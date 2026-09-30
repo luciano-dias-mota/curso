@@ -9,6 +9,7 @@ use App\Controllers\HomeController;
 use App\Controllers\LessonController;
 use App\Controllers\ModuleController;
 use App\Controllers\PhaseController;
+use App\Controllers\ProgressController;
 
 /** @var \App\Core\Router $router */
 
@@ -37,3 +38,6 @@ $router->get('/fase/{id}', [PhaseController::class, 'show'])
 
 $router->get('/aula/{id}', [LessonController::class, 'show'])
     ->middleware(['auth', 'student', 'lesson.unlocked']);
+
+$router->post('/aula/{id}/concluir', [ProgressController::class, 'completeLesson'])
+    ->middleware(['auth', 'student', 'csrf', 'lesson.unlocked']);
