@@ -1,25 +1,2 @@
-<section>
-    <p class="muted">Bem-vindo à missão.</p>
-    <h1><?= e($user['name'] ?? 'Estudante') ?></h1>
-
-    <?php if (!$courses): ?>
-        <div class="card">
-            <h2>Nenhum curso ativo</h2>
-            <p class="muted">Sua matrícula ainda não foi liberada pelo administrador.</p>
-        </div>
-    <?php else: ?>
-        <div class="grid grid-3">
-            <?php foreach ($courses as $course): ?>
-                <article class="card">
-                    <h2><?= e($course['title']) ?></h2>
-                    <p class="muted"><?= e($course['short_description'] ?? '') ?></p>
-                    <div class="progress">
-                        <span style="width: <?= (float) $course['progress_pct'] ?>%"></span>
-                    </div>
-                    <p><?= number_format((float) $course['progress_pct'], 0) ?>% concluído</p>
-                    <a class="btn" href="<?= e(url('/curso/' . $course['id'])) ?>">Continuar</a>
-                </article>
-            <?php endforeach; ?>
-        </div>
-    <?php endif; ?>
-</section>
+<?php use App\Core\Session;$success=Session::pullFlash('success');$avg=0;if($courses)$avg=array_sum(array_map(fn($c)=>(float)$c['progress_pct'],$courses))/count($courses);$firstName=explode(' ',trim($user['name']??'Estudante'))[0]; ?>
+<section class="dashboard-page"><?php if($success):?><div class="alert success"><?=e($success)?></div><?php endif;?><header class="hero"><div><span class="eyebrow">CENTRAL DE TREINAMENTO</span><h1>Continue sua missão, <?=e($firstName)?>.</h1><p>Estude em blocos curtos, avance por fases e consulte a biblioteca de referência quando precisar aprofundar literalidade e procedimentos.</p></div><div class="metrics"><div><small>XP</small><strong><?=number_format((int)($user['xp_total']??0),0,',','.')?></strong></div><div><small>Nível</small><strong><?=(int)($user['current_level']??1)?></strong></div><div><small>Sequência</small><strong><?=(int)($user['current_streak']??0)?> dias</strong></div><div><small>Progresso</small><strong><?=number_format($avg,0)?>%</strong></div></div></header><div class="section-head"><div><span class="eyebrow">TRILHAS ATIVAS</span><h2>Seus cursos</h2></div></div><?php if(!$courses):?><div class="card empty"><h2>Nenhum curso ativo</h2><p>Sua matrícula ainda não foi liberada.</p></div><?php else:?><div class="course-grid"><?php foreach($courses as $c):?><article class="course-card"><div class="course-top"><span class="badge active">ATIVO</span><span class="muted"><?=e(mb_strtoupper($c['difficulty']??'advanced'))?></span></div><div class="course-icon">◆</div><h3><?=e($c['title'])?></h3><p><?=e($c['short_description']??'')?></p><div class="meta"><span><?=(int)$c['module_count']?> módulos</span><span><?=number_format((float)$c['average_score'],0)?>% média</span></div><div class="progress-row"><span>Progresso geral</span><strong><?=number_format((float)$c['progress_pct'],0)?>%</strong></div><div class="progress"><span style="width:<?=(float)$c['progress_pct']?>%"></span></div><a class="primary" href="<?=e(url('/curso/'.$c['id']))?>">Continuar missão →</a></article><?php endforeach;?></div><?php endif;?></section>

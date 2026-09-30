@@ -1,38 +1,6 @@
 <?php
-
-use App\Core\Auth;
-use App\Core\Csrf;
-
-$userLayout = Auth::user();
-$pageTitle = isset($title) ? $title . ' • ' . config('app.name') : config('app.name');
+use App\Core\Auth;use App\Core\Csrf;
+$u=Auth::user();$pageTitle=isset($title)?$title.' • '.config('app.name'):config('app.name');
 ?>
-<!doctype html>
-<html lang="pt-BR" data-theme="<?= e($userLayout['theme'] ?? 'dark') ?>">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="<?= e(Csrf::token()) ?>">
-    <title><?= e($pageTitle) ?></title>
-    <link rel="stylesheet" href="<?= e(url('/assets/css/app.css')) ?>">
-    <script>window.APP_URL = <?= json_encode(rtrim((string) config('app.url'), '/')) ?>;</script>
-    <script src="<?= e(url('/assets/js/app.js')) ?>" defer></script>
-</head>
-<body>
-<div class="app-shell">
-    <header class="topbar">
-        <a class="brand" href="<?= e(url('/dashboard')) ?>">PMMT <span>ACADEMY</span></a>
-        <div>
-            <strong><?= e($userLayout['name'] ?? '') ?></strong>
-            &nbsp;•&nbsp; Nível <?= (int) ($userLayout['current_level'] ?? 1) ?>
-            &nbsp;•&nbsp; <?= (int) ($userLayout['xp_total'] ?? 0) ?> XP
-            <button class="btn secondary" type="button" data-theme-toggle>☀/🌙</button>
-            <form class="inline" action="<?= e(url('/logout')) ?>" method="post">
-                <?= Csrf::input() ?>
-                <button class="btn secondary" type="submit">Sair</button>
-            </form>
-        </div>
-    </header>
-    <main class="page"><?= $content ?></main>
-</div>
-</body>
-</html>
+<!doctype html><html lang="pt-BR" data-theme="<?= e($u['theme']??'dark') ?>"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="csrf-token" content="<?= e(Csrf::token()) ?>"><title><?= e($pageTitle) ?></title><link rel="stylesheet" href="<?= e(url('/assets/css/app.css')) ?>"><script>window.APP_URL=<?= json_encode(rtrim((string)config('app.url'),'/')) ?>;</script><script src="<?= e(url('/assets/js/app.js')) ?>" defer></script></head>
+<body class="student-body"><header class="academy-topbar"><a class="academy-brand" href="<?= e(url('/dashboard')) ?>"><span class="brand-mark">PMMT</span><span class="brand-name">ACADEMY</span><span class="brand-tag">MISSÃO APROVAÇÃO</span></a><div class="top-actions"><div class="player-chip"><span class="avatar"><?= e(mb_strtoupper(mb_substr($u['name']??'E',0,1))) ?></span><span><strong><?= e($u['name']??'Estudante') ?></strong><small>Nível <?= (int)($u['current_level']??1) ?> • <?= (int)($u['xp_total']??0) ?> XP</small></span></div><button class="icon-btn" type="button" data-theme-toggle title="Alternar tema"><span data-theme-icon>◐</span></button><form class="inline" action="<?= e(url('/logout')) ?>" method="post"><?= Csrf::input() ?><button class="ghost-btn" type="submit">Sair</button></form></div></header><main class="academy-shell"><?= $content ?></main></body></html>

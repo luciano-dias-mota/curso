@@ -12,39 +12,19 @@ final class LessonUnlockedMiddleware
 {
     public function handle(array $params = []): void
     {
-        if (!Auth::isStudent()) {
-            return;
-        }
+        if (!Auth::isStudent()) return;
+        $id = (int)($params['id'] ?? 0);
+        if ($id <= 0) return;
 
-        $lessonId = isset($params['id']) ? (int) $params['id'] : 0;
-
-        if ($lessonId <= 0) {
-            return;
-        }
-
-        $stmt = Database::connection()->prepare(
-            "SELECT upp.status
-             FROM lessons l
-             INNER JOIN phases p ON p.id = l.phase_id
-             LEFT JOIN user_phase_progress upp
-               ON upp.phase_id = p.id AND upp.user_id = :user_id
-             WHERE l.id = :lesson_id
-             LIMIT 1"
+        $s = Database::connection()->prepare(
+            "SELECT status FROM user_lesson_progress WHERE user_id=:u AND lesson_id=:l LIMIT 1"
         );
-        $stmt->execute([
-            'user_id' => Auth::id(),
-            'lesson_id' => $lessonId,
-        ]);
+        $s->execute(['u'=>Auth::id(),'l'=>$id]);
+        $status = $s->fetchColumn();
 
-        $row = $stmt->fetch();
-
-        if (!$row || ($row['status'] ?? 'locked') === 'locked') {
+        if (!$status || $status === 'locked') {
             http_response_code(403);
-            View::render(
-                'errors/locked',
-                ['message' => 'Esta aula ainda está bloqueada.'],
-                'layouts/app'
-            );
+            View::render('errors/locked', ['message'=>'Conclua a aula anterior para desbloquear esta etapa.'], 'layouts/app');
             exit;
         }
     }

@@ -12,34 +12,9 @@ final class DashboardController extends Controller
 {
     public function index(): void
     {
-        if (Auth::isAdmin()) {
-            $this->redirect('/admin');
-        }
-
-        $pdo = Database::connection();
-
-        $stmt = $pdo->prepare(
-            "SELECT c.id, c.title, c.slug, c.short_description,
-                    COALESCE(ucp.progress_pct, 0) AS progress_pct
-             FROM enrollments e
-             INNER JOIN courses c ON c.id = e.course_id
-             LEFT JOIN user_course_progress ucp
-               ON ucp.course_id = c.id AND ucp.user_id = e.user_id
-             WHERE e.user_id = :user_id
-               AND e.status = 'active'
-               AND c.status = 'published'
-             ORDER BY c.position"
-        );
-        $stmt->execute(['user_id' => Auth::id()]);
-
-        $this->view(
-            'student/dashboard',
-            [
-                'title' => 'Painel do Estudante',
-                'user' => Auth::user(),
-                'courses' => $stmt->fetchAll(),
-            ],
-            'layouts/student'
-        );
+        if(Auth::isAdmin()){$this->redirect('/admin');}
+        $s=Database::connection()->prepare("SELECT c.id,c.title,c.slug,c.short_description,c.difficulty,COALESCE(p.progress_pct,0) progress_pct,COALESCE(p.average_score,0) average_score,(SELECT COUNT(*) FROM modules m WHERE m.course_id=c.id AND m.status='published') module_count FROM enrollments e JOIN courses c ON c.id=e.course_id LEFT JOIN user_course_progress p ON p.course_id=c.id AND p.user_id=e.user_id WHERE e.user_id=:u AND e.status='active' AND c.status='published' ORDER BY c.position,c.id");
+        $s->execute(['u'=>Auth::id()]);
+        $this->view('student/dashboard',['title'=>'Painel do Estudante','user'=>Auth::user(),'courses'=>$s->fetchAll()],'layouts/student');
     }
 }

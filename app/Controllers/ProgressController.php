@@ -15,52 +15,36 @@ final class ProgressController extends Controller
     public function completeLesson(int $id): void
     {
         try {
-            $result = (new ProgressService())->completeLesson(
-                (int) Auth::id(),
-                $id
-            );
+            $result = (new ProgressService())->completeLesson((int) Auth::id(), $id);
 
-            // Há outra aula dentro da mesma fase.
+            if (!empty($result['optional'])) {
+                Session::flash('success', 'Leitura de referência concluída.');
+                $this->redirect('/fase/' . $result['phase_id']);
+            }
+
             if (!empty($result['next_lesson_id'])) {
-                Session::flash('success', 'Aula concluída. Continue para a próxima aula.');
+                Session::flash('success', 'Aula concluída. Próxima aula desbloqueada.');
                 $this->redirect('/aula/' . $result['next_lesson_id']);
             }
 
-            // Terminou a fase e ainda NÃO há prova cadastrada.
-            // Libera provisoriamente a próxima fase/aula.
-            if (
-                !empty($result['all_lessons_completed'])
-                && empty($result['quiz_id'])
-                && !empty($result['next_content_lesson_id'])
-            ) {
-                Session::flash(
-                    'success',
-                    'Fase concluída. Próxima aula desbloqueada.'
-                );
-
-                $this->redirect('/aula/' . $result['next_content_lesson_id']);
-            }
-
-            // Quando houver prova, o fluxo para aqui.
             if (!empty($result['quiz_id'])) {
                 Session::flash(
                     'success',
-                    'Leitura concluída. Faça a prova da fase para continuar.'
+                    'Leitura da fase concluída. Agora você precisa ser aprovado no checkpoint com pelo menos 4 de 5 acertos.'
+                );
+                $this->redirect('/prova/' . $result['quiz_id']);
+            }
+
+            if (!empty($result['quiz_missing'])) {
+                Session::flash(
+                    'error',
+                    'A leitura foi concluída, mas a prova desta fase ainda não foi configurada. A próxima fase permanecerá bloqueada.'
                 );
                 $this->redirect('/fase/' . $result['phase_id']);
             }
 
-            if (!empty($result['course_completed'])) {
-                Session::flash(
-                    'success',
-                    'Parabéns! Você concluiu todo o conteúdo disponível do curso.'
-                );
-                $this->redirect('/dashboard');
-            }
-
-            Session::flash('success', 'Aula concluída com sucesso.');
+            Session::flash('success', 'Aula concluída.');
             $this->redirect('/fase/' . $result['phase_id']);
-
         } catch (Throwable $e) {
             Session::flash('error', $e->getMessage());
             $this->redirect('/aula/' . $id);
