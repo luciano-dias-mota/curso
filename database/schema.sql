@@ -6,11 +6,11 @@
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
-CREATE DATABASE IF NOT EXISTS pmmta_academy
+CREATE DATABASE IF NOT EXISTS curso
   CHARACTER SET utf8mb4
   COLLATE utf8mb4_unicode_ci;
 
-USE pmmta_academy;
+USE curso;
 
 -- ============================================================================
 -- ACESSO E USUÁRIOS

@@ -84,7 +84,7 @@ function slugify(string $text): string
 
 $dbHost = (string) envValue('DB_HOST', '127.0.0.1');
 $dbPort = (int) envValue('DB_PORT', 3306);
-$dbName = (string) envValue('DB_DATABASE', 'pmmta_academy');
+$dbName = (string) envValue('DB_DATABASE', 'curso');
 $dbUser = (string) envValue('DB_USERNAME', 'root');
 $dbPass = (string) envValue('DB_PASSWORD', '');
 

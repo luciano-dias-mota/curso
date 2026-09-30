@@ -12,7 +12,7 @@ final class Session
             return;
         }
 
-        session_name((string) config('app.session_name', 'pmmta_academy_session'));
+        session_name((string) config('app.session_name', 'curso_session'));
 
         session_set_cookie_params([
             'httponly' => true,

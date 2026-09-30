@@ -1,5 +1,5 @@
 {
-  "name": "ld/pmmta-academy",
+  "name": "luciano/curso",
   "description": "Plataforma gamificada de estudos PMMT em PHP MVC",
   "type": "project",
   "require": {
