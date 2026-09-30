@@ -1,0 +1,624 @@
+/* ==========================================================
+   CURSO - Aula profissional e responsiva
+   Correção da navegação + camada pedagógica
+   ========================================================== */
+
+/*
+ * DESKTOP
+ * A grade usa somente elementos que realmente precisam ocupar a viewport.
+ * Os botões ficam ACIMA do conteúdo, portanto não dependem de chegar ao
+ * final da tela para serem clicados.
+ */
+.study-room {
+    height: calc(100dvh - 116px) !important;
+    min-height: 540px !important;
+    display: grid !important;
+    grid-template-columns: 300px minmax(0, 1fr) !important;
+    gap: 16px !important;
+    overflow: hidden !important;
+}
+
+.study-map {
+    min-height: 0 !important;
+    overflow: hidden !important;
+}
+
+.study-map-head {
+    min-width: 0;
+}
+
+.study-back {
+    display: inline-flex !important;
+    margin-bottom: 14px !important;
+    color: var(--muted) !important;
+    font-size: .82rem;
+}
+
+.study-map .map-list {
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    scrollbar-gutter: stable;
+}
+
+.study-stage {
+    min-width: 0 !important;
+    min-height: 0 !important;
+    display: grid !important;
+    grid-template-rows:
+        auto
+        auto
+        auto
+        minmax(0, 1fr) !important;
+    gap: 10px !important;
+    overflow: hidden !important;
+}
+
+.stage-top {
+    min-height: 74px;
+}
+
+.study-nav-top {
+    display: grid;
+    grid-template-columns: minmax(135px, 1fr) minmax(220px, .9fr) minmax(135px, 1fr);
+    gap: 12px;
+    align-items: center;
+    padding: 9px 12px;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    background: var(--panel);
+    box-shadow: var(--shadow);
+    position: relative;
+    z-index: 20;
+}
+
+.study-nav-side {
+    display: flex;
+    align-items: center;
+}
+
+.study-nav-side--right {
+    justify-content: flex-end;
+}
+
+.study-nav-top a,
+.study-nav-top button {
+    min-height: 45px;
+    min-width: 122px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.study-nav-progress {
+    display: grid;
+    gap: 5px;
+    text-align: center;
+}
+
+.study-nav-progress small {
+    color: var(--muted);
+    font-size: .68rem;
+}
+
+.nav-placeholder {
+    min-height: 45px;
+}
+
+.nav-finish-form {
+    display: inline-flex;
+}
+
+.study-card {
+    min-height: 0 !important;
+    overflow: hidden !important;
+}
+
+.study-content {
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    padding-right: 12px !important;
+    padding-bottom: 28px !important;
+}
+
+/* O footer antigo não é mais necessário nesta view. */
+.study-controls {
+    display: none !important;
+}
+
+/* ==========================================================
+   CONTEÚDO / DIDÁTICA
+   ========================================================== */
+
+.question-preview-note {
+    display: grid;
+    gap: 4px;
+    margin: 0 0 18px;
+    padding: 13px 15px;
+    border: 1px solid rgba(120, 161, 255, .24);
+    border-radius: 14px;
+    background: rgba(120, 161, 255, .07);
+}
+
+.question-preview-note strong {
+    color: var(--text);
+}
+
+.question-preview-note span {
+    color: var(--muted);
+    font-size: .86rem;
+    line-height: 1.5;
+}
+
+.question-preview-statement {
+    max-width: 1050px;
+    margin: 0 0 18px;
+    font-size: clamp(1rem, 1.25vw, 1.08rem);
+    line-height: 1.72;
+    font-weight: 700;
+}
+
+.question-preview-options {
+    display: grid;
+    gap: 10px;
+    max-width: 1100px;
+}
+
+.question-preview-option {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+    padding: 13px 15px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: color-mix(in srgb, var(--panel2) 68%, var(--panel));
+}
+
+.question-preview-option > span {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    border: 1px solid rgba(242, 139, 36, .24);
+    background: rgba(242, 139, 36, .08);
+    color: var(--orange2);
+    font-weight: 900;
+}
+
+.question-preview-option p {
+    margin: 4px 0 0;
+    line-height: 1.62;
+}
+
+.pedagogy-card {
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 14px;
+    align-items: start;
+    margin-top: 18px;
+    padding: 16px 18px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+}
+
+.pedagogy-icon {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    font-weight: 950;
+}
+
+.pedagogy-card h3 {
+    margin: 3px 0 7px;
+    font-size: 1rem;
+}
+
+.pedagogy-card p {
+    margin: 0;
+    line-height: 1.65;
+}
+
+.pedagogy-card small {
+    display: block;
+    margin-top: 9px;
+    color: var(--muted);
+    line-height: 1.45;
+}
+
+.pedagogy-label {
+    font-size: .69rem;
+    letter-spacing: .11em;
+    font-weight: 900;
+}
+
+.analogy-card {
+    border-color: rgba(168, 140, 255, .25);
+    background:
+        linear-gradient(135deg, rgba(168, 140, 255, .08), transparent 65%),
+        var(--panel2);
+}
+
+.analogy-card .pedagogy-icon {
+    background: rgba(168, 140, 255, .12);
+    color: #c7b8ff;
+}
+
+.analogy-card .pedagogy-label {
+    color: #c7b8ff;
+}
+
+.study-tip-card {
+    background:
+        linear-gradient(135deg, rgba(57, 197, 124, .07), transparent 65%),
+        var(--panel2);
+    border-color: rgba(57, 197, 124, .20);
+}
+
+.study-tip-card .pedagogy-icon {
+    background: rgba(57, 197, 124, .10);
+    color: var(--success);
+}
+
+.study-tip-card .pedagogy-label {
+    color: var(--success);
+}
+
+.lesson-exercise-gate {
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 14px;
+    align-items: center;
+    margin-top: 18px;
+    padding: 15px 17px;
+    border: 1px solid rgba(242, 139, 36, .28);
+    border-radius: 16px;
+    background:
+        linear-gradient(135deg, rgba(242, 139, 36, .09), transparent 68%),
+        var(--panel2);
+}
+
+.lesson-exercise-gate .gate-icon {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: rgba(242, 139, 36, .11);
+    color: var(--orange2);
+    font-weight: 950;
+}
+
+.lesson-exercise-gate strong {
+    display: block;
+    margin-bottom: 3px;
+}
+
+.lesson-exercise-gate p {
+    margin: 0;
+    color: var(--muted);
+    font-size: .88rem;
+    line-height: 1.5;
+}
+
+.mobile-outline {
+    display: none;
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 1050px) and (min-width: 801px) {
+    .study-room {
+        grid-template-columns: 235px minmax(0, 1fr) !important;
+    }
+
+    .study-nav-top {
+        grid-template-columns: 125px minmax(150px, .7fr) 125px;
+    }
+
+    .study-nav-top a,
+    .study-nav-top button {
+        min-width: 112px;
+        padding-inline: 12px;
+    }
+}
+
+/* ==========================================================
+   CELULAR
+   ========================================================== */
+
+@media (max-width: 800px) {
+    .academy-shell {
+        width: calc(100% - 16px) !important;
+        padding-top: 8px !important;
+    }
+
+    .study-room {
+        height: auto !important;
+        min-height: 0 !important;
+        display: block !important;
+        overflow: visible !important;
+    }
+
+    /*
+     * No celular o grande menu lateral vira um cabeçalho compacto.
+     * O mapa completo fica em <details> dentro do estágio.
+     */
+    .study-map {
+        display: block !important;
+        min-height: 0 !important;
+        padding: 13px 15px !important;
+        margin-bottom: 10px;
+    }
+
+    .study-map .ring,
+    .study-map .map-list {
+        display: none !important;
+    }
+
+    .study-map-head .study-back {
+        margin-bottom: 8px !important;
+    }
+
+    .study-map-head h2 {
+        margin: 3px 0 4px !important;
+        font-size: 1rem !important;
+        line-height: 1.25;
+    }
+
+    .study-map-head p {
+        font-size: .76rem !important;
+    }
+
+    .study-stage {
+        min-height: 0 !important;
+        display: grid !important;
+        grid-template-rows: auto auto auto auto !important;
+        overflow: visible !important;
+        gap: 9px !important;
+    }
+
+    .stage-top {
+        min-height: 0;
+        padding: 12px 14px !important;
+        align-items: flex-start !important;
+        gap: 10px;
+    }
+
+    .stage-top h1 {
+        font-size: .98rem !important;
+        line-height: 1.25;
+    }
+
+    .stage-meta {
+        flex-shrink: 0;
+    }
+
+    .stage-meta span:nth-child(2),
+    .stage-meta span:nth-child(3) {
+        display: none;
+    }
+
+    /*
+     * Navegação fica sticky no celular, logo abaixo do topo do app.
+     * Assim Próximo/Anterior continuam acessíveis mesmo em telas longas.
+     */
+    .study-nav-top {
+        position: sticky !important;
+        top: 8px;
+        z-index: 90;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        padding: 8px;
+        border-radius: 15px;
+        background: color-mix(in srgb, var(--panel) 95%, transparent);
+        backdrop-filter: blur(15px);
+        box-shadow: 0 14px 35px rgba(0, 0, 0, .30);
+    }
+
+    .study-nav-progress {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    .study-nav-side {
+        grid-row: 2;
+    }
+
+    .study-nav-side--right {
+        justify-content: stretch;
+    }
+
+    .study-nav-top a,
+    .study-nav-top button,
+    .study-nav-top form {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .study-nav-top a,
+    .study-nav-top button {
+        min-height: 48px;
+    }
+
+    .mobile-outline {
+        display: block;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: var(--panel);
+    }
+
+    .mobile-outline summary {
+        min-height: 46px;
+        display: flex;
+        align-items: center;
+        padding: 0 14px;
+        cursor: pointer;
+        color: var(--muted);
+        font-size: .83rem;
+        font-weight: 750;
+    }
+
+    .mobile-outline-list {
+        max-height: 46dvh;
+        overflow-y: auto;
+        display: grid;
+        gap: 6px;
+        padding: 0 9px 9px;
+    }
+
+    .mobile-outline-list a {
+        display: grid;
+        grid-template-columns: 30px minmax(0, 1fr);
+        gap: 9px;
+        align-items: center;
+        padding: 9px 10px;
+        border-radius: 11px;
+        color: var(--muted);
+        font-size: .78rem;
+    }
+
+    .mobile-outline-list a.active {
+        background: rgba(242, 139, 36, .09);
+        color: var(--text);
+    }
+
+    .mobile-outline-list a span {
+        width: 28px;
+        height: 28px;
+        display: grid;
+        place-items: center;
+        border-radius: 8px;
+        background: var(--panel2);
+        font-weight: 850;
+    }
+
+    .study-card {
+        min-height: 0 !important;
+        padding: 18px 16px !important;
+        overflow: visible !important;
+    }
+
+    .study-card > header {
+        grid-template-columns: 42px minmax(0, 1fr) !important;
+        gap: 11px !important;
+    }
+
+    .study-card .symbol {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .study-card h2 {
+        font-size: 1.18rem !important;
+        line-height: 1.28;
+    }
+
+    .study-content {
+        min-height: 0 !important;
+        overflow: visible !important;
+        padding-right: 0 !important;
+        padding-bottom: 90px !important;
+    }
+
+    .content-p {
+        max-width: none !important;
+        font-size: .98rem !important;
+        line-height: 1.72 !important;
+    }
+
+    .table-wrap {
+        margin-left: -4px;
+        margin-right: -4px;
+    }
+
+    .pedagogy-card,
+    .lesson-exercise-gate {
+        grid-template-columns: 40px minmax(0, 1fr);
+        padding: 14px;
+    }
+
+    .pedagogy-icon,
+    .lesson-exercise-gate .gate-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .question-preview-option {
+        grid-template-columns: 34px minmax(0, 1fr);
+        padding: 12px;
+    }
+
+    .question-preview-option > span {
+        width: 31px;
+        height: 31px;
+    }
+}
+
+/* Celulares estreitos */
+@media (max-width: 520px) {
+    .study-nav-top {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .study-nav-top a,
+    .study-nav-top button {
+        font-size: .86rem;
+        padding-inline: 9px;
+    }
+
+    .stage-top {
+        flex-direction: column;
+    }
+
+    .stage-meta {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .question-preview-statement {
+        font-size: 1rem;
+    }
+
+    .pedagogy-card,
+    .lesson-exercise-gate {
+        grid-template-columns: 1fr;
+    }
+
+    .pedagogy-icon,
+    .lesson-exercise-gate .gate-icon {
+        display: none;
+    }
+}
+
+/* Monitores de pouca altura: reduz espaços, mas mantém os botões no topo. */
+@media (max-height: 720px) and (min-width: 801px) {
+    .study-room {
+        height: calc(100dvh - 96px) !important;
+        min-height: 470px !important;
+    }
+
+    .stage-top {
+        min-height: 60px;
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+    }
+
+    .study-nav-top {
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+
+    .study-card {
+        padding-top: 18px !important;
+        padding-bottom: 18px !important;
+    }
+}

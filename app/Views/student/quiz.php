@@ -3,11 +3,16 @@ use App\Core\Csrf;
 use App\Core\Session;
 
 $error = Session::pullFlash('error');
-$ready = (int) $quiz['question_count'] === 5;
-$passedBefore = (float) $quiz['best_passed'] >= 80;
+
+$expected = (int) ($quiz['question_limit'] ?? 0);
+$actual = (int) ($quiz['question_count'] ?? 0);
+$requiredCorrect = (int) ($quiz['required_correct'] ?? 0);
+$requiredScore = (float) ($quiz['required_score'] ?? 0);
+$ready = $expected > 0 && $actual === $expected;
+$passedBefore = (float) ($quiz['best_passed'] ?? 0) >= $requiredScore;
 ?>
 <section class="quiz-page">
-    <a class="back" href="<?= e(url('/fase/' . $quiz['phase_id'])) ?>">← Voltar para a fase</a>
+    <a class="back" href="<?= e(url($quiz['context_url'])) ?>">← Voltar ao conteúdo</a>
 
     <?php if ($error): ?>
         <div class="alert error"><?= e($error) ?></div>
@@ -15,18 +20,23 @@ $passedBefore = (float) $quiz['best_passed'] >= 80;
 
     <header class="quiz-hero card">
         <div>
-            <span class="eyebrow">CHECKPOINT DA FASE</span>
-            <h1>Prova • <?= e($quiz['phase_title']) ?></h1>
-            <p>
-                Esta prova possui <strong>5 questões</strong>. Para ser aprovado e desbloquear
-                a próxima fase, você precisa acertar <strong>pelo menos 4</strong>.
+            <span class="quiz-kind"><?= e($quiz['type_label']) ?></span>
+            <h1><?= e($quiz['title']) ?></h1>
+            <p class="quiz-context">
+                <?php if ($quiz['quiz_type'] === 'lesson_fixation'): ?>
+                    A próxima aula só será liberada após aprovação neste exercício.
+                <?php elseif ($quiz['quiz_type'] === 'phase_exam'): ?>
+                    A próxima fase só será liberada após aprovação nesta prova.
+                <?php else: ?>
+                    O próximo módulo só será liberado após aprovação nesta avaliação.
+                <?php endif; ?>
             </p>
         </div>
 
         <div class="quiz-rule-box">
-            <div><strong>5</strong><span>questões</span></div>
-            <div><strong>4/5</strong><span>mínimo</span></div>
-            <div><strong>80%</strong><span>aprovação</span></div>
+            <div><strong><?= $expected ?></strong><span>questões</span></div>
+            <div><strong><?= $requiredCorrect ?>/<?= $expected ?></strong><span>mínimo</span></div>
+            <div><strong><?= number_format($requiredScore, 0) ?>%</strong><span>aprovação</span></div>
         </div>
     </header>
 
@@ -34,22 +44,20 @@ $passedBefore = (float) $quiz['best_passed'] >= 80;
         <article class="card quiz-info-card">
             <span class="eyebrow">TENTATIVAS</span>
             <strong><?= (int) $quiz['attempts'] ?></strong>
-            <p class="muted">Você pode refazer a prova se não alcançar 4 acertos.</p>
+            <p class="muted">Você pode refazer se necessário.</p>
         </article>
 
         <article class="card quiz-info-card">
             <span class="eyebrow">MELHOR NOTA</span>
             <strong><?= number_format((float) $quiz['best_percentage'], 0) ?>%</strong>
-            <p class="muted">O sistema mantém sua melhor pontuação.</p>
+            <p class="muted">Sua melhor pontuação fica registrada.</p>
         </article>
 
         <article class="card quiz-info-card <?= $passedBefore ? 'is-passed' : '' ?>">
             <span class="eyebrow">STATUS</span>
-            <strong><?= $passedBefore ? 'APROVADO' : ($ready ? 'LIBERADA' : 'EM PREPARAÇÃO') ?></strong>
+            <strong><?= $passedBefore ? 'APROVADO' : ($ready ? 'LIBERADA' : 'INCOMPLETA') ?></strong>
             <p class="muted">
-                <?= $passedBefore
-                    ? 'Você já venceu este checkpoint.'
-                    : ($ready ? 'A prova está pronta para começar.' : 'Faltam questões revisadas nesta fase.') ?>
+                <?= $ready ? 'Banco de questões pronto.' : "{$actual}/{$expected} questões cadastradas." ?>
             </p>
         </article>
     </div>
@@ -58,11 +66,11 @@ $passedBefore = (float) $quiz['best_passed'] >= 80;
         <div class="card quiz-unavailable">
             <span class="quiz-lock">🔒</span>
             <div>
-                <span class="eyebrow">PROVA AINDA NÃO PUBLICÁVEL</span>
-                <h2>Esta fase ainda não possui exatamente 5 questões revisadas.</h2>
+                <span class="eyebrow">BANCO INCOMPLETO</span>
+                <h2>A avaliação ainda não pode ser iniciada.</h2>
                 <p>
-                    A progressão continuará bloqueada até que o banco de questões desta fase
-                    esteja completo. Isso evita liberar uma prova incompleta ou pedagogicamente fraca.
+                    O sistema só libera a tentativa quando a quantidade de questões
+                    revisadas estiver completa.
                 </p>
             </div>
         </div>
@@ -70,7 +78,7 @@ $passedBefore = (float) $quiz['best_passed'] >= 80;
         <form action="<?= e(url('/prova/' . $quiz['id'] . '/iniciar')) ?>" method="post">
             <?= Csrf::input() ?>
             <button class="primary quiz-start" type="submit">
-                <?= $quiz['attempts'] > 0 ? 'Fazer nova tentativa →' : 'Iniciar prova →' ?>
+                <?= $quiz['attempts'] > 0 ? 'Fazer nova tentativa →' : 'Iniciar →' ?>
             </button>
         </form>
     <?php endif; ?>

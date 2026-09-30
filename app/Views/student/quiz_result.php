@@ -1,26 +1,31 @@
 <?php
+use App\Core\Csrf;
+
 $passed = (int) $attempt['passed'] === 1;
 $correct = (int) round((float) $attempt['score']);
+$total = (int) $attempt['question_limit'];
 $answers = $attempt['answers'] ?? [];
+$next = $attempt['next'] ?? ['url' => '/dashboard', 'label' => 'Continuar'];
 ?>
 <section class="quiz-page">
     <header class="quiz-result-hero card <?= $passed ? 'passed' : 'failed' ?>">
         <div class="quiz-result-icon"><?= $passed ? '🏆' : '🎯' ?></div>
         <div>
-            <span class="eyebrow">RESULTADO DO CHECKPOINT</span>
-            <h1><?= $passed ? 'Fase vencida!' : 'Ainda não foi desta vez' ?></h1>
+            <span class="quiz-kind"><?= e($attempt['type_label']) ?></span>
+            <h1><?= $passed ? 'Aprovado!' : 'Revise e tente novamente' ?></h1>
             <p>
-                Você acertou <strong><?= $correct ?> de 5 questões</strong>
+                Você acertou <strong><?= $correct ?> de <?= $total ?></strong>
                 (<?= number_format((float) $attempt['percentage'], 0) ?>%).
             </p>
-            <?php if ($passed): ?>
-                <p>A próxima fase foi desbloqueada.</p>
-            <?php else: ?>
-                <p>Revise o conteúdo e tente novamente. É necessário acertar pelo menos 4 questões.</p>
+            <?php if (!$passed): ?>
+                <p>
+                    É necessário acertar pelo menos
+                    <strong><?= (int) $attempt['required_correct'] ?> de <?= $total ?></strong>.
+                </p>
             <?php endif; ?>
         </div>
         <div class="quiz-result-score">
-            <strong><?= $correct ?>/5</strong>
+            <strong><?= $correct ?>/<?= $total ?></strong>
             <span><?= $passed ? 'APROVADO' : 'REVISAR' ?></span>
         </div>
     </header>
@@ -35,7 +40,7 @@ $answers = $attempt['answers'] ?? [];
             <article class="card quiz-review-card <?= $isCorrect ? 'correct' : 'wrong' ?>">
                 <div class="quiz-review-heading">
                     <span><?= $isCorrect ? '✓' : '✕' ?></span>
-                    <strong>Questão <?= (int) ($index + 1) ?></strong>
+                    <strong>Questão <?= $index + 1 ?></strong>
                     <small><?= $isCorrect ? 'ACERTOU' : 'ERROU' ?></small>
                 </div>
 
@@ -68,16 +73,20 @@ $answers = $attempt['answers'] ?? [];
     </div>
 
     <div class="quiz-result-actions">
-        <?php if ($passed && !empty($attempt['next_content']['lesson_id'])): ?>
-            <a class="primary" href="<?= e(url('/aula/' . $attempt['next_content']['lesson_id'])) ?>">
-                Continuar para a próxima fase →
+        <?php if ($passed): ?>
+            <a class="primary" href="<?= e(url($next['url'])) ?>">
+                <?= e($next['label']) ?>
             </a>
-        <?php elseif ($passed): ?>
-            <a class="primary" href="<?= e(url('/dashboard')) ?>">Voltar ao dashboard →</a>
         <?php else: ?>
-            <a class="secondary" href="<?= e(url('/fase/' . $attempt['phase_id'])) ?>">Revisar a fase</a>
-            <form action="<?= e(url('/prova/' . $attempt['quiz_id'] . '/iniciar')) ?>" method="post" class="inline">
-                <?= \App\Core\Csrf::input() ?>
+            <a class="secondary" href="<?= e(url($attempt['context_url'])) ?>">
+                Revisar conteúdo
+            </a>
+            <form
+                action="<?= e(url('/prova/' . $attempt['quiz_id'] . '/iniciar')) ?>"
+                method="post"
+                class="inline"
+            >
+                <?= Csrf::input() ?>
                 <button class="primary" type="submit">Tentar novamente →</button>
             </form>
         <?php endif; ?>

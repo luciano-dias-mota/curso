@@ -16,13 +16,11 @@ final class QuizController extends Controller
     public function show(int $id): void
     {
         try {
-            $quiz = (new QuizService())->quizForStudent($id, (int) Auth::id());
+            $quiz = (new QuizService())->getQuiz($id, (int) Auth::id());
+
             $this->view(
                 'student/quiz',
-                [
-                    'title' => 'Prova da fase',
-                    'quiz' => $quiz,
-                ],
+                ['title' => $quiz['type_label'], 'quiz' => $quiz],
                 'layouts/student'
             );
         } catch (Throwable $e) {
@@ -53,10 +51,7 @@ final class QuizController extends Controller
 
             $this->view(
                 'student/quiz_attempt',
-                [
-                    'title' => 'Prova da fase',
-                    'attempt' => $attempt,
-                ],
+                ['title' => $attempt['type_label'], 'attempt' => $attempt],
                 'layouts/student'
             );
         } catch (Throwable $e) {
@@ -73,7 +68,12 @@ final class QuizController extends Controller
                 $answers = [];
             }
 
-            (new QuizService())->submitAttempt($id, (int) Auth::id(), $answers);
+            (new QuizService())->submitAttempt(
+                $id,
+                (int) Auth::id(),
+                $answers
+            );
+
             $this->redirect('/prova/tentativa/' . $id . '/resultado');
         } catch (Throwable $e) {
             Session::flash('error', $e->getMessage());
@@ -92,10 +92,7 @@ final class QuizController extends Controller
 
             $this->view(
                 'student/quiz_result',
-                [
-                    'title' => 'Resultado da prova',
-                    'attempt' => $attempt,
-                ],
+                ['title' => 'Resultado', 'attempt' => $attempt],
                 'layouts/student'
             );
         } catch (Throwable $e) {
