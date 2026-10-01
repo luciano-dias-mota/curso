@@ -926,7 +926,7 @@ final class QuizService
     {
         $count=max(1,(int)($quiz['question_limit']??1));
         $score=(float)($quiz['required_score']??100);
-        return (int)ceil(($score/100)*$count);
+        return (int) ceil((($score * $count) / 100) - 1e-9);
     }
 
     private function typeLabel(string $type): string

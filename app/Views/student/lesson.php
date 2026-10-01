@@ -396,30 +396,6 @@ $nextUrl = $currentIndex < $totalBlocks
                     <?= $renderNormalContent($displayContent) ?>
                 <?php endif; ?>
 
-                <?php if (!empty($currentBlock['media_url'])): ?>
-                    <aside class="pedagogy-card source-card">
-                        <div class="pedagogy-icon">↗</div>
-
-                        <div>
-                            <span class="pedagogy-label">FONTE OFICIAL</span>
-                            <h3>Conferir no Manual POP PMMT 2023</h3>
-                            <p>
-                                Abra a página original para conferir figuras, fotografias,
-                                tabelas e a diagramação oficial do procedimento.
-                            </p>
-
-                            <a
-                                class="primary source-open-btn"
-                                href="<?= e(url((string) $currentBlock['media_url'])) ?>"
-                                target="_blank"
-                                rel="noopener"
-                            >
-                                Abrir página original do Manual ↗
-                            </a>
-                        </div>
-                    </aside>
-                <?php endif; ?>
-
                 <?php if ($analogy): ?>
                     <aside class="pedagogy-card analogy-card">
                         <div class="pedagogy-icon">↔</div>
@@ -430,8 +406,8 @@ $nextUrl = $currentIndex < $totalBlocks
                             <p><?= e($analogy['text']) ?></p>
 
                             <small>
-                                Recurso de memorização. Para prova, prevalecem a definição,
-                                a regra e o texto normativo apresentados no material-fonte.
+                                Recurso de memorização. Use a analogia para compreender o conceito;
+                                na prova, aplique a regra explicada na aula.
                             </small>
                         </div>
                     </aside>
