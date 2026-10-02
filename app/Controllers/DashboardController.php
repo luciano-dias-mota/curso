@@ -173,6 +173,67 @@ final class DashboardController extends Controller
         $xpTodayStmt->execute(['user_id' => $userId]);
         $xpToday = (int) $xpTodayStmt->fetchColumn();
 
+        $lessonOverviewStmt = $pdo->prepare(
+            "SELECT COUNT(DISTINCT l.id) AS total,
+                    COUNT(DISTINCT CASE WHEN ulp.status = 'completed' THEN l.id END) AS completed
+               FROM enrollments e
+               INNER JOIN modules m ON m.course_id = e.course_id AND m.status = 'published'
+               INNER JOIN phases p ON p.module_id = m.id AND p.status = 'published'
+               INNER JOIN lessons l ON l.phase_id = p.id AND l.status = 'published'
+               LEFT JOIN user_lesson_progress ulp
+                      ON ulp.lesson_id = l.id
+                     AND ulp.user_id = e.user_id
+              WHERE e.user_id = :user_id
+                AND e.status = 'active'"
+        );
+        $lessonOverviewStmt->execute(['user_id' => $userId]);
+        $lessonOverview = $lessonOverviewStmt->fetch(PDO::FETCH_ASSOC) ?: ['total' => 0, 'completed' => 0];
+
+        $questionOverviewStmt = $pdo->prepare(
+            "SELECT
+                (SELECT COUNT(DISTINCT qq.question_id)
+                   FROM enrollments e1
+                   INNER JOIN quizzes qz ON qz.course_id = e1.course_id AND qz.active = 1
+                   INNER JOIN quiz_questions qq ON qq.quiz_id = qz.id
+                  WHERE e1.user_id = :total_user
+                    AND e1.status = 'active') AS total,
+                (SELECT COUNT(DISTINCT qa.question_id)
+                   FROM quiz_answers qa
+                   INNER JOIN quiz_attempts qta ON qta.id = qa.attempt_id
+                  WHERE qta.user_id = :answered_user) AS completed"
+        );
+        $questionOverviewStmt->execute([
+            'total_user' => $userId,
+            'answered_user' => $userId,
+        ]);
+        $questionOverview = $questionOverviewStmt->fetch(PDO::FETCH_ASSOC) ?: ['total' => 0, 'completed' => 0];
+
+        $simulationOverviewStmt = $pdo->prepare(
+            "SELECT
+                (SELECT COUNT(DISTINCT s.id)
+                   FROM enrollments e2
+                   INNER JOIN simulations s ON s.course_id = e2.course_id AND s.active = 1
+                  WHERE e2.user_id = :sim_total_user
+                    AND e2.status = 'active') AS total,
+                (SELECT COUNT(DISTINCT sa.simulation_id)
+                   FROM simulation_attempts sa
+                  WHERE sa.user_id = :sim_done_user
+                    AND sa.status = 'finished') AS completed"
+        );
+        $simulationOverviewStmt->execute([
+            'sim_total_user' => $userId,
+            'sim_done_user' => $userId,
+        ]);
+        $simulationOverview = $simulationOverviewStmt->fetch(PDO::FETCH_ASSOC) ?: ['total' => 0, 'completed' => 0];
+
+        $studyTotalStmt = $pdo->prepare(
+            "SELECT COALESCE(SUM(duration_seconds), 0)
+               FROM study_sessions
+              WHERE user_id = :user_id"
+        );
+        $studyTotalStmt->execute(['user_id' => $userId]);
+        $studySecondsTotal = (int) $studyTotalStmt->fetchColumn();
+
         $dailyQuests = [
             [
                 'icon' => '▶',
@@ -213,6 +274,10 @@ final class DashboardController extends Controller
                 'achievementCount' => $achievementCount,
                 'dailyQuests' => $dailyQuests,
                 'xpToday' => $xpToday,
+                'lessonOverview' => $lessonOverview,
+                'questionOverview' => $questionOverview,
+                'simulationOverview' => $simulationOverview,
+                'studySecondsTotal' => $studySecondsTotal,
             ],
             'layouts/student'
         );

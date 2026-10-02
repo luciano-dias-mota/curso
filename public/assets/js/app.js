@@ -46,7 +46,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Modo foco da aula
+  // Busca visual na tela atual. Não altera dados nem faz requisição ao servidor.
+  const search = document.querySelector('[data-global-search]');
+  if (search) {
+    search.addEventListener('input', () => {
+      const term = search.value.trim().toLocaleLowerCase('pt-BR');
+      const targets = [...document.querySelectorAll('[data-searchable], .map-item')];
+
+      targets.forEach((target) => {
+        const haystack = (target.textContent || '').toLocaleLowerCase('pt-BR');
+        target.hidden = term !== '' && !haystack.includes(term);
+      });
+    });
+  }
+
+  // Modo foco da aula.
   const focusButtons = [...document.querySelectorAll('[data-focus-toggle]')];
   const setFocusMode = (enabled) => {
     body.classList.toggle('focus-mode', enabled);
@@ -61,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', () => setFocusMode(!body.classList.contains('focus-mode')));
   });
 
-  // Navegação por teclado nas aulas
+  // Setas do teclado nas aulas.
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && body.classList.contains('focus-mode')) {
       setFocusMode(false);
@@ -87,22 +101,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Exercícios: uma questão por vez no mobile, sem alterar o submit do backend.
+  // Prova/exercício: uma questão por vez em desktop e mobile.
   const quizPage = document.querySelector('[data-quiz-attempt]');
   if (quizPage) {
     const cards = [...quizPage.querySelectorAll('[data-quiz-question]')];
+    const jumps = [...quizPage.querySelectorAll('[data-quiz-jump]')];
     const prev = quizPage.querySelector('[data-quiz-prev]');
     const next = quizPage.querySelector('[data-quiz-next]');
     const counter = quizPage.querySelector('[data-quiz-counter]');
     const bar = quizPage.querySelector('[data-quiz-progress-bar]');
     const submitBar = quizPage.querySelector('[data-quiz-submit-bar]');
     const form = quizPage.querySelector('[data-quiz-form]');
-    const mobileQuery = window.matchMedia('(max-width: 800px)');
     let index = 0;
 
     const questionAnswered = (card) => !!card?.querySelector('input[type="radio"]:checked');
 
-    const showQuestion = (newIndex) => {
+    const syncJumpStates = () => {
+      jumps.forEach((button, i) => {
+        button.classList.toggle('active', i === index);
+        button.classList.toggle('answered', questionAnswered(cards[i]));
+        if (i === index) button.classList.remove('answered');
+      });
+    };
+
+    const showQuestion = (newIndex, scroll = true) => {
       if (!cards.length) return;
       index = Math.max(0, Math.min(cards.length - 1, newIndex));
       cards.forEach((card, i) => card.classList.toggle('is-active', i === index));
@@ -112,21 +134,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (prev) prev.disabled = index === 0;
       if (next) next.hidden = index === cards.length - 1;
       if (submitBar) submitBar.classList.toggle('is-visible', index === cards.length - 1);
+      syncJumpStates();
 
-      cards[index]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (scroll) cards[index]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
 
-    const syncQuizMode = () => {
-      const mobile = mobileQuery.matches;
-      quizPage.classList.toggle('quiz-one-by-one', mobile);
-      if (mobile) showQuestion(index);
-      else {
-        cards.forEach((card) => card.classList.add('is-active'));
-        if (submitBar) submitBar.classList.remove('is-visible');
-      }
-    };
-
-    next?.addEventListener('click', () => {
+    const moveNext = () => {
       const card = cards[index];
       if (!questionAnswered(card)) {
         card?.classList.add('needs-answer');
@@ -135,12 +148,19 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
       showQuestion(index + 1);
-    });
+    };
 
+    next?.addEventListener('click', moveNext);
     prev?.addEventListener('click', () => showQuestion(index - 1));
 
+    jumps.forEach((button) => {
+      button.addEventListener('click', () => {
+        const target = Number(button.dataset.quizJump || 0);
+        showQuestion(target);
+      });
+    });
+
     form?.addEventListener('submit', (event) => {
-      if (!mobileQuery.matches) return;
       const unansweredIndex = cards.findIndex((card) => !questionAnswered(card));
       if (unansweredIndex !== -1) {
         event.preventDefault();
@@ -152,12 +172,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     cards.forEach((card) => {
-      card.addEventListener('change', () => card.classList.remove('needs-answer'));
+      card.addEventListener('change', () => {
+        card.classList.remove('needs-answer');
+        syncJumpStates();
+      });
     });
 
-    if (typeof mobileQuery.addEventListener === 'function') mobileQuery.addEventListener('change', syncQuizMode);
-    else mobileQuery.addListener(syncQuizMode);
-
-    syncQuizMode();
+    showQuestion(0, false);
   }
 });
