@@ -28,14 +28,17 @@ $pedagogy = new PedagogyService();
 $rawContent = (string) ($currentBlock['content'] ?? '');
 $displayContent = $pedagogy->cleanDisplayText($rawContent);
 
-$looksLikeQuestion = $pedagogy->looksLikeMultipleChoice(
-    (string) ($currentBlock['title'] ?? ''),
-    $displayContent
-);
+$declaredType = (string) ($currentBlock['block_type'] ?? 'theory');
+
+$looksLikeQuestion = $declaredType !== 'video'
+    && $pedagogy->looksLikeMultipleChoice(
+        (string) ($currentBlock['title'] ?? ''),
+        $displayContent
+    );
 
 $currentType = $looksLikeQuestion
     ? 'question'
-    : (string) ($currentBlock['block_type'] ?? 'theory');
+    : $declaredType;
 
 $meta = $types[$currentType] ?? $types['theory'];
 
@@ -44,15 +47,22 @@ $pct = $totalBlocks > 0
     ? min(100, (int) round(($visited / $totalBlocks) * 100))
     : 0;
 
-$analogy = $pedagogy->analogyFor(
-    (string) ($currentBlock['title'] ?? ''),
-    $displayContent
-);
+$analogy = $currentType === 'video'
+    ? null
+    : $pedagogy->analogyFor(
+        (string) ($currentBlock['title'] ?? ''),
+        $displayContent
+    );
 
-$studyPrompt = $pedagogy->studyPromptFor(
-    $currentType,
-    $looksLikeQuestion
-);
+$studyPrompt = $currentType === 'video'
+    ? [
+        'label' => 'Fixação ativa',
+        'text' => 'Assista com atenção e, ao final, explique com suas próprias palavras os pontos principais antes de avançar.',
+    ]
+    : $pedagogy->studyPromptFor(
+        $currentType,
+        $looksLikeQuestion
+    );
 
 $renderNormalContent = static function (string $text): string {
     if ($text === '') {
@@ -253,14 +263,17 @@ $nextUrl = $currentIndex < $totalBlocks
                     (string) ($block['content'] ?? '')
                 );
 
-                $blockLooksQuestion = $pedagogy->looksLikeMultipleChoice(
-                    (string) ($block['title'] ?? ''),
-                    $blockContent
-                );
+                $blockDeclaredType = (string) ($block['block_type'] ?? 'theory');
+
+                $blockLooksQuestion = $blockDeclaredType !== 'video'
+                    && $pedagogy->looksLikeMultipleChoice(
+                        (string) ($block['title'] ?? ''),
+                        $blockContent
+                    );
 
                 $blockType = $blockLooksQuestion
                     ? 'question'
-                    : (string) ($block['block_type'] ?? 'theory');
+                    : $blockDeclaredType;
 
                 $blockMeta = $types[$blockType] ?? $types['theory'];
                 ?>
@@ -296,6 +309,11 @@ $nextUrl = $currentIndex < $totalBlocks
                     <span>+<?= (int) $lesson['xp_reward'] ?> XP</span>
                 <?php endif; ?>
             </div>
+
+            <button class="focus-toggle secondary" type="button" data-focus-toggle aria-pressed="false" title="Ocultar elementos secundários">
+                <span class="focus-toggle-icon">◎</span>
+                <span data-focus-label>Modo foco</span>
+            </button>
         </header>
 
         <!-- Navegação principal fica no topo: nunca fica escondida abaixo da dobra. -->
@@ -382,7 +400,38 @@ $nextUrl = $currentIndex < $totalBlocks
 
             <div class="study-content">
 
-                <?php if ($looksLikeQuestion): ?>
+                <?php if ($currentType === 'video'): ?>
+                    <?php
+                    $videoSource = !empty($currentBlock['media_id'])
+                        ? url('/media/video/' . (int) $currentBlock['media_id'])
+                        : trim((string) ($currentBlock['media_url'] ?? ''));
+                    ?>
+
+                    <?php if ($videoSource !== ''): ?>
+                        <div class="lesson-video-shell">
+                            <video
+                                class="lesson-video-player"
+                                controls
+                                preload="metadata"
+                                playsinline
+                                src="<?= e($videoSource) ?>"
+                            >
+                                Seu navegador não suporta reprodução de vídeo.
+                            </video>
+                        </div>
+
+                        <?php if ($displayContent !== ''): ?>
+                            <div class="lesson-video-note">
+                                <?= $renderNormalContent($displayContent) ?>
+                            </div>
+                        <?php endif; ?>
+                    <?php else: ?>
+                        <div class="alert error">
+                            O vídeo deste bloco não está mais disponível.
+                        </div>
+                    <?php endif; ?>
+
+                <?php elseif ($looksLikeQuestion): ?>
                     <div class="question-preview-note">
                         <strong>Questão do material de estudo</strong>
                         <span>

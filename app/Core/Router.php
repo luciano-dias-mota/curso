@@ -9,6 +9,7 @@ use App\Middleware\AuthMiddleware;
 use App\Middleware\CsrfMiddleware;
 use App\Middleware\GuestMiddleware;
 use App\Middleware\LessonUnlockedMiddleware;
+use App\Middleware\ModuleUnlockedMiddleware;
 use App\Middleware\PhaseUnlockedMiddleware;
 use App\Middleware\StudentMiddleware;
 use ReflectionMethod;
@@ -27,6 +28,7 @@ final class Router
         'csrf' => CsrfMiddleware::class,
         'phase.unlocked' => PhaseUnlockedMiddleware::class,
         'lesson.unlocked' => LessonUnlockedMiddleware::class,
+        'module.unlocked' => ModuleUnlockedMiddleware::class,
     ];
 
     public function get(string $uri, array|callable $handler): Route

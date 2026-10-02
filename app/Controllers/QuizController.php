@@ -9,6 +9,8 @@ use App\Core\Controller;
 use App\Core\Request;
 use App\Core\Session;
 use App\Services\QuizService;
+use PDOException;
+use RuntimeException;
 use Throwable;
 
 final class QuizController extends Controller
@@ -24,7 +26,7 @@ final class QuizController extends Controller
                 'layouts/student'
             );
         } catch (Throwable $e) {
-            Session::flash('error', $e->getMessage());
+            $this->flashSafeError($e);
             $this->redirect('/dashboard');
         }
     }
@@ -35,7 +37,7 @@ final class QuizController extends Controller
             $attemptId = (new QuizService())->startAttempt($id, (int) Auth::id());
             $this->redirect('/prova/tentativa/' . $attemptId);
         } catch (Throwable $e) {
-            Session::flash('error', $e->getMessage());
+            $this->flashSafeError($e);
             $this->redirect('/prova/' . $id);
         }
     }
@@ -49,13 +51,18 @@ final class QuizController extends Controller
                 $this->redirect('/prova/tentativa/' . $id . '/resultado');
             }
 
+            if ($attempt['status'] === 'abandoned') {
+                Session::flash('error', 'Esta tentativa foi encerrada. Inicie uma nova tentativa, se disponível.');
+                $this->redirect('/prova/' . (int) $attempt['quiz_id']);
+            }
+
             $this->view(
                 'student/quiz_attempt',
                 ['title' => $attempt['type_label'], 'attempt' => $attempt],
                 'layouts/student'
             );
         } catch (Throwable $e) {
-            Session::flash('error', $e->getMessage());
+            $this->flashSafeError($e);
             $this->redirect('/dashboard');
         }
     }
@@ -76,7 +83,7 @@ final class QuizController extends Controller
 
             $this->redirect('/prova/tentativa/' . $id . '/resultado');
         } catch (Throwable $e) {
-            Session::flash('error', $e->getMessage());
+            $this->flashSafeError($e);
             $this->redirect('/prova/tentativa/' . $id);
         }
     }
@@ -96,8 +103,26 @@ final class QuizController extends Controller
                 'layouts/student'
             );
         } catch (Throwable $e) {
-            Session::flash('error', $e->getMessage());
+            $this->flashSafeError($e);
             $this->redirect('/dashboard');
         }
+    }
+
+    private function flashSafeError(Throwable $e): void
+    {
+        error_log(sprintf(
+            '[QuizController] %s: %s in %s:%d',
+            $e::class,
+            $e->getMessage(),
+            $e->getFile(),
+            $e->getLine()
+        ));
+
+        if ($e instanceof RuntimeException && !$e instanceof PDOException) {
+            Session::flash('error', $e->getMessage());
+            return;
+        }
+
+        Session::flash('error', 'Não foi possível concluir a avaliação. Tente novamente.');
     }
 }

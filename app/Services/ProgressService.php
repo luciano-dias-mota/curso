@@ -18,26 +18,31 @@ final class ProgressService
         int $currentBlock
     ): void {
         $pdo = Database::connection();
-
-        $stmt = $pdo->prepare(
-            "SELECT id
-             FROM lesson_blocks
-             WHERE id = :block_id
-               AND lesson_id = :lesson_id
-             LIMIT 1"
-        );
-        $stmt->execute([
-            'block_id' => $blockId,
-            'lesson_id' => $lessonId,
-        ]);
-
-        if (!$stmt->fetchColumn()) {
-            return;
-        }
-
         $pdo->beginTransaction();
 
         try {
+            $lesson = $this->lessonAccess($pdo, $userId, $lessonId, true);
+
+            if ($lesson['status'] === 'locked') {
+                throw new RuntimeException('Esta aula ainda está bloqueada.');
+            }
+
+            $stmt = $pdo->prepare(
+                "SELECT id
+                 FROM lesson_blocks
+                 WHERE id = :block_id
+                   AND lesson_id = :lesson_id
+                 LIMIT 1"
+            );
+            $stmt->execute([
+                'block_id' => $blockId,
+                'lesson_id' => $lessonId,
+            ]);
+
+            if (!$stmt->fetchColumn()) {
+                throw new RuntimeException('Bloco de conteúdo inválido para esta aula.');
+            }
+
             $pdo->prepare(
                 "INSERT INTO user_lesson_block_views
                     (user_id, lesson_block_id, first_viewed_at, last_viewed_at, view_count)
@@ -57,25 +62,28 @@ final class ProgressService
                 : 100;
 
             $pdo->prepare(
-                "INSERT INTO user_lesson_progress
-                    (user_id, lesson_id, status, current_block,
-                     blocks_viewed, progress_pct, started_at, last_accessed_at)
-                 VALUES
-                    (:user_id, :lesson_id, 'in_progress', :current_block,
-                     :blocks_viewed, :progress_pct, NOW(), NOW())
-                 ON DUPLICATE KEY UPDATE
-                    status = IF(status = 'completed', 'completed', 'in_progress'),
-                    current_block = VALUES(current_block),
-                    blocks_viewed = VALUES(blocks_viewed),
-                    progress_pct = IF(status = 'completed', 100, VALUES(progress_pct)),
-                    started_at = COALESCE(started_at, NOW()),
-                    last_accessed_at = NOW()"
+                "UPDATE user_lesson_progress
+                 SET status = CASE
+                        WHEN status = 'completed' THEN 'completed'
+                        WHEN status IN ('available', 'in_progress') THEN 'in_progress'
+                        ELSE status
+                     END,
+                     current_block = :current_block,
+                     blocks_viewed = :blocks_viewed,
+                     progress_pct = CASE
+                        WHEN status = 'completed' THEN 100
+                        ELSE :progress_pct
+                     END,
+                     started_at = COALESCE(started_at, NOW()),
+                     last_accessed_at = NOW()
+                 WHERE user_id = :user_id
+                   AND lesson_id = :lesson_id"
             )->execute([
-                'user_id' => $userId,
-                'lesson_id' => $lessonId,
                 'current_block' => $currentBlock,
                 'blocks_viewed' => $viewed,
                 'progress_pct' => $pct,
+                'user_id' => $userId,
+                'lesson_id' => $lessonId,
             ]);
 
             $pdo->commit();
@@ -90,35 +98,9 @@ final class ProgressService
     public function finishReading(int $userId, int $lessonId): array
     {
         $pdo = Database::connection();
+        $lesson = $this->lessonAccess($pdo, $userId, $lessonId);
 
-        $lessonStmt = $pdo->prepare(
-            "SELECT l.id, l.phase_id
-             FROM lessons l
-             WHERE l.id = :lesson_id
-               AND l.status = 'published'
-             LIMIT 1"
-        );
-        $lessonStmt->execute(['lesson_id' => $lessonId]);
-        $lesson = $lessonStmt->fetch();
-
-        if (!$lesson) {
-            throw new RuntimeException('Aula não encontrada.');
-        }
-
-        $statusStmt = $pdo->prepare(
-            "SELECT status
-             FROM user_lesson_progress
-             WHERE user_id = :user_id
-               AND lesson_id = :lesson_id
-             LIMIT 1"
-        );
-        $statusStmt->execute([
-            'user_id' => $userId,
-            'lesson_id' => $lessonId,
-        ]);
-        $status = $statusStmt->fetchColumn();
-
-        if (!$status || $status === 'locked') {
+        if ($lesson['status'] === 'locked') {
             throw new RuntimeException('Esta aula ainda está bloqueada.');
         }
 
@@ -130,11 +112,42 @@ final class ProgressService
             );
         }
 
-        // A leitura chega a 100%, mas a aula continua in_progress.
-        // Somente a aprovação no lesson_fixation muda para completed.
+        $isOptional = (int) $lesson['lesson_required'] === 0
+            || (int) $lesson['phase_required'] === 0;
+
+        if ($isOptional) {
+            $pdo->prepare(
+                "UPDATE user_lesson_progress
+                 SET status = 'completed',
+                     progress_pct = 100,
+                     blocks_viewed = GREATEST(blocks_viewed, :blocks_viewed),
+                     completed_at = COALESCE(completed_at, NOW()),
+                     last_accessed_at = NOW()
+                 WHERE user_id = :user_id
+                   AND lesson_id = :lesson_id
+                   AND status <> 'locked'"
+            )->execute([
+                'blocks_viewed' => max($viewed, $required),
+                'user_id' => $userId,
+                'lesson_id' => $lessonId,
+            ]);
+
+            return [
+                'phase_id' => (int) $lesson['phase_id'],
+                'quiz_id' => null,
+                'optional' => true,
+            ];
+        }
+
+        // A leitura obrigatória chega a 100%, mas a aula só vira completed
+        // após aprovação no exercício lesson_fixation.
         $pdo->prepare(
             "UPDATE user_lesson_progress
-             SET status = IF(status = 'completed', 'completed', 'in_progress'),
+             SET status = CASE
+                    WHEN status = 'completed' THEN 'completed'
+                    WHEN status IN ('available', 'in_progress') THEN 'in_progress'
+                    ELSE status
+                 END,
                  progress_pct = 100,
                  blocks_viewed = :blocks_viewed,
                  last_accessed_at = NOW()
@@ -161,9 +174,7 @@ final class ProgressService
         $quiz = $quizStmt->fetch();
 
         if (!$quiz) {
-            throw new RuntimeException(
-                'O exercício desta aula ainda não foi configurado.'
-            );
+            throw new RuntimeException('O exercício desta aula ainda não foi configurado.');
         }
 
         if ((int) $quiz['question_count'] !== (int) $quiz['question_limit']) {
@@ -177,7 +188,64 @@ final class ProgressService
         return [
             'phase_id' => (int) $lesson['phase_id'],
             'quiz_id' => (int) $quiz['id'],
+            'optional' => false,
         ];
+    }
+
+    private function lessonAccess(PDO $pdo, int $userId, int $lessonId, bool $forUpdate = false): array
+    {
+        $lock = $forUpdate ? ' FOR UPDATE' : '';
+
+        $stmt = $pdo->prepare(
+            "SELECT l.id,
+                    l.phase_id,
+                    l.is_required AS lesson_required,
+                    p.is_required AS phase_required,
+                    ulp.status
+             FROM lessons l
+             INNER JOIN phases p
+               ON p.id = l.phase_id
+              AND p.status = 'published'
+             INNER JOIN modules m
+               ON m.id = p.module_id
+              AND m.status = 'published'
+             INNER JOIN courses c
+               ON c.id = m.course_id
+              AND c.status = 'published'
+             INNER JOIN enrollments e
+               ON e.course_id = c.id
+              AND e.user_id = :enrollment_user_id
+              AND e.status = 'active'
+             INNER JOIN user_module_progress ump
+               ON ump.module_id = m.id
+              AND ump.user_id = :module_user_id
+              AND ump.status <> 'locked'
+             INNER JOIN user_phase_progress upp
+               ON upp.phase_id = p.id
+              AND upp.user_id = :phase_user_id
+              AND upp.status <> 'locked'
+             INNER JOIN user_lesson_progress ulp
+               ON ulp.lesson_id = l.id
+              AND ulp.user_id = :lesson_user_id
+             WHERE l.id = :lesson_id
+               AND l.status = 'published'
+             LIMIT 1{$lock}"
+        );
+        $stmt->execute([
+            'enrollment_user_id' => $userId,
+            'module_user_id' => $userId,
+            'phase_user_id' => $userId,
+            'lesson_user_id' => $userId,
+            'lesson_id' => $lessonId,
+        ]);
+
+        $lesson = $stmt->fetch();
+
+        if (!$lesson) {
+            throw new RuntimeException('Aula indisponível para sua matrícula.');
+        }
+
+        return $lesson;
     }
 
     private function blockCounts(PDO $pdo, int $userId, int $lessonId): array

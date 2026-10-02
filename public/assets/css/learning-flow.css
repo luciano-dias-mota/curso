@@ -622,3 +622,37 @@
         padding-bottom: 18px !important;
     }
 }
+
+/* ==========================================================
+   UI V2 — MODO FOCO E REFINOS DA AULA
+   ========================================================== */
+.focus-toggle { gap:8px; min-width:120px; white-space:nowrap; }
+.focus-toggle-icon { color:var(--electric); font-weight:950; }
+.stage-top { gap:14px; }
+.study-card { border-color:color-mix(in srgb,var(--accent) 14%,var(--border)); }
+.symbol { border-color:color-mix(in srgb,var(--accent) 24%,transparent); background:color-mix(in srgb,var(--accent) 8%,transparent); color:var(--accent); }
+.map-item.active { border-color:color-mix(in srgb,var(--accent) 30%,transparent); background:color-mix(in srgb,var(--accent) 8%,transparent); }
+.map-item.active > span { color:#fff; background:var(--accent); }
+.ring { background:radial-gradient(closest-side,var(--panel) 72%,transparent 74%),conic-gradient(var(--accent) calc(var(--p)*1%),rgba(128,145,170,.14) 0); }
+
+body.focus-mode { overflow:hidden; padding-bottom:0 !important; }
+body.focus-mode .academy-topbar,
+body.focus-mode .mobile-bottom-nav { display:none !important; }
+body.focus-mode .academy-shell { width:min(1100px, calc(100vw - 24px)) !important; padding:12px 0 !important; }
+body.focus-mode .study-room { height:calc(100dvh - 24px) !important; min-height:0 !important; grid-template-columns:1fr !important; }
+body.focus-mode .study-map { display:none !important; }
+body.focus-mode .study-stage { grid-template-rows:auto auto auto minmax(0,1fr) !important; }
+body.focus-mode .stage-top { box-shadow:none; }
+body.focus-mode .study-card { box-shadow:none; }
+body.focus-mode .focus-toggle { border-color:color-mix(in srgb,var(--accent) 36%,var(--border)); background:color-mix(in srgb,var(--accent) 10%,var(--panel2)); }
+
+@media (max-width:800px) {
+  .focus-toggle { width:100%; min-height:48px; }
+  .stage-top { align-items:stretch !important; }
+  body.focus-mode { overflow:auto; }
+  body.focus-mode .academy-shell { width:calc(100% - 14px) !important; padding:7px 0 !important; }
+  body.focus-mode .study-room { height:auto !important; }
+  body.focus-mode .study-map { display:none !important; }
+  body.focus-mode .study-nav-top { top:6px !important; }
+  body.focus-mode .study-content { padding-bottom:24px !important; }
+}

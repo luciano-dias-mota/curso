@@ -46,7 +46,7 @@ final class Auth
 
     public static function check(): bool
     {
-        return self::id() !== null;
+        return self::user() !== null;
     }
 
     public static function id(): ?int
@@ -57,7 +57,10 @@ final class Auth
 
     public static function user(): ?array
     {
-        if (!self::check()) {
+        $id = self::id();
+
+        if ($id === null) {
+            self::$cachedUser = null;
             return null;
         }
 
@@ -70,13 +73,19 @@ final class Auth
              FROM users u
              INNER JOIN roles r ON r.id = u.role_id
              WHERE u.id = :id
+               AND u.status = \'active\'
              LIMIT 1'
         );
-        $stmt->execute(['id' => self::id()]);
+        $stmt->execute(['id' => $id]);
 
-        $user = $stmt->fetch();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        self::$cachedUser = $user ?: null;
+        if (!$user) {
+            self::logout();
+            return null;
+        }
+
+        self::$cachedUser = $user;
 
         return self::$cachedUser;
     }
@@ -99,6 +108,9 @@ final class Auth
     public static function logout(): void
     {
         self::$cachedUser = null;
-        Session::destroy();
+
+        if (session_status() === PHP_SESSION_ACTIVE) {
+            Session::destroy();
+        }
     }
 }

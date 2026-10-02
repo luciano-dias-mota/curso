@@ -34,6 +34,15 @@ final class App
 
             $router->dispatch();
         } catch (Throwable $e) {
+            error_log(sprintf(
+                '[%s] %s: %s in %s:%d',
+                date('c'),
+                $e::class,
+                $e->getMessage(),
+                $e->getFile(),
+                $e->getLine()
+            ));
+
             http_response_code(500);
 
             if ((bool) config('app.debug', false)) {

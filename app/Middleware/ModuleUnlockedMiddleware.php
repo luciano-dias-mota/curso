@@ -8,7 +8,7 @@ use App\Core\Auth;
 use App\Core\Database;
 use App\Core\View;
 
-final class PhaseUnlockedMiddleware
+final class ModuleUnlockedMiddleware
 {
     public function handle(array $params = []): void
     {
@@ -16,18 +16,15 @@ final class PhaseUnlockedMiddleware
             return;
         }
 
-        $phaseId = (int) ($params['id'] ?? 0);
+        $moduleId = (int) ($params['id'] ?? 0);
 
-        if ($phaseId <= 0) {
-            $this->deny('Fase inválida.');
+        if ($moduleId <= 0) {
+            $this->deny('Módulo inválido.');
         }
 
         $stmt = Database::connection()->prepare(
-            "SELECT upp.status
-             FROM phases p
-             INNER JOIN modules m
-               ON m.id = p.module_id
-              AND m.status = 'published'
+            "SELECT ump.status
+             FROM modules m
              INNER JOIN courses c
                ON c.id = m.course_id
               AND c.status = 'published'
@@ -37,26 +34,21 @@ final class PhaseUnlockedMiddleware
               AND e.status = 'active'
              INNER JOIN user_module_progress ump
                ON ump.module_id = m.id
-              AND ump.user_id = :module_user_id
-              AND ump.status <> 'locked'
-             INNER JOIN user_phase_progress upp
-               ON upp.phase_id = p.id
-              AND upp.user_id = :phase_user_id
-             WHERE p.id = :phase_id
-               AND p.status = 'published'
+              AND ump.user_id = :user_id_progress
+             WHERE m.id = :module_id
+               AND m.status = 'published'
              LIMIT 1"
         );
         $stmt->execute([
             'user_id' => Auth::id(),
-            'module_user_id' => Auth::id(),
-            'phase_user_id' => Auth::id(),
-            'phase_id' => $phaseId,
+            'user_id_progress' => Auth::id(),
+            'module_id' => $moduleId,
         ]);
 
         $status = $stmt->fetchColumn();
 
         if (!$status || $status === 'locked') {
-            $this->deny('Conclua a fase anterior para desbloquear esta missão.');
+            $this->deny('Conclua o módulo anterior para desbloquear esta etapa.');
         }
     }
 

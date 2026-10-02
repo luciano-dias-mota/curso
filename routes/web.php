@@ -7,6 +7,7 @@ use App\Controllers\CourseController;
 use App\Controllers\DashboardController;
 use App\Controllers\HomeController;
 use App\Controllers\LessonController;
+use App\Controllers\MediaController;
 use App\Controllers\ModuleController;
 use App\Controllers\PhaseController;
 use App\Controllers\ProgressController;
@@ -32,7 +33,7 @@ $router->get('/curso/{id}', [CourseController::class, 'show'])
     ->middleware(['auth', 'student']);
 
 $router->get('/modulo/{id}', [ModuleController::class, 'show'])
-    ->middleware(['auth', 'student']);
+    ->middleware(['auth', 'student', 'module.unlocked']);
 
 $router->get('/fase/{id}', [PhaseController::class, 'show'])
     ->middleware(['auth', 'student', 'phase.unlocked']);
@@ -42,6 +43,12 @@ $router->get('/aula/{id}', [LessonController::class, 'show'])
 
 $router->post('/aula/{id}/concluir', [ProgressController::class, 'completeLesson'])
     ->middleware(['auth', 'student', 'csrf', 'lesson.unlocked']);
+
+// Streaming protegido dos vídeos da biblioteca.
+// Administradores podem visualizar qualquer vídeo.
+// Estudantes precisam ter acesso a uma aula que utilize o vídeo.
+$router->get('/media/video/{id}', [MediaController::class, 'video'])
+    ->middleware('auth');
 
 // Checkpoint obrigatório de cada fase.
 $router->get('/prova/{id}', [QuizController::class, 'show'])

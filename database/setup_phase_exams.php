@@ -286,7 +286,9 @@ try {
                     continue;
                 }
 
-                $allModulePassed = true;
+                $allModulePhasesPassed = true;
+                $passedPhaseCount = 0;
+                $previousPassed = false;
 
                 foreach ($phaseIds as $index => $phaseId) {
                     $passedStmt = $pdo->prepare(
@@ -310,6 +312,7 @@ try {
                     $accessible = $canEnterModule && ($index === 0 || $previousPassed);
 
                     if ($passed) {
+                        $passedPhaseCount++;
                         $pdo->prepare(
                             "INSERT INTO user_phase_progress
                                 (user_id, phase_id, status, best_score, attempts_count, progress_pct, unlocked_at, completed_at)
@@ -352,34 +355,186 @@ try {
                         ]);
                     }
 
+                    // Reconstroi também a liberação das aulas da fase para evitar
+                    // fase disponível com todas as aulas ainda bloqueadas.
+                    $phaseAccessible = $canEnterModule && ($passed || $accessible);
+
+                    if ($phaseAccessible) {
+                        $pdo->prepare(
+                            "INSERT INTO user_lesson_progress
+                                (user_id, lesson_id, status, current_block, blocks_viewed, progress_pct)
+                             SELECT :optional_user_id, l.id, 'available', 1, 0, 0
+                             FROM lessons l
+                             WHERE l.phase_id = :optional_phase_id
+                               AND l.status = 'published'
+                               AND l.is_required = 0
+                             ON DUPLICATE KEY UPDATE
+                                status = IF(status IN ('completed','in_progress'), status, 'available')"
+                        )->execute([
+                            'optional_user_id' => $studentId,
+                            'optional_phase_id' => $phaseId,
+                        ]);
+                    }
+
+                    $requiredLessonsStmt = $pdo->prepare(
+                        "SELECT l.id,
+                                COALESCE(ulp.status, 'locked') AS user_status
+                         FROM lessons l
+                         LEFT JOIN user_lesson_progress ulp
+                           ON ulp.lesson_id = l.id
+                          AND ulp.user_id = :lesson_status_user_id
+                         WHERE l.phase_id = :lesson_phase_id
+                           AND l.status = 'published'
+                           AND l.is_required = 1
+                         ORDER BY l.position"
+                    );
+                    $requiredLessonsStmt->execute([
+                        'lesson_status_user_id' => $studentId,
+                        'lesson_phase_id' => $phaseId,
+                    ]);
+
+                    $canOpenLesson = $phaseAccessible;
+                    foreach ($requiredLessonsStmt->fetchAll() as $lessonRow) {
+                        $lessonId = (int) $lessonRow['id'];
+                        $lessonStatus = (string) $lessonRow['user_status'];
+
+                        if ($lessonStatus === 'completed') {
+                            continue;
+                        }
+
+                        if ($canOpenLesson) {
+                            $pdo->prepare(
+                                "INSERT INTO user_lesson_progress
+                                    (user_id, lesson_id, status, current_block, blocks_viewed, progress_pct)
+                                 VALUES
+                                    (:open_user_id, :open_lesson_id, 'available', 1, 0, 0)
+                                 ON DUPLICATE KEY UPDATE
+                                    status = IF(status = 'in_progress', 'in_progress', 'available')"
+                            )->execute([
+                                'open_user_id' => $studentId,
+                                'open_lesson_id' => $lessonId,
+                            ]);
+                            $canOpenLesson = false;
+                            continue;
+                        }
+
+                        $pdo->prepare(
+                            "INSERT INTO user_lesson_progress
+                                (user_id, lesson_id, status, current_block, blocks_viewed, progress_pct)
+                             VALUES
+                                (:locked_user_id, :locked_lesson_id, 'locked', 1, 0, 0)
+                             ON DUPLICATE KEY UPDATE
+                                status = IF(status = 'completed', 'completed', 'locked')"
+                        )->execute([
+                            'locked_user_id' => $studentId,
+                            'locked_lesson_id' => $lessonId,
+                        ]);
+                    }
+
                     $previousPassed = $passed;
                     if (!$passed) {
-                        $allModulePassed = false;
+                        $allModulePhasesPassed = false;
                     }
                 }
 
-                $moduleStatus = $canEnterModule
-                    ? ($allModulePassed ? 'completed' : 'available')
-                    : 'locked';
+                // Bibliotecas/fases opcionais ficam acessíveis sempre que o módulo está acessível,
+                // mas não participam do bloqueio da progressão.
+                if ($canEnterModule) {
+                    $pdo->prepare(
+                        "INSERT INTO user_phase_progress
+                            (user_id, phase_id, status, best_score, attempts_count, progress_pct, unlocked_at)
+                         SELECT :user_id, p.id, 'available', 0, 0, 0, NOW()
+                         FROM phases p
+                         WHERE p.module_id = :module_id
+                           AND p.status = 'published'
+                           AND p.is_required = 0
+                         ON DUPLICATE KEY UPDATE
+                            status = IF(status IN ('completed','in_progress'), status, 'available'),
+                            unlocked_at = COALESCE(unlocked_at, NOW())"
+                    )->execute([
+                        'user_id' => $studentId,
+                        'module_id' => $moduleId,
+                    ]);
+
+                    $pdo->prepare(
+                        "INSERT INTO user_lesson_progress
+                            (user_id, lesson_id, status, current_block, blocks_viewed, progress_pct)
+                         SELECT :user_id, l.id, 'available', 1, 0, 0
+                         FROM lessons l
+                         INNER JOIN phases p ON p.id = l.phase_id
+                         WHERE p.module_id = :module_id
+                           AND p.status = 'published'
+                           AND p.is_required = 0
+                           AND l.status = 'published'
+                         ON DUPLICATE KEY UPDATE
+                            status = IF(status IN ('completed','in_progress'), status, 'available')"
+                    )->execute([
+                        'user_id' => $studentId,
+                        'module_id' => $moduleId,
+                    ]);
+                }
+
+                // O módulo só é considerado concluído após aprovação no module_boss.
+                $bossStmt = $pdo->prepare(
+                    "SELECT
+                        COALESCE(MAX(CASE WHEN qa.status = 'finished' THEN qa.percentage ELSE 0 END), 0) AS best_score,
+                        COALESCE(MAX(CASE WHEN qa.status = 'finished' AND qa.passed = 1 THEN 1 ELSE 0 END), 0) AS passed
+                     FROM quizzes qz
+                     LEFT JOIN quiz_attempts qa
+                       ON qa.quiz_id = qz.id
+                      AND qa.user_id = :user_id
+                     WHERE qz.module_id = :module_id
+                       AND qz.quiz_type = 'module_boss'
+                       AND qz.active = 1"
+                );
+                $bossStmt->execute([
+                    'user_id' => $studentId,
+                    'module_id' => $moduleId,
+                ]);
+                $boss = $bossStmt->fetch();
+                $bossPassed = (int) ($boss['passed'] ?? 0) === 1;
+                $bestBossScore = (float) ($boss['best_score'] ?? 0);
+
+                $phaseProgressPct = count($phaseIds) > 0
+                    ? round(($passedPhaseCount / count($phaseIds)) * 100, 2)
+                    : 0.0;
+
+                $moduleCompleted = $allModulePhasesPassed && $bossPassed;
+
+                $moduleStatus = 'locked';
+                if ($canEnterModule) {
+                    if ($moduleCompleted) {
+                        $moduleStatus = 'completed';
+                    } elseif ($allModulePhasesPassed) {
+                        $moduleStatus = 'in_progress';
+                    } else {
+                        $moduleStatus = 'available';
+                    }
+                }
 
                 $pdo->prepare(
                     "INSERT INTO user_module_progress
-                        (user_id, module_id, status, best_score, progress_pct, unlocked_at)
+                        (user_id, module_id, status, best_score, progress_pct, unlocked_at, completed_at)
                      VALUES
-                        (:user_id, :module_id, :status, 0, :pct, :unlocked_at)
+                        (:user_id, :module_id, :status, :best_score, :pct, :unlocked_at, :completed_at)
                      ON DUPLICATE KEY UPDATE
                         status = VALUES(status),
+                        best_score = GREATEST(best_score, VALUES(best_score)),
                         progress_pct = VALUES(progress_pct),
-                        unlocked_at = COALESCE(unlocked_at, VALUES(unlocked_at))"
+                        unlocked_at = COALESCE(unlocked_at, VALUES(unlocked_at)),
+                        completed_at = VALUES(completed_at)"
                 )->execute([
                     'user_id' => $studentId,
                     'module_id' => $moduleId,
                     'status' => $moduleStatus,
-                    'pct' => $allModulePassed ? 100 : 0,
+                    'best_score' => $bestBossScore,
+                    'pct' => $moduleCompleted ? 100 : $phaseProgressPct,
                     'unlocked_at' => $canEnterModule ? date('Y-m-d H:i:s') : null,
+                    'completed_at' => $moduleCompleted ? date('Y-m-d H:i:s') : null,
                 ]);
 
-                $canEnterModule = $canEnterModule && $allModulePassed;
+                // Somente a aprovação na avaliação final abre o módulo seguinte.
+                $canEnterModule = $canEnterModule && $moduleCompleted;
             }
         }
     }

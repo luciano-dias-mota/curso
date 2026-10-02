@@ -8,7 +8,7 @@ $answers = $attempt['answers'] ?? [];
 $next = $attempt['next'] ?? ['url' => '/dashboard', 'label' => 'Continuar'];
 ?>
 <section class="quiz-page">
-    <header class="quiz-result-hero card <?= $passed ? 'passed' : 'failed' ?>">
+    <header class="quiz-result-hero card <?= $passed ? 'passed' : 'failed' ?>" <?= $passed ? 'data-result-celebrate' : '' ?>>
         <div class="quiz-result-icon"><?= $passed ? '🏆' : '🎯' ?></div>
         <div>
             <span class="quiz-kind"><?= e($attempt['type_label']) ?></span>
@@ -28,6 +28,9 @@ $next = $attempt['next'] ?? ['url' => '/dashboard', 'label' => 'Continuar'];
             <strong><?= $correct ?>/<?= $total ?></strong>
             <span><?= $passed ? 'APROVADO' : 'REVISAR' ?></span>
         </div>
+        <?php if ($passed && (int) ($attempt['xp_earned'] ?? 0) > 0): ?>
+            <div class="result-xp-reward">+<?= (int) $attempt['xp_earned'] ?> XP</div>
+        <?php endif; ?>
     </header>
 
     <div class="quiz-review-list">

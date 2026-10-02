@@ -21,7 +21,11 @@ final class DashboardController extends Controller
             )->fetchColumn(),
             'courses' => (int) $pdo->query('SELECT COUNT(*) FROM courses')->fetchColumn(),
             'modules' => (int) $pdo->query('SELECT COUNT(*) FROM modules')->fetchColumn(),
+            'lessons' => (int) $pdo->query('SELECT COUNT(*) FROM lessons')->fetchColumn(),
             'questions' => (int) $pdo->query('SELECT COUNT(*) FROM questions')->fetchColumn(),
+            'videos' => (int) $pdo->query(
+                "SELECT COUNT(*) FROM media_files WHERE status = 'active'"
+            )->fetchColumn(),
         ];
 
         $this->view(
