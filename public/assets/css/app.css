@@ -2030,10 +2030,10 @@ body.student-body {
 .reference-hero p { max-width:560px; margin:0; color:var(--muted); font-size:.96rem; line-height:1.45; }
 .reference-hero-art {
   position:absolute; z-index:1; right:0; top:0; bottom:0; width:54%;
-  background-image:linear-gradient(90deg,var(--panel) 0%,transparent 35%),url('../img/hero-soldier-dark.webp');
+  background-image:linear-gradient(90deg,var(--panel) 0%,transparent 35%),url('../img/dark.png');
   background-size:auto 100%,cover; background-repeat:no-repeat; background-position:left center,center;
 }
-html[data-theme="light"] .reference-hero-art { background-image:linear-gradient(90deg,var(--panel) 0%,transparent 36%),url('../img/hero-soldier-light.webp'); }
+html[data-theme="light"] .reference-hero-art { background-image:linear-gradient(90deg,var(--panel) 0%,transparent 36%),url('../img/clear.png'); }
 html[data-theme="light"] .reference-hero::after { background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,.92) 40%,rgba(255,255,255,.12) 78%); }
 .hero-inline-progress { width:min(470px,100%); display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:10px; margin:18px 0 15px; }
 .hero-inline-progress .progress { height:7px; background:color-mix(in srgb,var(--muted) 18%,transparent); }

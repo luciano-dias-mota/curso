@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "description": "Banco complementar de questões exclusivas para simulados. Adicione somente questões revisadas e apoiadas no conteúdo do curso.",
+  "modules": [
+    {
+      "module_slug_contains": "administracao-publica",
+      "module_title_contains": "Administração Pública",
+      "questions": []
+    },
+    {
+      "module_slug_contains": "policia-judiciaria-militar",
+      "module_title_contains": "Polícia Judiciária Militar",
+      "questions": []
+    },
+    {
+      "module_slug_contains": "corregedoria",
+      "module_title_contains": "Corregedoria",
+      "questions": []
+    },
+    {
+      "module_slug_contains": "responsabilizacao",
+      "module_title_contains": "Responsabilização",
+      "questions": []
+    },
+    {
+      "module_slug_contains": "direito-constitucional",
+      "module_title_contains": "Direito Constitucional",
+      "questions": []
+    },
+    {
+      "module_slug_contains": "legislacao-profissional",
+      "module_title_contains": "Legislação profissional",
+      "questions": []
+    }
+  ],
+  "question_schema_example": {
+    "statement": "Enunciado da questão",
+    "explanation": "Comentário do gabarito",
+    "difficulty": "hard",
+    "source_label": "Fonte interna do curso",
+    "alternatives": [
+      {"text": "Alternativa A", "correct": false},
+      {"text": "Alternativa B", "correct": true},
+      {"text": "Alternativa C", "correct": false},
+      {"text": "Alternativa D", "correct": false}
+    ]
+  }
+}

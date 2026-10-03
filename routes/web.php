@@ -12,6 +12,7 @@ use App\Controllers\ModuleController;
 use App\Controllers\PhaseController;
 use App\Controllers\ProgressController;
 use App\Controllers\QuizController;
+use App\Controllers\SimulationController;
 
 /** @var \App\Core\Router $router */
 
@@ -28,6 +29,34 @@ $router->post('/logout', [AuthController::class, 'logout'])
 
 $router->get('/dashboard', [DashboardController::class, 'index'])
     ->middleware(['auth', 'student']);
+
+// Simulados livres: independentes da progressão pedagógica.
+$router->get('/simulados', [SimulationController::class, 'index'])
+    ->middleware(['auth', 'student']);
+
+$router->get('/simulados/novo', [SimulationController::class, 'create'])
+    ->middleware(['auth', 'student']);
+
+$router->post('/simulados/gerar', [SimulationController::class, 'generate'])
+    ->middleware(['auth', 'student', 'csrf']);
+
+$router->get('/simulados/tentativa/{id}', [SimulationController::class, 'attempt'])
+    ->middleware(['auth', 'student']);
+
+$router->post('/simulados/tentativa/{id}/resposta', [SimulationController::class, 'saveAnswer'])
+    ->middleware(['auth', 'student', 'csrf']);
+
+$router->post('/simulados/tentativa/{id}/finalizar', [SimulationController::class, 'submit'])
+    ->middleware(['auth', 'student', 'csrf']);
+
+$router->get('/simulados/tentativa/{id}/resultado', [SimulationController::class, 'result'])
+    ->middleware(['auth', 'student']);
+
+$router->get('/simulados/tentativa/{id}/revisao', [SimulationController::class, 'review'])
+    ->middleware(['auth', 'student']);
+
+$router->post('/simulados/tentativa/{id}/abandonar', [SimulationController::class, 'abandon'])
+    ->middleware(['auth', 'student', 'csrf']);
 
 $router->get('/curso/{id}', [CourseController::class, 'show'])
     ->middleware(['auth', 'student']);
