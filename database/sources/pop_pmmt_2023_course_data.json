@@ -27255,5 +27255,7 @@
         }
       ]
     }
-  ]
+  ],
+  "contextualization_version": "v3-reviewed-no-statement-change",
+  "contextualization_note": "As 640 questões POP já continham referência explícita ao POP/seção e foram preservadas para evitar redundância."
 }

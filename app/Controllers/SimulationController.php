@@ -24,8 +24,8 @@ final class SimulationController extends Controller
                 'layouts/student'
             );
         } catch (Throwable $e) {
-            error_log('[simulations.index] ' . $e->getMessage());
-            Session::flash('error', 'Não foi possível carregar os simulados agora.');
+            $this->logSimulationError('simulations.index', $e);
+            Session::flash('error', $this->userError('Não foi possível carregar os simulados agora.', $e));
             $this->redirect('/dashboard');
         }
     }
@@ -40,8 +40,8 @@ final class SimulationController extends Controller
                 'layouts/student'
             );
         } catch (Throwable $e) {
-            error_log('[simulations.create] ' . $e->getMessage());
-            Session::flash('error', 'Não foi possível preparar um novo simulado.');
+            $this->logSimulationError('simulations.create', $e);
+            Session::flash('error', $this->userError('Não foi possível preparar um novo simulado.', $e));
             $this->redirect('/simulados');
         }
     }
@@ -65,8 +65,8 @@ final class SimulationController extends Controller
             Session::flash('error', $e->getMessage());
             $this->redirect('/simulados/novo');
         } catch (Throwable $e) {
-            error_log('[simulations.generate] ' . $e->getMessage());
-            Session::flash('error', 'Não foi possível gerar o simulado.');
+            $this->logSimulationError('simulations.generate', $e);
+            Session::flash('error', $this->userError('Não foi possível gerar o simulado.', $e));
             $this->redirect('/simulados/novo');
         }
     }
@@ -91,8 +91,8 @@ final class SimulationController extends Controller
             Session::flash('error', $e->getMessage());
             $this->redirect('/simulados');
         } catch (Throwable $e) {
-            error_log('[simulations.attempt] ' . $e->getMessage());
-            Session::flash('error', 'Não foi possível abrir esta tentativa.');
+            $this->logSimulationError('simulations.attempt', $e);
+            Session::flash('error', $this->userError('Não foi possível abrir esta tentativa.', $e));
             $this->redirect('/simulados');
         }
     }
@@ -110,7 +110,7 @@ final class SimulationController extends Controller
         } catch (RuntimeException $e) {
             $this->json(['ok' => false, 'message' => $e->getMessage()], 409);
         } catch (Throwable $e) {
-            error_log('[simulations.saveAnswer] ' . $e->getMessage());
+            $this->logSimulationError('simulations.saveAnswer', $e);
             $this->json(['ok' => false, 'message' => 'Não foi possível salvar a resposta.'], 500);
         }
     }
@@ -124,8 +124,8 @@ final class SimulationController extends Controller
             Session::flash('error', $e->getMessage());
             $this->redirect('/simulados/tentativa/' . $id);
         } catch (Throwable $e) {
-            error_log('[simulations.submit] ' . $e->getMessage());
-            Session::flash('error', 'Não foi possível finalizar o simulado.');
+            $this->logSimulationError('simulations.submit', $e);
+            Session::flash('error', $this->userError('Não foi possível finalizar o simulado.', $e));
             $this->redirect('/simulados/tentativa/' . $id);
         }
     }
@@ -143,8 +143,8 @@ final class SimulationController extends Controller
             Session::flash('error', $e->getMessage());
             $this->redirect('/simulados');
         } catch (Throwable $e) {
-            error_log('[simulations.result] ' . $e->getMessage());
-            Session::flash('error', 'Não foi possível carregar o resultado.');
+            $this->logSimulationError('simulations.result', $e);
+            Session::flash('error', $this->userError('Não foi possível carregar o resultado.', $e));
             $this->redirect('/simulados');
         }
     }
@@ -162,8 +162,8 @@ final class SimulationController extends Controller
             Session::flash('error', $e->getMessage());
             $this->redirect('/simulados');
         } catch (Throwable $e) {
-            error_log('[simulations.review] ' . $e->getMessage());
-            Session::flash('error', 'Não foi possível abrir a revisão.');
+            $this->logSimulationError('simulations.review', $e);
+            Session::flash('error', $this->userError('Não foi possível abrir a revisão.', $e));
             $this->redirect('/simulados');
         }
     }
@@ -174,9 +174,30 @@ final class SimulationController extends Controller
             (new SimulationService())->abandonAttempt($id, (int) Auth::id());
             Session::flash('success', 'Simulado abandonado. Você pode gerar outro quando quiser.');
         } catch (Throwable $e) {
-            error_log('[simulations.abandon] ' . $e->getMessage());
-            Session::flash('error', 'Não foi possível abandonar a tentativa.');
+            $this->logSimulationError('simulations.abandon', $e);
+            Session::flash('error', $this->userError('Não foi possível abandonar a tentativa.', $e));
         }
         $this->redirect('/simulados');
+    }
+    private function logSimulationError(string $context, Throwable $e): void
+    {
+        error_log(sprintf(
+            '[%s] %s: %s em %s:%d\n%s',
+            $context,
+            $e::class,
+            $e->getMessage(),
+            $e->getFile(),
+            $e->getLine(),
+            $e->getTraceAsString()
+        ));
+    }
+
+    private function userError(string $generic, Throwable $e): string
+    {
+        if ((bool) config('app.debug', false)) {
+            return $generic . ' Detalhe técnico: ' . $e->getMessage();
+        }
+
+        return $generic;
     }
 }

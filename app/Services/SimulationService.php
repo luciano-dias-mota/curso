@@ -112,7 +112,7 @@ final class SimulationService
               AND sa2.question_id = q.id
              WHERE sa.user_id = :user_id
                AND sa.status = 'finished'
-             GROUP BY m.id, m.title
+             GROUP BY m.id, m.title, m.position
              ORDER BY m.position, m.id"
         );
         $subjectStmt->execute(['user_id' => $userId]);
@@ -166,7 +166,7 @@ final class SimulationService
              WHERE e.user_id = :user_id
                AND e.status = 'active'
                AND c.status = 'published'
-             GROUP BY c.id, c.title
+             GROUP BY c.id, c.title, c.position
              ORDER BY c.position, c.id"
         );
         $courseStmt->execute(['user_id' => $userId]);
