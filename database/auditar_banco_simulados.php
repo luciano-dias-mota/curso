@@ -18,6 +18,30 @@ function envv(string $key, mixed $default = null): mixed
     return is_string($value) ? trim($value, "\"'") : $value;
 }
 
+function lowerText(string $value): string
+{
+    return function_exists('mb_strtolower') ? mb_strtolower($value, 'UTF-8') : strtolower($value);
+}
+
+function trimWidth(string $value, int $width): string
+{
+    if (function_exists('mb_strimwidth')) return mb_strimwidth($value, 0, $width, '…', 'UTF-8');
+    return strlen($value) <= $width ? $value : substr($value, 0, max(0, $width - 3)) . '...';
+}
+
+function auxiliaryModule(array $row): bool
+{
+    $slug = strtolower((string) ($row['slug'] ?? ''));
+    $title = lowerText((string) ($row['title'] ?? ''));
+
+    return str_contains($slug, 'modulo-0-')
+        || str_contains($slug, 'simulado-final-geral')
+        || str_contains($slug, 'fontes-utilizadas')
+        || str_contains($title, 'módulo 0 - orientações')
+        || str_contains($title, 'simulado final geral')
+        || str_contains($title, 'fontes utilizadas por módulo');
+}
+
 $pdo = new PDO(
     sprintf(
         'mysql:host=%s;port=%d;dbname=%s;charset=utf8mb4',
@@ -50,11 +74,11 @@ if (!$course) {
 $courseId = (int) $course['id'];
 
 echo "=============================================================\n";
-echo " AUDITORIA DO BANCO DE QUESTÕES PARA SIMULADOS\n";
+echo " AUDITORIA DO BANCO DE QUESTÕES PARA SIMULADOS - V2\n";
 echo "=============================================================\n";
 echo "Curso: #{$courseId} - {$course['title']}\n\n";
 
-$sql = "SELECT m.id, m.position, m.title,
+$sql = "SELECT m.id, m.position, m.title, m.slug,
                SUM(CASE WHEN q.difficulty='easy' THEN 1 ELSE 0 END) AS easy_count,
                SUM(CASE WHEN q.difficulty='medium' THEN 1 ELSE 0 END) AS medium_count,
                SUM(CASE WHEN q.difficulty='hard' THEN 1 ELSE 0 END) AS hard_count,
@@ -75,42 +99,50 @@ $sql = "SELECT m.id, m.position, m.title,
         ) quality ON quality.question_id=q.id
         WHERE m.course_id=:course_id
           AND m.status='published'
-        GROUP BY m.id,m.position,m.title
+        GROUP BY m.id,m.position,m.title,m.slug
         ORDER BY m.position,m.id";
 $stmt = $pdo->prepare($sql);
 $stmt->execute(['course_id'=>$courseId]);
 $rows = $stmt->fetchAll();
 
-$totalMedium=0; $totalHard=0; $totalValid=0; $totalAll=0;
+$totalMedium=0; $totalHard=0; $totalEasy=0; $totalValid=0; $totalAll=0;
+$cobravelMedium=0; $cobravelHard=0; $cobravelValid=0;
 foreach ($rows as $row) {
+    $e=(int)$row['easy_count'];
     $m=(int)$row['medium_count'];
     $h=(int)$row['hard_count'];
     $t=(int)$row['total_count'];
     $v=(int)$row['valid_count'];
+    $aux=auxiliaryModule($row);
+
+    $totalEasy += $e;
     $totalMedium += $m;
     $totalHard += $h;
     $totalAll += $t;
     $totalValid += $v;
 
-    printf("%-72s M:%4d | H:%4d | Válidas:%4d | Total:%4d\n", mb_strimwidth($row['title'],0,72,'…'),$m,$h,$v,$t);
+    if (!$aux) {
+        $cobravelMedium += $m;
+        $cobravelHard += $h;
+        $cobravelValid += $v;
+    }
+
+    printf(
+        "%-68s E:%3d | M:%4d | H:%3d | Válidas:%4d | Total:%4d%s\n",
+        trimWidth((string)$row['title'],68),
+        $e,$m,$h,$v,$t,
+        $aux ? ' | AUXILIAR' : ''
+    );
 }
 
 echo "\n-------------------------------------------------------------\n";
+printf("Fáceis:         %d\n", $totalEasy);
 printf("Intermediárias: %d\n", $totalMedium);
 printf("Difíceis:       %d\n", $totalHard);
 printf("Total ativo:    %d\n", $totalAll);
 printf("Total válido:   %d\n", $totalValid);
-echo "-------------------------------------------------------------\n\n";
-
-$popStmt=$pdo->prepare("SELECT COUNT(*) FROM questions WHERE course_id=:c AND active=1 AND source_label LIKE 'Manual POP PMMT 2023|%'");
-$popStmt->execute(['c'=>$courseId]);
-$pop=(int)$popStmt->fetchColumn();
-echo "Questões POP PMMT 2023: {$pop} / esperado na fonte estruturada: 640\n";
-
-$portStmt=$pdo->prepare("SELECT COUNT(*) FROM questions q INNER JOIN modules m ON m.id=q.module_id WHERE q.course_id=:c AND q.active=1 AND (m.slug LIKE '%lingua-portuguesa%' OR m.title LIKE '%Língua Portuguesa%')");
-$portStmt->execute(['c'=>$courseId]);
-$port=(int)$portStmt->fetchColumn();
-echo "Questões de Língua Portuguesa no módulo: {$port}\n\n";
+echo "-------------------------------------------------------------\n";
+printf("Banco cobrável (sem módulos auxiliares): %d válidas | M:%d | H:%d\n\n", $cobravelValid, $cobravelMedium, $cobravelHard);
 
 $invalidStmt=$pdo->prepare(
     "SELECT COUNT(*)
@@ -126,11 +158,7 @@ $invalidStmt=$pdo->prepare(
 );
 $invalidStmt->execute(['c'=>$courseId]);
 $invalid=(int)$invalidStmt->fetchColumn();
-echo "Questões inválidas para o simulador (alternativas/gabarito): {$invalid}\n";
-
-$unassignedStmt=$pdo->prepare("SELECT COUNT(*) FROM questions WHERE course_id=:c AND active=1 AND module_id IS NULL");
-$unassignedStmt->execute(['c'=>$courseId]);
-echo "Questões ativas sem módulo: ".(int)$unassignedStmt->fetchColumn()."\n";
+echo "Questões inválidas para o simulador: {$invalid}\n";
 
 $dupStmt=$pdo->prepare(
     "SELECT COUNT(*) FROM (
@@ -147,8 +175,15 @@ echo "Enunciados duplicados (grupos): ".(int)$dupStmt->fetchColumn()."\n\n";
 echo "COBERTURA RECOMENDADA\n";
 echo "----------------------\n";
 foreach ($rows as $row) {
+    if (auxiliaryModule($row)) {
+        echo "[AUXILIAR - NÃO EXIGIR BANCO] {$row['title']}\n";
+        continue;
+    }
+
     $valid=(int)$row['valid_count'];
     $hard=(int)$row['hard_count'];
+    $easy=(int)$row['easy_count'];
+
     if ($valid===0) {
         echo "[SEM BANCO] {$row['title']}\n";
     } elseif ($valid<40) {
@@ -157,17 +192,21 @@ foreach ($rows as $row) {
         echo "[SEM HARD] {$row['title']}\n";
     } elseif ($hard<10) {
         echo "[POUCAS HARD: {$hard}] {$row['title']}\n";
+    } elseif ($easy>0) {
+        echo "[OK, MAS HÁ {$easy} EASY] {$row['title']}\n";
     } else {
         echo "[OK] {$row['title']}\n";
     }
 }
 
 echo "\n";
-if ($totalValid < 200) {
-    echo "ATENÇÃO: há menos de 200 questões válidas no banco.\n";
-} elseif ($totalHard === 0) {
-    echo "ATENÇÃO: não há questões classificadas como hard.\n";
-    echo "O simulador continuará funcionando e preencherá a cota difícil com medium.\n";
+if ($totalEasy > 0) {
+    echo "ATENÇÃO: existem questões classificadas como easy; o pacote V2 não cria nenhuma questão easy.\n";
+}
+if ($cobravelValid >= 1000 && $totalHard >= 100) {
+    echo "Banco amplo para simulados dinâmicos, com cobertura intermediária e difícil.\n";
+} elseif ($cobravelValid >= 200) {
+    echo "Banco suficiente para simulados; continue ampliando dificuldade e cobertura temática.\n";
 } else {
-    echo "Banco suficiente para simulados dinâmicos. Continue ampliando os módulos com baixa cobertura.\n";
+    echo "ATENÇÃO: há menos de 200 questões válidas no banco cobrável.\n";
 }
