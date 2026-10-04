@@ -40,7 +40,7 @@ $firstName = explode(' ', trim((string) ($user['name'] ?? 'Aluno')))[0];
         <a class="sidebar-brand" href="<?= e(url('/dashboard')) ?>" aria-label="PMMT Academy">
             <span class="sidebar-brand-shield">✦</span>
             <span>
-                <strong>PMMT</strong>
+                <strong>LD</strong>
                 <small>ACADEMY</small>
             </span>
         </a>

@@ -28,7 +28,7 @@ $router->post('/logout', [AuthController::class, 'logout'])
     ->middleware(['auth', 'csrf']);
 
 $router->get('/dashboard', [DashboardController::class, 'index'])
-    ->middleware(['auth', 'student']);
+    ->middleware(['auth']);
 
 // Simulados livres: independentes da progressão pedagógica.
 $router->get('/simulados', [SimulationController::class, 'index'])
