@@ -37,14 +37,14 @@ final class MediaService
 
         $tmp = (string) ($file['tmp_name'] ?? '');
         $originalName = trim((string) ($file['name'] ?? 'video'));
-        $size = (int) ($file['size'] ?? 0);
-
         if ($tmp === '' || !is_uploaded_file($tmp)) {
             throw new RuntimeException('O arquivo recebido pelo servidor não é um upload válido.');
         }
 
-        if ($size <= 0) {
-            throw new RuntimeException('O vídeo enviado está vazio.');
+        $size = filesize($tmp);
+
+        if ($size === false || $size <= 0) {
+            throw new RuntimeException('O vídeo enviado está vazio ou possui tamanho inválido.');
         }
 
         if ($size > self::MAX_BYTES) {

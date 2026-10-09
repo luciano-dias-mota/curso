@@ -2,6 +2,13 @@
 
 declare(strict_types=1);
 
+
+if (PHP_SAPI !== 'cli') {
+    http_response_code(403);
+    exit('Execução permitida apenas via CLI.');
+}
+
+
 define('BASE_PATH', dirname(__DIR__));
 $autoload = BASE_PATH . '/vendor/autoload.php';
 if (!is_file($autoload)) {
@@ -24,7 +31,14 @@ function loadJson(string $path): array {
     return $data;
 }
 
-$dryRun=hasFlag('--dry-run');
+$apply=hasFlag('--apply');
+$dryRun=!$apply;
+$isProduction = strtolower((string) envv('APP_ENV', 'production')) === 'production';
+$forceProduction = hasFlag('--force-production');
+if ($apply && $isProduction && !$forceProduction) {
+    fwrite(STDERR, "ABORTADO: APP_ENV=production. Use --apply --force-production somente após backup.\n");
+    exit(1);
+}
 $manifest=loadJson(BASE_PATH . '/database/contextualizacao_questoes_v3.json');
 $changes=$manifest['changes'] ?? [];
 
@@ -96,5 +110,5 @@ if ($stats['missing']>0 || $stats['ambiguous']>0) {
     printf("ATENÇÃO: há itens que exigem conferência antes de considerar a atualização completa.\n");
 }
 printf($dryRun
-    ? "DRY-RUN concluído. Se os números estiverem corretos, execute sem --dry-run.\n"
+    ? "DRY-RUN concluído. Se os números estiverem corretos, execute com --apply.\n"
     : "Atualização concluída. Nenhuma alternativa, gabarito, explicação ou dificuldade foi alterada.\n");

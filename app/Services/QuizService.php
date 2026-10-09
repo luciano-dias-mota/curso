@@ -6,6 +6,7 @@ namespace App\Services;
 
 use App\Core\Database;
 use PDO;
+use PDOException;
 use RuntimeException;
 use Throwable;
 
@@ -56,7 +57,8 @@ final class QuizService
             "SELECT COUNT(*) AS attempts,
                     SUM(CASE WHEN status = 'finished' THEN 1 ELSE 0 END) AS finished_attempts,
                     COALESCE(MAX(CASE WHEN status = 'finished' THEN percentage ELSE 0 END), 0) AS best_percentage,
-                    COALESCE(MAX(CASE WHEN status = 'finished' AND passed = 1 THEN percentage ELSE 0 END), 0) AS best_passed
+                    COALESCE(MAX(CASE WHEN status = 'finished' AND passed = 1 THEN percentage ELSE 0 END), 0) AS best_passed,
+                    COALESCE(MAX(CASE WHEN status = 'in_progress' THEN id ELSE 0 END), 0) AS in_progress_attempt_id
              FROM quiz_attempts
              WHERE quiz_id = :quiz_id
                AND user_id = :user_id"
@@ -71,6 +73,7 @@ final class QuizService
         $quiz['finished_attempts'] = (int) ($stats['finished_attempts'] ?? 0);
         $quiz['best_percentage'] = (float) ($stats['best_percentage'] ?? 0);
         $quiz['best_passed'] = (float) ($stats['best_passed'] ?? 0);
+        $quiz['in_progress_attempt_id'] = (int) ($stats['in_progress_attempt_id'] ?? 0);
         $quiz['required_correct'] = $this->requiredCorrect($quiz);
         $quiz['type_label'] = $this->typeLabel((string) $quiz['quiz_type']);
         $quiz['context_url'] = $this->contextUrl($quiz);
@@ -945,39 +948,67 @@ final class QuizService
             return;
         }
 
-        $stmt=$pdo->prepare(
-            "SELECT id FROM xp_events
-             WHERE user_id=:user_id
-               AND event_type=:event_type
-               AND reference_id=:reference_id
-             LIMIT 1"
-        );
-        $stmt->execute([
-            'user_id'=>$userId,
-            'event_type'=>$eventType,
-            'reference_id'=>$referenceId,
-        ]);
+        // Requer o índice único uq_xp_event_once criado pelo hardening.
+        // Somente violação de unicidade é ignorada; outros erros de banco continuam visíveis.
+        try {
+            $insert = $pdo->prepare(
+                "INSERT INTO xp_events
+                    (user_id, event_type, reference_id, xp_amount, description)
+                 VALUES
+                    (:user_id, :event_type, :reference_id, :xp, :description)"
+            );
+            $insert->execute([
+                'user_id' => $userId,
+                'event_type' => $eventType,
+                'reference_id' => $referenceId,
+                'xp' => $xp,
+                'description' => $description,
+            ]);
+        } catch (PDOException $e) {
+            $driverCode = (int) ($e->errorInfo[1] ?? 0);
 
-        if ($stmt->fetchColumn()) {
-            return;
+            if ($e->getCode() === '23000' && $driverCode === 1062) {
+                return;
+            }
+
+            throw $e;
         }
 
         $pdo->prepare(
-            "INSERT INTO xp_events
-                (user_id,event_type,reference_id,xp_amount,description)
-             VALUES
-                (:user_id,:event_type,:reference_id,:xp,:description)"
+            "UPDATE users
+             SET xp_total = xp_total + :xp
+             WHERE id = :user_id"
         )->execute([
-            'user_id'=>$userId,
-            'event_type'=>$eventType,
-            'reference_id'=>$referenceId,
-            'xp'=>$xp,
-            'description'=>$description,
+            'xp' => $xp,
+            'user_id' => $userId,
         ]);
 
-        $pdo->prepare(
-            "UPDATE users SET xp_total=xp_total+:xp WHERE id=:user_id"
-        )->execute(['xp'=>$xp,'user_id'=>$userId]);
+        $xpStmt = $pdo->prepare('SELECT xp_total FROM users WHERE id = :user_id LIMIT 1');
+        $xpStmt->execute(['user_id' => $userId]);
+        $totalXp = (int) ($xpStmt->fetchColumn() ?: 0);
+
+        $levelStmt = $pdo->prepare(
+            "SELECT level_number
+             FROM levels
+             WHERE min_xp <= :xp
+               AND (max_xp IS NULL OR max_xp >= :xp_max)
+             ORDER BY level_number DESC
+             LIMIT 1"
+        );
+        $levelStmt->execute([
+            'xp' => $totalXp,
+            'xp_max' => $totalXp,
+        ]);
+        $level = (int) ($levelStmt->fetchColumn() ?: 0);
+
+        if ($level > 0) {
+            $pdo->prepare(
+                'UPDATE users SET current_level = :level WHERE id = :user_id'
+            )->execute([
+                'level' => $level,
+                'user_id' => $userId,
+            ]);
+        }
     }
 
     private function assertActiveEnrollment(PDO $pdo, int $userId, int $courseId): void

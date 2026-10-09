@@ -10,6 +10,11 @@ $requiredCorrect = (int) ($quiz['required_correct'] ?? 0);
 $requiredScore = (float) ($quiz['required_score'] ?? 0);
 $ready = $expected > 0 && $actual === $expected;
 $passedBefore = (float) ($quiz['best_passed'] ?? 0) >= $requiredScore;
+$maxAttempts = (int) ($quiz['max_attempts'] ?? 0);
+$attempts = (int) ($quiz['attempts'] ?? 0);
+$inProgressAttemptId = (int) ($quiz['in_progress_attempt_id'] ?? 0);
+$remainingAttempts = $maxAttempts > 0 ? max(0, $maxAttempts - $attempts) : null;
+$attemptLimitReached = $maxAttempts > 0 && $remainingAttempts === 0 && $inProgressAttemptId <= 0;
 ?>
 <section class="quiz-page">
     <a class="back" href="<?= e(url($quiz['context_url'])) ?>">← Voltar ao conteúdo</a>
@@ -43,8 +48,14 @@ $passedBefore = (float) ($quiz['best_passed'] ?? 0) >= $requiredScore;
     <div class="quiz-info-grid">
         <article class="card quiz-info-card">
             <span class="eyebrow">TENTATIVAS</span>
-            <strong><?= (int) $quiz['attempts'] ?></strong>
-            <p class="muted">Você pode refazer se necessário.</p>
+            <strong><?= $attempts ?></strong>
+            <p class="muted">
+                <?php if ($maxAttempts > 0): ?>
+                    <?= $inProgressAttemptId > 0 ? 'Há uma tentativa em andamento.' : ($remainingAttempts > 0 ? 'Restam ' . $remainingAttempts . ' de ' . $maxAttempts . ' tentativa(s).' : 'Limite de tentativas atingido.') ?>
+                <?php else: ?>
+                    Você pode refazer se necessário.
+                <?php endif; ?>
+            </p>
         </article>
 
         <article class="card quiz-info-card">
@@ -74,11 +85,20 @@ $passedBefore = (float) ($quiz['best_passed'] ?? 0) >= $requiredScore;
                 </p>
             </div>
         </div>
+    <?php elseif ($attemptLimitReached): ?>
+        <div class="card quiz-unavailable">
+            <span class="quiz-lock">🔒</span>
+            <div>
+                <span class="eyebrow">LIMITE DE TENTATIVAS</span>
+                <h2>Você já utilizou todas as tentativas desta avaliação.</h2>
+                <p>Revise o conteúdo e consulte seus resultados anteriores.</p>
+            </div>
+        </div>
     <?php else: ?>
         <form action="<?= e(url('/prova/' . $quiz['id'] . '/iniciar')) ?>" method="post">
             <?= Csrf::input() ?>
             <button class="primary quiz-start" type="submit">
-                <?= $quiz['attempts'] > 0 ? 'Fazer nova tentativa →' : 'Iniciar →' ?>
+                <?= $inProgressAttemptId > 0 ? 'Continuar tentativa →' : ($attempts > 0 ? 'Fazer nova tentativa →' : 'Iniciar →') ?>
             </button>
         </form>
     <?php endif; ?>

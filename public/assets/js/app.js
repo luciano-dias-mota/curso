@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (remote) persistThemeRemote(normalized);
   };
 
-  applyTheme(localStorage.getItem('pmmta-theme') || root.dataset.theme || 'dark');
+  applyTheme(root.dataset.theme || localStorage.getItem('pmmta-theme') || 'dark');
 
   document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
     button.addEventListener('click', () => {

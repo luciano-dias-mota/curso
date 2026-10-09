@@ -4,6 +4,7 @@ $question = $question ?? [];
 $alternatives = $alternatives ?? [];
 $usage = $usage ?? [];
 $scopeLocked = (bool) ($scopeLocked ?? false);
+$immutable = (bool) ($immutable ?? false);
 
 if (!$isEdit && $alternatives === []) {
     for ($i = 1; $i <= 5; $i++) {
@@ -40,15 +41,17 @@ if ($isEdit) {
     </div>
 </section>
 
-<?php if ($isEdit && ((int) ($usage['quiz_links'] ?? 0) > 0 || (int) ($usage['simulation_links'] ?? 0) > 0 || (int) ($usage['simulation_uses'] ?? 0) > 0)): ?>
+<?php if ($isEdit && $immutable): ?>
     <div class="ld-admin-notice">
-        <strong>Questão já utilizada.</strong>
+        <strong>Questão protegida por histórico.</strong>
         <span>
             Ela possui <?= (int) ($usage['quiz_links'] ?? 0) ?> vínculo(s) com prova(s),
             <?= (int) ($usage['simulation_links'] ?? 0) ?> vínculo(s) com simulado(s) fixo(s) e
             <?= (int) ($usage['simulation_uses'] ?? 0) ?> uso(s) em tentativa(s) dinâmica(s).
-            Por segurança, o módulo e a quantidade de alternativas ficam bloqueados nesta edição; os IDs das alternativas são preservados.
+            Para impedir que provas antigas mudem depois de realizadas, enunciado, alternativas, gabarito, dificuldade, fonte e status ficam imutáveis.
+            Para corrigir ou substituir o conteúdo, cadastre uma nova questão.
         </span>
+        <a class="ld-admin-btn is-primary is-small" href="<?= e(url('/admin/questoes/nova')) ?>">Criar nova questão</a>
     </div>
 <?php endif; ?>
 
@@ -61,6 +64,7 @@ if ($isEdit) {
         <?= \App\Core\Csrf::input() ?>
         <?php if ($isEdit): ?><input type="hidden" name="_method" value="PUT"><?php endif; ?>
 
+        <fieldset class="ld-admin-question-fieldset" <?= $immutable ? 'disabled' : '' ?>>
         <div class="ld-admin-form-grid two ld-admin-question-meta-grid">
             <label>
                 <span>Módulo</span>
@@ -177,5 +181,6 @@ if ($isEdit) {
                 <button class="ld-admin-btn is-primary" type="submit"><?= $isEdit ? 'Salvar alterações' : 'Cadastrar questão' ?></button>
             </div>
         </div>
+        </fieldset>
     </form>
 </section>

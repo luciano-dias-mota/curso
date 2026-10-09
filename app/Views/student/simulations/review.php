@@ -20,7 +20,7 @@ $selectedCount = (int) ($attempt['answered_count'] ?? 0);
             <article class="card simulation-review-card <?= $isCorrect ? 'correct' : 'wrong' ?>">
                 <div class="simulation-review-heading">
                     <span><?= $isCorrect ? '✓' : ($unanswered ? '○' : '✕') ?></span>
-                    <div><strong>Questão <?= $index + 1 ?></strong><small><?= e($question['module_title']) ?> • <?= $question['difficulty'] === 'hard' ? 'Difícil' : 'Intermediária' ?></small></div>
+                    <div><strong>Questão <?= $index + 1 ?></strong><small><?= e($question['module_title']) ?> • <?= match ((string) $question['difficulty']) { 'hard' => 'Difícil', 'easy' => 'Fácil', default => 'Intermediária' } ?></small></div>
                     <em><?= $isCorrect ? 'ACERTOU' : ($unanswered ? 'EM BRANCO' : 'ERROU') ?></em>
                 </div>
 

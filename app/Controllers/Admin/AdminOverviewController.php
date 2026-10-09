@@ -167,17 +167,44 @@ final class AdminOverviewController extends Controller
         header('Content-Disposition: attachment; filename="relatorio-alunos-' . date('Y-m-d-His') . '.csv"');
         echo "\xEF\xBB\xBF";
         $out = fopen('php://output', 'wb');
+
+        if ($out === false) {
+            throw new \RuntimeException('Não foi possível iniciar a exportação CSV.');
+        }
+
+        // Ajuda o Excel a reconhecer o separador usado no arquivo.
+        fwrite($out, "sep=;\r\n");
+
         fputcsv($out, ['ID', 'Nome', 'E-mail', 'Status', 'XP', 'Nível', 'Progresso médio', 'Quizzes', 'Média quizzes', 'Simulados', 'Média simulados', 'Último login'], ';');
         foreach ($rows as $row) {
             fputcsv($out, [
-                $row['id'], $row['name'], $row['email'], $row['status'], $row['xp_total'],
-                $row['current_level'], $row['progress_pct'], $row['quiz_attempts'],
-                $row['quiz_average'], $row['simulation_attempts'], $row['simulation_average'],
-                $row['last_login_at'],
+                $row['id'],
+                $this->csvSafe($row['name']),
+                $this->csvSafe($row['email']),
+                $this->csvSafe($row['status']),
+                $row['xp_total'],
+                $row['current_level'],
+                $row['progress_pct'],
+                $row['quiz_attempts'],
+                $row['quiz_average'],
+                $row['simulation_attempts'],
+                $row['simulation_average'],
+                $this->csvSafe($row['last_login_at']),
             ], ';');
         }
         fclose($out);
         exit;
+    }
+
+    private function csvSafe(mixed $value): string
+    {
+        $text = (string) $value;
+
+        if ($text !== '' && preg_match('/^[=+\-@\t\r\n]/u', $text) === 1) {
+            return "'" . $text;
+        }
+
+        return $text;
     }
 
     private function studentReportRows(PDO $pdo): array

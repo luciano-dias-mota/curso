@@ -2,6 +2,13 @@
 
 declare(strict_types=1);
 
+
+if (PHP_SAPI !== 'cli') {
+    http_response_code(403);
+    exit('Execução permitida apenas via CLI.');
+}
+
+
 define('BASE_PATH', dirname(__DIR__));
 
 $autoload = BASE_PATH . '/vendor/autoload.php';
@@ -30,6 +37,19 @@ function hasColumn(\PDO $pdo, string $table, string $column): bool {
     $s = $pdo->prepare("SELECT COUNT(*) FROM information_schema.COLUMNS WHERE TABLE_SCHEMA=DATABASE() AND TABLE_NAME=:t AND COLUMN_NAME=:c");
     $s->execute(['t'=>$table,'c'=>$column]);
     return (int)$s->fetchColumn() > 0;
+}
+
+$apply = in_array('--apply', $argv ?? [], true);
+if (!$apply) {
+    fwrite(STDOUT, "MODO SEGURO: nenhuma alteração foi realizada. Use --apply para executar este script.\n");
+    exit(0);
+}
+
+$isProduction = strtolower((string) envv('APP_ENV', 'production')) === 'production';
+$forceProduction = in_array('--force-production', $argv ?? [], true);
+if ($isProduction && !$forceProduction) {
+    fwrite(STDERR, "ABORTADO: este script altera dados e APP_ENV=production. Use --force-production somente após backup e revisão.\n");
+    exit(1);
 }
 
 $pdo = new \PDO(

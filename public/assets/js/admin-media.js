@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const status = document.querySelector('[data-reorder-status]');
     let dragging = null;
     let saving = false;
+    let pendingSave = false;
+    let confirmedOrder = [];
 
     const blocks = () => Array.from(list.querySelectorAll('[data-block-id]'));
 
@@ -43,40 +45,63 @@ document.addEventListener('DOMContentLoaded', () => {
         status.className = `reorder-status ${type}`.trim();
     };
 
-    const saveOrder = async () => {
-        if (saving) return;
+    const currentOrder = () => blocks().map((block) => Number(block.dataset.blockId));
 
+    const restoreConfirmedOrder = () => {
+        if (!confirmedOrder.length) return;
+        const byId = new Map(blocks().map((block) => [Number(block.dataset.blockId), block]));
+        confirmedOrder.forEach((id) => {
+            const block = byId.get(id);
+            if (block) list.appendChild(block);
+        });
+        refreshPositions();
+    };
+
+    const saveOrder = async () => {
         const url = list.dataset.reorderUrl;
         if (!url) return;
 
-        const order = blocks().map((block) => Number(block.dataset.blockId));
+        if (saving) {
+            pendingSave = true;
+            showStatus('Alteração aguardando salvamento...', 'saving');
+            return;
+        }
+
         saving = true;
-        showStatus('Salvando nova ordem...');
 
         try {
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': token,
-                    'X-Requested-With': 'XMLHttpRequest',
-                },
-                body: JSON.stringify({order}),
-            });
+            do {
+                pendingSave = false;
+                const order = currentOrder();
+                showStatus('Salvando nova ordem...');
 
-            let data = {};
-            try {
-                data = await response.json();
-            } catch (_) {}
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': token,
+                        'X-Requested-With': 'XMLHttpRequest',
+                    },
+                    body: JSON.stringify({order}),
+                });
 
-            if (!response.ok || data.ok === false) {
-                throw new Error(data.message || 'Não foi possível salvar a ordem.');
-            }
+                let data = {};
+                try {
+                    data = await response.json();
+                } catch (_) {}
 
-            refreshPositions();
-            showStatus('Ordem salva.', 'ok');
+                if (!response.ok || data.ok === false) {
+                    throw new Error(data.message || 'Não foi possível salvar a ordem.');
+                }
+
+                confirmedOrder = order;
+                refreshPositions();
+                showStatus(pendingSave ? 'Salvando a alteração mais recente...' : 'Ordem salva.', pendingSave ? 'saving' : 'ok');
+            } while (pendingSave);
         } catch (error) {
-            showStatus(error.message || 'Falha ao salvar a ordem.', 'error');
+            pendingSave = false;
+            restoreConfirmedOrder();
+            showStatus((error.message || 'Falha ao salvar a ordem.') + ' A ordem anterior foi restaurada.', 'error');
         } finally {
             saving = false;
         }
@@ -142,6 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
         await saveOrder();
     });
 
+    confirmedOrder = currentOrder();
     refreshPositions();
 });
 

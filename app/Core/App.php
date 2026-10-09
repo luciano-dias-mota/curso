@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Core;
 
+use App\Middleware\SecurityHeadersMiddleware;
 use Dotenv\Dotenv;
 use Throwable;
 
@@ -20,6 +21,7 @@ final class App
 
         date_default_timezone_set((string) config('app.timezone', 'America/Cuiaba'));
 
+        (new SecurityHeadersMiddleware())->handle();
         Session::start();
     }
 
@@ -34,14 +36,8 @@ final class App
 
             $router->dispatch();
         } catch (Throwable $e) {
-            error_log(sprintf(
-                '[%s] %s: %s in %s:%d',
-                date('c'),
-                $e::class,
-                $e->getMessage(),
-                $e->getFile(),
-                $e->getLine()
-            ));
+            self::logThrowable($e);
+            self::clearOutputBuffers();
 
             http_response_code(500);
 
@@ -53,7 +49,35 @@ final class App
                 return;
             }
 
-            View::render('errors/500', [], 'layouts/app');
+            try {
+                View::render('errors/500', [], 'layouts/app');
+            } catch (Throwable $fallbackError) {
+                self::logThrowable($fallbackError);
+                self::clearOutputBuffers();
+
+                http_response_code(500);
+                header('Content-Type: text/plain; charset=UTF-8');
+                echo 'Erro interno do servidor.';
+            }
         }
+    }
+
+    private static function clearOutputBuffers(): void
+    {
+        while (ob_get_level() > 0) {
+            @ob_end_clean();
+        }
+    }
+
+    private static function logThrowable(Throwable $e): void
+    {
+        error_log(sprintf(
+            '[%s] %s: %s in %s:%d',
+            date('c'),
+            $e::class,
+            $e->getMessage(),
+            $e->getFile(),
+            $e->getLine()
+        ));
     }
 }

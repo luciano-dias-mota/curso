@@ -2,6 +2,11 @@
 
 declare(strict_types=1);
 
+
+if (PHP_SAPI !== 'cli') {
+    http_response_code(403);
+    exit('Execução permitida apenas via CLI.');
+}
 define('BASE_PATH', dirname(__DIR__));
 require BASE_PATH . '/vendor/autoload.php';
 \Dotenv\Dotenv::createImmutable(BASE_PATH)->safeLoad();

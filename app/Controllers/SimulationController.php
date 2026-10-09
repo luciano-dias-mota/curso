@@ -9,6 +9,7 @@ use App\Core\Controller;
 use App\Core\Request;
 use App\Core\Session;
 use App\Services\SimulationService;
+use PDOException;
 use RuntimeException;
 use Throwable;
 
@@ -62,7 +63,12 @@ final class SimulationController extends Controller
 
             $this->redirect('/simulados/tentativa/' . $attemptId);
         } catch (RuntimeException $e) {
-            Session::flash('error', $e->getMessage());
+            if ($e instanceof PDOException) {
+                $this->logSimulationError('simulations.generate', $e);
+                Session::flash('error', 'Não foi possível gerar o simulado.');
+            } else {
+                Session::flash('error', $e->getMessage());
+            }
             $this->redirect('/simulados/novo');
         } catch (Throwable $e) {
             $this->logSimulationError('simulations.generate', $e);
@@ -88,7 +94,12 @@ final class SimulationController extends Controller
                 'layouts/student'
             );
         } catch (RuntimeException $e) {
-            Session::flash('error', $e->getMessage());
+            if ($e instanceof PDOException) {
+                $this->logSimulationError('simulations.attempt', $e);
+                Session::flash('error', 'Não foi possível abrir esta tentativa.');
+            } else {
+                Session::flash('error', $e->getMessage());
+            }
             $this->redirect('/simulados');
         } catch (Throwable $e) {
             $this->logSimulationError('simulations.attempt', $e);
@@ -108,6 +119,10 @@ final class SimulationController extends Controller
             );
             $this->json(['ok' => true] + $result);
         } catch (RuntimeException $e) {
+            if ($e instanceof PDOException) {
+                $this->logSimulationError('simulations.saveAnswer', $e);
+                $this->json(['ok' => false, 'message' => 'Não foi possível salvar a resposta.'], 500);
+            }
             $this->json(['ok' => false, 'message' => $e->getMessage()], 409);
         } catch (Throwable $e) {
             $this->logSimulationError('simulations.saveAnswer', $e);
@@ -121,7 +136,12 @@ final class SimulationController extends Controller
             (new SimulationService())->finishAttempt($id, (int) Auth::id());
             $this->redirect('/simulados/tentativa/' . $id . '/resultado');
         } catch (RuntimeException $e) {
-            Session::flash('error', $e->getMessage());
+            if ($e instanceof PDOException) {
+                $this->logSimulationError('simulations.submit', $e);
+                Session::flash('error', 'Não foi possível finalizar o simulado.');
+            } else {
+                Session::flash('error', $e->getMessage());
+            }
             $this->redirect('/simulados/tentativa/' . $id);
         } catch (Throwable $e) {
             $this->logSimulationError('simulations.submit', $e);
@@ -140,7 +160,12 @@ final class SimulationController extends Controller
                 'layouts/student'
             );
         } catch (RuntimeException $e) {
-            Session::flash('error', $e->getMessage());
+            if ($e instanceof PDOException) {
+                $this->logSimulationError('simulations.result', $e);
+                Session::flash('error', 'Não foi possível carregar o resultado.');
+            } else {
+                Session::flash('error', $e->getMessage());
+            }
             $this->redirect('/simulados');
         } catch (Throwable $e) {
             $this->logSimulationError('simulations.result', $e);
@@ -159,7 +184,12 @@ final class SimulationController extends Controller
                 'layouts/student'
             );
         } catch (RuntimeException $e) {
-            Session::flash('error', $e->getMessage());
+            if ($e instanceof PDOException) {
+                $this->logSimulationError('simulations.review', $e);
+                Session::flash('error', 'Não foi possível abrir a revisão.');
+            } else {
+                Session::flash('error', $e->getMessage());
+            }
             $this->redirect('/simulados');
         } catch (Throwable $e) {
             $this->logSimulationError('simulations.review', $e);

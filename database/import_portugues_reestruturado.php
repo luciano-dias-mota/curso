@@ -2,6 +2,13 @@
 
 declare(strict_types=1);
 
+
+if (PHP_SAPI !== 'cli') {
+    http_response_code(403);
+    exit('Execução permitida apenas via CLI.');
+}
+
+
 define('BASE_PATH', dirname(__DIR__));
 require BASE_PATH . '/vendor/autoload.php';
 
@@ -62,6 +69,19 @@ function rotateAlternatives(array $question): array
     return [$rotated, $correctNew];
 }
 
+$apply = in_array('--apply', $argv ?? [], true);
+if (!$apply) {
+    fwrite(STDOUT, "MODO SEGURO: nenhuma alteração foi realizada. Use --apply para executar este script.\n");
+    exit(0);
+}
+
+$isProduction = strtolower((string) envv('APP_ENV', 'production')) === 'production';
+$forceProduction = in_array('--force-production', $argv ?? [], true);
+if ($isProduction && !$forceProduction) {
+    fwrite(STDERR, "ABORTADO: este script altera dados e APP_ENV=production. Use --force-production somente após backup e revisão.\n");
+    exit(1);
+}
+
 $jsonPath = BASE_PATH . '/database/portugues_ufmt_reestruturado.json';
 if (!is_file($jsonPath)) {
     fwrite(STDERR, "Erro: database/portugues_ufmt_reestruturado.json não encontrado.\n");
@@ -101,15 +121,10 @@ if ($courseIdArg !== null) {
     $stmt->execute();
     $course = $stmt->fetch();
 
-    if (!$course) {
-        $course = $pdo->query(
-            "SELECT * FROM courses WHERE status = 'published' ORDER BY position, id LIMIT 1"
-        )->fetch();
-    }
 }
 
 if (!$course) {
-    fwrite(STDERR, "Erro: nenhum curso publicado foi encontrado. Use --course-id=N.\n");
+    fwrite(STDERR, "Erro: curso PMMT esperado não encontrado. Use --course-id=N somente se tiver certeza do destino.\n");
     exit(1);
 }
 

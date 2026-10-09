@@ -2,6 +2,13 @@
 
 declare(strict_types=1);
 
+
+if (PHP_SAPI !== 'cli') {
+    http_response_code(403);
+    exit('Execução permitida apenas via CLI.');
+}
+
+
 /**
  * PMMT Academy - Seed inicial
  *
@@ -33,8 +40,6 @@ if (!is_file($autoload)) {
 require $autoload;
 
 use Dotenv\Dotenv;
-use PDO;
-use Throwable;
 
 $dotenv = Dotenv::createImmutable(BASE_PATH);
 $dotenv->safeLoad();
@@ -80,6 +85,19 @@ function slugify(string $text): string
     $text = strtolower($text);
     $text = preg_replace('/[^a-z0-9]+/', '-', $text) ?? '';
     return trim($text, '-');
+}
+
+$apply = in_array('--apply', $argv ?? [], true);
+if (!$apply) {
+    fwrite(STDOUT, "MODO SEGURO: nenhuma alteração foi realizada. Use --apply para executar este script.\n");
+    exit(0);
+}
+
+$isProduction = strtolower((string) envValue('APP_ENV', 'production')) === 'production';
+$forceProduction = in_array('--force-production', $argv ?? [], true);
+if ($isProduction && !$forceProduction) {
+    fwrite(STDERR, "ABORTADO: seed_admin não deve ser executado em produção sem --force-production.\n");
+    exit(1);
 }
 
 $dbHost = (string) envValue('DB_HOST', '127.0.0.1');

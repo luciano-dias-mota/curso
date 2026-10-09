@@ -2,6 +2,13 @@
 
 declare(strict_types=1);
 
+
+if (PHP_SAPI !== 'cli') {
+    http_response_code(403);
+    exit('Execução permitida apenas via CLI.');
+}
+
+
 define('BASE_PATH', dirname(__DIR__));
 
 require BASE_PATH . '/vendor/autoload.php';
@@ -75,6 +82,19 @@ function insertQuizQuestions(\PDO $pdo, int $quizId, array $questionIds): void
     }
 }
 
+$apply = in_array('--apply', $argv ?? [], true);
+if (!$apply) {
+    fwrite(STDOUT, "MODO SEGURO: nenhuma alteração foi realizada. Use --apply para executar este script.\n");
+    exit(0);
+}
+
+$isProduction = strtolower((string) envv('APP_ENV', 'production')) === 'production';
+$forceProduction = in_array('--force-production', $argv ?? [], true);
+if ($isProduction && !$forceProduction) {
+    fwrite(STDERR, "ABORTADO: este script altera dados e APP_ENV=production. Use --force-production somente após backup e revisão.\n");
+    exit(1);
+}
+
 $dataFile = BASE_PATH . '/database/pop_pmmt_2023_course_data.json';
 
 if (!is_file($dataFile)) {
@@ -117,17 +137,7 @@ $courseStmt->execute(['slug' => 'preparacao-pmmt-merito-intelectual-e-caoc']);
 $course = $courseStmt->fetch();
 
 if (!$course) {
-    $course = $pdo->query(
-        "SELECT id, title
-         FROM courses
-         WHERE status = 'published'
-         ORDER BY position, id
-         LIMIT 1"
-    )->fetch();
-}
-
-if (!$course) {
-    fwrite(STDERR, "Erro: nenhum curso publicado foi encontrado.\n");
+    fwrite(STDERR, "Erro: curso esperado 'preparacao-pmmt-merito-intelectual-e-caoc' não encontrado. Abortado para evitar alterar o curso errado.\n");
     exit(1);
 }
 

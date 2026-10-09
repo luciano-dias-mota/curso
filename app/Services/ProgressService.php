@@ -98,98 +98,113 @@ final class ProgressService
     public function finishReading(int $userId, int $lessonId): array
     {
         $pdo = Database::connection();
-        $lesson = $this->lessonAccess($pdo, $userId, $lessonId);
+        $pdo->beginTransaction();
 
-        if ($lesson['status'] === 'locked') {
-            throw new RuntimeException('Esta aula ainda está bloqueada.');
-        }
+        try {
+            $lesson = $this->lessonAccess($pdo, $userId, $lessonId, true);
 
-        [$viewed, $required] = $this->blockCounts($pdo, $userId, $lessonId);
+            if ($lesson['status'] === 'locked') {
+                throw new RuntimeException('Esta aula ainda está bloqueada.');
+            }
 
-        if ($required > 0 && $viewed < $required) {
-            throw new RuntimeException(
-                "Você ainda não visualizou todas as telas obrigatórias ({$viewed}/{$required})."
-            );
-        }
+            [$viewed, $required] = $this->blockCounts($pdo, $userId, $lessonId);
 
-        $isOptional = (int) $lesson['lesson_required'] === 0
-            || (int) $lesson['phase_required'] === 0;
+            if ($required > 0 && $viewed < $required) {
+                throw new RuntimeException(
+                    "Você ainda não visualizou todas as telas obrigatórias ({$viewed}/{$required})."
+                );
+            }
 
-        if ($isOptional) {
+            $isOptional = (int) $lesson['lesson_required'] === 0
+                || (int) $lesson['phase_required'] === 0;
+
+            if ($isOptional) {
+                $pdo->prepare(
+                    "UPDATE user_lesson_progress
+                     SET status = 'completed',
+                         progress_pct = 100,
+                         blocks_viewed = GREATEST(blocks_viewed, :blocks_viewed),
+                         completed_at = COALESCE(completed_at, NOW()),
+                         last_accessed_at = NOW()
+                     WHERE user_id = :user_id
+                       AND lesson_id = :lesson_id
+                       AND status <> 'locked'"
+                )->execute([
+                    'blocks_viewed' => max($viewed, $required),
+                    'user_id' => $userId,
+                    'lesson_id' => $lessonId,
+                ]);
+
+                $pdo->commit();
+
+                return [
+                    'phase_id' => (int) $lesson['phase_id'],
+                    'quiz_id' => null,
+                    'optional' => true,
+                ];
+            }
+
+            // A leitura obrigatória chega a 100%, mas a aula só vira completed
+            // após aprovação no exercício lesson_fixation.
             $pdo->prepare(
                 "UPDATE user_lesson_progress
-                 SET status = 'completed',
+                 SET status = CASE
+                        WHEN status = 'completed' THEN 'completed'
+                        WHEN status IN ('available', 'in_progress') THEN 'in_progress'
+                        ELSE status
+                     END,
                      progress_pct = 100,
-                     blocks_viewed = GREATEST(blocks_viewed, :blocks_viewed),
-                     completed_at = COALESCE(completed_at, NOW()),
+                     blocks_viewed = :blocks_viewed,
                      last_accessed_at = NOW()
                  WHERE user_id = :user_id
-                   AND lesson_id = :lesson_id
-                   AND status <> 'locked'"
+                   AND lesson_id = :lesson_id"
             )->execute([
                 'blocks_viewed' => max($viewed, $required),
                 'user_id' => $userId,
                 'lesson_id' => $lessonId,
             ]);
 
-            return [
-                'phase_id' => (int) $lesson['phase_id'],
-                'quiz_id' => null,
-                'optional' => true,
-            ];
-        }
-
-        // A leitura obrigatória chega a 100%, mas a aula só vira completed
-        // após aprovação no exercício lesson_fixation.
-        $pdo->prepare(
-            "UPDATE user_lesson_progress
-             SET status = CASE
-                    WHEN status = 'completed' THEN 'completed'
-                    WHEN status IN ('available', 'in_progress') THEN 'in_progress'
-                    ELSE status
-                 END,
-                 progress_pct = 100,
-                 blocks_viewed = :blocks_viewed,
-                 last_accessed_at = NOW()
-             WHERE user_id = :user_id
-               AND lesson_id = :lesson_id"
-        )->execute([
-            'blocks_viewed' => max($viewed, $required),
-            'user_id' => $userId,
-            'lesson_id' => $lessonId,
-        ]);
-
-        $quizStmt = $pdo->prepare(
-            "SELECT qz.id, qz.question_limit, COUNT(qq.question_id) AS question_count
-             FROM quizzes qz
-             LEFT JOIN quiz_questions qq ON qq.quiz_id = qz.id
-             WHERE qz.lesson_id = :lesson_id
-               AND qz.quiz_type = 'lesson_fixation'
-               AND qz.active = 1
-             GROUP BY qz.id
-             ORDER BY qz.id
-             LIMIT 1"
-        );
-        $quizStmt->execute(['lesson_id' => $lessonId]);
-        $quiz = $quizStmt->fetch();
-
-        if (!$quiz) {
-            throw new RuntimeException('O exercício desta aula ainda não foi configurado.');
-        }
-
-        if ((int) $quiz['question_count'] !== (int) $quiz['question_limit']) {
-            throw new RuntimeException(
-                'O exercício desta aula ainda está incompleto: '
-                . (int) $quiz['question_count'] . '/'
-                . (int) $quiz['question_limit'] . ' questões.'
+            $quizStmt = $pdo->prepare(
+                "SELECT qz.id, qz.question_limit, COUNT(qq.question_id) AS question_count
+                 FROM quizzes qz
+                 LEFT JOIN quiz_questions qq ON qq.quiz_id = qz.id
+                 WHERE qz.lesson_id = :lesson_id
+                   AND qz.quiz_type = 'lesson_fixation'
+                   AND qz.active = 1
+                 GROUP BY qz.id
+                 ORDER BY qz.id
+                 LIMIT 1"
             );
-        }
+            $quizStmt->execute(['lesson_id' => $lessonId]);
+            $quiz = $quizStmt->fetch();
 
-        return [
-            'phase_id' => (int) $lesson['phase_id'],
-            'quiz_id' => (int) $quiz['id'],
-            'optional' => false,
-        ];
+            if (!$quiz) {
+                throw new RuntimeException('O exercício desta aula ainda não foi configurado.');
+            }
+
+            if ((int) $quiz['question_count'] !== (int) $quiz['question_limit']) {
+                throw new RuntimeException(
+                    'O exercício desta aula ainda está incompleto: '
+                    . (int) $quiz['question_count'] . '/'
+                    . (int) $quiz['question_limit'] . ' questões.'
+                );
+            }
+
+            $result = [
+                'phase_id' => (int) $lesson['phase_id'],
+                'quiz_id' => (int) $quiz['id'],
+                'optional' => false,
+            ];
+
+            $pdo->commit();
+            return $result;
+        } catch (Throwable $e) {
+            if ($pdo->inTransaction()) {
+                $pdo->rollBack();
+            }
+
+            throw $e;
+        }
     }
 
     private function lessonAccess(PDO $pdo, int $userId, int $lessonId, bool $forUpdate = false): array

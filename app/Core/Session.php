@@ -14,9 +14,14 @@ final class Session
 
         session_name((string) config('app.session_name', 'curso_session'));
 
+        $configuredSecure = config('app.session_secure', null);
+        $secure = is_bool($configuredSecure)
+            ? $configuredSecure
+            : (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
+
         session_set_cookie_params([
             'httponly' => true,
-            'secure' => !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off',
+            'secure' => $secure,
             'samesite' => 'Lax',
             'path' => '/',
         ]);

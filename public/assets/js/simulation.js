@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let index = 0;
   let timerHandle = null;
   let autoSubmitting = false;
+  const pendingSaves = new Set();
 
   const answered = (card) => !!card?.querySelector('input[type="radio"]:checked');
   const answeredCount = () => cards.filter(answered).length;
@@ -123,7 +124,10 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('change', (event) => {
       const input = event.target.closest('input[type="radio"]');
       if (!input) return;
-      saveAnswer(card, input);
+
+      const task = saveAnswer(card, input);
+      pendingSaves.add(task);
+      task.finally(() => pendingSaves.delete(task));
       sync();
     });
   });
@@ -132,12 +136,28 @@ document.addEventListener('DOMContentLoaded', () => {
   next?.addEventListener('click', () => show(index + 1));
   jumps.forEach((button) => button.addEventListener('click', () => show(Number(button.dataset.simulationJump || 0))));
 
+  const submitAfterPendingSaves = async () => {
+    if (!finishForm || autoSubmitting) return;
+    autoSubmitting = true;
+
+    if (pendingSaves.size > 0) {
+      setSaveStatus('Aguardando o salvamento das últimas respostas...', 'saving');
+      await Promise.allSettled([...pendingSaves]);
+    }
+
+    finishForm.submit();
+  };
+
   finishForm?.addEventListener('submit', (event) => {
     if (autoSubmitting) return;
+
+    event.preventDefault();
     const unanswered = cards.length - answeredCount();
     if (unanswered > 0 && !window.confirm(`Ainda existem ${unanswered} questão(ões) sem resposta. Elas contarão como erro. Finalizar mesmo assim?`)) {
-      event.preventDefault();
+      return;
     }
+
+    submitAfterPendingSaves();
   });
 
   const renderTimer = () => {
@@ -160,8 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
       window.clearInterval(timerHandle);
       setSaveStatus('Tempo encerrado. Finalizando o simulado...', 'error');
       if (finishForm && !autoSubmitting) {
-        autoSubmitting = true;
-        finishForm.submit();
+        submitAfterPendingSaves();
       }
     }
   }, 1000);

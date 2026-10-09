@@ -2,13 +2,18 @@
 
 declare(strict_types=1);
 
+
+if (PHP_SAPI !== 'cli') {
+    http_response_code(403);
+    exit('Execução permitida apenas via CLI.');
+}
+
+
 define('BASE_PATH', dirname(__DIR__));
 
 require BASE_PATH . '/vendor/autoload.php';
 
 use Dotenv\Dotenv;
-use PDO;
-use Throwable;
 
 Dotenv::createImmutable(BASE_PATH)->safeLoad();
 
@@ -21,6 +26,15 @@ function envv(string $key, mixed $default = null): mixed
     }
 
     return is_string($v) ? trim($v, "\"'") : $v;
+}
+
+$apply = in_array('--apply', $argv ?? [], true);
+$isProduction = strtolower((string) envv('APP_ENV', 'production')) === 'production';
+$forceProduction = in_array('--force-production', $argv ?? [], true);
+
+if ($apply && $isProduction && !$forceProduction) {
+    fwrite(STDERR, "ABORTADO: APP_ENV=production. Use --apply --force-production somente após backup.\n");
+    exit(1);
 }
 
 $pdo = new PDO(
@@ -86,6 +100,12 @@ echo "Telas encontradas: " . count($rows) . "\n\n";
 
 foreach ($rows as $row) {
     echo "- Bloco #{$row['id']} | {$row['module_title']} | {$row['lesson_title']} | {$row['title']}\n";
+}
+
+if (!$apply) {
+    echo "\nDRY-RUN: nenhum registro foi removido.\n";
+    echo "Para aplicar a exclusão, execute novamente com --apply.\n";
+    exit(0);
 }
 
 $ids = array_map(

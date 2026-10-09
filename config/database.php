@@ -10,4 +10,6 @@ return [
     'username' => env('DB_USERNAME', 'root'),
     'password' => env('DB_PASSWORD', ''),
     'charset' => 'utf8mb4',
+    // Deve representar o mesmo relógio usado por APP_TIMEZONE.
+    'timezone' => env('DB_TIMEZONE', env('APP_TIMEZONE', 'America/Cuiaba')),
 ];

@@ -4,7 +4,10 @@ use App\Core\Session;
 $success = Session::pullFlash('success');
 $error = Session::pullFlash('error');
 $library = (int) $phase['is_required'] === 0;
-$quizReady = $quiz && (int) $quiz['question_count'] === 5;
+$quizExpected = (int) ($quiz['question_limit'] ?? 0);
+$quizRequiredCorrect = (int) ($quiz['required_correct'] ?? 0);
+$quizRequiredScore = (float) ($quiz['required_score'] ?? 0);
+$quizReady = $quiz && $quizExpected > 0 && (int) $quiz['question_count'] === $quizExpected;
 $phasePassed = $phase['user_status'] === 'completed';
 ?>
 <section class="phase-page">
@@ -103,25 +106,25 @@ $phasePassed = $phase['user_status'] === 'completed';
                     <h2>Prova ainda não configurada</h2>
                     <p>
                         A leitura foi concluída, mas a próxima fase continuará bloqueada até existir
-                        uma prova de 5 questões para este conteúdo.
+                        uma prova configurada e completa para este conteúdo.
                     </p>
 
                 <?php elseif (!$quizReady): ?>
                     <h2>Prova em preparação</h2>
                     <p>
-                        Esta fase possui <strong><?= (int) $quiz['question_count'] ?>/5</strong> questões cadastradas.
-                        A prova só será liberada quando as 5 questões estiverem revisadas.
+                        Esta fase possui <strong><?= (int) $quiz['question_count'] ?>/<?= $quizExpected ?></strong> questões cadastradas.
+                        A prova só será liberada quando as <?= $quizExpected ?> questões estiverem revisadas.
                     </p>
 
                 <?php else: ?>
                     <h2>Leitura concluída. Hora de provar o domínio.</h2>
                     <p>
-                        São <strong>5 questões</strong>. Você precisa acertar <strong>4</strong>
-                        para atingir <strong>80%</strong> e desbloquear a próxima fase.
+                        São <strong><?= $quizExpected ?> questões</strong>. Você precisa acertar <strong><?= $quizRequiredCorrect ?></strong>
+                        para atingir <strong><?= number_format($quizRequiredScore, 0) ?>%</strong> e desbloquear a próxima fase.
                     </p>
                     <div class="phase-exam-stats">
-                        <span>5 questões</span>
-                        <span>4 acertos mínimos</span>
+                        <span><?= $quizExpected ?> questões</span>
+                        <span><?= $quizRequiredCorrect ?> acertos mínimos</span>
                         <span><?= (int) ($quiz['finished_attempts'] ?? 0) ?> tentativa(s)</span>
                         <span>Melhor: <?= number_format((float) ($quiz['best_percentage'] ?? 0), 0) ?>%</span>
                     </div>

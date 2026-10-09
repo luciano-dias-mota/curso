@@ -2,6 +2,13 @@
 
 declare(strict_types=1);
 
+
+if (PHP_SAPI !== 'cli') {
+    http_response_code(403);
+    exit('Execução permitida apenas via CLI.');
+}
+
+
 define('BASE_PATH', dirname(__DIR__));
 
 require BASE_PATH . '/vendor/autoload.php';
@@ -17,6 +24,19 @@ function envv(string $key, mixed $default = null): mixed
         return $default;
     }
     return is_string($value) ? trim($value, "\"'") : $value;
+}
+
+$apply = in_array('--apply', $argv ?? [], true);
+if (!$apply) {
+    fwrite(STDOUT, "MODO SEGURO: nenhuma alteração foi realizada. Use --apply para executar este script.\n");
+    exit(0);
+}
+
+$isProduction = strtolower((string) envv('APP_ENV', 'production')) === 'production';
+$forceProduction = in_array('--force-production', $argv ?? [], true);
+if ($isProduction && !$forceProduction) {
+    fwrite(STDERR, "ABORTADO: este script altera dados e APP_ENV=production. Use --force-production somente após backup e revisão.\n");
+    exit(1);
 }
 
 $pdo = new \PDO(

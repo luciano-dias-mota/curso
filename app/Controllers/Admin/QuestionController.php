@@ -192,11 +192,10 @@ final class QuestionController extends Controller
         $alternatives = $this->alternatives($pdo, $id);
         $usage = $this->usage($pdo, $id);
 
-        $scopeLocked = (int) ($question['phase_id'] ?? 0) > 0
-            || (int) ($question['lesson_id'] ?? 0) > 0
-            || (int) ($usage['quiz_links'] ?? 0) > 0
-            || (int) ($usage['simulation_links'] ?? 0) > 0
-            || (int) ($usage['simulation_uses'] ?? 0) > 0;
+        $immutable = $this->isImmutable($usage);
+        $scopeLocked = $immutable
+            || (int) ($question['phase_id'] ?? 0) > 0
+            || (int) ($question['lesson_id'] ?? 0) > 0;
 
         $this->view('admin/questions/form', [
             'title' => 'Editar questão #' . $id,
@@ -206,6 +205,7 @@ final class QuestionController extends Controller
             'modules' => $this->modules($pdo),
             'usage' => $usage,
             'scopeLocked' => $scopeLocked,
+            'immutable' => $immutable,
         ], 'layouts/admin');
     }
 
@@ -218,11 +218,15 @@ final class QuestionController extends Controller
             $existingAlternatives = $this->alternatives($pdo, $id);
             $usage = $this->usage($pdo, $id);
 
+            $immutable = $this->isImmutable($usage);
+            if ($immutable) {
+                throw new RuntimeException(
+                    'Esta questão já está vinculada ou foi utilizada em avaliação. Para preservar o histórico dos alunos, ela não pode mais ser editada. Cadastre uma nova questão para substituir o conteúdo.'
+                );
+            }
+
             $scopeLocked = (int) ($question['phase_id'] ?? 0) > 0
-                || (int) ($question['lesson_id'] ?? 0) > 0
-                || (int) ($usage['quiz_links'] ?? 0) > 0
-                || (int) ($usage['simulation_links'] ?? 0) > 0
-                || (int) ($usage['simulation_uses'] ?? 0) > 0;
+                || (int) ($question['lesson_id'] ?? 0) > 0;
 
             $data = $this->validatedQuestionPayload(
                 $pdo,
@@ -336,6 +340,16 @@ final class QuestionController extends Controller
     {
         $pdo = Database::connection();
         $this->question($pdo, $id);
+        $usage = $this->usage($pdo, $id);
+
+        if ($this->isImmutable($usage)) {
+            Session::flash(
+                'error',
+                'Questão vinculada/usada em avaliação não pode ser ativada ou desativada, para preservar o histórico. Cadastre uma nova versão.'
+            );
+            $this->redirect('/admin/questoes');
+        }
+
         $active = (int) $request->input('active', -1);
 
         if (!in_array($active, [0, 1], true)) {
@@ -522,6 +536,14 @@ final class QuestionController extends Controller
             'simulation_uses' => 0,
             'simulation_answers' => 0,
         ];
+    }
+
+    private function isImmutable(array $usage): bool
+    {
+        return (int) ($usage['quiz_links'] ?? 0) > 0
+            || (int) ($usage['simulation_links'] ?? 0) > 0
+            || (int) ($usage['simulation_uses'] ?? 0) > 0
+            || (int) ($usage['simulation_answers'] ?? 0) > 0;
     }
 
     private function modules(PDO $pdo): array

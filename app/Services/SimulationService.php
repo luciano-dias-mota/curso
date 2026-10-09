@@ -66,30 +66,29 @@ final class SimulationService
         $historyStmt->execute(['user_id' => $userId]);
         $history = $historyStmt->fetchAll();
 
+        $statsStmt = $pdo->prepare(
+            "SELECT COUNT(*) AS attempts,
+                    COALESCE(AVG(percentage), 0) AS average,
+                    COALESCE(MAX(percentage), 0) AS best,
+                    COALESCE(SUM(question_limit), 0) AS questions
+             FROM simulation_attempts
+             WHERE user_id = :user_id
+               AND status = 'finished'"
+        );
+        $statsStmt->execute(['user_id' => $userId]);
+        $statsRow = $statsStmt->fetch() ?: [];
+
         $stats = [
-            'attempts' => count($history),
-            'average' => 0.0,
-            'best' => 0.0,
+            'attempts' => (int) ($statsRow['attempts'] ?? 0),
+            'average' => round((float) ($statsRow['average'] ?? 0), 1),
+            'best' => round((float) ($statsRow['best'] ?? 0), 1),
             'latest' => 0.0,
-            'questions' => 0,
+            'questions' => (int) ($statsRow['questions'] ?? 0),
             'trend' => 0.0,
         ];
 
         if ($history !== []) {
-            $sum = 0.0;
-            $best = 0.0;
-            $questions = 0;
-            foreach ($history as $row) {
-                $percentage = (float) $row['percentage'];
-                $sum += $percentage;
-                $best = max($best, $percentage);
-                $questions += (int) $row['question_limit'];
-            }
-
-            $stats['average'] = round($sum / count($history), 1);
-            $stats['best'] = round($best, 1);
             $stats['latest'] = round((float) $history[0]['percentage'], 1);
-            $stats['questions'] = $questions;
             if (isset($history[1])) {
                 $stats['trend'] = round(
                     (float) $history[0]['percentage'] - (float) $history[1]['percentage'],
@@ -419,153 +418,186 @@ final class SimulationService
         int $alternativeId
     ): array {
         $pdo = Database::connection();
-        $attempt = $this->attemptBase($pdo, $attemptId, $userId);
+        $pdo->beginTransaction();
 
-        if ($attempt['status'] !== 'in_progress') {
-            throw new RuntimeException('Esta tentativa não está mais em andamento.');
+        try {
+            // O lock serializa "salvar resposta" e "finalizar" para impedir
+            // que uma resposta seja alterada depois do cálculo da nota.
+            $attempt = $this->attemptBase($pdo, $attemptId, $userId, true);
+
+            if ($attempt['status'] !== 'in_progress') {
+                throw new RuntimeException('Esta tentativa não está mais em andamento.');
+            }
+
+            if ($this->remainingSeconds($attempt) <= 0) {
+                $pdo->rollBack();
+                $this->finishAttempt($attemptId, $userId);
+                throw new RuntimeException('O tempo do simulado terminou.');
+            }
+
+            $questionStmt = $pdo->prepare(
+                "SELECT 1
+                 FROM simulation_attempt_questions
+                 WHERE attempt_id = :attempt_id
+                   AND question_id = :question_id
+                 LIMIT 1"
+            );
+            $questionStmt->execute([
+                'attempt_id' => $attemptId,
+                'question_id' => $questionId,
+            ]);
+            if (!$questionStmt->fetchColumn()) {
+                throw new RuntimeException('Questão inválida para esta tentativa.');
+            }
+
+            $altStmt = $pdo->prepare(
+                "SELECT id, is_correct
+                 FROM alternatives
+                 WHERE id = :alternative_id
+                   AND question_id = :question_id
+                 LIMIT 1"
+            );
+            $altStmt->execute([
+                'alternative_id' => $alternativeId,
+                'question_id' => $questionId,
+            ]);
+            $alternative = $altStmt->fetch();
+            if (!$alternative) {
+                throw new RuntimeException('Alternativa inválida.');
+            }
+
+            $isCorrect = (int) $alternative['is_correct'] === 1;
+            $save = $pdo->prepare(
+                "INSERT INTO simulation_answers
+                    (attempt_id, question_id, alternative_id, is_correct, points_awarded, answered_at)
+                 VALUES
+                    (:attempt_id, :question_id, :alternative_id, :is_correct, :points, NOW())
+                 ON DUPLICATE KEY UPDATE
+                    alternative_id = VALUES(alternative_id),
+                    is_correct = VALUES(is_correct),
+                    points_awarded = VALUES(points_awarded),
+                    answered_at = NOW()"
+            );
+            $save->execute([
+                'attempt_id' => $attemptId,
+                'question_id' => $questionId,
+                'alternative_id' => $alternativeId,
+                'is_correct' => $isCorrect ? 1 : 0,
+                'points' => $isCorrect ? 1 : 0,
+            ]);
+
+            $countStmt = $pdo->prepare(
+                "SELECT COUNT(*)
+                 FROM simulation_answers
+                 WHERE attempt_id = :attempt_id
+                   AND alternative_id IS NOT NULL"
+            );
+            $countStmt->execute(['attempt_id' => $attemptId]);
+
+            $result = [
+                'saved' => true,
+                'answered' => (int) $countStmt->fetchColumn(),
+                'total' => (int) $attempt['question_limit'],
+                'remaining_seconds' => $this->remainingSeconds($attempt),
+            ];
+
+            $pdo->commit();
+            return $result;
+        } catch (Throwable $e) {
+            if ($pdo->inTransaction()) {
+                $pdo->rollBack();
+            }
+            throw $e;
         }
-
-        if ($this->remainingSeconds($attempt) <= 0) {
-            $this->finishAttempt($attemptId, $userId);
-            throw new RuntimeException('O tempo do simulado terminou.');
-        }
-
-        $questionStmt = $pdo->prepare(
-            "SELECT 1
-             FROM simulation_attempt_questions
-             WHERE attempt_id = :attempt_id
-               AND question_id = :question_id
-             LIMIT 1"
-        );
-        $questionStmt->execute([
-            'attempt_id' => $attemptId,
-            'question_id' => $questionId,
-        ]);
-        if (!$questionStmt->fetchColumn()) {
-            throw new RuntimeException('Questão inválida para esta tentativa.');
-        }
-
-        $altStmt = $pdo->prepare(
-            "SELECT id, is_correct
-             FROM alternatives
-             WHERE id = :alternative_id
-               AND question_id = :question_id
-             LIMIT 1"
-        );
-        $altStmt->execute([
-            'alternative_id' => $alternativeId,
-            'question_id' => $questionId,
-        ]);
-        $alternative = $altStmt->fetch();
-        if (!$alternative) {
-            throw new RuntimeException('Alternativa inválida.');
-        }
-
-        $isCorrect = (int) $alternative['is_correct'] === 1;
-        $save = $pdo->prepare(
-            "INSERT INTO simulation_answers
-                (attempt_id, question_id, alternative_id, is_correct, points_awarded, answered_at)
-             VALUES
-                (:attempt_id, :question_id, :alternative_id, :is_correct, :points, NOW())
-             ON DUPLICATE KEY UPDATE
-                alternative_id = VALUES(alternative_id),
-                is_correct = VALUES(is_correct),
-                points_awarded = VALUES(points_awarded),
-                answered_at = NOW()"
-        );
-        $save->execute([
-            'attempt_id' => $attemptId,
-            'question_id' => $questionId,
-            'alternative_id' => $alternativeId,
-            'is_correct' => $isCorrect ? 1 : 0,
-            'points' => $isCorrect ? 1 : 0,
-        ]);
-
-        $countStmt = $pdo->prepare(
-            "SELECT COUNT(*)
-             FROM simulation_answers
-             WHERE attempt_id = :attempt_id
-               AND alternative_id IS NOT NULL"
-        );
-        $countStmt->execute(['attempt_id' => $attemptId]);
-
-        return [
-            'saved' => true,
-            'answered' => (int) $countStmt->fetchColumn(),
-            'total' => (int) $attempt['question_limit'],
-            'remaining_seconds' => $this->remainingSeconds($attempt),
-        ];
     }
 
     public function finishAttempt(int $attemptId, int $userId): array
     {
         $pdo = Database::connection();
-        $attempt = $this->attemptBase($pdo, $attemptId, $userId);
+        $pdo->beginTransaction();
 
-        if ($attempt['status'] === 'finished') {
+        try {
+            $attempt = $this->attemptBase($pdo, $attemptId, $userId, true);
+
+            if ($attempt['status'] === 'finished') {
+                $result = [
+                    'percentage' => (float) $attempt['percentage'],
+                    'passed' => (int) $attempt['passed'] === 1,
+                ];
+                $pdo->commit();
+                return $result;
+            }
+
+            if ($attempt['status'] !== 'in_progress') {
+                throw new RuntimeException('Esta tentativa não pode ser finalizada.');
+            }
+
+            $scoreStmt = $pdo->prepare(
+                "SELECT COUNT(saq.question_id) AS total,
+                        SUM(CASE WHEN COALESCE(sa.is_correct, 0) = 1 THEN 1 ELSE 0 END) AS correct,
+                        SUM(CASE WHEN sa.alternative_id IS NOT NULL THEN 1 ELSE 0 END) AS answered
+                 FROM simulation_attempt_questions saq
+                 LEFT JOIN simulation_answers sa
+                   ON sa.attempt_id = saq.attempt_id
+                  AND sa.question_id = saq.question_id
+                 WHERE saq.attempt_id = :attempt_id"
+            );
+            $scoreStmt->execute(['attempt_id' => $attemptId]);
+            $score = $scoreStmt->fetch();
+
+            $total = (int) ($score['total'] ?? 0);
+            $correct = (int) ($score['correct'] ?? 0);
+            $answered = (int) ($score['answered'] ?? 0);
+
+            if ($total <= 0) {
+                throw new RuntimeException('Não existem questões associadas a esta tentativa.');
+            }
+
+            $percentage = round(($correct / $total) * 100, 2);
+            $required = (float) $attempt['required_score'];
+            $passed = $percentage >= $required;
+
+            $update = $pdo->prepare(
+                "UPDATE simulation_attempts
+                 SET finished_at = NOW(),
+                     score = :score,
+                     max_score = :max_score,
+                     percentage = :percentage,
+                     passed = :passed,
+                     xp_earned = 0,
+                     status = 'finished'
+                 WHERE id = :attempt_id
+                   AND user_id = :user_id
+                   AND status = 'in_progress'"
+            );
+            $update->execute([
+                'score' => $correct,
+                'max_score' => $total,
+                'percentage' => $percentage,
+                'passed' => $passed ? 1 : 0,
+                'attempt_id' => $attemptId,
+                'user_id' => $userId,
+            ]);
+
+            if ($update->rowCount() !== 1) {
+                throw new RuntimeException('A tentativa mudou de estado durante a finalização.');
+            }
+
+            $pdo->commit();
+
             return [
-                'percentage' => (float) $attempt['percentage'],
-                'passed' => (int) $attempt['passed'] === 1,
+                'correct' => $correct,
+                'answered' => $answered,
+                'total' => $total,
+                'percentage' => $percentage,
+                'passed' => $passed,
             ];
+        } catch (Throwable $e) {
+            if ($pdo->inTransaction()) {
+                $pdo->rollBack();
+            }
+            throw $e;
         }
-
-        if ($attempt['status'] !== 'in_progress') {
-            throw new RuntimeException('Esta tentativa não pode ser finalizada.');
-        }
-
-        $scoreStmt = $pdo->prepare(
-            "SELECT COUNT(saq.question_id) AS total,
-                    SUM(CASE WHEN COALESCE(sa.is_correct, 0) = 1 THEN 1 ELSE 0 END) AS correct,
-                    SUM(CASE WHEN sa.alternative_id IS NOT NULL THEN 1 ELSE 0 END) AS answered
-             FROM simulation_attempt_questions saq
-             LEFT JOIN simulation_answers sa
-               ON sa.attempt_id = saq.attempt_id
-              AND sa.question_id = saq.question_id
-             WHERE saq.attempt_id = :attempt_id"
-        );
-        $scoreStmt->execute(['attempt_id' => $attemptId]);
-        $score = $scoreStmt->fetch();
-
-        $total = (int) ($score['total'] ?? 0);
-        $correct = (int) ($score['correct'] ?? 0);
-        $answered = (int) ($score['answered'] ?? 0);
-        if ($total <= 0) {
-            throw new RuntimeException('Não existem questões associadas a esta tentativa.');
-        }
-
-        $percentage = round(($correct / $total) * 100, 2);
-        $required = (float) $attempt['required_score'];
-        $passed = $percentage >= $required;
-
-        $update = $pdo->prepare(
-            "UPDATE simulation_attempts
-             SET finished_at = NOW(),
-                 score = :score,
-                 max_score = :max_score,
-                 percentage = :percentage,
-                 passed = :passed,
-                 xp_earned = 0,
-                 status = 'finished'
-             WHERE id = :attempt_id
-               AND user_id = :user_id
-               AND status = 'in_progress'"
-        );
-        $update->execute([
-            'score' => $correct,
-            'max_score' => $total,
-            'percentage' => $percentage,
-            'passed' => $passed ? 1 : 0,
-            'attempt_id' => $attemptId,
-            'user_id' => $userId,
-        ]);
-
-        return [
-            'correct' => $correct,
-            'answered' => $answered,
-            'total' => $total,
-            'percentage' => $percentage,
-            'passed' => $passed,
-        ];
     }
 
     public function resultData(int $attemptId, int $userId): array
@@ -906,8 +938,14 @@ final class SimulationService
         }
     }
 
-    private function attemptBase(PDO $pdo, int $attemptId, int $userId): array
-    {
+    private function attemptBase(
+        PDO $pdo,
+        int $attemptId,
+        int $userId,
+        bool $forUpdate = false
+    ): array {
+        $lock = $forUpdate ? ' FOR UPDATE' : '';
+
         $stmt = $pdo->prepare(
             "SELECT sa.*, s.title AS simulation_title, s.required_score,
                     c.id AS course_id, c.title AS course_title,
@@ -918,7 +956,7 @@ final class SimulationService
              LEFT JOIN modules m ON m.id = sa.scope_module_id
              WHERE sa.id = :attempt_id
                AND sa.user_id = :user_id
-             LIMIT 1"
+             LIMIT 1" . $lock
         );
         $stmt->execute([
             'attempt_id' => $attemptId,

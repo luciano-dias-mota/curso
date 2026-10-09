@@ -8,6 +8,8 @@ use PDO;
 
 final class Auth
 {
+    private const DUMMY_PASSWORD_HASH = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2uheWG/igi.';
+
     private static ?array $cachedUser = null;
 
     public static function attempt(string $email, string $password): bool
@@ -25,16 +27,29 @@ final class Auth
 
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if (!$user || $user['status'] !== 'active') {
+        if (!$user || ($user['status'] ?? null) !== 'active') {
+            password_verify($password, self::DUMMY_PASSWORD_HASH);
             return false;
         }
 
-        if (!password_verify($password, $user['password_hash'])) {
+        if (!password_verify($password, (string) $user['password_hash'])) {
             return false;
+        }
+
+        if (password_needs_rehash((string) $user['password_hash'], PASSWORD_DEFAULT)) {
+            $newHash = password_hash($password, PASSWORD_DEFAULT);
+            $pdo->prepare('UPDATE users SET password_hash = :hash WHERE id = :id')
+                ->execute(['hash' => $newHash, 'id' => $user['id']]);
+            $user['password_hash'] = $newHash;
         }
 
         Session::regenerate();
+        Session::forget('_csrf_token');
         Session::put('auth_user_id', (int) $user['id']);
+        Session::put(
+            'auth_session_version',
+            max(1, (int) ($user['session_version'] ?? 1))
+        );
 
         $pdo->prepare('UPDATE users SET last_login_at = NOW() WHERE id = :id')
             ->execute(['id' => $user['id']]);
@@ -46,7 +61,7 @@ final class Auth
 
     public static function check(): bool
     {
-        return self::id() !== null;
+        return self::user() !== null;
     }
 
     public static function id(): ?int
@@ -57,14 +72,20 @@ final class Auth
 
     public static function user(): ?array
     {
-        if (!self::check()) {
+        $id = self::id();
+        if ($id === null) {
             return null;
         }
 
-        if (self::$cachedUser !== null) {
-            if (($cachedStatus = (self::$cachedUser['status'] ?? null)) !== 'active') {
-                self::$cachedUser = null;
-                Session::destroy();
+        if (self::$cachedUser !== null && (int) (self::$cachedUser['id'] ?? 0) === $id) {
+            $cachedVersion = max(1, (int) (self::$cachedUser['session_version'] ?? 1));
+            $sessionVersion = (int) Session::get('auth_session_version', 0);
+
+            if (
+                (self::$cachedUser['status'] ?? null) !== 'active'
+                || $sessionVersion !== $cachedVersion
+            ) {
+                self::invalidateAuthentication();
                 return null;
             }
 
@@ -78,18 +99,24 @@ final class Auth
              WHERE u.id = :id
              LIMIT 1'
         );
-        $stmt->execute(['id' => self::id()]);
+        $stmt->execute(['id' => $id]);
 
-        $user = $stmt->fetch();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if (!$user || ($user['status'] ?? null) !== 'active') {
-            self::$cachedUser = null;
-            Session::destroy();
+            self::invalidateAuthentication();
+            return null;
+        }
+
+        $sessionVersion = (int) Session::get('auth_session_version', 0);
+        $userVersion = max(1, (int) ($user['session_version'] ?? 1));
+
+        if ($sessionVersion !== $userVersion) {
+            self::invalidateAuthentication();
             return null;
         }
 
         self::$cachedUser = $user;
-
         return self::$cachedUser;
     }
 
@@ -106,6 +133,15 @@ final class Auth
     public static function isStudent(): bool
     {
         return self::role() === 'student';
+    }
+
+    private static function invalidateAuthentication(): void
+    {
+        self::$cachedUser = null;
+        Session::forget('auth_user_id');
+        Session::forget('auth_session_version');
+        Session::forget('_csrf_token');
+        Session::regenerate();
     }
 
     public static function logout(): void

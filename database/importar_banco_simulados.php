@@ -2,6 +2,13 @@
 
 declare(strict_types=1);
 
+
+if (PHP_SAPI !== 'cli') {
+    http_response_code(403);
+    exit('Execução permitida apenas via CLI.');
+}
+
+
 /**
  * Importador exclusivo do BANCO DE QUESTÕES PARA SIMULADOS.
  *
@@ -9,8 +16,8 @@ declare(strict_types=1);
  * Apenas insere/relaciona registros em questions + alternatives.
  *
  * Uso:
- *   php database/importar_banco_simulados.php --dry-run
- *   php database/importar_banco_simulados.php
+ *   php database/importar_banco_simulados.php          (dry-run)
+ *   php database/importar_banco_simulados.php --apply  (gravação)
  *   php database/importar_banco_simulados.php --source=pop
  *   php database/importar_banco_simulados.php --source=portugues
  *   php database/importar_banco_simulados.php --source=complementar
@@ -87,17 +94,10 @@ function resolveCourse(PDO $pdo): array
     $course = $stmt->fetch();
 
     if (!$course) {
-        $course = $pdo->query(
-            "SELECT id, title, slug
-             FROM courses
-             WHERE status = 'published'
-             ORDER BY position, id
-             LIMIT 1"
-        )->fetch();
-    }
-
-    if (!$course) {
-        throw new RuntimeException('Nenhum curso publicado foi encontrado.');
+        throw new RuntimeException(
+            "Curso de simulados não encontrado para o slug configurado: {$slug}. "
+            . 'Defina SIMULATION_COURSE_SLUG corretamente; o importador não escolherá outro curso automaticamente.'
+        );
     }
 
     return $course;
@@ -383,7 +383,15 @@ if (!in_array($source, ['all', 'pop', 'portugues', 'complementar'], true)) {
     exit(1);
 }
 
-$dryRun = hasFlag('--dry-run');
+$apply = hasFlag('--apply');
+$dryRun = !$apply;
+
+$isProduction = strtolower((string) envv('APP_ENV', 'production')) === 'production';
+$forceProduction = in_array('--force-production', $argv ?? [], true);
+if ($apply && $isProduction && !$forceProduction) {
+    fwrite(STDERR, "ABORTADO: APP_ENV=production. Use --apply --force-production somente após backup e revisão.\n");
+    exit(1);
+}
 
 $pdo = new PDO(
     sprintf(
@@ -534,7 +542,7 @@ printf("-------------------------------------------------------------\n");
 
 if ($dryRun) {
     echo "DRY-RUN concluído. Nenhuma alteração foi gravada.\n";
-    echo "Se os números estiverem corretos, execute novamente sem --dry-run.\n";
+    echo "Se os números estiverem corretos, execute novamente com --apply.\n";
 } else {
     echo "Importação concluída. Agora execute:\n";
     echo "  php database/auditar_banco_simulados.php\n";

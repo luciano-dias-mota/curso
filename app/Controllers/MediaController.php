@@ -43,6 +43,12 @@ final class MediaController extends Controller
             session_write_close();
         }
 
+        // Impede que buffers de saída acumulem o vídeo em memória ou misturem
+        // conteúdo anterior com a resposta binária.
+        while (ob_get_level() > 0) {
+            @ob_end_clean();
+        }
+
         @set_time_limit(0);
 
         $start = 0;

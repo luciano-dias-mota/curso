@@ -9,6 +9,7 @@ use App\Core\Controller;
 use App\Core\Request;
 use App\Core\Session;
 use App\Core\Validator;
+use App\Services\LoginThrottle;
 
 final class AuthController extends Controller
 {
@@ -37,20 +38,33 @@ final class AuthController extends Controller
             $this->redirect('/login');
         }
 
-        if (!Auth::attempt((string) $data['email'], (string) $data['password'])) {
-            Session::flash('error', 'E-mail ou senha inválidos.');
-            Session::flash('old_email', (string) $data['email']);
+        $email = mb_strtolower(trim((string) $data['email']));
+        $password = (string) $data['password'];
+        $throttle = new LoginThrottle();
+
+        if ($throttle->isBlocked($email)) {
+            Session::flash(
+                'error',
+                'Muitas tentativas de login foram realizadas. Aguarde alguns minutos e tente novamente.'
+            );
+            Session::flash('old_email', $email);
             $this->redirect('/login');
         }
 
+        if (!Auth::attempt($email, $password)) {
+            $throttle->recordFailure($email);
+            Session::flash('error', 'E-mail ou senha inválidos.');
+            Session::flash('old_email', $email);
+            $this->redirect('/login');
+        }
+
+        $throttle->clear($email);
         $this->redirect('/dashboard');
     }
 
     public function logout(): void
     {
         Auth::logout();
-
-        header('Location: ' . url('/login'));
-        exit;
+        $this->redirect('/login');
     }
 }

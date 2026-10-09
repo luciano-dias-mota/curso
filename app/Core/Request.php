@@ -6,6 +6,8 @@ namespace App\Core;
 
 final class Request
 {
+    private ?array $cachedData = null;
+
     public function method(): string
     {
         return strtoupper($_SERVER['REQUEST_METHOD'] ?? 'GET');
@@ -13,12 +15,18 @@ final class Request
 
     public function all(): array
     {
-        if ($this->isJson()) {
-            $decoded = json_decode(file_get_contents('php://input') ?: '{}', true);
-            return is_array($decoded) ? $decoded : [];
+        if ($this->cachedData !== null) {
+            return $this->cachedData;
         }
 
-        return array_merge($_GET, $_POST);
+        if ($this->isJson()) {
+            $decoded = json_decode(file_get_contents('php://input') ?: '{}', true);
+            $this->cachedData = is_array($decoded) ? $decoded : [];
+            return $this->cachedData;
+        }
+
+        $this->cachedData = array_merge($_GET, $_POST);
+        return $this->cachedData;
     }
 
     public function input(string $key, mixed $default = null): mixed
@@ -44,5 +52,14 @@ final class Request
     public function isAjax(): bool
     {
         return strtolower($_SERVER['HTTP_X_REQUESTED_WITH'] ?? '') === 'xmlhttprequest';
+    }
+
+    public function expectsJson(): bool
+    {
+        return $this->isAjax()
+            || str_contains(
+                strtolower($_SERVER['HTTP_ACCEPT'] ?? ''),
+                'application/json'
+            );
     }
 }

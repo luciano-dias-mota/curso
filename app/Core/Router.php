@@ -13,6 +13,7 @@ use App\Middleware\ModuleUnlockedMiddleware;
 use App\Middleware\PhaseUnlockedMiddleware;
 use App\Middleware\StudentMiddleware;
 use ReflectionMethod;
+use ReflectionNamedType;
 use RuntimeException;
 
 final class Router
@@ -62,10 +63,20 @@ final class Router
     {
         $method = strtoupper($_SERVER['REQUEST_METHOD'] ?? 'GET');
 
-        if ($method === 'POST' && isset($_POST['_method'])) {
-            $override = strtoupper((string) $_POST['_method']);
-            if (in_array($override, ['PUT', 'PATCH', 'DELETE'], true)) {
-                $method = $override;
+        if ($method === 'POST') {
+            $override = $_POST['_method'] ?? null;
+
+            if ($override === null) {
+                $request = new Request();
+                $override = $request->input('_method');
+            }
+
+            if (is_string($override)) {
+                $override = strtoupper($override);
+
+                if (in_array($override, ['PUT', 'PATCH', 'DELETE'], true)) {
+                    $method = $override;
+                }
             }
         }
 
@@ -136,7 +147,9 @@ final class Router
         foreach ($reflection->getParameters() as $parameter) {
             $name = $parameter->getName();
 
-            if ($parameter->getType()?->getName() === Request::class) {
+            $type = $parameter->getType();
+
+            if ($type instanceof ReflectionNamedType && $type->getName() === Request::class) {
                 $arguments[] = new Request();
                 continue;
             }

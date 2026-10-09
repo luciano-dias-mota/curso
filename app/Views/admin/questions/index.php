@@ -101,14 +101,18 @@ $baseQuery = array_filter($baseQuery, static fn ($value) => $value !== '' && $va
                     </div>
 
                     <div class="ld-admin-question-actions">
-                        <a class="ld-admin-btn is-small" href="<?= e(url('/admin/questoes/' . (int) $q['id'] . '/editar')) ?>">Editar</a>
-                        <form method="post" action="<?= e(url('/admin/questoes/' . (int) $q['id'] . '/status')) ?>">
-                            <?= \App\Core\Csrf::input() ?>
-                            <input type="hidden" name="active" value="<?= (int) $q['active'] === 1 ? 0 : 1 ?>">
-                            <button class="ld-admin-btn is-small <?= (int) $q['active'] === 1 ? 'is-ghost' : 'is-success' ?>" type="submit">
-                                <?= (int) $q['active'] === 1 ? 'Desativar' : 'Ativar' ?>
-                            </button>
-                        </form>
+                        <a class="ld-admin-btn is-small" href="<?= e(url('/admin/questoes/' . (int) $q['id'] . '/editar')) ?>"><?= $linked > 0 ? 'Visualizar' : 'Editar' ?></a>
+                        <?php if ($linked > 0): ?>
+                            <button class="ld-admin-btn is-small is-ghost" type="button" disabled title="Questão protegida por histórico">Protegida</button>
+                        <?php else: ?>
+                            <form method="post" action="<?= e(url('/admin/questoes/' . (int) $q['id'] . '/status')) ?>">
+                                <?= \App\Core\Csrf::input() ?>
+                                <input type="hidden" name="active" value="<?= (int) $q['active'] === 1 ? 0 : 1 ?>">
+                                <button class="ld-admin-btn is-small <?= (int) $q['active'] === 1 ? 'is-ghost' : 'is-success' ?>" type="submit">
+                                    <?= (int) $q['active'] === 1 ? 'Desativar' : 'Ativar' ?>
+                                </button>
+                            </form>
+                        <?php endif; ?>
                     </div>
                 </article>
             <?php endforeach; ?>

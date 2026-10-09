@@ -1936,3 +1936,11 @@ html[data-theme="light"] .ld-admin-hero-badge { background: rgba(255, 255, 255, 
     .ld-admin-hero-v4-actions { flex-direction: column; align-items: stretch; }
     .ld-admin-hero-v4-actions a { justify-content: center; width: 100%; }
 }
+
+/* V2 - questão protegida por histórico */
+.ld-admin-question-fieldset{border:0;padding:0;margin:0;min-inline-size:0}
+.ld-admin-question-fieldset:disabled{opacity:.72}
+.ld-admin-question-fieldset:disabled input,
+.ld-admin-question-fieldset:disabled textarea,
+.ld-admin-question-fieldset:disabled select,
+.ld-admin-question-fieldset:disabled button{cursor:not-allowed}

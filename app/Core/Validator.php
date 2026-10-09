@@ -17,12 +17,31 @@ final class Validator
             foreach ($fieldRules as $rule) {
                 [$name, $param] = array_pad(explode(':', (string) $rule, 2), 2, null);
 
-                if ($name === 'required' && ($value === null || trim((string) $value) === '')) {
-                    $errors[$field][] = "O campo {$field} é obrigatório.";
+                if ($name === 'required') {
+                    $empty = $value === null
+                        || (is_string($value) && trim($value) === '')
+                        || (is_array($value) && $value === []);
+
+                    if ($empty) {
+                        $errors[$field][] = "O campo {$field} é obrigatório.";
+                    }
+
                     continue;
                 }
 
-                if ($value === null || $value === '') {
+                if ($value === null || $value === '' || $value === []) {
+                    continue;
+                }
+
+                if ($name === 'array') {
+                    if (!is_array($value)) {
+                        $errors[$field][] = "O campo {$field} deve ser uma lista.";
+                    }
+                    continue;
+                }
+
+                if (is_array($value)) {
+                    $errors[$field][] = "O campo {$field} possui formato inválido.";
                     continue;
                 }
 
@@ -40,6 +59,21 @@ final class Validator
 
                 if ($name === 'same' && $value !== ($data[$param] ?? null)) {
                     $errors[$field][] = "O campo {$field} deve ser igual ao campo {$param}.";
+                }
+
+                if ($name === 'integer' && filter_var($value, FILTER_VALIDATE_INT) === false) {
+                    $errors[$field][] = "O campo {$field} deve conter um número inteiro.";
+                }
+
+                if ($name === 'numeric' && !is_numeric($value)) {
+                    $errors[$field][] = "O campo {$field} deve conter um valor numérico.";
+                }
+
+                if ($name === 'in' && $param !== null) {
+                    $allowed = explode(',', $param);
+                    if (!in_array((string) $value, $allowed, true)) {
+                        $errors[$field][] = "O campo {$field} possui um valor inválido.";
+                    }
                 }
             }
         }

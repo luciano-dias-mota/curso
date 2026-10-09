@@ -2,12 +2,20 @@
 
 declare(strict_types=1);
 
-require dirname(__DIR__) . '/vendor/autoload.php';
+
+if (PHP_SAPI !== 'cli') {
+    http_response_code(403);
+    exit('Execução permitida apenas via CLI.');
+}
+
+
+define('BASE_PATH', dirname(__DIR__));
+require BASE_PATH . '/vendor/autoload.php';
 
 use App\Core\App;
 use App\Core\Database;
 
-App::bootstrap();
+App::boot(BASE_PATH);
 $pdo = Database::connection();
 
 $checks = [];

@@ -1,6 +1,11 @@
 <?php
 
 declare(strict_types=1);
+
+if (PHP_SAPI !== 'cli') {
+    http_response_code(403);
+    exit('Execução permitida apenas via CLI.');
+}
 define('BASE_PATH',dirname(__DIR__));require BASE_PATH.'/vendor/autoload.php';\Dotenv\Dotenv::createImmutable(BASE_PATH)->safeLoad();
 function ev(string $k,mixed $d=null):mixed{$v=$_ENV[$k]??$_SERVER[$k]??getenv($k);return ($v===false||$v===null)?$d:(is_string($v)?trim($v,"\"'"):$v);} 
 $pdo=new \PDO(sprintf('mysql:host=%s;port=%d;dbname=%s;charset=utf8mb4',ev('DB_HOST','127.0.0.1'),(int)ev('DB_PORT',3306),ev('DB_DATABASE','curso')),(string)ev('DB_USERNAME','root'),(string)ev('DB_PASSWORD',''),[\PDO::ATTR_ERRMODE=>\PDO::ERRMODE_EXCEPTION,\PDO::ATTR_DEFAULT_FETCH_MODE=>\PDO::FETCH_ASSOC]);
