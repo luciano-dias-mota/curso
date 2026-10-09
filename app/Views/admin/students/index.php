@@ -42,7 +42,12 @@ $total = (int) ($stats['total_count'] ?? 0);
                     <td><?= number_format((float) $student['max_progress'], 1, ',', '.') ?>%</td>
                     <td><?= (int) $student['xp_total'] ?> XP <small>Nível <?= (int) $student['current_level'] ?></small></td>
                     <td><?= $student['last_login_at'] ? e(date('d/m/Y H:i', strtotime($student['last_login_at']))) : 'Nunca' ?></td>
-                    <td><a class="ld-admin-btn is-small" href="<?= e(url('/admin/usuarios/' . (int) $student['id'])) ?>">Gerenciar</a></td>
+                    <td>
+                        <div class="ld-admin-row-actions">
+                            <a class="ld-admin-btn is-small" href="<?= e(url('/admin/usuarios/' . (int) $student['id'])) ?>">Gerenciar</a>
+                            <a class="ld-admin-btn is-small is-password" href="<?= e(url('/admin/usuarios/' . (int) $student['id']) . '#redefinir-senha') ?>" title="Redefinir a senha deste aluno">🔑 Senha</a>
+                        </div>
+                    </td>
                 </tr>
             <?php endforeach; ?>
             </tbody>

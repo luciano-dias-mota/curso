@@ -32,14 +32,21 @@ $statusLabels = ['active'=>'Ativo','inactive'=>'Inativo','blocked'=>'Bloqueado']
     <p class="ld-admin-help">Ao desativar ou bloquear, novas requisições autenticadas do aluno deixam de ser aceitas. O histórico acadêmico permanece preservado.</p>
 </section>
 
-<aside class="ld-admin-panel">
-    <div class="ld-admin-panel-heading compact"><div><span class="ld-admin-panel-kicker">SEGURANÇA</span><h2>Redefinir senha</h2></div></div>
-    <form method="post" action="<?= e(url('/admin/usuarios/' . (int)$student['id'] . '/senha')) ?>" autocomplete="off">
+<aside class="ld-admin-panel ld-admin-password-panel" id="redefinir-senha">
+    <div class="ld-admin-panel-heading compact">
+        <div>
+            <span class="ld-admin-panel-kicker">SEGURANÇA</span>
+            <h2>🔑 Redefinir senha</h2>
+            <p>Defina uma senha temporária para o aluno. Após a troca, as sessões antigas serão encerradas e ele precisará entrar novamente.</p>
+        </div>
+    </div>
+    <form method="post" action="<?= e(url('/admin/usuarios/' . (int)$student['id'] . '/senha')) ?>" autocomplete="off" data-confirm="Redefinir a senha de <?= e($student['name']) ?>? As sessões ativas desse aluno serão encerradas.">
         <?= \App\Core\Csrf::input() ?>
         <label><span>Nova senha</span><input class="ld-admin-input" id="reset-password" type="password" name="password" minlength="8" required autocomplete="new-password"></label>
         <label><span>Confirmar</span><input class="ld-admin-input" id="reset-password-confirmation" type="password" name="password_confirmation" minlength="8" required autocomplete="new-password"></label>
         <button class="ld-admin-btn is-ghost ld-admin-generate-password" type="button" data-generate-password data-password-target="reset-password" data-confirm-target="reset-password-confirmation">Gerar senha temporária</button>
-        <button class="ld-admin-btn ld-admin-block-btn" type="submit">Redefinir senha</button>
+        <button class="ld-admin-btn ld-admin-block-btn is-password-primary" type="submit">🔐 Redefinir senha</button>
+        <small class="ld-admin-password-note">A senha atual deixa de funcionar imediatamente. Compartilhe a nova senha apenas por um canal seguro.</small>
     </form>
 </aside>
 </div>
