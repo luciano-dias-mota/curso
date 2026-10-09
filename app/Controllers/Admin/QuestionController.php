@@ -97,7 +97,7 @@ final class QuestionController extends Controller
             'question' => is_array($old) ? $old : [],
             'alternatives' => $this->oldAlternatives($old),
             'modules' => $this->modules($pdo),
-            'usage' => ['quiz_links' => 0, 'simulation_links' => 0, 'simulation_uses' => 0],
+            'usage' => ['quiz_links' => 0, 'simulation_links' => 0, 'simulation_uses' => 0, 'simulation_answers' => 0, 'exercise_uses' => 0],
             'scopeLocked' => false,
         ], 'layouts/admin');
     }
@@ -530,12 +530,23 @@ final class QuestionController extends Controller
                 (SELECT COUNT(*) FROM simulation_answers WHERE question_id = :q4) AS simulation_answers"
         );
         $stmt->execute(['q1' => $questionId, 'q2' => $questionId, 'q3' => $questionId, 'q4' => $questionId]);
-        return $stmt->fetch(PDO::FETCH_ASSOC) ?: [
+        $usage = $stmt->fetch(PDO::FETCH_ASSOC) ?: [
             'quiz_links' => 0,
             'simulation_links' => 0,
             'simulation_uses' => 0,
             'simulation_answers' => 0,
         ];
+
+        $usage['exercise_uses'] = 0;
+        if ($this->tableExists($pdo, 'exercise_session_questions')) {
+            $exerciseStmt = $pdo->prepare(
+                'SELECT COUNT(*) FROM exercise_session_questions WHERE question_id = :question_id'
+            );
+            $exerciseStmt->execute(['question_id' => $questionId]);
+            $usage['exercise_uses'] = (int) $exerciseStmt->fetchColumn();
+        }
+
+        return $usage;
     }
 
     private function isImmutable(array $usage): bool
@@ -543,7 +554,21 @@ final class QuestionController extends Controller
         return (int) ($usage['quiz_links'] ?? 0) > 0
             || (int) ($usage['simulation_links'] ?? 0) > 0
             || (int) ($usage['simulation_uses'] ?? 0) > 0
-            || (int) ($usage['simulation_answers'] ?? 0) > 0;
+            || (int) ($usage['simulation_answers'] ?? 0) > 0
+            || (int) ($usage['exercise_uses'] ?? 0) > 0;
+    }
+
+    private function tableExists(PDO $pdo, string $table): bool
+    {
+        $stmt = $pdo->prepare(
+            "SELECT 1
+             FROM information_schema.TABLES
+             WHERE TABLE_SCHEMA = DATABASE()
+               AND TABLE_NAME = :table_name
+             LIMIT 1"
+        );
+        $stmt->execute(['table_name' => $table]);
+        return (bool) $stmt->fetchColumn();
     }
 
     private function modules(PDO $pdo): array

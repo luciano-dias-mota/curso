@@ -5,6 +5,7 @@ declare(strict_types=1);
 use App\Controllers\AuthController;
 use App\Controllers\CourseController;
 use App\Controllers\DashboardController;
+use App\Controllers\ExerciseController;
 use App\Controllers\HomeController;
 use App\Controllers\LessonController;
 use App\Controllers\MediaController;
@@ -13,6 +14,7 @@ use App\Controllers\PhaseController;
 use App\Controllers\ProgressController;
 use App\Controllers\QuizController;
 use App\Controllers\SimulationController;
+use App\Controllers\StudyNoteController;
 
 /** @var \App\Core\Router $router */
 
@@ -29,6 +31,42 @@ $router->post('/logout', [AuthController::class, 'logout'])
 
 $router->get('/dashboard', [DashboardController::class, 'index'])
     ->middleware(['auth']);
+
+
+// Exercícios de fixação: questões médias, feedback imediato e seleção anti-repetição.
+$router->get('/exercicios', [ExerciseController::class, 'index'])
+    ->middleware(['auth', 'student']);
+
+$router->post('/exercicios/gerar', [ExerciseController::class, 'generate'])
+    ->middleware(['auth', 'student', 'csrf']);
+
+$router->get('/exercicios/sessao/{id}', [ExerciseController::class, 'session'])
+    ->middleware(['auth', 'student']);
+
+$router->post('/exercicios/sessao/{id}/resposta', [ExerciseController::class, 'answer'])
+    ->middleware(['auth', 'student', 'csrf']);
+
+$router->get('/exercicios/sessao/{id}/resultado', [ExerciseController::class, 'result'])
+    ->middleware(['auth', 'student']);
+
+// Caderno de anotações do estudante.
+$router->get('/anotacoes', [StudyNoteController::class, 'index'])
+    ->middleware(['auth', 'student']);
+
+$router->post('/anotacoes', [StudyNoteController::class, 'store'])
+    ->middleware(['auth', 'student', 'csrf']);
+
+$router->get('/anotacoes/{id}/editar', [StudyNoteController::class, 'edit'])
+    ->middleware(['auth', 'student']);
+
+$router->put('/anotacoes/{id}', [StudyNoteController::class, 'update'])
+    ->middleware(['auth', 'student', 'csrf']);
+
+$router->delete('/anotacoes/{id}', [StudyNoteController::class, 'destroy'])
+    ->middleware(['auth', 'student', 'csrf']);
+
+$router->post('/anotacoes/{id}/fixar', [StudyNoteController::class, 'togglePin'])
+    ->middleware(['auth', 'student', 'csrf']);
 
 // Simulados livres: independentes da progressão pedagógica.
 $router->get('/simulados', [SimulationController::class, 'index'])

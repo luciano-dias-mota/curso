@@ -21,3 +21,655 @@
 @media(max-width:900px){.simulation-stat-grid,.simulation-result-stat-grid{grid-template-columns:repeat(2,1fr)}.simulation-dashboard-grid,.simulation-active-grid{grid-template-columns:1fr}.simulation-builder-card{grid-template-columns:1fr}.simulation-question-layout{grid-template-columns:1fr}.simulation-navigator{position:static}.simulation-timer-side{display:none}.simulation-jump-grid{grid-template-columns:repeat(10,1fr)}.simulation-history{grid-template-columns:50px minmax(0,1fr) 70px}.simulation-history-actions{grid-column:2/-1}.simulation-limit-grid{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:820px){.mobile-bottom-nav{grid-template-columns:repeat(5,1fr)!important}.simulation-hub,.simulation-create-page,.simulation-attempt-page,.simulation-result-page,.simulation-review-page{gap:11px}.simulation-hero{min-height:190px;padding:20px}.simulation-hero-mark{font-size:7rem}.simulation-hero h1{font-size:1.45rem}.simulation-stat-grid,.simulation-result-stat-grid{gap:7px}.simulation-stat,.simulation-result-stat-grid article{min-height:86px;padding:10px;display:block;text-align:center}.simulation-stat>span,.simulation-result-stat-grid article>span{width:32px;height:32px;margin:0 auto 5px;border-radius:50%;font-size:.9rem}.simulation-subject-row{grid-template-columns:minmax(0,1fr) 48px}.simulation-subject-progress{grid-column:1/-1}.simulation-history{grid-template-columns:44px minmax(0,1fr);gap:8px}.simulation-history-score{width:40px;height:40px}.simulation-history-result{display:none}.simulation-history-actions{grid-column:2}.simulation-builder-card{padding:14px}.simulation-limit-grid{grid-template-columns:repeat(2,1fr)}.simulation-pool-status{grid-template-columns:1fr 1fr 1fr;padding:9px;gap:5px}.simulation-pool-status>div{padding:8px 4px}.simulation-attempt-header{padding:13px}.simulation-attempt-header>.simulation-timer{display:block}.simulation-question-card{padding:14px}.simulation-question-card h2{font-size:.9rem}.simulation-jump-grid{grid-template-columns:repeat(5,1fr)}.simulation-navigator{display:none}.simulation-question-controls{position:sticky;bottom:76px;z-index:70}.simulation-submit{display:grid}.simulation-result-hero{padding:16px;grid-template-columns:auto 1fr}.simulation-result-score{grid-column:1/-1;padding-top:10px;border-top:1px solid var(--border)}.simulation-review-card{padding:14px}.simulation-review-heading{grid-template-columns:30px 1fr}.simulation-review-heading em{grid-column:2}.simulation-review-option{grid-template-columns:26px 1fr}.simulation-review-option em{grid-column:2}.simulation-result-actions{justify-content:stretch}.simulation-result-actions>*{flex:1;text-align:center}}
 @media(max-width:520px){.simulation-stat-grid,.simulation-result-stat-grid{grid-template-columns:repeat(2,1fr)}.simulation-hero-actions{align-items:stretch}.simulation-hero-actions .primary{width:100%;text-align:center}.simulation-chart{height:170px}.simulation-chart-column{height:135px}.simulation-builder-step>span{width:34px;height:34px}.simulation-pool-status{grid-template-columns:1fr}.simulation-attempt-header{align-items:start}.simulation-timer{min-width:95px}.simulation-question-top{display:grid}.simulation-question-top .difficulty-chip{justify-self:start}.simulation-option{padding:9px}.simulation-history-main small{line-height:1.4}}
+
+/* ==========================================================
+   Central de Simulados v2 — compacta no desktop / fluida no mobile
+   Somente a rota /simulados recebe body.page-simulation-hub.
+   ========================================================== */
+.simulation-hub-v2 {
+    width: 100%;
+    max-width: 1480px;
+    min-width: 0;
+    gap: 12px;
+}
+
+.simulation-hub-top {
+    min-width: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(350px, .85fr);
+    gap: 12px;
+}
+
+.simulation-hero-compact {
+    min-height: 0;
+    height: 100%;
+    padding: 20px 22px;
+    display: flex;
+    align-items: center;
+}
+
+.simulation-hero-compact > div:first-child {
+    max-width: 680px;
+}
+
+.simulation-hero-compact h1 {
+    font-size: clamp(1.55rem, 2.25vw, 2.35rem);
+    line-height: 1;
+}
+
+.simulation-hero-compact p {
+    max-width: 620px;
+    margin: 7px 0 13px;
+    font-size: .72rem;
+    line-height: 1.45;
+}
+
+.simulation-hero-compact .simulation-hero-actions {
+    gap: 10px;
+}
+
+.simulation-hero-compact .simulation-hero-actions .primary {
+    min-height: 38px;
+    padding-inline: 14px;
+    border-radius: 11px;
+    font-size: .72rem;
+}
+
+.simulation-hero-compact .simulation-hero-actions span {
+    font-size: .62rem;
+}
+
+.simulation-hero-compact .simulation-hero-mark {
+    right: 5%;
+    font-size: 7.6rem;
+    opacity: .8;
+}
+
+.simulation-stat-grid-compact {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.simulation-stat-grid-compact .simulation-stat {
+    min-height: 0;
+    height: 100%;
+    padding: 10px 11px;
+    gap: 9px;
+}
+
+.simulation-stat-grid-compact .simulation-stat > span {
+    width: 35px;
+    height: 35px;
+    border-radius: 11px;
+    font-size: .95rem;
+}
+
+.simulation-stat-grid-compact .simulation-stat small {
+    font-size: .58rem;
+}
+
+.simulation-stat-grid-compact .simulation-stat strong {
+    font-size: 1.05rem;
+}
+
+.simulation-stat-grid-compact .simulation-stat em {
+    font-size: .50rem;
+}
+
+.simulation-hub-workspace {
+    min-width: 0;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr) minmax(300px, .82fr);
+    gap: 12px;
+}
+
+.simulation-hub-panel,
+.simulation-hub-side,
+.simulation-hub-side-panel {
+    min-width: 0;
+    min-height: 0;
+}
+
+.simulation-hub-panel {
+    height: 100%;
+    padding: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.simulation-hub-panel .simulation-panel-head,
+.simulation-hub-side-panel .simulation-panel-head {
+    flex: 0 0 auto;
+}
+
+.simulation-hub-panel .simulation-panel-head h2,
+.simulation-hub-side-panel .simulation-panel-head h2 {
+    font-size: .88rem;
+}
+
+.simulation-hub-panel .simulation-panel-head span,
+.simulation-hub-side-panel .simulation-panel-head span {
+    font-size: .52rem;
+}
+
+.simulation-hub-panel .simulation-panel-head > strong {
+    font-size: .55rem;
+}
+
+.simulation-chart-compact {
+    flex: 1;
+    min-height: 0;
+    height: auto;
+    margin-top: 9px;
+    padding: 12px 4px 0;
+    gap: 7px;
+}
+
+.simulation-chart-compact .simulation-chart-column {
+    height: 100%;
+    min-height: 125px;
+}
+
+.simulation-chart-compact .simulation-chart-column > span {
+    width: min(34px, 66%);
+}
+
+.simulation-chart-compact .simulation-chart-column small {
+    font-size: .52rem;
+}
+
+.simulation-subject-list-compact {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+    align-content: start;
+    gap: 8px;
+    margin-top: 10px;
+    padding-right: 3px;
+    scrollbar-width: thin;
+}
+
+.simulation-subject-list-compact .simulation-subject-row {
+    grid-template-columns: minmax(115px, 1.2fr) minmax(70px, .8fr) 38px;
+    gap: 7px;
+    padding: 7px 8px;
+    border: 1px solid color-mix(in srgb, var(--border) 75%, transparent);
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--panel2) 72%, transparent);
+}
+
+.simulation-subject-list-compact .simulation-subject-row strong {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    font-size: .65rem;
+}
+
+.simulation-subject-list-compact .simulation-subject-row small {
+    margin-top: 2px;
+    font-size: .50rem;
+}
+
+.simulation-subject-list-compact .simulation-subject-row b {
+    font-size: .62rem;
+}
+
+.simulation-subject-list-compact .simulation-subject-progress {
+    height: 6px;
+}
+
+.simulation-hub-side {
+    display: grid;
+    gap: 10px;
+}
+
+.simulation-hub-workspace.has-active .simulation-hub-side {
+    grid-template-rows: minmax(130px, .42fr) minmax(0, .58fr);
+}
+
+.simulation-hub-workspace.no-active .simulation-hub-side {
+    grid-template-rows: minmax(0, 1fr);
+}
+
+.simulation-hub-side-panel {
+    padding: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.compact-head {
+    margin-bottom: 7px;
+    align-items: center;
+}
+
+.simulation-mini-link {
+    color: var(--electric);
+    font-size: .56rem;
+    font-weight: 850;
+    text-decoration: none;
+}
+
+.simulation-active-list-compact,
+.simulation-history-list-compact {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+    display: grid;
+    align-content: start;
+    gap: 6px;
+    padding-right: 2px;
+    scrollbar-width: thin;
+}
+
+.simulation-active-compact {
+    min-height: 58px;
+    padding: 8px 9px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--panel2) 76%, transparent);
+}
+
+.simulation-active-compact-copy {
+    min-width: 0;
+}
+
+.simulation-active-compact h3 {
+    overflow: hidden;
+    margin: 5px 0 2px;
+    font-size: .68rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.simulation-active-compact p {
+    overflow: hidden;
+    margin: 0;
+    color: var(--muted);
+    font-size: .51rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.simulation-active-compact .simulation-chip {
+    padding: 3px 6px;
+    font-size: .47rem;
+}
+
+.simulation-active-actions-compact {
+    min-width: 82px;
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    gap: 5px;
+}
+
+.simulation-active-actions-compact .primary,
+.simulation-active-actions-compact .secondary {
+    min-height: 30px;
+    padding: 0 8px;
+    border-radius: 8px;
+    font-size: .55rem;
+}
+
+.simulation-active-actions-compact form,
+.simulation-active-actions-compact button {
+    width: 100%;
+    margin: 0;
+}
+
+.simulation-history-list-compact {
+    gap: 5px;
+}
+
+.simulation-history-compact {
+    min-height: 54px;
+    padding: 7px 8px;
+    grid-template-columns: 38px minmax(0, 1fr) auto;
+    gap: 7px;
+    border-radius: 10px;
+}
+
+.simulation-history-compact .simulation-history-score {
+    width: 34px;
+    height: 34px;
+    font-size: .60rem;
+}
+
+.simulation-history-compact .simulation-history-main {
+    min-width: 0;
+}
+
+.simulation-history-compact .simulation-history-main strong {
+    overflow: hidden;
+    font-size: .61rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.simulation-history-compact .simulation-history-main small {
+    overflow: hidden;
+    margin-top: 2px;
+    font-size: .48rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.simulation-history-compact .simulation-history-actions {
+    display: grid;
+    gap: 3px;
+}
+
+.simulation-history-compact .simulation-history-actions a {
+    padding: 4px 6px;
+    border-radius: 6px;
+    font-size: .48rem;
+    line-height: 1;
+    text-align: center;
+}
+
+.simulation-empty-compact {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    gap: 5px;
+    padding: 14px;
+}
+
+.simulation-empty-compact > span {
+    font-size: 1.3rem;
+}
+
+.simulation-empty-compact strong {
+    color: var(--text);
+    font-size: .68rem;
+}
+
+.simulation-empty-compact small {
+    max-width: 250px;
+    font-size: .54rem;
+    line-height: 1.4;
+}
+
+.simulation-hub-alert {
+    margin: 0;
+}
+
+/* Desktop/notebook: Central de Simulados inteira dentro da viewport. */
+@media (min-width: 901px) {
+    body.page-simulation-hub {
+        height: 100dvh;
+        min-height: 100dvh;
+        overflow: hidden;
+        padding-bottom: 0;
+    }
+
+    body.page-simulation-hub .academy-app-frame {
+        height: 100dvh;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    body.page-simulation-hub .academy-workspace {
+        height: 100dvh;
+        min-height: 0;
+        display: grid;
+        grid-template-rows: 58px minmax(0, 1fr);
+        overflow: hidden;
+    }
+
+    body.page-simulation-hub .academy-commandbar {
+        position: relative;
+        min-height: 58px;
+        height: 58px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+
+    body.page-simulation-hub .academy-shell {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        padding: 10px 14px 12px;
+        overflow: hidden;
+    }
+
+    body.page-simulation-hub .simulation-hub-v2 {
+        height: 100%;
+        min-height: 0;
+        grid-template-rows: minmax(136px, 29%) minmax(0, 1fr);
+        overflow: hidden;
+    }
+
+    body.page-simulation-hub .simulation-hub-top,
+    body.page-simulation-hub .simulation-hub-workspace,
+    body.page-simulation-hub .simulation-hub-side,
+    body.page-simulation-hub .simulation-hub-panel,
+    body.page-simulation-hub .simulation-hub-side-panel {
+        min-height: 0;
+    }
+}
+
+/* Notebooks mais baixos, como 1366x768. */
+@media (min-width: 901px) and (max-height: 800px) {
+    body.page-simulation-hub .academy-workspace {
+        grid-template-rows: 54px minmax(0, 1fr);
+    }
+
+    body.page-simulation-hub .academy-commandbar {
+        min-height: 54px;
+        height: 54px;
+    }
+
+    body.page-simulation-hub .academy-shell {
+        padding: 7px 10px 9px;
+    }
+
+    body.page-simulation-hub .simulation-hub-v2 {
+        gap: 8px;
+        grid-template-rows: minmax(120px, 28%) minmax(0, 1fr);
+    }
+
+    .simulation-hub-top,
+    .simulation-hub-workspace,
+    .simulation-hub-side {
+        gap: 8px;
+    }
+
+    .simulation-hero-compact {
+        padding: 14px 17px;
+    }
+
+    .simulation-hero-compact h1 {
+        font-size: 1.65rem;
+    }
+
+    .simulation-hero-compact p {
+        margin: 5px 0 9px;
+        font-size: .61rem;
+    }
+
+    .simulation-hero-compact .simulation-hero-actions .primary {
+        min-height: 32px;
+    }
+
+    .simulation-hero-compact .simulation-hero-mark {
+        font-size: 6rem;
+    }
+
+    .simulation-stat-grid-compact {
+        gap: 6px;
+    }
+
+    .simulation-stat-grid-compact .simulation-stat {
+        padding: 7px 8px;
+    }
+
+    .simulation-stat-grid-compact .simulation-stat > span {
+        width: 30px;
+        height: 30px;
+        font-size: .82rem;
+    }
+
+    .simulation-hub-panel,
+    .simulation-hub-side-panel {
+        padding: 10px;
+    }
+
+    .simulation-chart-compact .simulation-chart-column {
+        min-height: 100px;
+    }
+
+    .simulation-subject-list-compact {
+        gap: 5px;
+    }
+
+    .simulation-subject-list-compact .simulation-subject-row {
+        padding: 5px 6px;
+    }
+}
+
+/* Desktop intermediário: mantém três colunas, mas compacta a lateral. */
+@media (min-width: 901px) and (max-width: 1180px) {
+    .simulation-hub-top {
+        grid-template-columns: minmax(0, 1.25fr) minmax(310px, .75fr);
+    }
+
+    .simulation-hub-workspace {
+        grid-template-columns: minmax(0, 1fr) minmax(0, .9fr) minmax(270px, .78fr);
+    }
+
+    .simulation-hero-compact .simulation-hero-mark {
+        font-size: 6.5rem;
+    }
+}
+
+/* Tablet/celular: conteúdo empilhado, leitura confortável e scroll natural. */
+@media (max-width: 900px) {
+    .simulation-hub-v2 {
+        gap: 10px;
+    }
+
+    .simulation-hub-top,
+    .simulation-hub-workspace,
+    .simulation-hub-side {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        height: auto;
+    }
+
+    .simulation-hero-compact {
+        min-height: 150px;
+        padding: 18px;
+    }
+
+    .simulation-hero-compact h1 {
+        font-size: 1.45rem;
+    }
+
+    .simulation-hero-compact p {
+        max-width: 78%;
+        font-size: .66rem;
+    }
+
+    .simulation-hero-compact .simulation-hero-mark {
+        right: 4%;
+        font-size: 6rem;
+    }
+
+    .simulation-stat-grid-compact {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-rows: auto;
+    }
+
+    .simulation-hub-panel,
+    .simulation-hub-side-panel {
+        height: auto;
+        overflow: visible;
+    }
+
+    .simulation-chart-compact {
+        min-height: 190px;
+    }
+
+    .simulation-subject-list-compact,
+    .simulation-active-list-compact,
+    .simulation-history-list-compact {
+        max-height: none;
+        overflow: visible;
+    }
+}
+
+@media (max-width: 620px) {
+    .simulation-stat-grid-compact {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .simulation-stat-grid-compact .simulation-stat {
+        min-height: 72px;
+        display: flex;
+        text-align: left;
+    }
+
+    .simulation-stat-grid-compact .simulation-stat > span {
+        margin: 0;
+    }
+
+    .simulation-hero-compact p {
+        max-width: 100%;
+    }
+
+    .simulation-hero-compact .simulation-hero-mark {
+        display: none;
+    }
+
+    .simulation-hero-compact .simulation-hero-actions {
+        display: grid;
+        align-items: stretch;
+    }
+
+    .simulation-hero-compact .simulation-hero-actions .primary {
+        width: 100%;
+        text-align: center;
+    }
+
+    .simulation-hub-workspace {
+        gap: 10px;
+    }
+
+    .simulation-subject-list-compact .simulation-subject-row {
+        grid-template-columns: minmax(0, 1fr) 40px;
+    }
+
+    .simulation-subject-list-compact .simulation-subject-progress {
+        grid-column: 1 / -1;
+    }
+
+    .simulation-active-compact {
+        grid-template-columns: 1fr;
+    }
+
+    .simulation-active-actions-compact {
+        grid-template-columns: 1fr 40px;
+        width: 100%;
+    }
+
+    .simulation-history-compact {
+        grid-template-columns: 38px minmax(0, 1fr);
+    }
+
+    .simulation-history-compact .simulation-history-actions {
+        grid-column: 2;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

@@ -30,7 +30,7 @@ $error = Session::pullFlash('error');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="csrf-token" content="<?= e(Csrf::token()) ?>">
-    <meta name="theme-color" content="#0c1020">
+    <meta name="theme-color" content="#07101f">
     <title><?= e($pageTitle) ?></title>
     <link rel="stylesheet" href="<?= e(url('/assets/css/app.css')) ?>">
     <link rel="stylesheet" href="<?= e(url('/assets/css/admin.css')) ?>">
@@ -39,12 +39,12 @@ $error = Session::pullFlash('error');
     <script src="<?= e(url('/assets/js/admin-users.js')) ?>" defer></script>
     <script src="<?= e(url('/assets/js/admin-media.js')) ?>" defer></script>
 </head>
-<body class="ld-admin-body<?= $section === 'home' ? ' ld-admin-home' : '' ?>">
+<body class="ld-admin-body ld-admin-v5<?= $section === 'home' ? ' ld-admin-home' : '' ?>">
 <div class="ld-admin-frame">
     <aside class="ld-admin-sidebar" aria-label="Navegação administrativa">
         <a class="ld-admin-brand" href="<?= e(url('/admin')) ?>">
             <span class="ld-admin-brand-mark">LD</span>
-            <span class="ld-admin-brand-copy"><strong>ADMIN</strong><small>Painel de gestão</small></span>
+            <span class="ld-admin-brand-copy"><strong>ADMIN</strong><small>Gestão da plataforma</small></span>
         </a>
 
         <nav class="ld-admin-nav">
@@ -75,7 +75,10 @@ $error = Session::pullFlash('error');
         </nav>
 
         <div class="ld-admin-sidebar-bottom">
-            <div class="ld-admin-system-chip"><span class="ld-admin-status-dot"></span><div><strong>Área administrativa</strong><small>Acesso restrito</small></div></div>
+            <div class="ld-admin-system-chip">
+                <span class="ld-admin-status-dot"></span>
+                <div><strong>Sistema operacional</strong><small>Ambiente administrativo</small></div>
+            </div>
         </div>
     </aside>
 
@@ -83,12 +86,22 @@ $error = Session::pullFlash('error');
         <header class="ld-admin-topbar">
             <div class="ld-admin-topbar-copy">
                 <span class="ld-admin-mobile-brand">LD <strong>ADMIN</strong></span>
-                <div><span class="ld-admin-eyebrow">Administração</span><strong><?= e($title ?? 'Painel') ?></strong></div>
+                <div class="ld-admin-topbar-section">
+                    <span class="ld-admin-eyebrow">Administração</span>
+                    <strong><?= e($title ?? 'Painel') ?></strong>
+                </div>
             </div>
+
             <div class="ld-admin-top-actions">
-                <button class="ld-admin-icon-btn" type="button" data-theme-toggle title="Alternar tema">◐</button>
-                <div class="ld-admin-user-chip"><span class="ld-admin-avatar"><?= e($adminInitial) ?></span><span class="ld-admin-user-copy"><strong><?= e($userLayout['name'] ?? 'Administrador') ?></strong><small>Administrador</small></span></div>
-                <form class="ld-admin-inline-form" action="<?= e(url('/logout')) ?>" method="post"><?= Csrf::input() ?><button class="ld-admin-logout" type="submit">Sair</button></form>
+                <button class="ld-admin-icon-btn" type="button" data-theme-toggle title="Alternar tema" aria-label="Alternar tema">◐</button>
+                <div class="ld-admin-user-chip">
+                    <span class="ld-admin-avatar"><?= e($adminInitial) ?></span>
+                    <span class="ld-admin-user-copy"><strong><?= e($userLayout['name'] ?? 'Administrador') ?></strong><small>Administrador</small></span>
+                </div>
+                <form class="ld-admin-inline-form" action="<?= e(url('/logout')) ?>" method="post">
+                    <?= Csrf::input() ?>
+                    <button class="ld-admin-logout" type="submit">Sair</button>
+                </form>
             </div>
         </header>
 
