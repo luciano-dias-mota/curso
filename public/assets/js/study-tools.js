@@ -33,8 +33,71 @@
         const course = form.querySelector('[data-scope-course]');
         const module = form.querySelector('[data-scope-module]');
         const phase = form.querySelector('[data-scope-phase]');
+        const popTopic = form.querySelector('[data-pop-topic]');
+        const processTopic = form.querySelector('[data-process-topic]');
+        const procedureTopic = form.querySelector('[data-procedure-topic]');
 
         if (!course) return;
+
+        const resetSelect = (select) => {
+            if (!select) return;
+            select.value = '';
+            select.disabled = true;
+            [...select.options].forEach((option, index) => {
+                option.hidden = index !== 0 && option.value !== '';
+                option.disabled = index !== 0 && option.value !== '';
+            });
+        };
+
+        const syncProcedureTopic = () => {
+            if (!procedureTopic) return;
+            const processId = processTopic?.value || '';
+            if (!processId) {
+                resetSelect(procedureTopic);
+                return;
+            }
+            filterOptions(
+                procedureTopic,
+                (option) => option.dataset.parentId === processId
+            );
+        };
+
+        const syncProcessTopic = () => {
+            if (!processTopic) return;
+            const popId = popTopic?.value || '';
+            if (!popId) {
+                resetSelect(processTopic);
+                resetSelect(procedureTopic);
+                return;
+            }
+            filterOptions(
+                processTopic,
+                (option) => option.dataset.parentId === popId
+            );
+            syncProcedureTopic();
+        };
+
+        const syncPopTopics = () => {
+            if (!popTopic) return;
+            const selectedModule = module?.selectedOptions?.[0];
+            const isPopModule = Boolean(module?.value) && selectedModule?.dataset.isPop === '1';
+            if (!isPopModule) {
+                resetSelect(popTopic);
+                resetSelect(processTopic);
+                resetSelect(procedureTopic);
+                return;
+            }
+
+            let available = 0;
+            [...popTopic.options].forEach((option, index) => {
+                const visible = true;
+                option.hidden = !visible;
+                option.disabled = !visible;
+                if (index > 0 && option.value) available += 1;
+            });
+            popTopic.disabled = available === 0;
+            syncProcessTopic();
+        };
 
         const syncPhase = (initial = false) => {
             if (!phase) return;
@@ -82,14 +145,32 @@
         course.addEventListener('change', () => {
             if (module) module.value = '';
             if (phase) phase.value = '';
+            resetSelect(popTopic);
+            resetSelect(processTopic);
+            resetSelect(procedureTopic);
             syncModule();
+            syncPopTopics();
         });
         module?.addEventListener('change', () => {
             if (phase) phase.value = '';
+            if (popTopic) popTopic.value = '';
+            if (processTopic) processTopic.value = '';
+            if (procedureTopic) procedureTopic.value = '';
             syncPhase();
+            syncPopTopics();
+        });
+        popTopic?.addEventListener('change', () => {
+            if (processTopic) processTopic.value = '';
+            if (procedureTopic) procedureTopic.value = '';
+            syncProcessTopic();
+        });
+        processTopic?.addEventListener('change', () => {
+            if (procedureTopic) procedureTopic.value = '';
+            syncProcedureTopic();
         });
 
         syncModule(true);
+        syncPopTopics();
     });
 
     const answerForm = document.querySelector('[data-exercise-answer-form]');

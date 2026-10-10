@@ -37,13 +37,25 @@ final class ExerciseController extends Controller
             $moduleId = (int) $request->input('module_id', 0);
             $phaseId = (int) $request->input('phase_id', 0);
             $questionLimit = (int) $request->input('question_limit', 10);
+            $difficulty = (string) $request->input('difficulty', 'all');
+
+            // O usuário escolhe POP -> Processo -> Procedimento. Usa sempre o nível
+            // mais específico preenchido, sem confiar em campos ocultos do cliente.
+            $popTopicId = (int) $request->input('pop_topic_id', 0);
+            $processTopicId = (int) $request->input('process_topic_id', 0);
+            $procedureTopicId = (int) $request->input('procedure_topic_id', 0);
+            $topicId = $procedureTopicId > 0
+                ? $procedureTopicId
+                : ($processTopicId > 0 ? $processTopicId : ($popTopicId > 0 ? $popTopicId : null));
 
             $sessionId = (new ExerciseService())->generate(
                 (int) Auth::id(),
                 $courseId,
                 $questionLimit,
                 $moduleId > 0 ? $moduleId : null,
-                $phaseId > 0 ? $phaseId : null
+                $phaseId > 0 ? $phaseId : null,
+                $topicId,
+                $difficulty
             );
 
             $this->redirect('/exercicios/sessao/' . $sessionId);

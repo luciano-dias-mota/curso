@@ -1,0 +1,2583 @@
+{
+  "format_version": 1,
+  "source_document": "POP-1---.pdf",
+  "question_document": "questoes-pop1.docx",
+  "review_basis": "Exclusivamente o POP 1 atualizado fornecido pelo usuário; sem preenchimento silencioso com fontes externas.",
+  "total_questions": 51,
+  "items": [
+    {
+      "source_key": "POP1-ATUALIZADO-Q001",
+      "question_number": 1,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo I)  Um policial militar de serviço depara-se com um agressor em estado de resistência ativa que empunha um instrumento contundente (pedaço de madeira) e faz ameaças. Decidindo pela utilização do bastão policial (tonfa) para cessar a agressão e efetuar o desarme, o POP 105 estabelece que o uso do bastão é classificado primordialmente como um instrumento:",
+      "difficulty": "medium",
+      "topics": [
+        "105.1"
+      ],
+      "primary_topic": "105.1",
+      "source_pages": [
+        [
+          48,
+          52
+        ]
+      ],
+      "origin": {
+        "type": "estilo_banca",
+        "label": "UFMT - POP Módulo I (material fornecido)"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | UFMT - POP Módulo I (material fornecido)",
+      "explanation": "O mapa do Processo 105 define o bastão tonfa como armamento individual destinado primordialmente ao uso DEFENSIVO nas ações de policiamento, embora possa ser empregado com técnicas ofensivas.",
+      "alternatives": [
+        {
+          "text": "Ofensivo de alta letalidade.",
+          "correct": false
+        },
+        {
+          "text": "De uso defensivo nas ações de policiamento.",
+          "correct": true
+        },
+        {
+          "text": "De uso proibido em ambientes públicos com aglomeração de pessoas.",
+          "correct": false
+        },
+        {
+          "text": "Equivalente à força letal, exigindo prévia autorização judicial por escrito.",
+          "correct": false
+        },
+        {
+          "text": "Destinado exclusivamente à quebra de vidros de veículos.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q002",
+      "question_number": 2,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo I) De acordo com as especificações técnicas do PROCEDIMENTO 101.2 - Posicionamento do EPI, existem regras sobre o acesso aos equipamentos. As algemas e a pistola 9mm devem ser acessadas pela:",
+      "difficulty": "medium",
+      "topics": [
+        "101.2"
+      ],
+      "primary_topic": "101.2",
+      "source_pages": [
+        [
+          10,
+          10
+        ]
+      ],
+      "origin": {
+        "type": "estilo_banca",
+        "label": "UFMT - POP Módulo I (material fornecido)"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | UFMT - POP Módulo I (material fornecido)",
+      "explanation": "A regra está no POP 101.2 (Posicionamento do EPI): pistola e algemas são acessadas pela mão forte. O enunciado original citava 101.1 e foi corrigido para 101.2.",
+      "alternatives": [
+        {
+          "text": "Mão forte.",
+          "correct": true
+        },
+        {
+          "text": "Mão fraca.",
+          "correct": false
+        },
+        {
+          "text": "Mão dominante apenas se o militar fizer uso de coldre de perna.",
+          "correct": false
+        },
+        {
+          "text": "Ambas as mãos de forma indistinta.",
+          "correct": false
+        },
+        {
+          "text": "Mão esquerda, independentemente de o policial ser destro ou canhoto.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": true,
+        "note": "Enunciado/alternativas ajustados para aderência ao POP atualizado e resposta única."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q003",
+      "question_number": 3,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo I) No atendimento de uma ocorrência, um policial militar é alvejado por disparo de arma de fogo na perna, sofrendo uma hemorragia massiva de extremidade. Iniciado o protocolo de Atendimento Pré-Hospitalar Policial em Combate (MARC1), qual deve ser a primeira conduta emergencial a ser adotada na letra \"M\" (Massivo) do acrônimo?",
+      "difficulty": "medium",
+      "topics": [
+        "108.3"
+      ],
+      "primary_topic": "108.3",
+      "source_pages": [
+        [
+          104,
+          105
+        ]
+      ],
+      "origin": {
+        "type": "estilo_banca",
+        "label": "UFMT - POP Módulo I (material fornecido)"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | UFMT - POP Módulo I (material fornecido)",
+      "explanation": "No POP 108.3, o controle do sangramento massivo em extremidade vem primeiro e o torniquete é aplicado na modalidade emergencial “alto e apertado”.",
+      "alternatives": [
+        {
+          "text": "Preenchimento da ferida com gaze de metro aplicando pressão por 5 minutos.",
+          "correct": false
+        },
+        {
+          "text": "Abertura do Selo de Tórax Valvulado Industrializado para evitar o pneumotórax.",
+          "correct": false
+        },
+        {
+          "text": "Introdução da Cânula Nasofaringea 28 FR para a permeabilização das vias aéreas.",
+          "correct": false
+        },
+        {
+          "text": "Aplicação do Torniquete Tático na modalidade emergencial (Alto e Apertado) no membro ferido.",
+          "correct": true
+        },
+        {
+          "text": "Aplicação de fonte de calor instantâneo na região lombar do policial ferido.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q004",
+      "question_number": 4,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo I) No que tange às técnicas de manuseio do bastão policial tonfa em situações adversas de salvamento e resgate (POP 105.2), o policial militar pode utilizá-lo para quebrar vidros de veículos ou residências. Para fins de danificar o material em partes concentradas, o operador deve segurar o bastão por meio da:",
+      "difficulty": "medium",
+      "topics": [
+        "105.2"
+      ],
+      "primary_topic": "105.2",
+      "source_pages": [
+        [
+          53,
+          54
+        ]
+      ],
+      "origin": {
+        "type": "estilo_banca",
+        "label": "UFMT - POP Módulo I (material fornecido)"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | UFMT - POP Módulo I (material fornecido)",
+      "explanation": "O POP 105.2 prevê, para dano concentrado em vidro/material, empunhadura tipo martelo e movimentos curtos e firmes.",
+      "alternatives": [
+        {
+          "text": "Haste longa com movimentos circulares e amplos.",
+          "correct": false
+        },
+        {
+          "text": "Empunhadura tipo \"martelo\", realizando movimentos curtos e firmes.",
+          "correct": true
+        },
+        {
+          "text": "Teclado de fixação modular acoplado ao colete balístico de segunda linha.",
+          "correct": false
+        },
+        {
+          "text": "Catraca de fechamento em sentido inverso ao do elo de serviço.",
+          "correct": false
+        },
+        {
+          "text": "Área de proteção do guarda-mato com a mão fraca estendida.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q005",
+      "question_number": 5,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo I) O POP 104.1 normatiza os procedimentos de verificação e checagem do display central de informações da arma de incapacitação neuromuscular Taser X-2. Caso o operador verifique que a carga da bateria caiu e atinge a faixa crítica entre 1% e 10% restante, o visor digital exibirá o seguinte ícone indicativo:",
+      "difficulty": "medium",
+      "topics": [
+        "104.1"
+      ],
+      "primary_topic": "104.1",
+      "source_pages": [
+        [
+          34,
+          38
+        ]
+      ],
+      "origin": {
+        "type": "estilo_banca",
+        "label": "UFMT - POP Módulo I (material fornecido)"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | UFMT - POP Módulo I (material fornecido)",
+      "explanation": "No POP 104.1, o aviso LO BATT corresponde à bateria entre 1% e 10% e determina sua substituição.",
+      "alternatives": [
+        {
+          "text": "CRIT FAULT dentro de um triângulo amarelo de falha maior.",
+          "correct": false
+        },
+        {
+          "text": "SYS FAIL dentro de um sinal de parada no canto superior direito.",
+          "correct": false
+        },
+        {
+          "text": "INVALID BATT acompanhado de um ponto de exclamação piscando.",
+          "correct": false
+        },
+        {
+          "text": "LO BATT, indicando que a bateria deve ser prontamente substituída.",
+          "correct": true
+        },
+        {
+          "text": "SEMI AUTO indicando que a arma está no modo de conexão cruzada.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q006",
+      "question_number": 6,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo I) Conforme o procedimento padrão estabelecido no POP 106 para a Manutenção de 1º Escalão nas pistolas Glock G17 e G19 de calibre 9mm, assinale a diretriz correta a ser adotada pelo policial militar em relação à lubrificação do ferrolho:",
+      "difficulty": "medium",
+      "topics": [
+        "106.2"
+      ],
+      "primary_topic": "106.2",
+      "source_pages": [
+        [
+          59,
+          64
+        ]
+      ],
+      "origin": {
+        "type": "estilo_banca",
+        "label": "UFMT - POP Módulo I (material fornecido)"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | UFMT - POP Módulo I (material fornecido)",
+      "explanation": "A orientação visual do POP 106.2 determina que túnel do percussor e cubeta permaneçam limpos e secos; solventes/lubrificantes nessas áreas podem causar falhas.",
+      "alternatives": [
+        {
+          "text": "É terminantemente proibido lubrificar o túnel do percussor e a cubeta, devendo estas áreas ser mantidas completamente secas.",
+          "correct": true
+        },
+        {
+          "text": "Deve-se aplicar graxa ou vaselina em abundância no interior do túnel do percussor para evitar oxidação.",
+          "correct": false
+        },
+        {
+          "text": "É obrigatória a aplicação de óleo lubrificante contendo hidrocarbonetos em toda a extensão da cubeta do ferrolho.",
+          "correct": false
+        },
+        {
+          "text": "A mola recuperadora e o cano devem ser mergulhados em solvente químico por 24 horas consecutivas antes da montagem.",
+          "correct": false
+        },
+        {
+          "text": "O gatilho deve ser mantido na posição à frente com o percussor armado durante todo o processo de limpeza.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q007",
+      "question_number": 7,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo I) A prevenção da hipotermia é uma fase crítica e obrigatória no suporte à vida do policial militar ferido no ambiente operacional. Conforme o POP 108.4, por ocasião da execução da letra \"C\" (Calor) do protocolo MARC1, a manta térmica aluminizada deve ser aplicada envolvendo o ferido com:",
+      "difficulty": "medium",
+      "topics": [
+        "108.4"
+      ],
+      "primary_topic": "108.4",
+      "source_pages": [
+        [
+          106,
+          112
+        ]
+      ],
+      "origin": {
+        "type": "estilo_banca",
+        "label": "UFMT - POP Módulo I (material fornecido)"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | UFMT - POP Módulo I (material fornecido)",
+      "explanation": "No POP 108.4, depois da fonte de calor, a manta aluminizada deve envolver o ferido com o lado brilhoso voltado para dentro para conservar calor.",
+      "alternatives": [
+        {
+          "text": "O lado brilhoso voltado para fora, com fins de refletir os raios solares térmicos.",
+          "correct": false
+        },
+        {
+          "text": "Duas camadas de gaze hemostática estéril umedecidas em solução de bicarbonato.",
+          "correct": false
+        },
+        {
+          "text": "O apoio fixo diretamente sobre o solo desnudo para evitar o efeito ímã da viatura.",
+          "correct": false
+        },
+        {
+          "text": "A fixação conjunta de fitas descartáveis no sentido de fora para dentro dos pulsos.",
+          "correct": false
+        },
+        {
+          "text": "O lado brilhoso voltado para dentro, com o fim de conservar o calor corporal obtido.",
+          "correct": true
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q008",
+      "question_number": 8,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo I) Após disparos de arma de fogo necessários para cessar agressão letal, os procedimentos de uso da força do POP 107 determinam varredura, arma em pronto baixo e monitoramento do agressor e do ambiente. Esse procedimento denomina-se:",
+      "difficulty": "medium",
+      "topics": [
+        "107.4"
+      ],
+      "primary_topic": "107.4",
+      "source_pages": [
+        [
+          82,
+          83
+        ]
+      ],
+      "origin": {
+        "type": "estilo_banca",
+        "label": "UFMT - POP Módulo I (material fornecido)"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | UFMT - POP Módulo I (material fornecido)",
+      "explanation": "O manual denomina “conferência visual após os disparos” a varredura e manutenção da arma em pronto baixo com monitoramento do agressor e ambiente. A referência original a 107.2 foi corrigida para o contexto do 107.4/uso da força.",
+      "alternatives": [
+        {
+          "text": "Tática de acompanhamento em encalço veicular à distância.",
+          "correct": false
+        },
+        {
+          "text": "Técnica de terceiro olho com os cotovelos flexionados em ambiente confinado.",
+          "correct": false
+        },
+        {
+          "text": "Procedimento de cerco policial e isolamento do perímetro.",
+          "correct": false
+        },
+        {
+          "text": "Controle de submissão e imobilização em manobra de tracionamento mandibular.",
+          "correct": false
+        },
+        {
+          "text": "Conferência visual após os disparos.",
+          "correct": true
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": true,
+        "note": "Enunciado/alternativas ajustados para aderência ao POP atualizado e resposta única."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q009",
+      "question_number": 9,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo I) Durante o patrulhamento operacional, a guarnição policial depara-se com um indivíduo em fundada suspeita portando ostensivamente um instrumento cortante (faca de grande porte) nas mãos. À luz do POP 107.2, qual é a distância mínima de segurança que a guarnição deve manter para o estabelecimento do contato verbal resguardado?",
+      "difficulty": "medium",
+      "topics": [
+        "107.2"
+      ],
+      "primary_topic": "107.2",
+      "source_pages": [
+        [
+          77,
+          79
+        ]
+      ],
+      "origin": {
+        "type": "estilo_banca",
+        "label": "UFMT - POP Módulo I (material fornecido)"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | UFMT - POP Módulo I (material fornecido)",
+      "explanation": "No POP 107.2, a abordagem de pessoa com instrumento cortante/perfurante exige contato verbal resguardado mantendo distância de segurança de pelo menos 7 metros.",
+      "alternatives": [
+        {
+          "text": "Distância mínima de 1 metro.",
+          "correct": false
+        },
+        {
+          "text": "Distância mínima de 3 metros.",
+          "correct": false
+        },
+        {
+          "text": "Distância mínima de pelo menos 7 metros.",
+          "correct": true
+        },
+        {
+          "text": "Distância máxima de até 5 metros para uso do espargidor individual.",
+          "correct": false
+        },
+        {
+          "text": "Distância de 20 segundos de arrasto tático em conformidade com o MARC1.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q010",
+      "question_number": 10,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo I) Um policial militar faz o disparo de uma Arma de Incapacitação Neuromuscular - AINM (Taser X-2) contra um agressor não cooperativo. Visando ao correto aproveitamento técnico dos dardos e cabos condutores de energia, o POP 104.2 especifica que a distância ideal entre o policial e o agressor por ocasião do disparo deve ser de:",
+      "difficulty": "medium",
+      "topics": [
+        "104.2"
+      ],
+      "primary_topic": "104.2",
+      "source_pages": [
+        [
+          39,
+          45
+        ]
+      ],
+      "origin": {
+        "type": "estilo_banca",
+        "label": "UFMT - POP Módulo I (material fornecido)"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | UFMT - POP Módulo I (material fornecido)",
+      "explanation": "O POP 104.2 estabelece como distância ideal de disparo da TASER X-2 de 5 m a 7 m.",
+      "alternatives": [
+        {
+          "text": "No mínimo 1 metro e no máximo 3 metros.",
+          "correct": false
+        },
+        {
+          "text": "No mínimo 2 metros e no máximo 4 metros.",
+          "correct": false
+        },
+        {
+          "text": "No mínimo 5 metros e no máximo 7 metros.",
+          "correct": true
+        },
+        {
+          "text": "Exatamente 10,7 metros, utilizando o cartucho de cor vermelha.",
+          "correct": false
+        },
+        {
+          "text": "No máximo 20 segundos de aproximação tática contínua pela porção frontal.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q011",
+      "question_number": 11,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 - 2ª Lista) Um policial militar atua em uma ocorrência de alta complexidade em ambiente fechado, onde um infrator barricado efetua disparos de arma de fogo contra a guarnição por trás de uma janela de alvenaria. O militar adentra a edificação de forma isolada sem cobertura tática, tentando surpreender o atirador. Com base nas definições rigorosas de 'Área de Perigo', 'Área de Segurança' e nos erros procedimentais descritos no POP 104.2 e POP 107.11, assinale a alternativa que define corretamente os termos e as falhas táticas cometidas.",
+      "difficulty": "hard",
+      "topics": [
+        "107.11",
+        "104.2"
+      ],
+      "primary_topic": "107.11",
+      "source_pages": [
+        [
+          94,
+          100
+        ],
+        [
+          39,
+          45
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - listas de estudo fornecidas"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - listas de estudo fornecidas",
+      "explanation": "No cenário de ameaça em edificação, o procedimento exige priorizar abrigo/área de segurança, cobertura, verbalização e técnicas de tomada de ângulo, evitando progressão isolada e exposição na área de perigo.",
+      "alternatives": [
+        {
+          "text": "A 'Área de Perigo' é o local mediato onde os policiais estão totalmente protegidos de riscos balísticos e posicionados a uma distância segura com ampla visibilidade externa.",
+          "correct": false
+        },
+        {
+          "text": "O policial agiu corretamente ao adentrar de forma isolada na edificação, uma vez que a doutrina do 'Terceiro Olho' preconiza a varredura individual e célere com um dos olhos fechados em ambientes sob crise.",
+          "correct": false
+        },
+        {
+          "text": "O POP determina que o adentramento em edificações com suspeito armado deve ocorrer sempre com a arma em posição Pronto-Retido Lateral e sem sinal sonoro ou verbalização prévia.",
+          "correct": false
+        },
+        {
+          "text": "O 'Efeito Ímã' foi perfeitamente evitado pelo operador ao progredir rente às paredes internas, técnica que consiste em eliminar completamente a consciência periférica de proteção 360 graus.",
+          "correct": false
+        },
+        {
+          "text": "O erro do policial consistiu em adentrar na 'Área de Perigo' (recinto confinado onde a ameaça está localizada) sem cobertura e sem a aplicação de técnicas de gerenciamento de crise; o POP determina permanecer na 'Área de Segurança', progredir com cobertura realizando tomado de ângulo/fatiamento e forçar a saída do suspeito pela verbalização.",
+          "correct": true
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q012",
+      "question_number": 12,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 - 2ª Lista) Um suspeito de alta periculosidade, após cometer roubo com emprego de violência, é localizado pela PM. Durante a verbalização a 7 metros, o agressor saca uma faca (instrumento perfurocortante) e avança rapidamente contra a guarnição. O ambiente possui grande aglomeração de transeuntes ao fundo. Considerando o trinômio Habilidade x Oportunidade x Risco (POP 107.2), o uso progressivo da força e as restrições táticas, assinale a conduta procedimental correta para a preservação de vidas.",
+      "difficulty": "hard",
+      "topics": [
+        "107.2"
+      ],
+      "primary_topic": "107.2",
+      "source_pages": [
+        [
+          77,
+          79
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - listas de estudo fornecidas"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - listas de estudo fornecidas",
+      "explanation": "O POP 107.2 prioriza abrigo, verbalização e avaliação do risco. Se o agressor com arma branca avança e cria ameaça letal iminente, a força letal pode ser necessária para defesa da vida, com atenção ao risco a terceiros.",
+      "alternatives": [
+        {
+          "text": "Os policiais devem efetuar disparos imediatos com a espingarda calibre 12 municiada com elastômero (impacto controlado) no tórax do agressor, independentemente de estarem ou não abrigados por proteção física.",
+          "correct": false
+        },
+        {
+          "text": "Os policiais devem manter-se em Pronto Emprego (3º Olho) e buscar abrigo; na iminência de agressão letal a curta distância sem tempo hábil de abrigo ou eficácia de IMPO, o uso de força letal (arma de fogo) justifica-se estritamente para a defesa da vida, devendo o PM assegurar-se de minimizar riscos a inocentes.",
+          "correct": true
+        },
+        {
+          "text": "A guarnição deve empregar imediatamente o espargidor de gás pimenta OC coletivo (GL-108 Advantage Max), pois o alcance de dispersão de 5 metros do fabricante garante a neutralização sem risco de contaminação cruzada.",
+          "correct": false
+        },
+        {
+          "text": "A presença de público ao fundo atua como impedimento legal absoluto ao uso de arma de fogo, sendo obrigatório aos policiais travar luta corporal à mão livre utilizando técnicas de submissão do bastão tonfa.",
+          "correct": false
+        },
+        {
+          "text": "O trinômio de força letal define que a 'Habilidade' do suspeito em causar morte ou lesão grave é descaracterizada caso ele empunhe arma branca em vez de arma de fogo.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q013",
+      "question_number": 13,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 - 2ª Lista) Em uma inspeção de segurança da pistola Glock G19 Gen5, de acordo com o PROCEDIMENTO 106.1 - Inspeção da Pistola, assinale a conduta que integra corretamente a sequência institucional de inspeção.",
+      "difficulty": "medium",
+      "topics": [
+        "106.1"
+      ],
+      "primary_topic": "106.1",
+      "source_pages": [
+        [
+          55,
+          58
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - listas de estudo fornecidas"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - listas de estudo fornecidas",
+      "explanation": "O POP 106.1 determina inspeção em local seguro: retirar carregador, puxar o ferrolho, certificar o esvaziamento da câmara e verificar munições e integridade do armamento. A questão original não tinha alternativa plenamente aderente e foi corrigida.",
+      "alternatives": [
+        {
+          "text": "Em local seguro e com a arma direcionada para a caixa de areia, retirar o carregador, puxar o ferrolho para trás certificando-se do esvaziamento da câmara e então verificar munições e integridade do armamento.",
+          "correct": true
+        },
+        {
+          "text": "Iniciar a inspeção mantendo uma munição na câmara para verificar o funcionamento do extrator durante o manuseio.",
+          "correct": false
+        },
+        {
+          "text": "Pressionar o gatilho repetidamente antes de retirar o carregador, pois isso confirma o funcionamento do sistema Safe Action.",
+          "correct": false
+        },
+        {
+          "text": "Aplicar óleo no interior da câmara e na ponta do percussor antes da inspeção visual, facilitando a identificação de rachaduras.",
+          "correct": false
+        },
+        {
+          "text": "Tentar corrigir no próprio local qualquer irregularidade de 2º escalão ou superior identificada durante a inspeção.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": true,
+        "note": "Enunciado/alternativas ajustados para aderência ao POP atualizado e resposta única."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q014",
+      "question_number": 14,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 - 2ª Lista) O Comandante de uma guarnição da Polícia Militar de Mato Grosso depara-se com um indivíduo menor de idade (adolescente de 16 anos) empunhando ostensivamente uma arma de fogo na área central de Rondonópolis. O infrator efetua disparos para o alto e recusa as ordens de rendição. Diante do Estatuto da Criança e do Adolescente (ECA) e dos POPs 102.2 e 107.10, qual deve ser a conduta legal e procedimental da equipe quanto ao uso da força e contenção?",
+      "difficulty": "hard",
+      "topics": [
+        "107.10",
+        "102.2",
+        "POP1-GERAL"
+      ],
+      "primary_topic": "107.10",
+      "source_pages": [
+        [
+          93,
+          93
+        ],
+        [
+          14,
+          18
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - listas de estudo fornecidas"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - listas de estudo fornecidas",
+      "explanation": "O material admite resposta proporcional à ameaça também quando o infrator é adolescente. Algemas exigem justificativa nos termos da SV 11; o adolescente apreendido deve ser apresentado à autoridade competente e não pode ser transportado em compartimento fechado em condições atentatórias à dignidade/integridade.",
+      "alternatives": [
+        {
+          "text": "O uso de arma de fogo contra o adolescente é terminantemente vedado pela legislação de proteção ao menor, restando à guarnição a retirada tática do local sem intervenção.",
+          "correct": false
+        },
+        {
+          "text": "O adolescente infrator está imune ao ato de algemação por força do artigo 172 do ECA, sendo nula qualquer justificativa fundamentada em receio de fuga ou perigo à integridade.",
+          "correct": false
+        },
+        {
+          "text": "Em se tratando de ato infracional praticado por criança (até 12 anos incompletos), a guarnição está autorizada pelo POP a realizar a condução coercitiva imediata para custódia em cela de unidade militar prisional.",
+          "correct": false
+        },
+        {
+          "text": "O menor apreendido em flagrante por ato infracional cometido em coautoria com um adulto deverá ser encaminhado obrigatoriamente à Delegacia de Polícia Civil Comum, prevalecendo a competência da repartição de adultos sobre a especializada de adolescentes.",
+          "correct": false
+        },
+        {
+          "text": "O adolescente em conflito com a lei que apresente grave ameaça ou resistência ativa armada pode ser submetido à abordagem repressiva proporcional; caso seja apreendido em flagrante de ato infracional, a algemação é lícita se presentes os requisitos de perigo/fuga da Súmula Vinculante 11, sendo vedado seu transporte em compartimento fechado que atente contra sua dignidade.",
+          "correct": true
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q015",
+      "question_number": 15,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 - 2ª Lista) Após o controle de um confronto armado, a guarnição inicia a fase C (Calor e Evacuação) do protocolo MARC1 no policial ferido, conforme o POP 108.4. A viatura disponível é convencional e a equipe remanescente precisa preparar o transporte. Assinale a alternativa correta.",
+      "difficulty": "hard",
+      "topics": [
+        "108.4"
+      ],
+      "primary_topic": "108.4",
+      "source_pages": [
+        [
+          106,
+          112
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - listas de estudo fornecidas"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - listas de estudo fornecidas",
+      "explanation": "O POP 108.4 manda aplicar fonte de calor preferencialmente no tórax sem contato direto com a pele, manta brilhosa para dentro, preparar o banco/viatura e ligar o aquecedor.",
+      "alternatives": [
+        {
+          "text": "O socorrista deve priorizar a aplicação da bolsa de calor instantâneo diretamente sobre a pele desnuda da nuca ou das panturrilhas do policial militar ferido.",
+          "correct": false
+        },
+        {
+          "text": "Os policiais operacionais remanescentes devem realizar a extração utilizando a técnica de arrasto simples e aplicar a manta térmica aluminizada com o lado brilhoso voltado para fora (ambiente externo).",
+          "correct": false
+        },
+        {
+          "text": "O deslocamento na viatura de transporte do ferido deve ocorrer com sirene e giroflex ligados, mantendo a velocidade rigorosamente idêntica à de patrulhamento preventivo rotineiro, sendo vedado o apoio de uma segunda viatura no trajeto.",
+          "correct": false
+        },
+        {
+          "text": "A bolsa de calor deve ser aplicada preferencialmente no tórax (nunca direto na pele), o ferido deve ser envolto com manta aluminizada (lado brilhoso para dentro), o banco do comandante da VTR deve ser rebatido ao limite máximo para dar apoio e o aquecedor da viatura deve ser ligado.",
+          "correct": true
+        },
+        {
+          "text": "A aplicação da manta térmica aluminizada constitui procedimento cirúrgico exclusivo do nível MARC3, sendo expressamente vedada a sua manipulação por policiais militares comuns de radiopatrulha.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": true,
+        "note": "Enunciado/alternativas ajustados para aderência ao POP atualizado e resposta única."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q016",
+      "question_number": 16,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 - 2ª Lista) Durante a execução do protocolo MARC1 no Atendimento Pré-Hospitalar Policial (POP 108.3), o socorrista atende um colega de farda com ferimento perfurante por projétil de arma de fogo na região torácica lateral. A hemorragia massiva de membros já foi controlada no 'X'. Durante a fase 'R' (Respiração), qual das alternativas reflete um erro procedimental crítico e a sua respectiva correção técnica segundo as normas operacionais?",
+      "difficulty": "hard",
+      "topics": [
+        "108.3"
+      ],
+      "primary_topic": "108.3",
+      "source_pages": [
+        [
+          104,
+          105
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - listas de estudo fornecidas"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - listas de estudo fornecidas",
+      "explanation": "No POP 108.3, o tórax deve ser inspecionado nas regiões anterior, laterais e posterior; todos os ferimentos perfurantes devem ser ocluídos com selo de tórax e o dorso não deve permanecer em contato direto com o solo.",
+      "alternatives": [
+        {
+          "text": "Erro: Deixar de aplicar o selo de tórax nas costas da vítima. Correção: Ocluir exclusivamente o orifício anterior de entrada e manter a região dorsal da vítima em contato direto e contínuo com o solo úmido.",
+          "correct": false
+        },
+        {
+          "text": "Erro: Aplicar o selo de tórax valvulado industrializado em ferimentos torácicos. Correção: Substituir o selo valvulado por gaze com agente hemostático Celox Rapid comprimida por 5 minutos dentro do espaço pleural.",
+          "correct": false
+        },
+        {
+          "text": "Erro: Iniciar a fase de respiração antes do controle da hemorragia massiva. Correção: O protocolo exige realizar a descompressão por agulha em membros antes de avaliar as vias aéreas.",
+          "correct": false
+        },
+        {
+          "text": "Erro: Não inspecionar a região posterior do tórax (dorso/costas). Correção: O policial socorrista deve ocluir todos os ferimentos perfurantes encontrados no tórax (anterior, laterais e posterior) com selo de tórax, evitando que o dorso permaneça em contato direto com o solo.",
+          "correct": true
+        },
+        {
+          "text": "Erro: Lateralizar a vítima inconsciente que respira. Correção: A vítima deve ser mantida obrigatoriamente de bruços (decúbito ventral) para otimizar a expansão pulmonar e evitar o pneumotórax.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q017",
+      "question_number": 17,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 - 2ª Lista) Durante a checagem eletrônica da Arma de Incapacitação Neuromuscular (AINM) Axon Taser X-2, o operador liga o dispositivo e observa no monitor de informações central (Visor/CID) a exibição de um ponto de exclamação piscando intermitentemente sobreposto ao ícone do status da bateria. Com base no POP 104.1, assinale o diagnóstico técnico correto e a conduta imediata regulamentar.",
+      "difficulty": "medium",
+      "topics": [
+        "104.1"
+      ],
+      "primary_topic": "104.1",
+      "source_pages": [
+        [
+          34,
+          38
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - listas de estudo fornecidas"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - listas de estudo fornecidas",
+      "explanation": "Ponto de exclamação piscando com ícone de bateria indica “Bateria Inválida”: remover e reinserir; persistindo, testar outra bateria e encaminhar para manutenção se necessário.",
+      "alternatives": [
+        {
+          "text": "O visor indica que a arma entrou no modo de 'Bateria Inválida' por falha de reconhecimento, devendo o operador remover e reinsirir a bateria e, se o erro persistir, testar outra bateria antes de encaminhar para manutenção.",
+          "correct": true
+        },
+        {
+          "text": "A indicação representa uma 'Falha Maior' no sistema de registro de data e hora, o que impede o disparo e exige a devolução imediata do equipamento à reserva de armamento.",
+          "correct": false
+        },
+        {
+          "text": "Trata-se do aviso 'LO BATT' de nível crítico inferior a 1%, indicando que a arma produzirá o arco voltaico, mas não efetuará a ejeção dos cartuchos operacionais de 7,6 metros.",
+          "correct": false
+        },
+        {
+          "text": "O ponto de exclamação indica falha exclusiva no circuito interno do cartucho preto operacional, sendo obrigatório realizar o teste mecânico de centelha por 5 segundos para limpar a baia.",
+          "correct": false
+        },
+        {
+          "text": "A sinalização indica que a arma foi configurada no modo 'LF', desativando automaticamente o laser e mantendo a lanterna LED em potência máxima.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q018",
+      "question_number": 18,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 - 2ª Lista) Uma guarnição da PMMT realiza o encalço de um veículo em fuga por vias urbanas de Cuiabá. Durante o deslocamento tático de emergência, a viatura colide lateralmente com um automóvel civil no momento em que transpunha um cruzamento semáforo desfavorável. O Boletim de Ocorrência constatou que a viatura estava com os dispositivos sonoros desligados, mantendo apenas os sinais luminosos intermitentes acionados. Diante do art. 29 do CTB e das normas de deslocamento da corporação, avalie a responsabilidade administrativa e de trânsito da guarnição.",
+      "difficulty": "medium",
+      "topics": [
+        "POP1-GERAL"
+      ],
+      "primary_topic": "POP1-GERAL",
+      "source_pages": [
+        [
+          1,
+          5
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - listas de estudo fornecidas"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - listas de estudo fornecidas",
+      "explanation": "O comentário inicial do manual reproduz o art. 29 do CTB: a prioridade/livre circulação em urgência pressupõe identificação pelos dispositivos regulamentares sonoro e luminoso, e a travessia de cruzamentos deve ocorrer com velocidade reduzida e cuidados de segurança.",
+      "alternatives": [
+        {
+          "text": "A viatura goza de prerrogativa de livre circulação e passagem absoluta por ser veículo de emergência policial em serviço, tornando o condutor civil o único responsável civil pelo sinistro.",
+          "correct": false
+        },
+        {
+          "text": "A prioridade de trânsito e a livre circulação dependem cumulativamente de os dispositivos regulamentares de alarme sonoro E iluminação vermelha intermitente estarem acionados, devendo a passagem no cruzamento ocorrer com velocidade reduzida.",
+          "correct": true
+        },
+        {
+          "text": "O trânsito de veículos policiais descaracterizados ou velados em serviço de urgência é considerado infração gravíssima automática pelo CTB se houver avanço de sinal vermelho, independentemente da situação.",
+          "correct": false
+        },
+        {
+          "text": "A norma de trânsito determina que, ao ouvir o alarme sonoro, os pedestres devem concluir a travessia rapidamente e os condutores civis devem convergir obrigatoriamente para a faixa da esquerda da via.",
+          "correct": false
+        },
+        {
+          "text": "O uso combinado de sinais luminosos e sonoros em viaturas policiais é de natureza discricionária e facultativa, servindo prioritariamente como sinalização de advertência em patrulhamentos rotineiros.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q019",
+      "question_number": 19,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 - 2ª Lista) Durante o atendimento a uma ocorrência de roubo com restrição de liberdade da vítima no interior de uma residência, o criminoso se recusa a cooperar com as ordens de rendição emanadas pela guarnição da PMMT. O captor mantém a vítima sob a mira direta de uma pistola 9mm. De acordo com as diretrizes específicas de gerenciamento de crises preconizadas no POP 107.8, qual deve ser o procedimento imediato adotado pela primeira equipe policial que intervém no local?",
+      "difficulty": "hard",
+      "topics": [
+        "107.8"
+      ],
+      "primary_topic": "107.8",
+      "source_pages": [
+        [
+          90,
+          90
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - listas de estudo fornecidas"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - listas de estudo fornecidas",
+      "explanation": "No POP 107.8, a primeira equipe deve adotar medidas preliminares de gerenciamento de crise, abrigo e negociação, evitando elevar o estresse; força letal só se justifica diante de ameaça letal atual/iminente quando houver condição de agir sem expor a vítima.",
+      "alternatives": [
+        {
+          "text": "Realizar uma invasão tática imediata no perímetro interno do imóvel, efetuando disparos de saturação na edificação para forçar o desarmamento do infrator.",
+          "correct": false
+        },
+        {
+          "text": "Efetuar disparos de arma de fogo direcionados à cabeça do criminoso mesmo com a vítima na linha de tiro direta, visando quebrar a resistência psicológica do captor de pronto.",
+          "correct": false
+        },
+        {
+          "text": "Manter a arma na posição Pronto Baixo com proteção em abrigos, aplicar as medidas preliminares de gerenciamento de crise e negociação sem elevar o estresse do infrator, e somente usar força letal se a vítima libertar-se/for liberada e o infrator atentar contra a vida da guarnição ou terceiros.",
+          "correct": true
+        },
+        {
+          "text": "Acondicionar todas as armas de fogo no coldre e adentrar o recinto de forma pacífica e isolada, dispensando a transmissão de informações ao Centro de Operações (CIOSP) para evitar vazamento de dados.",
+          "correct": false
+        },
+        {
+          "text": "Utilizar o bastão policial tonfa em técnicas ofensivas de estocada longa através das janelas da residência para desarmar o captor à distância de segurança.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q020",
+      "question_number": 20,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 - 2ª Lista) Em uma abordagem tática a veículo suspeito na Região Metropolitana de Cuiabá, o motorista desembarca mantendo as mãos escondidas atrás do corpo, recusando-se a exibi-las após repetidos comandos verbais. Diante da postura não cooperativa (resistência passiva) e da impossibilidade de visualização das mãos, assinale a alternativa que descreve a correta postura tática e o enquadramento procedimental da equipe segundo o POP 107.3.",
+      "difficulty": "hard",
+      "topics": [
+        "107.3"
+      ],
+      "primary_topic": "107.3",
+      "source_pages": [
+        [
+          80,
+          81
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - listas de estudo fornecidas"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - listas de estudo fornecidas",
+      "explanation": "No POP 107.3, mãos não visualizadas exigem pronto emprego, silhueta reduzida, abrigo quando possível e insistência na verbalização; evolução para crise/homiziamento demanda cerco e apoio.",
+      "alternatives": [
+        {
+          "text": "Os policiais militares devem avançar rapidamente e efetuar disparos de arma de fogo na região do tórax, fundamentados na presunção de agressão armada iminente.",
+          "correct": false
+        },
+        {
+          "text": "A guarnição deve fechar um dos olhos para focar o aparelho de pontaria no suspeito, reduzindo a silhueta tática e gerando intencionalmente o fenômeno neurofisiológico da 'Visão de Túnel'.",
+          "correct": false
+        },
+        {
+          "text": "Diante do risco, a equipe deve manter as armas em Pronto Emprego (3º Olho), reduzir silhueta, abrigar-se preferencialmente e insistir na verbalização para trazê-lo a local de boa visibilidade; caso a resistência passiva evolua para crise ou homiziamento, deve-se promover o cerco e solicitar apoio.",
+          "correct": true
+        },
+        {
+          "text": "O comandante da guarnição deve acondicionar sua arma de fogo no coldre imediatamente e realizar a busca pessoal às cegas no suspeito para localizar possíveis armas ocultas.",
+          "correct": false
+        },
+        {
+          "text": "Os policiais devem se posicionar colados e pressionados diretamente contra o muro de proteção mais próximo, aplicando o princípio tático do 'Efeito Avestruz' para garantir o domínio total de área.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q021",
+      "question_number": 21,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 - 3ª Lista) Considerando as diretrizes sobre a preparação do EPI e das algemas, ordene os trechos abaixo para que formem um texto coeso, coerente e de acordo com o procedimento institucional previsto no Processo 102 - Uso de Algemas:\n(   ) A disponibilidade desses meios ao policial, bem como, o treinamento para o seu uso correto caracteriza a materialização da aplicação dos direitos humanos aos agentes responsáveis pela fiscalização do cumprimento das leis (Tratados e Convenções Internacionais os quais o Brasil é signatário).\n(   ) O equipamento individual deve ser adequado e ajustado para seu uso de forma confortável, para que não cause empecilho quando houver necessidade de seu uso.\n(   ) Entende-se que os equipamentos de proteção individual têm como objetivo principal subsidiar a ação do policial na execução do seu serviço de forma segura e atentando para as normas de segurança do trabalho.\n(   ) O policial deve conservar os equipamentos sob sua guarda, a fim de não afetar seu funcionamento e consequentemente para um melhor aproveitamento.\nA sequência correta de preenchimento dos parênteses, de cima para baixo, é:",
+      "difficulty": "medium",
+      "topics": [
+        "102.1"
+      ],
+      "primary_topic": "102.1",
+      "source_pages": [
+        [
+          11,
+          13
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - listas de estudo fornecidas"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - listas de estudo fornecidas",
+      "explanation": "A ordem do comentário é: equipamento adequado; conservação; finalidade do EPI; disponibilidade e treinamento. Assim, nos parênteses apresentados: 4-1-3-2.",
+      "alternatives": [
+        {
+          "text": "4 – 1 – 3 – 2",
+          "correct": true
+        },
+        {
+          "text": "1 – 2 – 4 – 3",
+          "correct": false
+        },
+        {
+          "text": "4 – 2 – 1 – 3",
+          "correct": false
+        },
+        {
+          "text": "2 – 1 – 3 – 4",
+          "correct": false
+        },
+        {
+          "text": "3 – 4 – 2 – 1",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q022",
+      "question_number": 22,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 - 3ª Lista) De acordo com as Sequências de Ações do PROCEDIMENTO: 101.2 Posicionamento do EPI, assinale a alternativa CORRETA.*",
+      "difficulty": "medium",
+      "topics": [
+        "101.2"
+      ],
+      "primary_topic": "101.2",
+      "source_pages": [
+        [
+          10,
+          10
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - listas de estudo fornecidas"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - listas de estudo fornecidas",
+      "explanation": "No POP 101.2, o canivete multiuso, quando utilizado, deve permanecer fechado e com o suporte abotoado/fechado. As demais alternativas invertem as regras de acesso ou posição da lanterna.",
+      "alternatives": [
+        {
+          "text": "Pistola e Algemas: acessadas pela mão fraca",
+          "correct": false
+        },
+        {
+          "text": "IMPO, carregadores de todas as armas, lanterna, canivete multiuso, rádio HT: acessados pela mão forte",
+          "correct": false
+        },
+        {
+          "text": "Torniquete e IFAK: acessados pela mão forte",
+          "correct": false
+        },
+        {
+          "text": "Acondicionar a lanterna de forma que sua lâmpada fique voltada para cima",
+          "correct": false
+        },
+        {
+          "text": "Se for utilizado o canivete multiuso, este deverá estar fechado, abotoando ou fechando seu suporte",
+          "correct": true
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q023",
+      "question_number": 23,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 - 3ª Lista) Em relação à Sequência de Ações do PROCEDIMENTO: 102.1 Preparação do EPI das Algemas, assinale a alternativa INCORRETA.*",
+      "difficulty": "medium",
+      "topics": [
+        "102.1"
+      ],
+      "primary_topic": "102.1",
+      "source_pages": [
+        [
+          11,
+          13
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - listas de estudo fornecidas"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - listas de estudo fornecidas",
+      "explanation": "No POP 102.1, a corrente deve ficar voltada para baixo, a fechadura do elo de serviço preferencialmente para o lado externo e os ganchos para o meio do corpo. A alternativa que manda corrente para cima/lado interno é a incorreta.",
+      "alternatives": [
+        {
+          "text": "O policial militar deverá manter seu cinto de guarnição de forma que o seu porta-algemas fique na parte frontal do seu cinto de guarnição, preferencialmente antecedendo o seu coldre. Obs.: No caso de uma possível reação por parte do infrator da lei, tendo o PM que empregar técnicas de imobilizações, as suas algemas sempre estarão acessíveis a ambas as mãos;",
+          "correct": false
+        },
+        {
+          "text": "Durante a operação das algemas, suas fechaduras deverão estarem voltadas para a palma da mão",
+          "correct": false
+        },
+        {
+          "text": "A fim de possibilitar tal posicionamento, o policial militar deverá segurar ambas as algemas com as duas mãos, com os ganchos de fechamento voltados para frente e as fechaduras voltadas para as palmas das mãos;",
+          "correct": false
+        },
+        {
+          "text": "Inserir as algemas com a corrente voltada para cima no porta-algemas, fechando-o logo em seguida, deixando preferencialmente a fechadura do elo de serviço voltada para o lado interno e os ganchos de fechamento voltados para o meio do corpo do policial, seja ele destro ou canhoto;",
+          "correct": true
+        },
+        {
+          "text": "Realizar o teste de eficiência do travamento dos elos de serviço nos ganchos da catraca das algemas, tentando movimentar os elos de serviço no sentido contrário;",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q024",
+      "question_number": 24,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 - 3ª Lista) Considerando a Sequência de Ações do PROCEDIMENTO: 102.2 Ato de Algemação, na Posição Deitado, ordene os trechos abaixo para que apresentem a sequência correta de ações:\n(   ) Verificar o grau de aperto dos ganchos de fechamento; Executar com a mão-fraca ou forte o travamento dos ganchos de fechamento com a chave das algemas; Verificar se as fechaduras das algemas estão voltadas para cima.\n(   ) Realizar a aproximação e contato fora do alcance dos braços do infrator da lei; Iniciar o controle sobre o braço do infrator da lei; Imobilização; Posicionamento sobre os calcanhares, ajoelhando-se;\n(   ) Posição deitado: O Policial diante do flagrante de delito determinará que o infrator da lei deite de bruços no solo, com os braços abertos e palmas das mãos voltadas para cima, e vire o rosto para o lado oposto;\n(   ) Saque das algemas; Aplicação das algemas no primeiro pulso controlado; Alcance e aplicação das algemas no pulso seguinte; Após a algemação o posicionamento dos punhos do infrator da lei deve estar com ambas as palmas voltadas para fora;\nA sequência correta de preenchimento dos parênteses, de cima para baixo, é:",
+      "difficulty": "medium",
+      "topics": [
+        "102.2"
+      ],
+      "primary_topic": "102.2",
+      "source_pages": [
+        [
+          14,
+          18
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - listas de estudo fornecidas"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - listas de estudo fornecidas",
+      "explanation": "Na posição deitado, primeiro vem a determinação para deitar; depois aproximação/controle; em seguida saque e aplicação das algemas; por fim conferência de aperto/travamento/fechaduras. Logo: 4-2-1-3.",
+      "alternatives": [
+        {
+          "text": "4 – 1 – 3 – 2",
+          "correct": false
+        },
+        {
+          "text": "1 – 3 – 2 – 4",
+          "correct": false
+        },
+        {
+          "text": "3 – 1 – 4 – 2",
+          "correct": false
+        },
+        {
+          "text": "2 – 4 – 1 – 3",
+          "correct": false
+        },
+        {
+          "text": "4 – 2 – 1 – 3",
+          "correct": true
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q025",
+      "question_number": 25,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 - 3ª Lista) De acordo com a verbalização prevista no PROCEDIMENTO: 102.2 Ato de Algemação, assinale a CORRETA.*",
+      "difficulty": "medium",
+      "topics": [
+        "102.2"
+      ],
+      "primary_topic": "102.2",
+      "source_pages": [
+        [
+          14,
+          18
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - listas de estudo fornecidas"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - listas de estudo fornecidas",
+      "explanation": "O POP 102.2 atribui ao 1º homem a verbalização, com “mãos para cima” e depois “mãos na cabeça, entrelace os dedos”.",
+      "alternatives": [
+        {
+          "text": "O 3º homem é o encarregado da verbalização, e através de um comando de voz firme, alto e claro, determina: “POLÍCIA! PARADO(S)!”, “COLOQUE(M) AS MÃOS NA CABEÇA!”, “VIRE(M)-SE DE COSTAS PARA MIM!” (se estiver de frente para o policial), “MÃOS NA NUCA, ENTRELACE(M) OS DEDOS!”, “AFASTE(M)-SE UM DO OUTRO!” (se houver mais de um suspeito), “ABRA(M) AS PERNAS E OLHEM PARA FRENTE!”, para ser submetido ao algemação conforme a situação.",
+          "correct": false
+        },
+        {
+          "text": "O 1º homem é o encarregado da verbalização, e através de um comando de voz firme, alto e claro, determina: “POLÍCIA! PARADO(S)!”, “COLOQUE(M) AS MÃOS NA CABEÇA!”, “VIRE(M)-SE DE COSTAS PARA MIM!” (se estiver de frente para o policial), “MÃOS NA NUCA, ENTRELACE(M) OS DEDOS!”, “AFASTE(M)-SE UM DO OUTRO!” (se houver mais de um suspeito), “ABRA(M) AS PERNAS E OLHEM PARA FRENTE!”, para ser submetido ao algemação conforme a situação.",
+          "correct": false
+        },
+        {
+          "text": "O 1º homem é o encarregado da verbalização, e através de um comando de voz firme, alto e claro, determina: “POLÍCIA! PARADO(S)!”, “COLOQUE(M) AS MÃOS PARA CIMA!”, “VIRE(M)-SE DE COSTAS PARA MIM!” (se estiver de frente para o policial), “MÃOS NA CABEÇA, ENTRELACE(M) OS DEDOS!”, “AFASTE(M)-SE UM DO OUTRO!” (se houver mais de um suspeito), “ABRA(M) AS PERNAS E OLHEM PARA FRENTE!”, para ser submetido ao algemação conforme a situação.",
+          "correct": true
+        },
+        {
+          "text": "O 2º homem é o encarregado da verbalização, e através de um comando de voz firme, alto e claro, determina: “POLÍCIA! PARADO(S)!”, “COLOQUE(M) AS MÃOS PARA CIMA!”, “VIRE(M)-SE DE COSTAS PARA MIM!” (se estiver de frente para o policial), “MÃOS NA CABEÇA, ENTRELACE(M) OS DEDOS!”, “AFASTE(M)-SE UM DO OUTRO!” (se houver mais de um suspeito), “ABRA(M) AS PERNAS E OLHEM PARA FRENTE!”, para ser submetido ao algemação conforme a situação.",
+          "correct": false
+        },
+        {
+          "text": "O 2º homem é o encarregado da verbalização, e através de um comando de voz firme, alto e claro, determina: “POLÍCIA! PARADO(S)!”, “COLOQUE(M) AS MÃOS NA CABEÇA!”, “VIRE(M)-SE DE COSTAS PARA MIM!” (se estiver de frente para o policial), “MÃOS NA NUCA, ENTRELACE(M) OS DEDOS!”, “AFASTE(M)-SE UM DO OUTRO!” (se houver mais de um suspeito), “ABRA(M) AS PERNAS E OLHEM PARA FRENTE!”, para ser submetido ao algemação conforme a situação.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q026",
+      "question_number": 26,
+      "question_type": "true_false",
+      "statement": "(POP 1 - 3ª Lista)  Conforme o PROCEDIMENTO: 101.1 Montagem do EPI, a disposição dos acessórios no cinto de guarnição deve obedecer estritamente à Sequência de Ações prevista, sem alterações, a fim de preservar a identidade visual da instituição. Esta assertiva é:  *",
+      "difficulty": "medium",
+      "topics": [
+        "101.1"
+      ],
+      "primary_topic": "101.1",
+      "source_pages": [
+        [
+          4,
+          9
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - listas de estudo fornecidas"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - listas de estudo fornecidas",
+      "explanation": "Falsa. O manual apresenta uma sequência padronizada voltada à ergonomia e acesso, mas admite opções como protetor lombar, coldre/bornal de perna e equipamentos facultativos; a justificativa de “identidade visual” não é a regra indicada.",
+      "alternatives": [
+        {
+          "text": "Verdadeira",
+          "correct": false
+        },
+        {
+          "text": "Falsa",
+          "correct": true
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q027",
+      "question_number": 27,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 - 3ª Lista) Quanto aos níveis de retenção de coldre, assinale a sequência correta conforme o POP Módulo 1.\n( ) Nível de retenção onde há mais de um dispositivo que impeça o saque sem ser desarmado (ex. Alça de proteção tipo capacete e trava de guarda mato simultaneamente).\n( ) Nível de retenção, onde existe algum dispositivo que impeça o saque sem que este seja desarmado (ex. Alça de proteção tipo capacete, fita de náilon com botão de pressão ou trava de guarda mato);\n( ) Nível de retenção, onde a arma de porte, ao ser acondicionada corretamente no coldre, tem seu gatilho e guarda mato totalmente protegidos, só podendo ser acessados mediante o saque (remoção parcial ou total desta arma do coldre);",
+      "difficulty": "medium",
+      "topics": [
+        "101.1"
+      ],
+      "primary_topic": "101.1",
+      "source_pages": [
+        [
+          4,
+          9
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - listas de estudo fornecidas"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - listas de estudo fornecidas",
+      "explanation": "Os conceitos apresentados correspondem, na ordem, aos níveis III, II e I. Portanto: 3-2-1.",
+      "alternatives": [
+        {
+          "text": "1, 2, 3",
+          "correct": false
+        },
+        {
+          "text": "2, 1, 3",
+          "correct": false
+        },
+        {
+          "text": "3, 2, 1",
+          "correct": true
+        },
+        {
+          "text": "3, 1, 2",
+          "correct": false
+        },
+        {
+          "text": "2, 3, 1",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q028",
+      "question_number": 28,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 - 3ª Lista) Em relação a Montagem do Equipamento de Porte e Proteção Individual, assinale com O os materiais obrigatórios e com F os materiais facultativos, em seguida marque a alternativa correta.\n( ) Uniforme Operacional: 4° F ou 4° F2, de acordo com o Regulamento de Uniformes da PMMT;\n( ) Telefone Celular;\n( ) Apito\n( ) Carteira de Identidade Funcional;\n( ) Carteira Nacional de Habilitação (CNH);\n( ) Bloco de anotações e caneta;",
+      "difficulty": "medium",
+      "topics": [
+        "101.1"
+      ],
+      "primary_topic": "101.1",
+      "source_pages": [
+        [
+          4,
+          9
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - listas de estudo fornecidas"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - listas de estudo fornecidas",
+      "explanation": "Uniforme, identidade funcional, CNH e bloco/caneta são obrigatórios; telefone celular e apito são facultativos: O-F-F-O-O-O.",
+      "alternatives": [
+        {
+          "text": "O, O, F, O, F, F",
+          "correct": false
+        },
+        {
+          "text": "O, F, F, O, O, O",
+          "correct": true
+        },
+        {
+          "text": "F, O, F, O, F, O",
+          "correct": false
+        },
+        {
+          "text": "O, F, O, F, O, F",
+          "correct": false
+        },
+        {
+          "text": "O, O, F, F, F, O",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q029",
+      "question_number": 29,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 - 3ª Lista) De acordo com o PROCEDIMENTO: 102.2 Ato de Algemação, assinale a alternativa que NÃO representa uma ATIVIDADE CRÍTICA.",
+      "difficulty": "medium",
+      "topics": [
+        "102.2"
+      ],
+      "primary_topic": "102.2",
+      "source_pages": [
+        [
+          14,
+          18
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - listas de estudo fornecidas"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - listas de estudo fornecidas",
+      "explanation": "As atividades críticas do POP 102.2 são posicionamento, saque rápido, algemação do primeiro punho e correção de elo. A ordem para abrir as mãos e ficar imóvel integra a sequência de ações, não a lista de atividades críticas.",
+      "alternatives": [
+        {
+          "text": "O policial militar segurando em ambos os pulsos do infrator da lei, determinará que este abra as mãos e permaneça imóvel",
+          "correct": true
+        },
+        {
+          "text": "Posicionamento do infrator da lei para o ato de algemação",
+          "correct": false
+        },
+        {
+          "text": "Saque rápido das algemas na posição correta",
+          "correct": false
+        },
+        {
+          "text": "Algemação do primeiro punho do infrator da lei",
+          "correct": false
+        },
+        {
+          "text": "Correção de um dos elos durante o processo.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q030",
+      "question_number": 30,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 - 3ª Lista) Analise as proposições a seguir e assinale a correta quanto aos conceitos de Arma de Porte e Arma Portátil.\nI. Arma de fogo de dimensões e peso reduzidos, que pode ser portada por um indivíduo em um coldre e disparada, comodamente, com somente uma das mãos pelo atirador, enquadram-se, nesta definição, pistolas, revólveres e garruchas;\nII. Arma cujo peso e cujas dimensões permitem que seja transportada por um único homem, mas não conduzida em um coldre, exigindo, em situações normais, ambas as mãos para a realização eficiente do disparo;",
+      "difficulty": "medium",
+      "topics": [
+        "101.1"
+      ],
+      "primary_topic": "101.1",
+      "source_pages": [
+        [
+          4,
+          9
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - listas de estudo fornecidas"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - listas de estudo fornecidas",
+      "explanation": "A proposição I define arma de porte; a II define arma portátil.",
+      "alternatives": [
+        {
+          "text": "I se trata de Arma de Porte enquanto a II se refere à Arma Portátil",
+          "correct": true
+        },
+        {
+          "text": "I se trata de Arma Portátil enquanto a II se refere à Arma de Porte.",
+          "correct": false
+        },
+        {
+          "text": "As duas proposições definem Arma de Porte.",
+          "correct": false
+        },
+        {
+          "text": "As duas proposições definem Arma Portátil.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": true,
+        "note": "Enunciado/alternativas ajustados para aderência ao POP atualizado e resposta única."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q031",
+      "question_number": 31,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 / 4ª Lista) O Processo 107 do Módulo I padroniza o uso da força em diferentes cenários. Considerando especificamente as ações do PROCEDIMENTO 107.7 - Infrator da Lei Disparando Arma de Fogo com Colete de Proteção Balística, assinale a alternativa CORRETA:",
+      "difficulty": "hard",
+      "topics": [
+        "107.7",
+        "107.2"
+      ],
+      "primary_topic": "107.7",
+      "source_pages": [
+        [
+          88,
+          89
+        ],
+        [
+          77,
+          79
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - 4ª Lista fornecida"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - 4ª Lista fornecida",
+      "explanation": "No POP 107.7, se o colete estiver velado, prioriza-se inicialmente o tórax; se a agressão não cessar, direcionam-se disparos à região vital exposta. A questão original tinha outra alternativa também literalmente correta sobre princípios do uso da força; ela foi ajustada para eliminar ambiguidade.",
+      "alternatives": [
+        {
+          "text": "Quando o colete balístico estiver velado, os primeiros disparos devem ser direcionados obrigatoriamente aos membros inferiores, independentemente do comportamento do agressor.",
+          "correct": false
+        },
+        {
+          "text": "Quando o colete estiver ostensivo, o policial deve manter os disparos exclusivamente no centro do colete para testar sua eficiência antes de alterar a região alvejada.",
+          "correct": false
+        },
+        {
+          "text": "Se o colete estiver velado, o policial prioriza inicialmente a região do tórax; se a ação agressora não cessar, deve direcionar os disparos à região vital exposta.",
+          "correct": true
+        },
+        {
+          "text": "A presença de colete de proteção balística impede o uso de arma de fogo, devendo a equipe empregar exclusivamente instrumentos de menor potencial ofensivo.",
+          "correct": false
+        },
+        {
+          "text": "O POP determina que a conferência visual após os disparos seja dispensada quando o infrator estiver usando colete balístico.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": true,
+        "note": "Enunciado/alternativas ajustados para aderência ao POP atualizado e resposta única."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q032",
+      "question_number": 32,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 / 4ª Lista)\nO Módulo I do Manual de Procedimentos Operacionais Padrão da PMMT (POP 101) regulamenta detalhadamente a montagem e a disposição ergonômica dos equipamentos de proteção e porte individual (EPI) na primeira linha (cinto de guarnição) e na segunda linha (colete balístico).\nConsiderando as especificações técnicas, os itens obrigatórios/facultativos e os princípios de acesso aos equipamentos durante a intervenção policial, assinale a alternativa CORRETA:",
+      "difficulty": "medium",
+      "topics": [
+        "101.2",
+        "101.1"
+      ],
+      "primary_topic": "101.2",
+      "source_pages": [
+        [
+          10,
+          10
+        ],
+        [
+          4,
+          9
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - 4ª Lista fornecida"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - 4ª Lista fornecida",
+      "explanation": "O POP 101.2 determina: pistola/algemas pela mão forte; IMPO/carregadores/lanterna/canivete/HT pela mão fraca; torniquete e IFAK com ambas as mãos.",
+      "alternatives": [
+        {
+          "text": "O Kit Individual de Primeiros Socorros (IFAK) para aplicação do protocolo MARC1 e a lanterna pequena são itens classificados como obrigatórios da primeira linha (cinto de guarnição), devendo a lanterna ser acondicionada em seu suporte com a lâmpada voltada para cima a fim de evitar acionamento acidental.",
+          "correct": false
+        },
+        {
+          "text": "Conforme as diretrizes de acesso tático e ergonomia do manual, enquanto a pistola de 9mm e as algemas devem ser acessadas obrigatoriamente pela mão forte, e os instrumentos de menor potencial ofensivo (IMPO) e carregadores pela mão fraca, o Torniquete Tático e o Kit de Primeiros Socorros (IFAK) devem ser dispostos de forma a permitir o acesso com ambas as mãos.",
+          "correct": true
+        },
+        {
+          "text": "O coldre de pistola de 9mm exigido para compor a primeira linha deve possuir, no mínimo, nível III de retenção na cor preta, devendo o porta-algemas ser posicionado na região posterior do cinto (região lombar) para liberar o campo frontal e lateral para a transição de armas.",
+          "correct": false
+        },
+        {
+          "text": "Quando o policial militar cautelar a Arma Eletrônica de Incapacitação Neuromuscular (AINM – TASER X-2), a sequência regulamentar de montagem do cinto obriga que o seu coldre seja acoplado do mesmo lado da arma de fogo de porte, garantindo o saque com a mão forte caso a verbalização falhe.",
+          "correct": false
+        },
+        {
+          "text": "A montagem do cinto de guarnição para o policial militar destro deve ser realizada introduzindo-se os acessórios no cinto esticado da esquerda para a direita, iniciando-se obrigatoriamente pelo porta-torniquete e finalizando pelo porta-algemas junto ao fecho central.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q033",
+      "question_number": 33,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 / 4ª Lista)\nO Módulo I do Manual de Procedimentos Operacionais Padrão da PMMT (POP 103) disciplina o emprego individual e coletivo do espargidor de gás pimenta (O.C.), definindo os requisitos de atuação, distâncias de segurança, limitações de uso e procedimentos de descontaminação.\nConsiderando as normas técnicas e as possibilidades de erro descritas no POP 103, assinale a alternativa CORRETA:",
+      "difficulty": "hard",
+      "topics": [
+        "103.1"
+      ],
+      "primary_topic": "103.1",
+      "source_pages": [
+        [
+          26,
+          28
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - 4ª Lista fornecida"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - 4ª Lista fornecida",
+      "explanation": "O manual manda manter a válvula do espargidor voltada para frente. Em caso de queimadura, lavar com água corrente em abundância e admite solução de bicarbonato de sódio a 0,5% enquanto aguarda auxílio médico.",
+      "alternatives": [
+        {
+          "text": "No acondicionamento do frasco de agente químico no cinto ou colete, a válvula de acionamento deve ser mantida voltada obrigatoriamente para a frente do policial militar; além disso, caso a exposição ao agente químico provoque queimaduras, a medida corretiva de emergência prescrita antes do auxílio médico é lavar o local com água corrente em abundância, podendo ser empregada solução de bicarbonato de sódio a 0,5%.",
+          "correct": true
+        },
+        {
+          "text": "O acionamento do espargidor individual (GL-108/OC mini) deve ser realizado mediante borrifadas contínuas de 3 a 5 segundos direcionadas aos olhos do agressor, devendo o policial militar manter a distância tática de 30 a 50 centímetros do rosto do indivíduo para garantir o adensamento da névoa.",
+          "correct": false
+        },
+        {
+          "text": "Por se tratar de um instrumento de menor potencial ofensivo destinado à saturação de ambiente, dispensa-se o prévio esgotamento das negociações verbais, sendo autorizado o acionamento do espargidor diretamente contra o sentido do vento para acelerar a dispersão do agente na face do resistente.",
+          "correct": false
+        },
+        {
+          "text": "Diante do descumprimento de ordem verbal por infrator da lei que já se encontre algemado e imobilizado no solo, o policial militar fica autorizado a efetuar disparos sequenciais de gás pimenta a curta distância para forçar o seu embarque imediato no compartimento de presos da viatura.",
+          "correct": false
+        },
+        {
+          "text": "A utilização de espargidores de solução lacrimogênea não fornecidos pela PMMT é permitida em intervenções de alto risco, desde que empregados de forma simultânea e conjunta com a Arma Eletrônica de Incapacitação Neuromuscular (AINM – TASER X-2) sobre o mesmo agressor.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q034",
+      "question_number": 34,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 / 4ª Lista)\nA manutenção de 1º escalão é o procedimento executado pelo próprio policial militar para garantir a conservação, limpeza, lubrificação e o perfeito funcionamento do seu armamento de dotação individual. Com base no POP 106.2 (Limpeza e Manutenção da Pistola Glock), assinale a alternativa CORRETA:",
+      "difficulty": "medium",
+      "topics": [
+        "106.2"
+      ],
+      "primary_topic": "106.2",
+      "source_pages": [
+        [
+          59,
+          64
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - 4ª Lista fornecida"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - 4ª Lista fornecida",
+      "explanation": "A figura de lubrificação do POP 106.2 determina apenas uma pequena gota de óleo no ponto de contato entre conector e barra do gatilho; excesso ou lubrificação em áreas proibidas é inadequado.",
+      "alternatives": [
+        {
+          "text": "Para a separação do ferrolho em relação à armação durante a desmontagem de 1º escalão, o gatilho deve obrigatoriamente estar posicionado à frente e o retém do ferrolho mantido pressionado para cima.",
+          "correct": false
+        },
+        {
+          "text": "Durante a limpeza do ferrolho, recomenda-se a aplicação abundante de óleo lubrificante à base de hidrocarbonetos no túnel do percussor e na cubeta do extrator para remover os resíduos de pólvora.",
+          "correct": false
+        },
+        {
+          "text": "Para garantir o correto funcionamento mecânico e evitar um acionamento pesado do gatilho ou danos às peças, prescreve-se a aplicação de apenas uma pequena gota de óleo lubrificante específico no ponto de contato entre o conector e a barra do gatilho.",
+          "correct": true
+        },
+        {
+          "text": "A limpeza interna do cano após o tiro deve ser realizada inserindo-se a escova tubular obrigatoriamente pela boca do cano em direção à câmara, sendo recomendada a utilização de escovas de cerdas de aço para remover o chumbo impregnado nas raias.",
+          "correct": false
+        },
+        {
+          "text": "O check de funcionamento da pistola, realizado após a montagem, exige que o policial insira um carregador com munições de manejo e cicle o ferrolho para testar a ejeção e o trancamento automático.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q035",
+      "question_number": 35,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 / 4ª Lista)\nO Manual de Procedimentos Operacionais Padrão da PMMT (Módulo I) disciplina a atuação policial militar em ocorrências envolvendo pessoas menores de idade em conflito com a lei, harmonizando as táticas operacionais com os dispositivos do Estatuto da Criança e do Adolescente (ECA – Lei nº 8.069/1990) e o Decreto nº 8.858/2016.\nConsiderando as normas de conduta, vedações e rotinas de apresentação de menores às autoridades competentes, assinale a alternativa CORRETA:",
+      "difficulty": "hard",
+      "topics": [
+        "107.10",
+        "POP1-GERAL"
+      ],
+      "primary_topic": "107.10",
+      "source_pages": [
+        [
+          93,
+          93
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - 4ª Lista fornecida"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - 4ª Lista fornecida",
+      "explanation": "O comentário geral do manual determina que criança em flagrante de ato infracional seja apresentada ao Conselho Tutelar, vedada sua condução a unidade policial.",
+      "alternatives": [
+        {
+          "text": "Diante de criança (pessoa de até 12 anos incompletos) flagrada na prática de ato infracional análogo a crime grave, a guarnição policial militar deverá conduzi-la à Delegacia de Polícia Civil especializada em atos infracionais para a lavratura do Auto de Apreensão em Flagrante.",
+          "correct": false
+        },
+        {
+          "text": "A apreensão e condução de adolescente em conflito com a lei em compartimento fechado de veículo policial (xadrez/camburão) é permitida no âmbito da PMMT, desde que esteja acompanhado por no mínimo um policial militar no mesmo recinto para garantir sua integridade física.",
+          "correct": false
+        },
+        {
+          "text": "O emprego de algemas em adolescentes em conflito com a lei é regra geral durante a apreensão em via pública, dispensando-se fundamentação por escrito no Boletim de Ocorrência em razão da presunção de risco de fuga decorrente da menoridade.",
+          "correct": false
+        },
+        {
+          "text": "Tratando-se de criança infratora apreendida em flagrante de ato infracional, a conduta regulamentar do policial militar consiste na sua apresentação direta ao Conselho Tutelar competente, sendo vedada a sua condução a qualquer unidade policial civil ou militar.",
+          "correct": true
+        },
+        {
+          "text": "Quando um ato infracional for praticado em coautoria entre um adolescente e um adulto, havendo repartição policial especializada para atendimento de adolescentes na localidade, a regra de atração determina que o adulto seja apresentado juntamente com o menor na unidade especializada, onde permanecerá custodiado até a conclusão do flagrante.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q036",
+      "question_number": 36,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 / 4ª Lista)\nNo Módulo I do Manual de Procedimentos Operacionais Padrão da PMMT (POP 107.4 e 107.5), são detalhadas as condutas táticas diante de infratores da lei portando arma de fogo ou simulacro, bem como as diretrizes que regem o uso da força e a postura corporal dos policiais militares.\nConsiderando os procedimentos regulamentares para essas situações, assinale a alternativa CORRETA:",
+      "difficulty": "hard",
+      "topics": [
+        "107.4",
+        "107.5"
+      ],
+      "primary_topic": "107.4",
+      "source_pages": [
+        [
+          82,
+          83
+        ],
+        [
+          84,
+          85
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - 4ª Lista fornecida"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - 4ª Lista fornecida",
+      "explanation": "No POP 107.4, em fuga com o infrator disparando contra guarnição ou terceiros, a resposta é imediata com arma de fogo, mantendo abrigo e silhueta reduzida.",
+      "alternatives": [
+        {
+          "text": "Na hipótese de o infrator empreender fuga a pé em via pública empunhando arma de fogo sem efetuar disparos contra a guarnição ou terceiros, a orientação tática determina que o policial militar efetue disparos direcionados aos membros inferiores para interromper o deslocamento antes que ocorra a perda do contato visual.",
+          "correct": false
+        },
+        {
+          "text": "A identificação de que o objeto empunhado pelo abordado se trata de um simulacro de arma de fogo descaracteriza a situação de grave ameaça, devendo a guarnição converter o procedimento de abordagem diretamente para controle de contato, dispensando o acompanhamento e o cerco policial.",
+          "correct": false
+        },
+        {
+          "text": "Durante a fuga do infrator efetuando disparos de arma de fogo contra a guarnição ou terceiros, dita-se a resposta imediata com arma de fogo por parte do policial militar, mantendo-se abrigado e com a silhueta reduzida.",
+          "correct": true
+        },
+        {
+          "text": "O princípio da postura tática denominado \"Controle da Arma\" orienta que o cano do armamento permaneça direcionado para o solo em ângulo reto durante toda a progressão em ambientes com visibilidade reduzida.",
+          "correct": false
+        },
+        {
+          "text": "Após a rendição e o descarte da arma pelo infrator, o policial militar responsável pela realização da busca pessoal mantém a sua arma de fogo em punho na posição de pronto emprego enquanto executa a busca, sendo dispensada a cobertura por outro integrante da equipe.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q037",
+      "question_number": 37,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 / 4ª Lista)  O Módulo I do Manual de Procedimentos Operacionais Padrão da PMMT (POP 102) disciplina o uso de algemas metálicas, algemas descartáveis e instrumentos alternativos de restrição temporária. Considerando os preceitos da Súmula Vinculante nº 11 do STF, as regras de segurança tática e a sequência padronizada de ações, assinale a alternativa CORRETA:*",
+      "difficulty": "medium",
+      "topics": [
+        "102.2"
+      ],
+      "primary_topic": "102.2",
+      "source_pages": [
+        [
+          14,
+          18
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - 4ª Lista fornecida"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - 4ª Lista fornecida",
+      "explanation": "Ao final da algemação, os punhos devem ficar com as palmas voltadas para fora e as fechaduras das algemas voltadas para cima.",
+      "alternatives": [
+        {
+          "text": "No ato de algemação na posição em pé, o policial militar deve segurar o abordado pelos dedos da mão controlada e ajustar as algemas de modo que as palmas das mãos fiquem voltadas para dentro e as fechaduras voltadas para baixo.",
+          "correct": false
+        },
+        {
+          "text": "O uso de cabos ou cordas para amarrações táticas é proibido em qualquer hipótese no âmbito da PMMT, constituindo falta disciplinar grave o seu porte ou utilização pelo policial militar.",
+          "correct": false
+        },
+        {
+          "text": "Caso o policial perceba, durante a execução do algemamento, que o elo de serviço foi colocado de forma incorreta no infrator, deverá efetuar a remoção e a correção imediata da algema no próprio local da abordagem, ainda que em ambiente aberto e não controlado.",
+          "correct": false
+        },
+        {
+          "text": "Ao término do procedimento de algemação (seja na posição em pé ou deitado), os punhos do infrator da lei devem permanecer posicionados com ambas as palmas voltadas para fora e as fechaduras das algemas voltadas para cima.",
+          "correct": true
+        },
+        {
+          "text": "A remoção das algemas descartáveis (fitas de polímero) deve ser realizada acionando-se o botão de alívio da trava por meio da ponta da chave padrão de algemas metálicas.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q038",
+      "question_number": 38,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 / 4ª Lista)\nNo atendimento de ocorrência envolvendo confronto armado contra infrator da lei portando colete de proteção balística, a doutrina do Módulo I do Manual de Procedimentos Operacionais Padrão da PMMT (POP 107) estabelece diretrizes específicas para a resposta armada e a manutenção do controle do cenário operacional.\nConsiderando os procedimentos do POP 107.7 e os princípios da postura tática policial, assinale a alternativa correta:",
+      "difficulty": "hard",
+      "topics": [
+        "107.7"
+      ],
+      "primary_topic": "107.7",
+      "source_pages": [
+        [
+          88,
+          89
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - 4ª Lista fornecida"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - 4ª Lista fornecida",
+      "explanation": "No POP 107.7, colete ostensivo leva à priorização de regiões vitais sem proteção balística.",
+      "alternatives": [
+        {
+          "text": "Na hipótese de o infrator utilizar colete de proteção balística de forma velada, a resposta armada inicial deve focar na região abdominal, redirecionando-se os disparos para o tórax apenas em caso de falha no engajamento primário.",
+          "correct": false
+        },
+        {
+          "text": "Quando o colete de proteção balística for utilizado de forma ostensiva pelo agressor, a orientação tática prescreve que os disparos do policial militar devem priorizar as regiões vitais desprovidas de proteção balística.",
+          "correct": true
+        },
+        {
+          "text": "A falha de postura tática denominada \"Efeito Avestruz\" caracteriza-se pelo posicionamento do policial excessivamente colado ao anteparo balístico, resultando na perda do domínio do campo de visão.",
+          "correct": false
+        },
+        {
+          "text": "O conceito tático de \"Terceiro Olho\" exige que o policial mantenha a arma empunhada na linha de visada fechando um dos olhos para garantir a precisão do alinhamento do aparelho de pontaria.",
+          "correct": false
+        },
+        {
+          "text": "Após cessada a agressão por meio de disparos de arma de fogo, o procedimento de conferência visual determina o imediato acionamento do travamento do coldre e o recolhimento do armamento antes de realizar a varredura do ambiente.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q039",
+      "question_number": 39,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 / 4ª Lista)\nO Módulo I do Manual de Procedimento Operacional Padrão (POP) da Polícia Militar do Estado de Mato Grosso estabelece diretrizes rígidas para a verificação e utilização operacional das Armas de Incapacitação Neuromuscular (AINM – TASER X-2). Considerados os princípios do uso diferenciado da força, o manuseio tático e as limitações operacionais de emprego, analise as afirmativas a seguir:\nI. Para o melhor aproveitamento do disparo efetuado com a TASER X-2, a distância ideal entre o agressor e o policial é de, no mínimo, 5 (cinco) metros e, no máximo, 7 (sete) metros. II. Em todas as situações operacionais em que for empregada a AINM, um policial da equipe deverá estar em condições de uso imediato de força letal. III. Caso a perfuração promovida na pele do indivíduo ultrapasse o dardo, penetrando também a sua base, a retirada da sonda e do dardo deve ser efetuada imediatamente no local da ocorrência pelo próprio policial militar, utilizando luvas descartáveis e mediante tração única e firme. IV. É vedada a utilização da TASER X-2 em pessoas que estejam em locais elevados, conduzindo veículos, operando máquinas ou que estejam parcial ou totalmente imersas em água, bem como o seu acionamento próximo a materiais inflamáveis, explosivos ou equipamentos energizados.\nEstão corretas as afirmativas:",
+      "difficulty": "hard",
+      "topics": [
+        "104.2"
+      ],
+      "primary_topic": "104.2",
+      "source_pages": [
+        [
+          39,
+          45
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - 4ª Lista fornecida"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - 4ª Lista fornecida",
+      "explanation": "I é correta (5-7 m); II é correta (cobertura imediata de força letal); III é falsa, pois se a perfuração ultrapassar o dardo e atingir a base, corta-se o fio e a retirada é hospitalar; IV corresponde às restrições previstas. Logo I, II e IV.",
+      "alternatives": [
+        {
+          "text": "I, II e IV, apenas.",
+          "correct": true
+        },
+        {
+          "text": "I, III e IV, apenas.",
+          "correct": false
+        },
+        {
+          "text": "II e III, apenas.",
+          "correct": false
+        },
+        {
+          "text": "I, II, III e IV.",
+          "correct": false
+        },
+        {
+          "text": "II e IV, apenas.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q040",
+      "question_number": 40,
+      "question_type": "multiple_choice",
+      "statement": "(POP 1 / 4ª Lista)\nO Módulo I do Manual de Procedimentos Operacionais Padrão da PMMT regulamenta a checagem diária, as configurações operacionais e as táticas de disparo com a Arma de Incapacitação Neuromuscular (AINM - TASER X-2).\nAnalisando os procedimentos de verificação do sistema e a sequência de ações operacionais descritos nos POPs 104.1 e 104.2, assinale a alternativa CORRETA:",
+      "difficulty": "medium",
+      "topics": [
+        "104.1",
+        "104.2"
+      ],
+      "primary_topic": "104.1",
+      "source_pages": [
+        [
+          34,
+          38
+        ],
+        [
+          39,
+          45
+        ]
+      ],
+      "origin": {
+        "type": "lista_estudo",
+        "label": "POP 1 - 4ª Lista fornecida"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | POP 1 - 4ª Lista fornecida",
+      "explanation": "O POP 104.1 orienta configuração LO, com laser ligado e lanterna desativada; também diz que não se realiza teste de centelha na cautela da TASER X-2.",
+      "alternatives": [
+        {
+          "text": "Na checagem diária durante o recebimento da TASER X-2 na reserva de armamento, o policial militar realiza o acionamento da tecla de disparo por dois segundos direcionado para local seguro para efetuar o teste prático de centelha e atestar o arco elétrico inicial.",
+          "correct": false
+        },
+        {
+          "text": "A configuração regulamentar do visor da AINM TASER X-2 para o serviço operacional deve ser mantida na opção \"LO\", na qual o laser duplo permanece ativado e a lanterna LED desativada, tendo em vista a baixa luminosidade da lanterna para a atividade policial.",
+          "correct": true
+        },
+        {
+          "text": "Ao constatar a perda ou o desvio de um dos dardos no primeiro disparo contra o agressor, o policial militar deve desligar a trava de segurança e realizar a troca manual do cartucho deflagrado para conseguir efetuar o segundo disparo.",
+          "correct": false
+        },
+        {
+          "text": "O acionamento do arco de advertência, empregado como opção de demonstração de força ou contato direto sem disparo, exige a remoção prévia dos dois cartuchos acoplados às baias para evitar a ejeção acidental dos dardos.",
+          "correct": false
+        },
+        {
+          "text": "A PMMT padronizou para o emprego operacional urbano o uso exclusivo de cartuchos pretos de 10,7 metros, ficando os cartuchos de 7,6 metros reservados para adestramento e simulação de tiro.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q041",
+      "question_number": 41,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - SIMULADO INÉDITO) Durante patrulhamento tático em região de fronteira, uma guarnição da PMMT sofreu emboscada com disparos de fuzil, resultando em um policial militar alvejado gravemente. Diante da necessidade premente de intervenções de Atendimento Pré-Hospitalar (APH) Tático, surgiram discussões sobre a doutrina, o lastro jurídico e as normas operacionais aplicáveis. Considerando o POP 108 da PMMT e a legislação de regência, assinale a alternativa CORRETA:",
+      "difficulty": "hard",
+      "topics": [
+        "108.1"
+      ],
+      "primary_topic": "108.1",
+      "source_pages": [
+        [
+          101,
+          101
+        ]
+      ],
+      "origin": {
+        "type": "simulado_inedito",
+        "label": "UFMT - Simulado Inédito (material fornecido)"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | UFMT - Simulado Inédito (material fornecido)",
+      "explanation": "O próprio POP 108 transcreve a Lei 12.842/2013: atendimento à pessoa sob risco de morte iminente é exceção ao rol de atividades privativas do médico. MARC2/MARC3 são reservados a pessoal que cumpra requisitos específicos.",
+      "alternatives": [
+        {
+          "text": "O atendimento à pessoa sob risco de morte iminente excetua-se do rol de atividades privativas do médico, conforme a Lei Federal nº 12.842/2013, conferindo lastro legal para a intervenção do policial socorrista.",
+          "correct": true
+        },
+        {
+          "text": "Os procedimentos de maior complexidade técnica (MARC2 e MARC3) poderão ser executados por qualquer policial militar possuidor de curso de formação inicial, bastando o porte do IFAK orgânico.",
+          "correct": false
+        },
+        {
+          "text": "A Portaria Normativa MD/GM nº 16/2018 exclui a aplicação de torniquete e a descompressão torácica do conceito de procedimentos de APH Tático.",
+          "correct": false
+        },
+        {
+          "text": "O estado de necessidade previsto no CPM exige, como requisito inafastável, que o bem jurídico sacrificado seja necessariamente de valor inferior ao bem jurídico protegido pelo militar socorrista.",
+          "correct": false
+        },
+        {
+          "text": "O protocolo básico de APH Policial da PMMT é denominado MARC2, o qual equivale diretamente ao protocolo internacional PHTLS de 10ª Edição.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q042",
+      "question_number": 42,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - SIMULADO INÉDITO) Ao prestar atendimento pré-hospitalar a um companheiro de farda gravemente ferido, o socorrista inicia a execução do Protocolo MARC1 (Procedimento 108.3 da PMMT). No tocante ao controle do sangramento massivo ('M') e vias aéreas ('A'), assinale a alternativa CORRETA:",
+      "difficulty": "hard",
+      "topics": [
+        "108.3"
+      ],
+      "primary_topic": "108.3",
+      "source_pages": [
+        [
+          104,
+          105
+        ]
+      ],
+      "origin": {
+        "type": "simulado_inedito",
+        "label": "UFMT - Simulado Inédito (material fornecido)"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | UFMT - Simulado Inédito (material fornecido)",
+      "explanation": "No POP 108.3, sangramento massivo de cabeça por PAF exige evacuação imediata e o restante do MARC1 deve prosseguir durante a evacuação.",
+      "alternatives": [
+        {
+          "text": "Identificado ferimento com sangramento massivo em extremidade, o torniquete tático deve ser posicionado obrigatoriamente sobre a articulação do joelho ou cotovelo para obter compressão óssea direta.",
+          "correct": false
+        },
+        {
+          "text": "Nos ferimentos em áreas juncionais (axilas e virilhas), deve-se preencher a cavidade com gaze hemostática e empacotar com bandagem, inserindo toda a gaze para dentro sem deixar ponta exposta.",
+          "correct": false
+        },
+        {
+          "text": "Diante de um policial inconsciente com obstrução de vias aéreas por secreção e sangramento massivo ativo em membro inferior, deve-se realizar a desobstrução aérea antes de conter o sangramento.",
+          "correct": false
+        },
+        {
+          "text": "Na busca por sangramento massivo na cabeça decorrente de PAF, o procedimento padrão é a evacuação imediata para unidade hospitalar de referência, executando o restante do protocolo MARC1 durante o deslocamento.",
+          "correct": true
+        },
+        {
+          "text": "A aplicação da cânula nasofaríngea é indicada indistintamente em todos os casos de trauma cranioencefálico grave, sendo dispensável verificar sinais de fratura de base de crânio.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q043",
+      "question_number": 43,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - SIMULADO INÉDITO) Um instrutor de tiro e táticas da PMMT orienta o efetivo acerca da montagem do Kit Individual de Primeiros Socorros (IFAK) e da disposição adequada dos materiais de APH, em conformidade com o Procedimento 108.1. Assinale a alternativa CORRETA:",
+      "difficulty": "medium",
+      "topics": [
+        "108.1"
+      ],
+      "primary_topic": "108.1",
+      "source_pages": [
+        [
+          101,
+          101
+        ]
+      ],
+      "origin": {
+        "type": "simulado_inedito",
+        "label": "UFMT - Simulado Inédito (material fornecido)"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | UFMT - Simulado Inédito (material fornecido)",
+      "explanation": "O POP 108.1 manda posicionar o torniquete preferencialmente separado do IFAK, visível e de fácil acesso, idealmente em porta-torniquete próprio.",
+      "alternatives": [
+        {
+          "text": "O torniquete tático deve ser guardado no fundo do compartimento interno do IFAK, lacrado em seu plástico original de fábrica para preservar a esterilização.",
+          "correct": false
+        },
+        {
+          "text": "O torniquete deve ser colocado, de preferência, em lugar próprio e separado do IFAK, em local de fácil visibilidade e de fácil acesso, sendo o ideal em porta-torniquete específico com preferência por modelos com velcro.",
+          "correct": true
+        },
+        {
+          "text": "As luvas de procedimento descartáveis contidas no IFAK devem ser de nitrilo na cor preta, a fim de garantir a camuflagem tática durante a progressão noturna.",
+          "correct": false
+        },
+        {
+          "text": "A disposição sequencial dos materiais no IFAK deve iniciar pelos dispositivos de prevenção da hipotermia (letra C), seguidos pelas vias aéreas e, por último, o controle de sangramento.",
+          "correct": false
+        },
+        {
+          "text": "O IFAK deve ser confeccionado em polímero rígido indeformável e posicionado na parte dorsal superior do colete balístico, inacessível ao alcance das mãos do próprio operador.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q044",
+      "question_number": 44,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - CAOC 2025) Extrai-se do Módulo I do Manual de Procedimento Operacional Padrão (POP) da Polícia Militar do Estado de Mato Grosso (PMMT) que deve ser observada uma sequência de ações para resgate de policial ferido em situações de confronto, para fins de neutralização rápida e adequada de ameaças imediatas antes de dar início ao Protocolo de Atendimento Pré-Hospitalar Policial - MARC 1.\nNeste contexto, analise as ações descritas a seguir:\n1. Em havendo policiais feridos no X, estabelecer um contato e iniciar o auxílio remoto.\n2. Equipe Policial Militar deverá identificar e neutralizar ameaças imediatas de forma seletiva e proporcional.\n3. Equipe Policial Militar deverá se abrigar imediatamente, saindo e/ou se afastando do local do confronto.\n4. Estabelecer comunicação da equipe policial com o CIOSP e/ou demais viaturas na rede rádio, informando “policial ferido / confronto / solicito apoio”.\n5. Em caso de Policial Militar inconsciente ou impossibilitado de realizar seu autoatendimento, este deverá ser extraído para um local seguro, de maneira rápida e deliberada para receber o atendimento.\n6. Fazer cobertura da “área quente”, estabelecendo um perímetro de segurança, evitando ameaças secundárias eventuais.\n7. Extrair o policial ferido para local de atendimento secundário.\n8. Caso o Policial ferido esteja longe de um local seguro (mais de 20 segundos de arrasto), poderá ser realizada uma triagem rápida no X para contenção do sangramento massivo de extremidades através do uso do torniquete.\nAssinale a alternativa que apresenta a sequência correta das ações em conformidade com os procedimentos previstos no referido Protocolo.",
+      "difficulty": "hard",
+      "topics": [
+        "108.2"
+      ],
+      "primary_topic": "108.2",
+      "source_pages": [
+        [
+          102,
+          103
+        ]
+      ],
+      "origin": {
+        "type": "prova_identificada_no_material",
+        "label": "UFMT - CAOC 2025 (identificação presente no arquivo fornecido)"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | UFMT - CAOC 2025 (identificação presente no arquivo fornecido)",
+      "explanation": "A ordem oficial relevante é: abrigar-se; comunicar CIOSP; neutralizar ameaças; cobrir área quente; contato/auxílio remoto; extrair inconsciente; se >20 s de arrasto fazer triagem rápida; extrair para atendimento secundário. Isso corresponde a 3-4-2-6-1-5-8-7.",
+      "alternatives": [
+        {
+          "text": "2, 4, 3, 1, 6, 8, 5, 7",
+          "correct": false
+        },
+        {
+          "text": "4, 3, 2, 1, 6, 8, 7, 5",
+          "correct": false
+        },
+        {
+          "text": "3, 4, 2, 6, 1, 5, 8, 7",
+          "correct": true
+        },
+        {
+          "text": "3, 2, 4, 6, 1, 5, 7, 8",
+          "correct": false
+        },
+        {
+          "text": "4. 3, 1, 2, 6, 7, 5, 8",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q045",
+      "question_number": 45,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - SIMULADO INÉDITO) No que concerne ao controle de sangramentos massivos ('M') regulamentado pelo Procedimento 108.3 do POP da PMMT, avalie as proposições:\n[I] Na suspeita de hemorragia grave (uniforme empapado, poça de sangue, ferimento pulsátil ou vítima letárgica e cianótica), a doutrina impõe a regra de que 'na dúvida, sempre considerar que é sangramento massivo'.\n[II] É vedado aplicar o torniquete tático sobre articulações (joelhos e cotovelos), e uma vez aplicado no ambiente tático, ele jamais deve ser afrouxado, retirado ou cortado pela equipe policial antes do tratamento médico definitivo em centro cirúrgico.\n[III] Caso o ferimento com sangramento massivo em extremidade continue sangrando após a aplicação do primeiro torniquete de combate, é proibido aplicar um segundo torniquete, devendo-se aguardar a evacuação.\nEstá correto o que se afirma em:",
+      "difficulty": "hard",
+      "topics": [
+        "108.3"
+      ],
+      "primary_topic": "108.3",
+      "source_pages": [
+        [
+          104,
+          105
+        ]
+      ],
+      "origin": {
+        "type": "simulado_inedito",
+        "label": "UFMT - Simulado Inédito (material fornecido)"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | UFMT - Simulado Inédito (material fornecido)",
+      "explanation": "I é correta (“na dúvida” considerar sangramento massivo). II é correta: não aplicar em articulações e não afrouxar/retirar/cortar antes do tratamento definitivo. III não é sustentada pelo POP e contradiz a lógica de controle persistente do sangramento. Logo I e II.",
+      "alternatives": [
+        {
+          "text": "I e III, apenas.",
+          "correct": false
+        },
+        {
+          "text": "I e II, apenas.",
+          "correct": true
+        },
+        {
+          "text": "II, apenas.",
+          "correct": false
+        },
+        {
+          "text": "II e III, apenas.",
+          "correct": false
+        },
+        {
+          "text": "I, II e III.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q046",
+      "question_number": 46,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - SIMULADO INÉDITO) Em uma incursão em área de risco, um policial militar é alvejado no membro inferior e tomba em área exposta ('ponto X'). Considerando a doutrina de Resgate do Policial Ferido prevista no Procedimento 108.2 da PMMT, assinale a alternativa CORRETA:",
+      "difficulty": "medium",
+      "topics": [
+        "108.2"
+      ],
+      "primary_topic": "108.2",
+      "source_pages": [
+        [
+          102,
+          103
+        ]
+      ],
+      "origin": {
+        "type": "simulado_inedito",
+        "label": "UFMT - Simulado Inédito (material fornecido)"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | UFMT - Simulado Inédito (material fornecido)",
+      "explanation": "O POP 108.2 permite triagem rápida no ponto X com torniquete quando o ferido estiver a mais de 20 segundos de arrasto de local seguro.",
+      "alternatives": [
+        {
+          "text": "Havendo um policial ferido no X, a equipe deve imediatamente cessar o revide e correr em direção à vítima em campo aberto, sendo vedada a busca prévia por abrigo.",
+          "correct": false
+        },
+        {
+          "text": "O auxílio remoto é proibido pela doutrina institucional da PMMT, devendo o socorrista sempre realizar a extração física direta mesmo que o ferido esteja consciente e apto a se abrigar.",
+          "correct": false
+        },
+        {
+          "text": "Caso o policial militar ferido esteja longe de um local seguro (mais de 20 segundos de arrasto), poderá ser realizada uma triagem rápida no X para contenção do sangramento massivo de extremidades através do uso do torniquete.",
+          "correct": true
+        },
+        {
+          "text": "Estando o policial militar ferido no X, o socorrista deve executar imediatamente no próprio local todos os passos do protocolo MARC1, incluindo a colocação de cânula e manta térmica.",
+          "correct": false
+        },
+        {
+          "text": "A primeira atitude da equipe ao ter um homem ferido é realizar a contagem de munições da viatura, postergando o contato via rádio e o abrigo sob fogo.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q047",
+      "question_number": 47,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - SIMULADO INÉDITO) A respeito do fluxograma decisório e da logística de evacuação do policial militar ferido, regulamentados pelo POP 108 da Polícia Militar do Estado de Mato Grosso, analise as proposições:\n[I] O 'cheque de abandono' no local do confronto visa recolher armas, HTs, carregadores e equipamentos deixados para trás, sendo atribuição prioritária do socorrista antes de iniciar o atendimento pré-hospitalar.\n[II] Na hierarquia doutrinária dos meios de evacuação de feridos da PMMT, a viatura orgânica da equipe constitui o meio ideal; a ambulância constitui o meio secundário; e a aeronave é tratada como último recurso.\n[III] Sempre que operacionalmente viável, o deslocamento até o hospital de referência deve ser realizado com o apoio de duas viaturas, facilitando a rápida baldeação em caso de pane mecânica ou avaria da viatura principal.\nEstá correto o que se afirma em:",
+      "difficulty": "hard",
+      "topics": [
+        "108.4"
+      ],
+      "primary_topic": "108.4",
+      "source_pages": [
+        [
+          106,
+          112
+        ]
+      ],
+      "origin": {
+        "type": "simulado_inedito",
+        "label": "UFMT - Simulado Inédito (material fornecido)"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | UFMT - Simulado Inédito (material fornecido)",
+      "explanation": "I é falsa: o cheque de abandono é tarefa posterior, “sempre que possível”, não prioridade antes do APH. II é falsa: o POP diz aeronave ideal, ambulância aceitável e viatura própria como último caso. III é correta: sempre que possível usar duas viaturas.",
+      "alternatives": [
+        {
+          "text": "I e II, apenas.",
+          "correct": false
+        },
+        {
+          "text": "I, II e III.",
+          "correct": false
+        },
+        {
+          "text": "I e III, apenas.",
+          "correct": false
+        },
+        {
+          "text": "II e III, apenas.",
+          "correct": false
+        },
+        {
+          "text": "III, apenas.",
+          "correct": true
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q048",
+      "question_number": 48,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - SIMULADO INÉDITO) Durante a execução das fases 'A' (Ar) e 'R' (Respiração) do protocolo MARC1 da Polícia Militar do Estado de Mato Grosso, analise as afirmativas:\n[I] Na presença concomitante de sangramento massivo ativo e obstrução de vias aéreas, o protocolo preconiza a intervenção imediata prioritária na via aérea, suspendendo temporariamente o torniquete.\n[II] Em vítimas desacordadas / inconscientes, a doutrina do POP 108 estabelece como mandatário o emprego da cânula nasofaríngea, observando-se a inexistência de fratura de base de crânio.\n[III] Caso o paciente apresente piora do padrão respiratório após oclusão com selo valvulado de tórax, deve-se proceder à limpeza do orifício/válvula para remoção de eventuais coágulos e executar a manobra de BURP torácico.\nEstá correto o que se afirma em:",
+      "difficulty": "hard",
+      "topics": [
+        "108.3"
+      ],
+      "primary_topic": "108.3",
+      "source_pages": [
+        [
+          104,
+          105
+        ]
+      ],
+      "origin": {
+        "type": "simulado_inedito",
+        "label": "UFMT - Simulado Inédito (material fornecido)"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | UFMT - Simulado Inédito (material fornecido)",
+      "explanation": "I é falsa porque hemorragia massiva vem antes das vias aéreas. II é correta para vítima desacordada, ressalvada avaliação de sinais de fratura de base de crânio. III é correta: piora respiratória após selo exige limpeza de válvula/orifício e BURP, entre as medidas previstas.",
+      "alternatives": [
+        {
+          "text": "I e II, apenas.",
+          "correct": false
+        },
+        {
+          "text": "I, II e III.",
+          "correct": false
+        },
+        {
+          "text": "II e III, apenas.",
+          "correct": true
+        },
+        {
+          "text": "I e III, apenas.",
+          "correct": false
+        },
+        {
+          "text": "III, apenas.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q049",
+      "question_number": 49,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - SIMULADO INÉDITO) Durante confronto armado com infratores da lei em ambiente de mata, uma patrulha da PMMT composta por 4 militares tem um operador ferido. Em conformidade com o Procedimento 108.2 (Resgate do Policial Ferido), analise as assertivas:\n[I] O policial militar ferido, se estiver consciente e em condições físicas, deve procurar abrigo e realizar o autoatendimento (aplicação do próprio torniquete), orientado por auxílio remoto da equipe.\n[II] Caso o policial ferido esteja a mais de 20 segundos de arrasto de um local seguro, é proibida qualquer intervenção no ponto 'X', devendo o socorrista arrastá-lo imediatamente sem aplicar torniquete.\n[III] Em equipes compostas por 3 ou 4 policiais, as funções devem ser distribuídas entre socorrista, segurança da equipe e, quando possível, socorrista auxiliar, utilizando técnicas de transporte como 'Navy Seals' ou transporte duplo/enfileirado.\nEstá correto o que se afirma em:",
+      "difficulty": "hard",
+      "topics": [
+        "108.2"
+      ],
+      "primary_topic": "108.2",
+      "source_pages": [
+        [
+          102,
+          103
+        ]
+      ],
+      "origin": {
+        "type": "simulado_inedito",
+        "label": "UFMT - Simulado Inédito (material fornecido)"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | UFMT - Simulado Inédito (material fornecido)",
+      "explanation": "I é correta: ferido consciente deve buscar abrigo e realizar autoatendimento com auxílio remoto. II é falsa: se estiver a mais de 20 s de arrasto pode haver triagem rápida no X. III é correta para equipes de 3/4 militares, com divisão de funções e técnicas de transporte duplo/enfileirado ou Navy Seals.",
+      "alternatives": [
+        {
+          "text": "I e III, apenas.",
+          "correct": true
+        },
+        {
+          "text": "I, II e III.",
+          "correct": false
+        },
+        {
+          "text": "II e III, apenas.",
+          "correct": false
+        },
+        {
+          "text": "II, apenas.",
+          "correct": false
+        },
+        {
+          "text": "I, apenas.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q050",
+      "question_number": 50,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - SIMULADO INÉDITO) No tocante à prevenção da tríade da morte (hipotermia) e à adaptação da viatura policial para transporte rápido (Procedimento 108.4 da PMMT), considere as assertivas:\n[I] Ao preparar a viatura policial para receber o policial ferido, deve-se remover armas longas, cabideiro (se houver), mochilas e garrafas do banco traseiro, rebater o banco do Comandante para frente no limite máximo e acionar o aquecedor veicular.\n[II] A manta aluminizada deve ser disposta sobre a vítima com o lado reflexivo/brilhoso voltado para dentro, visando conservar o calor gerado, e a fonte de calor químico deve ser posicionada preferencialmente no tórax, evitando contato direto com a pele.\n[III] O protocolo completo MARC1 deve ser reavaliado integralmente, na sequência da cabeça aos pés, a cada 2 minutos durante o deslocamento até a unidade hospitalar de referência.\nEstá correto o que se afirma em:",
+      "difficulty": "hard",
+      "topics": [
+        "108.4"
+      ],
+      "primary_topic": "108.4",
+      "source_pages": [
+        [
+          106,
+          112
+        ]
+      ],
+      "origin": {
+        "type": "simulado_inedito",
+        "label": "UFMT - Simulado Inédito (material fornecido)"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | UFMT - Simulado Inédito (material fornecido)",
+      "explanation": "I e II reproduzem a sequência do POP 108.4. A reavaliação cabeça-aos-pés ocorre após o MARC; durante o deslocamento, a cada 2 minutos, o protocolo deve ser revisto na ordem MARC. A afirmativa III mistura as duas instruções.",
+      "alternatives": [
+        {
+          "text": "I e II, apenas.",
+          "correct": true
+        },
+        {
+          "text": "II e III, apenas.",
+          "correct": false
+        },
+        {
+          "text": "I e III, apenas.",
+          "correct": false
+        },
+        {
+          "text": "I, II e III.",
+          "correct": false
+        },
+        {
+          "text": "I, apenas.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    },
+    {
+      "source_key": "POP1-ATUALIZADO-Q051",
+      "question_number": 51,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - SIMULADO INÉDITO) A respeito do manejo da respiração ('R'), prevenção da hipotermia ('C') e procedimentos veiculares para evacuação (Procedimentos 108.3 e 108.4 da PMMT), assinale a alternativa CORRETA:",
+      "difficulty": "hard",
+      "topics": [
+        "108.4"
+      ],
+      "primary_topic": "108.4",
+      "source_pages": [
+        [
+          106,
+          112
+        ]
+      ],
+      "origin": {
+        "type": "simulado_inedito",
+        "label": "UFMT - Simulado Inédito (material fornecido)"
+      },
+      "source_label": "POP 1 - Módulo I atualizado (arquivo POP-1---.pdf) | UFMT - Simulado Inédito (material fornecido)",
+      "explanation": "O POP 108.4 determina que, com equipe de apenas dois militares, o ferido seja lateralizado no banco traseiro com a face voltada para frente, permitindo monitoramento pelo retrovisor do motorista.",
+      "alternatives": [
+        {
+          "text": "O selo de tórax valvulado deve ser aplicado no orifício de entrada anterior, sendo desnecessário inspecionar as regiões laterais e posterior (dorso) da vítima.",
+          "correct": false
+        },
+        {
+          "text": "Caso a respiração da vítima piore após a colocação do selo de tórax, deve-se aguardar a chegada ao hospital sem realizar qualquer intervenção local ou manobra descompressiva.",
+          "correct": false
+        },
+        {
+          "text": "A bolsa de calor químico instantâneo deve ser posicionada preferencialmente sobre a nuca ou na panturrilha do policial, diretamente sobre a pele desnuda.",
+          "correct": false
+        },
+        {
+          "text": "A manta térmica aluminizada deve ser instalada sobre o policial ferido com a sua face metalizada/brilhosa voltada para fora, visando refletir a luz solar ambiente.",
+          "correct": false
+        },
+        {
+          "text": "Na hipótese de transporte do policial ferido em viatura composta por apenas 2 militares, a vítima deve ser alojada no banco traseiro lateralizada com a face voltada para frente, permitindo o monitoramento pelo retrovisor do motorista.",
+          "correct": true
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP atualizado."
+      }
+    }
+  ]
+}

@@ -7,9 +7,15 @@ $success = Session::pullFlash('success');
 $courses = $courses ?? [];
 $modules = $modules ?? [];
 $phases = $phases ?? [];
+$topics = $topics ?? [];
+$taxonomyAvailable = (bool) ($taxonomyAvailable ?? false);
 $history = $history ?? [];
 $stats = $stats ?? [];
 $allowedLimits = $allowedLimits ?? [5, 10, 15, 20, 30];
+
+$popTopics = array_values(array_filter($topics, static fn (array $t): bool => ($t['topic_type'] ?? '') === 'pop'));
+$processTopics = array_values(array_filter($topics, static fn (array $t): bool => ($t['topic_type'] ?? '') === 'process'));
+$procedureTopics = array_values(array_filter($topics, static fn (array $t): bool => ($t['topic_type'] ?? '') === 'procedure'));
 ?>
 <section class="study-tools-page exercise-center">
     <?php if ($error): ?><div class="study-alert is-error"><?= e((string) $error) ?></div><?php endif; ?>
@@ -18,8 +24,8 @@ $allowedLimits = $allowedLimits ?? [5, 10, 15, 20, 30];
     <header class="study-tools-hero card">
         <div>
             <span class="study-tools-eyebrow">CENTRAL DE EXERCÍCIOS</span>
-            <h1>Fixe a base antes de encarar a prova</h1>
-            <p>Gere listas com questões de dificuldade média, escolhendo curso, disciplina e tema. O sistema prioriza perguntas que você ainda não viu.</p>
+            <h1>Estude exatamente o conteúdo que precisa revisar</h1>
+            <p>Escolha curso, disciplina e tema. No banco de POP, você também pode selecionar POP, processo e procedimento específico.</p>
         </div>
         <div class="study-tools-hero-badge" aria-hidden="true">🧠</div>
     </header>
@@ -35,7 +41,7 @@ $allowedLimits = $allowedLimits ?? [5, 10, 15, 20, 30];
         <section class="study-panel card exercise-generator-panel">
             <div class="study-panel-heading">
                 <div><span>GERADOR</span><h2>Monte seu exercício</h2></div>
-                <span class="study-chip">Somente nível médio</span>
+                <span class="study-chip">Médio + difícil</span>
             </div>
 
             <?php if (empty($courses)): ?>
@@ -50,7 +56,7 @@ $allowedLimits = $allowedLimits ?? [5, 10, 15, 20, 30];
                             <option value="">Selecione o curso</option>
                             <?php foreach ($courses as $course): ?>
                                 <option value="<?= (int) $course['id'] ?>">
-                                    <?= e($course['title']) ?> · <?= (int) ($course['medium_questions'] ?? 0) ?> questões
+                                    <?= e($course['title']) ?> · <?= (int) ($course['question_count'] ?? 0) ?> questões
                                 </option>
                             <?php endforeach; ?>
                         </select>
@@ -62,26 +68,86 @@ $allowedLimits = $allowedLimits ?? [5, 10, 15, 20, 30];
                             <option value="">Todas as disciplinas</option>
                             <?php foreach ($modules as $module): ?>
                                 <option value="<?= (int) $module['id'] ?>"
-                                        data-course-id="<?= (int) $module['course_id'] ?>">
-                                    <?= e($module['title']) ?> · <?= (int) ($module['medium_questions'] ?? 0) ?> questões
+                                        data-course-id="<?= (int) $module['course_id'] ?>"
+                                        data-is-pop="<?= !empty($module['is_pop']) ? '1' : '0' ?>">
+                                    <?= e($module['title']) ?> · <?= (int) ($module['question_count'] ?? 0) ?> questões
                                 </option>
                             <?php endforeach; ?>
                         </select>
                     </label>
 
                     <label>
-                        <span>Tema</span>
+                        <span>Tema da trilha <em>(opcional)</em></span>
                         <select name="phase_id" data-scope-phase disabled>
                             <option value="">Todos os temas</option>
                             <?php foreach ($phases as $phase): ?>
                                 <option value="<?= (int) $phase['id'] ?>"
                                         data-course-id="<?= (int) $phase['course_id'] ?>"
                                         data-module-id="<?= (int) $phase['module_id'] ?>">
-                                    <?= e($phase['title']) ?> · <?= (int) ($phase['medium_questions'] ?? 0) ?> questões
+                                    <?= e($phase['title']) ?> · <?= (int) ($phase['question_count'] ?? 0) ?> questões
                                 </option>
                             <?php endforeach; ?>
                         </select>
                     </label>
+
+                    <label>
+                        <span>Dificuldade</span>
+                        <select name="difficulty">
+                            <option value="all">Médio + difícil</option>
+                            <option value="medium">Somente médio</option>
+                            <option value="hard">Somente difícil</option>
+                        </select>
+                    </label>
+
+                    <label class="exercise-pop-filter">
+                        <span>POP <em>(opcional)</em></span>
+                        <select name="pop_topic_id" data-pop-topic disabled>
+                            <option value="">Todos os POPs</option>
+                            <?php foreach ($popTopics as $topic): ?>
+                                <option value="<?= (int) $topic['id'] ?>">
+                                    <?= e($topic['title']) ?> · <?= (int) ($topic['question_count'] ?? 0) ?> questões
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </label>
+
+                    <label class="exercise-pop-filter">
+                        <span>Processo <em>(opcional)</em></span>
+                        <select name="process_topic_id" data-process-topic disabled>
+                            <option value="">Todos os processos</option>
+                            <?php foreach ($processTopics as $topic): ?>
+                                <option value="<?= (int) $topic['id'] ?>"
+                                        data-parent-id="<?= (int) ($topic['parent_id'] ?? 0) ?>">
+                                    <?= e($topic['title']) ?> · <?= (int) ($topic['question_count'] ?? 0) ?> questões
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </label>
+
+                    <label class="exercise-pop-filter">
+                        <span>Procedimento <em>(opcional)</em></span>
+                        <select name="procedure_topic_id" data-procedure-topic disabled>
+                            <option value="">Todos os procedimentos</option>
+                            <?php foreach ($procedureTopics as $topic): ?>
+                                <option value="<?= (int) $topic['id'] ?>"
+                                        data-parent-id="<?= (int) ($topic['parent_id'] ?? 0) ?>">
+                                    <?= e($topic['title']) ?> · <?= (int) ($topic['question_count'] ?? 0) ?> questões
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </label>
+
+                    <?php if ($taxonomyAvailable): ?>
+                        <div class="exercise-pop-note">
+                            <span>🗂️</span>
+                            <p><strong>Banco organizado por POP.</strong> Escolha a disciplina de Procedimentos Operacionais Padrão para liberar POP → Processo → Procedimento. O filtro usa o nível mais específico selecionado.</p>
+                        </div>
+                    <?php else: ?>
+                        <div class="exercise-pop-note is-warning">
+                            <span>⚠️</span>
+                            <p>A taxonomia POP ainda não está instalada. Execute primeiro <code>database/aplicar_pop1_taxonomia_v1.php</code>.</p>
+                        </div>
+                    <?php endif; ?>
 
                     <fieldset class="exercise-limit-fieldset">
                         <legend>Quantidade</legend>
@@ -97,7 +163,7 @@ $allowedLimits = $allowedLimits ?? [5, 10, 15, 20, 30];
 
                     <div class="exercise-generator-note">
                         <span>🔀</span>
-                        <p>Primeiro entram questões ainda não vistas. Quando o conteúdo disponível for esgotado, o sistema reutiliza as menos vistas e mais antigas.</p>
+                        <p>Primeiro entram questões ainda não vistas. Depois de esgotar o filtro escolhido, o sistema reutiliza as menos vistas e mais antigas.</p>
                     </div>
 
                     <button class="primary exercise-generate-button" type="submit">Gerar exercícios →</button>
@@ -117,8 +183,14 @@ $allowedLimits = $allowedLimits ?? [5, 10, 15, 20, 30];
 
                 <?php foreach ($history as $item): ?>
                     <?php
-                    $scope = $item['phase_title_snapshot'] ?: ($item['module_title_snapshot'] ?: $item['course_title_snapshot']);
+                    $scope = $item['topic_title_snapshot']
+                        ?: ($item['phase_title_snapshot'] ?: ($item['module_title_snapshot'] ?: $item['course_title_snapshot']));
                     $finished = ($item['status'] ?? '') === 'finished';
+                    $difficultyLabel = match ((string) ($item['difficulty_filter'] ?? 'all')) {
+                        'medium' => 'médio',
+                        'hard' => 'difícil',
+                        default => 'médio + difícil',
+                    };
                     ?>
                     <article class="exercise-history-item">
                         <span class="exercise-history-score <?= $finished && (float) $item['percentage'] >= 70 ? 'is-good' : '' ?>">
@@ -126,7 +198,7 @@ $allowedLimits = $allowedLimits ?? [5, 10, 15, 20, 30];
                         </span>
                         <div>
                             <strong><?= e((string) $scope) ?></strong>
-                            <small><?= (int) $item['question_limit'] ?> questões · <?= e(date('d/m/Y H:i', strtotime((string) $item['started_at']))) ?></small>
+                            <small><?= (int) $item['question_limit'] ?> questões · <?= e($difficultyLabel) ?> · <?= e(date('d/m/Y H:i', strtotime((string) $item['started_at']))) ?></small>
                         </div>
                         <?php if ($finished): ?>
                             <a href="<?= e(url('/exercicios/sessao/' . (int) $item['id'] . '/resultado')) ?>">Ver resultado</a>

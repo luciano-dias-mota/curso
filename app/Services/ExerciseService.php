@@ -12,7 +12,9 @@ use Throwable;
 final class ExerciseService
 {
     private const ALLOWED_LIMITS = [5, 10, 15, 20, 30];
-    private const MIN_ALTERNATIVES = 4;
+    private const MIN_ALTERNATIVES_MULTIPLE_CHOICE = 4;
+    private const MIN_ALTERNATIVES_TRUE_FALSE = 2;
+    private const ALLOWED_DIFFICULTIES = ['all', 'medium', 'hard'];
 
     public function dashboard(int $userId): array
     {
@@ -49,14 +51,17 @@ final class ExerciseService
                 'courses' => [],
                 'modules' => [],
                 'phases' => [],
+                'topics' => [],
+                'taxonomyAvailable' => false,
                 'allowedLimits' => self::ALLOWED_LIMITS,
+                'allowedDifficulties' => self::ALLOWED_DIFFICULTIES,
             ];
         }
 
         $placeholders = implode(',', array_fill(0, count($courseIds), '?'));
 
         $moduleStmt = $pdo->prepare(
-            "SELECT m.id, m.course_id, m.title, m.position
+            "SELECT m.id, m.course_id, m.title, m.slug, m.position
              FROM modules m
              WHERE m.course_id IN ({$placeholders})
                AND m.status = 'published'
@@ -64,6 +69,11 @@ final class ExerciseService
         );
         $moduleStmt->execute($courseIds);
         $modules = $moduleStmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($modules as &$module) {
+            $module['is_pop'] = $this->isPopModule($module) ? 1 : 0;
+        }
+        unset($module);
 
         $phaseStmt = $pdo->prepare(
             "SELECT p.id, p.module_id, p.title, p.position, m.course_id
@@ -77,28 +87,35 @@ final class ExerciseService
         $phaseStmt->execute($courseIds);
         $phases = $phaseStmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $counts = $this->mediumQuestionCounts($pdo, $courseIds);
+        $counts = $this->practiceQuestionCounts($pdo, $courseIds);
 
         foreach ($courses as &$course) {
-            $course['medium_questions'] = (int) ($counts['courses'][(int) $course['id']] ?? 0);
+            $course['question_count'] = (int) ($counts['courses'][(int) $course['id']] ?? 0);
         }
         unset($course);
 
         foreach ($modules as &$module) {
-            $module['medium_questions'] = (int) ($counts['modules'][(int) $module['id']] ?? 0);
+            $module['question_count'] = (int) ($counts['modules'][(int) $module['id']] ?? 0);
         }
         unset($module);
 
         foreach ($phases as &$phase) {
-            $phase['medium_questions'] = (int) ($counts['phases'][(int) $phase['id']] ?? 0);
+            $phase['question_count'] = (int) ($counts['phases'][(int) $phase['id']] ?? 0);
         }
         unset($phase);
+
+        $taxonomyAvailable = $this->tableExists($pdo, 'study_topics')
+            && $this->tableExists($pdo, 'question_topics');
+        $topics = $taxonomyAvailable ? $this->studyTopics($pdo, $courseIds) : [];
 
         return [
             'courses' => $courses,
             'modules' => $modules,
             'phases' => $phases,
+            'topics' => $topics,
+            'taxonomyAvailable' => $taxonomyAvailable,
             'allowedLimits' => self::ALLOWED_LIMITS,
+            'allowedDifficulties' => self::ALLOWED_DIFFICULTIES,
         ];
     }
 
@@ -107,10 +124,17 @@ final class ExerciseService
         int $courseId,
         int $questionLimit,
         ?int $moduleId = null,
-        ?int $phaseId = null
+        ?int $phaseId = null,
+        ?int $topicId = null,
+        string $difficulty = 'all'
     ): int {
         if (!in_array($questionLimit, self::ALLOWED_LIMITS, true)) {
             throw new RuntimeException('Quantidade de exercícios inválida.');
+        }
+
+        $difficulty = strtolower(trim($difficulty));
+        if (!in_array($difficulty, self::ALLOWED_DIFFICULTIES, true)) {
+            throw new RuntimeException('Dificuldade inválida.');
         }
 
         $pdo = Database::connection();
@@ -119,7 +143,7 @@ final class ExerciseService
         $module = null;
         if ($moduleId !== null && $moduleId > 0) {
             $moduleStmt = $pdo->prepare(
-                "SELECT id, course_id, title
+                "SELECT id, course_id, title, slug
                  FROM modules
                  WHERE id = :id
                    AND course_id = :course_id
@@ -165,16 +189,44 @@ final class ExerciseService
             $phaseId = null;
         }
 
+        $topic = null;
+        if ($topicId !== null && $topicId > 0) {
+            if ($module === null || !$this->isPopModule($module)) {
+                throw new RuntimeException('Os filtros POP só podem ser usados na disciplina de Procedimentos Operacionais Padrão.');
+            }
+            if (!$this->tableExists($pdo, 'study_topics') || !$this->tableExists($pdo, 'question_topics')) {
+                throw new RuntimeException('A taxonomia POP ainda não foi instalada no banco.');
+            }
+
+            $topicStmt = $pdo->prepare(
+                "SELECT id, parent_id, code, title, topic_type
+                 FROM study_topics
+                 WHERE id = :id
+                   AND domain = 'pop'
+                   AND active = 1
+                 LIMIT 1"
+            );
+            $topicStmt->execute(['id' => $topicId]);
+            $topic = $topicStmt->fetch(PDO::FETCH_ASSOC) ?: null;
+            if (!$topic) {
+                throw new RuntimeException('POP, processo ou procedimento inválido.');
+            }
+        } else {
+            $topicId = null;
+        }
+
         $candidates = $this->questionCandidates(
             $pdo,
             $userId,
             $courseId,
             $moduleId,
-            $phaseId
+            $phaseId,
+            $topicId,
+            $difficulty
         );
 
         if ($candidates === []) {
-            throw new RuntimeException('Não existem questões médias válidas para este filtro. Escolha outro conteúdo.');
+            throw new RuntimeException('Não existem questões válidas para este filtro. Escolha outro conteúdo ou dificuldade.');
         }
 
         $picked = $this->selectQuestions($candidates, $questionLimit);
@@ -184,8 +236,12 @@ final class ExerciseService
         )));
         $alternatives = $this->alternativesByQuestion($pdo, $uniqueQuestionIds);
 
-        foreach ($uniqueQuestionIds as $questionId) {
-            if (count($alternatives[$questionId] ?? []) < self::MIN_ALTERNATIVES) {
+        foreach ($picked as $question) {
+            $questionId = (int) $question['id'];
+            $minimum = ($question['question_type'] ?? 'multiple_choice') === 'true_false'
+                ? self::MIN_ALTERNATIVES_TRUE_FALSE
+                : self::MIN_ALTERNATIVES_MULTIPLE_CHOICE;
+            if (count($alternatives[$questionId] ?? []) < $minimum) {
                 throw new RuntimeException('Uma das questões selecionadas não possui alternativas suficientes.');
             }
         }
@@ -194,22 +250,25 @@ final class ExerciseService
         try {
             $insertSession = $pdo->prepare(
                 "INSERT INTO exercise_sessions
-                    (user_id, course_id, module_id, phase_id,
-                     course_title_snapshot, module_title_snapshot, phase_title_snapshot,
-                     question_limit, correct_count, percentage, status, started_at)
+                    (user_id, course_id, module_id, phase_id, topic_id,
+                     course_title_snapshot, module_title_snapshot, phase_title_snapshot, topic_title_snapshot,
+                     difficulty_filter, question_limit, correct_count, percentage, status, started_at)
                  VALUES
-                    (:user_id, :course_id, :module_id, :phase_id,
-                     :course_title, :module_title, :phase_title,
-                     :question_limit, 0, 0, 'in_progress', NOW())"
+                    (:user_id, :course_id, :module_id, :phase_id, :topic_id,
+                     :course_title, :module_title, :phase_title, :topic_title,
+                     :difficulty_filter, :question_limit, 0, 0, 'in_progress', NOW())"
             );
             $insertSession->execute([
                 'user_id' => $userId,
                 'course_id' => $courseId,
                 'module_id' => $moduleId,
                 'phase_id' => $phaseId,
+                'topic_id' => $topicId,
                 'course_title' => (string) $course['title'],
                 'module_title' => $module['title'] ?? null,
                 'phase_title' => $phase['title'] ?? null,
+                'topic_title' => $topic['title'] ?? null,
+                'difficulty_filter' => $difficulty,
                 'question_limit' => $questionLimit,
             ]);
             $sessionId = (int) $pdo->lastInsertId();
@@ -239,7 +298,7 @@ final class ExerciseService
                     'statement_snapshot' => (string) $question['statement'],
                     'explanation_snapshot' => $question['explanation'],
                     'source_label_snapshot' => $question['source_label'],
-                    'difficulty_snapshot' => 'medium',
+                    'difficulty_snapshot' => (string) $question['difficulty'],
                     'alternatives_snapshot' => json_encode(
                         $snapshotAlternatives,
                         JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR
@@ -544,6 +603,7 @@ final class ExerciseService
     {
         $stmt = $pdo->prepare(
             "SELECT id, course_title_snapshot, module_title_snapshot, phase_title_snapshot,
+                    topic_title_snapshot, difficulty_filter,
                     question_limit, correct_count, percentage, status, started_at, finished_at
              FROM exercise_sessions
              WHERE user_id = :user_id
@@ -581,14 +641,17 @@ final class ExerciseService
         int $userId,
         int $courseId,
         ?int $moduleId,
-        ?int $phaseId
+        ?int $phaseId,
+        ?int $topicId,
+        string $difficulty
     ): array {
         $where = [
             'q.course_id = :course_id',
             'q.active = 1',
-            "q.question_type = 'multiple_choice'",
-            "q.difficulty = 'medium'",
-            'quality.alternatives_count >= ' . self::MIN_ALTERNATIVES,
+            "q.question_type IN ('multiple_choice','true_false')",
+            "q.difficulty IN ('medium','hard')",
+            "((q.question_type = 'multiple_choice' AND quality.alternatives_count >= " . self::MIN_ALTERNATIVES_MULTIPLE_CHOICE . ")
+              OR (q.question_type = 'true_false' AND quality.alternatives_count >= " . self::MIN_ALTERNATIVES_TRUE_FALSE . '))',
             'quality.correct_count = 1',
         ];
         $params = [
@@ -604,9 +667,17 @@ final class ExerciseService
             $where[] = 'q.phase_id = :phase_id';
             $params['phase_id'] = $phaseId;
         }
+        if ($topicId !== null) {
+            $where[] = 'EXISTS (SELECT 1 FROM question_topics qt WHERE qt.question_id = q.id AND qt.topic_id = :topic_id)';
+            $params['topic_id'] = $topicId;
+        }
+        if ($difficulty !== 'all') {
+            $where[] = 'q.difficulty = :difficulty';
+            $params['difficulty'] = $difficulty;
+        }
 
         $stmt = $pdo->prepare(
-            "SELECT q.id, q.statement, q.explanation, q.source_label,
+            "SELECT q.id, q.question_type, q.statement, q.explanation, q.source_label, q.difficulty,
                     COALESCE(hist.seen_count, 0) AS seen_count,
                     hist.last_seen_at
              FROM questions q
@@ -779,7 +850,7 @@ final class ExerciseService
         return $percentage;
     }
 
-    private function mediumQuestionCounts(PDO $pdo, array $courseIds): array
+    private function practiceQuestionCounts(PDO $pdo, array $courseIds): array
     {
         if ($courseIds === []) {
             return ['courses' => [], 'modules' => [], 'phases' => []];
@@ -798,9 +869,10 @@ final class ExerciseService
              ) quality ON quality.question_id = q.id
              WHERE q.course_id IN ({$placeholders})
                AND q.active = 1
-               AND q.question_type = 'multiple_choice'
-               AND q.difficulty = 'medium'
-               AND quality.alternatives_count >= " . self::MIN_ALTERNATIVES . "
+               AND q.question_type IN ('multiple_choice','true_false')
+               AND q.difficulty IN ('medium','hard')
+               AND ((q.question_type = 'multiple_choice' AND quality.alternatives_count >= " . self::MIN_ALTERNATIVES_MULTIPLE_CHOICE . ")
+                    OR (q.question_type = 'true_false' AND quality.alternatives_count >= " . self::MIN_ALTERNATIVES_TRUE_FALSE . "))
                AND quality.correct_count = 1
              GROUP BY q.course_id, q.module_id, q.phase_id"
         );
@@ -809,7 +881,6 @@ final class ExerciseService
         $courseCounts = [];
         $moduleCounts = [];
         $phaseCounts = [];
-
         foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
             $qty = (int) $row['qty'];
             $courseId = (int) $row['course_id'];
@@ -831,4 +902,69 @@ final class ExerciseService
             'phases' => $phaseCounts,
         ];
     }
+
+    private function studyTopics(PDO $pdo, array $courseIds): array
+    {
+        $counts = [];
+        if ($courseIds !== []) {
+            $placeholders = implode(',', array_fill(0, count($courseIds), '?'));
+            $stmt = $pdo->prepare(
+                "SELECT qt.topic_id, COUNT(DISTINCT q.id) AS qty
+                 FROM question_topics qt
+                 INNER JOIN questions q ON q.id = qt.question_id
+                 INNER JOIN (
+                    SELECT question_id,
+                           COUNT(*) AS alternatives_count,
+                           SUM(CASE WHEN is_correct = 1 THEN 1 ELSE 0 END) AS correct_count
+                    FROM alternatives
+                    GROUP BY question_id
+                 ) quality ON quality.question_id = q.id
+                 WHERE q.course_id IN ({$placeholders})
+                   AND q.active = 1
+                   AND q.question_type IN ('multiple_choice','true_false')
+                   AND q.difficulty IN ('medium','hard')
+                   AND ((q.question_type = 'multiple_choice' AND quality.alternatives_count >= " . self::MIN_ALTERNATIVES_MULTIPLE_CHOICE . ")
+                        OR (q.question_type = 'true_false' AND quality.alternatives_count >= " . self::MIN_ALTERNATIVES_TRUE_FALSE . "))
+                   AND quality.correct_count = 1
+                 GROUP BY qt.topic_id"
+            );
+            $stmt->execute($courseIds);
+            foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
+                $counts[(int) $row['topic_id']] = (int) $row['qty'];
+            }
+        }
+
+        $rows = $pdo->query(
+            "SELECT id,parent_id,domain,code,slug,topic_type,title,position
+             FROM study_topics
+             WHERE domain='pop' AND active=1
+             ORDER BY CASE topic_type WHEN 'pop' THEN 1 WHEN 'general' THEN 2 WHEN 'process' THEN 3 ELSE 4 END,
+                      position,id"
+        )->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($rows as &$row) {
+            $row['question_count'] = (int) ($counts[(int)$row['id']] ?? 0);
+        }
+        unset($row);
+        return $rows;
+    }
+
+    private function tableExists(PDO $pdo, string $table): bool
+    {
+        $stmt = $pdo->prepare(
+            "SELECT COUNT(*) FROM information_schema.TABLES
+             WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = :table"
+        );
+        $stmt->execute(['table' => $table]);
+        return (int) $stmt->fetchColumn() > 0;
+    }
+
+    private function isPopModule(array $module): bool
+    {
+        $slug = mb_strtolower((string)($module['slug'] ?? ''));
+        $title = mb_strtolower((string)($module['title'] ?? ''));
+        return str_contains($slug, 'procedimentos-operacionais-padrao')
+            || str_contains($title, 'procedimentos operacionais');
+    }
+
 }
