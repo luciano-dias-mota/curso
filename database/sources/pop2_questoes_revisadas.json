@@ -1,0 +1,1410 @@
+{
+  "format_version": 1,
+  "source_document": "pop-2--.pdf",
+  "question_document": "exercicio-pop-2.docx",
+  "review_basis": "Exclusivamente o POP 2 atualizado fornecido pelo usuário; sem preenchimento silencioso com fontes externas.",
+  "total_questions": 28,
+  "difficulty_summary": {
+    "medium": 20,
+    "hard": 8
+  },
+  "items": [
+    {
+      "source_key": "POP2-ATUALIZADO-Q001",
+      "question_number": 1,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo II) O encarregado da busca veicular chega ao 5º ponto de vistoria (porta-malas) e realiza a abertura lenta do compartimento utilizando a mão fraca, com a arma em posição de pronto emprego. Nos termos do POP 201.5, caso o vistoriador encontre uma pessoa no interior do porta-malas, qual deve ser a sua conduta?",
+      "difficulty": "medium",
+      "topics": [
+        "201.5"
+      ],
+      "primary_topic": "201.5",
+      "source_pages": [
+        [
+          11,
+          12
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo II"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | UFMT - POP Módulo II (material fornecido)",
+      "explanation": "No POP 201.5, se houver pessoa no porta-malas, o vistoriador fecha a porta, informa o comandante e este determina o reposicionamento/algemamento dos demais abordados antes de retomar a ação.",
+      "alternatives": [
+        {
+          "text": "Efetuar disparos defensivos em curto espaço de tempo na região do tórax.",
+          "correct": false
+        },
+        {
+          "text": "Solicitar que o proprietário faça o reconhecimento do chassi do estepe.",
+          "correct": false
+        },
+        {
+          "text": "Retirar a pessoa do compartimento de forma isolada sem avisar a equipe.",
+          "correct": false
+        },
+        {
+          "text": "Fechar a porta imediatamente, informando o Comandante da guarnição, que determinará que os demais abordados deitem no chão para a realização do algemamento.",
+          "correct": true
+        },
+        {
+          "text": "Liberar todos os ocupantes do veículo aplicando o chavão padrão da instituição.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q002",
+      "question_number": 2,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo II) Um policial militar atua como o encarregado da busca pessoal (2º homem) em uma ocorrência com fundada suspeita. Visando a resguardar a integridade física da guarnição e conforme as regras do POP 202.2, caso o abordado esteja portando uma mochila ou sacola de volume portátil, o policial deve:",
+      "difficulty": "medium",
+      "topics": [
+        "202.2"
+      ],
+      "primary_topic": "202.2",
+      "source_pages": [
+        [
+          21,
+          22
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo II"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | UFMT - POP Módulo II (material fornecido)",
+      "explanation": "No POP 202.2, havendo mochila, mala, sacola ou outro volume portátil, o 2º homem deve realizar a busca do pertence antes de iniciar a checagem dos documentos.",
+      "alternatives": [
+        {
+          "text": "Exigir que o próprio abordado insira as mãos na mochila para retirar os pertences.",
+          "correct": false
+        },
+        {
+          "text": "Ignorar o volume, realizando a checagem dos documentos em primeiro lugar.",
+          "correct": false
+        },
+        {
+          "text": "Submeter o objeto à destruição tática preventiva com uso de Instrumentos de Menor Potencial Ofensivo.",
+          "correct": false
+        },
+        {
+          "text": "Encaminhar o volume diretamente para perícia especializada na POLITEC.",
+          "correct": false
+        },
+        {
+          "text": "Realizar a busca desse pertence antes de iniciar a checagem dos documentos.",
+          "correct": true
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q003",
+      "question_number": 3,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo II) Complete as lacunas vazias com as palavras correspondentes:\n\nO encarregado da busca veicular chega ao ___ ponto de vistoria (porta-malas) e realiza a abertura lenta do compartimento utilizando a mão _______, com a arma em posição de pronto ______.*",
+      "difficulty": "medium",
+      "topics": [
+        "201.5"
+      ],
+      "primary_topic": "201.5",
+      "source_pages": [
+        [
+          11,
+          11
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo II"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | UFMT - POP Módulo II (material fornecido)",
+      "explanation": "O POP 201.5 divide o veículo em 6 pontos; o porta-malas é o 5º. A abertura é lenta, pela mão fraca, com a arma em pronto emprego e cuidado para o cano não ultrapassar o limite fatiado.",
+      "alternatives": [
+        {
+          "text": "6º, fraca, baixo",
+          "correct": false
+        },
+        {
+          "text": "5º, forte, emprego",
+          "correct": false
+        },
+        {
+          "text": "5º, forte, baixo",
+          "correct": false
+        },
+        {
+          "text": "6º, forte, emprego",
+          "correct": false
+        },
+        {
+          "text": "5°, fraca, emprego",
+          "correct": true
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q004",
+      "question_number": 4,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo II) No âmbito do policiamento motociclístico da Polícia Militar de Mato Grosso, os esclarecimentos gerais do Módulo II estabelecem quantidade mínima de pessoal e de motocicletas para preservar a segurança da equipe. O motopatrulhamento tático não deverá ser realizado por efetivo menor que:",
+      "difficulty": "medium",
+      "topics": [
+        "208.1",
+        "210.1"
+      ],
+      "primary_topic": "210.1",
+      "source_pages": [
+        [
+          73,
+          73
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo II"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | UFMT - POP Módulo II (material fornecido)",
+      "explanation": "O esclarecimento geral do policiamento motociclístico determina mínimo de 3 policiais militares e uso obrigatório de 2 motocicletas, com o 3º homem engarupado. No PDF atualizado, esse esclarecimento aparece ao final do Processo 208.1; a questão original o atribuía especificamente ao 210.1.",
+      "alternatives": [
+        {
+          "text": "02 policiais militares e 01 motocicleta operacional.",
+          "correct": false
+        },
+        {
+          "text": "04 policiais militares e 02 viaturas de quatro rodas.",
+          "correct": false
+        },
+        {
+          "text": "03 policiais militares e 02 motocicletas operacionais, estando o 3º homem engarupado.",
+          "correct": true
+        },
+        {
+          "text": "05 policiais militares coordenados por um oficial do quadro complementar.",
+          "correct": false
+        },
+        {
+          "text": "06 policiais militares em ambiente de blindagem balística.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": true,
+        "note": "O enunciado original atribuía a regra aos 'Esclarecimentos do POP 210.1'. No PDF atualizado, a regra geral de efetivo mínimo aparece ao final do Processo 208.1; a redação foi corrigida sem alterar o conteúdo cobrado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q005",
+      "question_number": 5,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo II) Durante uma abordagem a uma pessoa em fundada suspeita, o 1º homem fica encarregado da segurança do perímetro e da busca. Conforme as regras de angulação tática fixadas no POP 202.2, caso a guarnição esteja abordando APENAS 01 (um) indivíduo, o policial responsável pela segurança deve se posicionar em relação ao revistador a um ângulo de aproximadamente:",
+      "difficulty": "medium",
+      "topics": [
+        "202.2"
+      ],
+      "primary_topic": "202.2",
+      "source_pages": [
+        [
+          21,
+          21
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo II"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | UFMT - POP Módulo II (material fornecido)",
+      "explanation": "No POP 202.2, quando há apenas um abordado, o 1º homem responsável pela segurança deve buscar o melhor ângulo, indicado nos esclarecimentos como aproximadamente 45° em relação ao encarregado da busca.",
+      "alternatives": [
+        {
+          "text": "45 graus.",
+          "correct": true
+        },
+        {
+          "text": "90 graus.",
+          "correct": false
+        },
+        {
+          "text": "180 graus.",
+          "correct": false
+        },
+        {
+          "text": "15 graus.",
+          "correct": false
+        },
+        {
+          "text": "360 graus.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q006",
+      "question_number": 6,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo II) Durante o patrulhamento em uma motocicleta operacional, a equipe de motopatrulhamento depara-se com um veículo ocupado por infratores da lei e decide realizar a abordagem. Conforme as regras de posicionamento veicular do POP 209.1, a motocicleta do 2º homem (piloto) deverá ser posicionada em relação ao veículo alvo a uma distância de:",
+      "difficulty": "medium",
+      "topics": [
+        "209.1"
+      ],
+      "primary_topic": "209.1",
+      "source_pages": [
+        [
+          76,
+          76
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo II"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | UFMT - POP Módulo II (material fornecido)",
+      "explanation": "O POP 209.1 determina as motos lado a lado, cerca de 2 m entre si; a moto do 2º homem fica cerca de 1 m à frente, a aproximadamente 45° do alvo e cerca de 5 m à retaguarda.",
+      "alternatives": [
+        {
+          "text": "10 metros à retaguarda, alinhada à direita do capô.",
+          "correct": false
+        },
+        {
+          "text": "2 metros à frente, bloqueando a roda dianteira esquerda.",
+          "correct": false
+        },
+        {
+          "text": "Aproximadamente 5 metros à retaguarda, posicionando-se 1 metro à frente da outra moto e inclinada a 45 graus do alvo.",
+          "correct": true
+        },
+        {
+          "text": "Exatamente 7 metros de distância, respeitando a regra de Tueller.",
+          "correct": false
+        },
+        {
+          "text": "3 metros na calçada lateral.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q007",
+      "question_number": 7,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo II) Os 3º Sargentos Marcelo e Cyntia realizam a abordagem tática a um veículo de passeio de quatro rodas ocupado por indivíduos em fundada suspeita. Com base no POP 204.1, qual o posicionamento e o alinhamento correto que a viatura policial deve adotar à retaguarda do veículo alvo por ocasião da parada?",
+      "difficulty": "medium",
+      "topics": [
+        "204.1"
+      ],
+      "primary_topic": "204.1",
+      "source_pages": [
+        [
+          37,
+          37
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo II"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | UFMT - POP Módulo II (material fornecido)",
+      "explanation": "No POP 204.1, a viatura para aproximadamente 5 m atrás do veículo-alvo, com o farol direito alinhado entre a placa traseira e a lanterna esquerda do veículo abordado.",
+      "alternatives": [
+        {
+          "text": "Parar a 10 metros, alinhando o para-choque dianteiro esquerdo com a lateral direita do alvo.",
+          "correct": false
+        },
+        {
+          "text": "Parar a uma distância segura de aproximadamente 5 metros, alinhando o farol direito da viatura entre a placa traseira e a lanterna esquerda do veículo abordado.",
+          "correct": true
+        },
+        {
+          "text": "Estacionar lado a lado com a moto do 2º homem, mantendo inclinação de 45 graus na diagonal.",
+          "correct": false
+        },
+        {
+          "text": "Parar a 1 metro de distância, mantendo as portas totalmente abertas no modo semidesembarcado.",
+          "correct": false
+        },
+        {
+          "text": "Estacionar na calçada oposta, direcionando o farol auxiliar cilibrim para o capô do motor.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q008",
+      "question_number": 8,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo II) Durante uma abordagem na área urbana de Cuiabá, o Comandante de uma guarnição da PMMT realiza o procedimento de entrevista com um indivíduo em fundada suspeita. De acordo com os Esclarecimentos do POP 202.2, para verificar a autenticidade e a integridade do documento de habilitação apresentado, o militar deve utilizar, preferencialmente, o seguinte aplicativo governamental:",
+      "difficulty": "medium",
+      "topics": [
+        "202.2"
+      ],
+      "primary_topic": "202.2",
+      "source_pages": [
+        [
+          22,
+          22
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo II"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | UFMT - POP Módulo II (material fornecido)",
+      "explanation": "Os esclarecimentos do POP 202.2 orientam, sempre que possível, a checagem da autenticidade do documento pelo aplicativo governamental VIO: QR Seguro.",
+      "alternatives": [
+        {
+          "text": "BNMP (Banco Nacional de Mandados).",
+          "correct": false
+        },
+        {
+          "text": "SIGMA (Sistema de Gerenciamento de Armas).",
+          "correct": false
+        },
+        {
+          "text": "SIRGAF (Sistema de Registro de Armas).",
+          "correct": false
+        },
+        {
+          "text": "INFOSEG (Rede de Informações de Segurança).",
+          "correct": false
+        },
+        {
+          "text": "VIO: QR Seguro.",
+          "correct": true
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q009",
+      "question_number": 9,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo II) No contexto das comunicações operacionais estabelecidas via rádio no POP 201.1 da PMMT, o patrulheiro militar é obrigado a utilizar linguagens padronizadas para garantir a clareza e a agilidade. À luz do código internacional adotado pela corporação, o significado exato da transmissão \"QTC\" e da resposta \"QSL\" correspondem, respectivamente, a:",
+      "difficulty": "medium",
+      "topics": [
+        "201.1"
+      ],
+      "primary_topic": "201.1",
+      "source_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo II"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | UFMT - POP Módulo II (material fornecido)",
+      "explanation": "No quadro de Código Q do POP 201.1, QTC significa telegrama/mensagem e QSL significa entendido, confirmado, compreendido.",
+      "alternatives": [
+        {
+          "text": "Mensagem / Entendido, confirmado.",
+          "correct": true
+        },
+        {
+          "text": "Local dos fatos / Pronto para receber chamada.",
+          "correct": false
+        },
+        {
+          "text": "Horário de funcionamento / Última forma.",
+          "correct": false
+        },
+        {
+          "text": "Velocidade do veículo / Interferência estática.",
+          "correct": false
+        },
+        {
+          "text": "Nome do operador / Legível com dificuldade.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q010",
+      "question_number": 10,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo II) De acordo com as diretrizes táticas de trânsito descritas no POP 201.2 da PMMT, os veículos de polícia, quando em efetivo serviço de urgência, gozam de prerrogativas de livre circulação e prioridade de passagem. Para a execução segura dessa atividade, o manual dita que o deslocamento deve ser realizado, preferencialmente, pela:",
+      "difficulty": "medium",
+      "topics": [
+        "201.2"
+      ],
+      "primary_topic": "201.2",
+      "source_pages": [
+        [
+          5,
+          5
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo II"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | UFMT - POP Módulo II (material fornecido)",
+      "explanation": "O POP 201.2 determina que, em serviço de urgência, o deslocamento seja feito pela faixa da esquerda da via, com velocidade compatível e os dispositivos previstos.",
+      "alternatives": [
+        {
+          "text": "Faixa da esquerda da via.",
+          "correct": true
+        },
+        {
+          "text": "Faixa da direita da via, deslocando-se pelo acostamento.",
+          "correct": false
+        },
+        {
+          "text": "Porção centralizada das faixas de rolamento comerciais.",
+          "correct": false
+        },
+        {
+          "text": "Ciclovia ou faixa exclusiva de transporte coletivo urbano.",
+          "correct": false
+        },
+        {
+          "text": "Área de passeio público de pedestres com velocidade reduzida.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q011",
+      "question_number": 11,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo II) Na execução do protocolo de busca e identificação veicular regulamentado pelo POP 201.5 da PMMT, o veículo suspeito deve ser dividido imaginariamente em pontos de vistoria. Assinale a alternativa que apresenta a quantidade exata de pontos imaginários e o roteiro sequencial inicial de busca em um veículo de passeio comum:",
+      "difficulty": "medium",
+      "topics": [
+        "201.5"
+      ],
+      "primary_topic": "201.5",
+      "source_pages": [
+        [
+          11,
+          11
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo II"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | UFMT - POP Módulo II (material fornecido)",
+      "explanation": "O POP 201.5 divide o veículo em 6 pontos: esquerdo dianteiro, esquerdo traseiro, direito traseiro, direito dianteiro, porta-malas e motor/capô.",
+      "alternatives": [
+        {
+          "text": "4 pontos / Porta esquerda, porta direita, carroceria e capô.",
+          "correct": false
+        },
+        {
+          "text": "8 pontos / Vistoria interna, cubeta, dreno, ferrolho, motor e chassi.",
+          "correct": false
+        },
+        {
+          "text": "3 pontos / Esquerdo dianteiro, direito traseiro e porta-malas.",
+          "correct": false
+        },
+        {
+          "text": "6 pontos / Iniciando pelo esquerdo dianteiro, seguindo para o esquerdo traseiro, direito traseiro, direito dianteiro, porta-malas e motor/capô.",
+          "correct": true
+        },
+        {
+          "text": "5 pontos / Fatiamento do camburão, checagem do documento VIO e liberação.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q012",
+      "question_number": 12,
+      "question_type": "multiple_choice",
+      "statement": "(POP 2 - 2ª Lista) Um cidadão é abordado por apresentar fundada suspeita em uma via pública central. Durante a intervenção, a equipe constata, através da apresentação da CIPTEA (Carteira de Identificação da Pessoa com Transtorno do Espectro Autista), que o indivíduo é autista. Diante das peculiaridades comportamentais previstas no POP 202.4 para a abordagem a pessoas com TEA, analise as condutas procedimentais e assinale a alternativa correta:",
+      "difficulty": "medium",
+      "topics": [
+        "202.4"
+      ],
+      "primary_topic": "202.4",
+      "source_pages": [
+        [
+          28,
+          29
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 2 - 2ª Lista"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | POP 2 - 2ª Lista (material fornecido)",
+      "explanation": "O POP 202.4 orienta respeitar o espaço da pessoa com TEA, agir de forma objetiva, clara e preferencialmente calma, evitar contato físico e buscar interação verificando se ela compreende o que ocorre.",
+      "alternatives": [
+        {
+          "text": "O policial deve aplicar o uso de algemas devido à previsível reação agressiva e falta de noção de perigo inerente ao nível 1 do transtorno.",
+          "correct": false
+        },
+        {
+          "text": "As ordens devem ser dadas de forma rápida, em voz alta e com o giroflex da viatura direcionado ao abordado para obter foco visual.",
+          "correct": false
+        },
+        {
+          "text": "Caso o indivíduo com TEA ignore a presença policial ou fique introspectivo, a equipe deve elevar o nível de força física para compeli-lo.",
+          "correct": false
+        },
+        {
+          "text": "Deve-se respeitar o espaço de abordagem em relação à pessoa com TEA, agindo de maneira objetiva e clara, preferencialmente de forma calma, a fim de evitar contato físico, buscando interação e perguntando se ele está entendendo o que está acontecendo.",
+          "correct": true
+        },
+        {
+          "text": "O manuseio e busca interna dos pertences da mochila da pessoa com TEA devem ser executados pelo próprio abordado sob ordens estritas.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q013",
+      "question_number": 13,
+      "question_type": "multiple_choice",
+      "statement": "(POP 2 - 2ª Lista) Durante a execução técnica de uma busca pessoal minuciosa em um suspeito detido em flagrante delito, o policial encarregado deve seguir uma sequência anatômica pré-estabelecida pela doutrina operacional de modo a garantir a máxima segurança e impedir o saque de armas ocultas. De acordo com o POP 201.4, assinale a alternativa que apresenta a sequência inicial e contínua da busca a ser executada em um dos lados do abordado:",
+      "difficulty": "hard",
+      "topics": [
+        "201.4"
+      ],
+      "primary_topic": "201.4",
+      "source_pages": [
+        [
+          9,
+          9
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 2 - 2ª Lista"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | POP 2 - 2ª Lista (material fornecido)",
+      "explanation": "O POP 201.4 fixa a sequência: cintura (frente e atrás), virilha, parte interna da perna até o tornozelo, parte externa até o abdômen, peito, costas, ombro, axila, braço; depois troca-se a mão e inicia-se o outro lado e cobertura.",
+      "alternatives": [
+        {
+          "text": "Ombro, axila, braço, peito, abdômen, cintura, virilha e pernas até o tornozelo.",
+          "correct": false
+        },
+        {
+          "text": "Cintura (frente e atrás), abdômen, peito, costas, ombro, axila, braço, virilha e pernas até o tornozelo.",
+          "correct": false
+        },
+        {
+          "text": "Cintura (frente e atrás), virilha, parte interna da perna até o tornozelo, parte externa da perna até o abdômen, peito, costas, ombro, axila, braço, trocar a mão que segura o revistado e iniciar o outro lado e cobertura.",
+          "correct": true
+        },
+        {
+          "text": "Cobertura, ombro, braço, axila, peito, costas, cintura (frente e atrás), virilha e pernas.",
+          "correct": false
+        },
+        {
+          "text": "Virilha, cintura (frente e atrás), peito, abdômen, perna interna, perna externa, costas, ombro, axila e braço.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q014",
+      "question_number": 14,
+      "question_type": "multiple_choice",
+      "statement": "(POP 2 - 2ª Lista) Durante um patrulhamento tático urbanístico na região metropolitana de Cuiabá, a equipe da viatura de quatro rodas depara-se com um veículo automotor ocupado por quatro indivíduos em atitude que fundamenta fundada suspeita. Considerando a doutrina de procedimentos comuns e específicos estabelecida no POP 204.1 para abordagem a veículo ocupado por pessoas em fundada suspeita, após a ordem de parada, a distância segura ideal de parada da viatura atrás do veículo alvo e o alinhamento correto dos faróis da viatura devem ser, respectivamente:",
+      "difficulty": "medium",
+      "topics": [
+        "204.1"
+      ],
+      "primary_topic": "204.1",
+      "source_pages": [
+        [
+          37,
+          37
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 2 - 2ª Lista"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | POP 2 - 2ª Lista (material fornecido)",
+      "explanation": "O POP 204.1 estabelece parada a aproximadamente 5 m e alinhamento do farol direito da viatura entre a placa traseira e a lanterna esquerda do veículo abordado.",
+      "alternatives": [
+        {
+          "text": "Aproximadamente 5 metros, alinhando o farol direito da viatura entre a placa traseira e a lanterna esquerda do veículo abordado.",
+          "correct": true
+        },
+        {
+          "text": "Aproximadamente 5 metros, alinhando o centro da viatura com a placa traseira do veículo abordado.",
+          "correct": false
+        },
+        {
+          "text": "Aproximadamente 2 metros, alinhando o farol esquerdo da viatura com a lanterna direita do veículo abordado.",
+          "correct": false
+        },
+        {
+          "text": "Aproximadamente 3 metros, mantendo a viatura totalmente na diagonal para proteção balística contra o flanco esquerdo.",
+          "correct": false
+        },
+        {
+          "text": "Aproximadamente 5 metros, alinhando o farol esquerdo da viatura entre a placa traseira e a lanterna direita do veículo abordado.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q015",
+      "question_number": 15,
+      "question_type": "multiple_choice",
+      "statement": "(POP 2 - 2ª Lista) Em uma abordagem policial a um veículo ocupado por infratores da lei (indivíduos flagrados cometendo ilícitos penais), a guarnição de quatro rodas adota a técnica padrão descrita no POP 205.1. Quando os suspeitos desembarcam do veículo sob as ordens da equipe policial e atingem o ponto geográfico determinado em manual, uma ordem específica de posicionamento deve ser emanada pelo Comandante da guarnição. De acordo com o POP 205.1, assinale a alternativa correta sobre esse momento:",
+      "difficulty": "hard",
+      "topics": [
+        "205.1"
+      ],
+      "primary_topic": "205.1",
+      "source_pages": [
+        [
+          42,
+          42
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 2 - 2ª Lista"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | POP 2 - 2ª Lista (material fornecido)",
+      "explanation": "No POP 205.1, quando o(s) suspeito(s) chega(m) à metade da distância entre o veículo e a viatura, o 1º homem determina que se deitem, com braços abertos e palmas das mãos para cima.",
+      "alternatives": [
+        {
+          "text": "Quando o suspeito estiver a 2 metros do veículo, determina-se: 'Ajoelhe no chão com as mãos na nuca!'.",
+          "correct": false
+        },
+        {
+          "text": "Assim que saírem das portas, determina-se: 'Deite de bruços com as mãos sob o tórax!'.",
+          "correct": false
+        },
+        {
+          "text": "Quando atingirem o para-choque da viatura, determina-se: 'Mãos na parede e pernas abertas!'.",
+          "correct": false
+        },
+        {
+          "text": "Quando o(s) suspeito(s) atingir(em) a metade da distância entre o veículo e a viatura, o 1º homem determina: 'DEITE(M) NO CHÃO!', 'BRAÇOS ABERTOS E PALMAS DAS MÃOS PARA CIMA!'.",
+          "correct": true
+        },
+        {
+          "text": "Quando os infratores contornarem a lateral direita do carro, determina-se: 'Sentem na calçada de costas para a via!'.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q016",
+      "question_number": 16,
+      "question_type": "multiple_choice",
+      "statement": "(POP 2 - 2ª Lista) Suponha que uma guarnição da Polícia Militar de Mato Grosso aborde um indivíduo suspeito em via pública. Ao iniciar a verbalização, constata-se por meio de sinais que o cidadão é surdo. Em consonância com as regras específicas contidas no POP 202.3 (Abordagem a Pessoas Surdas), a conduta correta no tocante à segurança e à comunicação inicial em LIBRAS determina que:",
+      "difficulty": "medium",
+      "topics": [
+        "202.3"
+      ],
+      "primary_topic": "202.3",
+      "source_pages": [
+        [
+          24,
+          24
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 2 - 2ª Lista"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | POP 2 - 2ª Lista (material fornecido)",
+      "explanation": "O POP 202.3 determina que o responsável pela comunicação com a pessoa surda utilize apenas a mão fraca, mantendo a arma em condições de pronto baixo enquanto o cenário ainda não está totalmente seguro.",
+      "alternatives": [
+        {
+          "text": "O policial responsável pela comunicação deverá comunicar-se utilizando apenas a mão fraca, de forma que a sua arma continue em condições de pronto baixo.",
+          "correct": true
+        },
+        {
+          "text": "O policial deve coldrear a sua arma e utilizar ambas as mãos para realizar os sinais de LIBRAS com perfeição técnica.",
+          "correct": false
+        },
+        {
+          "text": "O encarregado da segurança deve realizar movimentos rápidos com a mão forte em direção à cintura do abordado para demonstrar autoridade tática.",
+          "correct": false
+        },
+        {
+          "text": "A abordagem deve ser cancelada, liberando o suspeito sem a realização de busca pessoal para evitar violações de direitos.",
+          "correct": false
+        },
+        {
+          "text": "Qualquer transeunte na via pública que afirme saber LIBRAS deve ser chamado para intermediar a verbalização antes mesmo de qualquer busca tática.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q017",
+      "question_number": 17,
+      "question_type": "multiple_choice",
+      "statement": "(POP 2 - 2ª Lista) Em conformidade com o POP 201.5 (Busca e Identificação Veicular), quando a guarnição policial aborda um automóvel de passeio e decide realizar a vistoria técnica em busca de armas ou substâncias ilícitas, o veículo deve ser dividido imaginariamente em pontos específicos de vistoria. Assinale a alternativa que apresenta a sequência correta e cronologicamente prevista de pontos para a execução da vistoria veicular externa e interna:",
+      "difficulty": "medium",
+      "topics": [
+        "201.5"
+      ],
+      "primary_topic": "201.5",
+      "source_pages": [
+        [
+          11,
+          11
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 2 - 2ª Lista"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | POP 2 - 2ª Lista (material fornecido)",
+      "explanation": "A sequência correta do POP 201.5 é: esquerdo dianteiro, esquerdo traseiro, direito traseiro, direito dianteiro, porta-malas e motor/capô.",
+      "alternatives": [
+        {
+          "text": "1º Motor/capô; 2º Porta-malas; 3º Esquerdo dianteiro; 4º Esquerdo traseiro; 5º Direito traseiro; 6º Direito dianteiro.",
+          "correct": false
+        },
+        {
+          "text": "1º Esquerdo dianteiro; 2º Direito dianteiro; 3º Esquerdo traseiro; 4º Direito traseiro; 5º Porta-malas; 6º Motor/capô.",
+          "correct": false
+        },
+        {
+          "text": "1º Porta-malas; 2º Motor/capô; 3º Esquerdo dianteiro; 4º Esquerdo traseiro; 5º Direito traseiro; 6º Direito dianteiro.",
+          "correct": false
+        },
+        {
+          "text": "1º Esquerdo dianteiro; 2º Esquerdo traseiro; 3º Direito dianteiro; 4º Direito traseiro; 5º Motor/capô; 6º Porta-malas.",
+          "correct": false
+        },
+        {
+          "text": "1º Esquerdo dianteiro; 2º Esquerdo traseiro; 3º Direito traseiro; 4º Direito dianteiro; 5º Porta-malas; 6º Motor/capô.",
+          "correct": true
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q018",
+      "question_number": 18,
+      "question_type": "multiple_choice",
+      "statement": "(POP 2 - 2ª Lista) Em uma abordagem policial realizada por uma guarnição de motopatrulhamento constituída por duas motocicletas operacionais e três policiais militares, a equipe intercepta um veículo ocupado por infratores da lei (infratores flagrados cometendo delito). Segundo a padronização do POP 209.1, no momento do posicionamento inicial para a verbalização tática, as motocicletas devem parar lado a lado e observar uma disposição geométrica específica em relação ao objetivo. Assinale a alternativa que descreve corretamente essa disposição:",
+      "difficulty": "medium",
+      "topics": [
+        "209.1"
+      ],
+      "primary_topic": "209.1",
+      "source_pages": [
+        [
+          76,
+          76
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 2 - 2ª Lista"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | POP 2 - 2ª Lista (material fornecido)",
+      "explanation": "O POP 209.1 estabelece motos lado a lado, cerca de 2 m entre si, com a moto do 2º homem cerca de 1 m à frente, a aproximadamente 45° do alvo e 5 m à retaguarda.",
+      "alternatives": [
+        {
+          "text": "As motocicletas param alinhadas à retaguarda a 2 metros do veículo, com a moto do 1º homem posicionada 1 metro à frente.",
+          "correct": false
+        },
+        {
+          "text": "As motocicletas param lado a lado, aproximadamente 2 metros entre si, contudo a moto do 2º homem se posicionará aproximadamente 01 metro à frente e aproximadamente a 45° do alvo e aproximadamente a 5 metros à retaguarda do objetivo.",
+          "correct": true
+        },
+        {
+          "text": "As motocicletas param lado a lado a uma distância de 5 metros, mantendo-se em linha paralela exata sem avanço de nenhuma das motos.",
+          "correct": false
+        },
+        {
+          "text": "A motocicleta do 3º homem avança até o flanco dianteiro esquerdo para cortar a linha de fuga do veículo, mantendo 2 metros de distância.",
+          "correct": false
+        },
+        {
+          "text": "As motocicletas param em fila indiana a 5 metros da retaguarda, alinhando o farol direito da primeira moto com a lanterna esquerda do veículo.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q019",
+      "question_number": 19,
+      "question_type": "multiple_choice",
+      "statement": "(POP 2 - 2ª Lista) Considere a situação hipotética na qual uma guarnição composta por apenas 2 (dois) policiais militares efetua a prisão em flagrante de um infrator de alta periculosidade. A viatura utilizada não possui compartimento fechado para condução de presos (camburão). De acordo com a doutrina operacional comum estabelecida nos Esclarecimentos do POP 201.6, o preso em tela deverá ser transportado no veículo da seguinte maneira:",
+      "difficulty": "medium",
+      "topics": [
+        "201.6"
+      ],
+      "primary_topic": "201.6",
+      "source_pages": [
+        [
+          15,
+          15
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 2 - 2ª Lista"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | POP 2 - 2ª Lista (material fornecido)",
+      "explanation": "Nos esclarecimentos do POP 201.6, em viatura sem camburão e guarnição de 2 policiais, o preso segue no banco traseiro, sentado e algemado no sentido oposto ao 1º homem, comandante da guarnição.",
+      "alternatives": [
+        {
+          "text": "Sentado no banco dianteiro do passageiro, devidamente algemado com os braços para trás e preso ao cinto de segurança.",
+          "correct": false
+        },
+        {
+          "text": "Sentado no banco traseiro, algemado com as mãos para a frente, posicionado atrás do motorista da viatura.",
+          "correct": false
+        },
+        {
+          "text": "Conduzido no banco traseiro, sentado e algemado no sentido oposto ao 1º homem (comandante da guarnição).",
+          "correct": true
+        },
+        {
+          "text": "Conduzido no banco traseiro, algemado no sentido contrário ao 3º homem (patrulheiro), que obrigatoriamente fará a escolta interna.",
+          "correct": false
+        },
+        {
+          "text": "Deitado no assoalho do banco traseiro, algemado com as mãos para trás para minimizar qualquer possibilidade de reação mecânica.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q020",
+      "question_number": 20,
+      "question_type": "multiple_choice",
+      "statement": "(POP 2 - 2ª Lista) Uma equipe policial militar de serviço na modalidade de radiopatrulha recebe um chamado via rádio do Centro de Operações/CIOSP para atendimento de ocorrência de roubo em andamento. Ao realizar a comunicação de resposta ao chamado tático, o patrulheiro deve utilizar estritamente a linguagem técnica e o Código Q. De acordo com o POP 201.1, assinale a alternativa que descreve a sequência correta de termos técnicos e procedimentos verbais previstos na doutrina para este momento inicial:",
+      "difficulty": "medium",
+      "topics": [
+        "201.1"
+      ],
+      "primary_topic": "201.1",
+      "source_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 2 - 2ª Lista"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | POP 2 - 2ª Lista (material fornecido)",
+      "explanation": "O POP 201.1 determina resposta inicial 'VTR em QAP', com informação de guarnição embarcada (QTI) ou desembarcada e alterações; em seguida anotam-se os detalhes e, ao final, transmite-se 'QSL, deslocando'.",
+      "alternatives": [
+        {
+          "text": "Dizer 'QSL, deslocando' logo no primeiro contato e anotar os dados posteriormente para agilizar o atendimento.",
+          "correct": false
+        },
+        {
+          "text": "Responder: 'VTR em QAP', guarnição embarcada... tal QTI, ou desembarcada: informando as alterações caso haja; em seguida anotar os detalhes informados e, quando tudo estiver anotado, dizer ao microfone: 'QSL, deslocando'.",
+          "correct": true
+        },
+        {
+          "text": "Informar 'QRX' no microfone e deslocar-se sem prestar informações de posicionamento geográfico para manter o sigilo das communications operacionais.",
+          "correct": false
+        },
+        {
+          "text": "Responder 'QRU, ciente', acionar o cilibrim e deslocar-se utilizando gírias comuns da região para dinamizar a transmissão de dados.",
+          "correct": false
+        },
+        {
+          "text": "Verbalizar o prefixo da VTR e a expressão 'TKS, a caminho', operando o rádio fora da técnica habitual se houver tráfego intenso na rede.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q021",
+      "question_number": 21,
+      "question_type": "multiple_choice",
+      "statement": "(POP 2 - 2ª Lista) No decorrer de uma fiscalização tática e vistoria de identificação veicular em um automóvel suspeito, o policial encarregado da busca veicular (2º homem) deve proceder à abertura e verificação detalhada do compartimento do porta-malas. De acordo com a sequência de ações e protocolos de segurança previstos no POP 201.5, assinale a alternativa que descreve a conduta correta a ser adotada pelo vistoriador nesse momento crítico:",
+      "difficulty": "medium",
+      "topics": [
+        "201.5"
+      ],
+      "primary_topic": "201.5",
+      "source_pages": [
+        [
+          11,
+          11
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 2 - 2ª Lista"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | POP 2 - 2ª Lista (material fornecido)",
+      "explanation": "No POP 201.5, o vistoriador mantém a arma em pronto emprego, posiciona-se lateralmente e abre lentamente o porta-malas com a mão fraca, sem deixar o cano ultrapassar o limite a ser fatiado.",
+      "alternatives": [
+        {
+          "text": "O policial deve exigir que o proprietário abra o porta-malas pelo acionador elétrico interno do painel.",
+          "correct": false
+        },
+        {
+          "text": "O policial vistoriador deve guardar sua arma no coldre e fechar a presilha antes de encostar a mão na tampa do porta-malas para evitar disparos acidentais.",
+          "correct": false
+        },
+        {
+          "text": "O vistoriador deve progredir com a arma longa em pronto emprego inserindo o cano inteiramente dentro do porta-malas antes de visualizar os cantos.",
+          "correct": false
+        },
+        {
+          "text": "O policial deve efetuar um disparo de advertência no trinco do porta-malas caso suspeite da presença de infratores homiziados em seu interior.",
+          "correct": false
+        },
+        {
+          "text": "O policial encarregado da vistoria com arma na posição de pronto emprego, posiciona-se na lateral do veículo e com a mão fraca o policial vistoriador abrirá lentamente o porta-malas - verificando o seu interior, tendo CUIDADO para que o cano da arma não ultrapasse o limite a ser fatiado.",
+          "correct": true
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q022",
+      "question_number": 22,
+      "question_type": "multiple_choice",
+      "statement": "(POP 2 / 3ª Lista) De acordo com o Procedimento Operacional Padrão (POP 201.1 - Conhecimento da Ocorrência) da Polícia Militar do Estado de Mato Grosso, o atendimento ao chamado do Centro de Operações/CIOSP exige o emprego de linguagem técnica de comunicação via rádio, visando à clareza e à agilidade das informações.\n\nA respeito dos procedimentos corretos a serem adotados pelo patrulheiro ao receber uma mensagem via rádio emitida pelo Centro de Operações/CIOSP, assinale a alternativa correta:",
+      "difficulty": "medium",
+      "topics": [
+        "201.1"
+      ],
+      "primary_topic": "201.1",
+      "source_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 2 / 3ª Lista"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | POP 2 / 3ª Lista (material fornecido)",
+      "explanation": "No POP 201.1, a resposta inicial é 'VTR em QAP', informando situação embarcada com QTI ou desembarcada e eventuais alterações. 'QSL, deslocando' vem somente após anotar os detalhes.",
+      "alternatives": [
+        {
+          "text": "Ao receber a mensagem via rádio, o patrulheiro deve imediatamente emitir o comando \"QSL, deslocando\" antes mesmo de realizar a anotação dos detalhes informados pelo operador.",
+          "correct": false
+        },
+        {
+          "text": "Ao receber a mensagem via rádio, o patrulheiro deve responder obrigatoriamente \"VTR em QAP\", informando se a guarnição encontra-se embarcada (indicando o respectivo QTI) ou desembarcada, além das alterações existentes, se houver.",
+          "correct": true
+        },
+        {
+          "text": "O uso de gírias e variações na linguagem de comunicação via rádio é facultado ao patrulheiro caso a ocorrência apresente grau mínimo de risco e dispensar urgência.",
+          "correct": false
+        },
+        {
+          "text": "Após a anotação de todos os detalhes da ocorrência repassados pelo Centro de Operações/CIOSP, o patrulheiro deve responder no microfone a expressão \"QAP, a caminho\" para indicar a ida ao local da ocorrência.",
+          "correct": false
+        },
+        {
+          "text": "O atendimento ao chamado do Centro de Operações/CIOSP refere-se ao momento em que a guarnição conclui o atendimento e realiza a apresentação das partes envolvidas na delegacia.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q023",
+      "question_number": 23,
+      "question_type": "multiple_choice",
+      "statement": "(POP 2 / 3ª Lista) No âmbito dos Esclarecimentos previstos no POP 201.4 (Busca Pessoal) do manual de abordagens da Polícia Militar do Estado de Mato Grosso, foram estabelecidas orientações doutrinárias para a execução técnica das revistas e para a realização da busca pessoal minuciosa.\n\nDe acordo com as prescrições contidas no referido manual, assinale a alternativa CORRETA:",
+      "difficulty": "hard",
+      "topics": [
+        "201.4"
+      ],
+      "primary_topic": "201.4",
+      "source_pages": [
+        [
+          10,
+          10
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 2 / 3ª Lista"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | POP 2 / 3ª Lista (material fornecido)",
+      "explanation": "Os esclarecimentos do POP 201.4 recomendam evitar apalpações porque objetos podem deixar de ser detectados, admitindo-as para verificações externas de bolsos em geral.",
+      "alternatives": [
+        {
+          "text": "Durante a revista em ambiente da via pública, as apalpações são a técnica primária e prioritária recomendada pelo manual para a detecção de pequenos objetos em cavidades e invólucros internos de vestimentas, devendo ser estendidas a todo o corpo do abordado.",
+          "correct": false
+        },
+        {
+          "text": "A busca pessoal minuciosa deve ser executada em via pública ou local aberto sempre que o policial constatar que o indivíduo apresenta cheiro característico de substâncias ilícitas na região das mãos.",
+          "correct": false
+        },
+        {
+          "text": "A ordem da busca no corpo do indivíduo deve priorizar a verificação das extremidades inferiores do abordado (pés e tornozelos), visto ser o local de mais complexa visualização por parte do policial encarregado da segurança da guarnição.",
+          "correct": false
+        },
+        {
+          "text": "A técnica da apalpação deve ser evitada como regra geral durante a busca pessoal por poder deixar de detectar objetos, contudo, a doutrina prevê expressamente o seu emprego excepcional para a realização de verificações externas em bolsos em geral.",
+          "correct": true
+        },
+        {
+          "text": "A busca pessoal minuciosa prescinde de ambiente fechado, bastando que o cidadão descarte suas vestes na presença de testemunhas no local da abordagem para que se proceda à verificação de partes íntimas e cavidades corporais.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q024",
+      "question_number": 24,
+      "question_type": "multiple_choice",
+      "statement": "(POP 2 / 3ª Lista) A busca pessoal é uma das atividades mais críticas da atividade policial ostensiva, exigindo estrita observância às regras de segurança e à sequência de ações padronizadas.\n\nCom base no PROCEDIMENTO 201.4 – Busca Pessoal da Polícia Militar do Estado de Mato Grosso, analise os procedimentos operacionais e assinale a alternativa CORRETA:",
+      "difficulty": "hard",
+      "topics": [
+        "201.4"
+      ],
+      "primary_topic": "201.4",
+      "source_pages": [
+        [
+          9,
+          9
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 2 / 3ª Lista"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | POP 2 / 3ª Lista (material fornecido)",
+      "explanation": "O item 'i' do POP 201.4 prevê, para pessoa em fundada suspeita, posicionamento na calçada de frente para a rua, retirada do capacete um por vez, mãos à mostra, abertura da boca se necessário, esvaziamento dos bolsos e abertura da carteira para verificar eventual entorpecente.",
+      "alternatives": [
+        {
+          "text": "Antes do contato físico com o revistado, se houver mais de uma pessoa abordada, a busca pessoal deve ser iniciada pelo indivíduo situado do mesmo lado do 1º homem (encarregado da segurança), haja vista a proximidade do ângulo de cobertura.",
+          "correct": false
+        },
+        {
+          "text": "Durante a execução anatômica da busca pessoal em um dos lados do corpo, a norma prescreve a seguinte sequência: peito, costas, ombro, axila, braço, virilha, parte interna da perna até o tornozelo e, por fim, a região da cintura abdominal (frente e atrás).",
+          "correct": false
+        },
+        {
+          "text": "Ao identificar que o abordado porta uma arma de fogo de pronto acesso, o policial que realiza a busca deve verbalizar imediata e silenciosamente para a guarnição a expressão \"SUSPEITO ARMADO\", procedendo ao desarmamento direto enquanto o abordado permanece com as mãos na cabeça.",
+          "correct": false
+        },
+        {
+          "text": "Em se tratando de indivíduo em Fundada Suspeita, após o seu posicionamento na calçada de frente para a rua, ser-lhe-á determinado que retire o capacete (um por vez), mostre as mãos, abra a boca (se necessário), retire os pertences dos bolsos para confirmação de vacância e abra a própria carteira para verificação de possível ocultação de substância entorpecente.",
+          "correct": true
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q025",
+      "question_number": 25,
+      "question_type": "multiple_choice",
+      "statement": "(POP 2 / 3ª Lista) Durante o patrulhamento executado por uma equipe de motopatrulhamento composta por três policiais militares em duas motocicletas, a guarnição depara-se com uma motocicleta ocupada por dois indivíduos em atitude que desperta fundada suspeita.\n\nDe acordo com os ditames contidos no Procedimento Operacional Padrão da PMMT (POP 210.1 - Abordagem a Motocicleta Ocupada por Pessoa(s) em Fundada Suspeita por VTR 02 Rodas), analise as afirmativas a seguir sobre o posicionamento e a divisão de atribuições entre os integrantes da guarnição:\n\nI. O 2º homem é o responsável por emitir a ordem de parada por meio dos dispositivos sonoros e luminosos. Ao posicionar as motocicletas a cerca de 5 metros à retaguarda do alvo, mantendo 2 metros entre elas, a moto do 2º homem deve ser colocada aproximadamente 1 metro à frente da moto do 1º homem e a um ângulo de 45° em relação ao objetivo.\n\nII. Durante a aproximação e verbalização inicial, o 3º homem, ainda embarcado na garupa da motocicleta, vira o tronco em direção ao veículo e é o responsável por emitir todas as ordens de verbalização até que os abordados estejam posicionados para a busca pessoal.\n\nIII. Ao desembarcar para dar início aos procedimentos de busca e segurança, o 1º homem ganha o flanco direito e o 3º homem ganha o flanco esquerdo da abordagem, momento em que o 2º homem desembarca e assume a posição que era ocupada pelo 3º homem para realizar a segurança periférica.\n\nIV. Durante a realização da busca pessoal, o 2º homem deve coldrear a sua arma e fechar a presilha do coldre para evitar o fácil acesso do revistado ao seu armamento, sendo a segurança aproximada do procedimento de busca realizada pelo 1º homem.\n\nEstão CORRETAS apenas as afirmativas:",
+      "difficulty": "hard",
+      "topics": [
+        "210.1"
+      ],
+      "primary_topic": "210.1",
+      "source_pages": [
+        [
+          89,
+          90
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 2 / 3ª Lista"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | POP 2 / 3ª Lista (material fornecido)",
+      "explanation": "No POP 210.1: I é correta (ordem de parada pelo 2º homem e posicionamento previsto); II é incorreta porque a verbalização inicial é do 3º homem, mas a sequência também atribui comandos ao 1º e admite que toda a verbalização possa ser feita pelo 3º; III e IV estão corretas. Logo, I, III e IV.",
+      "alternatives": [
+        {
+          "text": "I e IV.",
+          "correct": false
+        },
+        {
+          "text": "II e III.",
+          "correct": false
+        },
+        {
+          "text": "I, III e IV.",
+          "correct": true
+        },
+        {
+          "text": "I, II e III.",
+          "correct": false
+        },
+        {
+          "text": "II, III e IV.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q026",
+      "question_number": 26,
+      "question_type": "multiple_choice",
+      "statement": "(POP 2 / 3ª Lista) No âmbito das ações procedimentais que regem a Chegada ao Local da Ocorrência em Viatura (POP 201.3), o manual doutrinário estabelece parâmetros sobre segurança periférica, progressão no terreno e fundada suspeita baseada nos aspectos comportamentais e das vestes dos indivíduos. A respeito dos Esclarecimentos contidos na referida norma, analise as afirmativas a seguir:\n\nI. O conceito de Local Visível e Seguro define-se como o espaço que garante amplitude de visão por parte da guarnição e dos transeuntes, devendo proporcionar, condições para a contenção da ameaça no ponto de parada da viatura.\n\nII. Na doutrina de \"Proteger-se Suficientemente\", as táticas de progressão variam conforme a topografia e o ambiente do local da ocorrência: Em locais abertos, o patrulheiro deve abrigar-se utilizando coberturas naturais (ex.: postes, paredes), assegurando a proteção permanente de sua retaguarda; Em locais fechados, deve progredir mediante coberturas existentes (ex.: paredes, pilares), devendo evitar o posicionamento atrás de portas ou janelas; Em locais íngremes (subidas ou descidas acentuadas), o patrulheiro deve progredir no terreno pelas laterais, mantendo-se o mais próximo possível dos abrigos.\n\nIII. A caracterização da Pessoa Supostamente Armada exige a presença de fundadas suspeitas fundamentadas em aspectos objetivos de comportamento e vestuário, tais como: vestimentas pesadas em dias de forte calor, volumes acentuados no tórax, cintura, costas ou panturrilhas, ou o porte de volumes cujo formato e tamanho sugiram a ocultação de artefatos delituosos, respaldando a submissão do indivíduo à busca pessoal.\n\nIV. Na progressão em locais fechados, é recomendado que o policial militar utilize portas e janelas como anteparos primários para observação de acessos, haja vista a facilidade de ocultação da silhueta proporcionada pelas esquadrias.\n\nEstão CORRETAS apenas as afirmativas:",
+      "difficulty": "hard",
+      "topics": [
+        "201.3"
+      ],
+      "primary_topic": "201.3",
+      "source_pages": [
+        [
+          7,
+          8
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 2 / 3ª Lista"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | POP 2 / 3ª Lista (material fornecido)",
+      "explanation": "No POP 201.3, I é falsa porque 'local visível e seguro' é o local visível a todos e que permita retirada rápida da guarnição; II e III estão de acordo com os esclarecimentos; IV é falsa porque em local fechado deve-se evitar posicionar-se atrás de portas ou janelas.",
+      "alternatives": [
+        {
+          "text": "I e IV.",
+          "correct": false
+        },
+        {
+          "text": "I, II e III.",
+          "correct": false
+        },
+        {
+          "text": "II, III e IV.",
+          "correct": false
+        },
+        {
+          "text": "II e III.",
+          "correct": true
+        },
+        {
+          "text": "I e III.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q027",
+      "question_number": 27,
+      "question_type": "multiple_choice",
+      "statement": "(POP 2 / 3ª Lista) No que se refere ao procedimento operacional e à disciplina de radiocomunicação previstos no POP 201.1 (Procedimentos Comuns nas Abordagens – Conhecimento da Ocorrência), especificamente sobre o Atendimento ao Chamado do Centro de Operações/CIOSP, analise as assertivas abaixo:\n\nI. O Atendimento ao Chamado do Centro de Operações/CIOSP conceitua-se como a resposta dada pelo patrulheiro em serviço na viatura em seu setor de policiamento, por meio da qual ele se disponibiliza para o atendimento da demanda solicitada.\n\nII. Ao receber a mensagem emitida via rádio pelo operador, o procedimento técnico correto exige que o patrulheiro informe se a guarnição está embarcada (com o respectivo QTH) ou desembarcada, comunicando eventuais alterações antes de declarar o estado de escuta.\n\nIII. O cumprimento da sequência de ações impõe uma ordem cronológica: após a resposta inicial do patrulheiro, este deve proceder ao registro escrito das informações repassadas pelo CIOSP e, somente após a conclusão das anotações, acionar o microfone do rádio para emitir o código \"QSL, deslocando\".\n\nIV. A padronização da linguagem rádio admite variações regionais ou adaptações informais de vocabulário, desde que tais variações não comprometam a clareza, a agilidade técnica e o imediato entendimento do Centro de Operações.\n\nÉ correto o que se afirma em:",
+      "difficulty": "hard",
+      "topics": [
+        "201.1"
+      ],
+      "primary_topic": "201.1",
+      "source_pages": [
+        [
+          3,
+          4
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 2 / 3ª Lista"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | POP 2 / 3ª Lista (material fornecido)",
+      "explanation": "No POP 201.1, I é correta; II é falsa porque a guarnição embarcada informa QTI, não QTH; III é correta; IV é falsa porque a linguagem deve ser técnica, exclusivamente, sem variações impróprias ou gírias. Portanto, I e III apenas.",
+      "alternatives": [
+        {
+          "text": "I e III, apenas.",
+          "correct": true
+        },
+        {
+          "text": "II e IV, apenas.",
+          "correct": false
+        },
+        {
+          "text": "I, II e III, apenas.",
+          "correct": false
+        },
+        {
+          "text": "I, III e IV, apenas.",
+          "correct": false
+        },
+        {
+          "text": "I, II, III e IV.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    },
+    {
+      "source_key": "POP2-ATUALIZADO-Q028",
+      "question_number": 28,
+      "question_type": "multiple_choice",
+      "statement": "(POP 2 / 3ª Lista) No âmbito da Doutrina Operacional da Polícia Militar do Estado de Mato Grosso (POP 201.2 – Deslocamento para o Local da Ocorrência), os \"Esclarecimentos\" normativos estabelecem diretrizes conceituais sobre o emprego de sistemas luminosos emergenciais, deslocamento e normas de trânsito aplicáveis às viaturas.\n\nA respeito desses conceitos doutrinários, analise as assertivas a seguir:\n\nI. O Dispositivo Luminoso Intermitente (\"high-light\") opera mediante a emissão de luz piscante periódica, com a finalidade de chamar a atenção das pessoas. No Brasil, a regulação padrão adotada para o sistema de iluminação indica que as cores vermelha e azul sinalizam o emprego da viatura em atividades emergenciais, enquanto a cor amarela é destinada às atividades não emergenciais.\n\nII. O conceito doutrinário de Velocidade Compatível fundamenta-se na análise discricionária do motorista e do encarregado da guarnição, considerando variáveis como a fluidez do trânsito, as características da via, as condições climáticas e o grau de urgência; contudo, encontra seu limite é o valor estipulado para a velocidade máxima da via respectiva.\n\nIII. Considera-se Serviço de Urgência a situação operacional caracterizada pela iminência de risco à vida ou à integridade física de qualquer uma das pessoas envolvidas, estendendo-se essa proteção aos próprios usuários do serviço policial prestado.\n\nIV. Em consonância com a legislação de trânsito citada na norma (Art. 280, § 6º do CTB), a isenção de infração de circulação, parada ou estacionamento conferida aos veículos de polícia e emergência condiciona-se à devida identificação ostensiva do veículo no momento da conduta.\n\nIsso posto, estão CORRETAS apenas as assertivas:",
+      "difficulty": "hard",
+      "topics": [
+        "201.2"
+      ],
+      "primary_topic": "201.2",
+      "source_pages": [
+        [
+          5,
+          6
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 2 / 3ª Lista"
+      },
+      "source_label": "POP 2 - Módulo II atualizado (arquivo pop-2--.pdf) | POP 2 / 3ª Lista (material fornecido)",
+      "explanation": "No POP 201.2, II e III estão corretas. I é falsa porque o texto associa o sistema emergencial à cor vermelha e a atividade não emergencial à amarela, registrando o mesmo para luzes azuis; IV é falsa porque a citação do art. 280, §6º do CTB afirma que não há a infração indicada mesmo quando os veículos não estejam ostensivamente identificados.",
+      "alternatives": [
+        {
+          "text": "I e IV.",
+          "correct": false
+        },
+        {
+          "text": "I, II e III.",
+          "correct": false
+        },
+        {
+          "text": "II e III.",
+          "correct": true
+        },
+        {
+          "text": "II, III e IV.",
+          "correct": false
+        },
+        {
+          "text": "I e III.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 2 atualizado."
+      }
+    }
+  ]
+}
