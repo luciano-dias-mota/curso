@@ -17,7 +17,7 @@ $moduleQuizReady = $moduleQuiz && $moduleQuizExpected > 0
             <h2>🏆 Avaliação do módulo</h2>
             <p class="muted">
                 Depois de vencer todas as fases, faça esta avaliação.
-                O próximo módulo só será liberado após aprovação.
+                A aprovação conclui este módulo; os demais módulos permanecem livres para você alternar os estudos.
             </p>
         </div>
 
