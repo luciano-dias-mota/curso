@@ -607,8 +607,9 @@ final class QuizService
                 'Checkpoint da fase aprovado'
             );
 
-            // Se houver próxima fase, libera. Se for a última, PARA no módulo.
-            // O próximo módulo só abre após module_boss.
+            // Dentro do módulo a sequência continua obrigatória: somente a
+            // próxima fase é liberada após aprovação. Os demais módulos do
+            // curso já permanecem disponíveis independentemente desta fase.
             $this->unlockNextPhaseOnly($pdo, $userId, $phaseId, (int) $attempt['module_id']);
             $this->refreshModuleProgress($pdo, $userId, (int) $attempt['module_id']);
             return;
@@ -1105,87 +1106,6 @@ final class QuizService
         );
 
         return $items;
-    }
-
-    private function unlockModuleEntryPoints(PDO $pdo, int $userId, int $moduleId): void
-    {
-        $stmt = $pdo->prepare(
-            "SELECT id, is_required
-             FROM phases
-             WHERE module_id = :module_id
-               AND status = 'published'
-             ORDER BY position"
-        );
-        $stmt->execute(['module_id' => $moduleId]);
-        $phases = $stmt->fetchAll();
-
-        $firstRequiredUnlocked = false;
-
-        foreach ($phases as $phase) {
-            $phaseId = (int) $phase['id'];
-            $required = (int) ($phase['is_required'] ?? 1) === 1;
-
-            if (!$required) {
-                $this->unlockPhase($pdo, $userId, $phaseId);
-                $this->unlockAllLessons($pdo, $userId, $phaseId);
-                continue;
-            }
-
-            if (!$firstRequiredUnlocked) {
-                $this->unlockPhase($pdo, $userId, $phaseId);
-                $this->unlockPhaseEntryLessons($pdo, $userId, $phaseId);
-                $firstRequiredUnlocked = true;
-            }
-        }
-    }
-
-    private function unlockPhaseEntryLessons(PDO $pdo, int $userId, int $phaseId): void
-    {
-        $optionalStmt = $pdo->prepare(
-            "SELECT id
-             FROM lessons
-             WHERE phase_id = :phase_id
-               AND status = 'published'
-               AND is_required = 0
-             ORDER BY position"
-        );
-        $optionalStmt->execute(['phase_id' => $phaseId]);
-
-        foreach ($optionalStmt->fetchAll(PDO::FETCH_COLUMN) as $lessonId) {
-            $this->unlockLesson($pdo, $userId, (int) $lessonId);
-        }
-
-        $requiredStmt = $pdo->prepare(
-            "SELECT id
-             FROM lessons
-             WHERE phase_id = :phase_id
-               AND status = 'published'
-               AND is_required = 1
-             ORDER BY position
-             LIMIT 1"
-        );
-        $requiredStmt->execute(['phase_id' => $phaseId]);
-        $firstRequired = (int) ($requiredStmt->fetchColumn() ?: 0);
-
-        if ($firstRequired > 0) {
-            $this->unlockLesson($pdo, $userId, $firstRequired);
-        }
-    }
-
-    private function unlockAllLessons(PDO $pdo, int $userId, int $phaseId): void
-    {
-        $stmt = $pdo->prepare(
-            "SELECT id
-             FROM lessons
-             WHERE phase_id = :phase_id
-               AND status = 'published'
-             ORDER BY position"
-        );
-        $stmt->execute(['phase_id' => $phaseId]);
-
-        foreach ($stmt->fetchAll(PDO::FETCH_COLUMN) as $lessonId) {
-            $this->unlockLesson($pdo, $userId, (int) $lessonId);
-        }
     }
 
     private function validateStructure(PDO $pdo, int $quizId, int $expected): void
