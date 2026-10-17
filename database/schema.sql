@@ -602,6 +602,49 @@ CREATE TABLE user_favorites (
 -- CONFIGURAÇÕES E AUDITORIA
 -- ============================================================================
 
+CREATE TABLE user_access_sessions (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    user_id BIGINT UNSIGNED NOT NULL,
+    session_hash CHAR(64) NOT NULL UNIQUE,
+    device_hash CHAR(64) NOT NULL,
+    device_type VARCHAR(30) NOT NULL DEFAULT 'Computador',
+    platform VARCHAR(80) NOT NULL DEFAULT 'Plataforma desconhecida',
+    browser VARCHAR(80) NOT NULL DEFAULT 'Navegador desconhecido',
+    device_label VARCHAR(180) NOT NULL,
+    ip_address VARCHAR(45) NULL,
+    user_agent VARCHAR(500) NULL,
+    login_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    last_activity_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    logged_out_at DATETIME NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_user_access_sessions_user FOREIGN KEY (user_id) REFERENCES users(id)
+        ON UPDATE CASCADE ON DELETE CASCADE,
+    INDEX idx_user_access_user_activity (user_id, last_activity_at),
+    INDEX idx_user_access_user_device (user_id, device_hash, login_at),
+    INDEX idx_user_access_open (user_id, logged_out_at, last_activity_at)
+) ENGINE=InnoDB;
+
+CREATE TABLE user_access_alerts (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    user_id BIGINT UNSIGNED NOT NULL,
+    alert_type VARCHAR(50) NOT NULL,
+    severity ENUM('low','medium','high') NOT NULL DEFAULT 'medium',
+    title VARCHAR(180) NOT NULL,
+    description TEXT NOT NULL,
+    first_detected_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    last_detected_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    occurrence_count INT UNSIGNED NOT NULL DEFAULT 1,
+    resolved_at DATETIME NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_user_access_alerts_user FOREIGN KEY (user_id) REFERENCES users(id)
+        ON UPDATE CASCADE ON DELETE CASCADE,
+    INDEX idx_user_access_alert_user (user_id, resolved_at, last_detected_at),
+    INDEX idx_user_access_alert_open (resolved_at, severity, last_detected_at),
+    INDEX idx_user_access_alert_type (user_id, alert_type, last_detected_at)
+) ENGINE=InnoDB;
+
 CREATE TABLE system_settings (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     setting_key VARCHAR(120) NOT NULL UNIQUE,
