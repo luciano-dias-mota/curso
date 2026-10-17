@@ -32,7 +32,7 @@ $formatStatement = static function (string $statement): array {
     ), static fn (string $line): bool => $line !== ''));
 
     $isSequence = stripos($statement, 'ordene os trechos abaixo') !== false
-        && preg_match('/^\(\s*\)/u', implode("\n", $lines)) === 1;
+        && preg_match('/^\(\s*\)/mu', implode("\n", $lines)) === 1;
 
     if (!$isSequence) {
         return [
