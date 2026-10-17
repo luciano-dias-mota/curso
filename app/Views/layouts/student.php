@@ -32,7 +32,7 @@ $firstName = explode(' ', trim((string) ($user['name'] ?? 'Aluno')))[0];
     <link rel="stylesheet" href="<?= e(url('/assets/css/learning-flow.css') . '?v=20261003-2') ?>">
     <link rel="stylesheet" href="<?= e(url('/assets/css/video-management.css') . '?v=20261003-2') ?>">
     <link rel="stylesheet" href="<?= e(url('/assets/css/mockup-v3.css') . '?v=20261003-2') ?>">
-    <link rel="stylesheet" href="<?= e(url('/assets/css/simulation.css') . '?v=20261009-1') ?>">
+    <link rel="stylesheet" href="<?= e(url('/assets/css/simulation.css') . '?v=20261017-2') ?>">
     <?php if ($isExercise || $isNotes): ?>
         <link rel="stylesheet" href="<?= e(url('/assets/css/study-tools.css') . '?v=20261009-1') ?>">
     <?php endif; ?>
