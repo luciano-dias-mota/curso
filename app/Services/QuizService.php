@@ -640,10 +640,12 @@ final class QuizService
                 'Módulo aprovado na avaliação final'
             );
 
-            $this->unlockNextModule(
+            // Os módulos já são livres desde a matrícula. A avaliação final
+            // continua obrigatória para CONCLUIR este módulo, mas não serve
+            // mais como chave de acesso ao módulo seguinte.
+            $this->refreshCourseProgress(
                 $pdo,
                 $userId,
-                $moduleId,
                 (int) $attempt['course_id']
             );
         }
@@ -788,61 +790,57 @@ final class QuizService
         $this->unlockPhaseEntryLessons($pdo, $userId, $nextPhase);
     }
 
-    private function unlockNextModule(PDO $pdo, int $userId, int $moduleId, int $courseId): void
+    private function refreshCourseProgress(PDO $pdo, int $userId, int $courseId): void
     {
-        $stmt = $pdo->prepare("SELECT position FROM modules WHERE id = :id LIMIT 1");
-        $stmt->execute(['id' => $moduleId]);
-        $position = (int) $stmt->fetchColumn();
-
         $stmt = $pdo->prepare(
-            "SELECT id
-             FROM modules
-             WHERE course_id = :course_id
-               AND status = 'published'
-               AND position > :position
-             ORDER BY position
-             LIMIT 1"
+            "SELECT COUNT(m.id) AS total,
+                    SUM(CASE WHEN ump.status = 'completed' THEN 1 ELSE 0 END) AS completed
+             FROM modules m
+             LEFT JOIN user_module_progress ump
+               ON ump.module_id = m.id
+              AND ump.user_id = :user_id
+             WHERE m.course_id = :course_id
+               AND m.status = 'published'"
         );
         $stmt->execute([
+            'user_id' => $userId,
             'course_id' => $courseId,
-            'position' => $position,
         ]);
-        $nextModule = (int) ($stmt->fetchColumn() ?: 0);
+        $row = $stmt->fetch();
 
-        if ($nextModule <= 0) {
-            $pdo->prepare(
-                "UPDATE user_course_progress
-                 SET status = 'completed',
-                     progress_pct = 100,
-                     completed_at = COALESCE(completed_at, NOW()),
-                     last_accessed_at = NOW()
-                 WHERE user_id = :user_id
-                   AND course_id = :course_id"
-            )->execute([
-                'user_id' => $userId,
-                'course_id' => $courseId,
-            ]);
-            return;
-        }
+        $total = (int) ($row['total'] ?? 0);
+        $completed = (int) ($row['completed'] ?? 0);
+        $pct = $total > 0 ? round(($completed / $total) * 100, 2) : 0.0;
+        $allCompleted = $total > 0 && $completed === $total;
 
         $pdo->prepare(
-            "INSERT INTO user_module_progress
-                (user_id, module_id, status, best_score, progress_pct, unlocked_at)
-             VALUES
-                (:user_id, :module_id, 'available', 0, 0, NOW())
-             ON DUPLICATE KEY UPDATE
-                status = CASE
-                    WHEN status = 'completed' THEN 'completed'
-                    WHEN status = 'in_progress' THEN 'in_progress'
-                    ELSE 'available'
+            "UPDATE user_course_progress
+             SET progress_pct = :progress_pct,
+                 status = CASE
+                    WHEN :all_completed = 1 THEN 'completed'
+                    WHEN :completed_modules > 0 THEN 'in_progress'
+                    ELSE status
                  END,
-                unlocked_at = COALESCE(unlocked_at, NOW())"
+                 started_at = CASE
+                    WHEN :completed_modules2 > 0 THEN COALESCE(started_at, NOW())
+                    ELSE started_at
+                 END,
+                 completed_at = CASE
+                    WHEN :all_completed2 = 1 THEN COALESCE(completed_at, NOW())
+                    ELSE NULL
+                 END,
+                 last_accessed_at = NOW()
+             WHERE user_id = :user_id
+               AND course_id = :course_id"
         )->execute([
+            'progress_pct' => $pct,
+            'all_completed' => $allCompleted ? 1 : 0,
+            'completed_modules' => $completed,
+            'completed_modules2' => $completed,
+            'all_completed2' => $allCompleted ? 1 : 0,
             'user_id' => $userId,
-            'module_id' => $nextModule,
+            'course_id' => $courseId,
         ]);
-
-        $this->unlockModuleEntryPoints($pdo, $userId, $nextModule);
     }
 
     private function unlockLesson(PDO $pdo, int $userId, int $lessonId): void
