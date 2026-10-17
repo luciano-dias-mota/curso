@@ -12,66 +12,48 @@ require BASE_PATH . '/vendor/autoload.php';
 
 use App\Core\App;
 use App\Core\Database;
-use PDO;
 
 App::boot(BASE_PATH);
+
 $pdo = Database::connection();
 
-$courseSlug = 'preparacao-pmmt-merito-intelectual-e-caoc';
 $moduleSlug = 'modulo-2-administracao-publica-e-gestao-fundamentos-organizacao-atos-controle-modelos-e-materiais';
 
-$courseStmt = $pdo->prepare(
-    "SELECT id,title FROM courses
-     WHERE slug=:slug AND status='published'
-     LIMIT 1"
-);
-$courseStmt->execute(['slug'=>$courseSlug]);
-$course = $courseStmt->fetch(PDO::FETCH_ASSOC);
-
-if (!$course) {
-    fwrite(STDERR, "[FALHA] Curso publicado não encontrado.\n");
-    exit(2);
-}
-
 $moduleStmt = $pdo->prepare(
-    "SELECT id,title,position
-     FROM modules
-     WHERE course_id=:course_id
-       AND slug=:slug
-       AND status='published'
+    "SELECT m.id,m.course_id,m.title,c.title AS course_title
+     FROM modules m
+     INNER JOIN courses c ON c.id=m.course_id
+     WHERE m.slug=:slug
+       AND m.status='published'
+       AND c.status='published'
      LIMIT 1"
 );
-$moduleStmt->execute([
-    'course_id'=>(int)$course['id'],
-    'slug'=>$moduleSlug,
-]);
-$module = $moduleStmt->fetch(PDO::FETCH_ASSOC);
+$moduleStmt->execute(['slug'=>$moduleSlug]);
+$module = $moduleStmt->fetch(\PDO::FETCH_ASSOC);
 
 if (!$module) {
     fwrite(STDERR, "[FALHA] Módulo 2 publicado não encontrado.\n");
-    exit(3);
+    exit(2);
 }
 
+$moduleId = (int) $module['id'];
+
 echo "=============================================================\n";
-echo " AUDITORIA MÓDULO 2 - CONTEÚDO E PROGRESSÃO V1\n";
+echo " AUDITORIA MÓDULO 2 - CONTEÚDO E PROGRESSÃO V2\n";
 echo "=============================================================\n";
-printf("Banco:  %s\n", (string)$pdo->query('SELECT DATABASE()')->fetchColumn());
-printf("Curso:  #%d - %s\n", (int)$course['id'], $course['title']);
-printf("Módulo: #%d - %s\n\n", (int)$module['id'], $module['title']);
+printf("Banco:  %s\n", (string) $pdo->query('SELECT DATABASE()')->fetchColumn());
+printf("Curso:  #%d - %s\n", (int)$module['course_id'], $module['course_title']);
+printf("Módulo: #%d - %s\n\n", $moduleId, $module['title']);
 
 $phasesStmt = $pdo->prepare(
-    "SELECT p.id,p.title,p.slug,p.position,p.is_required,p.phase_type,
-            p.required_score,
-            COALESCE(upp.status,'sem_progresso') AS progress_status
-     FROM phases p
-     LEFT JOIN user_phase_progress upp
-       ON 1=0
-     WHERE p.module_id=:module_id
-       AND p.status='published'
-     ORDER BY p.position,p.id"
+    "SELECT id,title,slug,position,is_required,phase_type,required_score
+     FROM phases
+     WHERE module_id=:module_id
+       AND status='published'
+     ORDER BY position,id"
 );
-$phasesStmt->execute(['module_id'=>(int)$module['id']]);
-$phases = $phasesStmt->fetchAll(PDO::FETCH_ASSOC);
+$phasesStmt->execute(['module_id'=>$moduleId]);
+$phases = $phasesStmt->fetchAll(\PDO::FETCH_ASSOC);
 
 $lessonStmt = $pdo->prepare(
     "SELECT l.id,l.title,l.slug,l.position,l.is_required,l.estimated_minutes,
@@ -85,88 +67,113 @@ $lessonStmt = $pdo->prepare(
      ORDER BY l.position,l.id"
 );
 
-$quizStmt = $pdo->prepare(
-    "SELECT qz.id,qz.quiz_type,qz.title,qz.required_score,qz.question_limit,qz.active,
+$lessonQuizStmt = $pdo->prepare(
+    "SELECT qz.id,qz.title,qz.required_score,qz.question_limit,
             COUNT(DISTINCT qq.question_id) AS question_count
      FROM quizzes qz
      LEFT JOIN quiz_questions qq ON qq.quiz_id=qz.id
-     WHERE qz.active=1
-       AND (
-            (:lesson_id > 0 AND qz.lesson_id=:lesson_id2)
-            OR (:phase_id > 0 AND qz.phase_id=:phase_id2 AND qz.lesson_id IS NULL)
-       )
-     GROUP BY qz.id,qz.quiz_type,qz.title,qz.required_score,qz.question_limit,qz.active
-     ORDER BY qz.quiz_type,qz.id"
+     WHERE qz.lesson_id=:lesson_id
+       AND qz.quiz_type='lesson_fixation'
+       AND qz.active=1
+     GROUP BY qz.id,qz.title,qz.required_score,qz.question_limit
+     ORDER BY qz.id
+     LIMIT 1"
+);
+
+$phaseQuizStmt = $pdo->prepare(
+    "SELECT qz.id,qz.title,qz.required_score,qz.question_limit,
+            COUNT(DISTINCT qq.question_id) AS question_count
+     FROM quizzes qz
+     LEFT JOIN quiz_questions qq ON qq.quiz_id=qz.id
+     WHERE qz.phase_id=:phase_id
+       AND qz.lesson_id IS NULL
+       AND qz.quiz_type='phase_exam'
+       AND qz.active=1
+     GROUP BY qz.id,qz.title,qz.required_score,qz.question_limit
+     ORDER BY qz.id
+     LIMIT 1"
 );
 
 $problems = [];
 $totalLessons = 0;
+$requiredPhases = 0;
+$optionalPhases = 0;
 $missingLessonFixations = 0;
 $missingPhaseExams = 0;
-$thinLessons = 0;
+$thinRequiredLessons = 0;
+$validFixations = 0;
+$validPhaseExams = 0;
 
 foreach ($phases as $phase) {
-    $phaseId = (int)$phase['id'];
-    $required = (int)$phase['is_required'] === 1;
+    $phaseId = (int) $phase['id'];
+    $phaseRequired = (int) $phase['is_required'] === 1;
+
+    if ($phaseRequired) {
+        $requiredPhases++;
+    } else {
+        $optionalPhases++;
+    }
 
     echo "-------------------------------------------------------------\n";
     printf(
         "FASE %02d | #%d | %s | %s\n",
         (int)$phase['position'],
         $phaseId,
-        $required ? 'OBRIGATÓRIA' : 'OPCIONAL',
+        $phaseRequired ? 'OBRIGATÓRIA' : 'COMPLEMENTAR',
         $phase['title']
     );
 
     $lessonStmt->execute(['phase_id'=>$phaseId]);
-    $lessons = $lessonStmt->fetchAll(PDO::FETCH_ASSOC);
-
+    $lessons = $lessonStmt->fetchAll(\PDO::FETCH_ASSOC);
     printf("Aulas publicadas: %d\n", count($lessons));
 
     foreach ($lessons as $lesson) {
         $totalLessons++;
-        $lessonId = (int)$lesson['id'];
-        $lessonRequired = (int)$lesson['is_required'] === 1;
-        $blocks = (int)$lesson['block_count'];
-        $requiredBlocks = (int)$lesson['required_blocks'];
+        $lessonId = (int) $lesson['id'];
+        $lessonRequired = (int) $lesson['is_required'] === 1;
+        $blocks = (int) $lesson['block_count'];
+        $requiredBlocks = (int) $lesson['required_blocks'];
 
-        if ($lessonRequired && $blocks <= 1) {
-            $thinLessons++;
-            $problems[] = "Aula #{$lessonId} '{$lesson['title']}' possui apenas {$blocks} bloco(s).";
+        if ($phaseRequired && $lessonRequired && $blocks <= 1) {
+            $thinRequiredLessons++;
+            $problems[] = "Aula curricular #{$lessonId} '{$lesson['title']}' possui apenas {$blocks} bloco(s).";
         }
 
-        $quizStmt->execute([
-            'lesson_id'=>$lessonId,
-            'lesson_id2'=>$lessonId,
-            'phase_id'=>0,
-            'phase_id2'=>0,
-        ]);
-        $lessonQuizzes = $quizStmt->fetchAll(PDO::FETCH_ASSOC);
-        $fixation = null;
-        foreach ($lessonQuizzes as $quiz) {
-            if ($quiz['quiz_type'] === 'lesson_fixation') {
-                $fixation = $quiz;
-                break;
-            }
-        }
+        $lessonQuizStmt->execute(['lesson_id'=>$lessonId]);
+        $fixation = $lessonQuizStmt->fetch(\PDO::FETCH_ASSOC);
 
-        $fixationText = 'SEM FIXAÇÃO';
-        if ($fixation) {
-            $fixationText = sprintf(
-                'fixação #%d: %d/%d questões | nota %.0f%%',
-                (int)$fixation['id'],
-                (int)$fixation['question_count'],
-                (int)$fixation['question_limit'],
-                (float)$fixation['required_score']
-            );
+        if ($phaseRequired && $lessonRequired) {
+            if (!$fixation) {
+                $missingLessonFixations++;
+                $problems[] = "Aula obrigatória #{$lessonId} '{$lesson['title']}' não possui lesson_fixation.";
+                $fixationText = 'SEM FIXAÇÃO';
+            } else {
+                $questionCount = (int)$fixation['question_count'];
+                $limit = (int)$fixation['question_limit'];
+                $score = (float)$fixation['required_score'];
+                $fixationText = sprintf(
+                    'fixação #%d: %d/%d questões | nota %.0f%%',
+                    (int)$fixation['id'],
+                    $questionCount,
+                    $limit,
+                    $score
+                );
 
-            if ((int)$fixation['question_limit'] <= 0
-                || (int)$fixation['question_count'] !== (int)$fixation['question_limit']) {
-                $problems[] = "Fixação incompleta da aula #{$lessonId}: {$fixationText}.";
+                if ($questionCount !== 3 || $limit !== 3 || abs($score - 100.0) > 0.01) {
+                    $problems[] = "Fixação fora do padrão na aula #{$lessonId}: {$fixationText}.";
+                } else {
+                    $validFixations++;
+                }
             }
-        } elseif ($required && $lessonRequired) {
-            $missingLessonFixations++;
-            $problems[] = "Aula obrigatória #{$lessonId} '{$lesson['title']}' não possui lesson_fixation.";
+        } else {
+            $fixationText = $fixation
+                ? sprintf(
+                    'opcional com quiz #%d: %d/%d',
+                    (int)$fixation['id'],
+                    (int)$fixation['question_count'],
+                    (int)$fixation['question_limit']
+                )
+                : 'sem fixação obrigatória';
         }
 
         printf(
@@ -180,37 +187,30 @@ foreach ($phases as $phase) {
         );
     }
 
-    $quizStmt->execute([
-        'lesson_id'=>0,
-        'lesson_id2'=>0,
-        'phase_id'=>$phaseId,
-        'phase_id2'=>$phaseId,
-    ]);
-    $phaseQuizzes = $quizStmt->fetchAll(PDO::FETCH_ASSOC);
-    $exam = null;
-    foreach ($phaseQuizzes as $quiz) {
-        if ($quiz['quiz_type'] === 'phase_exam') {
-            $exam = $quiz;
-            break;
-        }
-    }
+    $phaseQuizStmt->execute(['phase_id'=>$phaseId]);
+    $exam = $phaseQuizStmt->fetch(\PDO::FETCH_ASSOC);
 
-    if ($required) {
+    if ($phaseRequired) {
         if (!$exam) {
             $missingPhaseExams++;
             $problems[] = "Fase obrigatória #{$phaseId} '{$phase['title']}' não possui phase_exam.";
             echo "Checkpoint da fase: AUSENTE\n";
         } else {
+            $questionCount = (int)$exam['question_count'];
+            $limit = (int)$exam['question_limit'];
+            $score = (float)$exam['required_score'];
             printf(
                 "Checkpoint da fase: #%d | %d/%d questões | nota %.0f%%\n",
                 (int)$exam['id'],
-                (int)$exam['question_count'],
-                (int)$exam['question_limit'],
-                (float)$exam['required_score']
+                $questionCount,
+                $limit,
+                $score
             );
-            if ((int)$exam['question_limit'] <= 0
-                || (int)$exam['question_count'] !== (int)$exam['question_limit']) {
-                $problems[] = "Checkpoint incompleto da fase #{$phaseId}.";
+
+            if ($questionCount !== 5 || $limit !== 5 || abs($score - 80.0) > 0.01) {
+                $problems[] = "Checkpoint fora do padrão na fase #{$phaseId}.";
+            } else {
+                $validPhaseExams++;
             }
         }
     } else {
@@ -230,17 +230,52 @@ $bossStmt = $pdo->prepare(
      ORDER BY qz.id
      LIMIT 1"
 );
-$bossStmt->execute(['module_id'=>(int)$module['id']]);
-$boss = $bossStmt->fetch(PDO::FETCH_ASSOC);
+$bossStmt->execute(['module_id'=>$moduleId]);
+$boss = $bossStmt->fetch(\PDO::FETCH_ASSOC);
+
+$managedQuestionsStmt = $pdo->prepare(
+    "SELECT COUNT(*)
+     FROM questions
+     WHERE module_id=:module_id
+       AND active=1
+       AND source_label LIKE 'M2V2%'"
+);
+$managedQuestionsStmt->execute(['module_id'=>$moduleId]);
+$managedQuestions = (int) $managedQuestionsStmt->fetchColumn();
+
+$invalidAlternativesStmt = $pdo->prepare(
+    "SELECT COUNT(*)
+     FROM (
+        SELECT q.id,
+               COUNT(a.id) AS alternatives_count,
+               SUM(CASE WHEN a.is_correct=1 THEN 1 ELSE 0 END) AS correct_count
+        FROM questions q
+        LEFT JOIN alternatives a ON a.question_id=q.id
+        WHERE q.module_id=:module_id
+          AND q.active=1
+          AND q.source_label LIKE 'M2V2%'
+        GROUP BY q.id
+        HAVING COUNT(a.id)<>5
+            OR SUM(CASE WHEN a.is_correct=1 THEN 1 ELSE 0 END)<>1
+     ) x"
+);
+$invalidAlternativesStmt->execute(['module_id'=>$moduleId]);
+$invalidAlternatives = (int) $invalidAlternativesStmt->fetchColumn();
 
 echo "\n=============================================================\n";
 echo " RESUMO\n";
 echo "=============================================================\n";
 printf("Fases publicadas:                    %d\n", count($phases));
+printf("Fases curriculares obrigatórias:     %d / 11\n", $requiredPhases);
+printf("Fases complementares opcionais:      %d / 5\n", $optionalPhases);
 printf("Aulas publicadas:                    %d\n", $totalLessons);
 printf("Aulas obrigatórias sem fixação:      %d\n", $missingLessonFixations);
+printf("Fixações válidas 3/3 a 100%%:         %d / 11\n", $validFixations);
 printf("Fases obrigatórias sem checkpoint:   %d\n", $missingPhaseExams);
-printf("Aulas obrigatórias com <= 1 bloco:   %d\n", $thinLessons);
+printf("Checkpoints válidos 5/5 a 80%%:       %d / 11\n", $validPhaseExams);
+printf("Aulas curriculares com <= 1 bloco:   %d\n", $thinRequiredLessons);
+printf("Questões curadas M2V2:               %d / 55\n", $managedQuestions);
+printf("Questões M2V2 com estrutura inválida:%d\n", $invalidAlternatives);
 
 if ($boss) {
     printf(
@@ -250,13 +285,28 @@ if ($boss) {
         (int)$boss['question_limit'],
         (float)$boss['required_score']
     );
-    if ((int)$boss['question_limit'] <= 0
-        || (int)$boss['question_count'] !== (int)$boss['question_limit']) {
-        $problems[] = 'Avaliação final do módulo está incompleta.';
+
+    if ((int)$boss['question_count'] !== 10
+        || (int)$boss['question_limit'] !== 10
+        || abs((float)$boss['required_score'] - 80.0) > 0.01) {
+        $problems[] = 'Avaliação final do módulo está fora do padrão 10 questões / 80%.';
     }
 } else {
     echo "Avaliação final do módulo:          AUSENTE\n";
     $problems[] = 'Módulo 2 não possui avaliação final module_boss.';
+}
+
+if ($requiredPhases !== 11) {
+    $problems[] = "Quantidade de fases obrigatórias é {$requiredPhases}; esperado: 11.";
+}
+if ($optionalPhases !== 5) {
+    $problems[] = "Quantidade de fases complementares é {$optionalPhases}; esperado: 5.";
+}
+if ($managedQuestions !== 55) {
+    $problems[] = "Banco curado M2V2 possui {$managedQuestions}/55 questões.";
+}
+if ($invalidAlternatives > 0) {
+    $problems[] = "{$invalidAlternatives} questão(ões) M2V2 com alternativas/gabarito inválidos.";
 }
 
 if ($problems !== []) {
@@ -264,8 +314,8 @@ if ($problems !== []) {
     foreach ($problems as $i=>$problem) {
         printf("%02d. %s\n", $i+1, $problem);
     }
-    fwrite(STDERR, "\n[FALHA] Módulo 2 não está pronto para progressão obrigatória completa.\n");
+    fwrite(STDERR, "\n[FALHA] Módulo 2 ainda não está consistente.\n");
     exit(4);
 }
 
-echo "\n[OK] Módulo 2 possui conteúdo, fixações, checkpoints e avaliação final completos.\n";
+echo "\n[OK] Módulo 2 consistente: conteúdo reforçado, 11 fixações, 11 checkpoints, 55 questões curadas e avaliação final válida.\n";
