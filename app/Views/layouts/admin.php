@@ -33,7 +33,7 @@ $error = Session::pullFlash('error');
     <meta name="theme-color" content="#07101f">
     <title><?= e($pageTitle) ?></title>
     <link rel="stylesheet" href="<?= e(url('/assets/css/app.css')) ?>">
-    <link rel="stylesheet" href="<?= e(url('/assets/css/admin.css')) ?>">
+    <link rel="stylesheet" href="<?= e(url('/assets/css/admin.css') . '?v=20261017-1') ?>">
     <script>window.APP_URL = <?= json_encode(rtrim((string) config('app.url'), '/')) ?>;</script>
     <script src="<?= e(url('/assets/js/app.js')) ?>" defer></script>
     <script src="<?= e(url('/assets/js/admin-users.js')) ?>" defer></script>
