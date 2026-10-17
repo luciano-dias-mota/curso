@@ -51,6 +51,84 @@ $statusLabels = ['active'=>'Ativo','inactive'=>'Inativo','blocked'=>'Bloqueado']
 </aside>
 </div>
 
+<section class="ld-admin-panel ld-admin-panel-spaced ld-admin-access-monitor">
+    <div class="ld-admin-panel-heading">
+        <div>
+            <span class="ld-admin-panel-kicker">SEGURANÇA DE ACESSO</span>
+            <h2>Dispositivos, dias e horários de login</h2>
+            <p>Use estes dados como indícios. IP ou dispositivo diferente, isoladamente, não prova compartilhamento da conta.</p>
+        </div>
+    </div>
+
+    <?php if (empty($accessSummary['available'])): ?>
+        <div class="ld-admin-empty">O monitor de acessos ainda não foi instalado no banco. Execute o script de instalação do monitor V1.</div>
+    <?php else: ?>
+        <div class="ld-admin-access-kpis">
+            <div><span>Sessões registradas</span><strong><?= (int) ($accessSummary['sessions'] ?? 0) ?></strong></div>
+            <div><span>Dispositivos</span><strong><?= (int) ($accessSummary['devices'] ?? 0) ?></strong></div>
+            <div><span>Ativos agora</span><strong><?= (int) ($accessSummary['active_devices'] ?? 0) ?></strong></div>
+            <div class="<?= (int) ($accessSummary['open_alerts'] ?? 0) > 0 ? 'is-alert' : '' ?>"><span>Alertas abertos</span><strong><?= (int) ($accessSummary['open_alerts'] ?? 0) ?></strong></div>
+        </div>
+
+        <?php if (!empty($accessAlerts)): ?>
+            <div class="ld-admin-access-alert-list">
+                <?php foreach ($accessAlerts as $alert): ?>
+                    <article class="ld-admin-access-alert is-<?= e((string) $alert['severity']) ?> <?= empty($alert['resolved_at']) ? 'is-open' : 'is-resolved' ?>">
+                        <div class="ld-admin-access-alert-icon"><?= empty($alert['resolved_at']) ? '⚠' : '✓' ?></div>
+                        <div>
+                            <strong><?= e($alert['title']) ?></strong>
+                            <p><?= e($alert['description']) ?></p>
+                            <small>
+                                Detectado em <?= e(date('d/m/Y H:i', strtotime((string) $alert['first_detected_at']))) ?>
+                                • última ocorrência <?= e(date('d/m/Y H:i', strtotime((string) $alert['last_detected_at']))) ?>
+                                • <?= (int) $alert['occurrence_count'] ?> ocorrência(s)
+                                <?= !empty($alert['resolved_at']) ? ' • encerrado em ' . e(date('d/m/Y H:i', strtotime((string) $alert['resolved_at']))) : '' ?>
+                            </small>
+                        </div>
+                    </article>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+
+        <div class="ld-admin-table-wrap ld-admin-access-table-wrap">
+            <table class="ld-admin-table ld-admin-access-table">
+                <thead>
+                    <tr>
+                        <th>Entrada</th>
+                        <th>Última atividade</th>
+                        <th>Dispositivo</th>
+                        <th>IP</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if (empty($accessSessions)): ?>
+                        <tr><td colspan="5">Nenhum login foi registrado desde a ativação do monitor.</td></tr>
+                    <?php endif; ?>
+                    <?php foreach ($accessSessions as $access): ?>
+                        <tr>
+                            <td>
+                                <strong><?= e(date('d/m/Y', strtotime((string) $access['login_at']))) ?></strong>
+                                <small><?= e(date('H:i:s', strtotime((string) $access['login_at']))) ?></small>
+                            </td>
+                            <td>
+                                <strong><?= e(date('d/m/Y', strtotime((string) $access['last_activity_at']))) ?></strong>
+                                <small><?= e(date('H:i:s', strtotime((string) $access['last_activity_at']))) ?></small>
+                            </td>
+                            <td>
+                                <strong><?= e($access['device_label']) ?></strong>
+                                <small><?= e((string) $access['browser']) ?> • <?= e((string) $access['platform']) ?></small>
+                            </td>
+                            <td><?= e($access['ip_address'] ?: '—') ?></td>
+                            <td><span class="ld-admin-access-status is-<?= e((string) $access['access_status']) ?>"><?= e((string) $access['access_status_label']) ?></span></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    <?php endif; ?>
+</section>
+
 <section class="ld-admin-panel ld-admin-panel-spaced">
     <div class="ld-admin-panel-heading"><div><span class="ld-admin-panel-kicker">MATRÍCULAS</span><h2>Cursos do aluno</h2><p>Ative, conclua ou cancele uma matrícula sem apagar o histórico.</p></div></div>
     <div class="ld-admin-enrollment-grid">
