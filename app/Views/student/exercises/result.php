@@ -4,7 +4,14 @@ $review = $review ?? [];
 $score = (float) ($session['percentage'] ?? 0);
 $correct = (int) ($session['correct_count'] ?? 0);
 $total = max(1, (int) ($session['question_limit'] ?? count($review)));
-$scope = $session['phase_title_snapshot'] ?: ($session['module_title_snapshot'] ?: $session['course_title_snapshot']);
+$scope = $session['topic_title_snapshot']
+    ?: ($session['phase_title_snapshot'] ?: ($session['module_title_snapshot'] ?: $session['course_title_snapshot']));
+
+$formatReviewStatement = static function (string $statement): string {
+    $statement = str_replace("\xC2\xA0", ' ', trim($statement));
+    $statement = preg_replace("/[ \t]+/u", ' ', $statement) ?? $statement;
+    return $statement;
+};
 ?>
 <section class="study-tools-page exercise-result-page">
     <header class="exercise-result-hero card">
@@ -27,7 +34,10 @@ $scope = $session['phase_title_snapshot'] ?: ($session['module_title_snapshot'] 
                 <article class="exercise-review-item <?= $item['is_correct'] ? 'is-correct' : 'is-wrong' ?>">
                     <div class="exercise-review-heading">
                         <span><?= (int) $item['position'] ?></span>
-                        <div><strong><?= $item['is_correct'] ? 'Correta' : 'Revisar' ?></strong><small><?= e((string) $item['statement']) ?></small></div>
+                        <div>
+                            <strong><?= $item['is_correct'] ? 'Correta' : 'Revisar' ?></strong>
+                            <small class="exercise-review-statement"><?= nl2br(e($formatReviewStatement((string) $item['statement']))) ?></small>
+                        </div>
                     </div>
                     <div class="exercise-review-answer">
                         <p><strong>Sua resposta:</strong> <?= e((string) (($item['selected']['label'] ?? '—') . ') ' . ($item['selected']['text'] ?? 'Não respondida'))) ?></p>
