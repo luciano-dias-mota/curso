@@ -104,9 +104,20 @@ final class ExerciseService
         }
         unset($phase);
 
+        // No gerador, fases sem nenhuma questão válida só poluem o seletor e
+        // levam o aluno a filtros que nunca podem gerar uma lista.
+        $phases = array_values(array_filter(
+            $phases,
+            static fn (array $phase): bool => (int) ($phase['question_count'] ?? 0) > 0
+        ));
+
         $taxonomyAvailable = $this->tableExists($pdo, 'study_topics')
             && $this->tableExists($pdo, 'question_topics');
         $topics = $taxonomyAvailable ? $this->studyTopics($pdo, $courseIds) : [];
+        $topics = array_values(array_filter(
+            $topics,
+            static fn (array $topic): bool => (int) ($topic['question_count'] ?? 0) > 0
+        ));
 
         return [
             'courses' => $courses,
@@ -159,6 +170,15 @@ final class ExerciseService
             $moduleId = null;
         }
 
+        $isPopModule = $module !== null && $this->isPopModule($module);
+
+        // A disciplina POP usa a taxonomia POP -> Processo -> Procedimento.
+        // Não combinamos esse filtro com phase_id, evitando seleções
+        // contraditórias como "fase POP3" + "taxonomia POP4".
+        if ($isPopModule) {
+            $phaseId = null;
+        }
+
         $phase = null;
         if ($phaseId !== null && $phaseId > 0) {
             if ($moduleId === null) {
@@ -191,7 +211,7 @@ final class ExerciseService
 
         $topic = null;
         if ($topicId !== null && $topicId > 0) {
-            if ($module === null || !$this->isPopModule($module)) {
+            if (!$isPopModule) {
                 throw new RuntimeException('Os filtros POP só podem ser usados na disciplina de Procedimentos Operacionais Padrão.');
             }
             if (!$this->tableExists($pdo, 'study_topics') || !$this->tableExists($pdo, 'question_topics')) {
@@ -203,6 +223,7 @@ final class ExerciseService
                  FROM study_topics
                  WHERE id = :id
                    AND domain = 'pop'
+                   AND topic_type IN ('pop','process','procedure')
                    AND active = 1
                  LIMIT 1"
             );
