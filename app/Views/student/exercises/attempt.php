@@ -34,6 +34,67 @@ $formatStatement = static function (string $statement): array {
     $isSequence = stripos($statement, 'ordene os trechos abaixo') !== false
         && preg_match('/^\(\s*\)/mu', implode("\n", $lines)) === 1;
 
+    $isRelation = stripos($statement, 'relacione cada item') !== false
+        && preg_match('/^\d+\.\s+/mu', implode("\n", $lines)) === 1;
+
+    if ($isRelation) {
+        $introLines = [];
+        $items = [];
+        $promptLines = [];
+        $readingItems = false;
+        $readingPrompt = false;
+
+        foreach ($lines as $line) {
+            if (preg_match('/^(\d+)\.\s*(.+)$/u', $line, $itemMatch) === 1) {
+                $readingItems = true;
+                $readingPrompt = false;
+                $items[] = [
+                    'number' => (int) $itemMatch[1],
+                    'text' => trim((string) $itemMatch[2]),
+                ];
+                continue;
+            }
+
+            if ($readingItems && preg_match('/^(Assinale|Indique|Marque|Escolha)/ui', $line) === 1) {
+                $readingPrompt = true;
+            }
+
+            if ($readingPrompt) {
+                $promptLines[] = $line;
+            } elseif (!$readingItems) {
+                $introLines[] = $line;
+            } elseif ($items !== []) {
+                $last = array_key_last($items);
+                $items[$last]['text'] = trim($items[$last]['text'] . ' ' . $line);
+            }
+        }
+
+        $intro = trim(implode(' ', $introLines));
+        $relation = null;
+
+        if (preg_match(
+            '/^(.*?)(PROCEDIMENTO\s+\d+(?:\.\d+)*\s*-\s*[^,]+),\s*relacione cada item a\s*R\s*\(([^)]+)\)\s*ou\s*A\s*\(([^)]+)\)\s*:?$/ui',
+            $intro,
+            $relationMatch
+        ) === 1) {
+            $relation = [
+                'before' => trim((string) $relationMatch[1]),
+                'procedure' => trim((string) $relationMatch[2]),
+                'r_label' => trim((string) $relationMatch[3]),
+                'a_label' => trim((string) $relationMatch[4]),
+            ];
+        }
+
+        return [
+            'type' => 'relation',
+            'source' => $source,
+            'intro' => $intro,
+            'items' => $items,
+            'prompt' => trim(implode(' ', $promptLines)),
+            'relation' => $relation,
+        ];
+    }
+
     if (!$isSequence) {
         return [
             'type' => 'default',
@@ -41,6 +102,7 @@ $formatStatement = static function (string $statement): array {
             'intro' => $statement,
             'items' => [],
             'prompt' => '',
+            'relation' => null,
         ];
     }
 
@@ -79,6 +141,7 @@ $formatStatement = static function (string $statement): array {
         'intro' => trim(implode(' ', $introLines)),
         'items' => $items,
         'prompt' => trim(implode(' ', $promptLines)),
+        'relation' => null,
     ];
 };
 
@@ -109,7 +172,41 @@ $formattedStatement = $formatStatement((string) ($current['statement_snapshot'] 
                 <span class="exercise-source-badge"><?= e((string) $formattedStatement['source']) ?></span>
             <?php endif; ?>
 
-            <?php if ($formattedStatement['type'] === 'sequence'): ?>
+            <?php if ($formattedStatement['type'] === 'relation'): ?>
+                <div class="exercise-relation-panel">
+                    <span class="exercise-relation-kicker">Leia e responda</span>
+
+                    <div class="exercise-relation-title">
+                        <?php if (is_array($formattedStatement['relation'] ?? null)): ?>
+                            <span><?= e((string) $formattedStatement['relation']['before']) ?></span>
+                            <strong class="exercise-procedure-highlight"><?= e((string) $formattedStatement['relation']['procedure']) ?></strong>
+                            <span>, relacione cada item a</span>
+                            <span class="exercise-relation-token is-r">R</span>
+                            <span>(<?= e((string) $formattedStatement['relation']['r_label']) ?>)</span>
+                            <span>ou</span>
+                            <span class="exercise-relation-token is-a">A</span>
+                            <span>(<?= e((string) $formattedStatement['relation']['a_label']) ?>):</span>
+                        <?php else: ?>
+                            <strong><?= e((string) $formattedStatement['intro']) ?></strong>
+                        <?php endif; ?>
+                    </div>
+
+                    <div class="exercise-relation-list">
+                        <?php foreach (($formattedStatement['items'] ?? []) as $item): ?>
+                            <div class="exercise-relation-item">
+                                <span class="exercise-relation-number"><?= (int) ($item['number'] ?? 0) ?></span>
+                                <p><?= e((string) ($item['text'] ?? '')) ?></p>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <?php if ((string) ($formattedStatement['prompt'] ?? '') !== ''): ?>
+                        <div class="exercise-relation-prompt">
+                            <strong><?= e((string) $formattedStatement['prompt']) ?></strong>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            <?php elseif ($formattedStatement['type'] === 'sequence'): ?>
                 <div class="exercise-statement-intro">
                     <span class="exercise-statement-kicker">Organize a sequência</span>
                     <h2><?= e((string) $formattedStatement['intro']) ?></h2>
