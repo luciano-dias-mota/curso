@@ -1,0 +1,1892 @@
+{
+  "version": 2,
+  "module_slug": "modulo-2-administracao-publica-e-gestao-fundamentos-organizacao-atos-controle-modelos-e-materiais",
+  "source_label": "M2V2 | Mega Apostila UFMT/PMMT reforçada + materiais incorporados ao projeto",
+  "optional_phase_slugs": [
+    "mapa-visual-atos-administrativos-e-evolucao-do-estado",
+    "aprofundamento-didatico-explicacao-exemplos-e-raciocinio-de-prova",
+    "revisao-ativa-do-modulo",
+    "exercicios-de-fixacao-10-itens",
+    "mini-simulado-do-modulo-10-questoes-a-e"
+  ],
+  "phases": [
+    {
+      "slug": "introducao-e-visao-geral",
+      "title": "Introdução e visão geral",
+      "replace_first_block": {
+        "type": "theory",
+        "title": "Como o Módulo 2 está organizado",
+        "content": "Este módulo reúne os principais eixos de Administração Pública e Gestão cobrados no material UFMT/PMMT. A trilha começa pelas diferenças entre Estado, Governo e Administração Pública; passa pela organização administrativa (centralização, desconcentração e descentralização), agentes públicos, poderes e atos administrativos; avança para controle, responsabilidade civil do Estado, modelos de Administração Pública, eficiência/eficácia/efetividade e gestão de materiais; e encerra com Gestão de Pessoas e ferramentas estratégicas recuperadas dos simulados enviados.\n\nA lógica de estudo é cumulativa: primeiro identifique os conceitos que a banca costuma aproximar; depois memorize as diferenças que não podem ser trocadas. Exemplos importantes: povo ≠ população ≠ nação; desconcentração ≠ descentralização; motivo ≠ motivação; anulação ≠ revogação; eficiência ≠ eficácia ≠ efetividade; ABC ≠ XYZ."
+      },
+      "extra_blocks": [
+        {
+          "type": "comparison",
+          "title": "Mapa mental dos conceitos que mais se confundem",
+          "content": "• Estado: pessoa jurídica de direito público interno formada por povo, território e governo soberano.\n• Governo: direção política.\n• Administração Pública: execução técnica e contínua das opções públicas, submetida ao direito.\n• Desconcentração: distribuição interna de competências na mesma pessoa jurídica; há hierarquia.\n• Descentralização: execução transferida a outra pessoa; não há hierarquia, mas vinculação/controle finalístico.\n• Ato administrativo: use o esquema CO-FI-FO-MO-OB — competência, finalidade, forma, motivo e objeto.\n• 3Es: eficiência = meios/recursos; eficácia = alcance da meta; efetividade = impacto/transformação.\n• Materiais: ABC = valor de demanda/impacto financeiro; XYZ = criticidade operacional."
+        },
+        {
+          "type": "warning",
+          "title": "Como a UFMT tende a montar pegadinhas",
+          "content": "As questões frequentemente trocam relações próximas: atribuem hierarquia à Administração Indireta, tratam revogação como correção de ilegalidade, confundem mérito administrativo com arbitrariedade, usam eficácia como sinônimo de eficiência ou invertem ABC e XYZ. Ao resolver, procure primeiro o conceito central e depois elimine alternativas que troquem a finalidade dos institutos."
+        }
+      ],
+      "questions": [
+        {
+          "statement": "Na visão geral do Módulo 2, qual alternativa diferencia corretamente Governo e Administração Pública?",
+          "explanation": "O material separa direção política (Governo) de execução administrativa técnica e contínua.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Governo executa tecnicamente e Administração exerce apenas direção política.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "Governo e Administração são expressões equivalentes no material.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "Governo dirige politicamente; a Administração executa de modo técnico e contínuo as opções públicas.",
+              "is_correct": true
+            },
+            {
+              "label": "D",
+              "text": "Administração atua sem submissão ao direito quando pratica atos discricionários.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "Governo corresponde apenas ao Poder Executivo federal.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Assinale a correspondência correta entre instituto e característica.",
+          "explanation": "A descentralização envolve outra pessoa; a relação não é hierárquica.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Desconcentração — criação de nova pessoa jurídica e ausência de hierarquia.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "Descentralização — atuação por outra pessoa, sem hierarquia, sujeita a vinculação/controle finalístico nos limites legais.",
+              "is_correct": true
+            },
+            {
+              "label": "C",
+              "text": "Centralização — transferência da execução a concessionário.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "Outorga — simples distribuição interna de tarefas entre órgãos.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "Delegação — transferência definitiva da titularidade por lei.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "No esquema CO-FI-FO-MO-OB, qual item representa o pressuposto de fato e de direito do ato administrativo?",
+          "explanation": "Motivo é a causa de fato e de direito que fundamenta o ato.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Competência",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "Finalidade",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "Forma",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "Motivo",
+              "is_correct": true
+            },
+            {
+              "label": "E",
+              "text": "Objeto",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Uma organização atingiu a meta prevista, mas gastou recursos muito acima do necessário. Segundo a distinção dos 3Es, houve:",
+          "explanation": "A meta foi alcançada (eficácia), mas com desperdício (baixa eficiência).",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "alta eficiência e alta eficácia.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "baixa eficiência e alta eficácia.",
+              "is_correct": true
+            },
+            {
+              "label": "C",
+              "text": "alta eficiência e baixa eficácia.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "baixa eficiência e baixa eficácia.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "efetividade máxima obrigatoriamente.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Na gestão de materiais, qual diferenciação está correta?",
+          "explanation": "O material distingue ABC como quantitativa/financeira e XYZ como qualitativa/criticidade.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "ABC considera valor de demanda/impacto financeiro; XYZ considera criticidade/importância operacional.",
+              "is_correct": true
+            },
+            {
+              "label": "B",
+              "text": "ABC e XYZ medem exatamente a mesma variável.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "XYZ classifica apenas materiais permanentes.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "ABC avalia apenas criticidade de segurança.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "XYZ substitui inventário e tombamento.",
+              "is_correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "1-estado-governo-e-administracao-publica",
+      "title": "1. Estado, Governo e Administração Pública",
+      "extra_blocks": [
+        {
+          "type": "comparison",
+          "title": "Retenção rápida: quatro distinções fundamentais",
+          "content": "1) Povo é vínculo jurídico-político; população é dado quantitativo; nação é conceito sociocultural.\n2) Governo dirige politicamente; Administração executa tecnicamente.\n3) Administração em sentido subjetivo/formal/orgânico responde “quem exerce?” — órgãos, entidades e agentes.\n4) Administração em sentido objetivo/material/funcional responde “o que é exercido?” — a própria atividade administrativa."
+        }
+      ],
+      "questions": [
+        {
+          "statement": "Segundo o material, quais são os elementos que formam o Estado?",
+          "explanation": "O Estado é apresentado como pessoa jurídica de direito público interno formada por povo, território e governo soberano.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Povo, território e governo soberano.",
+              "is_correct": true
+            },
+            {
+              "label": "B",
+              "text": "População, patrimônio e administração.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "Nação, governo e serviço público.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "Território, soberania e Administração Indireta.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "Povo, mercado e Poder Judiciário.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Qual alternativa diferencia corretamente povo, população e nação?",
+          "explanation": "A tríade é apresentada dessa forma no material.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Povo é conceito quantitativo; população é vínculo jurídico; nação é território.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "Povo e população são equivalentes; nação é apenas conceito jurídico.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "Nação é o conjunto de órgãos da Administração.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "Povo é vínculo jurídico-político; população é conceito quantitativo; nação é sociocultural.",
+              "is_correct": true
+            },
+            {
+              "label": "E",
+              "text": "População pressupõe necessariamente nacionalidade.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "A Administração Pública em sentido subjetivo, formal ou orgânico corresponde:",
+          "explanation": "O sentido subjetivo pergunta quem exerce a função administrativa.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "à finalidade política do Estado.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "à atividade administrativa em si.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "aos órgãos, entidades e agentes que exercem função administrativa.",
+              "is_correct": true
+            },
+            {
+              "label": "D",
+              "text": "somente às autarquias e fundações.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "somente aos servidores estatutários.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "A Administração Pública em sentido objetivo, material ou funcional corresponde:",
+          "explanation": "O sentido objetivo/material refere-se à atividade administrativa.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "ao conjunto de agentes públicos.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "à própria atividade administrativa.",
+              "is_correct": true
+            },
+            {
+              "label": "C",
+              "text": "ao Poder Executivo apenas.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "à personalidade jurídica do Estado.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "à Administração Indireta exclusivamente.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Sobre os Poderes estatais, o material destaca que Legislativo, Executivo e Judiciário são:",
+          "explanation": "Essa é a formulação apresentada no conteúdo.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "subordinados entre si em ordem hierárquica.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "independentes, porém sem funções atípicas.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "harmônicos apenas quando exercem função administrativa.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "independentes, mas sem possibilidade de controle recíproco.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "independentes e harmônicos, com funções típicas e atípicas.",
+              "is_correct": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "2-centralizacao-descentralizacao-e-desconcentracao",
+      "title": "2. Centralização, descentralização e desconcentração",
+      "extra_blocks": [
+        {
+          "type": "comparison",
+          "title": "Quadro de prova: não confunda",
+          "content": "Centralização: o próprio ente político executa a atividade.\nDesconcentração: distribuição interna dentro da mesma pessoa jurídica, com criação de órgãos sem personalidade própria e manutenção de hierarquia.\nDescentralização: execução por outra pessoa; não há hierarquia com o ente central, mas pode haver vinculação, tutela/supervisão e controle finalístico.\nOutorga: ligada à criação/atribuição legal à Administração Indireta.\nDelegação: transfere a execução por contrato ou ato, conforme o caso."
+        }
+      ],
+      "questions": [
+        {
+          "statement": "Quando o próprio ente político executa diretamente suas tarefas por seus órgãos, ocorre:",
+          "explanation": "Centralização é a execução pelo próprio ente político.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "centralização.",
+              "is_correct": true
+            },
+            {
+              "label": "B",
+              "text": "descentralização.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "delegação.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "outorga.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "privatização.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "A distribuição interna de competências dentro da mesma pessoa jurídica denomina-se:",
+          "explanation": "Desconcentração ocorre dentro da mesma pessoa jurídica.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "descentralização por outorga.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "delegação.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "desconcentração.",
+              "is_correct": true
+            },
+            {
+              "label": "D",
+              "text": "privatização.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "federalização.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Na desconcentração, a relação entre os órgãos é caracterizada por:",
+          "explanation": "A desconcentração preserva hierarquia.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "ausência de hierarquia e simples vinculação.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "hierarquia e subordinação interna.",
+              "is_correct": true
+            },
+            {
+              "label": "C",
+              "text": "contrato de concessão.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "autonomia política plena.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "personalidade jurídica própria de cada órgão.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Entre uma Secretaria de Estado e uma autarquia estadual, a relação típica é de:",
+          "explanation": "Entidades da Administração Indireta não se subordinam hierarquicamente ao órgão central.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "hierarquia plena.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "subordinação funcional absoluta.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "identidade de personalidade jurídica.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "vinculação/controle finalístico nos limites legais, e não hierarquia.",
+              "is_correct": true
+            },
+            {
+              "label": "E",
+              "text": "relação exclusivamente contratual.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Qual afirmação sobre outorga e delegação corresponde ao material?",
+          "explanation": "Essa é a diferenciação apresentada na apostila.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Ambas transferem sempre a titularidade definitivamente.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "Outorga é mera distribuição interna entre órgãos.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "Delegação exige sempre criação de autarquia.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "Outorga ocorre apenas por contrato.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "Outorga é associada à atribuição legal à Administração Indireta; delegação transfere execução por contrato ou ato, conforme o caso.",
+              "is_correct": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "3-agentes-publicos",
+      "title": "3. Agentes públicos",
+      "extra_blocks": [
+        {
+          "type": "comparison",
+          "title": "Cargo, emprego e função pública",
+          "content": "Cargo público: vínculo estatutário.\nEmprego público: vínculo celetista.\nFunção pública: conjunto de atribuições, podendo relacionar-se a temporários e funções de confiança.\nAgente público é conceito amplo e alcança quem exerce função pública ainda que de forma transitória ou sem remuneração, nos vínculos descritos pelo material."
+        }
+      ],
+      "questions": [
+        {
+          "statement": "O conceito de agente público adotado no material é:",
+          "explanation": "O material usa conceito amplo de agente público.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "restrito a servidores concursados.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "amplo, abrangendo quem exerce função pública ainda que transitoriamente ou sem remuneração.",
+              "is_correct": true
+            },
+            {
+              "label": "C",
+              "text": "restrito a agentes políticos.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "limitado a empregados celetistas.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "restrito a servidores estáveis.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Cargo público está associado, no material, a vínculo:",
+          "explanation": "Cargo público é relacionado ao regime estatutário.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "contratual privado.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "honorífico.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "estatutário.",
+              "is_correct": true
+            },
+            {
+              "label": "D",
+              "text": "eletivo exclusivamente.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "delegado.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Emprego público está associado a vínculo:",
+          "explanation": "Emprego público é apresentado como vínculo celetista.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "celetista.",
+              "is_correct": true
+            },
+            {
+              "label": "B",
+              "text": "estatutário.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "militar exclusivamente.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "honorífico.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "sem remuneração.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Função pública, segundo o material, corresponde:",
+          "explanation": "Essa é a síntese adotada no conteúdo.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "somente a cargo em comissão.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "sempre a emprego público.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "apenas a mandato eletivo.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "ao conjunto de atribuições, podendo relacionar-se a temporários e funções de confiança.",
+              "is_correct": true
+            },
+            {
+              "label": "E",
+              "text": "a vínculo sem qualquer atribuição definida.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "A estabilidade tratada no material, com referência ao art. 41, exige:",
+          "explanation": "O material destaca três anos de efetivo exercício e avaliação especial.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "dois anos e dispensa avaliação.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "cinco anos e concurso interno.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "três anos, independentemente de avaliação.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "dois anos e avaliação por pares.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "três anos de efetivo exercício e avaliação especial de desempenho.",
+              "is_correct": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "4-poderes-administrativos",
+      "title": "4. Poderes administrativos",
+      "questions": [
+        {
+          "statement": "O poder administrativo é apresentado como poder-dever porque:",
+          "explanation": "A competência administrativa é instrumental ao interesse público.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "a competência é conferida para atendimento do interesse público, e não como faculdade privada.",
+              "is_correct": true
+            },
+            {
+              "label": "B",
+              "text": "o agente pode deixar de agir sempre que considerar conveniente.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "a Administração não se submete à lei.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "todo poder administrativo é discricionário.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "o interesse particular prevalece sobre o público.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "No poder vinculado:",
+          "explanation": "O material contrapõe vinculação e discricionariedade.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "há liberdade irrestrita para escolher motivo e objeto.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "o agente decide conforme preferência pessoal.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "a lei define rigidamente os elementos relevantes, sem mérito administrativo.",
+              "is_correct": true
+            },
+            {
+              "label": "D",
+              "text": "o ato nunca pode ser controlado.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "não existe finalidade pública.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Discricionariedade administrativa significa:",
+          "explanation": "Discricionariedade não se confunde com arbitrariedade.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "arbitrariedade permitida.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "margem legal de conveniência e oportunidade dentro dos limites jurídicos.",
+              "is_correct": true
+            },
+            {
+              "label": "C",
+              "text": "liberdade sem controle.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "ausência de competência legal.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "impossibilidade de revisão judicial de legalidade.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Qual poder estrutura, coordena, fiscaliza e permite delegar/avocar dentro da mesma pessoa jurídica?",
+          "explanation": "Essas funções são ligadas ao poder hierárquico.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Poder de polícia.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "Poder disciplinar.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "Poder regulamentar.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "Poder hierárquico.",
+              "is_correct": true
+            },
+            {
+              "label": "E",
+              "text": "Poder constituinte.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "O poder disciplinar está relacionado principalmente a:",
+          "explanation": "Essa é a finalidade central destacada no material.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "criação de leis.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "controle externo do Judiciário.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "organização dos entes federativos.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "licenciamento de particulares em geral.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "apuração de infrações funcionais e aplicação de sanções em vínculos especiais.",
+              "is_correct": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "5-atos-administrativos",
+      "title": "5. Atos administrativos",
+      "questions": [
+        {
+          "statement": "No mnemônico CO-FI-FO-MO-OB, a sequência correta é:",
+          "explanation": "O esquema organiza os cinco elementos do ato administrativo.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "controle, finalidade, força, moralidade e obrigação.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "competência, finalidade, forma, motivo e objeto.",
+              "is_correct": true
+            },
+            {
+              "label": "C",
+              "text": "competência, fiscalização, forma, moralidade e obrigação.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "controle, finalidade, forma, motivação e objeto.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "competência, função, formalidade, motivo e objetivo.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Qual alternativa diferencia corretamente motivo e motivação?",
+          "explanation": "O material distingue a causa do ato de sua exteriorização justificativa.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Motivo e motivação são sinônimos absolutos.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "Motivação é pressuposto de fato; motivo é apenas forma.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "Motivo é pressuposto de fato e de direito; motivação é a exposição/justificação dos motivos.",
+              "is_correct": true
+            },
+            {
+              "label": "D",
+              "text": "Motivo é sempre discricionário; motivação nunca é exigível.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "Motivação corresponde ao objeto do ato.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Qual conjunto contém atributos trabalhados no material?",
+          "explanation": "Esses quatro atributos são listados no módulo.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Presunção de legitimidade/veracidade, imperatividade, autoexecutoriedade e tipicidade.",
+              "is_correct": true
+            },
+            {
+              "label": "B",
+              "text": "Soberania, jurisdição, coercibilidade legislativa e vitaliciedade.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "Competência, finalidade, forma e objeto.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "Legalidade, moralidade, publicidade e eficiência apenas.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "Hierarquia, disciplina, regulação e polícia.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "A anulação de um ato administrativo ocorre por:",
+          "explanation": "Ilegalidade conduz à anulação.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "mera mudança de conveniência.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "oportunidade administrativa.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "descumprimento posterior pelo beneficiário apenas.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "ilegalidade.",
+              "is_correct": true
+            },
+            {
+              "label": "E",
+              "text": "superveniência de norma incompatível exclusivamente.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "A revogação caracteriza-se por:",
+          "explanation": "O material contrasta anulação (ilegalidade) e revogação (mérito).",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "corrigir ato ilegal com efeito necessariamente retroativo.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "ser aplicada somente pelo Judiciário.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "atingir ato inválido.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "ser sinônimo de cassação.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "retirar ato válido por razões de conveniência/oportunidade, com efeitos prospectivos no esquema estudado.",
+              "is_correct": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "6-controle-da-administracao-e-responsabilidade-civil",
+      "title": "6. Controle da Administração e responsabilidade civil",
+      "extra_blocks": [
+        {
+          "type": "comparison",
+          "title": "Controle e autotutela: o que lembrar",
+          "content": "O Brasil adota jurisdição una: lesão ou ameaça a direito pode ser apreciada pelo Judiciário. Pela autotutela, a própria Administração pode anular atos ilegais e revogar atos válidos por razões de conveniência/oportunidade, dentro dos limites jurídicos. O Judiciário controla legalidade, legitimidade e moralidade, mas não substitui uma escolha administrativa válida de mérito."
+        }
+      ],
+      "questions": [
+        {
+          "statement": "O modelo brasileiro de controle jurisdicional é apresentado como:",
+          "explanation": "O material afirma que lesão ou ameaça a direito pode ser levada ao Judiciário.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "jurisdição una.",
+              "is_correct": true
+            },
+            {
+              "label": "B",
+              "text": "contencioso administrativo soberano.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "jurisdição administrativa exclusiva.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "controle apenas legislativo.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "ausência de controle judicial dos atos administrativos.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Autotutela administrativa significa que a Administração:",
+          "explanation": "Essa é a síntese de autotutela trabalhada no módulo.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "não pode rever seus próprios atos.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "somente pode revogar atos ilegais.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "pode anular atos ilegais e revogar atos inconvenientes/inadequados, observados os limites jurídicos.",
+              "is_correct": true
+            },
+            {
+              "label": "D",
+              "text": "depende sempre de ordem judicial para corrigir ilegalidades.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "pode substituir decisões judiciais.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Quanto ao mérito administrativo válido, o Judiciário:",
+          "explanation": "O controle judicial é jurídico; não substitui mérito válido.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "pode substituí-lo livremente por sua própria conveniência.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "não deve substituir a escolha administrativa válida de conveniência/oportunidade.",
+              "is_correct": true
+            },
+            {
+              "label": "C",
+              "text": "não pode controlar qualquer aspecto do ato discricionário.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "pode revogar todo ato que considere inoportuno.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "exerce hierarquia sobre a Administração.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Controle administrativo, legislativo e judicial:",
+          "explanation": "O material diferencia as modalidades de controle.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "possuem exatamente o mesmo objeto e os mesmos limites.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "são todos exercidos apenas pelo Executivo.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "não alcançam atos discricionários em nenhum aspecto.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "possuem objetos e limites distintos.",
+              "is_correct": true
+            },
+            {
+              "label": "E",
+              "text": "excluem a autotutela.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Sobre responsabilidade civil do Estado, o material diferencia:",
+          "explanation": "Esses pontos aparecem na síntese do módulo.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "apenas responsabilidade contratual e penal.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "somente atos comissivos.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "somente risco integral.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "exclusivamente culpa pessoal do agente.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "atos comissivos, omissões, risco administrativo, excludentes, hipóteses excepcionais de risco integral e direito de regresso.",
+              "is_correct": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "7-evolucao-dos-modelos-de-administracao-publica",
+      "title": "7. Evolução dos modelos de Administração Pública",
+      "questions": [
+        {
+          "statement": "Qual característica é associada ao modelo patrimonialista?",
+          "explanation": "O patrimonialismo é marcado pela confusão público/privado e práticas personalistas.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Separação rígida entre patrimônio público e privado.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "Confusão entre público e privado, personalismo e clientelismo.",
+              "is_correct": true
+            },
+            {
+              "label": "C",
+              "text": "Foco em indicadores de resultado.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "Profissionalização por mérito como traço central.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "Controle por contratos de gestão.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "O modelo burocrático é associado principalmente a:",
+          "explanation": "Esses traços são centrais no paradigma burocrático.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "nepotismo e clientelismo.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "flexibilidade sem formalização.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "racionalidade legal, formalismo, impessoalidade e profissionalização.",
+              "is_correct": true
+            },
+            {
+              "label": "D",
+              "text": "apropriação privada do patrimônio estatal.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "ausência de controles.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Uma disfunção apontada no modelo burocrático é:",
+          "explanation": "O material reconhece disfunções burocráticas apesar de seus avanços.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "excesso de meios/formalismo, autorreferência e lentidão.",
+              "is_correct": true
+            },
+            {
+              "label": "B",
+              "text": "ausência completa de regras.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "confusão patrimonial obrigatória.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "eliminação da impessoalidade.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "foco excessivo no cidadão-cliente.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "O modelo gerencial enfatiza:",
+          "explanation": "O gerencialismo desloca foco para resultados e accountability sem abolir legalidade.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "personalismo.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "controle apenas a priori.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "patrimônio público como extensão do governante.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "resultados, descentralização, flexibilidade, indicadores e responsabilização.",
+              "is_correct": true
+            },
+            {
+              "label": "E",
+              "text": "eliminação da legalidade.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Sobre a evolução dos modelos, o material destaca que:",
+          "explanation": "A evolução é apresentada sem ideia de substituição absoluta.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "cada novo modelo elimina totalmente o anterior.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "o gerencialismo dispensa controles.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "a burocracia é idêntica ao patrimonialismo.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "o patrimonialismo é o modelo atual desejável.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "os paradigmas se sucedem sem eliminação total dos anteriores.",
+              "is_correct": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "8-eficiencia-eficacia-e-efetividade",
+      "title": "8. Eficiência, eficácia e efetividade",
+      "extra_blocks": [
+        {
+          "type": "comparison",
+          "title": "Os 3Es em uma frase",
+          "content": "Eficiência: fazer certo as coisas, com atenção a meios, custos, produtividade e desperdícios.\nEficácia: fazer a coisa certa e alcançar a meta/resultados previstos.\nEfetividade: verificar o impacto real e a transformação produzida no ambiente ou na sociedade ao longo do tempo."
+        }
+      ],
+      "questions": [
+        {
+          "statement": "Eficiência concentra-se principalmente em:",
+          "explanation": "Eficiência olha para o uso dos recursos e para os meios.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "meios, custos, produtividade e desperdícios.",
+              "is_correct": true
+            },
+            {
+              "label": "B",
+              "text": "impacto social de longo prazo apenas.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "alcance de metas sem considerar recursos.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "legitimidade do ato administrativo.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "estrutura hierárquica.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Eficácia corresponde principalmente a:",
+          "explanation": "Eficácia mede se a meta foi alcançada.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "redução de custos, mesmo sem cumprir o objetivo.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "impacto social permanente.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "alcance das metas e resultados previstos.",
+              "is_correct": true
+            },
+            {
+              "label": "D",
+              "text": "controle de legalidade.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "classificação de materiais.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Efetividade está ligada a:",
+          "explanation": "Efetividade examina o efeito produzido na realidade.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "economia de recursos exclusivamente.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "cumprimento formal de etapas.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "número de servidores empregados.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "impacto e transformação social ao longo do tempo.",
+              "is_correct": true
+            },
+            {
+              "label": "E",
+              "text": "quantidade de órgãos criados.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Uma ação foi executada com poucos recursos, mas não atingiu a meta. Isso representa:",
+          "explanation": "Bom uso de recursos indica eficiência; não atingir a meta indica baixa eficácia.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "baixa eficiência e alta eficácia.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "alta eficiência e baixa eficácia.",
+              "is_correct": true
+            },
+            {
+              "label": "C",
+              "text": "alta efetividade necessariamente.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "alta eficácia e alta efetividade.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "baixa eficiência e baixa eficácia obrigatoriamente.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Qual cenário é descrito como ideal no material?",
+          "explanation": "O cenário ideal combina bom uso de recursos e alcance das metas.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "baixa eficiência e alta eficácia.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "alta eficiência e baixa eficácia.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "baixa eficiência e baixa eficácia.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "eficácia sem qualquer avaliação de recursos.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "alta eficiência e alta eficácia.",
+              "is_correct": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "9-gestao-de-materiais-e-patrimonio",
+      "title": "9. Gestão de materiais e patrimônio",
+      "questions": [
+        {
+          "statement": "O follow-up (diligenciamento) no setor de compras tem por objetivo:",
+          "explanation": "O follow-up acompanha sistematicamente o fluxo da aquisição.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "substituir o processo de contratação.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "acompanhar pedido e fornecedor para assegurar prazos, especificações e condições pactuadas.",
+              "is_correct": true
+            },
+            {
+              "label": "C",
+              "text": "classificar materiais pela curva XYZ.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "realizar tombamento de bens permanentes.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "definir a estrutura hierárquica do órgão.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "A classificação XYZ é caracterizada por:",
+          "explanation": "XYZ é qualitativa e ligada à criticidade.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "valor de demanda/impacto financeiro.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "tempo de armazenamento apenas.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "criticidade/importância operacional.",
+              "is_correct": true
+            },
+            {
+              "label": "D",
+              "text": "valor contábil do patrimônio apenas.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "ordem alfabética dos materiais.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "A curva ABC está relacionada principalmente a:",
+          "explanation": "ABC é apresentada como classificação quantitativa ligada ao valor.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "valor de demanda/impacto financeiro.",
+              "is_correct": true
+            },
+            {
+              "label": "B",
+              "text": "criticidade operacional qualitativa.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "grau de risco disciplinar.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "localização física do item.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "tipo de vínculo do servidor responsável.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Entre os controles patrimoniais citados no material estão:",
+          "explanation": "Esses procedimentos aparecem no conteúdo de patrimônio.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "delegação e avocação.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "anulação e revogação.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "SWOT e GUT.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "tombamento, inventário e incorporação.",
+              "is_correct": true
+            },
+            {
+              "label": "E",
+              "text": "autotutela e jurisdição.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Qual alternativa corresponde aos temas abrangidos pela gestão de materiais no caderno?",
+          "explanation": "O conteúdo aborda a cadeia de materiais de forma mais ampla.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Apenas compras.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "Somente transporte.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "Apenas bens permanentes.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "Somente classificação ABC.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "Organização da área de materiais, compras, armazenagem, transporte, distribuição e administração patrimonial.",
+              "is_correct": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "10-gestao-de-pessoas-e-gestao-estrategica-conteudo-recuperado-dos-simulados-enviados",
+      "title": "10. Gestão de Pessoas e Gestão Estratégica",
+      "questions": [
+        {
+          "statement": "No conteúdo recuperado dos simulados, a avaliação de desempenho tem como foco principal:",
+          "explanation": "O material destaca desenvolvimento e alinhamento, não remuneração como finalidade central.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "diagnóstico, desenvolvimento, mapeamento de competências, capacitação e alinhamento de resultados.",
+              "is_correct": true
+            },
+            {
+              "label": "B",
+              "text": "definir recompensa financeira como finalidade única.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "substituir todos os processos de gestão de pessoas.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "avaliar apenas tempo de serviço.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "aplicar sanções disciplinares.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "A avaliação 360 graus caracteriza-se por:",
+          "explanation": "A vantagem é ampliar a visão do desempenho e reduzir viés de uma única fonte.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "avaliação exclusiva do superior imediato.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "autoavaliação sem outras fontes.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "uso de múltiplas fontes, como superior, pares, subordinados, clientes/fornecedores e autoavaliação.",
+              "is_correct": true
+            },
+            {
+              "label": "D",
+              "text": "avaliação exclusivamente por clientes externos.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "eliminar necessidade de tratamento dos feedbacks.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Competência, segundo o material, é entendida como:",
+          "explanation": "O conteúdo afasta a redução de competência a diploma ou tempo de serviço.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "tempo de serviço acumulado.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "mobilização de conhecimentos, habilidades e atitudes para produzir resultados no contexto.",
+              "is_correct": true
+            },
+            {
+              "label": "C",
+              "text": "diploma formal apenas.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "traço fixo de personalidade.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "cargo ocupado pelo servidor.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Qual ferramenta é usada para diagnóstico estratégico de forças, fraquezas, oportunidades e ameaças?",
+          "explanation": "SWOT/FOFA cruza ambiente interno e externo.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "5W2H.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "GUT.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "BSC.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "SWOT/FOFA.",
+              "is_correct": true
+            },
+            {
+              "label": "E",
+              "text": "Follow-up.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Qual associação entre ferramenta e finalidade está correta?",
+          "explanation": "O material enfatiza que a banca pode trocar a finalidade dessas ferramentas.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "GUT — traduz a estratégia em perspectivas e indicadores.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "5W2H — diagnostica forças e fraquezas.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "BSC — prioriza problemas por gravidade, urgência e tendência.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "SWOT — detalha quem, quando, como e custo do plano de ação.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "GUT — prioriza problemas; 5W2H — estrutura plano de ação; BSC — traduz estratégia em objetivos e indicadores.",
+              "is_correct": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
