@@ -10,6 +10,7 @@ use App\Core\Request;
 use App\Core\Session;
 use App\Core\Validator;
 use App\Services\LoginThrottle;
+use App\Services\UserAccessMonitor;
 
 final class AuthController extends Controller
 {
@@ -59,11 +60,23 @@ final class AuthController extends Controller
         }
 
         $throttle->clear($email);
+
+        if (Auth::isStudent() && Auth::id() !== null) {
+            (new UserAccessMonitor())->registerLogin((int) Auth::id());
+        }
+
         $this->redirect('/dashboard');
     }
 
     public function logout(): void
     {
+        $userId = Auth::id();
+        $isStudent = Auth::isStudent();
+
+        if ($isStudent && $userId !== null) {
+            (new UserAccessMonitor())->logout((int) $userId);
+        }
+
         Auth::logout();
         $this->redirect('/login');
     }
