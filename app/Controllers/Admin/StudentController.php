@@ -10,6 +10,7 @@ use App\Core\Database;
 use App\Core\Request;
 use App\Core\Session;
 use App\Services\ProgressInitializer;
+use App\Services\UserAccessMonitor;
 use PDO;
 use PDOException;
 use RuntimeException;
@@ -288,6 +289,11 @@ final class StudentController extends Controller
         );
         $auditStmt->execute(['student_id' => $id]);
 
+        $accessMonitor = new UserAccessMonitor();
+        $accessSummary = $accessMonitor->summary($id);
+        $accessSessions = $accessMonitor->history($id, 100);
+        $accessAlerts = $accessMonitor->alertsForUser($id, 40);
+
         $this->view('admin/students/show', [
             'title' => 'Aluno • ' . $student['name'],
             'student' => $student,
@@ -298,6 +304,9 @@ final class StudentController extends Controller
             'quizAttempts' => $quizStmt->fetchAll(PDO::FETCH_ASSOC),
             'simulationAttempts' => $simulationStmt->fetchAll(PDO::FETCH_ASSOC),
             'auditEvents' => $auditStmt->fetchAll(PDO::FETCH_ASSOC),
+            'accessSummary' => $accessSummary,
+            'accessSessions' => $accessSessions,
+            'accessAlerts' => $accessAlerts,
         ], 'layouts/admin');
     }
 
