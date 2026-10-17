@@ -7,6 +7,7 @@ namespace App\Middleware;
 use App\Core\Auth;
 use App\Core\Database;
 use App\Core\View;
+use App\Services\ProgressInitializer;
 
 final class ModuleUnlockedMiddleware
 {
@@ -22,8 +23,9 @@ final class ModuleUnlockedMiddleware
             $this->deny('Módulo inválido.');
         }
 
-        $stmt = Database::connection()->prepare(
-            "SELECT ump.status
+        $pdo = Database::connection();
+        $stmt = $pdo->prepare(
+            "SELECT m.course_id
              FROM modules m
              INNER JOIN courses c
                ON c.id = m.course_id
@@ -32,24 +34,28 @@ final class ModuleUnlockedMiddleware
                ON e.course_id = c.id
               AND e.user_id = :user_id
               AND e.status = 'active'
-             INNER JOIN user_module_progress ump
-               ON ump.module_id = m.id
-              AND ump.user_id = :user_id_progress
              WHERE m.id = :module_id
                AND m.status = 'published'
              LIMIT 1"
         );
         $stmt->execute([
             'user_id' => Auth::id(),
-            'user_id_progress' => Auth::id(),
             'module_id' => $moduleId,
         ]);
 
-        $status = $stmt->fetchColumn();
+        $courseId = (int) ($stmt->fetchColumn() ?: 0);
 
-        if (!$status || $status === 'locked') {
-            $this->deny('Conclua o módulo anterior para desbloquear esta etapa.');
+        if ($courseId <= 0) {
+            $this->deny('Este módulo não está disponível para sua matrícula.');
         }
+
+        // Autocorreção para alunos antigos: ao abrir qualquer módulo, garante
+        // todos os módulos livres e mantém a sequência obrigatória interna.
+        (new ProgressInitializer())->initializeEnrollment(
+            (int) Auth::id(),
+            $courseId,
+            $pdo
+        );
     }
 
     private function deny(string $message): never
