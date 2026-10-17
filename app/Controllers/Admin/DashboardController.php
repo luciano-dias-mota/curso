@@ -9,6 +9,7 @@ use App\Core\Database;
 use App\Core\Request;
 use DateTimeImmutable;
 use PDO;
+use App\Services\UserAccessMonitor;
 
 final class DashboardController extends Controller
 {
@@ -94,6 +95,7 @@ final class DashboardController extends Controller
         $performance = $this->performanceSeries($pdo, $startDate, $buckets, $hasExercises);
         $contentDifficulty = $this->contentDifficulty($pdo, $startDate, $hasExercises);
         $attentionStudents = $this->attentionStudents($pdo, $hasExercises);
+        $accessSecurityAlerts = (new UserAccessMonitor())->activeAlerts(6);
 
         $this->view('admin/dashboard', [
             'title' => 'Administração',
@@ -106,6 +108,7 @@ final class DashboardController extends Controller
             ],
             'recentStudents' => $recentStudents,
             'attentionStudents' => $attentionStudents,
+            'accessSecurityAlerts' => $accessSecurityAlerts,
             'activity' => $activity,
             'performance' => $performance,
             'contentDifficulty' => $contentDifficulty,
