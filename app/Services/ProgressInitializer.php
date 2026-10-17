@@ -78,17 +78,15 @@ final class ProgressInitializer
 
         foreach ($modules->fetchAll(PDO::FETCH_ASSOC) as $module) {
             $moduleId = (int) $module['id'];
-            $requiredPhases = (int) $module['required_phases'];
 
+            // Todos os módulos publicados ficam disponíveis desde o início para
+            // o aluno escolher a disciplina que deseja estudar no dia.
+            //
+            // A liberdade existe ENTRE módulos. DENTRO de cada módulo a
+            // progressão continua obrigatória: primeira fase -> aulas em ordem
+            // -> exercício de fixação -> checkpoint -> próxima fase -> avaliação final.
             $this->unlockModule($pdo, $userId, $moduleId);
             $this->unlockModuleEntryPoints($pdo, $userId, $moduleId);
-
-            // Módulos formados apenas por conteúdo opcional/orientação não bloqueiam
-            // a entrada no próximo módulo. O primeiro módulo com fase obrigatória
-            // passa a ser o ponto real de entrada da trilha pedagógica.
-            if ($requiredPhases > 0) {
-                break;
-            }
         }
     }
 
