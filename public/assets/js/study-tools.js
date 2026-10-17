@@ -33,11 +33,24 @@
         const course = form.querySelector('[data-scope-course]');
         const module = form.querySelector('[data-scope-module]');
         const phase = form.querySelector('[data-scope-phase]');
+        const phaseField = form.querySelector('[data-phase-field]');
         const popTopic = form.querySelector('[data-pop-topic]');
         const processTopic = form.querySelector('[data-process-topic]');
         const procedureTopic = form.querySelector('[data-procedure-topic]');
+        const popFields = [...form.querySelectorAll('[data-pop-field]')];
 
         if (!course) return;
+
+        const isPopModuleSelected = () => {
+            const selectedModule = module?.selectedOptions?.[0];
+            return Boolean(module?.value) && selectedModule?.dataset.isPop === '1';
+        };
+
+        const togglePopFields = (visible) => {
+            popFields.forEach((field) => {
+                field.hidden = !visible;
+            });
+        };
 
         const resetSelect = (select) => {
             if (!select) return;
@@ -79,8 +92,9 @@
 
         const syncPopTopics = () => {
             if (!popTopic) return;
-            const selectedModule = module?.selectedOptions?.[0];
-            const isPopModule = Boolean(module?.value) && selectedModule?.dataset.isPop === '1';
+            const isPopModule = isPopModuleSelected();
+            togglePopFields(isPopModule);
+
             if (!isPopModule) {
                 resetSelect(popTopic);
                 resetSelect(processTopic);
@@ -104,6 +118,14 @@
             const courseId = course.value;
             const moduleId = module?.value || '';
             const selected = initial ? String(phase.dataset.selected || phase.value || '') : '';
+
+            if (isPopModuleSelected()) {
+                if (phaseField) phaseField.hidden = true;
+                resetSelect(phase);
+                return;
+            }
+
+            if (phaseField) phaseField.hidden = false;
 
             if (!courseId || !moduleId) {
                 phase.value = '';
