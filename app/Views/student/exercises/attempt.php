@@ -31,11 +31,78 @@ $formatStatement = static function (string $statement): array {
         $lines
     ), static fn (string $line): bool => $line !== ''));
 
+    $joinedLines = implode("\n", $lines);
+
     $isSequence = stripos($statement, 'ordene os trechos abaixo') !== false
-        && preg_match('/^\(\s*\)/mu', implode("\n", $lines)) === 1;
+        && preg_match('/^\(\s*\)/mu', $joinedLines) === 1;
+
+    $isMatching = stripos($statement, 'relacione:') !== false
+        && preg_match('/^\(\d+\)\s+/mu', $joinedLines) === 1
+        && preg_match('/^Definições/i', $joinedLines) === 1;
+
+    $hasRomanBlocks = preg_match('/^(?:I|II|III|IV|V|VI|VII|VIII|IX|X)\.\s+/mu', $joinedLines) === 1;
 
     $isRelation = stripos($statement, 'relacione cada item') !== false
-        && preg_match('/^\d+\.\s+/mu', implode("\n", $lines)) === 1;
+        && preg_match('/^\d+\.\s+/mu', $joinedLines) === 1;
+
+    if ($isMatching) {
+        $introLines = [];
+        $items = [];
+        $definitions = [];
+        $promptLines = [];
+        $mode = 'intro';
+
+        foreach ($lines as $line) {
+            if (preg_match('/^\((\d+)\)\s*(.+)$/u', $line, $itemMatch) === 1) {
+                $mode = 'items';
+                $items[] = [
+                    'number' => (int) $itemMatch[1],
+                    'text' => trim((string) $itemMatch[2]),
+                ];
+                continue;
+            }
+
+            if (preg_match('/^Definições(?:,\s*na\s*ordem)?\s*:\s*$/ui', $line) === 1) {
+                $mode = 'definitions';
+                continue;
+            }
+
+            if (preg_match('/^((?:I|II|III|IV|V|VI|VII|VIII|IX|X))\.\s*(.+)$/u', $line, $definitionMatch) === 1) {
+                $mode = 'definitions';
+                $definitions[] = [
+                    'roman' => trim((string) $definitionMatch[1]),
+                    'text' => trim((string) $definitionMatch[2]),
+                ];
+                continue;
+            }
+
+            if (preg_match('/^(Assinale|Indique|Marque|Escolha)/ui', $line) === 1) {
+                $mode = 'prompt';
+            }
+
+            if ($mode === 'prompt') {
+                $promptLines[] = $line;
+            } elseif ($mode === 'intro') {
+                $introLines[] = $line;
+            } elseif ($mode === 'items' && $items !== []) {
+                $last = array_key_last($items);
+                $items[$last]['text'] = trim($items[$last]['text'] . ' ' . $line);
+            } elseif ($mode === 'definitions' && $definitions !== []) {
+                $last = array_key_last($definitions);
+                $definitions[$last]['text'] = trim($definitions[$last]['text'] . ' ' . $line);
+            }
+        }
+
+        return [
+            'type' => 'matching',
+            'source' => $source,
+            'intro' => trim(implode(' ', $introLines)),
+            'items' => $items,
+            'definitions' => $definitions,
+            'prompt' => trim(implode(' ', $promptLines)),
+            'relation' => null,
+        ];
+    }
 
     if ($isRelation) {
         $introLines = [];
@@ -95,6 +162,48 @@ $formatStatement = static function (string $statement): array {
         ];
     }
 
+    if (!$isSequence && $hasRomanBlocks) {
+        $introLines = [];
+        $blocks = [];
+        $promptLines = [];
+        $readingBlocks = false;
+        $readingPrompt = false;
+
+        foreach ($lines as $line) {
+            if (preg_match('/^((?:I|II|III|IV|V|VI|VII|VIII|IX|X))\.\s*(.+)$/u', $line, $blockMatch) === 1) {
+                $readingBlocks = true;
+                $readingPrompt = false;
+                $blocks[] = [
+                    'roman' => trim((string) $blockMatch[1]),
+                    'text' => trim((string) $blockMatch[2]),
+                ];
+                continue;
+            }
+
+            if ($readingBlocks && preg_match('/^(Assinale|Indique|Marque|Escolha)/ui', $line) === 1) {
+                $readingPrompt = true;
+            }
+
+            if ($readingPrompt) {
+                $promptLines[] = $line;
+            } elseif (!$readingBlocks) {
+                $introLines[] = $line;
+            } elseif ($blocks !== []) {
+                $last = array_key_last($blocks);
+                $blocks[$last]['text'] = trim($blocks[$last]['text'] . ' ' . $line);
+            }
+        }
+
+        return [
+            'type' => 'roman_blocks',
+            'source' => $source,
+            'intro' => trim(implode(' ', $introLines)),
+            'items' => $blocks,
+            'prompt' => trim(implode(' ', $promptLines)),
+            'relation' => null,
+        ];
+    }
+
     if (!$isSequence) {
         return [
             'type' => 'default',
@@ -146,6 +255,24 @@ $formatStatement = static function (string $statement): array {
 };
 
 $formattedStatement = $formatStatement((string) ($current['statement_snapshot'] ?? ''));
+
+$splitProcedure = static function (string $text): array {
+    if (preg_match('/^(.*?)(PROCEDIMENTO\s+\d+(?:\.\d+)*\s*-\s*[^,.:;]+)(.*)$/ui', $text, $m) === 1) {
+        return [
+            'before' => trim((string) $m[1]),
+            'procedure' => trim((string) $m[2]),
+            'after' => trim((string) $m[3]),
+        ];
+    }
+
+    return [
+        'before' => $text,
+        'procedure' => '',
+        'after' => '',
+    ];
+};
+
+$introParts = $splitProcedure((string) ($formattedStatement['intro'] ?? ''));
 ?>
 <section class="study-tools-page exercise-attempt-page">
     <header class="exercise-attempt-header card">
@@ -172,11 +299,80 @@ $formattedStatement = $formatStatement((string) ($current['statement_snapshot'] 
                 <span class="exercise-source-badge"><?= e((string) $formattedStatement['source']) ?></span>
             <?php endif; ?>
 
-            <?php if ($formattedStatement['type'] === 'relation'): ?>
-                <div class="exercise-relation-panel">
-                    <span class="exercise-relation-kicker">Leia e responda</span>
+            <?php if ($formattedStatement['type'] === 'matching'): ?>
+                <div class="exercise-reading-panel">
+                    <span class="exercise-reading-badge">Leia e responda</span>
 
-                    <div class="exercise-relation-title">
+                    <div class="exercise-reading-title">
+                        <?php if ((string) $introParts['procedure'] !== ''): ?>
+                            <span><?= e((string) $introParts['before']) ?></span>
+                            <strong class="exercise-procedure-highlight"><?= e((string) $introParts['procedure']) ?></strong>
+                            <?php if ((string) $introParts['after'] !== ''): ?><span><?= e((string) $introParts['after']) ?></span><?php endif; ?>
+                        <?php else: ?>
+                            <strong><?= e((string) $formattedStatement['intro']) ?></strong>
+                        <?php endif; ?>
+                    </div>
+
+                    <div class="exercise-reading-list">
+                        <?php foreach (($formattedStatement['items'] ?? []) as $item): ?>
+                            <div class="exercise-reading-item">
+                                <span class="exercise-reading-number"><?= (int) ($item['number'] ?? 0) ?></span>
+                                <p><?= e((string) ($item['text'] ?? '')) ?></p>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="exercise-definitions-heading">Definições, na ordem</div>
+                    <div class="exercise-definition-list">
+                        <?php foreach (($formattedStatement['definitions'] ?? []) as $definition): ?>
+                            <div class="exercise-definition-item">
+                                <span class="exercise-definition-roman"><?= e((string) ($definition['roman'] ?? '')) ?></span>
+                                <p><?= e((string) ($definition['text'] ?? '')) ?></p>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <?php if ((string) ($formattedStatement['prompt'] ?? '') !== ''): ?>
+                        <div class="exercise-reading-prompt">
+                            <strong><?= e((string) $formattedStatement['prompt']) ?></strong>
+                        </div>
+                    <?php endif; ?>
+                </div>
+
+            <?php elseif ($formattedStatement['type'] === 'roman_blocks'): ?>
+                <div class="exercise-reading-panel">
+                    <span class="exercise-reading-badge">Leia e responda</span>
+                    <div class="exercise-reading-title">
+                        <?php if ((string) $introParts['procedure'] !== ''): ?>
+                            <span><?= e((string) $introParts['before']) ?></span>
+                            <strong class="exercise-procedure-highlight"><?= e((string) $introParts['procedure']) ?></strong>
+                            <?php if ((string) $introParts['after'] !== ''): ?><span><?= e((string) $introParts['after']) ?></span><?php endif; ?>
+                        <?php else: ?>
+                            <strong><?= e((string) $formattedStatement['intro']) ?></strong>
+                        <?php endif; ?>
+                    </div>
+
+                    <div class="exercise-definition-list">
+                        <?php foreach (($formattedStatement['items'] ?? []) as $item): ?>
+                            <div class="exercise-definition-item">
+                                <span class="exercise-definition-roman"><?= e((string) ($item['roman'] ?? '')) ?></span>
+                                <p><?= e((string) ($item['text'] ?? '')) ?></p>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <?php if ((string) ($formattedStatement['prompt'] ?? '') !== ''): ?>
+                        <div class="exercise-reading-prompt">
+                            <strong><?= e((string) $formattedStatement['prompt']) ?></strong>
+                        </div>
+                    <?php endif; ?>
+                </div>
+
+            <?php elseif ($formattedStatement['type'] === 'relation'): ?>
+                <div class="exercise-reading-panel">
+                    <span class="exercise-reading-badge">Leia e responda</span>
+
+                    <div class="exercise-reading-title">
                         <?php if (is_array($formattedStatement['relation'] ?? null)): ?>
                             <span><?= e((string) $formattedStatement['relation']['before']) ?></span>
                             <strong class="exercise-procedure-highlight"><?= e((string) $formattedStatement['relation']['procedure']) ?></strong>
@@ -191,47 +387,63 @@ $formattedStatement = $formatStatement((string) ($current['statement_snapshot'] 
                         <?php endif; ?>
                     </div>
 
-                    <div class="exercise-relation-list">
+                    <div class="exercise-reading-list">
                         <?php foreach (($formattedStatement['items'] ?? []) as $item): ?>
-                            <div class="exercise-relation-item">
-                                <span class="exercise-relation-number"><?= (int) ($item['number'] ?? 0) ?></span>
+                            <div class="exercise-reading-item">
+                                <span class="exercise-reading-number"><?= (int) ($item['number'] ?? 0) ?></span>
                                 <p><?= e((string) ($item['text'] ?? '')) ?></p>
                             </div>
                         <?php endforeach; ?>
                     </div>
 
                     <?php if ((string) ($formattedStatement['prompt'] ?? '') !== ''): ?>
-                        <div class="exercise-relation-prompt">
+                        <div class="exercise-reading-prompt">
                             <strong><?= e((string) $formattedStatement['prompt']) ?></strong>
                         </div>
                     <?php endif; ?>
                 </div>
+
             <?php elseif ($formattedStatement['type'] === 'sequence'): ?>
-                <div class="exercise-statement-intro">
-                    <span class="exercise-statement-kicker">Organize a sequência</span>
-                    <h2><?= e((string) $formattedStatement['intro']) ?></h2>
-                    <p>Leia os trechos abaixo com atenção e identifique a ordem correta das ações.</p>
-                </div>
-
-                <div class="exercise-sequence-list" aria-label="Trechos para ordenar">
-                    <?php foreach (($formattedStatement['items'] ?? []) as $index => $item): ?>
-                        <article class="exercise-sequence-item">
-                            <span class="exercise-sequence-number"><?= $index + 1 ?></span>
-                            <p><?= e((string) $item) ?></p>
-                        </article>
-                    <?php endforeach; ?>
-                </div>
-
-                <?php if ((string) ($formattedStatement['prompt'] ?? '') !== ''): ?>
-                    <div class="exercise-statement-prompt">
-                        <span>Agora responda</span>
-                        <strong><?= e((string) $formattedStatement['prompt']) ?></strong>
+                <div class="exercise-reading-panel">
+                    <span class="exercise-reading-badge">Leia e responda</span>
+                    <div class="exercise-reading-title">
+                        <?php if ((string) $introParts['procedure'] !== ''): ?>
+                            <span><?= e((string) $introParts['before']) ?></span>
+                            <strong class="exercise-procedure-highlight"><?= e((string) $introParts['procedure']) ?></strong>
+                            <?php if ((string) $introParts['after'] !== ''): ?><span><?= e((string) $introParts['after']) ?></span><?php endif; ?>
+                        <?php else: ?>
+                            <strong><?= e((string) $formattedStatement['intro']) ?></strong>
+                        <?php endif; ?>
                     </div>
-                <?php endif; ?>
+
+                    <div class="exercise-sequence-list" aria-label="Trechos para ordenar">
+                        <?php foreach (($formattedStatement['items'] ?? []) as $index => $item): ?>
+                            <article class="exercise-sequence-item">
+                                <span class="exercise-sequence-number"><?= $index + 1 ?></span>
+                                <p><?= e((string) $item) ?></p>
+                            </article>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <?php if ((string) ($formattedStatement['prompt'] ?? '') !== ''): ?>
+                        <div class="exercise-reading-prompt">
+                            <strong><?= e((string) $formattedStatement['prompt']) ?></strong>
+                        </div>
+                    <?php endif; ?>
+                </div>
+
             <?php else: ?>
-                <div class="exercise-statement-intro">
-                    <span class="exercise-statement-kicker">Leia e responda</span>
-                    <h2><?= nl2br(e((string) $formattedStatement['intro'])) ?></h2>
+                <div class="exercise-reading-panel">
+                    <span class="exercise-reading-badge">Leia e responda</span>
+                    <div class="exercise-reading-title is-default">
+                        <?php if ((string) $introParts['procedure'] !== ''): ?>
+                            <span><?= e((string) $introParts['before']) ?></span>
+                            <strong class="exercise-procedure-highlight"><?= e((string) $introParts['procedure']) ?></strong>
+                            <?php if ((string) $introParts['after'] !== ''): ?><span><?= nl2br(e((string) $introParts['after'])) ?></span><?php endif; ?>
+                        <?php else: ?>
+                            <strong><?= nl2br(e((string) $formattedStatement['intro'])) ?></strong>
+                        <?php endif; ?>
+                    </div>
                 </div>
             <?php endif; ?>
         </div>
