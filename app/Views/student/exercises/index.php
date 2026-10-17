@@ -145,7 +145,7 @@ $procedureTopics = array_values(array_filter($topics, static fn (array $t): bool
                     <?php else: ?>
                         <div class="exercise-pop-note is-warning">
                             <span>⚠️</span>
-                            <p>A taxonomia POP ainda não está instalada. Execute primeiro <code>database/aplicar_pop1_taxonomia_v1.php</code>.</p>
+                            <p>A taxonomia POP ainda não está instalada. Execute primeiro o script de taxonomia do POP que estiver sendo instalado (ex.: <code>database/aplicar_pop3_taxonomia_v1.php</code>).</p>
                         </div>
                     <?php endif; ?>
 

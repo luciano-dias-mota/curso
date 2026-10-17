@@ -1,0 +1,1026 @@
+{
+  "format_version": 1,
+  "source": {
+    "questions_file": "pop3-exercicio.docx",
+    "reference_file": "pop-3--.pdf",
+    "reference_module": "Módulo III - Procedimentos Diversos",
+    "review_basis": "Gabaritos e explicações definidos exclusivamente com base no PDF POP 3 atualizado fornecido pelo usuário."
+  },
+  "stats": {
+    "total": 20,
+    "medium": 14,
+    "hard": 6
+  },
+  "items": [
+    {
+      "source_key": "POP3-ATUALIZADO-Q001",
+      "question_number": 1,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo III) A ergonomia veicular é fundamental para resguardar a saúde do policial militar motorista e garantir manobras seguras em situações de risco. À luz do POP 301.1, qual o nome técnico do dispositivo que serve como principal meio de apoio para sustentar o corpo do motorista firme no banco em manobras bruscas de emergência?",
+      "difficulty": "medium",
+      "topics": [
+        "301.1"
+      ],
+      "primary_topic": "301.1",
+      "source_pages": [
+        [
+          3,
+          4
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo III"
+      },
+      "source_label": "POP 3 - Módulo III atualizado (arquivo pop-3--.pdf) | UFMT - POP Módulo III",
+      "explanation": "Nos esclarecimentos do POP 301.1, o quarto pedal ou pedal de segurança é definido como o principal meio de apoio que mantém o motorista firme no banco e permite manobras bruscas de emergência com maior segurança.",
+      "alternatives": [
+        {
+          "text": "Quarto pedal ou pedal de segurança.",
+          "correct": true
+        },
+        {
+          "text": "Dispositivo luminoso intermitente de alta intensidade.",
+          "correct": false
+        },
+        {
+          "text": "Assento modular de dotação coletiva da P4.",
+          "correct": false
+        },
+        {
+          "text": "Encosto de cabeça alinhado com o dreno do percussor.",
+          "correct": false
+        },
+        {
+          "text": "Cinto semirrígido de fixação por presilhas em alto relevo.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 3 atualizado."
+      }
+    },
+    {
+      "source_key": "POP3-ATUALIZADO-Q002",
+      "question_number": 2,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo III) No atendimento telefônico de emergência do CIOSP (POP 306.1), o atendente deve utilizar expressões claras e o tratamento gramatical cultuado pelos manuais de padronização da Polícia Militar. Assinale a alternativa que reproduz a verbalização padrão obrigatória e literal a ser dita ao atender o aparelho telefônico:",
+      "difficulty": "medium",
+      "topics": [
+        "306.1"
+      ],
+      "primary_topic": "306.1",
+      "source_pages": [
+        [
+          42,
+          44
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo III"
+      },
+      "source_label": "POP 3 - Módulo III atualizado (arquivo pop-3--.pdf) | UFMT - POP Módulo III",
+      "explanation": "O POP 306.1 determina atendimento já no 1º toque e estabelece a verbalização padrão iniciando por 'Centro de Operações/CIOSP/POLÍCIA MILITAR EMERGÊNCIA, SD PM... (nome do atendente)', seguida da saudação e da pergunta 'em que posso ajudá-lo(a)?'.",
+      "alternatives": [
+        {
+          "text": "Oi, quem fala? Um minutinho que vou transferir para a rádio patrulha do batalhão.",
+          "correct": false
+        },
+        {
+          "text": "Calma aí jovem, o sistema está offline, aguarde um pouquinho na linha por favor.",
+          "correct": false
+        },
+        {
+          "text": "Centro de Operações/CIOSP/POLÍCIA MILITAR EMERGÊNCIA, SD PM... [nome do atendente], Bom dia, Boa Tarde ou Boa Noite, em que posso ajudá-lo(a)?",
+          "correct": true
+        },
+        {
+          "text": "Alô, você está ligando para a linha de emergência 190. Qual o seu QTH de origem?",
+          "correct": false
+        },
+        {
+          "text": "QAP total, cidadão! Diga o seu nome e o número de telefone de onde você está ligando agora.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 3 atualizado."
+      }
+    },
+    {
+      "source_key": "POP3-ATUALIZADO-Q003",
+      "question_number": 3,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo III) Um policial militar de serviço na função de atendente emergencial do telefone 190 recebe uma chamada de violência doméstica. Conforme as orientações psicossociais e técnicas de triagem descritas no POP 306.1, caso a mulher solicitante apresente falas confusas e atípicas, o atendente deve:",
+      "difficulty": "medium",
+      "topics": [
+        "306.1"
+      ],
+      "primary_topic": "306.1",
+      "source_pages": [
+        [
+          42,
+          44
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo III"
+      },
+      "source_label": "POP 3 - Módulo III atualizado (arquivo pop-3--.pdf) | UFMT - POP Módulo III",
+      "explanation": "O POP 306.1 orienta que, em ocorrências de violência doméstica, falas confusas podem indicar que o suspeito está próximo da solicitante, impedindo-a de relatar livremente o que realmente ocorre.",
+      "alternatives": [
+        {
+          "text": "Desligar o telefone imediatamente por classificar a chamada na planilha de trotes.",
+          "correct": false
+        },
+        {
+          "text": "Orientar a cidadã a ligar para o telefone 102 de informações de ordem geral.",
+          "correct": false
+        },
+        {
+          "text": "Desconfiar que o suspeito possa estar perto da solicitante durante a ligação, impedindo-a de relatar o fato real.",
+          "correct": true
+        },
+        {
+          "text": "Exigir que a solicitante informe os dados cadastrais completos da CNH do agressor.",
+          "correct": false
+        },
+        {
+          "text": "Classificar a ocorrência como prioridade normal e sugerir que ela procure a ouvidoria da PMMT.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 3 atualizado."
+      }
+    },
+    {
+      "source_key": "POP3-ATUALIZADO-Q004",
+      "question_number": 4,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo III) No planejamento tático de uma operação de bloqueio policial na via pública (POP 305.1), o comandante baseia-se em manchas criminais e indicadores estatísticos para otimizar os recursos humanos e materiais. O método administrativo pelo qual o gestor deve combater as causas mais evidentes de problemas com a maior parte de seus recursos disponíveis denomina-se:",
+      "difficulty": "medium",
+      "topics": [
+        "305.1"
+      ],
+      "primary_topic": "305.1",
+      "source_pages": [
+        [
+          27,
+          29
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo III"
+      },
+      "source_label": "POP 3 - Módulo III atualizado (arquivo pop-3--.pdf) | UFMT - POP Módulo III",
+      "explanation": "O POP 305.1 manda basear o planejamento em estatísticas e, entre outros elementos, no Princípio de Pareto, definido como concentrar a maior parte dos recursos nas causas mais evidentes dos problemas.",
+      "alternatives": [
+        {
+          "text": "Técnica de fatiamento e tomadas de ângulo.",
+          "correct": false
+        },
+        {
+          "text": "Regra dos dois segundos de reação.",
+          "correct": false
+        },
+        {
+          "text": "Doutrina de segurança em high-light.",
+          "correct": false
+        },
+        {
+          "text": "Princípio de Pareto.",
+          "correct": true
+        },
+        {
+          "text": "Sistema SROP de fiscalização de trânsito.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 3 atualizado."
+      }
+    },
+    {
+      "source_key": "POP3-ATUALIZADO-Q005",
+      "question_number": 5,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo III) Durante a inspeção de 1º escalão realizada na viatura de quatro rodas, o policial militar motorista deve verificar os níveis de fluidos e a calibragem dos pneus. No que tange à manutenção do sistema de freios e pneus, o POP 301.1 estabelece que o motorista deve realizar a verificação do fluido de freio e a calibragem dos pneus adotando, respectivamente, o seguinte procedimento literal:",
+      "difficulty": "medium",
+      "topics": [
+        "301.1"
+      ],
+      "primary_topic": "301.1",
+      "source_pages": [
+        [
+          3,
+          4
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo III"
+      },
+      "source_label": "POP 3 - Módulo III atualizado (arquivo pop-3--.pdf) | UFMT - POP Módulo III",
+      "explanation": "O POP 301.1 determina inspeção visual do fluido de freio, sem abrir o reservatório, por se tratar de líquido higroscópico, e calibragem dos pneus em 10% abaixo da especificação do fabricante.",
+      "alternatives": [
+        {
+          "text": "Inspeção puramente visual, sem abrir a tampa do reservatório / Calibragem 10% abaixo da especificação do fabricante.",
+          "correct": true
+        },
+        {
+          "text": "Abertura da tampa para medição com vareta metálica / Calibragem 20% acima do limite especificado no manual.",
+          "correct": false
+        },
+        {
+          "text": "Troca completa do fluido higroscópio a cada passagem de serviço / Calibragem idêntica à das motocicletas operacionais.",
+          "correct": false
+        },
+        {
+          "text": "Inspeção por meio de orçamentos de produtos semelhantes / Calibragem baseada no princípio de Pareto da unidade.",
+          "correct": false
+        },
+        {
+          "text": "Remessa imediata do reservatório para a Perícia Oficial (POLITEC) / Calibragem com os polegares esticados ao longo do volante.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 3 atualizado."
+      }
+    },
+    {
+      "source_key": "POP3-ATUALIZADO-Q006",
+      "question_number": 6,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo III) Finalizada uma operação regulamentar de bloqueio policial na via pública, o supervisor determina o encerramento do dispositivo e a liberação do tráfego. Conforme as regras de segurança descritas no POP 305.6, o recolhimento dos meios materiais utilizados na sinalização da pista deve ocorrer:",
+      "difficulty": "medium",
+      "topics": [
+        "305.6"
+      ],
+      "primary_topic": "305.6",
+      "source_pages": [
+        [
+          40,
+          40
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo III"
+      },
+      "source_label": "POP 3 - Módulo III atualizado (arquivo pop-3--.pdf) | UFMT - POP Módulo III",
+      "explanation": "O POP 305.6 determina recolher os meios em sentido contrário ao fluxo de trânsito, deixando por último os cones que sinalizam o ponto inicial do bloqueio.",
+      "alternatives": [
+        {
+          "text": "De forma simultânea em todas as bases de vistoria do acostamento.",
+          "correct": false
+        },
+        {
+          "text": "Pelo recolhimento inicial e prioritário dos cones colocados no ponto de início do bloqueio.",
+          "correct": false
+        },
+        {
+          "text": "Apenas após a chegada do guincho público e a assinatura das planilhas de Auto de Infração.",
+          "correct": false
+        },
+        {
+          "text": "A critério exclusivo do anotador circulante posicionado no bolsão de veículos retidos.",
+          "correct": false
+        },
+        {
+          "text": "Em sentido contrário ao fluxo de trânsito, sendo os cones que sinalizam o ponto do início do bloqueio os últimos a ser recolhidos.",
+          "correct": true
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 3 atualizado."
+      }
+    },
+    {
+      "source_key": "POP3-ATUALIZADO-Q007",
+      "question_number": 7,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo III) Considere as diretrizes de postura marcial e conduta operacional das guarnições de rádio patrulha fixadas no POP 301.2 da Polícia Militar de Mato Grosso. Na ocorrência de fortes chuvas durante o turno de serviço, qual procedimento deve ser adotado pelos integrantes da viatura de quatro rodas?",
+      "difficulty": "medium",
+      "topics": [
+        "301.2"
+      ],
+      "primary_topic": "301.2",
+      "source_pages": [
+        [
+          5,
+          6
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo III"
+      },
+      "source_label": "POP 3 - Módulo III atualizado (arquivo pop-3--.pdf) | UFMT - POP Módulo III",
+      "explanation": "No POP 301.2, em fortes chuvas a viatura deve ser estacionada em local coberto e visível ao público; os policiais permanecem desembarcados, sem encostar na viatura, mantendo postura marcial.",
+      "alternatives": [
+        {
+          "text": "Permanecer abrigados no interior do veículo com os vidros totalmente fechados e portas travadas.",
+          "correct": false
+        },
+        {
+          "text": "Estacionar a viatura em local coberto e visível ao público, devendo os policiais permanecer desembarcados, mantendo postura marcial, sem encostar na viatura.",
+          "correct": true
+        },
+        {
+          "text": "Deslocar-se em alta velocidade pela faixa da esquerda acionando continuamente as sirenes e o pisca-alerta.",
+          "correct": false
+        },
+        {
+          "text": "Coordenar um bloqueio policial relâmpago de trânsito utilizando a cama de faquir na faixa de rolamento.",
+          "correct": false
+        },
+        {
+          "text": "Confeccionar o Relatório de Serviço Motorizado (RSM) no sistema offline e recolher os cones de sinalização.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 3 atualizado."
+      }
+    },
+    {
+      "source_key": "POP3-ATUALIZADO-Q008",
+      "question_number": 8,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo III) Durante o patrulhamento preventivo em vias urbanas de tráfego regular, a guarnição policial motorizada deve adotar uma postura tática condizente com a segurança e a visibilidade. De acordo com o POP 301.3 e o POP 302.3, a velocidade padrão a ser mantida continuamente pela viatura em patrulha deve ser:",
+      "difficulty": "medium",
+      "topics": [
+        "301.3",
+        "302.3"
+      ],
+      "primary_topic": "301.3",
+      "source_pages": [
+        [
+          7,
+          8
+        ],
+        [
+          14,
+          15
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo III"
+      },
+      "source_label": "POP 3 - Módulo III atualizado (arquivo pop-3--.pdf) | UFMT - POP Módulo III",
+      "explanation": "Tanto o POP 301.3 quanto o POP 302.3 estabelecem patrulhamento entre 20 km/h e 30 km/h, sem ultrapassar 30 km/h.",
+      "alternatives": [
+        {
+          "text": "Superior a 50 km/h para viaturas de quatro rodas e 60 km/h para motocicletas operacionais.",
+          "correct": false
+        },
+        {
+          "text": "Entre 20 km/h e 30 km/h, não ultrapassando a velocidade de 30 km/h.",
+          "correct": true
+        },
+        {
+          "text": "De no mínimo 45 km/h para evitar a formação de congestionamentos e filas na faixa da direita.",
+          "correct": false
+        },
+        {
+          "text": "Variável de acordo com o total de dados cadastrados no talonário eletrônico de trânsito da SESP.",
+          "correct": false
+        },
+        {
+          "text": "Sempre condicional à fluidez do tráfego rodoviário interestadual monitorado pelo CIOSP.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 3 atualizado."
+      }
+    },
+    {
+      "source_key": "POP3-ATUALIZADO-Q009",
+      "question_number": 9,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo III) Um veículo desobedece ao sinal de parada obrigatória em uma barreira de trânsito e empreende fuga em alta velocidade. De acordo com as normas de segurança fixadas de forma literal no POP 305.4, o policial militar posicionado na função de segurança do bloqueio deverá:",
+      "difficulty": "medium",
+      "topics": [
+        "305.4",
+        "304.1"
+      ],
+      "primary_topic": "305.4",
+      "source_pages": [
+        [
+          36,
+          37
+        ],
+        [
+          23,
+          25
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo III"
+      },
+      "source_label": "POP 3 - Módulo III atualizado (arquivo pop-3--.pdf) | UFMT - POP Módulo III",
+      "explanation": "O POP 305.4 determina que, em tentativa de fuga do bloqueio, jamais se atire contra o veículo, salvo necessidade real amparada por excludente de ilicitude; deve-se iniciar acompanhamento e cerco conforme o POP 304.",
+      "alternatives": [
+        {
+          "text": "Efetuar disparos de arma de fogo na região do pneu dianteiro esquerdo para imobilizar o carro.",
+          "correct": false
+        },
+        {
+          "text": "Disparar o armamento portátil contra o vidro traseiro para neutralizar o condutor em fuga.",
+          "correct": false
+        },
+        {
+          "text": "Efetuar disparos de advertência para o alto utilizando espingarda calibre 12 municiada com elastômero.",
+          "correct": false
+        },
+        {
+          "text": "Acionar o talonário eletrônico de trânsito e lavrar a autuação por direção perigosa em modo offline.",
+          "correct": false
+        },
+        {
+          "text": "JAMAIS (exceto em caso de necessidade real das excludentes de ilicitude) atirar em direção ao veículo, devendo iniciar acompanhamento e cerco.",
+          "correct": true
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 3 atualizado."
+      }
+    },
+    {
+      "source_key": "POP3-ATUALIZADO-Q010",
+      "question_number": 10,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo III) Considere os conceitos doutrinários de movimentação veicular de segurança descritos no POP 304.1 da Polícia Militar de Mato Grosso. O ato de seguir um veículo suspeito ou sabidamente ocupado por marginais, em alta velocidade, EVITANDO risco tanto para os policiais militares quanto para o público e os ocupantes, denomina-se tecnicamente:",
+      "difficulty": "medium",
+      "topics": [
+        "304.1"
+      ],
+      "primary_topic": "304.1",
+      "source_pages": [
+        [
+          23,
+          25
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo III"
+      },
+      "source_label": "POP 3 - Módulo III atualizado (arquivo pop-3--.pdf) | UFMT - POP Módulo III",
+      "explanation": "Nos esclarecimentos do POP 304.1, 'encalço' é o ato de seguir em alta velocidade um veículo suspeito ou sabidamente ocupado por marginais, evitando risco aos policiais, ao público e aos ocupantes.",
+      "alternatives": [
+        {
+          "text": "Acompanhamento à distância.",
+          "correct": false
+        },
+        {
+          "text": "Perseguição operacional integrada.",
+          "correct": false
+        },
+        {
+          "text": "Bloqueio relâmpago de trânsito.",
+          "correct": false
+        },
+        {
+          "text": "Encalço.",
+          "correct": true
+        },
+        {
+          "text": "Cerco policial perimétrico.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 3 atualizado."
+      }
+    },
+    {
+      "source_key": "POP3-ATUALIZADO-Q011",
+      "question_number": 11,
+      "question_type": "multiple_choice",
+      "statement": "De acordo com o PROCEDIMENTO 301.2 - Composição da Guarnição em Patrulhamento, relacione cada item a R (Resultados Esperados) ou A (Ações Corretivas):\n\n1. Que o policial militar conheça a sua função e posição na viatura quando em patrulhamento;\n2. Que o comandante determine e fiscalize seu(s) comandado(s), a manutenção da atenção em sua área de patrulhamento;\n3. Que o policial militar realize um excelente trabalho, observando com atenção e segurança a sua área de patrulhamento;\n4. Que não exponha sua arma, quando em patrulhamento;\n5. Que todos os Policiais Militares primem pela segurança da guarnição;\n6. Que o policial da guarnição, ao detectar algo suspeito, comunique imediatamente o comandante da viatura.\n\nAssinale a sequência correta.",
+      "difficulty": "hard",
+      "topics": [
+        "301.2"
+      ],
+      "primary_topic": "301.2",
+      "source_pages": [
+        [
+          5,
+          6
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido",
+        "label": "Lista complementar POP 3 (material fornecido)"
+      },
+      "source_label": "POP 3 - Módulo III atualizado (arquivo pop-3--.pdf) | Lista complementar POP 3 (material fornecido)",
+      "explanation": "No POP 301.2, os Resultados Esperados são: conhecer função/posição, realizar excelente trabalho com atenção e comunicar algo suspeito ao comandante. As Ações Corretivas são: fiscalização pelo comandante, não expor a arma e priorizar a segurança da guarnição. Sequência: R-A-R-A-A-R.",
+      "alternatives": [
+        {
+          "text": "R - R - R - A - A - A",
+          "correct": false
+        },
+        {
+          "text": "A - R - A - R - R - R",
+          "correct": false
+        },
+        {
+          "text": "R - A - R - A - A - R",
+          "correct": true
+        },
+        {
+          "text": "A - A - A - R - R - A",
+          "correct": false
+        },
+        {
+          "text": "A - A - R - A - R - A",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 3 atualizado."
+      }
+    },
+    {
+      "source_key": "POP3-ATUALIZADO-Q012",
+      "question_number": 12,
+      "question_type": "multiple_choice",
+      "statement": "Quanto aos Resultados Esperados do PROCEDIMENTO 303.1 - Ponto de Estacionamento de Viatura 04 Rodas (PE), assinale a alternativa INCORRETA.",
+      "difficulty": "medium",
+      "topics": [
+        "303.1"
+      ],
+      "primary_topic": "303.1",
+      "source_pages": [
+        [
+          18,
+          19
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido",
+        "label": "Lista complementar POP 3 (material fornecido)"
+      },
+      "source_label": "POP 3 - Módulo III atualizado (arquivo pop-3--.pdf) | Lista complementar POP 3 (material fornecido)",
+      "explanation": "A formulação oficial do POP 303.1 diz que os policiais devem estar aptos para pronta resposta a qualquer solicitação ou situação de PERIGO, e não 'situação de tranquilidade'. As demais alternativas reproduzem Resultados Esperados do procedimento.",
+      "alternatives": [
+        {
+          "text": "Que a viatura estacione de forma segura, estratégica e ostensiva no PE; que a viatura fique bem posicionada.",
+          "correct": false
+        },
+        {
+          "text": "Que a manobra seja rápida e não cause acidentes; que a viatura e o(s) policial(is) estejam sempre visíveis aos transeuntes locais.",
+          "correct": false
+        },
+        {
+          "text": "Que a viatura não se constitua em fator de risco aos pedestres e ao trânsito local; que o(s) policial(is) transmita(m) sensação de segurança e esteja(m) apto(s) para pronta resposta a qualquer solicitação ou situação de tranquilidade.",
+          "correct": true
+        },
+        {
+          "text": "Que o Centro de Operações seja cientificado do estacionamento da viatura no PE e sua situação.",
+          "correct": false
+        },
+        {
+          "text": "Que o policial anote os dados básicos do P.E.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 3 atualizado."
+      }
+    },
+    {
+      "source_key": "POP3-ATUALIZADO-Q013",
+      "question_number": 13,
+      "question_type": "multiple_choice",
+      "statement": "O Ponto de Estacionamento (PE) consiste no posicionamento ostensivo e estratégico da viatura em local de visibilidade e interesse operacional. Considere os blocos abaixo, todos extraídos da SEQUÊNCIA DE AÇÕES do POP 303.1:\n\nI. Aproximar-se em velocidade baixa; verificar segurança/espaço; desembarcar os integrantes, exceto o motorista, para orientar a manobra.\nII. Desembarque do motorista; manter sinais luminosos; cientificar o CIOSP; aguardar confirmação e anotar horário.\nIII. Permanecer desembarcados, com postura e compostura, mantendo ângulo de visão de 360°.\nIV. Observar veículos, pessoas, obstáculos fixos e pedestres próximos ao ponto.\nV. Manobrar a 45° com a frente no sentido da via; estacionar a distância segura; manter motor e freio de estacionamento enquanto se verifica a segurança; só depois desligar o motor.\n\nAssinale a sequência cronológica correta dos blocos I a V.",
+      "difficulty": "hard",
+      "topics": [
+        "303.1"
+      ],
+      "primary_topic": "303.1",
+      "source_pages": [
+        [
+          18,
+          19
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido",
+        "label": "Lista complementar POP 3 (material fornecido)"
+      },
+      "source_label": "POP 3 - Módulo III atualizado (arquivo pop-3--.pdf) | Lista complementar POP 3 (material fornecido)",
+      "explanation": "No POP 303.1, os blocos correspondem às ações 1-3, 12-15, 16-17, 4-7 e 8-11. Portanto, na ordem em que foram apresentados, a numeração correta é 1, 4, 5, 2, 3.",
+      "alternatives": [
+        {
+          "text": "1, 4, 5, 2, 3",
+          "correct": true
+        },
+        {
+          "text": "1, 3, 5, 2, 4",
+          "correct": false
+        },
+        {
+          "text": "1, 2, 3, 4, 5",
+          "correct": false
+        },
+        {
+          "text": "2, 4, 5, 1, 3",
+          "correct": false
+        },
+        {
+          "text": "1, 5, 4, 3, 2",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 3 atualizado."
+      }
+    },
+    {
+      "source_key": "POP3-ATUALIZADO-Q014",
+      "question_number": 14,
+      "question_type": "multiple_choice",
+      "statement": "Em relação ao PROCEDIMENTO 302.4 - Parada da Viatura Decorrentes do Fluxo de Trânsito ou Outras Paradas Rápidas em Patrulhamento com VTR 02 rodas, assinale a alternativa INCORRETA no que se refere à Sequência de Ações.",
+      "difficulty": "medium",
+      "topics": [
+        "302.4"
+      ],
+      "primary_topic": "302.4",
+      "source_pages": [
+        [
+          16,
+          16
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido",
+        "label": "Lista complementar POP 3 (material fornecido)"
+      },
+      "source_label": "POP 3 - Módulo III atualizado (arquivo pop-3--.pdf) | Lista complementar POP 3 (material fornecido)",
+      "explanation": "O POP 302.4 manda EVITAR o deslocamento imediatamente atrás de veículos grandes, justamente para melhorar a amplitude visual. Por isso, a alternativa que manda dar preferência a essa posição é a incorreta.",
+      "alternatives": [
+        {
+          "text": "Observar o fluxo do trânsito, em especial os sinais semafóricos.",
+          "correct": false
+        },
+        {
+          "text": "Quando observar que irá efetuar um cruzamento, reduzir a velocidade, pressionando o pedal do freio e/ou freio motor.",
+          "correct": false
+        },
+        {
+          "text": "No patrulhamento, quando a guarnição realizar parada em semáforo, atendimentos rápidos ao público, busca de informações, dentre outras, o 3º homem deverá descer e realizar a segurança periférica da equipe.",
+          "correct": false
+        },
+        {
+          "text": "Nas paradas, deixar um espaço de aproximadamente 02 metros do veículo à frente, facilitando saída imediata em qualquer direção.",
+          "correct": false
+        },
+        {
+          "text": "Dar preferência ao deslocamento imediatamente atrás de veículos grandes, como carretas, caminhões-baú, ônibus e vans, possibilitando melhor e maior amplitude visual.",
+          "correct": true
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 3 atualizado."
+      }
+    },
+    {
+      "source_key": "POP3-ATUALIZADO-Q015",
+      "question_number": 15,
+      "question_type": "multiple_choice",
+      "statement": "Durante a realização do Ponto de Estacionamento (PE), com base nos itens 6 a 10 das Ações Corretivas do PROCEDIMENTO 303.1, assinale a alternativa INCORRETA.",
+      "difficulty": "hard",
+      "topics": [
+        "303.1"
+      ],
+      "primary_topic": "303.1",
+      "source_pages": [
+        [
+          18,
+          19
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido",
+        "label": "Lista complementar POP 3 (material fornecido)"
+      },
+      "source_label": "POP 3 - Módulo III atualizado (arquivo pop-3--.pdf) | Lista complementar POP 3 (material fornecido)",
+      "explanation": "O item 10 das Ações Corretivas do POP 303.1 determina 'providenciar sanar dúvidas e questionamentos feitos por transeuntes'. Portanto, a orientação para não esclarecer dúvidas é contrária ao manual.",
+      "alternatives": [
+        {
+          "text": "Manter o volume do rádio de modo que possa ser audível pelo(s) policial(is) desembarcado(s).",
+          "correct": false
+        },
+        {
+          "text": "Em caso de chuva, trancar a viatura, manter os sinais luminosos acionados, permanecer conectado ao CIOSP por rádio portátil e buscar cobertura se o PE for descoberto.",
+          "correct": false
+        },
+        {
+          "text": "Aguardar oportunidade de comunicação com o CIOSP e, se necessário, solicitar retransmissão (ponte) por outra guarnição.",
+          "correct": false
+        },
+        {
+          "text": "Anotar o horário e a impossibilidade de comunicação com o CIOSP, explicando o motivo.",
+          "correct": false
+        },
+        {
+          "text": "Orientar os transeuntes a buscarem informações exclusivamente nas delegacias, abstendo-se de sanar dúvidas ou questionamentos no local do PE.",
+          "correct": true
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 3 atualizado."
+      }
+    },
+    {
+      "source_key": "POP3-ATUALIZADO-Q016",
+      "question_number": 16,
+      "question_type": "multiple_choice",
+      "statement": "No PROCESSO 302 - Patrulhamento com VTR 02 rodas, complete a identificação dos integrantes conforme o PROCEDIMENTO 302.2:\n\n1. O ___ homem é o comandante e responsável pelo comando, coordenação e controle da guarnição.\n2. A área de patrulhamento do ___ homem é frontal, lateral direita e retaguarda pelo espelho direito.\n3. O ___ homem é o piloto da garupa da guarnição, responsável por sua moto, manutenção, limpeza e condução.\n4. A área de patrulhamento do ___ homem é frontal, lateral esquerda e retaguarda pelo espelho esquerdo.\n5. O ___ homem responde pelo equipamento coletivo e parte documental, sendo o segurança geral.\n6. O ___ homem toma notas das ocorrências e demais informações pertinentes.\n7. A área de patrulhamento do ___ homem compreende os flancos e a retaguarda.\n\nAssinale a sequência correta.",
+      "difficulty": "hard",
+      "topics": [
+        "302.2"
+      ],
+      "primary_topic": "302.2",
+      "source_pages": [
+        [
+          12,
+          13
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido",
+        "label": "Lista complementar POP 3 (material fornecido)"
+      },
+      "source_label": "POP 3 - Módulo III atualizado (arquivo pop-3--.pdf) | Lista complementar POP 3 (material fornecido)",
+      "explanation": "O POP 302.2 atribui comando e cobertura direita ao 1º homem; condução da segunda moto e cobertura esquerda ao 2º; equipamento, anotações, flancos e retaguarda ao 3º. Sequência: 1-1-2-2-3-3-3.",
+      "alternatives": [
+        {
+          "text": "1 - 2 - 1 - 2 - 3 - 3 - 1",
+          "correct": false
+        },
+        {
+          "text": "2 - 3 - 1 - 2 - 2 - 1 - 3",
+          "correct": false
+        },
+        {
+          "text": "1 - 3 - 3 - 2 - 3 - 1 - 2",
+          "correct": false
+        },
+        {
+          "text": "1 - 2 - 3 - 3 - 1 - 2 - 3",
+          "correct": false
+        },
+        {
+          "text": "1 - 1 - 2 - 2 - 3 - 3 - 3",
+          "correct": true
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 3 atualizado."
+      }
+    },
+    {
+      "source_key": "POP3-ATUALIZADO-Q017",
+      "question_number": 17,
+      "question_type": "multiple_choice",
+      "statement": "Assinale a alternativa INCORRETA quanto às Possibilidades de Erro do PROCEDIMENTO 301.3 - Patrulhamento.",
+      "difficulty": "medium",
+      "topics": [
+        "301.3"
+      ],
+      "primary_topic": "301.3",
+      "source_pages": [
+        [
+          7,
+          8
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido",
+        "label": "Lista complementar POP 3 (material fornecido)"
+      },
+      "source_label": "POP 3 - Módulo III atualizado (arquivo pop-3--.pdf) | Lista complementar POP 3 (material fornecido)",
+      "explanation": "O POP 301.3 lista como possibilidade de erro a VELOCIDADE SUPERIOR a 30 km/h. 'Velocidade inferior a 30 km/h' não é o item descrito, por isso é a alternativa incorreta.",
+      "alternatives": [
+        {
+          "text": "Comandante ou o 3º homem, quando em patrulhamento, mantém arma no coldre.",
+          "correct": false
+        },
+        {
+          "text": "Arma com o cano voltado para a perna e/ou dedo no gatilho.",
+          "correct": false
+        },
+        {
+          "text": "Não se manter na faixa da direita.",
+          "correct": false
+        },
+        {
+          "text": "Velocidade inferior a 30 km/h.",
+          "correct": true
+        },
+        {
+          "text": "Não avaliar o grau de risco proporcional ao propósito da ação.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 3 atualizado."
+      }
+    },
+    {
+      "source_key": "POP3-ATUALIZADO-Q018",
+      "question_number": 18,
+      "question_type": "multiple_choice",
+      "statement": "No que se refere às Ações Corretivas previstas no POP 303.1 para o Ponto de Estacionamento de Viatura de 4 Rodas, assinale a alternativa INCORRETA.",
+      "difficulty": "medium",
+      "topics": [
+        "303.1"
+      ],
+      "primary_topic": "303.1",
+      "source_pages": [
+        [
+          18,
+          19
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido",
+        "label": "Lista complementar POP 3 (material fornecido)"
+      },
+      "source_label": "POP 3 - Módulo III atualizado (arquivo pop-3--.pdf) | Lista complementar POP 3 (material fornecido)",
+      "explanation": "O POP 303.1 determina expressamente NÃO estacionar a viatura ocupando toda a calçada e atrapalhando o fluxo de pedestres. Logo, a alternativa que autoriza essa ocupação é a incorreta.",
+      "alternatives": [
+        {
+          "text": "Não estacionar no PE quando não houver condições de segurança e espaço adequado, dando ciência e usando ponto secundário.",
+          "correct": false
+        },
+        {
+          "text": "Solicitar às pessoas paradas no PE que deem espaço ao estacionamento da viatura.",
+          "correct": false
+        },
+        {
+          "text": "Abordar indivíduos em fundada suspeita próximos ao PE.",
+          "correct": false
+        },
+        {
+          "text": "É permitido estacionar a viatura ocupando toda a calçada, desde que justificável para garantir a visibilidade dos pedestres.",
+          "correct": true
+        },
+        {
+          "text": "O comandante da guarnição providenciará para que os policiais permaneçam desembarcados no PE.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 3 atualizado."
+      }
+    },
+    {
+      "source_key": "POP3-ATUALIZADO-Q019",
+      "question_number": 19,
+      "question_type": "multiple_choice",
+      "statement": "Com base nos Esclarecimentos do PROCEDIMENTO 301.1 - Procedimentos Preliminares para o Patrulhamento, relacione:\n\n(1) Ajuste do encosto\n(2) Ajuste do encosto de cabeça\n(3) Pegada no volante\n(4) Quarto pedal ou pedal de segurança\n(5) Ajuste do assento\n\nDefinições, na ordem:\nI. Principal meio de apoio que sustentará o motorista firme no banco em manobras bruscas.\nII. Deve ser ajustado por todos os ocupantes para reduzir risco de lesão cervical pelo efeito pêndulo.\nIII. Posição correta 14h45, pegando por fora; em piso irregular/escorregadio pode manter polegares esticados.\nIV. Braços à frente em 14h45 até o volante tocar o pulso, permitindo braços levemente flexionados.\nV. Em veículo com câmbio mecânico, pressionar a embreagem até o curso máximo sem desencostar o quadril do banco.\n\nAssinale a sequência correta.",
+      "difficulty": "hard",
+      "topics": [
+        "301.1"
+      ],
+      "primary_topic": "301.1",
+      "source_pages": [
+        [
+          3,
+          4
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido",
+        "label": "Lista complementar POP 3 (material fornecido)"
+      },
+      "source_label": "POP 3 - Módulo III atualizado (arquivo pop-3--.pdf) | Lista complementar POP 3 (material fornecido)",
+      "explanation": "As definições correspondem, respectivamente, a: quarto pedal (4), encosto de cabeça (2), pegada no volante (3), ajuste do encosto (1) e ajuste do assento (5). Sequência: 4-2-3-1-5.",
+      "alternatives": [
+        {
+          "text": "1 - 2 - 3 - 4 - 5",
+          "correct": false
+        },
+        {
+          "text": "4 - 2 - 3 - 1 - 5",
+          "correct": true
+        },
+        {
+          "text": "4 - 5 - 3 - 1 - 2",
+          "correct": false
+        },
+        {
+          "text": "2 - 4 - 1 - 3 - 5",
+          "correct": false
+        },
+        {
+          "text": "4 - 2 - 5 - 1 - 3",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 3 atualizado."
+      }
+    },
+    {
+      "source_key": "POP3-ATUALIZADO-Q020",
+      "question_number": 20,
+      "question_type": "multiple_choice",
+      "statement": "Considere as ações previstas na SEQUÊNCIA DE AÇÕES do POP 301.1. Os blocos abaixo já estão agrupados por etapas:\n\nI. Cautela/inspeção preliminar; danos anteriores; líquido de arrefecimento; inspeção visual do fluido de freio.\nII. Óleo do motor e fluido de transmissão; partida fria; limpador; calibragem dos pneus; limpeza da viatura.\nIII. Ergonomia veicular, ajustes de bancos/retrovisores; preparação do condutor; desligamento dos dispositivos elétricos antes de acionar o motor.\nIV. Ligar o motor com câmbio em P/N e freio de estacionamento; acionar o farol baixo.\nV. Acionar sinais luminosos de emergência; desembarcar para checar faróis/giroflex; reembarcar e iniciar o patrulhamento.\n\nAssinale a sequência cronológica correta dos blocos I a V.",
+      "difficulty": "hard",
+      "topics": [
+        "301.1"
+      ],
+      "primary_topic": "301.1",
+      "source_pages": [
+        [
+          3,
+          4
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido",
+        "label": "Lista complementar POP 3 (material fornecido)"
+      },
+      "source_label": "POP 3 - Módulo III atualizado (arquivo pop-3--.pdf) | Lista complementar POP 3 (material fornecido)",
+      "explanation": "O POP 301.1 apresenta exatamente essa progressão: inspeção inicial e fluidos; demais níveis/calibragem/limpeza; ergonomia e preparação; acionamento do motor/farol; acionamento do giroflex, conferência externa e saída para o patrulhamento.",
+      "alternatives": [
+        {
+          "text": "1, 2, 3, 4, 5",
+          "correct": true
+        },
+        {
+          "text": "1, 3, 2, 5, 4",
+          "correct": false
+        },
+        {
+          "text": "2, 1, 3, 4, 5",
+          "correct": false
+        },
+        {
+          "text": "5, 4, 3, 2, 1",
+          "correct": false
+        },
+        {
+          "text": "1, 2, 4, 3, 5",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": true,
+        "note": "A redação foi levemente condensada para eliminar marcas de formulário e preservar a ordem operacional do material, sem alterar o conteúdo cobrado."
+      }
+    }
+  ]
+}
