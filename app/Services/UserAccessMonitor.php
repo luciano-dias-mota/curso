@@ -323,6 +323,7 @@ final class UserAccessMonitor
              FROM user_access_alerts a
              INNER JOIN users u ON u.id = a.user_id
              WHERE a.resolved_at IS NULL
+               AND a.last_detected_at >= DATE_SUB(NOW(), INTERVAL 7 DAY)
                AND u.status = 'active'
              ORDER BY
                 CASE a.severity WHEN 'high' THEN 1 WHEN 'medium' THEN 2 ELSE 3 END,
@@ -335,6 +336,18 @@ final class UserAccessMonitor
 
     private function detectSuspiciousAccess(PDO $pdo, int $userId): void
     {
+        // Alertas sem nova ocorrência por 24h deixam de ficar "abertos".
+        // O histórico continua preservado para consulta administrativa.
+        $closeOld = $pdo->prepare(
+            "UPDATE user_access_alerts
+             SET resolved_at = NOW(),
+                 updated_at = NOW()
+             WHERE user_id = :user_id
+               AND resolved_at IS NULL
+               AND last_detected_at < DATE_SUB(NOW(), INTERVAL 24 HOUR)"
+        );
+        $closeOld->execute(['user_id' => $userId]);
+
         $stmt = $pdo->prepare(
             "SELECT device_hash, device_label, ip_address, last_activity_at
              FROM user_access_sessions
