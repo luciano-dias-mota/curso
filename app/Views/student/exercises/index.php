@@ -13,9 +13,10 @@ $history = $history ?? [];
 $stats = $stats ?? [];
 $allowedLimits = $allowedLimits ?? [5, 10, 15, 20, 30];
 
-$popTopics = array_values(array_filter($topics, static fn (array $t): bool => ($t['topic_type'] ?? '') === 'pop'));
-$processTopics = array_values(array_filter($topics, static fn (array $t): bool => ($t['topic_type'] ?? '') === 'process'));
-$procedureTopics = array_values(array_filter($topics, static fn (array $t): bool => ($t['topic_type'] ?? '') === 'procedure'));
+$popTopics = array_values(array_filter($topics, static fn (array $t): bool => ($t['topic_type'] ?? '') === 'pop' && (int) ($t['question_count'] ?? 0) > 0));
+$processTopics = array_values(array_filter($topics, static fn (array $t): bool => ($t['topic_type'] ?? '') === 'process' && (int) ($t['question_count'] ?? 0) > 0));
+$procedureTopics = array_values(array_filter($topics, static fn (array $t): bool => ($t['topic_type'] ?? '') === 'procedure' && (int) ($t['question_count'] ?? 0) > 0));
+$totalPopQuestions = array_sum(array_map(static fn (array $t): int => (int) ($t['question_count'] ?? 0), $popTopics));
 ?>
 <section class="study-tools-page exercise-center">
     <?php if ($error): ?><div class="study-alert is-error"><?= e((string) $error) ?></div><?php endif; ?>
@@ -76,8 +77,8 @@ $procedureTopics = array_values(array_filter($topics, static fn (array $t): bool
                         </select>
                     </label>
 
-                    <label>
-                        <span>Tema da trilha <em>(opcional)</em></span>
+                    <label data-phase-field>
+                        <span>Tema <em>(opcional)</em></span>
                         <select name="phase_id" data-scope-phase disabled>
                             <option value="">Todos os temas</option>
                             <?php foreach ($phases as $phase): ?>
@@ -85,6 +86,44 @@ $procedureTopics = array_values(array_filter($topics, static fn (array $t): bool
                                         data-course-id="<?= (int) $phase['course_id'] ?>"
                                         data-module-id="<?= (int) $phase['module_id'] ?>">
                                     <?= e($phase['title']) ?> · <?= (int) ($phase['question_count'] ?? 0) ?> questões
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </label>
+
+                    <label class="exercise-pop-filter" data-pop-field hidden>
+                        <span>POP <em>(opcional)</em></span>
+                        <select name="pop_topic_id" data-pop-topic disabled>
+                            <option value="">Todos os POPs<?= $totalPopQuestions > 0 ? ' · ' . $totalPopQuestions . ' questões' : '' ?></option>
+                            <?php foreach ($popTopics as $topic): ?>
+                                <option value="<?= (int) $topic['id'] ?>">
+                                    <?= e($topic['title']) ?> · <?= (int) ($topic['question_count'] ?? 0) ?> questões
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </label>
+
+                    <label class="exercise-pop-filter" data-pop-field hidden>
+                        <span>Processo <em>(opcional)</em></span>
+                        <select name="process_topic_id" data-process-topic disabled>
+                            <option value="">Todos os processos do POP</option>
+                            <?php foreach ($processTopics as $topic): ?>
+                                <option value="<?= (int) $topic['id'] ?>"
+                                        data-parent-id="<?= (int) ($topic['parent_id'] ?? 0) ?>">
+                                    <?= e($topic['title']) ?> · <?= (int) ($topic['question_count'] ?? 0) ?> questões
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </label>
+
+                    <label class="exercise-pop-filter" data-pop-field hidden>
+                        <span>Procedimento <em>(opcional)</em></span>
+                        <select name="procedure_topic_id" data-procedure-topic disabled>
+                            <option value="">Todos os procedimentos do processo</option>
+                            <?php foreach ($procedureTopics as $topic): ?>
+                                <option value="<?= (int) $topic['id'] ?>"
+                                        data-parent-id="<?= (int) ($topic['parent_id'] ?? 0) ?>">
+                                    <?= e($topic['title']) ?> · <?= (int) ($topic['question_count'] ?? 0) ?> questões
                                 </option>
                             <?php endforeach; ?>
                         </select>
@@ -99,51 +138,13 @@ $procedureTopics = array_values(array_filter($topics, static fn (array $t): bool
                         </select>
                     </label>
 
-                    <label class="exercise-pop-filter">
-                        <span>POP <em>(opcional)</em></span>
-                        <select name="pop_topic_id" data-pop-topic disabled>
-                            <option value="">Todos os POPs</option>
-                            <?php foreach ($popTopics as $topic): ?>
-                                <option value="<?= (int) $topic['id'] ?>">
-                                    <?= e($topic['title']) ?> · <?= (int) ($topic['question_count'] ?? 0) ?> questões
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </label>
-
-                    <label class="exercise-pop-filter">
-                        <span>Processo <em>(opcional)</em></span>
-                        <select name="process_topic_id" data-process-topic disabled>
-                            <option value="">Todos os processos</option>
-                            <?php foreach ($processTopics as $topic): ?>
-                                <option value="<?= (int) $topic['id'] ?>"
-                                        data-parent-id="<?= (int) ($topic['parent_id'] ?? 0) ?>">
-                                    <?= e($topic['title']) ?> · <?= (int) ($topic['question_count'] ?? 0) ?> questões
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </label>
-
-                    <label class="exercise-pop-filter">
-                        <span>Procedimento <em>(opcional)</em></span>
-                        <select name="procedure_topic_id" data-procedure-topic disabled>
-                            <option value="">Todos os procedimentos</option>
-                            <?php foreach ($procedureTopics as $topic): ?>
-                                <option value="<?= (int) $topic['id'] ?>"
-                                        data-parent-id="<?= (int) ($topic['parent_id'] ?? 0) ?>">
-                                    <?= e($topic['title']) ?> · <?= (int) ($topic['question_count'] ?? 0) ?> questões
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </label>
-
                     <?php if ($taxonomyAvailable): ?>
-                        <div class="exercise-pop-note">
+                        <div class="exercise-pop-note" data-pop-field hidden>
                             <span>🗂️</span>
-                            <p><strong>Banco organizado por POP.</strong> Escolha a disciplina de Procedimentos Operacionais Padrão para liberar POP → Processo → Procedimento. O filtro usa o nível mais específico selecionado.</p>
+                            <p><strong>Banco organizado por POP.</strong> Selecione POP → Processo → Procedimento. O gerador usa sempre o nível mais específico escolhido e mostra somente conteúdos com questões disponíveis.</p>
                         </div>
                     <?php else: ?>
-                        <div class="exercise-pop-note is-warning">
+                        <div class="exercise-pop-note is-warning" data-pop-field hidden>
                             <span>⚠️</span>
                             <p>A taxonomia POP ainda não está instalada. Execute primeiro o script de taxonomia do POP que estiver sendo instalado (ex.: <code>database/aplicar_pop3_taxonomia_v1.php</code>).</p>
                         </div>
