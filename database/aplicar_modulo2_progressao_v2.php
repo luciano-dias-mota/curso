@@ -312,9 +312,9 @@ try {
          FROM quizzes
          WHERE quiz_type=:quiz_type
            AND (
-              (:lesson_id > 0 AND lesson_id=:lesson_id2)
+              (:lesson_positive > 0 AND lesson_id=:lesson_id)
               OR
-              (:lesson_id = 0 AND lesson_id IS NULL AND phase_id=:phase_id)
+              (:lesson_zero = 0 AND lesson_id IS NULL AND phase_id=:phase_id)
            )
            AND module_id=:module_id
          ORDER BY id
@@ -382,8 +382,9 @@ try {
     ): int {
         $findQuiz->execute([
             'quiz_type' => $type,
+            'lesson_positive' => $lessonId,
             'lesson_id' => $lessonId,
-            'lesson_id2' => $lessonId,
+            'lesson_zero' => $lessonId,
             'phase_id' => $phaseId,
             'module_id' => $moduleId,
         ]);
