@@ -11,6 +11,7 @@ $assessments = (int) ($stats['assessments'] ?? 0);
 $quizzes = (int) ($stats['quizzes'] ?? 0);
 $simulations = (int) ($stats['simulations'] ?? 0);
 $exercises = (int) ($stats['exercises'] ?? 0);
+$securityAlerts = $accessSecurityAlerts ?? [];
 
 $totalStatus = max(1, $activeStudents + $inactiveStudents + $blockedStudents);
 $activePct = round(($activeStudents / $totalStatus) * 100, 2);
@@ -303,10 +304,25 @@ $chartCircles = static function (array $values, int $width = 720, int $left = 52
 
             <section class="ld-admin-management-attention ld-admin-panel">
                 <div class="ld-admin-management-panel-head compact">
-                    <div><span class="ld-admin-panel-kicker">ACOMPANHAMENTO</span><h2>Precisam de atenção</h2></div>
+                    <div>
+                        <span class="ld-admin-panel-kicker">ACOMPANHAMENTO + SEGURANÇA</span>
+                        <h2>Precisam de atenção<?= !empty($securityAlerts) ? ' • ' . count($securityAlerts) . ' alerta(s)' : '' ?></h2>
+                    </div>
                 </div>
                 <div class="ld-admin-management-attention-list">
-                    <?php if (empty($attentionStudents)): ?><div class="ld-admin-management-all-good">✓ Nenhum alerta relevante agora.</div><?php endif; ?>
+                    <?php if (empty($attentionStudents) && empty($securityAlerts)): ?><div class="ld-admin-management-all-good">✓ Nenhum alerta relevante agora.</div><?php endif; ?>
+
+                    <?php foreach ($securityAlerts as $alert): ?>
+                        <a class="is-security" href="<?= e(url('/admin/usuarios/' . (int) $alert['user_id'])) ?>">
+                            <span>⚠</span>
+                            <div>
+                                <strong><?= e($alert['name']) ?></strong>
+                                <small><?= e($alert['title']) ?> • <?= e(date('d/m H:i', strtotime((string) $alert['last_detected_at']))) ?></small>
+                            </div>
+                            <i>›</i>
+                        </a>
+                    <?php endforeach; ?>
+
                     <?php foreach (($attentionStudents ?? []) as $student): ?>
                         <a href="<?= e(url('/admin/usuarios/' . (int) $student['id'])) ?>">
                             <span>!</span>
