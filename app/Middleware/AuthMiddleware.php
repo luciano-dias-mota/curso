@@ -6,6 +6,7 @@ namespace App\Middleware;
 
 use App\Core\Auth;
 use App\Core\Session;
+use App\Services\UserAccessMonitor;
 
 final class AuthMiddleware
 {
@@ -15,6 +16,10 @@ final class AuthMiddleware
             Session::flash('error', 'Faça login para continuar.');
             header('Location: ' . url('/login'));
             exit;
+        }
+
+        if (Auth::isStudent() && Auth::id() !== null) {
+            (new UserAccessMonitor())->touch((int) Auth::id());
         }
     }
 }
