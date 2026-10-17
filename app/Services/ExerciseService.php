@@ -309,8 +309,10 @@ final class ExerciseService
 
             foreach ($picked as $index => $question) {
                 $questionId = (int) $question['id'];
+                // Mantém a ordem pedagógica original A, B, C, D, E.
+                // A aleatoriedade deve ocorrer na seleção das questões, não na
+                // identificação visual das alternativas.
                 $snapshotAlternatives = $alternatives[$questionId] ?? [];
-                shuffle($snapshotAlternatives);
 
                 $insertQuestion->execute([
                     'session_id' => $sessionId,
@@ -385,10 +387,32 @@ final class ExerciseService
             }
             $safeAlternatives[] = [
                 'id' => (int) ($alternative['id'] ?? 0),
-                'label' => (string) ($alternative['label'] ?? ''),
-                'text' => (string) ($alternative['text'] ?? ''),
+                'label' => strtoupper(trim((string) ($alternative['label'] ?? ''))),
+                'text' => trim((string) ($alternative['text'] ?? '')),
             ];
         }
+
+        // Corrige inclusive sessões antigas cujo snapshot foi salvo em ordem
+        // embaralhada. O ID da alternativa permanece o mesmo, então a
+        // correção do gabarito não é afetada.
+        usort($safeAlternatives, static function (array $a, array $b): int {
+            $rank = static function (string $label): int {
+                $label = strtoupper(trim($label));
+                if (preg_match('/^[A-Z]$/', $label) === 1) {
+                    return ord($label) - ord('A');
+                }
+                return 999;
+            };
+
+            $rankA = $rank((string) ($a['label'] ?? ''));
+            $rankB = $rank((string) ($b['label'] ?? ''));
+
+            if ($rankA !== $rankB) {
+                return $rankA <=> $rankB;
+            }
+
+            return (int) ($a['id'] ?? 0) <=> (int) ($b['id'] ?? 0);
+        });
 
         $current['alternatives'] = $safeAlternatives;
         unset($current['alternatives_snapshot']);
