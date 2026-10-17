@@ -7,13 +7,88 @@ $total = max(1, (int) ($session['question_limit'] ?? 1));
 $answered = (int) ($answered ?? 0);
 $position = (int) ($current['position'] ?? ($answered + 1));
 $progress = min(100, max(0, (($position - 1) / $total) * 100));
-$scope = $session['phase_title_snapshot'] ?: ($session['module_title_snapshot'] ?: $session['course_title_snapshot']);
+$scope = $session['topic_title_snapshot']
+    ?: ($session['phase_title_snapshot'] ?: ($session['module_title_snapshot'] ?: $session['course_title_snapshot']));
+
+$difficultyLabel = match ((string) ($current['difficulty_snapshot'] ?? 'medium')) {
+    'hard' => 'Difícil',
+    default => 'Média',
+};
+
+$formatStatement = static function (string $statement): array {
+    $statement = str_replace("\xC2\xA0", ' ', trim($statement));
+    $statement = preg_replace("/[ \t]+/u", ' ', $statement) ?? $statement;
+
+    $source = '';
+    if (preg_match('/^\s*\((POP\s+\d+\s*[-–—]\s*[^)]+)\)\s*/ui', $statement, $match) === 1) {
+        $source = trim((string) $match[1]);
+        $statement = trim((string) preg_replace('/^\s*\((POP\s+\d+\s*[-–—]\s*[^)]+)\)\s*/ui', '', $statement, 1));
+    }
+
+    $lines = preg_split('/\R/u', $statement) ?: [$statement];
+    $lines = array_values(array_filter(array_map(
+        static fn (string $line): string => trim($line),
+        $lines
+    ), static fn (string $line): bool => $line !== ''));
+
+    $isSequence = stripos($statement, 'ordene os trechos abaixo') !== false
+        && preg_match('/^\(\s*\)/u', implode("\n", $lines)) === 1;
+
+    if (!$isSequence) {
+        return [
+            'type' => 'default',
+            'source' => $source,
+            'intro' => $statement,
+            'items' => [],
+            'prompt' => '',
+        ];
+    }
+
+    $introLines = [];
+    $items = [];
+    $promptLines = [];
+    $readingItems = false;
+    $readingPrompt = false;
+
+    foreach ($lines as $line) {
+        if (preg_match('/^\(\s*\)\s*(.+)$/u', $line, $itemMatch) === 1) {
+            $readingItems = true;
+            $readingPrompt = false;
+            $items[] = trim((string) $itemMatch[1]);
+            continue;
+        }
+
+        if ($readingItems && preg_match('/^(A sequência correta|Assinale|Indique|Marque)/ui', $line) === 1) {
+            $readingPrompt = true;
+        }
+
+        if ($readingPrompt) {
+            $promptLines[] = $line;
+        } elseif (!$readingItems) {
+            $introLines[] = $line;
+        } elseif ($items !== []) {
+            // Continuação do último trecho, caso o banco contenha quebra de linha interna.
+            $last = array_key_last($items);
+            $items[$last] = trim($items[$last] . ' ' . $line);
+        }
+    }
+
+    return [
+        'type' => 'sequence',
+        'source' => $source,
+        'intro' => trim(implode(' ', $introLines)),
+        'items' => $items,
+        'prompt' => trim(implode(' ', $promptLines)),
+    ];
+};
+
+$formattedStatement = $formatStatement((string) ($current['statement_snapshot'] ?? ''));
 ?>
 <section class="study-tools-page exercise-attempt-page">
     <header class="exercise-attempt-header card">
         <div>
             <a class="study-back-link" href="<?= e(url('/exercicios')) ?>">← Central de exercícios</a>
-            <span class="study-tools-eyebrow">FIXAÇÃO · NÍVEL MÉDIO</span>
+            <span class="study-tools-eyebrow">FIXAÇÃO · <?= e(mb_strtoupper($difficultyLabel)) ?></span>
             <h1><?= e((string) $scope) ?></h1>
             <p>Questão <?= $position ?> de <?= $total ?></p>
         </div>
@@ -26,9 +101,43 @@ $scope = $session['phase_title_snapshot'] ?: ($session['module_title_snapshot'] 
     <article class="exercise-question-card card">
         <div class="exercise-question-topline">
             <span>Questão <?= $position ?></span>
-            <span class="study-chip">Média</span>
+            <span class="study-chip"><?= e($difficultyLabel) ?></span>
         </div>
-        <h2><?= e((string) ($current['statement_snapshot'] ?? '')) ?></h2>
+
+        <div class="exercise-statement" data-question-type="<?= e((string) $formattedStatement['type']) ?>">
+            <?php if ((string) $formattedStatement['source'] !== ''): ?>
+                <span class="exercise-source-badge"><?= e((string) $formattedStatement['source']) ?></span>
+            <?php endif; ?>
+
+            <?php if ($formattedStatement['type'] === 'sequence'): ?>
+                <div class="exercise-statement-intro">
+                    <span class="exercise-statement-kicker">Organize a sequência</span>
+                    <h2><?= e((string) $formattedStatement['intro']) ?></h2>
+                    <p>Leia os trechos abaixo com atenção e identifique a ordem correta das ações.</p>
+                </div>
+
+                <div class="exercise-sequence-list" aria-label="Trechos para ordenar">
+                    <?php foreach (($formattedStatement['items'] ?? []) as $index => $item): ?>
+                        <article class="exercise-sequence-item">
+                            <span class="exercise-sequence-number"><?= $index + 1 ?></span>
+                            <p><?= e((string) $item) ?></p>
+                        </article>
+                    <?php endforeach; ?>
+                </div>
+
+                <?php if ((string) ($formattedStatement['prompt'] ?? '') !== ''): ?>
+                    <div class="exercise-statement-prompt">
+                        <span>Agora responda</span>
+                        <strong><?= e((string) $formattedStatement['prompt']) ?></strong>
+                    </div>
+                <?php endif; ?>
+            <?php else: ?>
+                <div class="exercise-statement-intro">
+                    <span class="exercise-statement-kicker">Leia e responda</span>
+                    <h2><?= nl2br(e((string) $formattedStatement['intro'])) ?></h2>
+                </div>
+            <?php endif; ?>
+        </div>
 
         <form data-exercise-answer-form
               action="<?= e(url('/exercicios/sessao/' . (int) $session['id'] . '/resposta')) ?>"
@@ -37,6 +146,10 @@ $scope = $session['phase_title_snapshot'] ?: ($session['module_title_snapshot'] 
             <input type="hidden" name="session_question_id" value="<?= (int) ($current['id'] ?? 0) ?>">
             <input type="hidden" name="_token" value="<?= e(Csrf::token()) ?>">
 
+            <div class="exercise-alternatives-heading">
+                <span>Alternativas</span>
+                <small>Selecione uma opção</small>
+            </div>
             <div class="exercise-alternatives">
                 <?php foreach (($current['alternatives'] ?? []) as $alternative): ?>
                     <label class="exercise-alternative">
