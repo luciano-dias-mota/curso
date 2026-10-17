@@ -89,6 +89,19 @@ $phase = $pdo->query(
      LIMIT 1"
 )->fetch();
 
+$phaseQuestionCount = 0;
+if ($phase) {
+    $s = $pdo->prepare(
+        "SELECT COUNT(DISTINCT k.question_id)
+         FROM question_import_keys k
+         INNER JOIN questions q ON q.id = k.question_id
+         WHERE k.source_key LIKE 'POP2-ATUALIZADO-Q%'
+           AND q.phase_id = :phase_id"
+    );
+    $s->execute(['phase_id'=>(int)$phase['id']]);
+    $phaseQuestionCount = (int)$s->fetchColumn();
+}
+
 $managedLessons = 0;
 if ($phase) {
     $s = $pdo->prepare(
@@ -126,6 +139,7 @@ printf("Médias / difíceis:            %d / 20 | %d / 8\n", (int)($quality['med
 printf("Alternativas insuficientes:   %d\n", (int)($quality['bad_alts'] ?? 0));
 printf("Gabarito diferente de 1 certa:%d\n", (int)($quality['bad_key'] ?? 0));
 printf("Fase POP2:                    %s\n", $phase ? '#'.(int)$phase['id'].' - '.$phase['title'] : 'FALTA');
+printf("Questões associadas à fase:   %d / 28\n", $phaseQuestionCount);
 printf("Aulas gerenciadas POP2:       %d / 12\n\n", $managedLessons);
 
 foreach ($byProcess as $row) {
@@ -141,6 +155,7 @@ $ok = $topicCount === 42
     && (int)($quality['bad_alts'] ?? 0) === 0
     && (int)($quality['bad_key'] ?? 0) === 0
     && $phase !== false
+    && $phaseQuestionCount === 28
     && $managedLessons === 12;
 
 if (!$ok) {

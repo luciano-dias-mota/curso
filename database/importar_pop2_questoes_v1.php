@@ -197,6 +197,16 @@ $linkTopic = $pdo->prepare(
      ON DUPLICATE KEY UPDATE is_primary=GREATEST(is_primary,VALUES(is_primary))"
 );
 
+// Recuperação segura: se as questões POP2 foram importadas antes da criação da fase,
+// associa somente questões deste importador e apenas quando phase_id ainda está NULL.
+// Não sobrescreve vínculo de fase já existente.
+$attachQuestionToPhase = $pdo->prepare(
+    "UPDATE questions
+     SET phase_id = :phase_id
+     WHERE id = :question_id
+       AND phase_id IS NULL"
+);
+
 $stats = ['new'=>0,'reuse_exact'=>0,'existing_key'=>0,'invalid'=>0,'links'=>0];
 $prepared = [];
 
@@ -313,6 +323,13 @@ try {
                 'source_key' => (string) $row['sourceKey'],
                 'question_id' => $questionId,
                 'source_name' => 'POP 2 atualizado - banco curado V1',
+            ]);
+        }
+
+        if ($phaseId !== null) {
+            $attachQuestionToPhase->execute([
+                'phase_id' => $phaseId,
+                'question_id' => $questionId,
             ]);
         }
 

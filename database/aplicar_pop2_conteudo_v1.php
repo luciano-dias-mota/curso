@@ -399,8 +399,8 @@ try {
              WHERE ump.module_id=:module_id
                AND ump.status IN ('available','in_progress','completed')
              ON DUPLICATE KEY UPDATE
-                status=IF(status IN ('completed','in_progress'),status,'available'),
-                unlocked_at=COALESCE(unlocked_at,NOW())"
+                status=IF(user_phase_progress.status IN ('completed','in_progress'),user_phase_progress.status,'available'),
+                unlocked_at=COALESCE(user_phase_progress.unlocked_at,NOW())"
         );
         $openPhase->execute(['phase_id'=>$phaseId,'module_id'=>(int)$module['id']]);
 
@@ -412,7 +412,7 @@ try {
              WHERE ump.module_id=:module_id
                AND ump.status IN ('available','in_progress','completed')
              ON DUPLICATE KEY UPDATE
-                status=IF(status IN ('completed','in_progress'),status,'available')"
+                status=IF(user_lesson_progress.status IN ('completed','in_progress'),user_lesson_progress.status,'available')"
         );
         foreach ($managedLessonIds as $lessonId) {
             $openLesson->execute(['lesson_id'=>$lessonId,'module_id'=>(int)$module['id']]);

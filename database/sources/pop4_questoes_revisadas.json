@@ -1,0 +1,1019 @@
+{
+  "format_version": 1,
+  "source": {
+    "questions_file": "pop-4-exercicios.docx",
+    "reference_file": "pop-4--.pdf",
+    "reference_module": "Módulo IV - Ocorrências Policiais",
+    "review_basis": "Gabaritos e explicações definidos exclusivamente com base no PDF POP 4 atualizado fornecido pelo usuário."
+  },
+  "stats": {
+    "total": 20,
+    "medium": 14,
+    "hard": 6
+  },
+  "items": [
+    {
+      "source_key": "POP4-ATUALIZADO-Q001",
+      "question_number": 1,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo IV) O Centro de Operações empenha a guarnição para atender a uma ocorrência de surto de indivíduo com transtorno psiquiátrico agindo de forma agressiva em via pública. De acordo com os procedimentos operacionais de aproximação estabelecidos no POP 412.1, a chegada da viatura da PMMT ao local dos fatos deve ocorrer obrigatoriamente:",
+      "difficulty": "medium",
+      "topics": [
+        "412.1"
+      ],
+      "primary_topic": "412.1",
+      "source_pages": [
+        [
+          53,
+          54
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo IV"
+      },
+      "source_label": "POP 4 - Módulo IV atualizado (arquivo pop-4--.pdf) | UFMT - POP Módulo IV",
+      "explanation": "O POP 412.1 determina que a chegada ao local ocorra de forma discreta, com sirenes e sinais luminosos desligados e sem criar tumultos.",
+      "alternatives": [
+        {
+          "text": "Em alta velocidade acionando de forma escandalosa as sirenes e o farol alto (giroflex).",
+          "correct": false
+        },
+        {
+          "text": "Com a arma em pronto emprego na técnica do terceiro olho com dupla empunhadura erguida.",
+          "correct": false
+        },
+        {
+          "text": "Comandada pelo 3º homem engarupado que desembarcará para fazer o cerco com fita zebrada.",
+          "correct": false
+        },
+        {
+          "text": "Precedida de invasão imediata da residência com uso de alavancas e ferramentas de arrombamento.",
+          "correct": false
+        },
+        {
+          "text": "De forma discreta, com as sirenes e os sinais luminosos (giroflex) totalmente desligados, evitando criar tumultos.",
+          "correct": true
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 4 atualizado."
+      }
+    },
+    {
+      "source_key": "POP4-ATUALIZADO-Q002",
+      "question_number": 2,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo IV) No cumprimento de um Mandado de Busca e Apreensão Domiciliar expedido por autoridade judiciária competente, a guarnição da PMMT deve observar limites horários rígidos para a invasão do domicílio. À luz do POP 411.1, a execução das buscas com base exclusivamente no mandado judicial deve ocorrer:",
+      "difficulty": "medium",
+      "topics": [
+        "411.1"
+      ],
+      "primary_topic": "411.1",
+      "source_pages": [
+        [
+          46,
+          51
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo IV"
+      },
+      "source_label": "POP 4 - Módulo IV atualizado (arquivo pop-4--.pdf) | UFMT - POP Módulo IV",
+      "explanation": "O POP 411.1 estabelece que a busca fundada em mandado seja executada durante o dia, entre 06h00 e 18h00. À noite, o próprio material exige consentimento formal do morador.",
+      "alternatives": [
+        {
+          "text": "Em qualquer horário do dia ou da noite, vigendo o princípio da supremacia do interesse público.",
+          "correct": false
+        },
+        {
+          "text": "Durante o dia, no período compreendido estritamente entre as 06h00min e as 18h00min.",
+          "correct": true
+        },
+        {
+          "text": "Exclusivamente no período noturno, compreendido entre as 22h00min e as 05h00min do dia seguinte.",
+          "correct": false
+        },
+        {
+          "text": "Apenas nos dias úteis da semana, sendo vedado o cumprimento aos sábados, domingos e feriados.",
+          "correct": false
+        },
+        {
+          "text": "No prazo máximo de até 48 horas após a instauração de sindicância inquisitória na Corregedoria.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 4 atualizado."
+      }
+    },
+    {
+      "source_key": "POP4-ATUALIZADO-Q003",
+      "question_number": 3,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo IV) Uma guarnição da PMMT é empenhada para atender a uma ocorrência de desordem urbana. Ao chegar no local, constata-se a presença de uma autoridade do Poder Judiciário (Magistrado) em flagrante delito de prática de crime comum afiançável. À luz do POP 406.1, a guarnição PM deve saber que os Magistrados gozam de imunidades relativas e:",
+      "difficulty": "medium",
+      "topics": [
+        "406.1"
+      ],
+      "primary_topic": "406.1",
+      "source_pages": [
+        [
+          22,
+          26
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo IV"
+      },
+      "source_label": "POP 4 - Módulo IV atualizado (arquivo pop-4--.pdf) | UFMT - POP Módulo IV",
+      "explanation": "O POP 406 informa que magistrados possuem imunidade relativa e somente são conduzidos quando praticarem crime inafiançável; nessa hipótese, devem ser apresentados diretamente ao Presidente do Tribunal a que estejam vinculados.",
+      "alternatives": [
+        {
+          "text": "Deverão sofrer prisão em flagrante imediata com algemamento conduzindo-os à delegacia civil.",
+          "correct": false
+        },
+        {
+          "text": "Ficarão sujeitos a julgamento sumário cível e administrativo coordenado pelo Comandante-Geral.",
+          "correct": false
+        },
+        {
+          "text": "Serão submetidos coercitivamente a exames toxicológicos com larga janela de detecção no IML.",
+          "correct": false
+        },
+        {
+          "text": "Não podem ser presos em flagrante, salvo se o crime for classificado por lei como INAFIANÇÁVEL, hipótese em que serão apresentados diretamente ao Presidente do Tribunal.",
+          "correct": true
+        },
+        {
+          "text": "Ficam isentos de responsabilidade penal, aplicando-se-lhes apenas multas e notificações do CTB.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 4 atualizado."
+      }
+    },
+    {
+      "source_key": "POP4-ATUALIZADO-Q004",
+      "question_number": 4,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo IV) No âmbito das garantias, prerrogativas funcionais e imunidades prisionais reguladas pelo POP 406.1 da Polícia Militar de Mato Grosso, assinale a autoridade que goza de imunidade ABSOLUTA à prisão em flagrante delito, não podendo ser conduzida a nenhuma de nossas repartições públicas judiciárias por infração de qualquer natureza:",
+      "difficulty": "medium",
+      "topics": [
+        "406.1"
+      ],
+      "primary_topic": "406.1",
+      "source_pages": [
+        [
+          22,
+          25
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo IV"
+      },
+      "source_label": "POP 4 - Módulo IV atualizado (arquivo pop-4--.pdf) | UFMT - POP Módulo IV",
+      "explanation": "O mapa do Processo 406 registra que diplomatas, chefes de Estado estrangeiros, comitivas oficiais e categorias correlatas possuem imunidade absoluta e não ficam sujeitos à prisão em flagrante, independentemente da natureza do crime, nos termos do material.",
+      "alternatives": [
+        {
+          "text": "O Governador do Estado de Mato Grosso.",
+          "correct": false
+        },
+        {
+          "text": "O Prefeito do Município da circunscrição dos fatos.",
+          "correct": false
+        },
+        {
+          "text": "Os Defensores Públicos da União e dos Estados membros.",
+          "correct": false
+        },
+        {
+          "text": "Os Diplomatas (Embaixadores, chefes de Estado estrangeiros e comitivas oficiais).",
+          "correct": true
+        },
+        {
+          "text": "Os Delegados de Polícia Civil e seus respectivos agentes de carreira de plantão.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 4 atualizado."
+      }
+    },
+    {
+      "source_key": "POP4-ATUALIZADO-Q005",
+      "question_number": 5,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo IV) Durante o patrulhamento preventivo fardado, a guarnição realiza a abordagem e a busca pessoal em uma travesti em fundada suspeita na via pública. Com base nas diretrizes de direitos humanos e identidade de gênero fixadas no POP 414.1, o tratamento idiomático e a execução da busca pessoal na travesti devem observar, respectivamente, o seguinte procedimento:",
+      "difficulty": "medium",
+      "topics": [
+        "414.1"
+      ],
+      "primary_topic": "414.1",
+      "source_pages": [
+        [
+          59,
+          61
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo IV"
+      },
+      "source_label": "POP 4 - Módulo IV atualizado (arquivo pop-4--.pdf) | UFMT - POP Módulo IV",
+      "explanation": "O POP 414.1 orienta respeitar a identificação social feminina, usar termos femininos como senhora/ela/dela e, prioritariamente, empregar efetivo feminino na busca de travestis e mulheres transexuais.",
+      "alternatives": [
+        {
+          "text": "Utilização de termos masculinos / Busca pessoal executada obrigatoriamente por policial masculino.",
+          "correct": false
+        },
+        {
+          "text": "Utilização de termos neutros / Supressão da busca pessoal, coletando apenas dados verbais.",
+          "correct": false
+        },
+        {
+          "text": "Utilização de termos femininos (senhora, ela, dela) / Busca pessoal executada prioritariamente por policial feminina.",
+          "correct": true
+        },
+        {
+          "text": "Uso de termos pejorativos / Condução imediata à delegacia especializada sem revista prévia.",
+          "correct": false
+        },
+        {
+          "text": "Tratamento pelo nome de registro civil em voz alta / Busca executada pelo 3º homem engarupado.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 4 atualizado."
+      }
+    },
+    {
+      "source_key": "POP4-ATUALIZADO-Q006",
+      "question_number": 6,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo IV) Um policial militar de serviço assume o isolamento perimetral de uma cena de homicídio consumado e aguarda a chegada das equipes periciais. De acordo com o POP 401.2 (Possibilidades de Erro), qual conduta praticada pela guarnição configura erro procedimental e pode caracterizar o crime de fraude processual?",
+      "difficulty": "medium",
+      "topics": [
+        "401.2"
+      ],
+      "primary_topic": "401.2",
+      "source_pages": [
+        [
+          5,
+          6
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo IV"
+      },
+      "source_label": "POP 4 - Módulo IV atualizado (arquivo pop-4--.pdf) | UFMT - POP Módulo IV",
+      "explanation": "Entre as possibilidades de erro do POP 401.2 estão alterar a posição do cadáver, revistar os bolsos da vítima e mexer nos instrumentos do crime, condutas incompatíveis com a preservação do local.",
+      "alternatives": [
+        {
+          "text": "Impedir o acesso de pessoas estranhas e de outros policiais desvinculados ao campo pericial imediato.",
+          "correct": false
+        },
+        {
+          "text": "Revistar os bolsos das vestes da vítima, alterar a posição do cadáver ou mexer nos instrumentos do crime (armas).",
+          "correct": true
+        },
+        {
+          "text": "Fotografar de forma panorâmica o local de crime caso existam vestígios frágeis expostos a intempéries.",
+          "correct": false
+        },
+        {
+          "text": "Acionar a Autoridade de Polícia Judiciária Civil de plantão através do Centro de Operações (190).",
+          "correct": false
+        },
+        {
+          "text": "Manter os sinais luminosos (giroflex) vermelhos da viatura ligados para indicar a presença ostensiva.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 4 atualizado."
+      }
+    },
+    {
+      "source_key": "POP4-ATUALIZADO-Q007",
+      "question_number": 7,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo IV) De acordo com as normas procedimentais de isolamento de local de crime estabelecidas de forma literal no POP 401.2 da PMMT, existem providências urgentes que devem preceder o isolamento do perímetro. Assinale a alternativa que apresenta a ordem de prioridade absoluta correta a ser adotada pela guarnição ao chegar na cena:",
+      "difficulty": "medium",
+      "topics": [
+        "401.2"
+      ],
+      "primary_topic": "401.2",
+      "source_pages": [
+        [
+          5,
+          6
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo IV"
+      },
+      "source_label": "POP 4 - Módulo IV atualizado (arquivo pop-4--.pdf) | UFMT - POP Módulo IV",
+      "explanation": "O POP 401.2 fixa expressamente, antes mesmo do isolamento, a ordem de prioridade: sinalização da via para evitar acidente, socorro à vítima e prisão do criminoso, se possível.",
+      "alternatives": [
+        {
+          "text": "1º Sinalização da via pública para evitar acidentes; 2º Socorro à vítima; 3º Prisão do criminoso (se possível).",
+          "correct": true
+        },
+        {
+          "text": "1º Acionamento da Perícia Oficial (POLITEC); 2º Lavratura do boletim de ocorrência; 3º Recolhimento de pertences.",
+          "correct": false
+        },
+        {
+          "text": "1º Verificação de fardamento velado; 2º Contenção por arma de energia conduzida; 3º Arrolamento de testemunhas.",
+          "correct": false
+        },
+        {
+          "text": "1º Entrada tática com tomada de ângulo; 2º Uso do espargidor de gás pimenta; 3º Condução coercitiva da vítima.",
+          "correct": false
+        },
+        {
+          "text": "1º Pesagem da substância ilegal na balança; 2º Preenchimento do formulário da SESP; 3º Acionamento do guincho.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 4 atualizado."
+      }
+    },
+    {
+      "source_key": "POP4-ATUALIZADO-Q008",
+      "question_number": 8,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo IV) Um policial militar em horário de folga e em trajes civis (à paisana) presencia a eclosão de um roubo a mão armada em um estabelecimento comercial de seu bairro. Agindo de acordo com os deveres de legalidade e preservação da integridade física fixados no POP 408.3, após a chegada da guarnição PM de serviço empenhada pelo 190, o militar de folga deverá:",
+      "difficulty": "medium",
+      "topics": [
+        "408.3"
+      ],
+      "primary_topic": "408.3",
+      "source_pages": [
+        [
+          33,
+          36
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo IV"
+      },
+      "source_label": "POP 4 - Módulo IV atualizado (arquivo pop-4--.pdf) | UFMT - POP Módulo IV",
+      "explanation": "No fluxo do Processo 408, após a chegada da guarnição de serviço, o policial de folga à paisana deve evitar interferência direta, transmitir as informações e permanecer em local seguro, deixando a GUPM conduzir as providências.",
+      "alternatives": [
+        {
+          "text": "Assumir de forma imediata o comando tático das ações de reação por possuir maior antiguidade.",
+          "correct": false
+        },
+        {
+          "text": "Interferir diretamente na resolução da ocorrência efetuando a busca pessoal minuciosa nos suspeitos.",
+          "correct": false
+        },
+        {
+          "text": "Sacar seu armamento particular de forma ostensiva integrando a linha de tiro do revistador.",
+          "correct": false
+        },
+        {
+          "text": "Registrar as imagens funcionais no aplicativo VIO da SESP para fins de abono de permanência.",
+          "correct": false
+        },
+        {
+          "text": "Não interferir na ocorrência, deixando que a guarnição de serviço tome todas as providências, e aguardar do lado de fora em local seguro.",
+          "correct": true
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 4 atualizado."
+      }
+    },
+    {
+      "source_key": "POP4-ATUALIZADO-Q009",
+      "question_number": 9,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo IV) Considere que uma equipe de motopatrulhamento tático necessita realizar o cumprimento de um mandado de busca domiciliar no período noturno, haja vista que o suspeito de tráfico de drogas só se encontra no local após as 20h00min. Nos termos do POP 411.1, para adentrar legalmente na residência durante a noite, a equipe deve:",
+      "difficulty": "medium",
+      "topics": [
+        "411.1"
+      ],
+      "primary_topic": "411.1",
+      "source_pages": [
+        [
+          46,
+          51
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo IV"
+      },
+      "source_label": "POP 4 - Módulo IV atualizado (arquivo pop-4--.pdf) | UFMT - POP Módulo IV",
+      "explanation": "O POP 411.1 determina que, à noite, a entrada para busca dependa de autorização formal do morador por escrito, com identificação, assinatura e testemunhas.",
+      "alternatives": [
+        {
+          "text": "Acionar o apoio especializado do BOPE para realizar o arrombamento sumário da porta.",
+          "correct": false
+        },
+        {
+          "text": "Obter a autorização formal por escrito do morador (Termo de Autorização), devidamente assinado e testemunhado.",
+          "correct": true
+        },
+        {
+          "text": "Aguardar o parecer favorável do Ministério Público expedido via sistema integrado de videoconferência.",
+          "correct": false
+        },
+        {
+          "text": "Lavrar um Auto de Resistência passiva de caráter provisório e coletar imagens panorâmicas do muro.",
+          "correct": false
+        },
+        {
+          "text": "Solicitar que o Centro de Operações (190) mude a classificação da ocorrência de normal para urgente.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 4 atualizado."
+      }
+    },
+    {
+      "source_key": "POP4-ATUALIZADO-Q010",
+      "question_number": 10,
+      "question_type": "multiple_choice",
+      "statement": "(UFMT - POP Módulo IV) O POP 411.1 da Polícia Militar normatiza a aplicação de técnicas sequenciais de vistoria nos quadrantes internos do domicílio para assegurar que nenhum vestígio seja omitido pela equipe. De acordo com o texto do manual, a sequência de vistoria nos compartimentos deve seguir o método de:",
+      "difficulty": "medium",
+      "topics": [
+        "411.1"
+      ],
+      "primary_topic": "411.1",
+      "source_pages": [
+        [
+          46,
+          51
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "UFMT - POP Módulo IV"
+      },
+      "source_label": "POP 4 - Módulo IV atualizado (arquivo pop-4--.pdf) | UFMT - POP Módulo IV",
+      "explanation": "O POP 411.1 manda realizar a vistoria de forma sequencial, por quadrantes, pelo método de fora para dentro e de baixo para cima: piso, linha da cintura e teto.",
+      "alternatives": [
+        {
+          "text": "Dentro para fora e de cima para baixo (teto, linha de cintura e piso).",
+          "correct": false
+        },
+        {
+          "text": "Busca aleatória baseada no livre convencimento técnico do selecionador da guarnição.",
+          "correct": false
+        },
+        {
+          "text": "Fora para dentro e de baixo para cima (piso, linha da cintura e teto).",
+          "correct": true
+        },
+        {
+          "text": "Fatiamento e tomadas de ângulo restritos à cubeta e ao túnel do percussor do ferrolho.",
+          "correct": false
+        },
+        {
+          "text": "Acompanhamento à distância em link contínuo com o supervisor de atendimento do CIOSP.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 4 atualizado."
+      }
+    },
+    {
+      "source_key": "POP4-ATUALIZADO-Q011",
+      "question_number": 11,
+      "question_type": "multiple_choice",
+      "statement": "(POP 4 - 2ª Lista) Em uma ocorrência de violência doméstica e familiar contra a mulher (POP 405.1), ao chegar à residência do casal, a guarnição depara-se com o agressor visivelmente embriagado, portando uma faca de grande porte e trancado no quarto principal mantendo a vítima sob ameaça direta de morte. De acordo com as Ações Corretivas descritas no POP 405.1 para cenários de alto risco e alteração de estado comportamental do agressor, a guarnição deve:",
+      "difficulty": "hard",
+      "topics": [
+        "405.1"
+      ],
+      "primary_topic": "405.1",
+      "source_pages": [
+        [
+          19,
+          21
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 4 - 2ª Lista"
+      },
+      "source_label": "POP 4 - Módulo IV atualizado (arquivo pop-4--.pdf) | POP 4 - 2ª Lista",
+      "explanation": "Nas ações corretivas do POP 405.1, se o agressor estiver armado e trancado com a vítima, especialmente sob influência de álcool ou drogas, a guarnição não deve invadir a casa e deve solicitar apoio especializado, pois a situação pode evoluir para crise com reféns.",
+      "alternatives": [
+        {
+          "text": "Arrombar imediatamente a porta do cômodo e realizar a entrada tática sem acionamento de apoio para evitar o prolongamento da discussão.",
+          "correct": false
+        },
+        {
+          "text": "Efetuar disparos de arma de fogo através da porta de madeira do quarto para desarmar o agressor de forma remota e imediata.",
+          "correct": false
+        },
+        {
+          "text": "Não invadir a casa; solicitar do Centro de Operações/CIOSP apoio especializado, pois neste caso a ocorrência pode evoluir para uma crise com reféns.",
+          "correct": true
+        },
+        {
+          "text": "Abandonar o local de atendimento e retornar à base para aguardar que o agressor recobre a sobriedade voluntariamente.",
+          "correct": false
+        },
+        {
+          "text": "Negociar diretamente a rendição do agressor oferecendo-lhe garantia formal de impunidade e arquivamento sumário do Boletim de Ocorrência.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 4 atualizado."
+      }
+    },
+    {
+      "source_key": "POP4-ATUALIZADO-Q012",
+      "question_number": 12,
+      "question_type": "multiple_choice",
+      "statement": "(POP 4 - 2ª Lista) Durante o patrulhamento em uma área de crise psiquiátrica, a guarnição PM é acionada para apoiar o atendimento a um indivíduo em surto psicótico agressivo sem cometimento de crime, que ameaça a própria integridade e a de terceiros. Considerando a doutrina do POP 412.1 (Atendimento de Ocorrência com Indivíduos com Transtornos Psiquiátricos) e a relação com os órgãos de atuação prioritária, assinale a conduta procedimental adequada:",
+      "difficulty": "medium",
+      "topics": [
+        "412.1"
+      ],
+      "primary_topic": "412.1",
+      "source_pages": [
+        [
+          53,
+          54
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 4 - 2ª Lista"
+      },
+      "source_label": "POP 4 - Módulo IV atualizado (arquivo pop-4--.pdf) | POP 4 - 2ª Lista",
+      "explanation": "O POP 412.1 atribui prioridade de atendimento ao SAMU/CBM. A contenção mecânica, quando necessária, deve ser solicitada pela equipe prioritária, cabendo à PM apoiar e garantir a segurança do ambiente.",
+      "alternatives": [
+        {
+          "text": "A guarnição PM deve assumir a medicação direta do paciente com o uso de sedativos contidos na maleta de primeiros socorros da viatura.",
+          "correct": false
+        },
+        {
+          "text": "A chegada ao local deve ocorrer com sirenes e sinais luminosos no volume máximo para assustar o indivíduo e provocar sua rendição imediata.",
+          "correct": false
+        },
+        {
+          "text": "A contenção mecânica (imobilização), quando necessária, deve ser solicitada pela equipe de atendimento prioritário (SAMU ou CBM), cabendo à PM atuar na segurança do ambiente e apoio.",
+          "correct": true
+        },
+        {
+          "text": "O cidadão em surto psiquiátrico agressivo sem crime deve ser conduzido obrigatoriamente para a Delegacia de Polícia Civil antes de receber qualquer socorro médico.",
+          "correct": false
+        },
+        {
+          "text": "É vedada qualquer intervenção verbal por parte dos policiais militares em casos de emergência psiquiátrica na ausência do SAMU.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 4 atualizado."
+      }
+    },
+    {
+      "source_key": "POP4-ATUALIZADO-Q013",
+      "question_number": 13,
+      "question_type": "multiple_choice",
+      "statement": "(POP 4 - 2ª Lista) Em um município do interior do Estado, a Polícia Militar é acionada para intervir em um conflito decorrente de uma briga entre dois indígenas integrados que causaram lesões corporais mútuas no interior de um estabelecimento comercial (bar), fora de terras indígenas e sem qualquer relação com disputas por direitos territoriais ou culturais. Considerando as regras do POP 413.1 e os fundamentos da Súmula 140 do Superior Tribunal de Justiça (STJ), qual é a conduta e a competência jurisdicional aplicável ao caso?",
+      "difficulty": "hard",
+      "topics": [
+        "413.1"
+      ],
+      "primary_topic": "413.1",
+      "source_pages": [
+        [
+          55,
+          58
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 4 - 2ª Lista"
+      },
+      "source_label": "POP 4 - Módulo IV atualizado (arquivo pop-4--.pdf) | POP 4 - 2ª Lista",
+      "explanation": "O POP 413.1 reproduz a Súmula 140/STJ: compete à Justiça Comum Estadual processar e julgar crime em que indígena figure como autor ou vítima, ressalvadas situações de direitos coletivos indígenas que deslocariam a competência.",
+      "alternatives": [
+        {
+          "text": "A Polícia Militar não deve atender a ocorrência por ser absolutamente incompetente para realizar a detenção de qualquer indígena, independentemente do local ou do delito.",
+          "correct": false
+        },
+        {
+          "text": "Declinar o atendimento e encaminhar a ocorrência ao Ministério Público Federal por se tratar de infração cometida por indígena em local público.",
+          "correct": false
+        },
+        {
+          "text": "Encaminhar o caso obrigatoriamente ao Exército Brasileiro para instauração de inquérito policial militar extraterritorial.",
+          "correct": false
+        },
+        {
+          "text": "Atender a ocorrência, efetuar as medidas de restabelecimento da ordem e conduzir os envolvidos à Delegacia de Polícia Civil (Justiça Comum Estadual), nos termos da Súmula 140/STJ e da legislação penal comum.",
+          "correct": true
+        },
+        {
+          "text": "Transferir imediatamente a posse das terras indígenas da região para a União como sanção administrativa aplicada pela guarnição PM.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 4 atualizado."
+      }
+    },
+    {
+      "source_key": "POP4-ATUALIZADO-Q014",
+      "question_number": 14,
+      "question_type": "multiple_choice",
+      "statement": "(POP 4 - 2ª Lista) Uma guarnição de radiopatrulha é acionada para atender a uma ocorrência enquadrada como perturbação da paz social provocada por som automotivo em via pública central. Ao chegar ao local, a equipe constata a presença de diversas pessoas e o som em altíssimo volume. Em conformidade estrita com o POP 403.1 e seus esclarecimentos doutrinários acerca de Perturbação do Sossego Público, Perturbação da Tranquilidade Alheia e Poluição Sonora, assinale a alternativa que apresenta a conduta correta da guarnição:",
+      "difficulty": "hard",
+      "topics": [
+        "403.1"
+      ],
+      "primary_topic": "403.1",
+      "source_pages": [
+        [
+          12,
+          14
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 4 - 2ª Lista"
+      },
+      "source_label": "POP 4 - Módulo IV atualizado (arquivo pop-4--.pdf) | POP 4 - 2ª Lista",
+      "explanation": "O POP 403.1 manda determinar a cessação da perturbação e advertir que o descumprimento configura também desobediência; havendo recusa, prevê a condução coercitiva pelo crime de desobediência.",
+      "alternatives": [
+        {
+          "text": "Conduzir o infrator coercitivamente à delegacia pela contravenção de perturbação do sossego público mesmo na ausência completa de vítima identificada ou solicitante.",
+          "correct": false
+        },
+        {
+          "text": "Determinar ao autor que seja interrompida a perturbação e orientá-lo que, caso seja descumprida a ordem, incorrerá também no crime de desobediência; havendo recusa, conduzi-lo coercitivamente pelo crime de desobediência.",
+          "correct": true
+        },
+        {
+          "text": "Exigir obrigatoriamente a medição por decibelímetro para lavrar qualquer procedimento relativo à contravenção penal de perturbação do sossego público (Art. 42 da LCP).",
+          "correct": false
+        },
+        {
+          "text": "Efetuar disparos de arma de fogo para o alto como meio de persuasão inicial para dispersar a aglomeração ao redor do veículo sonoro.",
+          "correct": false
+        },
+        {
+          "text": "Liberar o proprietário do veículo sem qualquer orientação ou registro, alegando que a perturbação do sossego só é punível se ocorrer após as 22 horas.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 4 atualizado."
+      }
+    },
+    {
+      "source_key": "POP4-ATUALIZADO-Q015",
+      "question_number": 15,
+      "question_type": "multiple_choice",
+      "statement": "(POP 4 - 2ª Lista) Durante o atendimento a um local de homicídio em ambiente urbano, a guarnição policial militar identifica que o corpo da vítima está no interior de uma residência e que há vestígios no quintal. Ao constatar a ausência temporária da Perícia Oficial de Identificação Técnica (POLITEC) no momento inicial, mas diante da extrema necessidade de isolamento técnico e tomada de decisões operacionais nos termos do POP 401.1 e POP 401.2 (Preservação de Local de Crime), qual conduta a guarnição deve adotar prioritariamente para a correta delimitação e salvaguarda dos vestígios?",
+      "difficulty": "hard",
+      "topics": [
+        "401.1",
+        "401.2"
+      ],
+      "primary_topic": "401.2",
+      "source_pages": [
+        [
+          3,
+          6
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 4 - 2ª Lista"
+      },
+      "source_label": "POP 4 - Módulo IV atualizado (arquivo pop-4--.pdf) | POP 4 - 2ª Lista",
+      "explanation": "Os POPs 401.1 e 401.2 orientam dimensionar e preservar todo o campo pericial. Em ambiente fechado, isola-se a edificação e, se necessário, área adjacente; em ambiente externo, o perímetro toma como referência o vestígio mais externo.",
+      "alternatives": [
+        {
+          "text": "Isolar o local do crime, sendo que, se for ambiente fechado, deve-se isolar toda a edificação e, se necessário, sua área adjacente; se for ambiente externo, isolar toda a área relacionada tendo como base o vestígio mais externo ao perímetro.",
+          "correct": true
+        },
+        {
+          "text": "Entrar imediatamente no imóvel para revistar os bolsos da vítima em busca de documentos de identificação antes que qualquer familiar chegue ao local.",
+          "correct": false
+        },
+        {
+          "text": "Coletar e acondicionar em sacos plásticos comuns todos os vestígios da cena, independentemente de sua fragilidade ou de autorização técnica.",
+          "correct": false
+        },
+        {
+          "text": "Liberar o trânsito e o acesso de familiares e imprensa ao interior da edificação para evitar tumultos enquanto se aguarda a equipe pericial.",
+          "correct": false
+        },
+        {
+          "text": "Cessar o isolamento e abandonar o local caso a equipe da Perícia Oficial não compareça no prazo exato de 30 minutos após o acionamento.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 4 atualizado."
+      }
+    },
+    {
+      "source_key": "POP4-ATUALIZADO-Q016",
+      "question_number": 16,
+      "question_type": "multiple_choice",
+      "statement": "(POP 4 - 2ª Lista) Um policial militar em seu período de folga, vestindo trajes civis e portando sua arma de fogo particular devidamente registrada, presencia a prática de um roubo em andamento em um estabelecimento comercial. De acordo com os procedimentos contidos no POP 408.1, POP 408.2 e POP 408.3 (Atendimento de Ocorrências em Horário de Folga), assinale a alternativa que apresenta a conduta prescrita para a atuação do militar de folga em trajes civis no momento em que a guarnição PM de serviço chega ao local dos fatos:",
+      "difficulty": "medium",
+      "topics": [
+        "408.1",
+        "408.2",
+        "408.3"
+      ],
+      "primary_topic": "408.3",
+      "source_pages": [
+        [
+          33,
+          36
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 4 - 2ª Lista"
+      },
+      "source_label": "POP 4 - Módulo IV atualizado (arquivo pop-4--.pdf) | POP 4 - 2ª Lista",
+      "explanation": "Os procedimentos 408.1 a 408.3 priorizam a segurança do policial de folga e a coordenação com a guarnição de serviço. Estando à paisana quando a GUPM chega, ele não deve assumir ou interferir diretamente na resolução da ocorrência.",
+      "alternatives": [
+        {
+          "text": "Se estiver à paisana, não interferir na ocorrência, ainda que seja superior a todos os policiais militares presentes, devendo deixar que a GUPM de serviço tome todas as providências e aguardar do lado de fora em local seguro.",
+          "correct": true
+        },
+        {
+          "text": "Assumir imediatamente o comando tático da intervenção invadindo o estabelecimento de arma em punho, sobrepondo-se à guarnição fardada.",
+          "correct": false
+        },
+        {
+          "text": "Sacar a arma ostensivamente e correr em direção aos policiais de serviço gritando ordens operacionais sem prévia identificação.",
+          "correct": false
+        },
+        {
+          "text": "Determinar que a guarnição fardada permaneça na viatura enquanto ele próprio efetua a busca pessoal e algemamento dos suspeitos.",
+          "correct": false
+        },
+        {
+          "text": "Efetuar disparos de cobertura a partir da via pública para forçar a saída dos criminosos antes que a guarnição fardada se posicione.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 4 atualizado."
+      }
+    },
+    {
+      "source_key": "POP4-ATUALIZADO-Q017",
+      "question_number": 17,
+      "question_type": "multiple_choice",
+      "statement": "(POP 4 - 2ª Lista) Durante o patrulhamento ostensivo, uma guarnição aborda um veículo automotor e, ao verificar a documentação do condutor, constata tratar-se de um membro do Congresso Nacional (Deputado Federal). Durante a busca veicular, os policiais encontram uma quantidade expressiva de substância entorpecente que caracteriza o crime inafiançável de tráfico ilícito de drogas. Conforme o POP 406.1 e o mapa de prerrogativas do POP 406 (Ocorrência Envolvendo Autoridades), qual é o procedimento legal e operacional que a guarnição deve adotar em relação à condução e apresentação do parlamentar?",
+      "difficulty": "hard",
+      "topics": [
+        "406.1"
+      ],
+      "primary_topic": "406.1",
+      "source_pages": [
+        [
+          22,
+          25
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 4 - 2ª Lista"
+      },
+      "source_label": "POP 4 - Módulo IV atualizado (arquivo pop-4--.pdf) | POP 4 - 2ª Lista",
+      "explanation": "O Processo 406 estabelece que membros do Congresso possuem imunidade relativa: em crime inafiançável, podem ser conduzidos à autoridade policial competente, e o auto de prisão em flagrante deve ser encaminhado à respectiva Casa Legislativa em 24 horas.",
+      "alternatives": [
+        {
+          "text": "Liberar o parlamentar imediatamente no local por possuir imunidade parlamentar absoluta que impede qualquer tipo de prisão ou condução policial.",
+          "correct": false
+        },
+        {
+          "text": "Encaminhar o parlamentar diretamente ao Quartel do Comando Geral da PMMT para julgamento sumário por tribunal militar.",
+          "correct": false
+        },
+        {
+          "text": "Conduzir o parlamentar à Polícia Federal/Delegacia competente por se tratar de crime inafiançável, devendo o auto de prisão em flagrante ser remetido à respectiva Casa Legislativa no prazo de 24 horas.",
+          "correct": true
+        },
+        {
+          "text": "Aguardar no local até a chegada de uma comissão formada por pelo menos três Senadores para autorizar a lavratura do Boletim de Ocorrência.",
+          "correct": false
+        },
+        {
+          "text": "Submeter o parlamentar à prisão disciplinar sem comunicação a órgãos judiciais ou legislativos por se tratar de prerrogativa do Comandante de Policiamento.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 4 atualizado."
+      }
+    },
+    {
+      "source_key": "POP4-ATUALIZADO-Q018",
+      "question_number": 18,
+      "question_type": "multiple_choice",
+      "statement": "(POP 4 - 2ª Lista) Durante o patrulhamento em uma área comercial, a guarnição da Polícia Militar realiza a abordagem a uma mulher transexual em atitude fundada suspeita. Durante o procedimento, ao consultar a Cédula de Identidade, verifica-se que consta nome de registro civil masculino, contudo a abordada informa seu nome social feminino. Em consonância rigorosa com o POP 414.1 (Atendimento de Ocorrências Envolvendo Pessoas Transgêneras), qual é a conduta correta a ser adotada pelos policiais militares quanto ao tratamento, busca pessoal e registro dos dados?",
+      "difficulty": "medium",
+      "topics": [
+        "414.1"
+      ],
+      "primary_topic": "414.1",
+      "source_pages": [
+        [
+          59,
+          61
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 4 - 2ª Lista"
+      },
+      "source_label": "POP 4 - Módulo IV atualizado (arquivo pop-4--.pdf) | POP 4 - 2ª Lista",
+      "explanation": "O POP 414.1 manda respeitar o nome/identificação social, utilizar termos femininos para mulher transexual, priorizar efetivo feminino na busca e registrar no BO tanto o nome de registro quanto o nome social quando houver condução.",
+      "alternatives": [
+        {
+          "text": "A busca pessoal deve ser realizada obrigatoriamente por policial feminino, vedando-se o uso de pronomes masculinos durante a verbalização.",
+          "correct": false
+        },
+        {
+          "text": "O policial militar deve falar em voz alta o nome de registro civil da pessoa abordada no meio da rua para que todos os transeuntes ouçam e verifiquem se o conhecem.",
+          "correct": false
+        },
+        {
+          "text": "Ignorar completamente o nome social informado e preencher o Boletim de Ocorrência apenas o nome que está no documento oficial.",
+          "correct": false
+        },
+        {
+          "text": "Utilizar termos como \"o travesti\" ou palavras pejorativas similares durante a condução ao Distrito Policial, sabendo que isso vai atrair a confiança da pessoa transexual.",
+          "correct": false
+        },
+        {
+          "text": "Respeitar a identificação social feminina, utilizar termos femininos (senhora, ela, dela), realizar a busca pessoal prioritariamente por efetivo feminino e constar no B.O. tanto o nome de registro quanto o nome social.",
+          "correct": true
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 4 atualizado."
+      }
+    },
+    {
+      "source_key": "POP4-ATUALIZADO-Q019",
+      "question_number": 19,
+      "question_type": "multiple_choice",
+      "statement": "(POP 4 - 2ª Lista) Uma guarnição de radiopatrulha localiza um veículo automotor estacionado em uma via pública com portas destrancadas e vidros abertos. Após checagem dos dados via CIOSP, confirma-se que o veículo possui queixa de roubo/furto registrada no dia anterior. Considerando as diretrizes do POP 407.1 (Atendimento de Ocorrência de Veículo Abandonado/Localizado) e seus Esclarecimentos, como os policiais militares que primeiro chegam ao local devem atuar em relação à verificação física do bem?",
+      "difficulty": "medium",
+      "topics": [
+        "407.1"
+      ],
+      "primary_topic": "407.1",
+      "source_pages": [
+        [
+          30,
+          31
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 4 - 2ª Lista"
+      },
+      "source_label": "POP 4 - Módulo IV atualizado (arquivo pop-4--.pdf) | POP 4 - 2ª Lista",
+      "explanation": "Nos esclarecimentos do POP 407.1, a primeira guarnição deve fazer apenas verificação visual, sem apreender ou tocar no veículo, em maçanetas, portas, porta-malas ou objetos internos.",
+      "alternatives": [
+        {
+          "text": "Abrir o porta-malas e vasculhar o interior das portas com as próprias mãos para procurar chaves ou documentos de terceiros.",
+          "correct": false
+        },
+        {
+          "text": "Acionar um chaveiro particular de sua confiança sem a anuência do proprietário para ligar o veículo e conduzi-lo rodando à delegacia.",
+          "correct": false
+        },
+        {
+          "text": "Lavar a lataria do veículo no local com água e sabão para facilitar a visualização do número do chassi e a coleta de fotografias.",
+          "correct": false
+        },
+        {
+          "text": "Remover imediatamente as rodas do veículo para evitar que os criminosos retornem e furtem os pneus antes da chegada do guincho.",
+          "correct": false
+        },
+        {
+          "text": "Proceder apenas à verificação visual do local do crime e do veículo, não devendo apreender nem tocar em nada que esteja no local, bem como em peças do veículo (maçanetas, portas, porta-malas) e objetos internos.",
+          "correct": true
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 4 atualizado."
+      }
+    },
+    {
+      "source_key": "POP4-ATUALIZADO-Q020",
+      "question_number": 20,
+      "question_type": "multiple_choice",
+      "statement": "(POP 4 - 2ª Lista) Uma equipe policial realiza o cumprimento de um Mandado de Busca e Apreensão Domiciliar em uma residência suspeita de funcionar como ponto de distribuição de entorpecentes. Em conformidade com o POP 411.1 e seus Esclarecimentos, sobre as técnicas de vistoria, horários de execução e procedimentos para apreensão de objetos eletrônicos e valores, assinale a alternativa correta:",
+      "difficulty": "hard",
+      "topics": [
+        "411.1"
+      ],
+      "primary_topic": "411.1",
+      "source_pages": [
+        [
+          46,
+          51
+        ]
+      ],
+      "origin": {
+        "type": "material_fornecido_estilo_banca",
+        "label": "POP 4 - 2ª Lista"
+      },
+      "source_label": "POP 4 - Módulo IV atualizado (arquivo pop-4--.pdf) | POP 4 - 2ª Lista",
+      "explanation": "O POP 411.1 determina que celulares, mídias, pen drives, laptops e notebooks apreendidos sejam acondicionados em malotes/lacres separados dos demais materiais, com a documentação formal e identificação do lacre.",
+      "alternatives": [
+        {
+          "text": "A busca domiciliar fundada em mandado judicial pode ser executada mediante arrombamento forçado a qualquer hora da noite, sem necessidade de consentimento do morador.",
+          "correct": false
+        },
+        {
+          "text": "Aparelhos celulares, mídias e notebooks apreendidos devem ser obrigatoriamente armazenados em malotes e lacres separados de outros materiais/documentos, preenchendo-se os documentos formais e o número do lacre.",
+          "correct": true
+        },
+        {
+          "text": "A vistoria do imóvel deve ser iniciada de cima para baixo (teto, linha de cintura e piso), de forma aleatória e sem divisão do ambiente em quadrantes.",
+          "correct": false
+        },
+        {
+          "text": "A apreensão de dinheiro em espécie dispensa conferência ou contagem na presença de moradores ou testemunhas para garantir a rapidez da operação.",
+          "correct": false
+        },
+        {
+          "text": "Caso o morador esteja ausente, a equipe deve realizar a busca sem a presença de testemunhas e deixar a porta do imóvel aberta após a saída.",
+          "correct": false
+        }
+      ],
+      "review": {
+        "status": "revisada_com_base_no_material_atualizado",
+        "corrected_from_original": false,
+        "note": "Mantida a formulação do arquivo, com gabarito definido pelo POP 4 atualizado."
+      }
+    }
+  ]
+}
