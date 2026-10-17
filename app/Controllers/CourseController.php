@@ -7,6 +7,7 @@ namespace App\Controllers;
 use App\Core\Auth;
 use App\Core\Controller;
 use App\Core\Database;
+use App\Services\ProgressInitializer;
 
 final class CourseController extends Controller
 {
@@ -43,6 +44,15 @@ final class CourseController extends Controller
             $this->view('errors/404');
             return;
         }
+
+        // Política de estudo livre entre disciplinas: todo módulo publicado da
+        // matrícula fica disponível. A sequência obrigatória é preservada
+        // dentro de cada módulo.
+        (new ProgressInitializer())->initializeEnrollment(
+            (int) Auth::id(),
+            $id,
+            $pdo
+        );
 
         $modulesStmt = $pdo->prepare(
             "SELECT m.*,
