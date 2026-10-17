@@ -10,6 +10,7 @@ use App\Core\Request;
 use App\Core\Session;
 use App\Core\Validator;
 use App\Services\LoginThrottle;
+use App\Services\ProgressInitializer;
 use App\Services\UserAccessMonitor;
 
 final class AuthController extends Controller
@@ -62,7 +63,12 @@ final class AuthController extends Controller
         $throttle->clear($email);
 
         if (Auth::isStudent() && Auth::id() !== null) {
-            (new UserAccessMonitor())->registerLogin((int) Auth::id());
+            $studentId = (int) Auth::id();
+
+            // Ao entrar, garante a política atual: todos os módulos publicados
+            // da matrícula ficam livres, preservando a sequência interna.
+            (new ProgressInitializer())->initializeActiveEnrollments($studentId);
+            (new UserAccessMonitor())->registerLogin($studentId);
         }
 
         $this->redirect('/dashboard');
