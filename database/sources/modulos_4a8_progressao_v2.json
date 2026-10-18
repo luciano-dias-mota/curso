@@ -463,13 +463,42 @@
           "title": "2. Lei de Tortura - Lei nº 9.455/1997",
           "keywords": [
             "tortura",
-            "9.455"
+            "9.455",
+            "informacao",
+            "declaracao",
+            "confissao",
+            "acao ou omissao criminosa",
+            "discriminacao racial",
+            "discriminacao religiosa",
+            "guarda poder autoridade",
+            "castigo pessoal",
+            "medida preventiva",
+            "pessoa presa",
+            "medida de seguranca",
+            "omissao",
+            "agente publico",
+            "sequestro",
+            "lesao grave",
+            "morte",
+            "regime fechado",
+            "vitima brasileira",
+            "violencia domestica"
           ],
           "extra_blocks": [
             {
               "type": "comparison",
               "title": "Modalidades que precisam ser distinguidas",
-              "content": "Organize a Lei de Tortura pelas situações trabalhadas no material: tortura para obter prova/confissão; tortura para provocar ação ou omissão criminosa; tortura discriminatória; tortura-castigo sobre pessoa sob guarda, poder ou autoridade; e a modalidade omissiva de quem tinha dever de evitar ou apurar. Observe também os efeitos específicos da condenação destacados no curso."
+              "content": "Organize a Lei de Tortura pela redação vigente: (1) tortura-prova/confissão — obter informação, declaração ou confissão; (2) tortura-crime — provocar ação ou omissão de natureza criminosa; (3) tortura-discriminação — discriminação racial ou religiosa; (4) tortura-castigo — pessoa sob guarda, poder ou autoridade, com intenso sofrimento como castigo pessoal ou medida preventiva; (5) art. 1º, § 1º — pessoa presa ou sujeita a medida de segurança submetida a sofrimento por ato não previsto em lei ou não resultante de medida legal; (6) tortura omissiva — quem tinha dever de evitar ou apurar e se omite; e (7) desde a Lei nº 15.410/2026, a submissão reiterada de mulher a intenso sofrimento físico ou mental no contexto de violência doméstica e familiar."
+            },
+            {
+              "type": "warning",
+              "title": "Literalidade que a banca costuma inverter",
+              "content": "Pena-base das formas principais: reclusão de 2 a 8 anos. Omissão do § 2º: detenção de 1 a 4 anos. Resultado grave ou gravíssimo: reclusão de 4 a 10 anos; morte: 8 a 16 anos. Majorantes do § 4º: 1/6 até 1/3 se cometido por agente público; contra criança, gestante, portador de deficiência, adolescente ou maior de 60 anos; ou mediante sequestro. A condenação acarreta perda do cargo, função ou emprego público e interdição para seu exercício pelo dobro do prazo da pena. O crime é inafiançável e insuscetível de graça ou anistia."
+            },
+            {
+              "type": "theory",
+              "title": "Atualização legislativa de 2026 — Lei nº 15.410/2026",
+              "content": "A Lei nº 15.410, de 20 de maio de 2026, acrescentou o inciso III ao art. 1º da Lei nº 9.455/1997: passa a constituir tortura submeter mulher, reiteradamente, a intenso sofrimento físico ou mental, no contexto de violência doméstica e familiar, sem prejuízo das penas correspondentes a outras infrações penais. Questões anteriores a essa alteração continuam úteis para os demais dispositivos, mas afirmações que pretendam esgotar todas as modalidades da lei devem ser confrontadas com a redação atual."
             }
           ]
         },
