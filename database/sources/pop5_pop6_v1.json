@@ -718,6 +718,15 @@
                 388,
                 391
               ]
+            },
+            {
+              "type": "comparison",
+              "title": "503.1 - Pontos de literalidade para prova",
+              "content": "Memorize as diferenças de função: a PM garante a execução da medida judicial e preserva a ordem; o Oficial de Justiça transmite a ordem. O planejamento policial ocorre 48 horas antes. A Tropa de Choque permanece inicialmente afastada do ponto crítico e fora da vista dos invasores. É possibilidade de erro realizar a operação sem Oficial de Justiça ou usar policiais/viaturas para transporte de pertences dos invasores.",
+              "source_pages": [
+                389,
+                391
+              ]
             }
           ],
           "questions": [
@@ -2770,6 +2779,15 @@
               "content": "O acionamento depende de classificação prévia da ocorrência, análise de risco, características do local, missão, circunstância e modalidade da equipe. O efetivo é tratado como binômio Homem/Cão.\n\nEm detecção de odores, a unidade solicitante deve isolar o local para evitar contaminação. Antes do emprego do cão, realiza-se vistoria de segurança e plano de busca. Havendo indicação positiva, faz-se busca minuciosa no ponto indicado.\n\nSe for localizado produto ilícito, a guarnição solicitante realiza a apreensão e conduz a ocorrência. Dados do BO devem ser compartilhados com o Canil.\n\nO manual proíbe alimentar, premiar, manejar ou brincar com o cão sem anuência do operador. Equipe canina de detecção de explosivos somente será acionada pelo Esquadrão Antibombas.",
               "source_pages": [
                 455,
+                457
+              ]
+            },
+            {
+              "type": "comparison",
+              "title": "605.1 - Pontos de literalidade para prova",
+              "content": "Em detecção de odores, a unidade solicitante isola o ambiente para evitar contaminação e, antes do cão, realiza vistoria de segurança e plano de busca. Indicação positiva exige busca minuciosa. Produto ilícito localizado é apreendido pela guarnição solicitante, que conduz a ocorrência. A modalidade canina de detecção de explosivos somente é acionada pelo Esquadrão Antibombas. Não alimentar, premiar, manejar ou brincar com o cão sem anuência do operador.",
+              "source_pages": [
+                456,
                 457
               ]
             }
