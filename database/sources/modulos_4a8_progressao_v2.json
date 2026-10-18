@@ -1339,6 +1339,11 @@
               "type": "comparison",
               "title": "JECRIM em dois eixos",
               "content": "O material destaca os critérios de oralidade, simplicidade, informalidade, economia processual e celeridade. Também trabalha o conceito de infração de menor potencial ofensivo do art. 61, abrangendo contravenções e crimes cuja pena máxima não seja superior a dois anos, cumulada ou não com multa, no recorte fornecido."
+            },
+            {
+              "type": "warning",
+              "title": "Justiça Militar e institutos despenalizadores",
+              "content": "A literalidade do art. 90-A da Lei nº 9.099/1995 estabelece que as disposições da Lei dos Juizados Especiais não se aplicam no âmbito da Justiça Militar. Esse ponto é especialmente relevante para prova de carreira policial militar e não deve ser confundido com a regra geral de infrações de menor potencial ofensivo do art. 61."
             }
           ],
           "new_questions": [
@@ -1405,6 +1410,38 @@
                   "is_correct": false
                 }
               ]
+            },
+            {
+              "statement": "Conforme o art. 90-A da Lei nº 9.099/1995, as disposições dessa lei:",
+              "explanation": "O art. 90-A afirma expressamente que as disposições da Lei nº 9.099/1995 não se aplicam no âmbito da Justiça Militar.",
+              "difficulty": "hard",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "aplicam-se integralmente à Justiça Militar.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "aplicam-se apenas aos crimes militares culposos.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "dependem de autorização do comandante.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "não se aplicam no âmbito da Justiça Militar.",
+                  "is_correct": true
+                },
+                {
+                  "label": "E",
+                  "text": "aplicam-se somente aos oficiais.",
+                  "is_correct": false
+                }
+              ]
             }
           ]
         },
@@ -1412,7 +1449,7 @@
           "selector": {
             "slug": "4-ctb-mapa-mental-fornecido"
           },
-          "title": "4. CTB - mapa mental fornecido",
+          "title": "4. Código de Trânsito Brasileiro - Lei nº 9.503/1997",
           "keywords": [
             "codigo de transito",
             "ctb",
@@ -1425,13 +1462,38 @@
             "gravissima",
             "via de transito rapido",
             "via local",
-            "toxicologico"
+            "toxicologico",
+            "sistema nacional de transito",
+            "art. 7",
+            "art. 23",
+            "art. 256",
+            "art. 269",
+            "art. 261",
+            "art. 306",
+            "20 pontos",
+            "30 pontos",
+            "40 pontos"
           ],
           "extra_blocks": [
             {
               "type": "comparison",
               "title": "CTB: mapa de prova do material fornecido",
               "content": "O mapa destaca veículos de emergência e art. 29; uso de luz baixa/DRL nas situações indicadas; diferença entre medida administrativa (providência imediata, como retenção/remoção) e penalidade (sanção, como multa); pontuação gravíssima 7 e grave 5; limites de 80 km/h em via de trânsito rápido e 30 km/h em via local no recorte; fiscalização policial conforme competência/delegação/convenção; e exame toxicológico periódico para categorias C, D e E."
+            },
+            {
+              "type": "theory",
+              "title": "CTB: estrutura legal além do mapa mental",
+              "content": "O texto compilado oficial do CTB rege o trânsito nas vias terrestres abertas à circulação. O trânsito em condições seguras é direito de todos e dever dos órgãos e entidades do Sistema Nacional de Trânsito. O SNT reúne órgãos da União, Estados, Distrito Federal e Municípios; o art. 7º inclui expressamente as Polícias Militares dos Estados e do Distrito Federal. O art. 23 prevê fiscalização de trânsito pela Polícia Militar quando e conforme convênio, como agente do órgão executivo competente."
+            },
+            {
+              "type": "comparison",
+              "title": "Penalidades x medidas administrativas",
+              "content": "Não confunda os capítulos. O art. 256 enumera penalidades, como advertência por escrito, multa e suspensão do direito de dirigir. O art. 269 trata de medidas administrativas, incluindo retenção e remoção do veículo, recolhimento de documentos, transbordo de excesso de carga e testes/exames previstos no dispositivo. Uma alternativa pode trazer medida administrativa como se fosse penalidade ou o inverso."
+            },
+            {
+              "type": "warning",
+              "title": "Suspensão por pontos e crime do art. 306",
+              "content": "O art. 261 trabalha, no período de 12 meses, 20 pontos quando houver duas ou mais infrações gravíssimas, 30 pontos quando houver uma gravíssima e 40 pontos quando não houver gravíssima, observadas as regras especiais do próprio artigo. O art. 306 tipifica conduzir veículo automotor com capacidade psicomotora alterada por álcool ou outra substância psicoativa, prevendo detenção de 6 meses a 3 anos, multa e suspensão/proibição de habilitação."
             }
           ],
           "new_questions": [
@@ -1560,6 +1622,166 @@
                   "label": "E",
                   "text": "todas as categorias sem distinção.",
                   "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "Segundo o art. 7º do CTB, integram o Sistema Nacional de Trânsito:",
+              "explanation": "O art. 7º inclui expressamente as Polícias Militares dos Estados e do Distrito Federal entre os órgãos e entidades do SNT.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "as Polícias Militares dos Estados e do Distrito Federal.",
+                  "is_correct": true
+                },
+                {
+                  "label": "B",
+                  "text": "somente órgãos federais.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "apenas o CONTRAN e as JARI.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "somente os DETRAN.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "apenas órgãos municipais.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "Nos termos do art. 23 do CTB, a Polícia Militar executa fiscalização de trânsito:",
+              "explanation": "O art. 23, III, condiciona a fiscalização ao convênio firmado, atuando a PM como agente do órgão ou entidade executivo de trânsito ou rodoviário.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "sempre e sem necessidade de qualquer vínculo com órgão executivo.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "quando e conforme convênio firmado, como agente do órgão ou entidade executivo competente.",
+                  "is_correct": true
+                },
+                {
+                  "label": "C",
+                  "text": "somente em rodovias federais.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "apenas mediante ordem judicial.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "somente se não houver agente de trânsito civil.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "No CTB, retenção e remoção do veículo aparecem no art. 269 como:",
+              "explanation": "O art. 269 enumera medidas administrativas; retenção e remoção estão nos incisos I e II.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "penas criminais.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "penalidades de suspensão.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "medidas administrativas.",
+                  "is_correct": true
+                },
+                {
+                  "label": "D",
+                  "text": "crimes de trânsito.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "causas de extinção da punibilidade.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "No período de 12 meses, o art. 261 do CTB prevê suspensão por pontuação, para o condutor em geral, ao atingir 20 pontos quando:",
+              "explanation": "O art. 261, I, a, estabelece 20 pontos quando constarem duas ou mais infrações gravíssimas na pontuação.",
+              "difficulty": "hard",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "não houver nenhuma infração gravíssima.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "houver exatamente uma infração gravíssima.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "houver somente infrações leves.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "constarem duas ou mais infrações gravíssimas.",
+                  "is_correct": true
+                },
+                {
+                  "label": "E",
+                  "text": "houver qualquer infração média.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "O art. 306 do CTB prevê, para conduzir veículo automotor com capacidade psicomotora alterada em razão de álcool ou substância psicoativa, pena de:",
+              "explanation": "O caput do art. 306 prevê detenção de seis meses a três anos, multa e suspensão ou proibição de se obter permissão/habilitação.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "apenas multa administrativa.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "reclusão de dois a oito anos.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "detenção de quinze dias a seis meses.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "reclusão de um a quatro anos.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "detenção de seis meses a três anos, multa e suspensão ou proibição de habilitação.",
+                  "is_correct": true
                 }
               ]
             }
