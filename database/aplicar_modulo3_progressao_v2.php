@@ -706,19 +706,35 @@ try {
         }
     }
 
-    // Avaliação final: 2 questões de cada eixo temático principal, sem usar a introdução.
+    // Avaliação final: distribuição equilibrada entre todas as fases
+    // temáticas obrigatórias, sem usar a introdução.
     $bossQuestions = [];
-    foreach ([
-        '1-codigo-penal-militar-recorte-do-edital',
-        '2-crimes-militares-selecionados',
-        '3-policia-judiciaria-militar-no-cppm',
-        '4-rdpm-mt-estrutura',
-        '5-transgressao-julgamento-punicao-e-comportamento'
-    ] as $slug) {
-        $bossQuestions = array_merge(
-            $bossQuestions,
-            array_slice($phaseQuestionSets[$slug] ?? [],0,2)
-        );
+    $thematicSlugs = array_values(array_filter(
+        $requiredSlugs,
+        static fn(string $slug): bool => $slug !== 'introducao-e-visao-geral'
+    ));
+
+    $cursor = 0;
+    while (count($bossQuestions) < 10) {
+        $added = false;
+
+        foreach ($thematicSlugs as $slug) {
+            $pool = $phaseQuestionSets[$slug] ?? [];
+            if (isset($pool[$cursor]) && !in_array((int)$pool[$cursor], $bossQuestions, true)) {
+                $bossQuestions[] = (int)$pool[$cursor];
+                $added = true;
+
+                if (count($bossQuestions) === 10) {
+                    break;
+                }
+            }
+        }
+
+        if (!$added) {
+            break;
+        }
+
+        $cursor++;
     }
 
     if (count($bossQuestions) !== 10) {
@@ -742,7 +758,7 @@ try {
             'phase_id'=>null,
             'lesson_id'=>null,
             'title'=>'Avaliação final — Polícia Judiciária Militar',
-            'description'=>'Avaliação final do Módulo 3: CPM, crimes selecionados, CPPM/PJM e RDPM/MT. Aprovação com pelo menos 8 de 10.',
+            'description'=>'Avaliação final do Módulo 3: CPM, Lei nº 13.491/2017, crimes selecionados, CPPM/PJM e RDPM/MT. Aprovação com pelo menos 8 de 10.',
             'required_score'=>80.0,
             'question_limit'=>10,
             'xp_reward'=>300,
