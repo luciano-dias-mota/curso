@@ -51,8 +51,8 @@ if (!is_file($sourceFile)) {
 $data = json_decode((string) file_get_contents($sourceFile), true, 512, JSON_THROW_ON_ERROR);
 $phasesData = is_array($data['phases'] ?? null) ? $data['phases'] : [];
 
-if ((int)($data['format_version'] ?? 0) !== 1 || count($phasesData) !== 11) {
-    fwrite(STDERR, "[FALHA] Fonte curricular incompatível. Esperadas 11 fases.\n");
+if ((int)($data['format_version'] ?? 0) !== 1 || count($phasesData) < 1) {
+    fwrite(STDERR, "[FALHA] Fonte curricular incompatível ou sem fases.\n");
     exit(3);
 }
 
@@ -86,8 +86,10 @@ foreach ($phasesData as $phaseData) {
     }
 }
 
-if ($totalQuestions !== 66) {
-    throw new RuntimeException("Fonte inválida: esperadas 66 questões; encontradas {$totalQuestions}.");
+if ($totalQuestions < (count($phasesData) * 5)) {
+    throw new RuntimeException(
+        "Fonte inválida: cada fase deve possuir pelo menos 5 questões; total encontrado {$totalQuestions}."
+    );
 }
 
 $pdo = Database::connection();
@@ -713,6 +715,19 @@ try {
         $module2Id = (int)$module2['id'];
         $module2CourseId = (int)$module2['course_id'];
 
+        $oneEthics = $pdo->prepare(
+            "SELECT q.id
+             FROM question_import_keys k
+             INNER JOIN questions q ON q.id=k.question_id
+             WHERE k.source_key LIKE 'EDITAL26-ETICA-Q%'
+               AND q.module_id=:module_id
+               AND q.active=1
+             ORDER BY k.source_key
+             LIMIT 1"
+        );
+        $oneEthics->execute(['module_id'=>$module2Id]);
+        $bossQuestions = array_map('intval', $oneEthics->fetchAll(PDO::FETCH_COLUMN));
+
         $lawQuestionsStmt = $pdo->prepare(
             "SELECT q.id
              FROM question_import_keys k
@@ -724,7 +739,12 @@ try {
              LIMIT 2"
         );
         $lawQuestionsStmt->execute(['module_id'=>$module2Id]);
-        $bossQuestions = array_map('intval', $lawQuestionsStmt->fetchAll(PDO::FETCH_COLUMN));
+        foreach ($lawQuestionsStmt->fetchAll(PDO::FETCH_COLUMN) as $id) {
+            $id = (int)$id;
+            if (!in_array($id, $bossQuestions, true)) {
+                $bossQuestions[] = $id;
+            }
+        }
 
         $generalQuestionsStmt = $pdo->prepare(
             "SELECT q.id
