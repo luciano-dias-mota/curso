@@ -6,6 +6,211 @@
   "phases": [
     {
       "module_slug": "modulo-2-administracao-publica-e-gestao-fundamentos-organizacao-atos-controle-modelos-e-materiais",
+      "slug": "10a-etica-no-exercicio-da-funcao-publica",
+      "title": "10-A. Ética no exercício da função pública",
+      "source_label": "Constituição Federal, art. 37, caput + Lei Estadual nº 7.692/2002, art. 4º - fontes oficiais",
+      "source_url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
+      "required_score": 80,
+      "lessons": [
+        {
+          "slug": "etica-funcao-publica-moralidade-impessoalidade-finalidade",
+          "title": "Ética na função pública: moralidade, impessoalidade, finalidade e interesse público",
+          "summary": "Estudo do eixo ético da atuação administrativa a partir dos princípios constitucionais e do processo administrativo estadual.",
+          "estimated_minutes": 25,
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "Ética pública e art. 37 da Constituição",
+              "content": "O art. 37 da Constituição submete a Administração Pública direta e indireta aos princípios da legalidade, impessoalidade, moralidade, publicidade e eficiência. Para a prova, ética pública não se reduz a cumprir formalmente a lei: a moralidade administrativa integra o próprio parâmetro jurídico de validade da atuação estatal."
+            },
+            {
+              "type": "comparison",
+              "title": "Legalidade, impessoalidade e moralidade",
+              "content": "Legalidade: o agente público atua nos limites do ordenamento. Impessoalidade: a atuação é dirigida à finalidade pública, sem favorecimento ou perseguição pessoal. Moralidade: exige padrões jurídicos de probidade, lealdade institucional, boa-fé e correção administrativa. Publicidade e eficiência completam o núcleo constitucional expresso do art. 37."
+            },
+            {
+              "type": "theory",
+              "title": "Lei Estadual nº 7.692/2002 e comportamento administrativo",
+              "content": "O art. 4º da Lei Estadual nº 7.692/2002 reforça, no processo administrativo de Mato Grosso, legalidade, impessoalidade, moralidade, publicidade, efetividade, eficiência, eficácia, motivação, finalidade, razoabilidade, proporcionalidade, ampla defesa, contraditório e segurança jurídica. Na prática, a decisão administrativa precisa ser orientada ao interesse público, motivada e livre de favorecimento pessoal."
+            },
+            {
+              "type": "warning",
+              "title": "Pegadinhas de prova",
+              "content": "Não confunda moralidade administrativa com moral privada. Não trate eficiência como autorização para ignorar a legalidade. Não confunda publicidade com promoção pessoal do agente. E lembre: a impessoalidade protege a finalidade pública tanto contra favorecimentos quanto contra perseguições."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "source_key": "EDITAL26-ETICA-Q01",
+          "statement": "O caput do art. 37 da Constituição Federal inclui expressamente, entre os princípios da Administração Pública:",
+          "difficulty": "medium",
+          "explanation": "O art. 37 traz legalidade, impessoalidade, moralidade, publicidade e eficiência.",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "moralidade.",
+              "is_correct": true
+            },
+            {
+              "label": "B",
+              "text": "supremacia judicial.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "sigilo como regra.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "livre disposição do interesse público.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "autonomia absoluta do agente.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-ETICA-Q02",
+          "statement": "A impessoalidade administrativa é corretamente associada à ideia de:",
+          "difficulty": "medium",
+          "explanation": "A impessoalidade exige atuação orientada à finalidade pública, sem favorecimento ou perseguição pessoal.",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "promoção pessoal do agente público.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "atuação voltada à finalidade pública, sem favorecimentos pessoais.",
+              "is_correct": true
+            },
+            {
+              "label": "C",
+              "text": "sigilo obrigatório de todos os atos.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "dispensa de motivação.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "prevalência do interesse particular do administrador.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-ETICA-Q03",
+          "statement": "A eficiência administrativa:",
+          "difficulty": "medium",
+          "explanation": "Eficiência integra o art. 37, mas não afasta a legalidade nem os demais princípios.",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "autoriza descumprir a lei para alcançar resultado.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "substitui os demais princípios do art. 37.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "deve ser buscada em conjunto com legalidade, impessoalidade, moralidade e publicidade.",
+              "is_correct": true
+            },
+            {
+              "label": "D",
+              "text": "aplica-se apenas à iniciativa privada.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "dispensa controle e responsabilização.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-ETICA-Q04",
+          "statement": "No processo administrativo estadual de Mato Grosso, a Lei nº 7.692/2002 inclui expressamente como princípio:",
+          "difficulty": "medium",
+          "explanation": "O art. 4º da Lei nº 7.692/2002 inclui moralidade, entre diversos outros princípios.",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "pessoalidade.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "arbitrariedade.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "segredo administrativo absoluto.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "moralidade.",
+              "is_correct": true
+            },
+            {
+              "label": "E",
+              "text": "renúncia ao interesse público.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-ETICA-Q05",
+          "statement": "A publicidade administrativa deve ser compreendida, no eixo ético do art. 37, como:",
+          "difficulty": "medium",
+          "explanation": "Publicidade promove transparência dos atos; não legitima promoção pessoal do agente.",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "autorização para propaganda pessoal do agente.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "dispensa de prestação de contas.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "sigilo permanente dos atos.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "faculdade sem relação com transparência.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "princípio de transparência da atuação administrativa, sem se confundir com promoção pessoal.",
+              "is_correct": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_slug": "modulo-2-administracao-publica-e-gestao-fundamentos-organizacao-atos-controle-modelos-e-materiais",
       "slug": "11-lei-estadual-7692-2002-processo-administrativo",
       "title": "11. Lei Estadual nº 7.692/2002 - Processo Administrativo Estadual",
       "source_label": "Lei Estadual nº 7.692/2002 - versão consolidada disponibilizada pela SEPLAG/MT",
