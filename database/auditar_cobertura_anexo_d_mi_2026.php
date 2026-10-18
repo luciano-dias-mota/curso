@@ -144,7 +144,7 @@ $items = [
     ['3.7','LC nº 386/2010 - Organização Básica',fn()=> $hasPhase('8-lei-complementar-386-2010-organizacao-basica-pmmt')],
     ['3.8','Decreto nº 591/1980 - Movimentação',fn()=> $hasPhase('9-decreto-591-1980-regulamento-de-movimentacao')],
     ['3.9/3.10','Decreto nº 1.172/2021 + Diretriz 001/2021',fn()=> $hasPhase('10-decreto-1172-2021-diretriz-conjunta-001-2021')],
-    ['3.11','Portaria nº 025/QCG/2025',fn()=> $hasText('025/QCG/2025') && !$hasText('PENDENTE')],
+    ['3.11','Portaria nº 025/QCG/2025',fn()=> $hasPhase('11-portaria-025-qcg-2025-violencia-domestica')],
 
     ['4.1','POP PMMT - Módulos I a IV',fn()=> $hasText('POP 1') && $hasText('POP 2') && $hasText('POP 3') && $hasText('POP 4')],
     ['4.2','ECA',fn()=> $hasPhase('1-eca-lei-no-8-069-1990')],
