@@ -725,12 +725,18 @@ try {
             ];
 
             foreach ($process['procedures'] as $procedureIndex=>$procedureCode) {
+                $procedureCode = (string)$procedureCode;
+                $procedureTitle = (string)(
+                    $process['procedure_titles'][$procedureCode]
+                    ?? ('Procedimento ' . $procedureCode)
+                );
+
                 $topicDefinitions[] = [
-                    'code'=>(string)$procedureCode,
+                    'code'=>$procedureCode,
                     'parent'=>$processCode,
                     'type'=>'procedure',
-                    'slug'=>strtolower($popCode) . '-procedimento-' . str_replace('.', '-', (string)$procedureCode),
-                    'title'=>'POP ' . $procedureCode,
+                    'slug'=>strtolower($popCode) . '-procedimento-' . str_replace('.', '-', $procedureCode),
+                    'title'=>$procedureCode . ' - ' . $procedureTitle,
                     'position'=>$procedureIndex + 1,
                 ];
             }
