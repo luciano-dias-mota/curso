@@ -176,6 +176,9 @@ if (!$popModule) {
     throw new RuntimeException('Módulo curricular de POP não encontrado.');
 }
 
+$popModuleNewTitle = 'Módulo 7 - Procedimentos Operacionais Padrão PMMT: Módulos I a VI';
+$popModuleNewDescription = 'Trilha integral do Manual POP PMMT 2023, contemplando os Módulos I a VI com aulas, fixações, checkpoints e banco de questões por processo.';
+
 $ddl = [];
 
 if (!tableExists($pdo, 'study_topics')) {
@@ -310,6 +313,18 @@ foreach ($ddl as $sql) {
 $pdo->beginTransaction();
 
 try {
+    $pdo->prepare(
+        "UPDATE modules
+         SET title=:title,
+             description=:description,
+             updated_at=NOW()
+         WHERE id=:id"
+    )->execute([
+        'title'=>$popModuleNewTitle,
+        'description'=>$popModuleNewDescription,
+        'id'=>(int)$popModule['id'],
+    ]);
+
     $adminId = firstAdminId($pdo);
 
     $findPhase = $pdo->prepare(
