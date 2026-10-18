@@ -1,10 +1,11 @@
 {
-  "version": 2,
+  "version": 3,
   "module_slug": "modulo-3-policia-judiciaria-militar-codigo-penal-militar-cppm-e-rdpm-mt",
-  "source_label": "M3V2 | CPM + CPPM + RDPM/MT | materiais fornecidos no projeto",
+  "source_label": "M3V3 | CPM + Lei 13.491/2017 + CPPM + RDPM/MT | fontes oficiais e materiais do projeto",
   "required_phase_slugs": [
     "introducao-e-visao-geral",
     "1-codigo-penal-militar-recorte-do-edital",
+    "6-lei-13491-2017-alteracao-do-art-9-do-cpm",
     "2-crimes-militares-selecionados",
     "3-policia-judiciaria-militar-no-cppm",
     "4-rdpm-mt-estrutura",
@@ -210,6 +211,23 @@
           "type": "comparison",
           "title": "Como ler o art. 9º sem decorar de forma cega",
           "content": "Faça quatro perguntas: quem praticou o fato? contra quem ou qual bem? onde ocorreu? havia serviço, função, manobra, exercício ou vínculo com patrimônio/ordem administrativa militar? Depois diferencie as hipóteses do art. 9º dos conceitos complementares dos arts. 12 a 24, como equiparações e conceito de superior."
+        }
+      ],
+      "questions": []
+    },
+    {
+      "slug": "6-lei-13491-2017-alteracao-do-art-9-do-cpm",
+      "title": "2. Lei nº 13.491/2017 - alteração do art. 9º do CPM",
+      "extra_blocks": [
+        {
+          "type": "comparison",
+          "title": "O que a Lei nº 13.491/2017 mudou",
+          "content": "A Lei nº 13.491/2017 alterou o art. 9º do Código Penal Militar. O inciso II passou a abranger, nas hipóteses previstas no próprio artigo, crimes previstos no CPM e também crimes previstos na legislação penal. A lei também disciplinou a competência para crimes dolosos contra a vida de civil e previu hipóteses específicas para militares das Forças Armadas."
+        },
+        {
+          "type": "warning",
+          "title": "Pegadinha de literalidade",
+          "content": "A alteração não tornou todo crime praticado por militar automaticamente crime militar. A incidência continua dependente das hipóteses legais do art. 9º do CPM. Diferencie ainda a regra geral de competência do Tribunal do Júri das hipóteses específicas do § 2º."
         }
       ],
       "questions": []
