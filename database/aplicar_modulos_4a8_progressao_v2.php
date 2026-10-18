@@ -902,10 +902,14 @@ try {
             throw new RuntimeException("Módulo #{$moduleId} sem fase temática para avaliação final.");
         }
 
+        // Se houver mais de 10 eixos temáticos obrigatórios (caso do
+        // Módulo 8 após o alinhamento integral ao edital), a avaliação final
+        // cresce para garantir pelo menos uma questão de cada eixo.
+        $bossQuestionLimit = max(10, count($thematicPhaseIds));
         $bossQuestions = [];
         $cursor = 0;
 
-        while (count($bossQuestions) < 10) {
+        while (count($bossQuestions) < $bossQuestionLimit) {
             $addedThisRound = false;
 
             foreach ($thematicPhaseIds as $phaseId) {
@@ -914,7 +918,7 @@ try {
                     $bossQuestions[] = $pool[$cursor];
                     $addedThisRound = true;
 
-                    if (count($bossQuestions) === 10) {
+                    if (count($bossQuestions) === $bossQuestionLimit) {
                         break;
                     }
                 }
@@ -927,9 +931,9 @@ try {
             $cursor++;
         }
 
-        if (count($bossQuestions) !== 10) {
+        if (count($bossQuestions) !== $bossQuestionLimit) {
             throw new RuntimeException(
-                "Módulo #{$moduleId}: não foi possível compor 10 questões distintas para a avaliação final."
+                "Módulo #{$moduleId}: não foi possível compor {$bossQuestionLimit} questões distintas para a avaliação final."
             );
         }
 
@@ -937,7 +941,7 @@ try {
         $bossId = (int)($bossFind->fetchColumn() ?: 0);
 
         $bossTitle = 'Avaliação final — ' . preg_replace('/^Módulo\s+\d+\s*-\s*/ui', '', (string)$module['title']);
-        $bossDescription = 'Avaliação final obrigatória: 10 questões. Aprovação com pelo menos 8 acertos.';
+        $bossDescription = "Avaliação final obrigatória: {$bossQuestionLimit} questões, cobrindo todos os eixos obrigatórios. Aprovação com pelo menos 80%.";
 
         if ($bossId > 0) {
             $updateQuiz->execute([
@@ -947,7 +951,7 @@ try {
                 'title'=>$bossTitle,
                 'description'=>$bossDescription,
                 'required_score'=>80.0,
-                'question_limit'=>10,
+                'question_limit'=>$bossQuestionLimit,
                 'xp_reward'=>300,
                 'id'=>$bossId,
             ]);
@@ -961,7 +965,7 @@ try {
                 'description'=>$bossDescription,
                 'quiz_type'=>'module_boss',
                 'required_score'=>80.0,
-                'question_limit'=>10,
+                'question_limit'=>$bossQuestionLimit,
                 'xp_reward'=>300,
             ]);
             $bossId = (int)$pdo->lastInsertId();
