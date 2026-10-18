@@ -1267,6 +1267,11 @@
               "type": "comparison",
               "title": "ECA: pontos de literalidade do material",
               "content": "O recorte destaca a diferença entre criança e adolescente, direitos educacionais do art. 53 e o art. 53-A, relacionado a medidas de conscientização, prevenção e enfrentamento ao uso ou dependência de drogas ilícitas por instituições de ensino, clubes e agremiações recreativas."
+            },
+            {
+              "type": "summary",
+              "title": "Fonte oficial integral para literalidade",
+              "content": "Estatuto da Criança e do Adolescente - texto oficial compilado\nhttps://www.planalto.gov.br/ccivil_03/leis/l8069compilado.htm\n\nA aula organiza os pontos de maior incidência e as regras operacionais, mas a literalidade integral deve ser conferida nesta fonte oficial. Questões do banco devem ser compatíveis com a redação vigente da lei."
             }
           ],
           "new_questions": [
@@ -1317,6 +1322,13 @@
             "relacao intima",
             "orientacao sexual",
             "direitos humanos"
+          ],
+          "extra_blocks": [
+            {
+              "type": "summary",
+              "title": "Fonte oficial integral para literalidade",
+              "content": "Lei Maria da Penha - texto oficial atualizado\nhttps://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm\n\nA aula organiza os pontos de maior incidência e as regras operacionais, mas a literalidade integral deve ser conferida nesta fonte oficial. Questões do banco devem ser compatíveis com a redação vigente da lei."
+            }
           ]
         },
         {
@@ -1344,6 +1356,11 @@
               "type": "warning",
               "title": "Justiça Militar e institutos despenalizadores",
               "content": "A literalidade do art. 90-A da Lei nº 9.099/1995 estabelece que as disposições da Lei dos Juizados Especiais não se aplicam no âmbito da Justiça Militar. Esse ponto é especialmente relevante para prova de carreira policial militar e não deve ser confundido com a regra geral de infrações de menor potencial ofensivo do art. 61."
+            },
+            {
+              "type": "summary",
+              "title": "Fonte oficial integral para literalidade",
+              "content": "Lei nº 9.099/1995 - texto oficial\nhttps://www.planalto.gov.br/ccivil_03/leis/l9099.htm\n\nA aula organiza os pontos de maior incidência e as regras operacionais, mas a literalidade integral deve ser conferida nesta fonte oficial. Questões do banco devem ser compatíveis com a redação vigente da lei."
             }
           ],
           "new_questions": [
@@ -1494,6 +1511,11 @@
               "type": "warning",
               "title": "Suspensão por pontos e crime do art. 306",
               "content": "O art. 261 trabalha, no período de 12 meses, 20 pontos quando houver duas ou mais infrações gravíssimas, 30 pontos quando houver uma gravíssima e 40 pontos quando não houver gravíssima, observadas as regras especiais do próprio artigo. O art. 306 tipifica conduzir veículo automotor com capacidade psicomotora alterada por álcool ou outra substância psicoativa, prevendo detenção de 6 meses a 3 anos, multa e suspensão/proibição de habilitação."
+            },
+            {
+              "type": "summary",
+              "title": "Fonte oficial integral para literalidade",
+              "content": "Código de Trânsito Brasileiro - texto compilado oficial\nhttps://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm\n\nA aula organiza os pontos de maior incidência e as regras operacionais, mas a literalidade integral deve ser conferida nesta fonte oficial. Questões do banco devem ser compatíveis com a redação vigente da lei."
             }
           ],
           "new_questions": [
@@ -1803,6 +1825,13 @@
             "transacao penal ambiental",
             "suspensao condicional em crime ambiental",
             "incendio"
+          ],
+          "extra_blocks": [
+            {
+              "type": "summary",
+              "title": "Fonte oficial integral para literalidade",
+              "content": "Lei nº 9.605/1998 - texto oficial\nhttps://www.planalto.gov.br/ccivil_03/leis/l9605.htm\n\nA aula organiza os pontos de maior incidência e as regras operacionais, mas a literalidade integral deve ser conferida nesta fonte oficial. Questões do banco devem ser compatíveis com a redação vigente da lei."
+            }
           ]
         },
         {
@@ -1818,6 +1847,13 @@
             "acao controlada",
             "droga",
             "sisnad"
+          ],
+          "extra_blocks": [
+            {
+              "type": "summary",
+              "title": "Fonte oficial integral para literalidade",
+              "content": "Lei nº 11.343/2006 - texto oficial\nhttps://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11343.htm\n\nA aula organiza os pontos de maior incidência e as regras operacionais, mas a literalidade integral deve ser conferida nesta fonte oficial. Questões do banco devem ser compatíveis com a redação vigente da lei."
+            }
           ]
         },
         {
