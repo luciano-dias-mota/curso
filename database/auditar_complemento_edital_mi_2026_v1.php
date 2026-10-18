@@ -259,5 +259,5 @@ if ($problems !== []) {
     exit(4);
 }
 
-echo "\n[OK] As 11 matérias adicionadas estão íntegras, obrigatórias e com exercícios/checkpoints válidos.\n";
+printf("\n[OK] As %d matérias adicionadas estão íntegras, obrigatórias e com exercícios/checkpoints válidos.\n", count($phasesData));
 echo "[PENDENTE] A cobertura só será declarada 100% após integrar a Portaria nº 025/QCG/2025 a partir de fonte oficial.\n";
