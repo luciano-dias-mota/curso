@@ -1,0 +1,574 @@
+{
+  "version": 2,
+  "module_slug": "modulo-3-policia-judiciaria-militar-codigo-penal-militar-cppm-e-rdpm-mt",
+  "source_label": "M3V2 | CPM + CPPM + RDPM/MT | materiais fornecidos no projeto",
+  "required_phase_slugs": [
+    "introducao-e-visao-geral",
+    "1-codigo-penal-militar-recorte-do-edital",
+    "2-crimes-militares-selecionados",
+    "3-policia-judiciaria-militar-no-cppm",
+    "4-rdpm-mt-estrutura",
+    "5-transgressao-julgamento-punicao-e-comportamento"
+  ],
+  "optional_phase_slugs": [
+    "aula-expandida-como-raciocinar-em-policia-judiciaria-militar-e-disciplina",
+    "leitura-orientada-dos-textos-normativos-selecionados",
+    "aprofundamento-adicional-mapa-dos-crimes-militares-selecionados",
+    "revisao-ativa-do-modulo",
+    "exercicios-de-fixacao-10-itens",
+    "mini-simulado-do-modulo-10-questoes-a-e"
+  ],
+  "phases": [
+    {
+      "slug": "introducao-e-visao-geral",
+      "title": "Introdução e visão geral",
+      "replace_first_block": {
+        "type": "theory",
+        "title": "Como pensar o Módulo 3: CPM, CPPM e RDPM/MT",
+        "content": "O Módulo 3 reúne três planos que precisam permanecer separados na prova. O Código Penal Militar (CPM) responde principalmente qual conduta pode constituir crime militar e qual tipo penal se aplica. O Código de Processo Penal Militar (CPPM) disciplina quem exerce Polícia Judiciária Militar, como se inicia e se desenvolve a apuração e quais atos integram o IPM. O RDPM/MT atua na esfera administrativo-disciplinar: transgressões, julgamento, punições, comportamento, recursos e recompensas.\n\nUm mesmo fato pode produzir repercussões em mais de uma esfera, mas isso não torna crime militar e transgressão disciplinar conceitos equivalentes. Para resolver questões, identifique primeiro a esfera normativa e só depois procure o dispositivo aplicável."
+      },
+      "extra_blocks": [
+        {
+          "type": "comparison",
+          "title": "Mapa de estudo e diferenças que a banca pode inverter",
+          "content": "CPM → crime militar em tempo de paz, art. 9º, conceitos dos arts. 12 a 24 e crimes selecionados do edital.\nCPPM → autoridades de Polícia Judiciária Militar, delegação, IPM, encarregado/escrivão, sigilo, medidas preliminares e atos investigativos.\nRDPM/MT → hierarquia e disciplina, transgressões, julgamento, classificação, punições, comportamento, recursos, cancelamento e recompensas.\n\nPegadinha central: autoridade de PJM não é sinônimo de encarregado do IPM; crime militar não é sinônimo de transgressão disciplinar; motim e revolta também não são figuras idênticas."
+        },
+        {
+          "type": "warning",
+          "title": "Estratégia para avançar no módulo",
+          "content": "Em cada etapa, leia o conteúdo obrigatório, conclua a fixação e depois faça o checkpoint. As fases de leitura orientada, aprofundamento, revisão e mini-simulado permanecem disponíveis como material complementar, mas não bloqueiam a progressão principal."
+        }
+      ],
+      "questions": [
+        {
+          "statement": "No mapa inicial do Módulo 3, qual associação entre diploma e função está correta?",
+          "explanation": "O módulo separa direito penal militar, processo penal militar e disciplina administrativa.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "CPM disciplina apenas recursos administrativos; CPPM define transgressões; RDPM tipifica crimes militares.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "CPM trata da tipificação penal militar; CPPM organiza a apuração/processo militar; RDPM/MT disciplina a esfera administrativo-disciplinar.",
+              "is_correct": true
+            },
+            {
+              "label": "C",
+              "text": "CPM e RDPM são equivalentes e o CPPM trata somente de promoções.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "RDPM define crimes militares e o CPM regula recursos disciplinares.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "CPPM substitui integralmente o CPM quando há militar estadual.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Um mesmo fato praticado por militar pode, conforme o caso, produzir repercussões penal-militar e administrativo-disciplinares. A conclusão correta é:",
+          "explanation": "O curso orienta a separar as esferas antes de aplicar a regra jurídica.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "se houver crime militar, nunca poderá existir repercussão disciplinar.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "toda transgressão disciplinar é necessariamente crime militar.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "o RDPM substitui o CPM quando o agente é policial militar estadual.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "as esferas podem coexistir, mas crime militar e transgressão disciplinar não são conceitos equivalentes.",
+              "is_correct": true
+            },
+            {
+              "label": "E",
+              "text": "a existência de IPM transforma automaticamente o fato em transgressão grave.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "No estudo do CPM selecionado para o módulo, o art. 9º é central porque:",
+          "explanation": "O art. 9º é o ponto de partida para identificar as hipóteses de crime militar em tempo de paz.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "delimita hipóteses de crimes militares em tempo de paz.",
+              "is_correct": true
+            },
+            {
+              "label": "B",
+              "text": "classifica o comportamento policial-militar.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "disciplina recursos contra punições.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "define a estrutura dos títulos do RDPM.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "regula exclusivamente a nomeação de escrivão do IPM.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "No CPPM trabalhado no módulo, o art. 7º é estudado principalmente em relação:",
+          "explanation": "O art. 7º aparece no eixo de competência e delegação de Polícia Judiciária Militar.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "às promoções de oficiais.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "à classificação das transgressões disciplinares.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "às autoridades de Polícia Judiciária Militar e à possibilidade de delegação nos limites legais.",
+              "is_correct": true
+            },
+            {
+              "label": "D",
+              "text": "à curva de comportamento disciplinar.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "às sanções de improbidade administrativa.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Segundo o material do RDPM/MT, sua finalidade inclui:",
+          "explanation": "A finalidade do art. 1º do RDPM/MT abrange transgressões, punições, comportamento e recursos.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "definir exclusivamente crimes militares contra o serviço.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "substituir o CPPM na investigação de crime militar.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "regular apenas promoções e transferências.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "disciplinar somente recompensas, sem tratar de punições.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "especificar e classificar transgressões, disciplinar punições, comportamento e recursos, entre outros pontos.",
+              "is_correct": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "1-codigo-penal-militar-recorte-do-edital",
+      "title": "1. Código Penal Militar - recorte do edital",
+      "extra_blocks": [
+        {
+          "type": "comparison",
+          "title": "Como ler o art. 9º sem decorar de forma cega",
+          "content": "Faça quatro perguntas: quem praticou o fato? contra quem ou qual bem? onde ocorreu? havia serviço, função, manobra, exercício ou vínculo com patrimônio/ordem administrativa militar? Depois diferencie as hipóteses do art. 9º dos conceitos complementares dos arts. 12 a 24, como equiparações e conceito de superior."
+        }
+      ],
+      "questions": []
+    },
+    {
+      "slug": "2-crimes-militares-selecionados",
+      "title": "2. Crimes militares selecionados",
+      "questions": []
+    },
+    {
+      "slug": "3-policia-judiciaria-militar-no-cppm",
+      "title": "3. Polícia Judiciária Militar no CPPM",
+      "extra_blocks": [
+        {
+          "type": "comparison",
+          "title": "Autoridade de PJM, encarregado e escrivão",
+          "content": "A autoridade de Polícia Judiciária Militar decorre do CPPM e da jurisdição correspondente. O encarregado do IPM é o oficial designado para conduzir a investigação. O escrivão auxilia na formalização e organização dos autos e presta compromisso de sigilo. Na delegação para instaurar IPM, o material destaca a superioridade de posto em relação ao indiciado e, quando isso não for possível, oficial do mesmo posto mais antigo."
+        }
+      ],
+      "questions": []
+    },
+    {
+      "slug": "4-rdpm-mt-estrutura",
+      "title": "4. RDPM/MT - estrutura",
+      "extra_blocks": [
+        {
+          "type": "theory",
+          "title": "Estrutura do RDPM/MT em títulos",
+          "content": "O Decreto nº 1.329, de 21 de abril de 1978, aprova o RDPM/MT. O Título I reúne disposições gerais, hierarquia, disciplina e competência. O Título II trata das transgressões disciplinares, julgamento e classificação. O Título III disciplina punições, aplicação, cumprimento e modificação. O Título IV trata do comportamento policial-militar. O Título V reúne recursos, cancelamento de punições e recompensas. O Título VI contém disposições finais."
+        }
+      ],
+      "questions": [
+        {
+          "statement": "O Regulamento Disciplinar da Polícia Militar do Estado de Mato Grosso (RDPM/MT) foi aprovado pelo:",
+          "explanation": "O documento fornecido identifica expressamente o Decreto nº 1.329/1978.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Decreto nº 1.329, de 21 de abril de 1978.",
+              "is_correct": true
+            },
+            {
+              "label": "B",
+              "text": "Decreto nº 160, de 21 de abril de 2009.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "Lei nº 14.751, de 2023.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "Decreto-Lei nº 1.002, de 1969.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "Lei Complementar nº 555, de 2014.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "No índice do RDPM/MT, o Título II trata de:",
+          "explanation": "O Título II é dedicado às transgressões disciplinares.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Direitos e recompensas.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "Disposições finais.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "Transgressões disciplinares, incluindo julgamento e classificação.",
+              "is_correct": true
+            },
+            {
+              "label": "D",
+              "text": "Comportamento policial-militar exclusivamente.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "Polícia Judiciária Militar.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "No RDPM/MT, o Título III reúne matérias relativas a:",
+          "explanation": "O Título III corresponde às punições disciplinares.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "somente recursos.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "crimes militares em tempo de paz.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "hierarquia e disciplina em sentido geral apenas.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "punições disciplinares, sua gradação, execução, aplicação, cumprimento e modificação.",
+              "is_correct": true
+            },
+            {
+              "label": "E",
+              "text": "promoções e transferências.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "No índice do RDPM/MT, comportamento policial-militar é objeto do:",
+          "explanation": "O Título IV é dedicado ao comportamento policial-militar.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Título II.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "Título IV.",
+              "is_correct": true
+            },
+            {
+              "label": "C",
+              "text": "Título V.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "Título VI.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "Anexo exclusivamente.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Segundo o índice do RDPM/MT, apresentação de recursos, cancelamento de punições e recompensas aparecem no:",
+          "explanation": "O Título V reúne Direitos e Recompensas, incluindo recursos e cancelamento.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Título I.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "Título II.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "Título III.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "Título IV.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "Título V.",
+              "is_correct": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "5-transgressao-julgamento-punicao-e-comportamento",
+      "title": "5. Transgressão, julgamento, punição e comportamento",
+      "questions": [
+        {
+          "statement": "Segundo o art. 19 do RDPM/MT fornecido, a transgressão disciplinar, quando não houver causa de justificação, classifica-se em:",
+          "explanation": "O art. 19 apresenta as classes leve, média e grave.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "administrativa e penal.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "simples e qualificada.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "leve, média e grave.",
+              "is_correct": true
+            },
+            {
+              "label": "D",
+              "text": "advertência, repreensão e prisão.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "dolosa e culposa.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Reconhecida uma das causas de justificação previstas no art. 16 do RDPM/MT, a consequência indicada no material é:",
+          "explanation": "O parágrafo único do art. 16 afirma que não haverá punição quando reconhecida causa de justificação.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "não haverá punição.",
+              "is_correct": true
+            },
+            {
+              "label": "B",
+              "text": "a punição será sempre grave.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "a transgressão será convertida em crime militar.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "a autoridade deverá aplicar advertência.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "o fato deverá ser remetido automaticamente ao Judiciário.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Qual das situações abaixo aparece no RDPM/MT como circunstância atenuante?",
+          "explanation": "O art. 17 inclui bom comportamento entre as circunstâncias atenuantes.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "mau comportamento.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "reincidência.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "prática da transgressão durante o serviço.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "bom comportamento.",
+              "is_correct": true
+            },
+            {
+              "label": "E",
+              "text": "premeditação.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Qual situação é apontada no art. 18 do RDPM/MT como circunstância agravante?",
+          "explanation": "O art. 18 inclui a prática durante a execução de serviço entre as agravantes.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "relevância de serviços prestados.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "prática da transgressão durante a execução de serviço.",
+              "is_correct": true
+            },
+            {
+              "label": "C",
+              "text": "falta de prática no serviço.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "força maior plenamente comprovada.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "legítima defesa própria.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "statement": "Segundo o art. 21 do RDPM/MT fornecido, a punição disciplinar objetiva:",
+          "explanation": "O art. 21 vincula a punição ao fortalecimento da disciplina e à finalidade educativa.",
+          "difficulty": "medium",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "produzir apenas efeito patrimonial.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "substituir eventual processo penal.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "eliminar a necessidade de julgamento.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "punir sem finalidade educativa.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "o fortalecimento da disciplina, tendo em vista benefício educativo ao punido e à coletividade.",
+              "is_correct": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
