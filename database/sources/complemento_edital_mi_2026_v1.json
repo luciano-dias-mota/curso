@@ -568,7 +568,7 @@
       "module_slug": "modulo-6-direito-constitucional-e-legislacao-institucional-da-pmmt",
       "slug": "8-lei-complementar-386-2010-organizacao-basica-pmmt",
       "title": "8. Lei Complementar nº 386/2010 - Organização Básica da PMMT",
-      "source_label": "LC nº 386/2010 - fonte oficial PMMT; consolidação conferida até LC nº 853/2026",
+      "source_label": "Lei Complementar nº 386/2010 - texto institucional oficial da PMMT e alterações oficiais",
       "source_url": "https://www.pm.mt.gov.br/documents/2459523/3703350/Lei-Complementar-n_%2B386-Dispoe-sobre-a-estrutura-basica-da-PM.pdf/a9a5b121-45e5-439b-94e7-d44627ad34ab",
       "required_score": 80,
       "lessons": [
@@ -590,8 +590,8 @@
             },
             {
               "type": "warning",
-              "title": "Texto consolidado",
-              "content": "A LC nº 386/2010 recebeu alterações posteriores. Para literalidade, o curso usa o texto oficial como base e registra a consolidação até 2026. Entre as redações atuais, o art. 45 determina que cargos e funções da Corporação sejam exercidos por policiais militares da ativa; o art. 46 remete as competências e atribuições ao decreto regulamentador da Lei de Organização Básica."
+              "title": "Alterações posteriores",
+              "content": "A Lei Complementar nº 386/2010 recebeu diversas alterações posteriores. Por isso, o curso mantém como núcleo literal os dispositivos estruturais confirmados na fonte institucional e não fixa redação de artigo alterado sem conferir o ato modificador oficial. Em questões que indiquem redação posterior, deve prevalecer o texto oficial vigente na data de corte do edital."
             }
           ]
         }
@@ -683,56 +683,66 @@
         },
         {
           "source_key": "EDITAL26-LC386-Q04",
-          "statement": "Na redação consolidada do art. 45 da LC nº 386/2010, os cargos e funções da Corporação serão exercidos:",
+          "statement": "Segundo a LC nº 386/2010, a Polícia Militar do Estado de Mato Grosso está diretamente subordinada:",
           "difficulty": "medium",
-          "explanation": "A redação consolidada do art. 45 exige policiais militares da ativa.",
+          "explanation": "O art. 1º da Lei de Organização Básica vincula diretamente a PMMT ao Governador do Estado.",
           "alternatives": [
             {
-              "text": "por qualquer servidor efetivo estadual.",
+              "label": "A",
+              "text": "ao Presidente do Tribunal de Justiça.",
               "is_correct": false
             },
             {
-              "text": "somente por oficiais superiores.",
+              "label": "B",
+              "text": "ao Procurador-Geral de Justiça.",
               "is_correct": false
             },
             {
-              "text": "por militares ativos ou inativos indistintamente.",
+              "label": "C",
+              "text": "ao Secretário Municipal de Segurança.",
               "is_correct": false
             },
             {
-              "text": "exclusivamente por policiais militares da ativa.",
+              "label": "D",
+              "text": "ao Governador do Estado.",
               "is_correct": true
             },
             {
-              "text": "por civis nomeados pelo Governador.",
+              "label": "E",
+              "text": "ao Comandante do Exército.",
               "is_correct": false
             }
           ]
         },
         {
           "source_key": "EDITAL26-LC386-Q05",
-          "statement": "O art. 46 consolidado da LC nº 386/2010 remete as competências e atribuições previstas na lei:",
+          "statement": "A destinação institucional indicada no art. 1º da LC nº 386/2010 compreende principalmente:",
           "difficulty": "medium",
-          "explanation": "O art. 46, na redação atual, remete ao decreto regulamentador.",
+          "explanation": "A lei estrutura a PMMT para a polícia ostensiva e preservação da ordem pública, dentro da missão constitucional e legal.",
           "alternatives": [
             {
-              "text": "ao Código Penal.",
+              "label": "A",
+              "text": "exercer exclusivamente polícia judiciária civil.",
               "is_correct": false
             },
             {
-              "text": "ao RDPM.",
+              "label": "B",
+              "text": "julgar infrações penais militares.",
               "is_correct": false
             },
             {
-              "text": "ao Estatuto do Desarmamento.",
+              "label": "C",
+              "text": "atuar apenas em defesa civil.",
               "is_correct": false
             },
             {
-              "text": "ao regimento do Poder Judiciário.",
+              "label": "D",
+              "text": "exercer exclusivamente investigação criminal.",
               "is_correct": false
             },
             {
-              "text": "ao decreto que regulamenta a Lei de Organização Básica da PMMT.",
+              "label": "E",
+              "text": "realizar polícia ostensiva e preservação da ordem pública, nos termos legais.",
               "is_correct": true
             }
           ]
