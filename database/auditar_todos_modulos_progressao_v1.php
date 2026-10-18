@@ -12,7 +12,6 @@ require BASE_PATH . '/vendor/autoload.php';
 
 use App\Core\App;
 use App\Core\Database;
-use PDO;
 
 App::boot(BASE_PATH);
 $pdo = Database::connection();
@@ -27,7 +26,7 @@ $courseStmt = $pdo->prepare(
      LIMIT 1"
 );
 $courseStmt->execute(['slug'=>$courseSlug]);
-$course = $courseStmt->fetch(PDO::FETCH_ASSOC);
+$course = $courseStmt->fetch(\PDO::FETCH_ASSOC);
 
 if (!$course) {
     fwrite(STDERR, "[FALHA] Curso publicado não encontrado.\n");
@@ -42,7 +41,7 @@ $modulesStmt = $pdo->prepare(
      ORDER BY position,id"
 );
 $modulesStmt->execute(['course_id'=>(int)$course['id']]);
-$modules = $modulesStmt->fetchAll(PDO::FETCH_ASSOC);
+$modules = $modulesStmt->fetchAll(\PDO::FETCH_ASSOC);
 
 $requiredPhasesStmt = $pdo->prepare(
     "SELECT id,title,slug,position
@@ -155,13 +154,13 @@ foreach ($modules as $module) {
     $allPhasesCount = (int)$allPhasesCountStmt->fetchColumn();
 
     $requiredPhasesStmt->execute(['module_id'=>$moduleId]);
-    $requiredPhases = $requiredPhasesStmt->fetchAll(PDO::FETCH_ASSOC);
+    $requiredPhases = $requiredPhasesStmt->fetchAll(\PDO::FETCH_ASSOC);
 
     $requiredLessonsStmt->execute(['module_id'=>$moduleId]);
-    $requiredLessons = $requiredLessonsStmt->fetchAll(PDO::FETCH_ASSOC);
+    $requiredLessons = $requiredLessonsStmt->fetchAll(\PDO::FETCH_ASSOC);
 
     $introStmt->execute(['module_id'=>$moduleId]);
-    $intro = $introStmt->fetch(PDO::FETCH_ASSOC) ?: null;
+    $intro = $introStmt->fetch(\PDO::FETCH_ASSOC) ?: null;
 
     $missingFixations = [];
     $invalidFixations = [];
@@ -180,7 +179,7 @@ foreach ($modules as $module) {
         }
 
         $lessonQuizStmt->execute(['lesson_id'=>$lessonId]);
-        $fix = $lessonQuizStmt->fetch(PDO::FETCH_ASSOC);
+        $fix = $lessonQuizStmt->fetch(\PDO::FETCH_ASSOC);
 
         if (!$fix) {
             $missingFixations[] = [
@@ -209,7 +208,7 @@ foreach ($modules as $module) {
     foreach ($requiredPhases as $phase) {
         $phaseId = (int)$phase['id'];
         $phaseQuizStmt->execute(['phase_id'=>$phaseId]);
-        $exam = $phaseQuizStmt->fetch(PDO::FETCH_ASSOC);
+        $exam = $phaseQuizStmt->fetch(\PDO::FETCH_ASSOC);
 
         if (!$exam) {
             $missingPhaseExams[] = [
@@ -233,7 +232,7 @@ foreach ($modules as $module) {
     }
 
     $bossStmt->execute(['module_id'=>$moduleId]);
-    $boss = $bossStmt->fetch(PDO::FETCH_ASSOC);
+    $boss = $bossStmt->fetch(\PDO::FETCH_ASSOC);
 
     $bossProblem = null;
     if (!$boss) {
