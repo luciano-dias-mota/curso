@@ -495,6 +495,29 @@ try {
                   q.id"
     );
 
+    // Prioriza questões associadas à própria aula quando esse vínculo existe.
+    // É o caso dos POP 5/6, cujo banco foi curado por processo/aula.
+    $validLessonQuestions = $pdo->prepare(
+        "SELECT q.id
+         FROM questions q
+         INNER JOIN (
+            SELECT question_id,
+                   COUNT(*) AS alternatives_count,
+                   SUM(CASE WHEN is_correct=1 THEN 1 ELSE 0 END) AS correct_count
+            FROM alternatives
+            GROUP BY question_id
+         ) quality ON quality.question_id=q.id
+         WHERE q.module_id=:module_id
+           AND q.phase_id=:phase_id
+           AND q.lesson_id=:lesson_id
+           AND q.active=1
+           AND q.question_type='multiple_choice'
+           AND quality.alternatives_count>=4
+           AND quality.correct_count=1
+         ORDER BY CASE q.difficulty WHEN 'medium' THEN 1 WHEN 'hard' THEN 2 ELSE 3 END,
+                  q.id"
+    );
+
     $unmappedQuestionsStmt = $pdo->prepare(
         "SELECT id,source_label,statement
          FROM questions
@@ -779,13 +802,32 @@ try {
 
                 $clearQuizQuestions->execute(['quiz_id'=>$fixId]);
 
-                $countPool = count($pool);
-                for ($i=0; $i<3; $i++) {
-                    $offset = (($lessonIndex * 3) + $i) % $countPool;
+                $validLessonQuestions->execute([
+                    'module_id'=>$moduleId,
+                    'phase_id'=>$phaseId,
+                    'lesson_id'=>$lessonId,
+                ]);
+                $lessonPool = array_map(
+                    'intval',
+                    $validLessonQuestions->fetchAll(\PDO::FETCH_COLUMN)
+                );
+
+                if (count($lessonPool) >= 3) {
+                    $fixQuestions = array_slice($lessonPool,0,3);
+                } else {
+                    $fixQuestions = [];
+                    $countPool = count($pool);
+                    for ($i=0; $i<3; $i++) {
+                        $offset = (($lessonIndex * 3) + $i) % $countPool;
+                        $fixQuestions[] = $pool[$offset];
+                    }
+                }
+
+                foreach ($fixQuestions as $idx=>$questionId) {
                     $linkQuestion->execute([
                         'quiz_id'=>$fixId,
-                        'question_id'=>$pool[$offset],
-                        'position'=>$i+1,
+                        'question_id'=>$questionId,
+                        'position'=>$idx+1,
                     ]);
                 }
             }
@@ -805,7 +847,41 @@ try {
 
             $clearQuizQuestions->execute(['quiz_id'=>$phaseQuizId]);
 
-            foreach (array_slice($pool,0,5) as $idx=>$questionId) {
+            // Tenta compor o checkpoint com uma questão de aulas diferentes
+            // antes de completar pelo pool geral da fase.
+            $checkpointQuestions = [];
+            foreach ($item['lessons'] as $lesson) {
+                $validLessonQuestions->execute([
+                    'module_id'=>$moduleId,
+                    'phase_id'=>$phaseId,
+                    'lesson_id'=>(int)$lesson['id'],
+                ]);
+                $candidate = $validLessonQuestions->fetchColumn();
+                if ($candidate !== false
+                    && !in_array((int)$candidate,$checkpointQuestions,true)) {
+                    $checkpointQuestions[] = (int)$candidate;
+                }
+                if (count($checkpointQuestions) === 5) {
+                    break;
+                }
+            }
+
+            foreach ($pool as $questionId) {
+                if (count($checkpointQuestions) === 5) {
+                    break;
+                }
+                if (!in_array((int)$questionId,$checkpointQuestions,true)) {
+                    $checkpointQuestions[] = (int)$questionId;
+                }
+            }
+
+            if (count($checkpointQuestions) !== 5) {
+                throw new RuntimeException(
+                    "Não foi possível montar 5 questões distintas para o checkpoint da fase #{$phaseId}."
+                );
+            }
+
+            foreach ($checkpointQuestions as $idx=>$questionId) {
                 $linkQuestion->execute([
                     'quiz_id'=>$phaseQuizId,
                     'question_id'=>$questionId,
