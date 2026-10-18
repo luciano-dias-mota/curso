@@ -791,6 +791,43 @@ final class QuizService
         $this->unlockPhaseEntryLessons($pdo, $userId, $nextPhase);
     }
 
+    private function unlockPhaseEntryLessons(PDO $pdo, int $userId, int $phaseId): void
+    {
+        // Ao liberar uma nova fase, libera todas as aulas opcionais e somente
+        // a primeira aula obrigatória. As demais aulas obrigatórias continuam
+        // dependentes da aprovação no exercício da aula anterior.
+        $optional = $pdo->prepare(
+            "SELECT id
+             FROM lessons
+             WHERE phase_id = :phase_id
+               AND status = 'published'
+               AND is_required = 0
+             ORDER BY position, id"
+        );
+        $optional->execute(['phase_id' => $phaseId]);
+
+        foreach ($optional->fetchAll(PDO::FETCH_COLUMN) as $lessonId) {
+            $this->unlockLesson($pdo, $userId, (int) $lessonId);
+        }
+
+        $required = $pdo->prepare(
+            "SELECT id
+             FROM lessons
+             WHERE phase_id = :phase_id
+               AND status = 'published'
+               AND is_required = 1
+             ORDER BY position, id
+             LIMIT 1"
+        );
+        $required->execute(['phase_id' => $phaseId]);
+
+        $firstRequired = (int) ($required->fetchColumn() ?: 0);
+
+        if ($firstRequired > 0) {
+            $this->unlockLesson($pdo, $userId, $firstRequired);
+        }
+    }
+
     private function refreshCourseProgress(PDO $pdo, int $userId, int $courseId): void
     {
         $stmt = $pdo->prepare(
