@@ -78,19 +78,52 @@ final class CourseController extends Controller
               AND ump.user_id = :user_id
              WHERE m.course_id = :course_id
                AND m.status = 'published'
-             ORDER BY m.position"
+             ORDER BY
+                CASE
+                    WHEN m.title LIKE 'Módulo 0 -%' THEN 0
+                    ELSE m.position
+                END,
+                m.position,
+                m.id"
         );
         $modulesStmt->execute([
             'user_id' => Auth::id(),
             'course_id' => $id,
         ]);
 
+        $modules = $modulesStmt->fetchAll();
+
+        foreach ($modules as &$module) {
+            $title = (string) ($module['title'] ?? '');
+
+            if (preg_match('/^Módulo\s+(\d+)\b/ui', $title, $matches) === 1) {
+                $module['display_number'] = (int) $matches[1];
+                $module['display_label'] = 'MÓDULO ' . (int) $matches[1];
+                $module['rail_label'] = (string) (int) $matches[1];
+                continue;
+            }
+
+            $module['display_number'] = null;
+
+            if (stripos($title, 'Simulado Final') === 0) {
+                $module['display_label'] = 'SIMULADO FINAL';
+                $module['rail_label'] = 'S';
+            } elseif (stripos($title, 'Fontes utilizadas') === 0) {
+                $module['display_label'] = 'BIBLIOTECA';
+                $module['rail_label'] = 'F';
+            } else {
+                $module['display_label'] = 'CONTEÚDO';
+                $module['rail_label'] = '•';
+            }
+        }
+        unset($module);
+
         $this->view(
             'student/course',
             [
                 'title' => $course['title'],
                 'course' => $course,
-                'modules' => $modulesStmt->fetchAll(),
+                'modules' => $modules,
             ],
             'layouts/student'
         );
