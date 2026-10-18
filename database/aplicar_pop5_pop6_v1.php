@@ -708,7 +708,7 @@ try {
             'code'=>$popCode,
             'parent'=>null,
             'type'=>'pop',
-            'slug'=>strtolower($popCode),
+            'slug'=>'pop-' . (int)$moduleData['number'],
             'title'=>(string)$moduleData['title'],
             'position'=>(int)$moduleData['number'],
         ]];
@@ -719,7 +719,7 @@ try {
                 'code'=>$processCode,
                 'parent'=>$popCode,
                 'type'=>'process',
-                'slug'=>strtolower($popCode) . '-processo-' . $processCode,
+                'slug'=>'pop-' . (int)$moduleData['number'] . '-processo-' . $processCode,
                 'title'=>'Processo ' . $processCode . ' - ' . $process['title'],
                 'position'=>$processIndex + 1,
             ];
@@ -735,7 +735,7 @@ try {
                     'code'=>$procedureCode,
                     'parent'=>$processCode,
                     'type'=>'procedure',
-                    'slug'=>strtolower($popCode) . '-procedimento-' . str_replace('.', '-', $procedureCode),
+                    'slug'=>'pop-' . (int)$moduleData['number'] . '-' . str_replace('.', '-', $procedureCode),
                     'title'=>$procedureCode . ' - ' . $procedureTitle,
                     'position'=>$procedureIndex + 1,
                 ];
