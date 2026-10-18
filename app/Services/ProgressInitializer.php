@@ -113,20 +113,29 @@ final class ProgressInitializer
     private function unlockModuleEntryPoints(PDO $pdo, int $userId, int $moduleId): void
     {
         $stmt = $pdo->prepare(
-            "SELECT id, is_required
-             FROM phases
-             WHERE module_id = :module_id
-               AND status = 'published'
-             ORDER BY position, id"
+            "SELECT p.id,
+                    p.is_required,
+                    COALESCE(upp.status, 'locked') AS user_status
+             FROM phases p
+             LEFT JOIN user_phase_progress upp
+               ON upp.phase_id = p.id
+              AND upp.user_id = :user_id
+             WHERE p.module_id = :module_id
+               AND p.status = 'published'
+             ORDER BY p.position, p.id"
         );
-        $stmt->execute(['module_id' => $moduleId]);
+        $stmt->execute([
+            'user_id' => $userId,
+            'module_id' => $moduleId,
+        ]);
         $phases = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $firstRequiredUnlocked = false;
+        $firstIncompleteRequiredUnlocked = false;
 
         foreach ($phases as $phase) {
             $phaseId = (int) $phase['id'];
             $required = (int) ($phase['is_required'] ?? 1) === 1;
+            $userStatus = (string) ($phase['user_status'] ?? 'locked');
 
             if (!$required) {
                 $this->unlockPhase($pdo, $userId, $phaseId);
@@ -134,10 +143,16 @@ final class ProgressInitializer
                 continue;
             }
 
-            if (!$firstRequiredUnlocked) {
+            // Fases obrigatórias já concluídas não devem impedir que uma
+            // matrícula antiga seja reconciliada com uma trilha atualizada.
+            if ($userStatus === 'completed') {
+                continue;
+            }
+
+            if (!$firstIncompleteRequiredUnlocked) {
                 $this->unlockPhase($pdo, $userId, $phaseId);
                 $this->unlockPhaseEntryLessons($pdo, $userId, $phaseId);
-                $firstRequiredUnlocked = true;
+                $firstIncompleteRequiredUnlocked = true;
             }
         }
     }
