@@ -294,7 +294,11 @@
                 "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
               }
             }
-          ]
+          ],
+          "procedure_titles": {
+            "501.1": "Deslocamento, aproximação e confirmação de ocorrência",
+            "501.2": "Constatação de ocorrência de crime violento contra o patrimônio no local"
+          }
         },
         {
           "code": "502",
@@ -778,7 +782,14 @@
                 "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
               }
             }
-          ]
+          ],
+          "procedure_titles": {
+            "502.1": "Ameaça Falsa",
+            "502.2": "Ameaça Real",
+            "502.3": "Localização de Bomba ou Falsa Bomba",
+            "502.4": "Localização de Explosivo",
+            "502.5": "Explosão"
+          }
         },
         {
           "code": "503",
@@ -1024,7 +1035,10 @@
                 "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
               }
             }
-          ]
+          ],
+          "procedure_titles": {
+            "503.1": "Cumprimento de requisição judicial de força policial para reintegração de posse"
+          }
         },
         {
           "code": "504",
@@ -1330,7 +1344,10 @@
                 "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
               }
             }
-          ]
+          ],
+          "procedure_titles": {
+            "504.1": "Primeira intervenção em ocorrências com reféns, suicidas ou barricados"
+          }
         },
         {
           "code": "505",
@@ -1585,7 +1602,10 @@
                 "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
               }
             }
-          ]
+          ],
+          "procedure_titles": {
+            "505.1": "Primeira intervenção em ocorrências de crise envolvendo agressores ativos"
+          }
         }
       ]
     },
@@ -1927,7 +1947,11 @@
                 "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
               }
             }
-          ]
+          ],
+          "procedure_titles": {
+            "601.1": "Atendimento de acidente de trânsito com vítima",
+            "601.2": "Atendimento de acidente de trânsito sem vítima"
+          }
         },
         {
           "code": "602",
@@ -2192,7 +2216,11 @@
                 "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
               }
             }
-          ]
+          ],
+          "procedure_titles": {
+            "602.1": "Acionamento da guarnição do policiamento ambiental",
+            "602.2": "Transporte de Produtos de Interesse Ambiental"
+          }
         },
         {
           "code": "603",
@@ -2457,7 +2485,11 @@
                 "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
               }
             }
-          ]
+          ],
+          "procedure_titles": {
+            "603.1": "Pouso de aeronave em área restrita",
+            "603.2": "Embarque e desembarque"
+          }
         },
         {
           "code": "604",
@@ -3021,7 +3053,16 @@
                 "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
               }
             }
-          ]
+          ],
+          "procedure_titles": {
+            "604.1": "Contato com Entidade Promotora/Autoridades/Reunião Estado-Maior",
+            "604.2": "Documentos necessários",
+            "604.3": "Análise de Riscos",
+            "604.4": "Relacionamento com Público",
+            "604.5": "Postos de Policiamento",
+            "604.6": "Atuação Policial em Controle de Distúrbios Civis",
+            "604.7": "Encerramento do Policiamento e Confecção de Relatório"
+          }
         },
         {
           "code": "605",
@@ -3267,7 +3308,10 @@
                 "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
               }
             }
-          ]
+          ],
+          "procedure_titles": {
+            "605.1": "Acionamento da guarnição de policiamento com cães"
+          }
         },
         {
           "code": "606",
@@ -3624,7 +3668,10 @@
                 "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
               }
             }
-          ]
+          ],
+          "procedure_titles": {
+            "606.1": "Uso seguro de RPA nas Operações de Segurança Pública na PMMT"
+          }
         },
         {
           "code": "607",
@@ -3930,7 +3977,10 @@
                 "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
               }
             }
-          ]
+          ],
+          "procedure_titles": {
+            "607.1": "Policiamento em Operações Policial Militar"
+          }
         }
       ]
     }
