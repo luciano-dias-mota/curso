@@ -14,9 +14,8 @@ declare(strict_types=1);
  * - vínculos de questões com fase, aula e taxonomia;
  * - idempotência por question_import_keys.
  *
- * Não torna as fases obrigatórias neste script. A integração curricular é feita
- * por database/aplicar_modulos_4a8_progressao_v2.php depois da importação,
- * permitindo criar fixações/checkpoints somente quando o banco já está íntegro.
+ * Mantém as fases como conteúdo complementar. O edital atual cobra POP I a IV,
+ * mas POP V e VI permanecem disponíveis para atualização profissional e futuros editais.
  *
  * Uso:
  *   php database/aplicar_pop5_pop6_v1.php
@@ -997,7 +996,7 @@ try {
         $stats['questions_updated'],
         $stats['questions_reused']
     );
-    echo "[PRÓXIMO] Rode database/aplicar_modulos_4a8_progressao_v2.php para integrar POP 5 e POP 6 à progressão obrigatória e gerar fixações/checkpoints.\n";
+    echo "[INFO] POP 5 e POP 6 permanecem como conteúdo complementar e não bloqueiam a progressão do edital atual.\n";
 } catch (Throwable $e) {
     if ($pdo->inTransaction()) {
         $pdo->rollBack();
