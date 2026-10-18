@@ -779,19 +779,19 @@
           "title": "Introdução e visão geral",
           "replace_first_block": {
             "type": "theory",
-            "title": "Como estudar os POPs no curso",
-            "content": "O módulo de POP deve ser estudado como sequência operacional, e não como coleção de frases isoladas. A trilha atualizada está organizada em quatro conjuntos: POP 1, voltado aos níveis do uso da força policial; POP 2, com abordagens policiais; POP 3, com procedimentos diversos; e POP 4, com ocorrências policiais.\n\nEm cada processo, transforme o texto em uma linha mental: preparação → execução → pontos de segurança → condutas que devem ser evitadas → encerramento/registro. Números, ordem das ações e condições de exceção merecem atenção especial."
+            "title": "Como estudar os seis módulos do Manual POP PMMT 2023",
+            "content": "O módulo de POP deve ser estudado como sequência operacional, e não como coleção de frases isoladas. A trilha curricular passa a contemplar os seis módulos oficiais do Manual POP PMMT 2023: POP 1 - Níveis do Uso da Força Policial; POP 2 - Abordagens Policiais; POP 3 - Procedimentos Diversos; POP 4 - Ocorrências Policiais; POP 5 - Eventos Críticos; e POP 6 - Policiamento Especializado.\n\nEm cada processo, transforme o texto em uma linha mental: atividades críticas → sequência das ações → resultados esperados → ações corretivas → possibilidades de erro → esclarecimentos. Como a prova pode cobrar literalidade, números, distâncias, prazos, ordem das ações, condições e vedações devem ser estudados exatamente conforme o manual."
           },
           "extra_blocks": [
             {
               "type": "comparison",
-              "title": "Mapa dos quatro POPs atualizados",
-              "content": "POP 1 → uso da força e decisões operacionais associadas.\nPOP 2 → abordagens policiais e procedimentos correspondentes.\nPOP 3 → procedimentos diversos, com foco em sequência segura de execução.\nPOP 4 → ocorrências policiais, preservação e fluxos específicos conforme o material.\n\nAs fases antigas de recortes, mapas e revisão permanecem como biblioteca complementar; a progressão obrigatória usa as quatro versões atualizadas."
+              "title": "Mapa dos seis POPs atualizados",
+              "content": "POP 1 → Níveis do Uso da Força Policial.\nPOP 2 → Abordagens Policiais.\nPOP 3 → Procedimentos Diversos.\nPOP 4 → Ocorrências Policiais.\nPOP 5 → Eventos Críticos: Processos 501 a 505.\nPOP 6 → Policiamento Especializado: Processos 601 a 607.\n\nAs fases antigas de recortes, mapas, revisão e mini-simulado permanecem como biblioteca complementar; a progressão obrigatória utiliza as versões atualizadas dos seis módulos do Manual POP PMMT 2023."
             },
             {
               "type": "warning",
               "title": "Método de prova para POP",
-              "content": "Se a alternativa inverter a ordem de duas ações, omitir uma condição de segurança ou transformar uma conduta vedada em recomendada, desconfie. Nos POPs, a sequência e a condição operacional fazem parte do conteúdo."
+              "content": "A banca pode trocar um número, inverter duas etapas, deslocar uma regra para outro processo ou transformar uma possibilidade de erro em procedimento correto. Leia o comando identificando o código do processo/POP e compare a alternativa com a literalidade do manual."
             }
           ],
           "new_questions": [
@@ -983,6 +983,20 @@
             "title_prefix": "POP 4 -"
           },
           "title": "POP 4 - Ocorrências Policiais",
+          "keywords": []
+        },
+        {
+          "selector": {
+            "title_prefix": "POP 5 -"
+          },
+          "title": "POP 5 - Eventos Críticos",
+          "keywords": []
+        },
+        {
+          "selector": {
+            "title_prefix": "POP 6 -"
+          },
+          "title": "POP 6 - Policiamento Especializado",
           "keywords": []
         }
       ],
