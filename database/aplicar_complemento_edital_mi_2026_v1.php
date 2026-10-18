@@ -697,6 +697,118 @@ try {
         $stats['quizzes']++;
     }
 
+    // Recompõe a avaliação final do Módulo 2 para que a Lei nº 7.692/2002
+    // também seja efetivamente cobrada, sem eliminar os eixos anteriores.
+    $module2Stmt = $pdo->prepare(
+        "SELECT id,course_id
+         FROM modules
+         WHERE slug='modulo-2-administracao-publica-e-gestao-fundamentos-organizacao-atos-controle-modelos-e-materiais'
+           AND status='published'
+         LIMIT 1"
+    );
+    $module2Stmt->execute();
+    $module2 = $module2Stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($module2) {
+        $module2Id = (int)$module2['id'];
+        $module2CourseId = (int)$module2['course_id'];
+
+        $lawQuestionsStmt = $pdo->prepare(
+            "SELECT q.id
+             FROM question_import_keys k
+             INNER JOIN questions q ON q.id=k.question_id
+             WHERE k.source_key LIKE 'EDITAL26-7692-Q%'
+               AND q.module_id=:module_id
+               AND q.active=1
+             ORDER BY k.source_key
+             LIMIT 2"
+        );
+        $lawQuestionsStmt->execute(['module_id'=>$module2Id]);
+        $bossQuestions = array_map('intval', $lawQuestionsStmt->fetchAll(PDO::FETCH_COLUMN));
+
+        $generalQuestionsStmt = $pdo->prepare(
+            "SELECT q.id
+             FROM questions q
+             INNER JOIN phases p ON p.id=q.phase_id
+             INNER JOIN (
+                SELECT question_id,
+                       COUNT(*) AS alternative_count,
+                       SUM(CASE WHEN is_correct=1 THEN 1 ELSE 0 END) AS correct_count
+                FROM alternatives
+                GROUP BY question_id
+             ) quality ON quality.question_id=q.id
+             WHERE q.module_id=:module_id
+               AND q.active=1
+               AND q.question_type='multiple_choice'
+               AND p.is_required=1
+               AND quality.alternative_count>=4
+               AND quality.correct_count=1
+             ORDER BY
+                CASE WHEN p.slug='11-lei-estadual-7692-2002-processo-administrativo' THEN 1 ELSE 0 END,
+                p.position,
+                q.id"
+        );
+        $generalQuestionsStmt->execute(['module_id'=>$module2Id]);
+
+        foreach ($generalQuestionsStmt->fetchAll(PDO::FETCH_COLUMN) as $questionId) {
+            $questionId = (int)$questionId;
+            if (!in_array($questionId, $bossQuestions, true)) {
+                $bossQuestions[] = $questionId;
+            }
+            if (count($bossQuestions) === 10) {
+                break;
+            }
+        }
+
+        if (count($bossQuestions) !== 10) {
+            throw new RuntimeException(
+                'Módulo 2 não possui 10 questões válidas para a avaliação final.'
+            );
+        }
+
+        $bossFind = $pdo->prepare(
+            "SELECT id
+             FROM quizzes
+             WHERE module_id=:module_id
+               AND quiz_type='module_boss'
+             ORDER BY id
+             LIMIT 1"
+        );
+        $bossFind->execute(['module_id'=>$module2Id]);
+        $bossId = (int)($bossFind->fetchColumn() ?: 0);
+
+        $bossParams = [
+            'course_id'=>$module2CourseId,
+            'phase_id'=>null,
+            'lesson_id'=>null,
+            'title'=>'Avaliação final — Administração Pública e Gestão',
+            'description'=>'Avaliação final do Módulo 2, incluindo Lei Estadual nº 7.692/2002. Aprovação com pelo menos 8 de 10.',
+            'required_score'=>80.0,
+            'question_limit'=>10,
+            'xp_reward'=>300,
+        ];
+
+        if ($bossId > 0) {
+            $updateQuiz->execute($bossParams + ['id'=>$bossId]);
+        } else {
+            $insertQuiz->execute($bossParams + [
+                'module_id'=>$module2Id,
+                'quiz_type'=>'module_boss',
+            ]);
+            $bossId = (int)$pdo->lastInsertId();
+        }
+
+        $clearQuizQuestions->execute(['quiz_id'=>$bossId]);
+        foreach ($bossQuestions as $idx=>$questionId) {
+            $linkQuestion->execute([
+                'quiz_id'=>$bossId,
+                'question_id'=>$questionId,
+                'position'=>$idx+1,
+            ]);
+        }
+        $stats['quizzes']++;
+    }
+
     // O Módulo 8 agora extrapola as seis leis especiais antigas.
     $pdo->prepare(
         "UPDATE modules
