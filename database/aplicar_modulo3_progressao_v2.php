@@ -63,8 +63,8 @@ if (!$module) {
 $moduleId = (int) $module['id'];
 $courseId = (int) $module['course_id'];
 
-if (count($requiredSlugs) !== 6 || count($optionalSlugs) !== 6) {
-    fwrite(STDERR, "[FALHA] A fonte V2 deve definir 6 fases obrigatórias e 6 complementares.\n");
+if (count($requiredSlugs) < 1 || count($optionalSlugs) < 1) {
+    fwrite(STDERR, "[FALHA] A fonte deve definir fases obrigatórias e complementares.\n");
     exit(4);
 }
 
@@ -161,8 +161,8 @@ foreach ($optionalSlugs as $slug) {
 }
 
 echo "\nPlano:\n";
-echo " - 6 fases curriculares obrigatórias: Introdução, CPM, crimes, CPPM/PJM, estrutura RDPM e disciplina.\n";
-echo " - 6 fases de aprofundamento/revisão passam a complementares e não bloqueiam o avanço.\n";
+echo " - Fases curriculares obrigatórias: Introdução, CPM, Lei 13.491/2017, crimes, CPPM/PJM, estrutura RDPM e disciplina.\n";
+echo " - As fases de aprofundamento/revisão permanecem complementares e não bloqueiam o avanço.\n";
 echo " - 50 questões existentes são classificadas por assunto e reaproveitadas.\n";
 echo " - 15 questões novas cobrem introdução e os dois eixos do RDPM.\n";
 echo " - Cada fase obrigatória terá fixação 3/3 (100%) e checkpoint 5 questões (80%).\n";
@@ -384,6 +384,13 @@ try {
             ])
                 ? '5-transgressao-julgamento-punicao-e-comportamento'
                 : '4-rdpm-mt-estrutura';
+        } elseif (
+            $containsAny($text, [
+                'lei 13.491','13.491/2017','13491','lei nº 13.491',
+                'lei n 13.491','alterou o art. 9','legislacao penal'
+            ])
+        ) {
+            $slug = '6-lei-13491-2017-alteracao-do-art-9-do-cpm';
         } elseif (
             $containsAny($text, [
                 'cppm','policia judiciaria militar','delegacao de pjm',
