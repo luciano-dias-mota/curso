@@ -1,0 +1,398 @@
+{
+  "format_version": 1,
+  "title": "Lei de Tortura - questões de bancas fornecidas pelo usuário",
+  "legal_basis": {
+    "law": "Lei nº 9.455/1997",
+    "consolidated_through": "Lei nº 15.410/2026",
+    "note": "Gabaritos revisados pela redação consolidada vigente em 2026."
+  },
+  "target": {
+    "module_slug": "modulo-5-responsabilizacao-e-protecao-improbidade-administrativa-tortura-e-abuso-de-autoridade",
+    "phase_slug": "2-lei-de-tortura-lei-no-9-455-1997"
+  },
+  "selection": {
+    "received": 20,
+    "selected": 12,
+    "excluded": [
+      {
+        "origin": "IAUPE - 2019",
+        "reason": "Excluída: a combinação de alternativas enviada não contém opção adequada para 'II apenas'; item inconsistente para importação segura."
+      },
+      {
+        "origin": "IBGP - 2022",
+        "reason": "Excluída por sobreposição com a questão geral de majorantes e por potencial ambiguidade na expressão 'auxiliar educacional'."
+      },
+      {
+        "origin": "CEBRASPE - 2018",
+        "reason": "Excluída: caso de autoria/participação dos guardas exige análise penal além da literalidade e é mais suscetível a controvérsia."
+      },
+      {
+        "origin": "CEBRASPE - 2019 (adolescente)",
+        "reason": "Excluída por duplicidade temática com a questão geral das causas de aumento."
+      },
+      {
+        "origin": "CEV UECE - 2018",
+        "reason": "Excluída por duplicidade temática com a questão geral das causas de aumento."
+      },
+      {
+        "origin": "IDECAN - 2026",
+        "reason": "Excluída por duplicidade temática com a questão geral da majorante por agente público."
+      },
+      {
+        "origin": "IBADE - 2018",
+        "reason": "Excluída por duplicidade temática: tortura-castigo + majorante de agente público já cobertas separadamente."
+      },
+      {
+        "origin": "NUCEPE UESPI - 2018 (prova/confissão)",
+        "reason": "Excluída por duplicidade temática com CETAP - 2022 sobre tortura-prova/confissão."
+      }
+    ]
+  },
+  "items": [
+    {
+      "source_key": "TORTURA-BANCA-IBGP-2026-01",
+      "origin": "IBGP - 2026",
+      "question_type": "multiple_choice",
+      "statement": "(IBGP - 2026) A Constituição Federal prevê como direito fundamental que ninguém será submetido à tortura nem a tratamento desumano ou degradante. No que diz respeito à Lei nº 9.455/1997, é CORRETO afirmar que:",
+      "difficulty": "medium",
+      "explanation": "Gabarito: C. O art. 1º, I, b, da Lei nº 9.455/1997 tipifica o constrangimento com violência ou grave ameaça, causando sofrimento físico ou mental, para provocar ação ou omissão de natureza criminosa. O crime é inafiançável e insuscetível de graça ou anistia; a majorante do § 4º vai de 1/6 até 1/3.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "O crime de tortura é inafiançável e insuscetível de graça, permitida a anistia por iniciativa do Presidente da República.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "O condenado por crime previsto na lei de tortura iniciará o cumprimento da pena de acordo com o tamanho da pena-base aplicada.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "O crime de tortura é aquele que constrange alguém com emprego de violência ou grave ameaça, causando-lhe sofrimento físico ou mental para provocar ação ou omissão de natureza criminosa.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "O agente que comete crime de tortura tem sua pena aumentada de um terço até um sexto.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "source_key": "TORTURA-BANCA-AOCP-2021-01",
+      "origin": "Instituto AOCP - 2021",
+      "question_type": "multiple_choice",
+      "statement": "(Instituto AOCP - 2021) Assinale a alternativa correta consoante a Lei de Tortura (Lei nº 9.455/1997).",
+      "difficulty": "medium",
+      "explanation": "Gabarito: E. O art. 1º, § 5º, determina a perda do cargo, função ou emprego público e a interdição para seu exercício pelo dobro do prazo da pena aplicada. A omissão do § 2º é punida com detenção de 1 a 4 anos; a lesão grave ou gravíssima leva a reclusão de 4 a 10 anos; e as majorantes do § 4º são de 1/6 até 1/3.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "O crime de tortura é imprescritível e insuscetível de graça ou anistia.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Aquele que se omite diante de condutas tipificadas como tortura, quando tinha o dever de evitá-las ou apurá-las, incorre na pena de detenção de dois a quatro anos.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Se do crime de tortura resulta lesão corporal de natureza grave ou gravíssima, a pena é de reclusão de quatro a doze anos.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Se o crime de tortura é cometido mediante sequestro, aumenta-se a pena de um sexto até dois terços.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "A condenação acarretará a perda do cargo, da função ou do emprego público e a interdição para seu exercício pelo dobro do prazo da pena aplicada.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "source_key": "TORTURA-BANCA-NUCEPE-2018-01",
+      "origin": "NUCEPE UESPI - 2018",
+      "question_type": "multiple_choice",
+      "statement": "(NUCEPE UESPI - 2018) Acerca do crime de tortura, marque a alternativa CORRETA.",
+      "difficulty": "medium",
+      "explanation": "Gabarito: D. O art. 1º, II, da Lei nº 9.455/1997 descreve a tortura-castigo: submeter pessoa sob guarda, poder ou autoridade, com violência ou grave ameaça, a intenso sofrimento físico ou mental, como castigo pessoal ou medida de caráter preventivo.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Constitui-se crime de tortura somente quando causar dano psíquico a outrem.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Caso o crime de tortura seja cometido por agente público, aumenta-se a pena de um terço à metade.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Nas situações previstas em lei, no crime de tortura, o juiz poderá arbitrar fiança.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Constitui-se crime de tortura submeter alguém, sob sua guarda, poder ou autoridade, com emprego de violência ou grave ameaça, a intenso sofrimento físico ou mental, como forma de aplicar castigo pessoal ou medida de caráter preventivo.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "Em qualquer situação o condenado por crime de tortura iniciará o cumprimento da pena em regime fechado.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "source_key": "TORTURA-BANCA-CETAP-2022-01",
+      "origin": "CETAP - 2022",
+      "question_type": "multiple_choice",
+      "statement": "(CETAP - 2022) Ainda sobre o crime de tortura, é correto afirmar:",
+      "difficulty": "medium",
+      "explanation": "Gabarito: B. A chamada tortura-prova/confissão corresponde ao art. 1º, I, a: obter informação, declaração ou confissão da vítima ou de terceira pessoa. A pena das formas principais é reclusão de 2 a 8 anos, e a lei também alcança hipóteses extraterritoriais do art. 2º.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Trata-se sempre de crime próprio, que somente pode ser cometido por policiais civis ou militares.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "A tortura-prova ocorre quando a intenção do sujeito, ao torturar a vítima, é a de obter informação, declaração ou confissão da própria vítima ou de terceira pessoa.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "A chamada tortura-castigo sujeita o autor do crime à pena de detenção, de 2 (dois) a 8 (oito) anos.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "As disposições da Lei nº 9.455/1997 aplicam-se apenas quando o crime for cometido em território nacional, ainda que a vítima seja brasileira ou o agente se encontre em local sob jurisdição brasileira.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "source_key": "TORTURA-BANCA-CEBRASPE-2014-01",
+      "origin": "CEBRASPE - 2014",
+      "question_type": "true_false",
+      "statement": "(CEBRASPE - 2014) Para que um cidadão seja processado e julgado por crime de tortura, é prescindível que esse crime deixe vestígios de ordem física.",
+      "difficulty": "hard",
+      "explanation": "Gabarito: CERTO. A Lei nº 9.455/1997 admite sofrimento físico ou mental em diversas modalidades. Portanto, vestígio físico não é requisito indispensável à configuração do delito.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Certo",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Errado",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "source_key": "TORTURA-BANCA-FGR-2019-01",
+      "origin": "FGR - 2019",
+      "question_type": "multiple_choice",
+      "statement": "(FGR - 2019) Segundo a Constituição da República, a tortura é crime inafiançável, insuscetível de graça e anistia. Sobre as hipóteses da Lei Federal nº 9.455/1997 e os efeitos da condenação, marque a alternativa INCORRETA:",
+      "difficulty": "hard",
+      "explanation": "Gabarito: A. A alternativa A não descreve modalidade prevista no art. 1º da Lei nº 9.455/1997. As demais reproduzem a tortura-castigo, a tortura-prova/confissão e o efeito da condenação previsto no § 5º.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Configura tortura constranger alguém, mediante violência ou grave ameaça, ou depois de lhe haver reduzido, por qualquer outro meio, a capacidade de resistência, a não fazer o que a lei permite, ou a fazer o que ela não manda.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Submeter alguém, sob sua guarda, poder ou autoridade, com emprego de violência ou grave ameaça, a intenso sofrimento físico ou mental, como forma de aplicar castigo pessoal ou medida de caráter preventivo, é crime de tortura.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "É tortura constranger alguém com emprego de violência ou grave ameaça, causando-lhe sofrimento físico ou mental com o fim de obter informação, declaração ou confissão da vítima ou de terceira pessoa.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "A condenação por crime de tortura acarretará a perda do cargo, função ou emprego público e a interdição para seu exercício pelo dobro do prazo da pena aplicada.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "source_key": "TORTURA-BANCA-AROEIRA-2020-01",
+      "origin": "AROEIRA - 2020",
+      "question_type": "multiple_choice",
+      "statement": "(AROEIRA - 2020) No tocante aos crimes de tortura previstos na Lei nº 9.455/1997, assinale a alternativa correta.",
+      "difficulty": "medium",
+      "explanation": "Gabarito: A. O art. 1º, § 4º, prevê aumento de 1/6 até 1/3 quando o crime é cometido por agente público, contra criança, gestante, portador de deficiência, adolescente ou maior de 60 anos, ou mediante sequestro.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "A causa de aumento de pena será aplicada quando o crime for cometido por agente público, se cometido contra criança, gestante, portador de deficiência, adolescente, maior de sessenta anos ou se cometido mediante sequestro.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "A condenação acarretará a perda do cargo, função ou emprego público e a interdição para o exercício de novo cargo, função ou emprego público, pelo mesmo prazo da pena.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "O crime de tortura é inafiançável, insuscetível de graça, indulto ou anistia, sendo o cumprimento da pena integralmente em regime fechado.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "O disposto nessa lei aplica-se somente aos crimes cometidos em território nacional, sendo irrelevante ser a vítima brasileira ou o agente encontrar-se em local sob jurisdição brasileira.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "source_key": "TORTURA-BANCA-CEBRASPE-2019-01",
+      "origin": "CEBRASPE - 2019",
+      "question_type": "true_false",
+      "statement": "(CEBRASPE - 2019) No crime de tortura em que pessoa presa ou sujeita a medida de segurança é submetida a sofrimento físico ou mental, por intermédio da prática de ato não previsto em lei ou não resultante de medida legal, não se exige especial fim de agir, bastando o dolo de praticar a conduta descrita no tipo objetivo.",
+      "difficulty": "hard",
+      "explanation": "Gabarito: CERTO. O art. 1º, § 1º, prevê essa modalidade sem estabelecer finalidade especial como elemento do tipo.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Certo",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Errado",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "source_key": "TORTURA-BANCA-IDECAN-2024-01",
+      "origin": "IDECAN - 2024",
+      "question_type": "multiple_choice",
+      "statement": "(IDECAN - 2024) Pedro constrangeu Paulo com emprego de violência, causando-lhe sofrimento físico em razão de discriminação religiosa, configurando crime de tortura nos termos da Lei nº 9.455/1997. Nessa situação hipotética, marque a alternativa correta.",
+      "difficulty": "medium",
+      "explanation": "Gabarito: B. Pelo art. 1º, § 3º, se resulta lesão corporal grave ou gravíssima, a pena é de reclusão de 4 a 10 anos; se resulta morte, de 8 a 16 anos.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Caso Pedro seja condenado por crime previsto na Lei nº 9.455/1997, iniciará o cumprimento da pena em regime aberto.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Caso o crime praticado por Pedro resulte lesão corporal de natureza grave em Paulo, a pena é de reclusão de quatro a dez anos; se resultar morte de Paulo, a reclusão é de oito a dezesseis anos.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "O crime de tortura praticado por Pedro é inafiançável e suscetível de graça ou anistia.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Caso Pedro seja funcionário público, a condenação acarretará a perda do cargo, função ou emprego público e a interdição para seu exercício pelo triplo do prazo da pena aplicada.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "source_key": "TORTURA-BANCA-SELECON-2022-01",
+      "origin": "SELECON - 2022",
+      "question_type": "multiple_choice",
+      "statement": "(SELECON - 2022) Carlos, brasileiro, está preso nos Estados Unidos pela prática de crime em solo americano. Por ser negro, é submetido a grave sofrimento mental, mas não físico, imposto por funcionários da penitenciária americana em que se encontra custodiado. Nesse contexto, é correto afirmar que o comportamento, pela lei brasileira, configura crime de:",
+      "difficulty": "hard",
+      "explanation": "Gabarito: B. O art. 2º da Lei nº 9.455/1997 admite aplicação da lei mesmo quando o crime não foi cometido em território nacional, se a vítima for brasileira ou se o agente estiver em local sob jurisdição brasileira.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "tortura, que não poderá ser julgado no Brasil.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "tortura, que poderá ser julgado no Brasil.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "abuso de autoridade, que não poderá ser julgado no Brasil.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "abuso de autoridade, que poderá ser julgado no Brasil.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "source_key": "TORTURA-BANCA-FDRH-2017-01",
+      "origin": "FDRH - 2017",
+      "question_type": "multiple_choice",
+      "statement": "(FDRH - 2017) O agente policial A empregou métodos truculentos contra a vítima Z, causando-lhe intenso sofrimento físico para obter confissão acerca de suposto crime. Sem agir com intenção de matar, A causou a morte da vítima. O agente B, superior imediato de A, podia e devia agir para evitar o ocorrido, mas, embora tenha presenciado tudo, preferiu se omitir. Nesse caso, quais delitos foram cometidos por A e B, respectivamente?",
+      "difficulty": "hard",
+      "explanation": "Gabarito: E. Para A, sem dolo de matar, incide a tortura qualificada pelo resultado morte do art. 1º, § 3º. Para B, que tinha dever de evitar a tortura e se omitiu, aplica-se a modalidade omissiva do § 2º.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Homicídio qualificado pela tortura em concurso de pessoas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Homicídio qualificado pela tortura e omissão de socorro, respectivamente.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Tortura seguida de morte em concurso de pessoas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Tortura dolosa e homicídio doloso como garantidor, respectivamente.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Tortura seguida de morte e tortura por omissão, respectivamente.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "source_key": "TORTURA-BANCA-CEBRASPE-2016-01",
+      "origin": "CEBRASPE - 2016",
+      "question_type": "true_false",
+      "statement": "(CEBRASPE - 2016) Um servidor público federal, no exercício de atividade carcerária, colocou em perigo a saúde física de preso em virtude de excesso na imposição da disciplina, com a mera intenção de aplicar medida educativa, sem lhe causar sofrimento. Nessa situação, o agente responderá pelo crime de tortura.",
+      "difficulty": "hard",
+      "explanation": "Gabarito: ERRADO. A Lei nº 9.455/1997 exige sofrimento físico ou mental nas modalidades pertinentes. A situação narrada afirma expressamente que não houve sofrimento, afastando a tipificação de tortura descrita no enunciado.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Certo",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Errado",
+          "is_correct": true
+        }
+      ]
+    }
+  ]
+}
