@@ -1,0 +1,2271 @@
+{
+  "format_version": 1,
+  "verified_at": "2026-10-18",
+  "exam_basis": "ANEXO D - Conteúdo Programático do Exame Intelectual enviado pelo usuário",
+  "note": "Conteúdo criado a partir de fontes oficiais ou institucionais. A Portaria nº 025/QCG/2025 não integra este arquivo por ausência de cópia oficial localizada com segurança; deve ser importada somente após obtenção do documento oficial.",
+  "phases": [
+    {
+      "module_slug": "modulo-2-administracao-publica-e-gestao-fundamentos-organizacao-atos-controle-modelos-e-materiais",
+      "slug": "11-lei-estadual-7692-2002-processo-administrativo",
+      "title": "11. Lei Estadual nº 7.692/2002 - Processo Administrativo Estadual",
+      "source_label": "Lei Estadual nº 7.692/2002 - versão consolidada disponibilizada pela SEPLAG/MT",
+      "source_url": "https://www.seplag.mt.gov.br/download.php?Op=legislacao&arquivo=LE_7692-2002-205.pdf",
+      "required_score": 80,
+      "lessons": [
+        {
+          "slug": "lei-7692-estrutura-principios-prazos",
+          "title": "Lei 7.692/2002: estrutura, princípios, interessados, prazos e motivação",
+          "summary": "Estudo dirigido da Lei Estadual nº 7.692/2002 com foco em literalidade de dispositivos de alta incidência.",
+          "estimated_minutes": 25,
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "Âmbito e aplicação subsidiária",
+              "content": "A Lei nº 7.692/2002 regula atos e procedimentos administrativos da Administração Pública centralizada e descentralizada de Mato Grosso quando não houver disciplina legal específica. Quando existir disciplina especial, a lei estadual atua subsidiariamente, respeitada a hierarquia normativa. Prazos definidos por normas específicas prevalecem sobre os prazos gerais desta lei."
+            },
+            {
+              "type": "comparison",
+              "title": "Princípios e interessados",
+              "content": "O art. 4º reúne, entre outros, legalidade, impessoalidade, moralidade, publicidade, efetividade, eficiência, eficácia, motivação, finalidade, razoabilidade, proporcionalidade, ampla defesa, contraditório e segurança jurídica. O art. 8º reconhece como interessados titulares de direitos/interesses, pessoas afetáveis pela decisão, organizações/associações representativas de interesses coletivos e pessoas/associações legalmente constituídas quanto a interesses difusos."
+            },
+            {
+              "type": "theory",
+              "title": "Prazos gerais do art. 36",
+              "content": "Na falta de prazo específico, o art. 36 fixa máximos como: 2 dias para autuação/juntada/publicação e mero expediente; 5 dias para intimação pessoal; 5 dias para informe sem caráter técnico ou jurídico; 15 dias para parecer/informe técnico ou jurídico; 5 dias para manifestação do particular; e 5 dias para decisões no curso do procedimento."
+            },
+            {
+              "type": "warning",
+              "title": "Motivação administrativa",
+              "content": "O art. 64 exige que a motivação indique as razões do ato, especialmente regra de competência, fundamentos de fato e de direito e finalidade. A lei permite motivação por concordância com pareceres, informações, propostas ou decisões anteriores, que passam a integrar o ato."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "source_key": "EDITAL26-7692-Q01",
+          "statement": "A Lei Estadual nº 7.692/2002 aplica-se subsidiariamente aos atos e procedimentos administrativos que possuam disciplina legal específica:",
+          "difficulty": "medium",
+          "explanation": "O art. 2º prevê aplicação subsidiária quando houver disciplina legal específica.",
+          "alternatives": [
+            {
+              "text": "sim, observada a hierarquia das normas jurídicas.",
+              "is_correct": true
+            },
+            {
+              "text": "não, em nenhuma hipótese.",
+              "is_correct": false
+            },
+            {
+              "text": "somente mediante autorização judicial.",
+              "is_correct": false
+            },
+            {
+              "text": "somente aos municípios.",
+              "is_correct": false
+            },
+            {
+              "text": "apenas aos processos disciplinares militares.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-7692-Q02",
+          "statement": "Entre os princípios expressamente trabalhados no art. 4º da Lei nº 7.692/2002 está:",
+          "difficulty": "medium",
+          "explanation": "Segurança jurídica aparece no rol do art. 4º, ao lado de legalidade, motivação, ampla defesa e outros.",
+          "alternatives": [
+            {
+              "text": "sigilo como regra geral.",
+              "is_correct": false
+            },
+            {
+              "text": "livre disposição do interesse público.",
+              "is_correct": false
+            },
+            {
+              "text": "segurança jurídica.",
+              "is_correct": true
+            },
+            {
+              "text": "supressão do contraditório.",
+              "is_correct": false
+            },
+            {
+              "text": "irretroatividade absoluta de todo ato administrativo.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-7692-Q03",
+          "statement": "Segundo o art. 8º da Lei nº 7.692/2002, organizações e associações representativas podem ser legitimadas como interessadas:",
+          "difficulty": "medium",
+          "explanation": "O art. 8º inclui organizações e associações representativas no tocante a direitos ou interesses coletivos.",
+          "alternatives": [
+            {
+              "text": "somente quanto a interesses individuais disponíveis.",
+              "is_correct": false
+            },
+            {
+              "text": "quanto a direitos ou interesses coletivos.",
+              "is_correct": true
+            },
+            {
+              "text": "apenas se integrarem a Administração indireta.",
+              "is_correct": false
+            },
+            {
+              "text": "somente após decisão judicial.",
+              "is_correct": false
+            },
+            {
+              "text": "apenas em processo tributário.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-7692-Q04",
+          "statement": "Na ausência de regra especial, o prazo máximo indicado no art. 36 para elaboração de parecer ou informe de caráter técnico ou jurídico é de:",
+          "difficulty": "medium",
+          "explanation": "O art. 36 estabelece 15 dias para pareceres ou informes de caráter técnico ou jurídico.",
+          "alternatives": [
+            {
+              "text": "2 dias.",
+              "is_correct": false
+            },
+            {
+              "text": "5 dias.",
+              "is_correct": false
+            },
+            {
+              "text": "10 dias.",
+              "is_correct": false
+            },
+            {
+              "text": "15 dias.",
+              "is_correct": true
+            },
+            {
+              "text": "30 dias.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-7692-Q05",
+          "statement": "A motivação do ato administrativo, conforme o art. 64 da Lei nº 7.692/2002, deve indicar especialmente:",
+          "difficulty": "medium",
+          "explanation": "O art. 64 aponta esses elementos como núcleo da motivação.",
+          "alternatives": [
+            {
+              "text": "somente o nome da autoridade.",
+              "is_correct": false
+            },
+            {
+              "text": "apenas a conveniência política.",
+              "is_correct": false
+            },
+            {
+              "text": "apenas a data da decisão.",
+              "is_correct": false
+            },
+            {
+              "text": "somente a jurisprudência utilizada.",
+              "is_correct": false
+            },
+            {
+              "text": "competência, fundamentos de fato e de direito e finalidade objetivada.",
+              "is_correct": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_slug": "modulo-3-policia-judiciaria-militar-codigo-penal-militar-cppm-e-rdpm-mt",
+      "slug": "6-lei-13491-2017-alteracao-do-art-9-do-cpm",
+      "title": "6. Lei nº 13.491/2017 - Alteração do art. 9º do CPM",
+      "source_label": "Lei nº 13.491/2017 - Presidência da República / Planalto",
+      "source_url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13491.htm",
+      "required_score": 80,
+      "lessons": [
+        {
+          "slug": "lei-13491-2017-literalidade",
+          "title": "Lei nº 13.491/2017: o que mudou no art. 9º do CPM",
+          "summary": "Leitura orientada das mudanças promovidas pela Lei nº 13.491/2017 no conceito legal de crime militar.",
+          "estimated_minutes": 25,
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "Ampliação do art. 9º, II, do CPM",
+              "content": "A Lei nº 13.491/2017 alterou o art. 9º do Código Penal Militar. O inciso II passou a alcançar, nas hipóteses previstas no dispositivo, tanto crimes previstos no próprio CPM quanto crimes previstos na legislação penal comum. Esse é o núcleo da mudança que a banca costuma explorar."
+            },
+            {
+              "type": "comparison",
+              "title": "Crime doloso contra a vida de civil",
+              "content": "A própria Lei nº 13.491/2017 introduziu a regra de que os crimes dolosos contra a vida cometidos por militares contra civil são da competência do Tribunal do Júri, preservadas as hipóteses especiais previstas para militares das Forças Armadas no § 2º do art. 9º."
+            },
+            {
+              "type": "warning",
+              "title": "Pegadinha",
+              "content": "Não confunda a ampliação do conceito de crime militar com criação de novos tipos penais. A lei alterou o critério do art. 9º do CPM e a competência em situações específicas; ela não transformou todo crime praticado por militar em crime militar."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "source_key": "EDITAL26-13491-Q01",
+          "statement": "A Lei nº 13.491/2017 alterou diretamente qual dispositivo do Código Penal Militar?",
+          "difficulty": "medium",
+          "explanation": "O art. 1º da Lei nº 13.491/2017 altera o art. 9º do CPM.",
+          "alternatives": [
+            {
+              "text": "Art. 9º.",
+              "is_correct": true
+            },
+            {
+              "text": "Art. 187.",
+              "is_correct": false
+            },
+            {
+              "text": "Art. 202.",
+              "is_correct": false
+            },
+            {
+              "text": "Art. 149.",
+              "is_correct": false
+            },
+            {
+              "text": "Art. 451.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-13491-Q02",
+          "statement": "Após a Lei nº 13.491/2017, o art. 9º, II, do CPM passou a mencionar:",
+          "difficulty": "medium",
+          "explanation": "A alteração de 2017 ampliou a referência para crimes previstos no CPM e na legislação penal.",
+          "alternatives": [
+            {
+              "text": "somente crimes previstos no CPM.",
+              "is_correct": false
+            },
+            {
+              "text": "crimes previstos no CPM e também os previstos na legislação penal, nas hipóteses do artigo.",
+              "is_correct": true
+            },
+            {
+              "text": "apenas contravenções penais.",
+              "is_correct": false
+            },
+            {
+              "text": "somente crimes dolosos contra a vida.",
+              "is_correct": false
+            },
+            {
+              "text": "apenas crimes previstos em leis estaduais.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-13491-Q03",
+          "statement": "Como regra introduzida pela Lei nº 13.491/2017, crimes dolosos contra a vida cometidos por militares contra civil são da competência:",
+          "difficulty": "medium",
+          "explanation": "O § 1º introduzido no art. 9º atribui esses casos ao Tribunal do Júri, sem prejuízo das hipóteses específicas do § 2º.",
+          "alternatives": [
+            {
+              "text": "exclusiva do comandante da unidade.",
+              "is_correct": false
+            },
+            {
+              "text": "do Conselho de Disciplina.",
+              "is_correct": false
+            },
+            {
+              "text": "do Tribunal do Júri.",
+              "is_correct": true
+            },
+            {
+              "text": "sempre da Justiça Militar da União.",
+              "is_correct": false
+            },
+            {
+              "text": "sempre da Justiça Militar estadual.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-13491-Q04",
+          "statement": "O § 2º inserido no art. 9º trata de hipóteses especiais envolvendo:",
+          "difficulty": "medium",
+          "explanation": "O § 2º cuida de crimes dolosos contra a vida de civil praticados por militares das Forças Armadas nos contextos ali definidos.",
+          "alternatives": [
+            {
+              "text": "qualquer servidor civil.",
+              "is_correct": false
+            },
+            {
+              "text": "policiais civis estaduais.",
+              "is_correct": false
+            },
+            {
+              "text": "guardas municipais.",
+              "is_correct": false
+            },
+            {
+              "text": "militares das Forças Armadas em contextos legalmente definidos.",
+              "is_correct": true
+            },
+            {
+              "text": "somente militares inativos estaduais.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-13491-Q05",
+          "statement": "É correto afirmar que a Lei nº 13.491/2017 tornou todo crime praticado por militar automaticamente crime militar?",
+          "difficulty": "medium",
+          "explanation": "A condição de militar, isoladamente, não substitui os requisitos do art. 9º.",
+          "alternatives": [
+            {
+              "text": "Sim, desde que o militar esteja fardado.",
+              "is_correct": false
+            },
+            {
+              "text": "Sim, se o fato ocorrer em serviço.",
+              "is_correct": false
+            },
+            {
+              "text": "Sim, para militares estaduais.",
+              "is_correct": false
+            },
+            {
+              "text": "Sim, exceto contravenções.",
+              "is_correct": false
+            },
+            {
+              "text": "Não. Continuam necessárias as hipóteses legais do art. 9º do CPM.",
+              "is_correct": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_slug": "modulo-6-direito-constitucional-e-legislacao-institucional-da-pmmt",
+      "slug": "8-lei-complementar-386-2010-organizacao-basica-pmmt",
+      "title": "8. Lei Complementar nº 386/2010 - Organização Básica da PMMT",
+      "source_label": "LC nº 386/2010 - fonte oficial PMMT; consolidação conferida até LC nº 853/2026",
+      "source_url": "https://www.pm.mt.gov.br/documents/2459523/3703350/Lei-Complementar-n_%2B386-Dispoe-sobre-a-estrutura-basica-da-PM.pdf/a9a5b121-45e5-439b-94e7-d44627ad34ab",
+      "required_score": 80,
+      "lessons": [
+        {
+          "slug": "lc-386-estrutura-organizacao",
+          "title": "LC 386/2010: destinação, organização e estrutura da PMMT",
+          "summary": "Estudo da Lei de Organização Básica com atenção às alterações posteriores e à literalidade vigente.",
+          "estimated_minutes": 25,
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "Destinação institucional",
+              "content": "A LC nº 386/2010 dispõe sobre a estrutura e organização básica da PMMT. O art. 1º caracteriza a Polícia Militar como força auxiliar e reserva do Exército, organizada com base na hierarquia e disciplina, diretamente subordinada ao Governador do Estado, com finalidade de polícia ostensiva e preservação da ordem pública, além da proteção da vida, liberdade, patrimônio e meio ambiente."
+            },
+            {
+              "type": "comparison",
+              "title": "Estrutura e comando",
+              "content": "A lei distribui a estrutura institucional em órgãos de direção, apoio e execução e disciplina competências do Comando-Geral e dos demais níveis organizacionais. Para prova, associe cada órgão ao nível estrutural e não transporte atribuições de apoio para órgãos de execução."
+            },
+            {
+              "type": "warning",
+              "title": "Texto consolidado",
+              "content": "A LC nº 386/2010 recebeu alterações posteriores. Para literalidade, o curso usa o texto oficial como base e registra a consolidação até 2026. Entre as redações atuais, o art. 45 determina que cargos e funções da Corporação sejam exercidos por policiais militares da ativa; o art. 46 remete as competências e atribuições ao decreto regulamentador da Lei de Organização Básica."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "source_key": "EDITAL26-LC386-Q01",
+          "statement": "A LC nº 386/2010 dispõe sobre:",
+          "difficulty": "medium",
+          "explanation": "Essa é a matéria central da LC nº 386/2010.",
+          "alternatives": [
+            {
+              "text": "a estrutura e organização básica da Polícia Militar do Estado de Mato Grosso.",
+              "is_correct": true
+            },
+            {
+              "text": "o Código Penal Militar.",
+              "is_correct": false
+            },
+            {
+              "text": "o processo penal militar.",
+              "is_correct": false
+            },
+            {
+              "text": "somente promoções de oficiais.",
+              "is_correct": false
+            },
+            {
+              "text": "somente o efetivo numérico da PMMT.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-LC386-Q02",
+          "statement": "Segundo a estrutura geral da LC nº 386/2010, a PMMT é organizada com base:",
+          "difficulty": "medium",
+          "explanation": "Hierarquia e disciplina são fundamentos expressos da organização institucional.",
+          "alternatives": [
+            {
+              "text": "na autonomia funcional e independência judicial.",
+              "is_correct": false
+            },
+            {
+              "text": "na hierarquia e na disciplina.",
+              "is_correct": true
+            },
+            {
+              "text": "na eleição interna dos comandantes.",
+              "is_correct": false
+            },
+            {
+              "text": "no regime celetista.",
+              "is_correct": false
+            },
+            {
+              "text": "na subordinação ao Poder Judiciário.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-LC386-Q03",
+          "statement": "A LC nº 386/2010 caracteriza a PMMT como:",
+          "difficulty": "medium",
+          "explanation": "A lei adota essa caracterização constitucional da Polícia Militar.",
+          "alternatives": [
+            {
+              "text": "autarquia estadual.",
+              "is_correct": false
+            },
+            {
+              "text": "empresa pública.",
+              "is_correct": false
+            },
+            {
+              "text": "força auxiliar e reserva do Exército.",
+              "is_correct": true
+            },
+            {
+              "text": "órgão do Poder Judiciário.",
+              "is_correct": false
+            },
+            {
+              "text": "fundação pública.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-LC386-Q04",
+          "statement": "Na redação consolidada do art. 45 da LC nº 386/2010, os cargos e funções da Corporação serão exercidos:",
+          "difficulty": "medium",
+          "explanation": "A redação consolidada do art. 45 exige policiais militares da ativa.",
+          "alternatives": [
+            {
+              "text": "por qualquer servidor efetivo estadual.",
+              "is_correct": false
+            },
+            {
+              "text": "somente por oficiais superiores.",
+              "is_correct": false
+            },
+            {
+              "text": "por militares ativos ou inativos indistintamente.",
+              "is_correct": false
+            },
+            {
+              "text": "exclusivamente por policiais militares da ativa.",
+              "is_correct": true
+            },
+            {
+              "text": "por civis nomeados pelo Governador.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-LC386-Q05",
+          "statement": "O art. 46 consolidado da LC nº 386/2010 remete as competências e atribuições previstas na lei:",
+          "difficulty": "medium",
+          "explanation": "O art. 46, na redação atual, remete ao decreto regulamentador.",
+          "alternatives": [
+            {
+              "text": "ao Código Penal.",
+              "is_correct": false
+            },
+            {
+              "text": "ao RDPM.",
+              "is_correct": false
+            },
+            {
+              "text": "ao Estatuto do Desarmamento.",
+              "is_correct": false
+            },
+            {
+              "text": "ao regimento do Poder Judiciário.",
+              "is_correct": false
+            },
+            {
+              "text": "ao decreto que regulamenta a Lei de Organização Básica da PMMT.",
+              "is_correct": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_slug": "modulo-6-direito-constitucional-e-legislacao-institucional-da-pmmt",
+      "slug": "9-decreto-591-1980-regulamento-de-movimentacao",
+      "title": "9. Decreto nº 591/1980 - Regulamento de Movimentação",
+      "source_label": "Decreto nº 591/1980 - cadastro e arquivo oficial da PMMT",
+      "source_url": "https://www.pm.mt.gov.br/telefones/-/asset_publisher/QQmC4Gwzst39/content/5066179-decreto-591-regulamento-de-movimentacao",
+      "required_score": 80,
+      "lessons": [
+        {
+          "slug": "decreto-591-regras-movimentacao",
+          "title": "Decreto 591/1980: conceitos, trânsito e instalação",
+          "summary": "Regras centrais do Regulamento de Movimentação para Oficiais e Praças da PMMT.",
+          "estimated_minutes": 25,
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "Finalidade da movimentação",
+              "content": "O regulamento estabelece princípios e normas gerais de movimentação. A movimentação atende à necessidade do serviço e busca assegurar efetivo necessário às OPM e frações. O policial militar está sujeito, em razão dos deveres da atividade, a servir em qualquer parte do Estado, sem prejuízo das situações previstas no próprio regulamento."
+            },
+            {
+              "type": "comparison",
+              "title": "Trânsito, apresentação e instalação",
+              "content": "Quando a movimentação exige mudança de guarnição, o regulamento prevê trânsito de até 20 dias. Em movimentação dentro da mesma guarnição, o prazo de apresentação na nova OPM é de 48 horas. Para instalação, o texto prevê 5 dias quando acompanhado de dependentes e 2 dias quando desacompanhado ou solteiro."
+            },
+            {
+              "type": "warning",
+              "title": "Conceitos não são sinônimos",
+              "content": "Movimentação é gênero. O regulamento diferencia modalidades e situações como transferência, classificação, nomeação/designação e outros atos. Na prova, atenção especial a 'trânsito', 'instalação', 'guarnição' e 'OPM', porque seus prazos e efeitos são distintos."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "source_key": "EDITAL26-D591-Q01",
+          "statement": "O Decreto nº 591/1980 regulamenta:",
+          "difficulty": "medium",
+          "explanation": "O Decreto nº 591/1980 é o Regulamento de Movimentação da PMMT.",
+          "alternatives": [
+            {
+              "text": "a movimentação de oficiais e praças da PMMT.",
+              "is_correct": true
+            },
+            {
+              "text": "a promoção exclusivamente por merecimento.",
+              "is_correct": false
+            },
+            {
+              "text": "a Sindicância PMMT.",
+              "is_correct": false
+            },
+            {
+              "text": "o inquérito policial militar.",
+              "is_correct": false
+            },
+            {
+              "text": "o porte federal de arma.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-D591-Q02",
+          "statement": "Quando a movimentação implica mudança de guarnição, o prazo de trânsito previsto no regulamento pode ser de até:",
+          "difficulty": "medium",
+          "explanation": "O regulamento prevê até 20 dias de trânsito.",
+          "alternatives": [
+            {
+              "text": "10 dias.",
+              "is_correct": false
+            },
+            {
+              "text": "20 dias.",
+              "is_correct": true
+            },
+            {
+              "text": "30 dias.",
+              "is_correct": false
+            },
+            {
+              "text": "45 dias.",
+              "is_correct": false
+            },
+            {
+              "text": "60 dias.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-D591-Q03",
+          "statement": "Em movimentação dentro da mesma guarnição, o prazo de apresentação na nova OPM é de:",
+          "difficulty": "medium",
+          "explanation": "O art. 8º do regulamento fixa 48 horas.",
+          "alternatives": [
+            {
+              "text": "24 horas.",
+              "is_correct": false
+            },
+            {
+              "text": "36 horas.",
+              "is_correct": false
+            },
+            {
+              "text": "48 horas.",
+              "is_correct": true
+            },
+            {
+              "text": "72 horas.",
+              "is_correct": false
+            },
+            {
+              "text": "5 dias.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-D591-Q04",
+          "statement": "Quanto à instalação, o regulamento prevê para o policial acompanhado de dependentes:",
+          "difficulty": "medium",
+          "explanation": "O art. 9º prevê 5 dias quando acompanhado de dependentes.",
+          "alternatives": [
+            {
+              "text": "1 dia.",
+              "is_correct": false
+            },
+            {
+              "text": "2 dias.",
+              "is_correct": false
+            },
+            {
+              "text": "3 dias.",
+              "is_correct": false
+            },
+            {
+              "text": "5 dias.",
+              "is_correct": true
+            },
+            {
+              "text": "10 dias.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-D591-Q05",
+          "statement": "Quanto à instalação, o policial desacompanhado ou solteiro tem, pelo regulamento, prazo de:",
+          "difficulty": "medium",
+          "explanation": "O art. 9º prevê 2 dias para o desacompanhado ou solteiro.",
+          "alternatives": [
+            {
+              "text": "10 dias.",
+              "is_correct": false
+            },
+            {
+              "text": "7 dias.",
+              "is_correct": false
+            },
+            {
+              "text": "5 dias.",
+              "is_correct": false
+            },
+            {
+              "text": "3 dias.",
+              "is_correct": false
+            },
+            {
+              "text": "2 dias.",
+              "is_correct": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_slug": "modulo-6-direito-constitucional-e-legislacao-institucional-da-pmmt",
+      "slug": "10-decreto-1172-2021-diretriz-conjunta-001-2021",
+      "title": "10. Decreto nº 1.172/2021 e Diretriz Conjunta nº 001/2021",
+      "source_label": "Decreto nº 1.172/2021 e Diretriz Conjunta nº 001/2021 - Imprensa Oficial de Mato Grosso",
+      "source_url": "https://iomat.mt.gov.br/legislacao/diario_oficial/detalhes/134235",
+      "required_score": 80,
+      "lessons": [
+        {
+          "slug": "decreto-1172-porte-posse-material-belico",
+          "title": "Decreto 1.172/2021: aquisição, registro, porte e posse de arma",
+          "summary": "Estudo da Diretriz Conjunta nº 001/2021 aprovada pelo Decreto nº 1.172/2021.",
+          "estimated_minutes": 25,
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "Objeto e revogação",
+              "content": "O Decreto nº 1.172/2021 aprova a Diretriz Conjunta nº 001/2021 dos Comandos-Gerais da PMMT e CBMMT. A Diretriz regula aquisição, cadastro, registro e porte de armas de fogo, aquisição de munições, coletes balísticos, acessórios e procedimentos relacionados a carga pessoal. O decreto revogou expressamente o Decreto nº 961/2012."
+            },
+            {
+              "type": "comparison",
+              "title": "Porte e restrições",
+              "content": "A Diretriz garante porte aos militares estaduais nos termos da legislação federal, mas estabelece hipóteses de suspensão. Entre elas estão decisões judiciais, restrições médicas/psicológicas, processo demissório e determinados procedimentos disciplinares. Há regras próprias para ativo, inativo e agregado."
+            },
+            {
+              "type": "warning",
+              "title": "Prazos literais do art. 28",
+              "content": "Após apuração, disparo de arma por descuido ou sem necessidade pode gerar suspensão por 180 dias; portar arma alcoolizado ou sob efeito de substância/medicação que altere desempenho, por 365 dias; incidência concomitante das hipóteses previstas, por 730 dias. Reincidência nos casos indicados dobra os respectivos prazos."
+            },
+            {
+              "type": "theory",
+              "title": "Posse e violência doméstica",
+              "content": "A Diretriz também prevê suspensão da posse em situações específicas, incluindo procedimento disciplinar por violência doméstica, até a remessa dos autos à autoridade delegante, salvo decisão em contrário."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "source_key": "EDITAL26-D1172-Q01",
+          "statement": "O Decreto nº 1.172/2021 aprovou:",
+          "difficulty": "medium",
+          "explanation": "O art. 1º do Decreto nº 1.172/2021 aprova a Diretriz Conjunta nº 001/2021.",
+          "alternatives": [
+            {
+              "text": "a Diretriz Conjunta nº 001/2021 da PMMT e do CBMMT.",
+              "is_correct": true
+            },
+            {
+              "text": "o RDPM.",
+              "is_correct": false
+            },
+            {
+              "text": "o Estatuto dos Militares.",
+              "is_correct": false
+            },
+            {
+              "text": "a Lei de Promoções.",
+              "is_correct": false
+            },
+            {
+              "text": "o Manual de IPM.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-D1172-Q02",
+          "statement": "O Decreto nº 1.172/2021 revogou expressamente:",
+          "difficulty": "medium",
+          "explanation": "O art. 2º revoga o Decreto nº 961/2012.",
+          "alternatives": [
+            {
+              "text": "o Decreto nº 591/1980.",
+              "is_correct": false
+            },
+            {
+              "text": "o Decreto nº 961/2012.",
+              "is_correct": true
+            },
+            {
+              "text": "o Decreto nº 1.329/1978.",
+              "is_correct": false
+            },
+            {
+              "text": "a LC nº 386/2010.",
+              "is_correct": false
+            },
+            {
+              "text": "a Lei nº 10.826/2003.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-D1172-Q03",
+          "statement": "Segundo a Diretriz Conjunta nº 001/2021, disparar arma de fogo por descuido ou sem necessidade, após apuração, pode suspender o porte por:",
+          "difficulty": "medium",
+          "explanation": "A Diretriz fixa 180 dias para essa hipótese.",
+          "alternatives": [
+            {
+              "text": "30 dias.",
+              "is_correct": false
+            },
+            {
+              "text": "90 dias.",
+              "is_correct": false
+            },
+            {
+              "text": "180 dias.",
+              "is_correct": true
+            },
+            {
+              "text": "365 dias.",
+              "is_correct": false
+            },
+            {
+              "text": "730 dias.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-D1172-Q04",
+          "statement": "Portar arma de fogo alcoolizado ou sob efeito de substância que altere desempenho, após constatação admitida em lei, pode gerar suspensão por:",
+          "difficulty": "medium",
+          "explanation": "A Diretriz fixa 365 dias nessa hipótese.",
+          "alternatives": [
+            {
+              "text": "90 dias.",
+              "is_correct": false
+            },
+            {
+              "text": "180 dias.",
+              "is_correct": false
+            },
+            {
+              "text": "270 dias.",
+              "is_correct": false
+            },
+            {
+              "text": "365 dias.",
+              "is_correct": true
+            },
+            {
+              "text": "730 dias.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-D1172-Q05",
+          "statement": "A incidência concomitante das hipóteses indicadas pela Diretriz para disparo indevido e porte sob álcool/substância pode gerar suspensão por:",
+          "difficulty": "medium",
+          "explanation": "A Diretriz fixa 730 dias para a incidência concomitante descrita.",
+          "alternatives": [
+            {
+              "text": "180 dias.",
+              "is_correct": false
+            },
+            {
+              "text": "270 dias.",
+              "is_correct": false
+            },
+            {
+              "text": "365 dias.",
+              "is_correct": false
+            },
+            {
+              "text": "540 dias.",
+              "is_correct": false
+            },
+            {
+              "text": "730 dias.",
+              "is_correct": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_slug": "modulo-8-legislacao-profissional-eca-maria-da-penha-juizados-ctb-crimes-ambientais-e-lei-de-drogas",
+      "slug": "7-lei-7716-1989-crimes-resultantes-de-preconceito",
+      "title": "7. Lei nº 7.716/1989 - Crimes resultantes de preconceito",
+      "source_label": "Lei nº 7.716/1989 - texto compilado oficial do Planalto",
+      "source_url": "https://www.planalto.gov.br/ccivil_03/leis/l7716compilado.htm",
+      "required_score": 80,
+      "lessons": [
+        {
+          "slug": "lei-7716-racismo-literalidade",
+          "title": "Lei 7.716/1989: discriminação, injúria racial e tipos principais",
+          "summary": "Leitura orientada da redação compilada da Lei nº 7.716/1989.",
+          "estimated_minutes": 25,
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "Âmbito do art. 1º e injúria racial",
+              "content": "O art. 1º abrange crimes resultantes de discriminação ou preconceito de raça, cor, etnia, religião ou procedência nacional. O art. 2º-A, incluído em 2023, tipifica a injúria praticada em razão de raça, cor, etnia ou procedência nacional, com pena de reclusão de 2 a 5 anos e multa."
+            },
+            {
+              "type": "comparison",
+              "title": "Acesso, emprego e atendimento",
+              "content": "A lei contém tipos relacionados a impedir/obstar acesso a cargo da Administração ou promoção funcional; negar emprego em empresa privada; recusar atendimento ou acesso a estabelecimentos, ensino, hospedagem, restaurantes, transportes e outras situações enumeradas."
+            },
+            {
+              "type": "warning",
+              "title": "Art. 20 e causas especiais",
+              "content": "O art. 20 pune praticar, induzir ou incitar discriminação ou preconceito pelos critérios previstos. A lei também possui regras específicas para divulgação do nazismo, meios de comunicação/redes, contexto de atividades públicas e majorantes introduzidas em 2023."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "source_key": "EDITAL26-7716-Q01",
+          "statement": "O art. 1º da Lei nº 7.716/1989 abrange discriminação ou preconceito de:",
+          "difficulty": "medium",
+          "explanation": "Esse é o rol do art. 1º na redação compilada.",
+          "alternatives": [
+            {
+              "text": "raça, cor, etnia, religião ou procedência nacional.",
+              "is_correct": true
+            },
+            {
+              "text": "apenas raça e cor.",
+              "is_correct": false
+            },
+            {
+              "text": "somente religião.",
+              "is_correct": false
+            },
+            {
+              "text": "profissão e renda exclusivamente.",
+              "is_correct": false
+            },
+            {
+              "text": "idade exclusivamente.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-7716-Q02",
+          "statement": "A injúria racial do art. 2º-A tem pena de:",
+          "difficulty": "medium",
+          "explanation": "O art. 2º-A estabelece reclusão de 2 a 5 anos e multa.",
+          "alternatives": [
+            {
+              "text": "detenção de 6 meses a 1 ano.",
+              "is_correct": false
+            },
+            {
+              "text": "reclusão de 2 a 5 anos e multa.",
+              "is_correct": true
+            },
+            {
+              "text": "reclusão de 1 a 2 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "apenas multa.",
+              "is_correct": false
+            },
+            {
+              "text": "reclusão de 6 a 10 anos.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-7716-Q03",
+          "statement": "Se a injúria do art. 2º-A for cometida mediante concurso de duas ou mais pessoas, a pena:",
+          "difficulty": "medium",
+          "explanation": "O parágrafo único do art. 2º-A prevê aumento de metade.",
+          "alternatives": [
+            {
+              "text": "é reduzida pela metade.",
+              "is_correct": false
+            },
+            {
+              "text": "não sofre alteração.",
+              "is_correct": false
+            },
+            {
+              "text": "é aumentada de metade.",
+              "is_correct": true
+            },
+            {
+              "text": "é duplicada obrigatoriamente.",
+              "is_correct": false
+            },
+            {
+              "text": "é substituída por multa.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-7716-Q04",
+          "statement": "Impedir ou obstar acesso de pessoa habilitada a cargo da Administração Direta ou Indireta é conduta prevista no:",
+          "difficulty": "medium",
+          "explanation": "O art. 3º tipifica essa conduta.",
+          "alternatives": [
+            {
+              "text": "art. 20 apenas.",
+              "is_correct": false
+            },
+            {
+              "text": "art. 2º-A.",
+              "is_correct": false
+            },
+            {
+              "text": "art. 16.",
+              "is_correct": false
+            },
+            {
+              "text": "art. 3º.",
+              "is_correct": true
+            },
+            {
+              "text": "art. 22.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-7716-Q05",
+          "statement": "O art. 20 da Lei nº 7.716/1989 pune, entre outras condutas:",
+          "difficulty": "medium",
+          "explanation": "Essa é a conduta-base do art. 20.",
+          "alternatives": [
+            {
+              "text": "somente a injúria individual.",
+              "is_correct": false
+            },
+            {
+              "text": "somente negar emprego.",
+              "is_correct": false
+            },
+            {
+              "text": "somente impedir casamento.",
+              "is_correct": false
+            },
+            {
+              "text": "apenas divulgar símbolo nazista.",
+              "is_correct": false
+            },
+            {
+              "text": "praticar, induzir ou incitar discriminação ou preconceito nos termos da lei.",
+              "is_correct": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_slug": "modulo-8-legislacao-profissional-eca-maria-da-penha-juizados-ctb-crimes-ambientais-e-lei-de-drogas",
+      "slug": "8-lei-10826-2003-estatuto-do-desarmamento",
+      "title": "8. Lei nº 10.826/2003 - Estatuto do Desarmamento",
+      "source_label": "Lei nº 10.826/2003 - texto compilado oficial do Planalto",
+      "source_url": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.826compilado.htm",
+      "required_score": 80,
+      "lessons": [
+        {
+          "slug": "lei-10826-sinarm-posse-porte-crimes",
+          "title": "Estatuto do Desarmamento: Sinarm, porte e crimes",
+          "summary": "Estrutura da Lei nº 10.826/2003 com foco em conceitos e tipos penais cobrados literalmente.",
+          "estimated_minutes": 25,
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "Sinarm e regra geral de porte",
+              "content": "O Sinarm funciona no âmbito da Polícia Federal, com circunscrição em todo o território nacional. O art. 6º estabelece a proibição do porte como regra, ressalvando os casos previstos em legislação própria e as categorias enumeradas na própria lei."
+            },
+            {
+              "type": "comparison",
+              "title": "Posse irregular x porte ilegal",
+              "content": "Art. 12: posse irregular de arma, acessório ou munição de uso permitido no interior da residência/dependência ou local de trabalho do titular/responsável legal; pena de detenção de 1 a 3 anos e multa. Art. 14: porte e outras condutas com arma/acessório/munição de uso permitido sem autorização; pena de reclusão de 2 a 4 anos e multa."
+            },
+            {
+              "type": "warning",
+              "title": "Uso restrito e proibido",
+              "content": "O art. 16 trata de arma, acessório ou munição de uso restrito sem autorização, com pena de reclusão de 3 a 6 anos e multa. Se as condutas do caput/§1º envolverem arma de uso proibido, o §2º prevê reclusão de 4 a 12 anos."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "source_key": "EDITAL26-10826-Q01",
+          "statement": "O Sistema Nacional de Armas (Sinarm) é instituído:",
+          "difficulty": "medium",
+          "explanation": "O art. 1º situa o Sinarm no âmbito da Polícia Federal.",
+          "alternatives": [
+            {
+              "text": "no âmbito da Polícia Federal, com circunscrição nacional.",
+              "is_correct": true
+            },
+            {
+              "text": "no âmbito exclusivo das Polícias Militares.",
+              "is_correct": false
+            },
+            {
+              "text": "no Poder Judiciário.",
+              "is_correct": false
+            },
+            {
+              "text": "nas Prefeituras.",
+              "is_correct": false
+            },
+            {
+              "text": "no Ministério Público.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-10826-Q02",
+          "statement": "A posse irregular de arma de fogo de uso permitido prevista no art. 12 tem pena de:",
+          "difficulty": "medium",
+          "explanation": "O art. 12 fixa detenção de 1 a 3 anos e multa.",
+          "alternatives": [
+            {
+              "text": "reclusão de 2 a 4 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "detenção de 1 a 3 anos e multa.",
+              "is_correct": true
+            },
+            {
+              "text": "reclusão de 3 a 6 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "apenas multa.",
+              "is_correct": false
+            },
+            {
+              "text": "reclusão de 4 a 12 anos.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-10826-Q03",
+          "statement": "O porte ilegal de arma de fogo de uso permitido, art. 14, tem pena de:",
+          "difficulty": "medium",
+          "explanation": "O art. 14 prevê reclusão de 2 a 4 anos e multa.",
+          "alternatives": [
+            {
+              "text": "detenção de 15 dias a 6 meses.",
+              "is_correct": false
+            },
+            {
+              "text": "detenção de 1 a 3 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "reclusão de 2 a 4 anos e multa.",
+              "is_correct": true
+            },
+            {
+              "text": "reclusão de 3 a 8 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "apenas multa.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-10826-Q04",
+          "statement": "A conduta-base do art. 16 envolvendo arma de fogo de uso restrito sem autorização tem pena de:",
+          "difficulty": "medium",
+          "explanation": "O art. 16 prevê reclusão de 3 a 6 anos e multa.",
+          "alternatives": [
+            {
+              "text": "detenção de 1 a 2 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "reclusão de 1 a 4 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "reclusão de 2 a 4 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "reclusão de 3 a 6 anos e multa.",
+              "is_correct": true
+            },
+            {
+              "text": "reclusão de 10 a 20 anos.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-10826-Q05",
+          "statement": "Se a conduta do art. 16 envolver arma de fogo de uso proibido, o § 2º prevê pena de:",
+          "difficulty": "medium",
+          "explanation": "O § 2º do art. 16 estabelece reclusão de 4 a 12 anos.",
+          "alternatives": [
+            {
+              "text": "detenção de 1 a 3 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "reclusão de 2 a 5 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "reclusão de 3 a 6 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "reclusão de 4 a 8 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "reclusão de 4 a 12 anos.",
+              "is_correct": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_slug": "modulo-8-legislacao-profissional-eca-maria-da-penha-juizados-ctb-crimes-ambientais-e-lei-de-drogas",
+      "slug": "9-decreto-lei-3688-1941-contravencoes-penais",
+      "title": "9. Decreto-Lei nº 3.688/1941 - Lei das Contravenções Penais",
+      "source_label": "Decreto-Lei nº 3.688/1941 - texto oficial do Planalto",
+      "source_url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del3688.htm",
+      "required_score": 80,
+      "lessons": [
+        {
+          "slug": "lcp-parte-geral-e-contravencoes-principais",
+          "title": "LCP: Parte Geral e contravenções de maior interesse policial",
+          "summary": "Leitura organizada da Lei das Contravenções Penais, unificando os itens 4.11 e 4.12 do edital.",
+          "estimated_minutes": 25,
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "Parte Geral",
+              "content": "A LCP aplica subsidiariamente as regras gerais do Código Penal quando ela própria não dispuser de modo diverso. A lei brasileira de contravenções é territorial: aplica-se à contravenção praticada no território nacional. A tentativa de contravenção não é punível. A ação penal é pública, devendo a autoridade proceder de ofício."
+            },
+            {
+              "type": "comparison",
+              "title": "Contravenções de interesse operacional",
+              "content": "Entre os tipos ainda relevantes estão vias de fato (art. 21), perturbação do trabalho ou sossego alheios (art. 42), exercício ilegal de profissão ou atividade (art. 47) e jogo de azar (art. 50). Atenção às atualizações legislativas e aos dispositivos revogados que ainda aparecem em materiais antigos."
+            },
+            {
+              "type": "warning",
+              "title": "Vias de fato e atualização de 2024",
+              "content": "No art. 21, a pena é agravada se a vítima for maior de 60 anos. Desde a Lei nº 14.994/2024, se a contravenção for praticada contra mulher por razões da condição do sexo feminino, nos termos legais, aplica-se a pena em triplo."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "source_key": "EDITAL26-LCP-Q01",
+          "statement": "Segundo a Parte Geral da Lei das Contravenções Penais, a tentativa de contravenção:",
+          "difficulty": "medium",
+          "explanation": "O art. 4º da LCP determina que a tentativa não é punível.",
+          "alternatives": [
+            {
+              "text": "não é punível.",
+              "is_correct": true
+            },
+            {
+              "text": "é punida como crime tentado.",
+              "is_correct": false
+            },
+            {
+              "text": "é sempre punida com multa.",
+              "is_correct": false
+            },
+            {
+              "text": "depende de representação.",
+              "is_correct": false
+            },
+            {
+              "text": "é punível apenas se houver violência.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-LCP-Q02",
+          "statement": "Quanto à territorialidade, a LCP estabelece que a lei brasileira é aplicável:",
+          "difficulty": "medium",
+          "explanation": "O art. 2º adota territorialidade para contravenções.",
+          "alternatives": [
+            {
+              "text": "também a toda contravenção praticada no exterior.",
+              "is_correct": false
+            },
+            {
+              "text": "à contravenção praticada no território nacional.",
+              "is_correct": true
+            },
+            {
+              "text": "somente a contravenções militares.",
+              "is_correct": false
+            },
+            {
+              "text": "apenas quando houver brasileiro envolvido.",
+              "is_correct": false
+            },
+            {
+              "text": "apenas quando houver decisão judicial prévia.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-LCP-Q03",
+          "statement": "Praticar vias de fato contra alguém, se o fato não constitui crime, corresponde ao art.:",
+          "difficulty": "medium",
+          "explanation": "Vias de fato é a contravenção do art. 21.",
+          "alternatives": [
+            {
+              "text": "17.",
+              "is_correct": false
+            },
+            {
+              "text": "19.",
+              "is_correct": false
+            },
+            {
+              "text": "21.",
+              "is_correct": true
+            },
+            {
+              "text": "42.",
+              "is_correct": false
+            },
+            {
+              "text": "50.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-LCP-Q04",
+          "statement": "Perturbação do trabalho ou do sossego alheios está prevista no art.:",
+          "difficulty": "medium",
+          "explanation": "O art. 42 disciplina perturbação do trabalho ou sossego.",
+          "alternatives": [
+            {
+              "text": "21.",
+              "is_correct": false
+            },
+            {
+              "text": "32.",
+              "is_correct": false
+            },
+            {
+              "text": "40.",
+              "is_correct": false
+            },
+            {
+              "text": "42.",
+              "is_correct": true
+            },
+            {
+              "text": "47.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-LCP-Q05",
+          "statement": "Exercer profissão ou atividade econômica sem preencher as condições legais de seu exercício é a contravenção do art.:",
+          "difficulty": "medium",
+          "explanation": "O art. 47 trata do exercício ilegal de profissão ou atividade.",
+          "alternatives": [
+            {
+              "text": "21.",
+              "is_correct": false
+            },
+            {
+              "text": "42.",
+              "is_correct": false
+            },
+            {
+              "text": "45.",
+              "is_correct": false
+            },
+            {
+              "text": "46.",
+              "is_correct": false
+            },
+            {
+              "text": "47.",
+              "is_correct": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_slug": "modulo-8-legislacao-profissional-eca-maria-da-penha-juizados-ctb-crimes-ambientais-e-lei-de-drogas",
+      "slug": "10-manual-tco-pmmt-2024",
+      "title": "10. Manual de Lavratura do TCO PMMT - 2024",
+      "source_label": "Manual de Lavratura do Termo Circunstanciado de Ocorrência da PMMT - fonte oficial PMMT",
+      "source_url": "https://www.pm.mt.gov.br/documents/2459523/4959688/Manual%2Bde%2BTCO%2B2024%2BAtualizada%2Be%2BRevisada.pdf/1c1a818f-ff4b-b657-5a5e-a8376e44d5d6?t=1737559429409",
+      "required_score": 80,
+      "lessons": [
+        {
+          "slug": "manual-tco-conceito-fluxo-documentos",
+          "title": "Manual do TCO 2024: conceito, cabimento, compromisso e fluxo",
+          "summary": "Conteúdo oficial do Manual da PMMT, com foco operacional e documental.",
+          "estimated_minutes": 25,
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "Conceito e menor potencial ofensivo",
+              "content": "O Manual explica que o TCO reúne identificação das partes e circunstâncias da infração de menor potencial ofensivo para subsidiar o Juizado. Conforme o art. 61 da Lei nº 9.099/1995, entram nesse conceito as contravenções e os crimes com pena máxima não superior a 2 anos, cumulada ou não com multa. O Manual ressalta que o TCO é relatório circunstanciado e não possui caráter investigativo."
+            },
+            {
+              "type": "comparison",
+              "title": "Termo de compromisso",
+              "content": "Quando o autor é imediatamente encaminhado ao Juizado ou assume compromisso de comparecimento, não se impõe prisão em flagrante nem se exige fiança. Como regra operacional do Manual, a recusa ao compromisso conduz à apresentação para lavratura do APF, ressalvadas hipóteses legais específicas, como situações previstas no CTB e no art. 28 da Lei de Drogas."
+            },
+            {
+              "type": "warning",
+              "title": "Hipóteses que afastam o rito",
+              "content": "O Manual destaca que a Lei nº 9.099/1995 não se aplica aos crimes praticados com violência doméstica e familiar contra a mulher. Também trata das peculiaridades do Direito Militar, menor infrator, foro por prerrogativa e crimes eleitorais."
+            },
+            {
+              "type": "theory",
+              "title": "Gestão e PJe",
+              "content": "O Manual disciplina documentos do BO-TC, termos, requisições, anexos, cadeia de custódia e o fluxo de encaminhamento pelo PJe. O Oficial Gestor possui atribuições específicas na conferência e tramitação; praças podem ser designadas para auxiliá-lo."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "source_key": "EDITAL26-TCO-Q01",
+          "statement": "Segundo o Manual TCO PMMT 2024, o TCO possui caráter:",
+          "difficulty": "medium",
+          "explanation": "O Manual afirma que o TCO, como relatório circunstanciado, não possui caráter investigativo.",
+          "alternatives": [
+            {
+              "text": "de relatório circunstanciado, sem caráter investigativo.",
+              "is_correct": true
+            },
+            {
+              "text": "de inquérito policial completo.",
+              "is_correct": false
+            },
+            {
+              "text": "de sentença judicial.",
+              "is_correct": false
+            },
+            {
+              "text": "de processo disciplinar.",
+              "is_correct": false
+            },
+            {
+              "text": "de denúncia do Ministério Público.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-TCO-Q02",
+          "statement": "Para o Manual, infração penal de menor potencial ofensivo compreende:",
+          "difficulty": "medium",
+          "explanation": "O Manual reproduz o conceito do art. 61 da Lei nº 9.099/1995.",
+          "alternatives": [
+            {
+              "text": "somente contravenções.",
+              "is_correct": false
+            },
+            {
+              "text": "contravenções e crimes com pena máxima não superior a 2 anos, cumulada ou não com multa.",
+              "is_correct": true
+            },
+            {
+              "text": "todos os crimes sem violência.",
+              "is_correct": false
+            },
+            {
+              "text": "crimes com pena máxima de até 4 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "apenas crimes de ação privada.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-TCO-Q03",
+          "statement": "Assumido o compromisso de comparecimento ao Juizado, a regra do art. 69 indicada no Manual é:",
+          "difficulty": "medium",
+          "explanation": "Essa é a consequência do compromisso segundo o art. 69 e o Manual.",
+          "alternatives": [
+            {
+              "text": "prisão preventiva obrigatória.",
+              "is_correct": false
+            },
+            {
+              "text": "fiança obrigatória.",
+              "is_correct": false
+            },
+            {
+              "text": "não imposição de prisão em flagrante nem exigência de fiança.",
+              "is_correct": true
+            },
+            {
+              "text": "arquivamento automático.",
+              "is_correct": false
+            },
+            {
+              "text": "remessa ao Tribunal do Júri.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-TCO-Q04",
+          "statement": "Segundo o Manual, em crimes praticados com violência doméstica e familiar contra a mulher:",
+          "difficulty": "medium",
+          "explanation": "O Manual destaca o art. 41 da Lei Maria da Penha e afasta o TCO nesse contexto.",
+          "alternatives": [
+            {
+              "text": "o TCO é obrigatório.",
+              "is_correct": false
+            },
+            {
+              "text": "a Lei nº 9.099/1995 sempre prevalece.",
+              "is_correct": false
+            },
+            {
+              "text": "o autor deve ser liberado sem registro.",
+              "is_correct": false
+            },
+            {
+              "text": "não é cabível aplicar a Lei nº 9.099/1995 para lavratura de TCO.",
+              "is_correct": true
+            },
+            {
+              "text": "somente a vítima decide a competência.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-TCO-Q05",
+          "statement": "O Manual orienta que, antes de iniciar a lavratura do TCO, deve-se verificar:",
+          "difficulty": "medium",
+          "explanation": "Essa conferência aparece entre os enunciados operacionais do Manual.",
+          "alternatives": [
+            {
+              "text": "apenas a idade do policial.",
+              "is_correct": false
+            },
+            {
+              "text": "somente se há testemunha presencial.",
+              "is_correct": false
+            },
+            {
+              "text": "se o fato ocorreu de dia.",
+              "is_correct": false
+            },
+            {
+              "text": "apenas a existência de dano material.",
+              "is_correct": false
+            },
+            {
+              "text": "se a infração é de menor potencial ofensivo e a questão do compromisso de comparecimento.",
+              "is_correct": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_slug": "modulo-8-legislacao-profissional-eca-maria-da-penha-juizados-ctb-crimes-ambientais-e-lei-de-drogas",
+      "slug": "11-codigo-penal-recorte-do-edital",
+      "title": "11. Código Penal - artigos 1º a 29, 121 a 129, 155 a 183, 213 a 218 e 312 a 337",
+      "source_label": "Código Penal - Decreto-Lei nº 2.848/1940 - texto compilado oficial do Planalto, conferido em 18/10/2026",
+      "source_url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del2848.htm",
+      "required_score": 80,
+      "lessons": [
+        {
+          "slug": "codigo-penal-faixas-do-edital",
+          "title": "Código Penal: mapa completo das faixas cobradas no edital",
+          "summary": "Estudo por blocos do Código Penal, preservando as faixas exatas indicadas no conteúdo programático.",
+          "estimated_minutes": 25,
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "Parte Geral - arts. 1º a 29",
+              "content": "O recorte inclui aplicação da lei penal; tempo e lugar do crime; territorialidade e extraterritorialidade; pena cumprida no estrangeiro; eficácia de sentença estrangeira; contagem de prazo; frações não computáveis; legislação especial; relação de causalidade; crime consumado e tentativa; desistência voluntária e arrependimento eficaz; arrependimento posterior; crime impossível; dolo e culpa; erro; coação/ordem; exclusão de ilicitude; excesso; estado de necessidade; legítima defesa; imputabilidade e concurso de pessoas até o art. 29."
+            },
+            {
+              "type": "comparison",
+              "title": "Crimes contra a pessoa - arts. 121 a 129",
+              "content": "O intervalo abrange homicídio e suas formas, feminicídio do art. 121-A e vicaricídio do art. 121-B incorporado em 2026; infanticídio; aborto; induzimento/instigação/auxílio a suicídio ou automutilação; e lesão corporal do art. 129. O texto consolidado deve prevalecer sobre apostilas antigas."
+            },
+            {
+              "type": "comparison",
+              "title": "Patrimônio - arts. 155 a 183",
+              "content": "O intervalo inclui furto, roubo, extorsão, usurpação, dano, apropriação indébita, estelionato e outras fraudes, receptação e disposições gerais. Atenção especial às alterações de 2026: o furto simples passou a reclusão de 1 a 6 anos e o roubo simples a 6 a 10 anos, além de outras mudanças no bloco patrimonial."
+            },
+            {
+              "type": "comparison",
+              "title": "Dignidade sexual - arts. 213 a 218",
+              "content": "O recorte inclui estupro, violação sexual mediante fraude e crimes sexuais contra vulnerável, observando dispositivos revogados e novos artigos inseridos entre numerações. O art. 217-A, por exemplo, possui redação de pena atualizada e a presunção de vulnerabilidade foi reforçada legislativamente."
+            },
+            {
+              "type": "comparison",
+              "title": "Administração Pública - arts. 312 a 337",
+              "content": "O intervalo inicia em peculato e abrange crimes funcionais e crimes praticados por particular contra a Administração, incluindo definição penal de funcionário público, resistência, desobediência, desacato, tráfico de influência, corrupção ativa e demais tipos até o art. 337 e seus artigos acrescidos."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "source_key": "EDITAL26-CP-Q01",
+          "statement": "O princípio expresso no art. 1º do Código Penal estabelece, em síntese:",
+          "difficulty": "medium",
+          "explanation": "O art. 1º consagra legalidade/anterioridade penal.",
+          "alternatives": [
+            {
+              "text": "não há crime sem lei anterior que o defina nem pena sem prévia cominação legal.",
+              "is_correct": true
+            },
+            {
+              "text": "todo fato imoral é crime.",
+              "is_correct": false
+            },
+            {
+              "text": "a analogia pode criar crime.",
+              "is_correct": false
+            },
+            {
+              "text": "a lei penal mais grave retroage.",
+              "is_correct": false
+            },
+            {
+              "text": "costume pode criar pena.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-CP-Q02",
+          "statement": "O art. 14 do Código Penal diferencia:",
+          "difficulty": "medium",
+          "explanation": "O art. 14 define crime consumado e tentativa.",
+          "alternatives": [
+            {
+              "text": "autoria e participação.",
+              "is_correct": false
+            },
+            {
+              "text": "crime consumado e crime tentado.",
+              "is_correct": true
+            },
+            {
+              "text": "dolo e culpa exclusivamente.",
+              "is_correct": false
+            },
+            {
+              "text": "erro e coação.",
+              "is_correct": false
+            },
+            {
+              "text": "crime e contravenção.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-CP-Q03",
+          "statement": "Entre as hipóteses do art. 23 de exclusão de ilicitude encontra-se:",
+          "difficulty": "medium",
+          "explanation": "O art. 23 inclui estado de necessidade, legítima defesa e estrito cumprimento/exercício regular.",
+          "alternatives": [
+            {
+              "text": "embriaguez voluntária.",
+              "is_correct": false
+            },
+            {
+              "text": "erro de proibição inevitável.",
+              "is_correct": false
+            },
+            {
+              "text": "legítima defesa.",
+              "is_correct": true
+            },
+            {
+              "text": "menoridade.",
+              "is_correct": false
+            },
+            {
+              "text": "confissão.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-CP-Q04",
+          "statement": "A pena do homicídio simples do art. 121 é:",
+          "difficulty": "medium",
+          "explanation": "O art. 121 prevê reclusão de 6 a 20 anos.",
+          "alternatives": [
+            {
+              "text": "2 a 8 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "4 a 12 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "5 a 15 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "6 a 20 anos.",
+              "is_correct": true
+            },
+            {
+              "text": "20 a 40 anos.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-CP-Q05",
+          "statement": "O feminicídio, desde a Lei nº 14.994/2024, está tipificado autonomamente no:",
+          "difficulty": "medium",
+          "explanation": "O feminicídio passou a ser crime autônomo no art. 121-A.",
+          "alternatives": [
+            {
+              "text": "art. 129, § 13.",
+              "is_correct": false
+            },
+            {
+              "text": "art. 121, § 2º-A.",
+              "is_correct": false
+            },
+            {
+              "text": "art. 122.",
+              "is_correct": false
+            },
+            {
+              "text": "art. 123.",
+              "is_correct": false
+            },
+            {
+              "text": "art. 121-A.",
+              "is_correct": true
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-CP-Q06",
+          "statement": "Na redação vigente em 2026, o furto simples do art. 155 tem pena de:",
+          "difficulty": "medium",
+          "explanation": "A Lei nº 15.397/2026 alterou a pena do furto simples para 1 a 6 anos e multa.",
+          "alternatives": [
+            {
+              "text": "reclusão de 1 a 6 anos e multa.",
+              "is_correct": true
+            },
+            {
+              "text": "detenção de 1 a 2 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "reclusão de 2 a 8 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "reclusão de 4 a 10 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "somente multa.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-CP-Q07",
+          "statement": "Na redação vigente em 2026, o roubo simples do art. 157 tem pena de:",
+          "difficulty": "medium",
+          "explanation": "A Lei nº 15.397/2026 elevou a pena-base do roubo simples para 6 a 10 anos e multa.",
+          "alternatives": [
+            {
+              "text": "2 a 4 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "6 a 10 anos e multa.",
+              "is_correct": true
+            },
+            {
+              "text": "1 a 6 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "3 a 8 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "10 a 20 anos.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-CP-Q08",
+          "statement": "O art. 171 trata de:",
+          "difficulty": "medium",
+          "explanation": "O art. 171 tipifica estelionato.",
+          "alternatives": [
+            {
+              "text": "furto.",
+              "is_correct": false
+            },
+            {
+              "text": "roubo.",
+              "is_correct": false
+            },
+            {
+              "text": "estelionato.",
+              "is_correct": true
+            },
+            {
+              "text": "peculato.",
+              "is_correct": false
+            },
+            {
+              "text": "resistência.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-CP-Q09",
+          "statement": "O art. 213 tipifica:",
+          "difficulty": "medium",
+          "explanation": "O art. 213 é o crime de estupro.",
+          "alternatives": [
+            {
+              "text": "assédio sexual.",
+              "is_correct": false
+            },
+            {
+              "text": "importunação sexual.",
+              "is_correct": false
+            },
+            {
+              "text": "estupro de vulnerável.",
+              "is_correct": false
+            },
+            {
+              "text": "estupro.",
+              "is_correct": true
+            },
+            {
+              "text": "corrupção de menores.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-CP-Q10",
+          "statement": "No art. 217-A, a vítima menor de idade considerada no tipo-base é:",
+          "difficulty": "medium",
+          "explanation": "O art. 217-A tipifica ato sexual/libidinoso com menor de 14 anos.",
+          "alternatives": [
+            {
+              "text": "menor de 18 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "menor de 16 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "menor de 12 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "menor de 10 anos.",
+              "is_correct": false
+            },
+            {
+              "text": "menor de 14 anos.",
+              "is_correct": true
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-CP-Q11",
+          "statement": "O art. 312 do Código Penal tipifica:",
+          "difficulty": "medium",
+          "explanation": "O art. 312 inicia o bloco com o crime de peculato.",
+          "alternatives": [
+            {
+              "text": "peculato.",
+              "is_correct": true
+            },
+            {
+              "text": "corrupção ativa.",
+              "is_correct": false
+            },
+            {
+              "text": "desacato.",
+              "is_correct": false
+            },
+            {
+              "text": "resistência.",
+              "is_correct": false
+            },
+            {
+              "text": "tráfico de influência.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-CP-Q12",
+          "statement": "Para efeitos penais, o art. 327 considera funcionário público quem:",
+          "difficulty": "medium",
+          "explanation": "O conceito penal do art. 327 é mais amplo que cargo efetivo remunerado.",
+          "alternatives": [
+            {
+              "text": "apenas ocupa cargo efetivo remunerado.",
+              "is_correct": false
+            },
+            {
+              "text": "ainda que transitoriamente ou sem remuneração, exerce cargo, emprego ou função pública.",
+              "is_correct": true
+            },
+            {
+              "text": "somente foi aprovado em concurso.",
+              "is_correct": false
+            },
+            {
+              "text": "apenas exerce cargo em comissão.",
+              "is_correct": false
+            },
+            {
+              "text": "somente recebe subsídio.",
+              "is_correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_slug": "modulo-8-legislacao-profissional-eca-maria-da-penha-juizados-ctb-crimes-ambientais-e-lei-de-drogas",
+      "slug": "12-codigo-processo-penal-recorte-do-edital",
+      "title": "12. Código de Processo Penal - arts. 4º a 62 e 301 a 310",
+      "source_label": "Código de Processo Penal - Decreto-Lei nº 3.689/1941 - texto compilado oficial do Planalto, conferido em 18/10/2026",
+      "source_url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del3689compilado.htm",
+      "required_score": 80,
+      "lessons": [
+        {
+          "slug": "cpp-inquerito-acao-penal-flagrante",
+          "title": "CPP: inquérito, ação penal e prisão em flagrante",
+          "summary": "Estudo dos intervalos exatos do edital: arts. 4º-23, 24-62 e 301-310.",
+          "estimated_minutes": 25,
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "Inquérito policial - arts. 4º a 23",
+              "content": "O art. 4º atribui à polícia judiciária a apuração das infrações penais e autoria no âmbito de sua competência. Os artigos seguintes disciplinam formas de início, diligências, reprodução simulada, identificação, incomunicabilidade historicamente prevista, prazos, relatório e remessa dos autos. A leitura deve ser feita pelo texto compilado porque há dispositivos alterados e referências constitucionais posteriores."
+            },
+            {
+              "type": "comparison",
+              "title": "Ação penal - arts. 24 a 62",
+              "content": "O art. 24 estabelece a ação penal pública promovida por denúncia do Ministério Público, condicionada, quando a lei exigir, à requisição ou representação. O intervalo também abrange representação, ação privada subsidiária, queixa, renúncia/perdão, indivisibilidade e extinção em hipóteses processuais previstas."
+            },
+            {
+              "type": "theory",
+              "title": "Prisão em flagrante - arts. 301 a 310",
+              "content": "O art. 301 diferencia faculdade de qualquer pessoa e dever das autoridades policiais/agentes. O art. 302 enumera flagrante próprio, situação logo após perseguição e encontro logo depois com elementos que façam presumir autoria. O art. 303 trata das infrações permanentes. Os arts. 304 e seguintes disciplinam lavratura, comunicações e providências."
+            },
+            {
+              "type": "warning",
+              "title": "Art. 310 atualizado",
+              "content": "Na redação consolidada de 2026, após receber o auto de prisão em flagrante, o juiz deve promover audiência de custódia no prazo máximo de 24 horas, por videoconferência em tempo real, e decidir fundamentadamente entre relaxamento da prisão ilegal, conversão em preventiva quando cabível ou liberdade provisória, com ou sem fiança."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "source_key": "EDITAL26-CPP-Q01",
+          "statement": "Nos termos do art. 4º do CPP, a polícia judiciária tem por finalidade principal:",
+          "difficulty": "medium",
+          "explanation": "O art. 4º trata da apuração das infrações penais e autoria.",
+          "alternatives": [
+            {
+              "text": "apurar infrações penais e sua autoria, no âmbito de sua competência.",
+              "is_correct": true
+            },
+            {
+              "text": "julgar definitivamente o acusado.",
+              "is_correct": false
+            },
+            {
+              "text": "aplicar pena criminal.",
+              "is_correct": false
+            },
+            {
+              "text": "oferecer denúncia.",
+              "is_correct": false
+            },
+            {
+              "text": "homologar acordos.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-CPP-Q02",
+          "statement": "Nos crimes de ação pública, o art. 24 estabelece que a ação será promovida:",
+          "difficulty": "medium",
+          "explanation": "A ação penal pública é promovida por denúncia do Ministério Público.",
+          "alternatives": [
+            {
+              "text": "sempre por queixa da vítima.",
+              "is_correct": false
+            },
+            {
+              "text": "por denúncia do Ministério Público.",
+              "is_correct": true
+            },
+            {
+              "text": "por portaria do delegado.",
+              "is_correct": false
+            },
+            {
+              "text": "por sentença judicial.",
+              "is_correct": false
+            },
+            {
+              "text": "por requerimento do réu.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-CPP-Q03",
+          "statement": "Segundo o art. 25 do CPP, a representação torna-se irretratável:",
+          "difficulty": "medium",
+          "explanation": "O art. 25 fixa a irretratabilidade após o oferecimento da denúncia.",
+          "alternatives": [
+            {
+              "text": "com o registro do boletim.",
+              "is_correct": false
+            },
+            {
+              "text": "com a prisão.",
+              "is_correct": false
+            },
+            {
+              "text": "depois de oferecida a denúncia.",
+              "is_correct": true
+            },
+            {
+              "text": "depois da sentença.",
+              "is_correct": false
+            },
+            {
+              "text": "somente após o trânsito em julgado.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-CPP-Q04",
+          "statement": "Nos termos do art. 301 do CPP:",
+          "difficulty": "medium",
+          "explanation": "O art. 301 distingue faculdade do particular e dever funcional da autoridade/agente.",
+          "alternatives": [
+            {
+              "text": "somente delegado pode prender em flagrante.",
+              "is_correct": false
+            },
+            {
+              "text": "qualquer pessoa é obrigada a prender.",
+              "is_correct": false
+            },
+            {
+              "text": "autoridades podem escolher se prendem.",
+              "is_correct": false
+            },
+            {
+              "text": "qualquer do povo poderá, e autoridades policiais e agentes deverão, prender quem esteja em flagrante.",
+              "is_correct": true
+            },
+            {
+              "text": "ninguém pode prender sem mandado.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-CPP-Q05",
+          "statement": "É hipótese de flagrante do art. 302:",
+          "difficulty": "medium",
+          "explanation": "Essa é uma das hipóteses do art. 302.",
+          "alternatives": [
+            {
+              "text": "apenas confissão posterior.",
+              "is_correct": false
+            },
+            {
+              "text": "mera denúncia anônima.",
+              "is_correct": false
+            },
+            {
+              "text": "suspeita genérica.",
+              "is_correct": false
+            },
+            {
+              "text": "antecedente criminal.",
+              "is_correct": false
+            },
+            {
+              "text": "ser perseguido logo após, em situação que faça presumir autoria.",
+              "is_correct": true
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-CPP-Q06",
+          "statement": "Nas infrações permanentes, o art. 303 considera o agente em flagrante:",
+          "difficulty": "medium",
+          "explanation": "A permanência mantém a situação de flagrância.",
+          "alternatives": [
+            {
+              "text": "enquanto não cessar a permanência.",
+              "is_correct": true
+            },
+            {
+              "text": "somente nas primeiras 2 horas.",
+              "is_correct": false
+            },
+            {
+              "text": "por 24 horas.",
+              "is_correct": false
+            },
+            {
+              "text": "apenas se houver mandado.",
+              "is_correct": false
+            },
+            {
+              "text": "somente após denúncia.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-CPP-Q07",
+          "statement": "No art. 310, constatada prisão ilegal, uma das decisões possíveis é:",
+          "difficulty": "medium",
+          "explanation": "O inciso I do art. 310 prevê relaxamento da prisão ilegal.",
+          "alternatives": [
+            {
+              "text": "converter sempre em preventiva.",
+              "is_correct": false
+            },
+            {
+              "text": "relaxar a prisão ilegal.",
+              "is_correct": true
+            },
+            {
+              "text": "aplicar pena imediatamente.",
+              "is_correct": false
+            },
+            {
+              "text": "arquivar o inquérito.",
+              "is_correct": false
+            },
+            {
+              "text": "oferecer denúncia.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-CPP-Q08",
+          "statement": "Na redação consolidada de 2026 do art. 310, a audiência de custódia deve ser promovida, em regra, em até:",
+          "difficulty": "medium",
+          "explanation": "O caput atualizado do art. 310 mantém o prazo máximo de 24 horas.",
+          "alternatives": [
+            {
+              "text": "12 horas.",
+              "is_correct": false
+            },
+            {
+              "text": "18 horas.",
+              "is_correct": false
+            },
+            {
+              "text": "24 horas.",
+              "is_correct": true
+            },
+            {
+              "text": "48 horas.",
+              "is_correct": false
+            },
+            {
+              "text": "72 horas.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-CPP-Q09",
+          "statement": "Além do relaxamento e da preventiva, o art. 310 também permite ao juiz:",
+          "difficulty": "medium",
+          "explanation": "O inciso III prevê liberdade provisória com ou sem fiança.",
+          "alternatives": [
+            {
+              "text": "condenar sem processo.",
+              "is_correct": false
+            },
+            {
+              "text": "remeter o caso ao Tribunal do Júri automaticamente.",
+              "is_correct": false
+            },
+            {
+              "text": "aplicar sanção administrativa.",
+              "is_correct": false
+            },
+            {
+              "text": "conceder liberdade provisória, com ou sem fiança.",
+              "is_correct": true
+            },
+            {
+              "text": "dispensar toda fundamentação.",
+              "is_correct": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
