@@ -18,6 +18,13 @@ $pdo = Database::connection();
 
 $moduleSlug = 'modulo-3-policia-judiciaria-militar-codigo-penal-militar-cppm-e-rdpm-mt';
 
+$sourceFile = BASE_PATH . '/database/sources/modulo3_progressao_v2.json';
+$source = is_file($sourceFile)
+    ? json_decode((string) file_get_contents($sourceFile), true, 512, JSON_THROW_ON_ERROR)
+    : [];
+$expectedRequired = count(is_array($source['required_phase_slugs'] ?? null) ? $source['required_phase_slugs'] : []);
+$expectedOptional = count(is_array($source['optional_phase_slugs'] ?? null) ? $source['optional_phase_slugs'] : []);
+
 $moduleStmt = $pdo->prepare(
     "SELECT m.id,m.course_id,m.title,c.title AS course_title
      FROM modules m
@@ -239,10 +246,10 @@ $unmapped=(int)$unmappedStmt->fetchColumn();
 echo "\n=============================================================\n";
 echo " RESUMO\n";
 echo "=============================================================\n";
-printf("Fases obrigatórias:                  %d / 6\n",$required);
-printf("Fases complementares:                %d / 6\n",$optional);
-printf("Fixações válidas 3/3 a 100%%:         %d / 6\n",$validFix);
-printf("Checkpoints válidos 5/5 a 80%%:       %d / 6\n",$validCheck);
+printf("Fases obrigatórias:                  %d / %d\n",$required,$expectedRequired);
+printf("Fases complementares:                %d / %d\n",$optional,$expectedOptional);
+printf("Fixações válidas 3/3 a 100%%:         %d / %d\n",$validFix,$expectedRequired);
+printf("Checkpoints válidos 5/5 a 80%%:       %d / %d\n",$validCheck,$expectedRequired);
 printf("Aulas obrigatórias com <= 1 bloco:   %d\n",$thinRequired);
 printf("Questões ativas no módulo:           %d\n",$totalQuestions);
 printf("Questões sem fase associada:         %d\n",$unmapped);
@@ -265,8 +272,12 @@ if($boss){
     $problems[]='Avaliação final ausente.';
 }
 
-if($required!==6) $problems[]="Quantidade de fases obrigatórias: {$required}; esperado 6.";
-if($optional!==6) $problems[]="Quantidade de fases complementares: {$optional}; esperado 6.";
+if($expectedRequired < 1 || $expectedOptional < 1){
+    $problems[]='Fonte curricular sem contagem esperada de fases.';
+}else{
+    if($required!==$expectedRequired) $problems[]="Quantidade de fases obrigatórias: {$required}; esperado {$expectedRequired}.";
+    if($optional!==$expectedOptional) $problems[]="Quantidade de fases complementares: {$optional}; esperado {$expectedOptional}.";
+}
 if($unmapped!==0) $problems[]="Existem {$unmapped} questões sem fase associada.";
 
 if($problems!==[]){
@@ -278,4 +289,4 @@ if($problems!==[]){
     exit(3);
 }
 
-echo "\n[OK] Módulo 3 consistente: conteúdo reforçado, 6 fixações, 6 checkpoints, banco mapeado e avaliação final válida.\n";
+echo "\n[OK] Módulo 3 consistente: conteúdo reforçado, fixações e checkpoints de todas as fases obrigatórias, banco mapeado e avaliação final válida.\n";
