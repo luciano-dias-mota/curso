@@ -186,11 +186,8 @@ foreach($modulesData as $moduleData){
         (float)$phase['required_score']
     );
 
-    if((int)$phase['is_required']!==1){
-        $problems[]="{$popCode}: fase ainda não está obrigatória na trilha.";
-    }
-    if(abs((float)$phase['required_score']-80.0)>=0.01){
-        $problems[]="{$popCode}: required_score da fase diferente de 80%.";
+    if((int)$phase['is_required']!==0){
+        $problems[]="{$popCode}: fase deveria estar complementar no edital atual.";
     }
 
     $lessonsStmt->execute(['phase_id'=>$phaseId]);
@@ -206,33 +203,29 @@ foreach($modulesData as $moduleData){
         if((int)$lesson['block_count']<2){
             $problems[]="{$popCode}: aula #{$lessonId} possui menos de 2 blocos pedagógicos.";
         }
-        if((int)$lesson['is_required']!==1){
-            $problems[]="{$popCode}: aula #{$lessonId} não está marcada como obrigatória.";
+        if((int)$lesson['is_required']!==0){
+            $problems[]="{$popCode}: aula #{$lessonId} deveria estar complementar.";
         }
 
         $fixStmt->execute(['lesson_id'=>$lessonId]);
         $fix=$fixStmt->fetch(PDO::FETCH_ASSOC);
-        if(!$fix){
-            $problems[]="{$popCode}: aula #{$lessonId} sem fixação.";
-        }elseif(
+        if($fix && (
             (int)$fix['question_limit']!==3
             || (int)$fix['linked_questions']!==3
             || abs((float)$fix['required_score']-100.0)>=0.01
-        ){
-            $problems[]="{$popCode}: fixação da aula #{$lessonId} fora do padrão 3/3 a 100%.";
+        )){
+            $problems[]="{$popCode}: fixação existente da aula #{$lessonId} fora do padrão 3/3 a 100%.";
         }
     }
 
     $checkpointStmt->execute(['phase_id'=>$phaseId]);
     $checkpoint=$checkpointStmt->fetch(PDO::FETCH_ASSOC);
-    if(!$checkpoint){
-        $problems[]="{$popCode}: checkpoint da fase ausente.";
-    }elseif(
+    if($checkpoint && (
         (int)$checkpoint['question_limit']!==5
         || (int)$checkpoint['linked_questions']!==5
         || abs((float)$checkpoint['required_score']-80.0)>=0.01
-    ){
-        $problems[]="{$popCode}: checkpoint fora do padrão 5/5 a 80%.";
+    )){
+        $problems[]="{$popCode}: checkpoint existente fora do padrão 5/5 a 80%.";
     }
 
     // Taxonomia.
@@ -368,4 +361,4 @@ if($problems!==[]){
     exit(4);
 }
 
-echo "\n[OK] POP 5 e POP 6 consistentes: 12 processos, 26 procedimentos, 60 questões curadas, aulas, fixações, checkpoints e avaliação final integrados.\n";
+echo "\n[OK] POP 5 e POP 6 consistentes e preservados como conteúdo complementar: 12 processos, 26 procedimentos e 60 questões curadas.\n";
