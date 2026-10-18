@@ -181,10 +181,21 @@ if (!$apply) {
 $pdo->beginTransaction();
 
 try {
+    // Afasta temporariamente as posições para evitar colisões e depois
+    // recompõe a ordem pedagógica: obrigatórias primeiro, complementares depois.
+    $pdo->prepare(
+        "UPDATE phases
+         SET position=position+1000,
+             updated_at=NOW()
+         WHERE module_id=:module_id
+           AND status='published'"
+    )->execute(['module_id'=>$moduleId]);
+
     $setPhaseRequired = $pdo->prepare(
         "UPDATE phases
          SET is_required=:required,
              required_score=80,
+             position=:position,
              description=:description,
              updated_at=NOW()
          WHERE id=:id"
@@ -198,10 +209,13 @@ try {
            AND status='published'"
     );
 
+    $phasePosition = 1;
+
     foreach ($requiredSlugs as $slug) {
         $phase = $phaseMap[$slug];
         $setPhaseRequired->execute([
             'required'=>1,
+            'position'=>$phasePosition++,
             'description'=>'Trilha curricular obrigatória • leitura + fixação + checkpoint.',
             'id'=>(int)$phase['id'],
         ]);
@@ -215,6 +229,7 @@ try {
         $phase = $phaseMap[$slug];
         $setPhaseRequired->execute([
             'required'=>0,
+            'position'=>$phasePosition++,
             'description'=>'Material complementar • disponível para revisão e aprofundamento, sem bloquear o avanço.',
             'id'=>(int)$phase['id'],
         ]);
