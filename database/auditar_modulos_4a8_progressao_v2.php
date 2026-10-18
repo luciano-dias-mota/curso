@@ -158,6 +158,8 @@ foreach($configs as $config){
     $phases=$phaseStmt->fetchAll(\PDO::FETCH_ASSOC);
 
     $requiredExpected=count($config['required_phases'] ?? []);
+    $thematicExpected=max(0,$requiredExpected-1);
+    $expectedBossQuestions=max(10,$thematicExpected);
     $requiredActual=0;
     $optionalActual=0;
     $validFixations=0;
@@ -268,10 +270,11 @@ foreach($configs as $config){
             (float)$boss['required_score']
         );
 
-        if((int)$boss['question_count']!==10
-            || (int)$boss['question_limit']!==10
+        if((int)$boss['question_count']!==$expectedBossQuestions
+            || (int)$boss['question_limit']!==$expectedBossQuestions
             || abs((float)$boss['required_score']-80.0)>=0.01){
-            $moduleProblems[]='Avaliação final fora do padrão 10/10 a 80%.';
+            $moduleProblems[]=
+                "Avaliação final fora do padrão {$expectedBossQuestions}/{$expectedBossQuestions} a 80%.";
         }
     }
 
