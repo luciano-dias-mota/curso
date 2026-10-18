@@ -123,7 +123,9 @@ foreach (['courses','modules','phases','lessons','questions','alternatives'] as 
     }
 }
 
-if (!$tableExists($pdo, 'question_import_keys')) {
+$hasImportKeys = $tableExists($pdo, 'question_import_keys');
+
+if (!$hasImportKeys) {
     if (!$apply) {
         echo "[CRIAR] question_import_keys\n";
     } else {
@@ -141,6 +143,7 @@ if (!$tableExists($pdo, 'question_import_keys')) {
                     ON DELETE CASCADE ON UPDATE CASCADE
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci"
         );
+        $hasImportKeys = true;
     }
 }
 
@@ -222,12 +225,14 @@ foreach ($existing as $row) {
     ];
 }
 
-$keyStmt = $pdo->prepare(
-    "SELECT question_id
-     FROM question_import_keys
-     WHERE source_key=:source_key
-     LIMIT 1"
-);
+$keyStmt = $hasImportKeys
+    ? $pdo->prepare(
+        "SELECT question_id
+         FROM question_import_keys
+         WHERE source_key=:source_key
+         LIMIT 1"
+    )
+    : null;
 
 $prepared = [];
 $stats = [
@@ -260,8 +265,11 @@ foreach ($items as $item) {
         continue;
     }
 
-    $keyStmt->execute(['source_key'=>$sourceKey]);
-    $keyQuestionId = $keyStmt->fetchColumn();
+    $keyQuestionId = false;
+    if ($keyStmt instanceof PDOStatement) {
+        $keyStmt->execute(['source_key'=>$sourceKey]);
+        $keyQuestionId = $keyStmt->fetchColumn();
+    }
 
     if ($keyQuestionId !== false) {
         $stats['existing_key']++;
