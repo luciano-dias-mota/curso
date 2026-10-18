@@ -1,0 +1,1536 @@
+{
+  "version": 2,
+  "modules": [
+    {
+      "module_slug": "modulo-4-corregedoria-pmmt-ipm-sindicancia-portaria-160-e-desercao",
+      "source_label": "M4V2 | Corregedoria PMMT | materiais fornecidos no projeto",
+      "required_phases": [
+        {
+          "selector": {
+            "slug": "introducao-e-visao-geral"
+          },
+          "title": "Introdução e visão geral",
+          "replace_first_block": {
+            "type": "theory",
+            "title": "Como o Módulo 4 está organizado",
+            "content": "Este módulo separa três procedimentos que não podem ser confundidos na prova. O Inquérito Policial Militar (IPM) é a investigação de natureza policial-militar voltada à apuração de fato que configure crime militar e de sua autoria. A Sindicância PMMT é procedimento administrativo apuratório disciplinado pelos manuais e pela Portaria nº 160/GCG/PMMT/09. A deserção possui sequência própria de ausência, prazo de graça e formalização, conforme o material específico.\n\nPara estudar bem, identifique em cada questão: qual procedimento está sendo cobrado, qual autoridade pratica o ato, qual prazo foi indicado no material e em que momento processual ele ocorre."
+          },
+          "extra_blocks": [
+            {
+              "type": "comparison",
+              "title": "Mapa rápido: IPM × Sindicância × Deserção",
+              "content": "IPM → investigação de crime militar, autoria/materialidade, encarregado, escrivão, diligências, prazos e relatório.\nSindicância → apuração administrativa, autuação, defesa, testemunhas, prorrogação, solução, recursos e prescrição segundo a Portaria 160 e o manual.\nDeserção → controle da ausência, parte de ausência, prazo de graça, consumação e termo de deserção, observadas as hipóteses trabalhadas no manual.\n\nPegadinha frequente: transportar prazo ou peça de um procedimento para outro."
+            },
+            {
+              "type": "warning",
+              "title": "Como resolver questões procedimentais",
+              "content": "Monte mentalmente uma linha do tempo. Quando a alternativa trouxer um prazo, pergunte primeiro a qual procedimento ele pertence; depois verifique quem é a autoridade competente e qual ato antecede ou sucede aquele momento."
+            }
+          ],
+          "keywords": [],
+          "new_questions": [
+            {
+              "statement": "No Módulo 4, qual associação está correta entre procedimento e finalidade?",
+              "explanation": "O módulo separa claramente investigação penal militar, apuração administrativa e procedimento de deserção.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "IPM — classificar comportamento disciplinar; Sindicância — processar crime militar; Deserção — julgar recursos administrativos.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "IPM — investigar fato que configure crime militar e autoria; Sindicância — apuração administrativa; Deserção — procedimento ligado à ausência ilegal e sua formalização.",
+                  "is_correct": true
+                },
+                {
+                  "label": "C",
+                  "text": "IPM e Sindicância são sinônimos; Deserção é apenas sanção disciplinar.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "Sindicância substitui obrigatoriamente o IPM sempre que houver militar envolvido.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "Deserção é apurada exclusivamente pelo RDPM, sem relação com o CPM/CPPM.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "Ao enfrentar uma questão sobre prazos no Módulo 4, a estratégia mais segura é:",
+              "explanation": "Os materiais possuem prazos distintos por procedimento e por situação.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "memorizar um único prazo para todos os procedimentos.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "desconsiderar a autoridade responsável pelo ato.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "tratar IPM, sindicância e deserção como um único rito.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "identificar primeiro o procedimento e o momento processual a que o prazo pertence.",
+                  "is_correct": true
+                },
+                {
+                  "label": "E",
+                  "text": "usar sempre o maior prazo apresentado nas alternativas.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "Qual tema pertence ao eixo de Sindicância PMMT no Módulo 4?",
+              "explanation": "Esses pontos integram a trilha de sindicância.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "Art. 9º do CPM.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "Níveis do uso da força.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "Autuação, defesa, testemunhas, solução e recursos conforme a Portaria 160 e o manual.",
+                  "is_correct": true
+                },
+                {
+                  "label": "D",
+                  "text": "Curva ABC de materiais.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "Tráfico privilegiado.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "No eixo de deserção, a prova pode cobrar principalmente:",
+              "explanation": "O material de deserção é fortemente procedimental e cronológico.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "sequência da ausência, prazo de graça, consumação e peças formais.",
+                  "is_correct": true
+                },
+                {
+                  "label": "B",
+                  "text": "somente princípios da Administração Pública.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "apenas classificação de transgressão disciplinar.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "somente recursos do RDPM.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "apenas atos de improbidade.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "Por que o curso separa IPM e Sindicância em fases diferentes?",
+              "explanation": "A distinção entre os institutos evita transportar regras de um procedimento para outro.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "Porque ambos possuem exatamente a mesma natureza e finalidade.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "Porque a Sindicância é sempre processo penal.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "Porque o IPM nunca envolve diligências.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "Porque a Sindicância substitui o CPPM.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "Porque possuem natureza, finalidade e sequência procedimental distintas, embora possam aparecer relacionadas em situações concretas.",
+                  "is_correct": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "selector": {
+            "slug": "1-inquerito-policial-militar-ipm"
+          },
+          "title": "1. Inquérito Policial Militar (IPM)",
+          "keywords": [
+            "ipm",
+            "inquerito policial militar",
+            "indiciado preso",
+            "indiciado solto",
+            "defesa previa",
+            "alegacoes finais",
+            "natureza do ipm",
+            "prorrogacao do ipm"
+          ]
+        },
+        {
+          "selector": {
+            "slug": "2-sindicancia-pmmt"
+          },
+          "title": "2. Sindicância PMMT",
+          "keywords": [
+            "sindicancia",
+            "portaria 160",
+            "autuacao",
+            "testemunhas",
+            "carta precatoria",
+            "duplicidade",
+            "sindicante",
+            "prescricao",
+            "comandante-geral",
+            "recursos na ultima instancia",
+            "solucao pelo comandante-geral"
+          ]
+        },
+        {
+          "selector": {
+            "slug": "3-desercao-e-instrucao-provisoria"
+          },
+          "title": "3. Deserção e Instrução Provisória",
+          "keywords": [
+            "desercao",
+            "ausencia",
+            "prazo de graca",
+            "parte de ausencia",
+            "termo de deser"
+          ],
+          "extra_blocks": [
+            {
+              "type": "comparison",
+              "title": "Linha do tempo da deserção",
+              "content": "No estudo da deserção, organize os fatos em sequência: falta/ausência injustificada → registro/parte de ausência → contagem conforme o manual → prazo de graça quando aplicável → consumação → formalização das peças correspondentes. Questões costumam trocar o marco inicial da contagem, antecipar a consumação ou confundir deserção comum com hipótese especial."
+            }
+          ]
+        }
+      ],
+      "all_other_phases_optional": true
+    },
+    {
+      "module_slug": "modulo-5-responsabilizacao-e-protecao-improbidade-administrativa-tortura-e-abuso-de-autoridade",
+      "source_label": "M5V2 | Improbidade + Tortura + Abuso de Autoridade | materiais fornecidos",
+      "required_phases": [
+        {
+          "selector": {
+            "slug": "introducao-e-visao-geral"
+          },
+          "title": "Introdução e visão geral",
+          "replace_first_block": {
+            "type": "theory",
+            "title": "Três leis, três estruturas de responsabilização",
+            "content": "O Módulo 5 reúne três eixos distintos. A Lei de Improbidade Administrativa trabalha atos dolosos tipificados, categorias dos arts. 9º, 10 e 11, sanções, declaração de bens e medidas patrimoniais. A Lei de Tortura define modalidades próprias de tortura, inclusive prova/confissão, crime, discriminação, castigo e omissão, além de efeitos da condenação. A Lei de Abuso de Autoridade exige a análise do tipo legal e da finalidade específica prevista na lei, além de tratar de ação penal e efeitos da condenação.\n\nA banca costuma misturar requisitos de uma lei com outra. Antes de responder, identifique qual diploma está sendo aplicado e qual elemento subjetivo ou efeito jurídico está em jogo."
+          },
+          "extra_blocks": [
+            {
+              "type": "comparison",
+              "title": "Mapa mental do módulo",
+              "content": "Improbidade → dolo, arts. 9º/10/11, sanções, declaração de bens, indisponibilidade.\nTortura → modalidades, sujeito passivo, finalidade, omissão e efeitos da condenação.\nAbuso de Autoridade → finalidade específica, condutas típicas, divergência interpretativa, ação penal e efeitos da condenação."
+            },
+            {
+              "type": "warning",
+              "title": "Pegadinha central",
+              "content": "Mera ilegalidade, divergência interpretativa ou exercício regular de competência não podem ser automaticamente tratados como improbidade ou abuso. Leia os requisitos específicos destacados em cada lei."
+            }
+          ],
+          "keywords": [],
+          "new_questions": [
+            {
+              "statement": "Qual alternativa associa corretamente os três eixos do Módulo 5?",
+              "explanation": "A introdução separa os requisitos próprios de cada diploma.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "Improbidade — atos dolosos tipificados; Tortura — modalidades específicas de constrangimento/sofrimento; Abuso de Autoridade — tipos penais com finalidade específica prevista em lei.",
+                  "is_correct": true
+                },
+                {
+                  "label": "B",
+                  "text": "Improbidade — qualquer erro administrativo; Tortura — apenas omissão; Abuso — qualquer decisão desfavorável.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "Improbidade e abuso são sinônimos; tortura é sanção administrativa.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "Tortura e improbidade são infrações exclusivamente civis.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "Abuso de autoridade dispensa finalidade específica.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "No estudo da Lei de Improbidade após a reforma trabalhada no curso, a atenção principal deve recair sobre:",
+              "explanation": "O material enfatiza dolo e tipicidade após as alterações da Lei nº 14.230/2021.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "responsabilidade automática por qualquer culpa.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "pena criminal de reclusão prevista na LIA.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "condutas dolosas tipificadas e os requisitos de cada categoria legal.",
+                  "is_correct": true
+                },
+                {
+                  "label": "D",
+                  "text": "somente tempo de serviço do agente.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "aplicação obrigatória do RDPM.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "No eixo de Abuso de Autoridade, qual cuidado evita erro de prova?",
+              "explanation": "A finalidade específica é ponto central do material.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "considerar toda divergência jurídica como crime.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "ignorar a finalidade da conduta.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "presumir abuso sempre que houver prejuízo ao administrado.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "verificar a finalidade específica e a conduta típica prevista na Lei nº 13.869/2019.",
+                  "is_correct": true
+                },
+                {
+                  "label": "E",
+                  "text": "aplicar automaticamente a Lei de Tortura.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "No eixo da Lei de Tortura, o curso organiza o estudo a partir de:",
+              "explanation": "Esses são os elementos destacados na trilha.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "apenas pena de multa.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "modalidades do crime, contexto/finalidade, omissão e efeitos da condenação.",
+                  "is_correct": true
+                },
+                {
+                  "label": "C",
+                  "text": "somente recursos administrativos.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "apenas agentes públicos concursados.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "regras de licitação.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "A melhor estratégia para não misturar as três leis do Módulo 5 é:",
+              "explanation": "O raciocínio por diploma evita transportar regras indevidamente.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "memorizar apenas o número das leis.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "usar a mesma definição de dolo em todas as situações.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "ignorar efeitos da condenação.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "tratar toda ilicitude como crime de abuso.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "identificar primeiro o diploma, depois requisitos, elemento subjetivo, sanções/efeitos e exceções.",
+                  "is_correct": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "selector": {
+            "slug": "1-improbidade-administrativa-lei-no-8-429-1992"
+          },
+          "title": "1. Improbidade Administrativa - Lei nº 8.429/1992",
+          "keywords": [
+            "improbidade",
+            "lia",
+            "8.429",
+            "art. 9",
+            "art. 10",
+            "art. 11",
+            "declaracao de bens",
+            "indisponibilidade",
+            "direitos politicos"
+          ]
+        },
+        {
+          "selector": {
+            "slug": "2-lei-de-tortura-lei-no-9-455-1997"
+          },
+          "title": "2. Lei de Tortura - Lei nº 9.455/1997",
+          "keywords": [
+            "tortura",
+            "9.455"
+          ],
+          "extra_blocks": [
+            {
+              "type": "comparison",
+              "title": "Modalidades que precisam ser distinguidas",
+              "content": "Organize a Lei de Tortura pelas situações trabalhadas no material: tortura para obter prova/confissão; tortura para provocar ação ou omissão criminosa; tortura discriminatória; tortura-castigo sobre pessoa sob guarda, poder ou autoridade; e a modalidade omissiva de quem tinha dever de evitar ou apurar. Observe também os efeitos específicos da condenação destacados no curso."
+            }
+          ]
+        },
+        {
+          "selector": {
+            "slug": "3-abuso-de-autoridade-lei-no-13-869-2019"
+          },
+          "title": "3. Abuso de Autoridade - Lei nº 13.869/2019",
+          "keywords": [
+            "abuso de autoridade",
+            "13.869",
+            "finalidade especifica",
+            "divergencia interpretativa",
+            "acao penal no abuso",
+            "efeitos dos incisos"
+          ]
+        }
+      ],
+      "all_other_phases_optional": true
+    },
+    {
+      "module_slug": "modulo-6-direito-constitucional-e-legislacao-institucional-da-pmmt",
+      "source_label": "M6V2 | Constitucional + Legislação Institucional PMMT | materiais fornecidos",
+      "required_phases": [
+        {
+          "selector": {
+            "slug": "introducao-e-visao-geral"
+          },
+          "title": "Introdução e visão geral",
+          "replace_first_block": {
+            "type": "theory",
+            "title": "Mapa constitucional e institucional do Módulo 6",
+            "content": "O Módulo 6 combina Constituição Federal e legislação institucional da PMMT. O primeiro eixo reúne fundamentos, objetivos, princípios internacionais e direitos e garantias. O segundo concentra Administração Pública, especialmente o art. 37. O terceiro trata do regime constitucional dos militares estaduais, segurança pública e Lei Orgânica Nacional das PMs e CBMs. O quarto reúne a legislação institucional de Mato Grosso, com Estatuto dos Militares, Constituição Estadual, regras de promoção e efetivo no recorte fornecido.\n\nA técnica de prova é localizar a fonte normativa antes de responder: CF/88, Constituição Estadual, Lei nº 14.751/2023, LC nº 555/2014, Lei nº 10.076/2014 ou LC nº 529/2014."
+          },
+          "extra_blocks": [
+            {
+              "type": "comparison",
+              "title": "Quatro caixas para organizar a matéria",
+              "content": "1) Constituição: fundamentos, objetivos, princípios e direitos.\n2) Administração Pública: LIMPE, cargos/funções, acumulação, publicidade, improbidade e responsabilidade estatal.\n3) Regime militar e Lei Orgânica Nacional: art. 42, hierarquia, disciplina, patentes, vedações e natureza institucional.\n4) PMMT/MT: Constituição Estadual, Estatuto, precedência, cargo militar, sede, promoção e efetivo."
+            },
+            {
+              "type": "warning",
+              "title": "Evite misturar fontes",
+              "content": "Uma alternativa pode trazer regra verdadeira de outro diploma para torná-la errada no contexto perguntado. Identifique sempre a fonte normativa e o dispositivo temático."
+            }
+          ],
+          "keywords": [],
+          "new_questions": [
+            {
+              "statement": "Qual é a melhor forma de organizar o Módulo 6 para prova?",
+              "explanation": "O módulo foi estruturado em quatro grandes caixas normativas.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "Tratar todas as normas como se fossem um único diploma.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "Separar Constituição, Administração Pública, regime militar/Lei Orgânica Nacional e legislação institucional de Mato Grosso.",
+                  "is_correct": true
+                },
+                {
+                  "label": "C",
+                  "text": "Estudar somente o art. 37.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "Ignorar a Constituição Estadual.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "Memorizar apenas números de leis.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "Quando uma questão citar LIMPE, cargos em comissão, função de confiança e responsabilidade civil do Estado, o eixo principal é:",
+              "explanation": "Esses temas são estudados no eixo do art. 37.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "Lei de Drogas.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "RDPM.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "Administração Pública constitucional, especialmente o art. 37.",
+                  "is_correct": true
+                },
+                {
+                  "label": "D",
+                  "text": "Lei de Tortura.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "CTB.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "Art. 42, patentes, hierarquia e disciplina integram principalmente o estudo:",
+              "explanation": "Esses elementos pertencem ao regime constitucional militar.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "do regime constitucional dos militares estaduais.",
+                  "is_correct": true
+                },
+                {
+                  "label": "B",
+                  "text": "da Lei de Improbidade.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "do ECA.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "do Código Penal Militar apenas.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "da Lei de Crimes Ambientais.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "A Lei nº 14.751/2023 é trabalhada no curso como:",
+              "explanation": "A Lei nº 14.751/2023 é a Lei Orgânica Nacional das PMs e CBMs.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "Lei de Promoção da PMMT.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "Estatuto estadual dos militares de MT.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "Código de Processo Penal Militar.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "Lei Orgânica Nacional das Polícias Militares e dos Corpos de Bombeiros Militares.",
+                  "is_correct": true
+                },
+                {
+                  "label": "E",
+                  "text": "Regulamento Disciplinar da PMMT.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "No eixo institucional de Mato Grosso, o curso utiliza, entre outros diplomas:",
+              "explanation": "Esses diplomas compõem o recorte institucional estadual.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "somente o Código Civil.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "apenas a Constituição Federal.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "somente a Lei nº 9.099/1995.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "apenas o Código Penal Militar.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "Constituição Estadual, LC nº 555/2014 e normas estaduais de promoção e efetivo constantes do material.",
+                  "is_correct": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "selector": {
+            "slug": "1-principios-fundamentais-arts-1o-a-4o"
+          },
+          "title": "Constituição Federal: Princípios Fundamentais e Direitos e Garantias",
+          "keywords": [
+            "fundamentos da republica",
+            "objetivos fundamentais",
+            "principios internacionais",
+            "art. 1",
+            "art. 3",
+            "art. 4",
+            "art. 5",
+            "domicilio",
+            "direitos e garantias"
+          ]
+        },
+        {
+          "selector": {
+            "slug": "3-administracao-publica-art-37"
+          },
+          "title": "Administração Pública - art. 37",
+          "keywords": [
+            "art. 37",
+            "limpe",
+            "funcao de confianca",
+            "cargo em comissao",
+            "acumulacao remunerada",
+            "publicidade oficial",
+            "improbidade no art. 37",
+            "responsabilidade civil do estado"
+          ],
+          "extra_blocks": [
+            {
+              "type": "comparison",
+              "title": "Art. 37: pontos que mais se cruzam",
+              "content": "LIMPE = legalidade, impessoalidade, moralidade, publicidade e eficiência. Função de confiança é exercida por servidor ocupante de cargo efetivo; cargo em comissão é de livre nomeação e exoneração e se destina a direção, chefia e assessoramento. O material também trabalha acumulação nos limites constitucionais, publicidade sem promoção pessoal, consequências por improbidade e responsabilidade civil das pessoas jurídicas nos termos do § 6º."
+            }
+          ]
+        },
+        {
+          "selector": {
+            "slug": "4-regime-dos-militares-e-seguranca-publica"
+          },
+          "title": "Regime constitucional dos militares e Lei Orgânica Nacional",
+          "keywords": [
+            "militares estaduais",
+            "art. 42",
+            "greve",
+            "sindicalizacao",
+            "patentes",
+            "atividade militar",
+            "cargo civil permanente",
+            "lei organica nacional",
+            "14.751",
+            "pms e cbms"
+          ],
+          "extra_blocks": [
+            {
+              "type": "comparison",
+              "title": "Regime militar: pontos de literalidade",
+              "content": "O material enfatiza hierarquia e disciplina, condição constitucional dos militares estaduais, patentes, vedações de sindicalização e greve, situações envolvendo cargo civil e a Lei nº 14.751/2023, que caracteriza PMs e CBMs como instituições militares permanentes, exclusivas e típicas de Estado, forças auxiliares e reserva do Exército."
+            }
+          ]
+        },
+        {
+          "selector": {
+            "slug": "7-estatuto-dos-militares-de-mt-lc-no-555-2014"
+          },
+          "title": "Legislação Institucional de MT: Estatuto, Constituição Estadual, Promoção e Efetivo",
+          "keywords": [
+            "lc 555",
+            "estatuto",
+            "sede",
+            "cargo militar",
+            "formas de provimento",
+            "precedencia",
+            "constituicao estadual",
+            "governador",
+            "promocao",
+            "10.076",
+            "efetivo",
+            "lc 529"
+          ]
+        }
+      ],
+      "all_other_phases_optional": true
+    },
+    {
+      "module_slug": "modulo-7-procedimentos-operacionais-padrao-pmmt-modulos-i-iii-e-iv",
+      "source_label": "M7V2 | POP PMMT | trilha atualizada",
+      "required_phases": [
+        {
+          "selector": {
+            "slug": "introducao-e-visao-geral"
+          },
+          "title": "Introdução e visão geral",
+          "replace_first_block": {
+            "type": "theory",
+            "title": "Como estudar os POPs no curso",
+            "content": "O módulo de POP deve ser estudado como sequência operacional, e não como coleção de frases isoladas. A trilha atualizada está organizada em quatro conjuntos: POP 1, voltado aos níveis do uso da força policial; POP 2, com abordagens policiais; POP 3, com procedimentos diversos; e POP 4, com ocorrências policiais.\n\nEm cada processo, transforme o texto em uma linha mental: preparação → execução → pontos de segurança → condutas que devem ser evitadas → encerramento/registro. Números, ordem das ações e condições de exceção merecem atenção especial."
+          },
+          "extra_blocks": [
+            {
+              "type": "comparison",
+              "title": "Mapa dos quatro POPs atualizados",
+              "content": "POP 1 → uso da força e decisões operacionais associadas.\nPOP 2 → abordagens policiais e procedimentos correspondentes.\nPOP 3 → procedimentos diversos, com foco em sequência segura de execução.\nPOP 4 → ocorrências policiais, preservação e fluxos específicos conforme o material.\n\nAs fases antigas de recortes, mapas e revisão permanecem como biblioteca complementar; a progressão obrigatória usa as quatro versões atualizadas."
+            },
+            {
+              "type": "warning",
+              "title": "Método de prova para POP",
+              "content": "Se a alternativa inverter a ordem de duas ações, omitir uma condição de segurança ou transformar uma conduta vedada em recomendada, desconfie. Nos POPs, a sequência e a condição operacional fazem parte do conteúdo."
+            }
+          ],
+          "new_questions": [
+            {
+              "statement": "Qual é a melhor forma de estudar um Procedimento Operacional Padrão para prova?",
+              "explanation": "O módulo orienta o estudo por sequência operacional.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "Memorizar apenas o título do processo.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "Ignorar a ordem das ações.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "Transformar o procedimento em sequência mental de preparação, execução, segurança, condutas vedadas e encerramento.",
+                  "is_correct": true
+                },
+                {
+                  "label": "D",
+                  "text": "Estudar somente as ilustrações.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "Considerar qualquer ordem de execução equivalente.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "Na nova trilha do Módulo 7, o POP 1 está associado principalmente a:",
+              "explanation": "O POP 1 atualizado trata dos níveis do uso da força policial.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "níveis do uso da força policial.",
+                  "is_correct": true
+                },
+                {
+                  "label": "B",
+                  "text": "sindicância administrativa.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "Lei de Drogas.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "gestão de materiais.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "improbidade administrativa.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "Na trilha atualizada, o POP 2 concentra:",
+              "explanation": "O POP 2 atualizado é o módulo de abordagens policiais.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "apenas crimes ambientais.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "abordagens policiais.",
+                  "is_correct": true
+                },
+                {
+                  "label": "C",
+                  "text": "somente recursos disciplinares.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "promoções militares.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "gestão de pessoas.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "Na trilha atualizada, o POP 3 é identificado como:",
+              "explanation": "O POP 3 atualizado corresponde a Procedimentos Diversos.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "Uso da força.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "Ocorrências policiais.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "Direito Constitucional.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "Procedimentos Diversos.",
+                  "is_correct": true
+                },
+                {
+                  "label": "E",
+                  "text": "Sindicância.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "Na trilha atualizada, o POP 4 corresponde a:",
+              "explanation": "O POP 4 atualizado reúne ocorrências policiais.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "Administração Pública.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "Código Penal Militar.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "Abordagens policiais.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "Lei de Improbidade.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "Ocorrências Policiais.",
+                  "is_correct": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "selector": {
+            "title_prefix": "POP 1 -"
+          },
+          "title": "POP 1 - Níveis do Uso da Força Policial",
+          "keywords": []
+        },
+        {
+          "selector": {
+            "title_prefix": "POP 2 -"
+          },
+          "title": "POP 2 - Abordagens Policiais",
+          "keywords": []
+        },
+        {
+          "selector": {
+            "title_prefix": "POP 3 -"
+          },
+          "title": "POP 3 - Procedimentos Diversos",
+          "keywords": []
+        },
+        {
+          "selector": {
+            "title_prefix": "POP 4 -"
+          },
+          "title": "POP 4 - Ocorrências Policiais",
+          "keywords": []
+        }
+      ],
+      "all_other_phases_optional": true,
+      "use_existing_phase_links": true
+    },
+    {
+      "module_slug": "modulo-8-legislacao-profissional-eca-maria-da-penha-juizados-ctb-crimes-ambientais-e-lei-de-drogas",
+      "source_label": "M8V2 | Legislação Profissional | materiais fornecidos",
+      "required_phases": [
+        {
+          "selector": {
+            "slug": "introducao-e-visao-geral"
+          },
+          "title": "Introdução e visão geral",
+          "replace_first_block": {
+            "type": "theory",
+            "title": "Seis diplomas que precisam ficar separados",
+            "content": "O Módulo 8 reúne seis eixos: ECA, Lei Maria da Penha, Juizados Especiais, Código de Trânsito Brasileiro, Crimes Ambientais e Lei de Drogas. A principal dificuldade é transportar uma regra verdadeira de uma lei para outra. Por isso, estude sempre em duas etapas: primeiro identifique o diploma; depois localize o instituto específico.\n\nECA: faixas etárias, direitos e prevenção. Maria da Penha: âmbito de incidência e formas de violência. Lei nº 9.099/1995: princípios e infrações de menor potencial ofensivo. CTB: regras operacionais e distinção entre medida administrativa e penalidade. Lei nº 9.605/1998: responsabilidade, crimes e mecanismos despenalizadores. Lei nº 11.343/2006: flagrante, laudo, tráfico privilegiado e técnicas investigativas do recorte fornecido."
+          },
+          "extra_blocks": [
+            {
+              "type": "comparison",
+              "title": "Mapa comparativo do módulo",
+              "content": "ECA → criança/adolescente, direitos educacionais e prevenção.\nMaria da Penha → relações abrangidas e violências física, psicológica, sexual, patrimonial e moral.\nJECRIM → oralidade, simplicidade, informalidade, economia processual, celeridade e menor potencial ofensivo.\nCTB → emergência, iluminação, medidas administrativas, penalidades, pontos, velocidade e fiscalização.\nAmbiental → responsabilidade, fauna/flora, crimes e despenalização.\nDrogas → laudo, flagrante, tráfico privilegiado, ação controlada e regras do recorte estudado."
+            },
+            {
+              "type": "warning",
+              "title": "Pegadinha de legislação especial",
+              "content": "Leia a pergunta procurando o número da lei ou o instituto. Termos como representação, ação penal, transação, laudo, medida protetiva, medida administrativa e causa de diminuição pertencem a regimes diferentes."
+            }
+          ],
+          "keywords": [],
+          "new_questions": [
+            {
+              "statement": "Qual estratégia reduz mais erros no Módulo 8?",
+              "explanation": "A matéria reúne diplomas diferentes e exige identificar a fonte normativa.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "Aplicar a mesma regra a todas as leis especiais.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "Identificar primeiro o diploma e depois o instituto específico cobrado.",
+                  "is_correct": true
+                },
+                {
+                  "label": "C",
+                  "text": "Ignorar o número da lei.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "Memorizar apenas penas.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "Tratar CTB e Lei nº 9.099/1995 como equivalentes.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "Qual associação está correta?",
+              "explanation": "O CTB trabalha medidas administrativas, penalidades e regras de trânsito.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "ECA — tráfico privilegiado.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "Maria da Penha — curva ABC.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "JECRIM — IPM.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "CTB — medidas administrativas e penalidades de trânsito.",
+                  "is_correct": true
+                },
+                {
+                  "label": "E",
+                  "text": "Lei de Drogas — comportamento disciplinar do RDPM.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "Faixa etária de criança/adolescente e direitos educacionais são temas do:",
+              "explanation": "Esses temas pertencem ao Estatuto da Criança e do Adolescente.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "ECA.",
+                  "is_correct": true
+                },
+                {
+                  "label": "B",
+                  "text": "CPM.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "RDPM.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "CTB exclusivamente.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "CPPM.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "Violência patrimonial e violência moral, no recorte do módulo, pertencem ao estudo:",
+              "explanation": "São formas de violência doméstica/familiar trabalhadas na Lei Maria da Penha.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "da Lei de Drogas.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "do CTB.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "da Lei Maria da Penha.",
+                  "is_correct": true
+                },
+                {
+                  "label": "D",
+                  "text": "do CPM.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "da Lei de Improbidade.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "Laudo de constatação e tráfico privilegiado são trabalhados principalmente no eixo:",
+              "explanation": "Esses institutos pertencem ao recorte da Lei nº 11.343/2006.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "ECA.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "Juizados Especiais.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "Crimes Ambientais.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "CTB.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "Lei de Drogas.",
+                  "is_correct": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "selector": {
+            "slug": "1-eca-lei-no-8-069-1990"
+          },
+          "title": "1. ECA - Lei nº 8.069/1990",
+          "keywords": [
+            "eca",
+            "crianca",
+            "adolescente",
+            "art. 53",
+            "53-a",
+            "direitos educacionais",
+            "faixa etaria"
+          ],
+          "extra_blocks": [
+            {
+              "type": "comparison",
+              "title": "ECA: pontos de literalidade do material",
+              "content": "O recorte destaca a diferença entre criança e adolescente, direitos educacionais do art. 53 e o art. 53-A, relacionado a medidas de conscientização, prevenção e enfrentamento ao uso ou dependência de drogas ilícitas por instituições de ensino, clubes e agremiações recreativas."
+            }
+          ],
+          "new_questions": [
+            {
+              "statement": "Segundo o recorte do ECA trabalhado no curso, o art. 53 assegura ao estudante, entre outros direitos:",
+              "explanation": "O material destaca esses direitos educacionais do art. 53.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "proibição de contestar critérios avaliativos.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "vedação de participação em entidades estudantis.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "igualdade de acesso e permanência, respeito pelos educadores, possibilidade de contestar critérios avaliativos e participação estudantil.",
+                  "is_correct": true
+                },
+                {
+                  "label": "D",
+                  "text": "apenas direito à matrícula, sem outras garantias.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "dispensa de frequência escolar.",
+                  "is_correct": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "selector": {
+            "slug": "2-lei-maria-da-penha-lei-no-11-340-2006"
+          },
+          "title": "2. Lei Maria da Penha - Lei nº 11.340/2006",
+          "keywords": [
+            "maria da penha",
+            "11.340",
+            "violencia patrimonial",
+            "violencia moral",
+            "relacao intima",
+            "orientacao sexual",
+            "direitos humanos"
+          ]
+        },
+        {
+          "selector": {
+            "slug": "3-lei-no-9-099-1995"
+          },
+          "title": "3. Lei nº 9.099/1995 - Juizados Especiais",
+          "keywords": [
+            "9.099",
+            "juizados especiais",
+            "menor potencial ofensivo",
+            "oralidade",
+            "simplicidade",
+            "informalidade",
+            "economia processual",
+            "celeridade"
+          ],
+          "extra_blocks": [
+            {
+              "type": "comparison",
+              "title": "JECRIM em dois eixos",
+              "content": "O material destaca os critérios de oralidade, simplicidade, informalidade, economia processual e celeridade. Também trabalha o conceito de infração de menor potencial ofensivo do art. 61, abrangendo contravenções e crimes cuja pena máxima não seja superior a dois anos, cumulada ou não com multa, no recorte fornecido."
+            }
+          ],
+          "new_questions": [
+            {
+              "statement": "Qual conjunto corresponde aos critérios destacados para os Juizados Especiais?",
+              "explanation": "Esses são os critérios trabalhados na Lei nº 9.099/1995.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "Oralidade, simplicidade, informalidade, economia processual e celeridade.",
+                  "is_correct": true
+                },
+                {
+                  "label": "B",
+                  "text": "Hierarquia, disciplina, soberania e publicidade.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "Sigilo absoluto, formalismo e morosidade.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "Legalidade, patrimonialismo e autotutela.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "Inquisitoriedade, segredo e rigidez procedimental.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "No recorte do art. 61 da Lei nº 9.099/1995 utilizado no curso, infração de menor potencial ofensivo abrange:",
+              "explanation": "Essa é a definição destacada no material.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "somente contravenções, nunca crimes.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "crimes com pena máxima de até cinco anos.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "apenas crimes culposos.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "contravenções e crimes com pena máxima não superior a dois anos, cumulada ou não com multa.",
+                  "is_correct": true
+                },
+                {
+                  "label": "E",
+                  "text": "todo crime sem violência.",
+                  "is_correct": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "selector": {
+            "slug": "4-ctb-mapa-mental-fornecido"
+          },
+          "title": "4. CTB - mapa mental fornecido",
+          "keywords": [
+            "codigo de transito",
+            "ctb",
+            "transito",
+            "retencao",
+            "remocao",
+            "veiculos de emergencia",
+            "luz baixa",
+            "drl",
+            "gravissima",
+            "via de transito rapido",
+            "via local",
+            "toxicologico"
+          ],
+          "extra_blocks": [
+            {
+              "type": "comparison",
+              "title": "CTB: mapa de prova do material fornecido",
+              "content": "O mapa destaca veículos de emergência e art. 29; uso de luz baixa/DRL nas situações indicadas; diferença entre medida administrativa (providência imediata, como retenção/remoção) e penalidade (sanção, como multa); pontuação gravíssima 7 e grave 5; limites de 80 km/h em via de trânsito rápido e 30 km/h em via local no recorte; fiscalização policial conforme competência/delegação/convenção; e exame toxicológico periódico para categorias C, D e E."
+            }
+          ],
+          "new_questions": [
+            {
+              "statement": "No mapa do CTB fornecido, retenção e remoção são apresentadas como:",
+              "explanation": "O mapa diferencia medidas administrativas de penalidades.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "penas privativas de liberdade.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "medidas administrativas.",
+                  "is_correct": true
+                },
+                {
+                  "label": "C",
+                  "text": "crimes de trânsito.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "recompensas.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "causas de exclusão da ilicitude.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "Segundo o mapa do CTB utilizado no curso, uma infração gravíssima soma:",
+              "explanation": "O recorte visual destaca 7 pontos para gravíssima.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "2 pontos.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "3 pontos.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "4 pontos.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "5 pontos.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "7 pontos.",
+                  "is_correct": true
+                }
+              ]
+            },
+            {
+              "statement": "No recorte visual do CTB, os limites destacados para via de trânsito rápido e via local são, respectivamente:",
+              "explanation": "Esses são os limites destacados no mapa fornecido.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "40 km/h e 20 km/h.",
+                  "is_correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "60 km/h e 40 km/h.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "80 km/h e 30 km/h.",
+                  "is_correct": true
+                },
+                {
+                  "label": "D",
+                  "text": "100 km/h e 60 km/h.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "110 km/h e 80 km/h.",
+                  "is_correct": false
+                }
+              ]
+            },
+            {
+              "statement": "O exame toxicológico periódico é destacado no mapa do CTB para condutores das categorias:",
+              "explanation": "O material destaca as categorias C, D e E.",
+              "difficulty": "medium",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "C, D e E.",
+                  "is_correct": true
+                },
+                {
+                  "label": "B",
+                  "text": "A e B apenas.",
+                  "is_correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "A, B e C.",
+                  "is_correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "B apenas.",
+                  "is_correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "todas as categorias sem distinção.",
+                  "is_correct": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "selector": {
+            "slug": "5-crimes-ambientais-lei-no-9-605-1998"
+          },
+          "title": "5. Crimes Ambientais - Lei nº 9.605/1998",
+          "keywords": [
+            "9.605",
+            "ambiental",
+            "fauna",
+            "floresta",
+            "grafite",
+            "laudo ambiental",
+            "acao penal ambiental",
+            "transacao penal ambiental",
+            "suspensao condicional em crime ambiental",
+            "incendio"
+          ]
+        },
+        {
+          "selector": {
+            "slug": "6-lei-de-drogas-lei-no-11-343-2006"
+          },
+          "title": "6. Lei de Drogas - Lei nº 11.343/2006",
+          "keywords": [
+            "11.343",
+            "lei de drogas",
+            "laudo de constatacao",
+            "trafico privilegiado",
+            "acao controlada",
+            "droga",
+            "sisnad"
+          ]
+        }
+      ],
+      "all_other_phases_optional": true
+    }
+  ]
+}
