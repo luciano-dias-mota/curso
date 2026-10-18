@@ -123,7 +123,7 @@ $existingCountStmt = $pdo->prepare(
      FROM questions
      WHERE module_id=:module_id
        AND active=1
-       AND source_label NOT LIKE 'M3V2%'"
+       AND source_label NOT LIKE 'M3V%'"
 );
 $existingCountStmt->execute(['module_id'=>$moduleId]);
 $existingQuestions = (int) $existingCountStmt->fetchColumn();
@@ -345,7 +345,7 @@ try {
          FROM questions
          WHERE module_id=:module_id
            AND active=1
-           AND source_label NOT LIKE 'M3V2%'
+           AND source_label NOT LIKE 'M3V%'
          ORDER BY id"
     );
     $existingStmt->execute(['module_id'=>$moduleId]);
