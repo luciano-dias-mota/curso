@@ -1,0 +1,3632 @@
+{
+  "format_version": 1,
+  "source": {
+    "title": "Manual de Procedimento Operacional Padrão PMMT",
+    "edition": "2ª edição - 1º de julho de 2023",
+    "file": "POP PMMT 2023 Corpo 190623_230706_190009.pdf",
+    "basis": "Conteúdo e questões formulados exclusivamente a partir do manual PDF fornecido pelo usuário. A literalidade da fonte prevalece."
+  },
+  "modules": [
+    {
+      "code": "POP5",
+      "number": 5,
+      "title": "POP 5 - Módulo V: Eventos Críticos (atualizado)",
+      "slug": "pop-5-modulo-v-eventos-criticos-atualizado",
+      "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição",
+      "intro": {
+        "title": "POP 5 - Visão geral dos Processos 501 a 505",
+        "content": "MÓDULO V — EVENTOS CRÍTICOS.\n\nA trilha é composta pelos Processos 501 a 505: Crimes Violentos Contra o Patrimônio; Primeira Resposta a Incidentes com Bombas e Explosivos; Reintegração de Posse; Medidas Iniciais do Gerenciamento de Crises Policiais; e Medidas Iniciais do Gerenciamento de Crises envolvendo agressores ativos.\n\nA aula foi organizada para preservar a literalidade do Manual POP PMMT 2023. Números, distâncias, prazos, ordem de ações, nomenclaturas e vedações devem ser estudados exatamente como aparecem na fonte.",
+        "source_pages": [
+          354,
+          402
+        ]
+      },
+      "processes": [
+        {
+          "code": "501",
+          "title": "CRIMES VIOLENTOS CONTRA O PATRIMÔNIO",
+          "source_pages": [
+            355,
+            362
+          ],
+          "procedures": [
+            "501.1",
+            "501.2"
+          ],
+          "blocks": [
+            {
+              "type": "summary",
+              "title": "Processo 501 - mapa e conceitos centrais",
+              "content": "O Processo 501 trata da resposta inicial a crimes violentos contra o patrimônio. O manual organiza a atuação em duas etapas formais: 501.1 - deslocamento, aproximação e confirmação da ocorrência; e 501.2 - constatação da ocorrência no local.\n\nPontos de literalidade:\n- a aproximação deve privilegiar cobertura/abrigo compatível com a possibilidade de armamento de alta energia;\n- a viatura deve ser deixada a distância segura e a aproximação final deve ocorrer a pé;\n- confirmada a ocorrência, as informações devem ser transmitidas ao CIOSP/Centro de Operações e às demais equipes;\n- o Plano de Defesa e documentos correlatos são tratados como documentos de caráter RESERVADO;\n- o manual diferencia modalidades como Novo Cangaço, Cangaço Noturno, Vapor e Domínio de Cidade.",
+              "source_pages": [
+                355,
+                358
+              ]
+            },
+            {
+              "type": "theory",
+              "title": "501.1 - Deslocamento, aproximação e confirmação de ocorrência",
+              "content": "Na aproximação, o manual determina cautela, coleta de dados, posicionamento e seleção de cobertura. A viatura deve ser parada a uma distância segura, de no mínimo 50 metros do ponto de interesse, e a aproximação deve prosseguir a pé, observando disciplina de luz e ruído.\n\nO primeiro objetivo é confirmar se a informação é falsa ou se existe efetivamente um crime violento contra o patrimônio. Havendo confirmação, devem ser acionados o CIOSP/Centro de Operações, apoios e unidades especializadas compatíveis com a ocorrência, com adoção do Plano de Defesa quando aplicável.",
+              "source_pages": [
+                359,
+                359
+              ]
+            },
+            {
+              "type": "theory",
+              "title": "501.2 - Constatação de ocorrência no local",
+              "content": "A constatação deve conciliar rapidez e cautela. O contato visual deve ser buscado a partir de local protegido. O manual alerta para o emprego frequente de armamentos de maior poder, razão pela qual o abrigo escolhido precisa ser compatível com esse risco.\n\nNa organização de bloqueios do Plano de Defesa, o manual prevê dois bloqueios por via, separados por aproximadamente 3 a 5 km. O bloqueio 01 é o mais próximo e deve ser constituído por materiais, sem permanência de policiais; o bloqueio 02 é mais afastado e pode contar com policiais, conforme disponibilidade de efetivo.\n\nApós confirmada a ação, deve-se evitar exposição desnecessária de viaturas caracterizadas e policiais fardados próximos ao alvo, sobretudo diante do risco de utilização de pessoas como escudo humano.",
+              "source_pages": [
+                360,
+                362
+              ]
+            }
+          ],
+          "questions": [
+            {
+              "question_type": "multiple_choice",
+              "statement": "Segundo o POP 501.1, ao realizar a aproximação final para confirmar uma ocorrência de crime violento contra o patrimônio, a viatura deve ser deixada a uma distância segura de, no mínimo:",
+              "difficulty": "medium",
+              "primary_topic": "501.1",
+              "topics": [
+                "501.1"
+              ],
+              "source_pages": [
+                359,
+                359
+              ],
+              "explanation": "O POP 501.1 fixa distância segura mínima de 50 metros para a viatura, prosseguindo-se a aproximação a pé.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "10 metros.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "25 metros.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "50 metros.",
+                  "correct": true
+                },
+                {
+                  "label": "D",
+                  "text": "100 metros.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "200 metros.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP5-LITERAL-Q001",
+              "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição | Processo 501",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Na organização dos bloqueios prevista no Processo 501, o manual estabelece, por via:",
+              "difficulty": "medium",
+              "primary_topic": "501.2",
+              "topics": [
+                "501.2"
+              ],
+              "source_pages": [
+                360,
+                362
+              ],
+              "explanation": "O POP prevê dois bloqueios por via, com distância aproximada de 3 a 5 km entre eles.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "um bloqueio único, junto ao ponto crítico.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "dois bloqueios, separados aproximadamente de 3 a 5 km.",
+                  "correct": true
+                },
+                {
+                  "label": "C",
+                  "text": "três bloqueios, separados exatamente por 1 km.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "dois bloqueios, separados no máximo por 500 m.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "quatro bloqueios, sem distância definida.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP5-LITERAL-Q002",
+              "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição | Processo 501",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "De acordo com o POP 501.2, qual afirmação sobre os bloqueios 01 e 02 está correta?",
+              "difficulty": "hard",
+              "primary_topic": "501.2",
+              "topics": [
+                "501.2"
+              ],
+              "source_pages": [
+                360,
+                362
+              ],
+              "explanation": "O manual diferencia o bloqueio material mais próximo do segundo bloqueio, mais distante, que pode receber policiais.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "O bloqueio 01 é o mais distante e deve ser ocupado apenas por policiais.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "Os dois bloqueios devem permanecer obrigatoriamente sem policiais.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "O bloqueio 02 é o mais próximo e contém apenas materiais.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "O bloqueio 01 é o mais próximo e é constituído por materiais, sem policiais; o bloqueio 02 é mais afastado e pode ter policiais conforme o efetivo.",
+                  "correct": true
+                },
+                {
+                  "label": "E",
+                  "text": "Os dois bloqueios devem ser instalados dentro do ponto crítico.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP5-LITERAL-Q003",
+              "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição | Processo 501",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Quanto à documentação do Plano de Defesa trabalhada no Processo 501, o manual indica que ela possui caráter:",
+              "difficulty": "medium",
+              "primary_topic": "501",
+              "topics": [
+                "501"
+              ],
+              "source_pages": [
+                355,
+                358
+              ],
+              "explanation": "O manual destaca o caráter RESERVADO dos documentos relacionados ao Plano de Defesa.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "RESERVADO.",
+                  "correct": true
+                },
+                {
+                  "label": "B",
+                  "text": "PÚBLICO irrestrito.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "SIGILOSO apenas após a ocorrência.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "OSTENSIVO para divulgação externa.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "FACULTATIVO, sem classificação.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP5-LITERAL-Q004",
+              "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição | Processo 501",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            }
+          ]
+        },
+        {
+          "code": "502",
+          "title": "PRIMEIRA RESPOSTA A INCIDENTES COM BOMBAS E EXPLOSIVOS",
+          "source_pages": [
+            363,
+            387
+          ],
+          "procedures": [
+            "502.1",
+            "502.2",
+            "502.3",
+            "502.4",
+            "502.5"
+          ],
+          "blocks": [
+            {
+              "type": "summary",
+              "title": "Processo 502 - classificação, vistoria e segurança",
+              "content": "O Processo 502 organiza a primeira resposta em cinco procedimentos: ameaça falsa, ameaça real, localização de bomba ou falsa bomba, localização de explosivo e explosão.\n\nRegra de estudo: a equipe deve coletar dados, classificar o incidente, decidir sobre isolamento/desocupação e nunca transformar uma ameaça ainda não confirmada em pânico generalizado. A intervenção técnica em artefatos/explosivos é reservada às equipes especializadas.",
+              "source_pages": [
+                363,
+                366
+              ]
+            },
+            {
+              "type": "theory",
+              "title": "502.1 - Ameaça Falsa",
+              "content": "A sequência começa com a ficha de atendimento do CIOSP e a transmissão dos dados à guarnição. No local, a equipe busca o responsável/solicitante e preenche a ficha de análise policial.\n\nSe os dados indicarem ameaça falsa, os responsáveis/frequentadores realizam busca em suas próprias áreas e, depois, os policiais fazem vistoria acompanhados por representante do local. A classificação da vistoria pode ser: liberado; ponto/objeto que necessita confirmação; ou objeto suspeito localizado.\n\nO manual é expresso: não se deve alterar a rotina nem provocar alarme geral enquanto existir apenas uma ameaça. Não tocar em objetos desconhecidos; só usar luzes/interruptores após confirmar segurança; não usar elevadores; não abrir portas, armários ou gavetas sem segurança confirmada. Se houver horário de explosão anunciado, a busca deve ser encerrada 30 minutos antes e reiniciada 30 minutos depois.",
+              "source_pages": [
+                367,
+                372
+              ]
+            },
+            {
+              "type": "theory",
+              "title": "502.2 - Ameaça Real",
+              "content": "A ameaça real mantém a coleta técnica de dados e a vistoria, mas inclui a confirmação da existência de objeto suspeito, artefato explosivo ou bomba e o acionamento de órgãos especializados. Isolamento, contenção e eventual desocupação devem ser definidos a partir da análise do risco, preservando pessoas e mantendo a capacidade de resposta dos órgãos de apoio.",
+              "source_pages": [
+                373,
+                375
+              ]
+            },
+            {
+              "type": "theory",
+              "title": "502.3 - Localização de Bomba ou Falsa Bomba",
+              "content": "A localização de objeto suspeito muda o nível da ocorrência. O local deve ser isolado e a intervenção passa a depender da classificação e das equipes especializadas. A guarnição não deve manipular o objeto para 'confirmar' sua natureza. A prioridade é impedir aproximações, transmitir informações e preservar o cenário para o Esquadrão de Bombas.",
+              "source_pages": [
+                376,
+                379
+              ]
+            },
+            {
+              "type": "theory",
+              "title": "502.4 - Localização de Explosivo",
+              "content": "No encontro de material explosivo, a conduta é de máxima cautela e preservação. O manual veda ações improvisadas como sacudir, abrir, molhar, perfurar, remover ou manipular componentes e detonadores. O perímetro deve ser controlado, utilizando-se cobertas e abrigos, e o Esquadrão de Bombas deve ser acionado para as contramedidas.\n\nExplosivos e detonadores não devem ser transportados para quartéis, delegacias ou CISCs por equipes não especializadas.",
+              "source_pages": [
+                380,
+                384
+              ]
+            },
+            {
+              "type": "theory",
+              "title": "502.5 - Explosão",
+              "content": "Após uma explosão, deve-se conter e isolar o local, prestar suporte às vítimas e pesquisar a possibilidade de artefatos adicionais. O manual define epicentro, cratera, perímetro e sistema de iniciação.\n\nNa formação do perímetro, mede-se D1 entre o epicentro e o fragmento mais distante; acrescenta-se D2, correspondente à metade de D1; D1 + D2 constitui o anel de proteção. O perímetro secundário fica 3 m para fora do anel de proteção, onde se estabelece o CICC.\n\nA ordem doutrinária de prioridade de segurança é: primeiro vidas humanas; segundo bens materiais; terceiro provas e evidências.",
+              "source_pages": [
+                385,
+                387
+              ]
+            }
+          ],
+          "questions": [
+            {
+              "question_type": "multiple_choice",
+              "statement": "No POP 502.1, enquanto a ocorrência ainda é apenas uma ameaça não confirmada, o manual orienta:",
+              "difficulty": "medium",
+              "primary_topic": "502.1",
+              "topics": [
+                "502.1"
+              ],
+              "source_pages": [
+                367,
+                372
+              ],
+              "explanation": "O POP 502.1 adverte que a precipitação pode gerar pânico e outras vulnerabilidades.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "evacuar sempre todo o local imediatamente e acionar alarme geral.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "não alterar a rotina nem provocar alarme geral, salvo quando a análise indicar necessidade de isolamento/desocupação.",
+                  "correct": true
+                },
+                {
+                  "label": "C",
+                  "text": "utilizar elevadores para acelerar a vistoria.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "abrir armários e gavetas antes de qualquer confirmação de segurança.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "desligar todos os meios de comunicação e abandonar o local.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP5-LITERAL-Q005",
+              "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição | Processo 502",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Em ameaça de bomba com horário previamente determinado, o POP 502.1 determina que a busca seja:",
+              "difficulty": "hard",
+              "primary_topic": "502.1",
+              "topics": [
+                "502.1"
+              ],
+              "source_pages": [
+                367,
+                372
+              ],
+              "explanation": "O manual fixa a janela de 30 minutos antes e 30 minutos depois.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "encerrada 10 minutos antes e retomada 10 minutos depois.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "mantida sem interrupção até a hora indicada.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "encerrada 30 minutos antes e reiniciada 30 minutos após o horário previsto.",
+                  "correct": true
+                },
+                {
+                  "label": "D",
+                  "text": "encerrada uma hora antes e não retomada.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "iniciada apenas depois do horário indicado.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP5-LITERAL-Q006",
+              "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição | Processo 502",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "A vistoria descrita no POP 502.1 deve ser realizada, segundo o esclarecimento do manual:",
+              "difficulty": "hard",
+              "primary_topic": "502.1",
+              "topics": [
+                "502.1"
+              ],
+              "source_pages": [
+                368,
+                372
+              ],
+              "explanation": "O esclarecimento define equipe de até duas pessoas, sentido de fora para dentro e de baixo para cima.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "por equipes de no máximo duas pessoas, de fora para dentro e de baixo para cima.",
+                  "correct": true
+                },
+                {
+                  "label": "B",
+                  "text": "por no mínimo quatro policiais, de dentro para fora e de cima para baixo.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "individualmente, sempre do centro para as extremidades.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "apenas por bombeiros, de cima para baixo.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "sem acompanhamento de pessoa que conheça o local.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP5-LITERAL-Q007",
+              "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição | Processo 502",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Qual elemento diferencia expressamente a atividade crítica do POP 502.2 (Ameaça Real)?",
+              "difficulty": "medium",
+              "primary_topic": "502.2",
+              "topics": [
+                "502.2"
+              ],
+              "source_pages": [
+                373,
+                375
+              ],
+              "explanation": "A ameaça real inclui confirmação do objeto/artefato/bomba e acionamento de órgãos especializados.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "A inexistência de qualquer objeto suspeito.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "A liberação imediata do local sem vistoria.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "A proibição de acionar órgãos especializados.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "A confirmação da existência de objeto suspeito, artefato explosivo ou bomba, com acionamento especializado.",
+                  "correct": true
+                },
+                {
+                  "label": "E",
+                  "text": "O encerramento do registro da ocorrência.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP5-LITERAL-Q008",
+              "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição | Processo 502",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Diante da localização de explosivo, qual conduta está de acordo com o POP 502.4?",
+              "difficulty": "medium",
+              "primary_topic": "502.4",
+              "topics": [
+                "502.4"
+              ],
+              "source_pages": [
+                380,
+                384
+              ],
+              "explanation": "O POP 502.4 enfatiza isolamento, segurança e intervenção por equipe especializada.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "Molhar o material para reduzir o risco.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "Remover o detonador e transportar o explosivo para o quartel.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "Perfurar a embalagem para identificar o conteúdo.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "Manipular o objeto para confirmar se é real.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "Isolar/controlar o perímetro e acionar equipe especializada, sem manipulação improvisada do material.",
+                  "correct": true
+                }
+              ],
+              "source_key": "POP5-LITERAL-Q009",
+              "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição | Processo 502",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "No POP 502.5, a ordem de prioridade de segurança em local de explosão é:",
+              "difficulty": "medium",
+              "primary_topic": "502.5",
+              "topics": [
+                "502.5"
+              ],
+              "source_pages": [
+                385,
+                387
+              ],
+              "explanation": "O manual apresenta literalmente vidas humanas em primeiro lugar, bens materiais em segundo e provas/evidências em terceiro.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "provas e evidências; bens materiais; vidas humanas.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "vidas humanas; bens materiais; provas e evidências.",
+                  "correct": true
+                },
+                {
+                  "label": "C",
+                  "text": "bens materiais; provas e evidências; vidas humanas.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "vidas humanas; provas e evidências; bens materiais.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "bens materiais; vidas humanas; provas e evidências.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP5-LITERAL-Q010",
+              "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição | Processo 502",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "No cálculo do perímetro descrito no POP 502.5, o anel de proteção corresponde a:",
+              "difficulty": "hard",
+              "primary_topic": "502.5",
+              "topics": [
+                "502.5"
+              ],
+              "source_pages": [
+                385,
+                387
+              ],
+              "explanation": "D1 vai do epicentro ao fragmento mais distante; D2 corresponde à metade de D1; o anel é a soma.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "D1 apenas.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "D2 apenas.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "D1 + D2, sendo D2 igual à metade de D1.",
+                  "correct": true
+                },
+                {
+                  "label": "D",
+                  "text": "três vezes D1.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "D1 menos D2.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP5-LITERAL-Q011",
+              "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição | Processo 502",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            }
+          ]
+        },
+        {
+          "code": "503",
+          "title": "REINTEGRAÇÃO DE POSSE",
+          "source_pages": [
+            388,
+            391
+          ],
+          "procedures": [
+            "503.1"
+          ],
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "503.1 - Cumprimento de requisição judicial de força policial",
+              "content": "A responsabilidade indicada é do Comandante Regional da área de litígio. O planejamento prevê estudo de situação e reunião apenas com representantes das forças policiais 48 horas antes da operação; as demais instituições também devem ser oficiadas para reunião com 48 horas de antecedência, com definição das atribuições.\n\nO manual reforça que cabe à Polícia Militar garantir a execução da medida judicial, preservar a ordem pública e coibir excessos, sem extrapolar como executora da ordem judicial. A leitura/transmissão da ordem é função do Oficial de Justiça.\n\nA tropa especializada deve ser posicionada em local afastado do ponto crítico e longe das vistas dos invasores, sendo empregada quando necessária. Não se devem estacionar viaturas próximas ao local crítico de forma a criar barreiras para eventual recuo.\n\nNa fase final, há varredura da área, inspeção judicial, entrega ao proprietário/representante da certidão de cumprimento do mandado e relatório circunstanciado.",
+              "source_pages": [
+                388,
+                391
+              ]
+            }
+          ],
+          "questions": [
+            {
+              "question_type": "multiple_choice",
+              "statement": "No POP 503.1, a reunião de planejamento apenas com representantes das forças policiais deve ocorrer:",
+              "difficulty": "medium",
+              "primary_topic": "503.1",
+              "topics": [
+                "503.1"
+              ],
+              "source_pages": [
+                389,
+                391
+              ],
+              "explanation": "O manual fixa 48 horas antes da data prevista para a operação.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "12 horas antes.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "24 horas antes.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "48 horas antes.",
+                  "correct": true
+                },
+                {
+                  "label": "D",
+                  "text": "72 horas antes.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "somente após a chegada ao local.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP5-LITERAL-Q012",
+              "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição | Processo 503",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Segundo o POP 503.1, qual é o papel da Polícia Militar na reintegração de posse?",
+              "difficulty": "hard",
+              "primary_topic": "503.1",
+              "topics": [
+                "503.1"
+              ],
+              "source_pages": [
+                389,
+                391
+              ],
+              "explanation": "O texto distingue garantir a execução da medida judicial de atuar como executora da ordem.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "Executar diretamente a ordem judicial e retirar os pertences dos ocupantes.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "Garantir a execução da medida judicial e preservar a ordem pública, sem extrapolar como executora da ordem.",
+                  "correct": true
+                },
+                {
+                  "label": "C",
+                  "text": "Substituir o Oficial de Justiça na leitura do mandado.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "Transportar os pertences dos invasores em viaturas da PM.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "Decidir, no local, se a ordem judicial deve ser cumprida.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP5-LITERAL-Q013",
+              "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição | Processo 503",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "A tropa especializada (Tropa de Choque), no planejamento do POP 503.1, deve ser posicionada:",
+              "difficulty": "medium",
+              "primary_topic": "503.1",
+              "topics": [
+                "503.1"
+              ],
+              "source_pages": [
+                389,
+                391
+              ],
+              "explanation": "O procedimento manda manter a tropa especializada afastada e fora da vista, empregando-a quando necessário.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "dentro do ponto crítico, junto aos líderes.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "ao lado do Oficial de Justiça durante toda a negociação.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "junto às viaturas de imprensa.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "em local afastado do ponto crítico e longe das vistas dos invasores, para emprego se necessário.",
+                  "correct": true
+                },
+                {
+                  "label": "E",
+                  "text": "obrigatoriamente no perímetro interno antes da leitura do mandado.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP5-LITERAL-Q014",
+              "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição | Processo 503",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Qual situação é apontada como possibilidade de erro no POP 503.1?",
+              "difficulty": "medium",
+              "primary_topic": "503.1",
+              "topics": [
+                "503.1"
+              ],
+              "source_pages": [
+                390,
+                391
+              ],
+              "explanation": "O manual lista expressamente a realização da operação sem o Oficial de Justiça como erro.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "Realizar a operação sem a presença do Oficial de Justiça.",
+                  "correct": true
+                },
+                {
+                  "label": "B",
+                  "text": "Registrar a operação por imagens.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "Comunicar etapas ao escalão superior.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "Fazer estudo de situação.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "Definir perímetros interno e externo.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP5-LITERAL-Q015",
+              "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição | Processo 503",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            }
+          ]
+        },
+        {
+          "code": "504",
+          "title": "MEDIDAS INICIAIS DO GERENCIAMENTO DE CRISES POLICIAIS",
+          "source_pages": [
+            392,
+            397
+          ],
+          "procedures": [
+            "504.1"
+          ],
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "504.1 - Conceitos e fases do gerenciamento de crises",
+              "content": "Crise é definida como evento ou situação crucial que exige resposta especial da Polícia para assegurar solução aceitável. Gerenciamento de crise é o processo de identificar, obter e aplicar recursos necessários à antecipação, prevenção e resolução. Causador do Evento Crítico (CEC) é a pessoa que gera a crise.\n\nO manual distingue ponto crítico, refém, vítima, gerente da crise, comandante do teatro de operações e primeira intervenção. O perímetro externo forma zona-tampão entre o interno e o público, enquanto o perímetro interno circunda o ponto crítico e constitui zona estéril.\n\nAs quatro fases são: pré-crise; primeira intervenção; resolução; pós-crise.",
+              "source_pages": [
+                392,
+                394
+              ]
+            },
+            {
+              "type": "theory",
+              "title": "504.1 - Dez passos da primeira intervenção",
+              "content": "A sequência começa por: 1) localizar o ponto crítico e constatar a crise; 2) conter; 3) isolar; 4) estabelecer contato sem concessões. Depois, solicitar apoio, coletar informações, diminuir o estresse/estabilizar, permanecer em local seguro, manter terceiros afastados e acionar equipes especializadas do BOPE.\n\nNo contato, o primeiro interventor deve ganhar tempo, evitar contato cara a cara, identificar-se de forma verdadeira, dirigir-se preferencialmente ao líder quando houver vários CECs, não permitir entrada de armas, coletes, carregadores, munições, celular ou material que aumente o potencial de dano, não oferecer nada nem permitir troca de refém e não assumir compromissos fora de sua atribuição.",
+              "source_pages": [
+                394,
+                395
+              ]
+            },
+            {
+              "type": "theory",
+              "title": "504.1 - Resolução e pós-crise",
+              "content": "Se o CEC liberar refém/vítima e quiser se entregar, a saída deve ser coordenada de forma tranquila e sequencial. Reféns/vítimas saem uma pessoa por vez, com as mãos sobre a cabeça, são submetidos a busca pessoal e qualificados para identificar se são autores ou vítimas.\n\nApós a saída do último refém, os CECs deixam as armas no solo, saem um a um, lentamente, sem movimentos bruscos e com as mãos sobre a cabeça.\n\nNo pós-crise: condução, varredura, proteção da imagem de vítimas/reféns, preservação para perícia, assistência médica, relatório e debriefing com as UPMs envolvidas.",
+              "source_pages": [
+                395,
+                397
+              ]
+            }
+          ],
+          "questions": [
+            {
+              "question_type": "multiple_choice",
+              "statement": "Segundo o POP 504.1, os quatro primeiros passos da primeira intervenção em crise são:",
+              "difficulty": "medium",
+              "primary_topic": "504.1",
+              "topics": [
+                "504.1"
+              ],
+              "source_pages": [
+                394,
+                395
+              ],
+              "explanation": "A sequência literal começa com localizar, conter, isolar e estabelecer contato sem concessões.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "localizar o ponto crítico; conter; isolar; estabelecer contato sem concessões.",
+                  "correct": true
+                },
+                {
+                  "label": "B",
+                  "text": "negociar concessões; aproximar familiares; entrar no ponto crítico; acionar imprensa.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "isolar; liberar imprensa; oferecer troca de refém; retirar a contenção.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "acionar perícia; realizar prisão; encerrar o local; elaborar relatório.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "desocupar a área; entrar taticamente; coletar provas; debriefing.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP5-LITERAL-Q016",
+              "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição | Processo 504",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "No POP 504.1, o perímetro interno é definido como:",
+              "difficulty": "medium",
+              "primary_topic": "504.1",
+              "topics": [
+                "504.1"
+              ],
+              "source_pages": [
+                393,
+                394
+              ],
+              "explanation": "O perímetro interno circunda o ponto crítico e forma a zona estéril.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "zona destinada à imprensa e ao público.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "zona para estacionamento de viaturas e curiosos.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "cordão de isolamento que circunda o ponto crítico, formando uma zona estéril.",
+                  "correct": true
+                },
+                {
+                  "label": "D",
+                  "text": "área externa ao teatro de operações sem qualquer controle.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "local exclusivo do posto de comando geral.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP5-LITERAL-Q017",
+              "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição | Processo 504",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Durante o contato inicial com o CEC, o primeiro interventor deve:",
+              "difficulty": "hard",
+              "primary_topic": "504.1",
+              "topics": [
+                "504.1"
+              ],
+              "source_pages": [
+                394,
+                395
+              ],
+              "explanation": "O procedimento enfatiza contato sem concessões e vedação a materiais que aumentem o potencial de dano.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "oferecer imediatamente tudo o que for solicitado.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "autorizar a entrada de familiares para facilitar a conversa.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "permitir a troca de refém para ganhar tempo.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "manter contato sem concessões, ganhar tempo e não permitir entrada de materiais que aumentem o potencial de dano.",
+                  "correct": true
+                },
+                {
+                  "label": "E",
+                  "text": "assumir compromissos mesmo fora de sua atribuição.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP5-LITERAL-Q018",
+              "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição | Processo 504",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Na saída de reféns/vítimas durante resolução ainda na primeira intervenção, o POP 504.1 determina:",
+              "difficulty": "medium",
+              "primary_topic": "504.1",
+              "topics": [
+                "504.1"
+              ],
+              "source_pages": [
+                395,
+                395
+              ],
+              "explanation": "O procedimento especifica saída individual, mãos sobre a cabeça e busca/qualificação.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "saída simultânea de todos para acelerar o procedimento.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "saída uma pessoa por vez, com mãos sobre a cabeça, seguida de busca pessoal e coleta de dados.",
+                  "correct": true
+                },
+                {
+                  "label": "C",
+                  "text": "saída somente depois da chegada da imprensa.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "saída sem qualquer busca pessoal.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "prioridade de saída aos CECs armados.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP5-LITERAL-Q019",
+              "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição | Processo 504",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Qual atividade integra expressamente a fase pós-crise do POP 504.1?",
+              "difficulty": "medium",
+              "primary_topic": "504.1",
+              "topics": [
+                "504.1"
+              ],
+              "source_pages": [
+                395,
+                397
+              ],
+              "explanation": "O debriefing integra a sequência pós-crise para avaliação dos procedimentos e desmobilização.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "permitir acesso da imprensa às vítimas.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "desfazer o isolamento antes da perícia.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "dispensar relatório.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "autorizar contato externo do CEC.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "realizar debriefing da ocorrência com policiais das UPMs envolvidas.",
+                  "correct": true
+                }
+              ],
+              "source_key": "POP5-LITERAL-Q020",
+              "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição | Processo 504",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            }
+          ]
+        },
+        {
+          "code": "505",
+          "title": "MEDIDAS INICIAIS DO GERENCIAMENTO DE CRISES",
+          "source_pages": [
+            398,
+            402
+          ],
+          "procedures": [
+            "505.1"
+          ],
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "505.1 - Primeira intervenção com agressores ativos",
+              "content": "O Processo 505 trata da crise dinâmica envolvendo agressor/atirador ativo. O manual diferencia esse cenário das crises estáticas: nas crises dinâmicas, a contenção não é utilizada como regra inicial porque existe demanda urgente de neutralização da ameaça.\n\nEntre as atividades críticas estão confirmar a natureza da crise, identificar o potencial ofensivo, avaliar superioridade/igualdade numérica, acionar BOPE, identificar características do agressor, estimar vítimas e iniciar a busca, inclusive sem aguardar necessariamente outras equipes quando a urgência assim exigir.",
+              "source_pages": [
+                398,
+                400
+              ]
+            },
+            {
+              "type": "theory",
+              "title": "505.1 - Busca, informação e neutralização",
+              "content": "A equipe deve aproximar-se com extrema segurança, confirmar que se trata de agressor ativo e comunicar imediatamente o CIOSP/Centro de Operações. O deslocamento de busca usa técnicas de varredura e entrada compartimentada, cobertas e abrigos.\n\nInformações rápidas devem ser coletadas de pessoas que escapam: onde está o agressor, quantos são, como estão vestidos, quais armamentos possuem e se há várias vítimas. O objetivo é neutralizar a ação de forma efetiva e rápida.\n\nSe o agressor tomar reféns, muda-se para os protocolos de primeira intervenção com reféns. Artefatos explosivos encontrados exigem protocolo específico.",
+              "source_pages": [
+                399,
+                401
+              ]
+            },
+            {
+              "type": "summary",
+              "title": "505.1 - Apoios, socorro e encerramento",
+              "content": "Equipes de apoio realizam buscas complementares. Equipe de socorro só entra mediante autorização do gerente/comandante ou quando o agressor estiver neutralizado, ou em área seguramente livre da ameaça.\n\nSe o agressor ainda não tiver sido neutralizado quando o BOPE chegar, o efetivo especializado assume o gerenciamento em cooperação com a OPM local e dá continuidade à busca, prisão ou eventual neutralização. Após a segurança do local, mantém-se isolamento para perícias e investigação.",
+              "source_pages": [
+                399,
+                402
+              ]
+            }
+          ],
+          "questions": [
+            {
+              "question_type": "multiple_choice",
+              "statement": "Na distinção doutrinária do POP 505.1, a crise com atirador ativo é tratada como:",
+              "difficulty": "medium",
+              "primary_topic": "505.1",
+              "topics": [
+                "505.1"
+              ],
+              "source_pages": [
+                399,
+                402
+              ],
+              "explanation": "O manual diferencia crises estáticas e dinâmicas e destaca a neutralização rápida na crise com agressor ativo.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "crise estática, na qual a contenção é a prioridade absoluta.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "ocorrência administrativa sem necessidade de resposta especial.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "crise dinâmica, cuja urgência exige neutralização da ameaça o mais rápido possível.",
+                  "correct": true
+                },
+                {
+                  "label": "D",
+                  "text": "crise pós-evento, sem risco presente.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "situação em que a negociação é sempre a primeira e única alternativa.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP5-LITERAL-Q021",
+              "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição | Processo 505",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Durante a busca por agressor ativo, quais informações o POP 505.1 orienta coletar rapidamente de pessoas que estejam escapando?",
+              "difficulty": "medium",
+              "primary_topic": "505.1",
+              "topics": [
+                "505.1"
+              ],
+              "source_pages": [
+                399,
+                400
+              ],
+              "explanation": "A sequência traz literalmente essas perguntas como informação operacional prioritária.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "somente nome e CPF das vítimas.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "localização, quantidade de agressores, vestimentas, armamentos e existência de várias vítimas.",
+                  "correct": true
+                },
+                {
+                  "label": "C",
+                  "text": "apenas placa de veículos no estacionamento.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "apenas dados da imprensa.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "somente nome do comandante da unidade.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP5-LITERAL-Q022",
+              "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição | Processo 505",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Se o agressor ativo tomar reféns durante a intervenção, o POP 505.1 orienta:",
+              "difficulty": "hard",
+              "primary_topic": "505.1",
+              "topics": [
+                "505.1"
+              ],
+              "source_pages": [
+                399,
+                400
+              ],
+              "explanation": "O próprio procedimento manda migrar para o protocolo de primeira intervenção em crise com reféns/vítimas.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "manter o mesmo procedimento sem alteração.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "encerrar a atuação e liberar o local.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "aguardar a imprensa antes de qualquer medida.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "iniciar as medidas de resposta imediata da primeira intervenção em crises policiais com reféns ou vítimas.",
+                  "correct": true
+                },
+                {
+                  "label": "E",
+                  "text": "desmobilizar o isolamento.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP5-LITERAL-Q023",
+              "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição | Processo 505",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Se a ação do agressor ativo ainda não tiver sido detida quando o BOPE chegar, o POP 505.1 estabelece que:",
+              "difficulty": "medium",
+              "primary_topic": "505.1",
+              "topics": [
+                "505.1"
+              ],
+              "source_pages": [
+                399,
+                400
+              ],
+              "explanation": "O manual atribui ao BOPE, como efetivo especializado, a assunção do gerenciamento nesse cenário.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "o BOPE assume o gerenciamento da crise em cooperação com a OPM local e dá continuidade à busca/prisão/eventual neutralização.",
+                  "correct": true
+                },
+                {
+                  "label": "B",
+                  "text": "a OPM local deve impedir a atuação do BOPE.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "todas as equipes devem se retirar sem manter isolamento.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "somente a perícia pode assumir o local.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "a ocorrência passa a ser tratada como simples preservação de local.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP5-LITERAL-Q024",
+              "source_label": "POP 5 - Módulo V: Eventos Críticos | Manual POP PMMT 2023, 2ª edição | Processo 505",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "POP6",
+      "number": 6,
+      "title": "POP 6 - Módulo VI: Policiamento Especializado (atualizado)",
+      "slug": "pop-6-modulo-vi-policiamento-especializado-atualizado",
+      "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição",
+      "intro": {
+        "title": "POP 6 - Visão geral dos Processos 601 a 607",
+        "content": "MÓDULO VI — POLICIAMENTO ESPECIALIZADO.\n\nA trilha reúne os Processos 601 a 607: Acidente de Trânsito; Ocorrências de Interesse Ambiental; Radiopatrulhamento Aéreo; Policiamento em Eventos e Praças Desportivas; Ocorrência com Apoio do Policiamento com Cães; Uso de Aeronave Remotamente Pilotada (RPA); e Policiamento Fazendário.\n\nAs aulas preservam termos, limites numéricos, prazos, ordens e condições do Manual POP PMMT 2023. Quando houver regra específica, a questão deve ser respondida pela literalidade do manual fornecido.",
+        "source_pages": [
+          403,
+          468
+        ]
+      },
+      "processes": [
+        {
+          "code": "601",
+          "title": "ACIDENTE DE TRÂNSITO",
+          "source_pages": [
+            403,
+            412
+          ],
+          "procedures": [
+            "601.1",
+            "601.2"
+          ],
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "601.1 - Atendimento de acidente com vítima",
+              "content": "Atividades críticas: sinalizar eficientemente; socorrer vítimas o mais breve possível com luvas/materiais descartáveis; efetuar prisões em flagrante quando a situação permitir.\n\nA sequência manda avaliar o cenário, verificar produtos perigosos, acionar SAMU/Corpo de Bombeiros e, havendo vítima fatal, acionar a POLITEC. Devem ser feitos registros fotográficos.\n\nSe houver prejuízo ao tráfego, providencia-se a retirada das pessoas lesionadas e dos veículos do leito da via, mesmo no caso de vítima fatal. O tráfego deve ser orientado para permitir chegada das equipes de atendimento.",
+              "source_pages": [
+                403,
+                410
+              ]
+            },
+            {
+              "type": "comparison",
+              "title": "601.1 - Fiscalização e registro",
+              "content": "Devem ser identificados envolvidos e testemunhas; fiscalizados documentos de condutores e veículos; aplicadas medidas administrativas e autuações que não sejam decorrentes do acidente.\n\nO manual faz ressalva às infrações específicas de circulação: exigem a presença do agente no local durante o cometimento.\n\nO policial deve manter imparcialidade quanto a dolo/culpabilidade e preencher BO/BOAT.",
+              "source_pages": [
+                405,
+                410
+              ]
+            },
+            {
+              "type": "theory",
+              "title": "601.2 - Atendimento de acidente sem vítima",
+              "content": "A equipe deve confirmar efetivamente a inexistência de feridos e mediar conflitos. Se os veículos prejudicarem o fluxo, a prioridade é retirá-los da via; se não houver condição de movimentação, deve-se providenciar guincho.\n\nPermanece a fiscalização documental, a verificação de crimes e a obrigação de registro. O manual mantém o cuidado de não autuar infrações de circulação que o agente não tenha presenciado.",
+              "source_pages": [
+                411,
+                412
+              ]
+            }
+          ],
+          "questions": [
+            {
+              "question_type": "multiple_choice",
+              "statement": "No POP 601.1, havendo vítima fatal em acidente de trânsito, deve ser acionada:",
+              "difficulty": "medium",
+              "primary_topic": "601.1",
+              "topics": [
+                "601.1"
+              ],
+              "source_pages": [
+                405,
+                410
+              ],
+              "explanation": "O POP 601.1 determina o acionamento da POLITEC quando houver vítima fatal.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "SEFAZ-MT.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "apenas a Polícia Civil, sem perícia.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "somente a concessionária da via.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "POLITEC.",
+                  "correct": true
+                },
+                {
+                  "label": "E",
+                  "text": "unidade de policiamento ambiental.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q025",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 601",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Se o acidente com vítima estiver prejudicando o tráfego, o POP 601.1 determina:",
+              "difficulty": "hard",
+              "primary_topic": "601.1",
+              "topics": [
+                "601.1"
+              ],
+              "source_pages": [
+                405,
+                410
+              ],
+              "explanation": "A regra é literal no item 6 da sequência.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "preservar todos os veículos exatamente no leito da via em qualquer hipótese.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "retirar pessoas lesionadas e veículos do leito da via, mesmo em caso de vítima fatal, quando houver prejuízo ao tráfego.",
+                  "correct": true
+                },
+                {
+                  "label": "C",
+                  "text": "aguardar obrigatoriamente 24 horas para remoção.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "remover apenas veículos, nunca pessoas.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "interditar a via até o dia seguinte.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q026",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 601",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Segundo o POP 601.1, as infrações específicas de circulação:",
+              "difficulty": "medium",
+              "primary_topic": "601.1",
+              "topics": [
+                "601.1"
+              ],
+              "source_pages": [
+                405,
+                410
+              ],
+              "explanation": "O manual faz a ressalva de que infrações específicas de circulação exigem presença do agente durante o cometimento.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "exigem a presença do agente no local durante o cometimento.",
+                  "correct": true
+                },
+                {
+                  "label": "B",
+                  "text": "podem ser autuadas sempre por presunção a partir do acidente.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "não podem ser autuadas em nenhuma situação.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "dependem exclusivamente de confissão do condutor.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "são de competência apenas da perícia.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q027",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 601",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Nos esclarecimentos do Processo 601, o impacto de um veículo contra um ciclista que esteja em movimento é classificado, conforme o caso, como:",
+              "difficulty": "hard",
+              "primary_topic": "601",
+              "topics": [
+                "601"
+              ],
+              "source_pages": [
+                405,
+                410
+              ],
+              "explanation": "O manual ressalva que ciclista em movimento integra veículo; se estiver a pé empurrando a bicicleta, aí pode configurar atropelamento.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "atropelamento obrigatoriamente.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "capotamento.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "colisão ou abalroamento, pois a bicicleta é veículo.",
+                  "correct": true
+                },
+                {
+                  "label": "D",
+                  "text": "tombamento.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "choque contra objeto fixo.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q028",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 601",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "No POP 601.2, confirmado acidente sem vítima e havendo veículos prejudicando o fluxo, a conduta é:",
+              "difficulty": "medium",
+              "primary_topic": "601.2",
+              "topics": [
+                "601.2"
+              ],
+              "source_pages": [
+                411,
+                412
+              ],
+              "explanation": "No acidente sem vítima, restabelecer o fluxo é parte central da sequência.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "manter todos exatamente onde estão até perícia, sem exceção.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "abandonar o atendimento.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "aguardar solicitação escrita dos envolvidos.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "permitir discussão das partes antes de liberar a via.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "providenciar a retirada dos veículos e, se não puderem se mover, solicitar guincho.",
+                  "correct": true
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q029",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 601",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            }
+          ]
+        },
+        {
+          "code": "602",
+          "title": "OCORRÊNCIAS DE INTERESSE AMBIENTAL",
+          "source_pages": [
+            413,
+            424
+          ],
+          "procedures": [
+            "602.1",
+            "602.2"
+          ],
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "602.1 - Acionamento da guarnição ambiental",
+              "content": "Entre as situações críticas estão crimes ambientais em flagrante, pesca predatória, produtos/subprodutos de origem animal ou vegetal, agrotóxicos, tráfico de animais silvestres, animais silvestres em ambiente urbano/posse ilegal e empresas envolvidas em crimes ambientais.\n\nAntes do acionamento, faz-se classificação prévia e análise de riscos. O Policiamento Ambiental pode ser acionado via CIOSP/SESP-MT ou telefone funcional da Unidade. A unidade solicitante deve isolar o local, identificar e checar suspeitos e materiais vinculados até a chegada do apoio.\n\nO manual manda adotar sempre postura educacional, agir com imparcialidade e buscar conscientização ambiental.",
+              "source_pages": [
+                413,
+                419
+              ]
+            },
+            {
+              "type": "theory",
+              "title": "602.2 - Transporte de produtos de interesse ambiental",
+              "content": "Na abordagem, o condutor deve acompanhar a vistoria e apresentar a documentação pertinente. A equipe verifica a legalidade do produto e, havendo irregularidade, aciona UPM Ambiental ou órgãos de fiscalização como IBAMA/SEMA, identifica remetente, transportador e condutor e encaminha suspeitos/materialidade à repartição competente.\n\nSempre que possível, cópia do BO deve ser enviada à unidade ambiental/órgãos parceiros. Ações corretivas incluem evitar manejo de animais silvestres, justificar no BO eventual impossibilidade de remover material e adotar postura educacional.",
+              "source_pages": [
+                419,
+                424
+              ]
+            }
+          ],
+          "questions": [
+            {
+              "question_type": "multiple_choice",
+              "statement": "Até a chegada do apoio ambiental, a unidade que acionou o Policiamento Ambiental deve:",
+              "difficulty": "medium",
+              "primary_topic": "602.1",
+              "topics": [
+                "602.1"
+              ],
+              "source_pages": [
+                418,
+                419
+              ],
+              "explanation": "A sequência do POP 602.1 atribui essas providências à unidade solicitante.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "deixar o local sem qualquer controle.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "isolar o local, identificar e checar suspeitos e materiais vinculados.",
+                  "correct": true
+                },
+                {
+                  "label": "C",
+                  "text": "liberar todos os materiais sem registro.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "manusear animais silvestres para facilitar a inspeção.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "transferir a ocorrência à imprensa.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q030",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 602",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Entre as ações corretivas do POP 602.1, o manual determina expressamente:",
+              "difficulty": "medium",
+              "primary_topic": "602.1",
+              "topics": [
+                "602.1"
+              ],
+              "source_pages": [
+                418,
+                419
+              ],
+              "explanation": "A expressão 'Adotar sempre uma postura educacional' aparece literalmente no procedimento.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "adotar sempre postura punitiva.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "evitar qualquer orientação ao cidadão.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "agir conforme interesse do solicitante.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "adotar sempre uma postura educacional.",
+                  "correct": true
+                },
+                {
+                  "label": "E",
+                  "text": "não comunicar dúvidas ao policiamento especializado.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q031",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 602",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "No POP 602.2, detectada irregularidade no transporte de produto de interesse ambiental, a equipe deve:",
+              "difficulty": "medium",
+              "primary_topic": "602.2",
+              "topics": [
+                "602.2"
+              ],
+              "source_pages": [
+                419,
+                424
+              ],
+              "explanation": "A sequência prevê apoio especializado, identificação dos responsáveis e apresentação da ocorrência.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "acionar a UPM Ambiental ou órgãos como IBAMA/SEMA para orientação, identificar responsáveis e encaminhar suspeitos/materialidade conforme o caso.",
+                  "correct": true
+                },
+                {
+                  "label": "B",
+                  "text": "destruir o produto no local por conta própria.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "ignorar a documentação apresentada.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "liberar o transporte sem registro.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "apreender qualquer objeto mesmo sem amparo legal.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q032",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 602",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Qual conduta é indicada nas ações corretivas do POP 602.2?",
+              "difficulty": "medium",
+              "primary_topic": "602.2",
+              "topics": [
+                "602.2"
+              ],
+              "source_pages": [
+                419,
+                424
+              ],
+              "explanation": "O manual orienta evitar manejo de animais silvestres e considerar a significância ambiental.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "manusear animais silvestres sempre que possível.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "resolver dúvidas sem consultar unidade especializada.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "evitar manejo de animais silvestres.",
+                  "correct": true
+                },
+                {
+                  "label": "D",
+                  "text": "ser parcial conforme a repercussão social.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "desconsiderar a significância ambiental em crimes de menor potencial ofensivo.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q033",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 602",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            }
+          ]
+        },
+        {
+          "code": "603",
+          "title": "RADIOPATRULHAMENTO AÉREO",
+          "source_pages": [
+            425,
+            431
+          ],
+          "procedures": [
+            "603.1",
+            "603.2"
+          ],
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "603.1 - Pouso em área restrita",
+              "content": "A equipe de solo deve reconhecer e isolar o local de pouso; a comunicação terra/ar é essencial. Devem ser avaliados fios, obstáculos, movimentação de pessoas, condições meteorológicas, visibilidade e características do terreno.\n\nA decisão de pouso é do Comandante da Aeronave. Se o pouso oferecer risco a tripulantes, aeronave ou terceiros, a operação deve ser abortada e reavaliada. Toda movimentação no solo será orientada pela tripulação.",
+              "source_pages": [
+                425,
+                426
+              ]
+            },
+            {
+              "type": "theory",
+              "title": "603.2 - Embarque e desembarque",
+              "content": "A sequência começa com briefing da tripulação com os passageiros e autorização do comandante. O embarque ocorre com auxílio dos tripulantes. Durante o voo, passageiros permanecem com cintos afivelados e na escuta da fonia interna.\n\nNo desembarque, devem afastar-se para local seguro, sempre dentro do campo de visão da tripulação. Após o embarque e conferência, o fiel informa ao comandante: “tripulação na segurança e fonia”.\n\nO procedimento destaca riscos de rotores girando, armas dentro da cabine, passageiro não familiarizado, excesso de peso, cinto de segurança e condução de presos.",
+              "source_pages": [
+                426,
+                431
+              ]
+            }
+          ],
+          "questions": [
+            {
+              "question_type": "multiple_choice",
+              "statement": "No POP 603.1, se o pouso oferecer risco para tripulantes, aeronave ou terceiros, a operação deve ser:",
+              "difficulty": "medium",
+              "primary_topic": "603.1",
+              "topics": [
+                "603.1"
+              ],
+              "source_pages": [
+                425,
+                426
+              ],
+              "explanation": "O manual manda abortar e reavaliar o pouso em situação de risco.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "abortada e reavaliada.",
+                  "correct": true
+                },
+                {
+                  "label": "B",
+                  "text": "mantida obrigatoriamente.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "transferida para passageiro não tripulante.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "realizada sem isolamento.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "executada em maior velocidade.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q034",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 603",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Durante o voo, conforme o POP 603.2, os passageiros devem permanecer:",
+              "difficulty": "medium",
+              "primary_topic": "603.2",
+              "topics": [
+                "603.2"
+              ],
+              "source_pages": [
+                426,
+                431
+              ],
+              "explanation": "Essa é a regra expressa na sequência de ações.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "sem cinto para facilitar saída rápida.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "em silêncio, sem fonia.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "com cintos afivelados e na escuta da fonia interna.",
+                  "correct": true
+                },
+                {
+                  "label": "D",
+                  "text": "em pé na cabine.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "com cobertura solta próxima aos rotores.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q035",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 603",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Durante o desembarque, o POP 603.2 estabelece que o passageiro se afaste:",
+              "difficulty": "medium",
+              "primary_topic": "603.2",
+              "topics": [
+                "603.2"
+              ],
+              "source_pages": [
+                426,
+                431
+              ],
+              "explanation": "O campo visual da tripulação é requisito literal do procedimento.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "para qualquer ponto fora de vista da tripulação.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "na direção que escolher, sem orientação.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "sempre pela frente da aeronave.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "para local seguro, permanecendo dentro do campo de visão da tripulação.",
+                  "correct": true
+                },
+                {
+                  "label": "E",
+                  "text": "somente após desligamento obrigatório de todos os motores.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q036",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 603",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Após todos estarem embarcados, o fiel reporta ao comandante da aeronave:",
+              "difficulty": "medium",
+              "primary_topic": "603.2",
+              "topics": [
+                "603.2"
+              ],
+              "source_pages": [
+                426,
+                431
+              ],
+              "explanation": "A frase aparece literalmente no item 8 da sequência do POP 603.2.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "'pista livre e missão concluída'.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "'tripulação na segurança e fonia'.",
+                  "correct": true
+                },
+                {
+                  "label": "C",
+                  "text": "'aeronave em pane'.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "'passageiros sem comunicação'.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "'solo liberado sem isolamento'.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q037",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 603",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            }
+          ]
+        },
+        {
+          "code": "604",
+          "title": "POLICIAMENTO EM EVENTOS E PRAÇAS DESPORTIVAS",
+          "source_pages": [
+            432,
+            454
+          ],
+          "procedures": [
+            "604.1",
+            "604.2",
+            "604.3",
+            "604.4",
+            "604.5",
+            "604.6",
+            "604.7"
+          ],
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "604.1 - Planejamento, entidade promotora e Estado-Maior",
+              "content": "O pedido de policiamento deve anteceder o evento em pelo menos 5 dias úteis para pequena proporção, 10 dias úteis para média e 20 dias úteis para grande proporção e extraordinários.\n\nA Polícia Militar participa de reunião de planejamento com entidades e define comando/Estado-Maior. A abertura dos portões e entrada do público somente serão permitidas após a chegada da PM e autorização do comandante da operação.\n\nClassificação indicada no manual: pequena proporção até 500 pessoas; média de 500 a 2.500; grande de 2.500 a 10.000; extraordinário acima de 10.000.",
+              "source_pages": [
+                432,
+                438
+              ]
+            },
+            {
+              "type": "theory",
+              "title": "604.2 - Documentos necessários",
+              "content": "A sequência inclui análise do pedido e documentos, levantamento/classificação, vistoria técnica do local, emissão da guia TASEG, elaboração da Ordem de Serviço e elaboração da escala do evento.\n\nA escala deve conter postos/setores e especificar a atribuição de cada policial empregado. A Ordem de Serviço segue o modelo padronizado da Gestão de Planejamento (PM-3) e deve estipular as fases da operação.",
+              "source_pages": [
+                439,
+                440
+              ]
+            },
+            {
+              "type": "theory",
+              "title": "604.3 - Análise de riscos",
+              "content": "Há primeira análise de riscos, voltada ao planejamento, e segunda análise no dia do evento, para detectar fatores capazes de prejudicar sua realização.\n\nO estudo considera fatores humanos, político-sociais, logísticos, estruturais, naturais e históricos. Se houver risco sério à segurança do público e impossibilidade de realização, a PM pode interditar parcial ou totalmente o evento, reunindo provas materiais e Laudo Técnico.",
+              "source_pages": [
+                441,
+                442
+              ]
+            },
+            {
+              "type": "theory",
+              "title": "604.4 - Relacionamento com o público",
+              "content": "O manual diferencia público pagante e não pagante. Entre o pagante, distingue torcedor/fã eventual e fanático; entre os fatores de planejamento, considera características psicológicas e comportamento coletivo.\n\nO público não pagante inclui, conforme o texto, crianças, idosos, profissionais de imprensa, organizadores, federações, segurança, administradores e autoridades, exigindo delimitação de espaços e atribuições.",
+              "source_pages": [
+                443,
+                445
+              ]
+            },
+            {
+              "type": "theory",
+              "title": "604.5 - Postos de policiamento",
+              "content": "Os postos e setores derivam da análise de risco, da planta/local e da distribuição do público. O efetivo deve conhecer sua missão, manter comunicação e atuar segundo o posto designado. Patrulhas e postos críticos devem ser posicionados com racionalidade, evitando desguarnecimento e preservando capacidade de resposta.",
+              "source_pages": [
+                446,
+                448
+              ]
+            },
+            {
+              "type": "theory",
+              "title": "604.6 - Controle de Distúrbios Civis",
+              "content": "O efetivo de eventos de média, grande proporção e extraordinários deve receber capacitação prévia/continuada em CDC. O início de distúrbio é identificado por ações coletivas contra a segurança do evento.\n\nEm local de eventos, a solução deve ser buscada com o próprio efetivo interno. Munições químicas devem ser utilizadas somente no lado externo, onde existam vias de fuga suficientes. Após a intervenção, devem ser colhidas provas (fotos/filmagens), materiais e registros para o BO.",
+              "source_pages": [
+                449,
+                452
+              ]
+            },
+            {
+              "type": "theory",
+              "title": "604.7 - Encerramento e relatório",
+              "content": "Próximo do término, abrem-se portões e saídas de emergência para facilitar a saída sem aglomerações. Parte do efetivo é deslocada às saídas sem desguarnecer por completo postos ainda necessários.\n\nO comandante reúne o efetivo, recebe alterações dos setores e confecciona relatório. O relatório deve conter pessoal e meios empregados, reforços/apoios, ocorrências e sugestões, além do arquivamento da documentação pertinente.",
+              "source_pages": [
+                453,
+                454
+              ]
+            }
+          ],
+          "questions": [
+            {
+              "question_type": "multiple_choice",
+              "statement": "No POP 604.1, os prazos mínimos do pedido de policiamento para eventos de pequena, média e grande/extraordinária proporção são, respectivamente:",
+              "difficulty": "hard",
+              "primary_topic": "604.1",
+              "topics": [
+                "604.1"
+              ],
+              "source_pages": [
+                436,
+                438
+              ],
+              "explanation": "O procedimento fixa 5, 10 e 20 dias úteis.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "2, 5 e 10 dias corridos.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "5, 10 e 20 dias úteis.",
+                  "correct": true
+                },
+                {
+                  "label": "C",
+                  "text": "5, 15 e 30 dias úteis.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "10, 20 e 30 dias corridos.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "1, 3 e 5 dias úteis.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q038",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 604",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "A abertura dos portões e a entrada do público, segundo o POP 604.1, somente podem ocorrer:",
+              "difficulty": "medium",
+              "primary_topic": "604.1",
+              "topics": [
+                "604.1"
+              ],
+              "source_pages": [
+                436,
+                438
+              ],
+              "explanation": "A regra é expressa no item 6 da sequência.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "assim que o promotor chegar ao local.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "antes da chegada da PM, se houver segurança privada.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "após autorização da imprensa.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "após a chegada da PM e autorização do comandante da operação.",
+                  "correct": true
+                },
+                {
+                  "label": "E",
+                  "text": "apenas após o encerramento da vistoria pós-evento.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q039",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 604",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Segundo o esclarecimento do POP 604.1, evento extraordinário é aquele com público:",
+              "difficulty": "medium",
+              "primary_topic": "604.1",
+              "topics": [
+                "604.1"
+              ],
+              "source_pages": [
+                437,
+                438
+              ],
+              "explanation": "O manual classifica extraordinário como acima de 10.000 pessoas.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "até 500 pessoas.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "de 500 a 1.000 pessoas.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "de 1.000 a 2.500 pessoas.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "de 2.500 a 10.000 pessoas.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "acima de 10.000 pessoas.",
+                  "correct": true
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q040",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 604",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "No POP 604.2, a escala do evento deve:",
+              "difficulty": "medium",
+              "primary_topic": "604.2",
+              "topics": [
+                "604.2"
+              ],
+              "source_pages": [
+                439,
+                440
+              ],
+              "explanation": "A escala deve individualizar postos/setores e atribuições.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "conter os postos/setores e especificar a atribuição de cada policial empregado.",
+                  "correct": true
+                },
+                {
+                  "label": "B",
+                  "text": "indicar somente o nome do comandante.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "omitir os setores para permitir livre atuação.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "ser elaborada apenas após o evento.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "substituir a Ordem de Serviço.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q041",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 604",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "O POP 604.3 determina a realização de duas análises de risco. A segunda é realizada:",
+              "difficulty": "medium",
+              "primary_topic": "604.3",
+              "topics": [
+                "604.3"
+              ],
+              "source_pages": [
+                441,
+                442
+              ],
+              "explanation": "A primeira subsidia o planejamento; a segunda reavalia os fatores no dia do evento.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "um ano antes do evento.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "somente depois do encerramento.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "no dia do evento, verificando fatores que possam prejudicar seu andamento.",
+                  "correct": true
+                },
+                {
+                  "label": "D",
+                  "text": "apenas se houver prisão.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "exclusivamente pela entidade promotora.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q042",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 604",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "No POP 604.4, qual característica é associada ao torcedor/fã fanático?",
+              "difficulty": "medium",
+              "primary_topic": "604.4",
+              "topics": [
+                "604.4"
+              ],
+              "source_pages": [
+                443,
+                445
+              ],
+              "explanation": "O manual contrasta fã eventual com fanático e descreve maior constância, caracterização e atuação em grupos.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "presença irregular e sempre com familiares.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "maior constância nos eventos e possibilidade de atuar em grupos, com maior potencial de atos violentos/vandalismo.",
+                  "correct": true
+                },
+                {
+                  "label": "C",
+                  "text": "desconhecimento da rotina do policiamento.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "ausência total de identificação com o time/ídolo.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "proibição de uso de vestes características.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q043",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 604",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "No POP 604.6, quanto ao emprego de munição química em distúrbios civis no contexto de eventos, o manual afirma que:",
+              "difficulty": "hard",
+              "primary_topic": "604.6",
+              "topics": [
+                "604.6"
+              ],
+              "source_pages": [
+                449,
+                452
+              ],
+              "explanation": "A restrição ao lado externo e existência de vias de fuga está expressa no procedimento.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "deve ser usada preferencialmente em ambientes internos fechados.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "é obrigatória em qualquer aglomeração.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "pode ser usada sem avaliar vias de fuga.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "deve ser utilizada somente no lado externo, onde haja vias de fuga suficientes.",
+                  "correct": true
+                },
+                {
+                  "label": "E",
+                  "text": "substitui qualquer outra técnica de CDC.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q044",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 604",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "No encerramento do policiamento, o relatório previsto no POP 604.7 deve conter obrigatoriamente, entre outros dados:",
+              "difficulty": "medium",
+              "primary_topic": "604.7",
+              "topics": [
+                "604.7"
+              ],
+              "source_pages": [
+                453,
+                454
+              ],
+              "explanation": "O esclarecimento do POP 604.7 lista esses dados como obrigatórios.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "somente fotos do evento.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "apenas relação de detidos.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "pessoal e meios empregados, reforços/apoios, ocorrências e sugestões.",
+                  "correct": true
+                },
+                {
+                  "label": "D",
+                  "text": "somente a arrecadação do evento.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "apenas nome do promotor.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q045",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 604",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            }
+          ]
+        },
+        {
+          "code": "605",
+          "title": "OCORRÊNCIA COM APOIO DO POLICIAMENTO COM CÃES",
+          "source_pages": [
+            455,
+            457
+          ],
+          "procedures": [
+            "605.1"
+          ],
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "605.1 - Acionamento do policiamento com cães",
+              "content": "O acionamento depende de classificação prévia da ocorrência, análise de risco, características do local, missão, circunstância e modalidade da equipe. O efetivo é tratado como binômio Homem/Cão.\n\nEm detecção de odores, a unidade solicitante deve isolar o local para evitar contaminação. Antes do emprego do cão, realiza-se vistoria de segurança e plano de busca. Havendo indicação positiva, faz-se busca minuciosa no ponto indicado.\n\nSe for localizado produto ilícito, a guarnição solicitante realiza a apreensão e conduz a ocorrência. Dados do BO devem ser compartilhados com o Canil.\n\nO manual proíbe alimentar, premiar, manejar ou brincar com o cão sem anuência do operador. Equipe canina de detecção de explosivos somente será acionada pelo Esquadrão Antibombas.",
+              "source_pages": [
+                455,
+                457
+              ]
+            }
+          ],
+          "questions": [
+            {
+              "question_type": "multiple_choice",
+              "statement": "Em ocorrência de detecção de odores, antes da chegada/emprego do cão, a unidade que acionou o Canil deve:",
+              "difficulty": "medium",
+              "primary_topic": "605.1",
+              "topics": [
+                "605.1"
+              ],
+              "source_pages": [
+                456,
+                457
+              ],
+              "explanation": "O isolamento evita contaminação de odor e integra a sequência do POP 605.1.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "isolar o local para evitar possível contaminação do ambiente.",
+                  "correct": true
+                },
+                {
+                  "label": "B",
+                  "text": "permitir circulação livre de pessoas no ponto de busca.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "alimentar o cão para aumentar o desempenho.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "manipular todos os objetos antes do cão.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "dispensar análise de riscos.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q046",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 605",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Havendo indicação positiva do cão em detecção de odores, o POP 605.1 manda:",
+              "difficulty": "medium",
+              "primary_topic": "605.1",
+              "topics": [
+                "605.1"
+              ],
+              "source_pages": [
+                456,
+                457
+              ],
+              "explanation": "A indicação positiva é seguida de busca minuciosa no local indicado.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "encerrar imediatamente a ocorrência sem verificação.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "liberar o local.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "realizar busca minuciosa nos locais da indicação.",
+                  "correct": true
+                },
+                {
+                  "label": "D",
+                  "text": "retirar o cão e não registrar nada.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "aguardar obrigatoriamente 24 horas.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q047",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 605",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Segundo o POP 605.1, sem anuência do operador do Canil, é vedado:",
+              "difficulty": "medium",
+              "primary_topic": "605.1",
+              "topics": [
+                "605.1"
+              ],
+              "source_pages": [
+                456,
+                457
+              ],
+              "explanation": "A vedação aparece nas ações corretivas e possibilidades de erro.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "transmitir dados da ocorrência.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "isolar o local.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "fazer análise de riscos.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "alimentar, premiar, manejar ou brincar com o cão.",
+                  "correct": true
+                },
+                {
+                  "label": "E",
+                  "text": "fornecer cópia do BO.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q048",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 605",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "A equipe do Canil responsável por detecção de explosivos, conforme o esclarecimento do POP 605.1, somente será acionada pelo:",
+              "difficulty": "medium",
+              "primary_topic": "605.1",
+              "topics": [
+                "605.1"
+              ],
+              "source_pages": [
+                456,
+                457
+              ],
+              "explanation": "O esclarecimento restringe esse acionamento ao Esquadrão Antibombas.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "CIOSP diretamente, em qualquer chamada.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "Esquadrão Antibombas.",
+                  "correct": true
+                },
+                {
+                  "label": "C",
+                  "text": "promotor do evento.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "condutor abordado.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "policiamento ambiental.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q049",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 605",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            }
+          ]
+        },
+        {
+          "code": "606",
+          "title": "USO DE AERONAVE REMOTAMENTE PILOTADA RPA",
+          "source_pages": [
+            458,
+            464
+          ],
+          "procedures": [
+            "606.1"
+          ],
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "606.1 - Antes do voo",
+              "content": "O piloto deve receber determinação do Comandante da UPM (ordem de serviço supre), planejar o voo segundo MCA 56-4 e ICA 100-40 e informar/solicitar autorização no SARPAS quando aplicável. Em áreas confinadas que não sejam consideradas espaço aéreo, o manual dispensa SARPAS.\n\nNão utilizar a RPA na chuva ou com vento superior ao permitido pelo fabricante. Fazer inspeção pré-voo, conferir rotores, hélices, gimbal, câmera, sensores, baterias e cartão de memória.\n\nA bússola é calibrada quando o sistema solicitar e quando houver deslocamento entre cidades; a IMU, uma vez por mês e quando o sistema solicitar. O return-to-home deve ser configurado para 30% de bateria. O voo só inicia com ao menos 10 satélites conectados.",
+              "source_pages": [
+                458,
+                461
+              ]
+            },
+            {
+              "type": "theory",
+              "title": "606.1 - Durante e após o voo",
+              "content": "Após decolar, manter estabilidade a cerca de 2 metros por 15 segundos para verificar comportamento da aeronave. A altura de segurança considera a maior elevação do local acrescida de cerca de 10 metros. A RPA não deve ultrapassar a linha de visada do piloto/observador.\n\nOs sensores anticolisão devem permanecer ativos; o voo é preferencialmente diurno. Ao avistar aeronave nas proximidades, inicia-se pouso imediatamente.\n\nApós o voo: desligar RPA/RPS, retirar hélices e bateria, inserir trava do gimbal, carregar baterias somente após resfriamento completo, preencher checklist pós-voo e descarregar os dados conforme autorização.",
+              "source_pages": [
+                460,
+                464
+              ]
+            },
+            {
+              "type": "summary",
+              "title": "606.1 - Limites e correções",
+              "content": "O resultado esperado é padronizar o uso de RPA classe 3 em VLOS ou EVLOS até 400 pés (120 m) nas ações de segurança pública e defesa civil.\n\nSe o SARPAS negar informação/autorização, o voo não pode ocorrer; deve ser feita nova solicitação/informação com novo local. Operação dentro de limites de segurança de aeródromo exige coordenação antecipada com o órgão responsável pelo espaço aéreo.",
+              "source_pages": [
+                461,
+                464
+              ]
+            }
+          ],
+          "questions": [
+            {
+              "question_type": "multiple_choice",
+              "statement": "No POP 606.1, o limite de bateria configurado para acionamento do return-to-home é:",
+              "difficulty": "medium",
+              "primary_topic": "606.1",
+              "topics": [
+                "606.1"
+              ],
+              "source_pages": [
+                460,
+                464
+              ],
+              "explanation": "O item 19 da sequência antes do voo fixa 30%.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "10%.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "20%.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "30%.",
+                  "correct": true
+                },
+                {
+                  "label": "D",
+                  "text": "40%.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "50%.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q050",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 606",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "O voo da RPA só deve ser iniciado, segundo o POP 606.1, quando houver conexão com pelo menos:",
+              "difficulty": "medium",
+              "primary_topic": "606.1",
+              "topics": [
+                "606.1"
+              ],
+              "source_pages": [
+                460,
+                464
+              ],
+              "explanation": "O manual exige ao menos 10 satélites conectados.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "4 satélites.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "6 satélites.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "8 satélites.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "10 satélites.",
+                  "correct": true
+                },
+                {
+                  "label": "E",
+                  "text": "15 satélites.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q051",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 606",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "A calibragem prevista no POP 606.1 estabelece que:",
+              "difficulty": "hard",
+              "primary_topic": "606.1",
+              "topics": [
+                "606.1"
+              ],
+              "source_pages": [
+                460,
+                464
+              ],
+              "explanation": "Esses intervalos e condições aparecem literalmente na sequência e nas ações corretivas.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "bússola e IMU sejam calibradas somente uma vez por ano.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "a bússola seja calibrada quando o sistema solicitar e ao mudar de cidade; a IMU, uma vez por mês e quando o sistema solicitar.",
+                  "correct": true
+                },
+                {
+                  "label": "C",
+                  "text": "a IMU nunca precisa de calibragem.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "a bússola seja calibrada somente depois do voo.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "nenhuma calibragem é necessária se houver GPS.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q052",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 606",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Qual é o resultado esperado quanto à altura/operação da RPA classe 3 no POP 606.1?",
+              "difficulty": "medium",
+              "primary_topic": "606.1",
+              "topics": [
+                "606.1"
+              ],
+              "source_pages": [
+                461,
+                464
+              ],
+              "explanation": "O manual explicita VLOS/EVLOS até 400 pés (120 m).",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "VLOS ou EVLOS até 400 pés (120 metros).",
+                  "correct": true
+                },
+                {
+                  "label": "B",
+                  "text": "BVLOS irrestrito até 1.000 metros.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "VLOS apenas até 50 metros.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "EVLOS apenas até 30 metros.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "qualquer altura definida pelo operador.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q053",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 606",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Em caso de negativa da informação/autorização de voo no SARPAS, o POP 606.1 determina:",
+              "difficulty": "hard",
+              "primary_topic": "606.1",
+              "topics": [
+                "606.1"
+              ],
+              "source_pages": [
+                461,
+                464
+              ],
+              "explanation": "A ação corretiva do manual impede o voo em caso de negativa.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "realizar o voo mesmo assim, se abaixo de 400 pés.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "voar somente à noite.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "ignorar o sistema e comunicar depois.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "substituir a autorização por mensagem informal.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "não realizar o voo e fazer nova informação/autorização, estabelecendo novo local.",
+                  "correct": true
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q054",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 606",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Ao avistar outra aeronave em voo nas proximidades, o POP 606.1 determina que o operador da RPA:",
+              "difficulty": "medium",
+              "primary_topic": "606.1",
+              "topics": [
+                "606.1"
+              ],
+              "source_pages": [
+                460,
+                461
+              ],
+              "explanation": "A sequência durante o voo determina pouso imediato diante de aeronave próxima.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "suba imediatamente para aumentar separação.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "mantenha a missão sem alteração.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "inicie o procedimento de pouso imediatamente.",
+                  "correct": true
+                },
+                {
+                  "label": "D",
+                  "text": "ative modo Sport.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "desligue a RPS em voo.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q055",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 606",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            }
+          ]
+        },
+        {
+          "code": "607",
+          "title": "POLICIAMENTO FAZENDÁRIO",
+          "source_pages": [
+            465,
+            468
+          ],
+          "procedures": [
+            "607.1"
+          ],
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "607.1 - Policiamento em operações fazendárias",
+              "content": "Ao assumir o serviço, a guarnição deve entrar em contato com o Batalhão Fazendário. O planejamento deve estar alinhado com a Coordenadoria de Fiscalização Volante em Postos Fiscais e Transportadoras (CFPF/SUFIS).\n\nNas abordagens de mercadorias aplica-se a Portaria SEFAZ nº 128/2021. A Notícia de Fato Tributário (NFT) registra, no mínimo, localização/data/hora, condutor/veículo, carga, pessoas relacionadas, fato verificado, chaves de documentos fiscais, imagens, circunstâncias, eventual condução a posto e identificação do responsável pelo registro.\n\nHavendo hipótese de retenção, motorista/veículo/carga são conduzidos à unidade SEFAZ-MT mais próxima.",
+              "source_pages": [
+                465,
+                468
+              ]
+            },
+            {
+              "type": "comparison",
+              "title": "607.1 - Situações de liberação e distância",
+              "content": "O manual manda registrar a NFT e liberar motorista/veículo/carga quando se tratar de: mercadoria de rápida deterioração ou perecimento; cargas vivas; semovente; mercadoria ou carga perigosa.\n\nTambém determina registro da NFT e liberação quando a distância até o Posto de Fiscalização da SEFAZ-MT mais próximo ultrapassar 100 km.\n\nBusca veicular, revista pessoal e checagens criminais não são indiscriminadas: dependem de fundada suspeita.",
+              "source_pages": [
+                465,
+                468
+              ]
+            },
+            {
+              "type": "warning",
+              "title": "607.1 - Quem preenche a NFT",
+              "content": "O esclarecimento é literal: o preenchimento da Notícia de Fato Tributário - NFT se dará exclusivamente por policiais militares integrantes do Batalhão de Polícia Militar Fazendário.\n\nSe outra unidade da PMMT se deparar com possível crime tributário, deve encaminhar a carga ao posto SEFAZ mais próximo e colher dados para registro posterior. Se a condução for inviável e não for possível registrar a NFT, confecciona-se BO com dados/fotos e encaminha-se ao Batalhão Fazendário.",
+              "source_pages": [
+                466,
+                468
+              ]
+            }
+          ],
+          "questions": [
+            {
+              "question_type": "multiple_choice",
+              "statement": "Ao assumir o serviço no policiamento fazendário, o POP 607.1 determina que a guarnição:",
+              "difficulty": "medium",
+              "primary_topic": "607.1",
+              "topics": [
+                "607.1"
+              ],
+              "source_pages": [
+                465,
+                468
+              ],
+              "explanation": "O contato com o Batalhão Fazendário é o primeiro item da sequência.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "entre em contato com o Batalhão Fazendário para receber orientações específicas.",
+                  "correct": true
+                },
+                {
+                  "label": "B",
+                  "text": "inicie abordagens sem qualquer coordenação.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "contate somente a imprensa.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "registre NFT antes de qualquer serviço, mesmo sem ocorrência.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "ignore o planejamento da CFPF/SUFIS.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q056",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 607",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Segundo o POP 607.1, em qual situação a guarnição deve registrar a NFT e liberar motorista, veículo e carga?",
+              "difficulty": "medium",
+              "primary_topic": "607.1",
+              "topics": [
+                "607.1"
+              ],
+              "source_pages": [
+                465,
+                468
+              ],
+              "explanation": "O manual enumera essas quatro hipóteses de liberação após registro da NFT.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "qualquer carga com indício de fraude.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "quando a carga estiver sem qualquer documento e houver indício comercial.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "sempre que houver divergência entre carga e nota fiscal.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "quando se tratar de mercadoria de rápida deterioração/perecimento, carga viva, semovente ou carga perigosa.",
+                  "correct": true
+                },
+                {
+                  "label": "E",
+                  "text": "sempre que o motorista solicitar.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q057",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 607",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "Se a distância até o Posto de Fiscalização da SEFAZ-MT mais próximo ultrapassar 100 km, o POP 607.1 orienta:",
+              "difficulty": "hard",
+              "primary_topic": "607.1",
+              "topics": [
+                "607.1"
+              ],
+              "source_pages": [
+                465,
+                468
+              ],
+              "explanation": "O limite de mais de 100 km aparece literalmente no item 7.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "reter indefinidamente a carga no local.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "abandonar o registro.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "registrar a NFT e liberar motorista, veículo e carga.",
+                  "correct": true
+                },
+                {
+                  "label": "D",
+                  "text": "conduzir obrigatoriamente a carga, independentemente de distância.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "acionar apenas o guincho.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q058",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 607",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "O preenchimento da Notícia de Fato Tributário (NFT), conforme o esclarecimento do POP 607.1, é realizado exclusivamente por:",
+              "difficulty": "medium",
+              "primary_topic": "607.1",
+              "topics": [
+                "607.1"
+              ],
+              "source_pages": [
+                466,
+                468
+              ],
+              "explanation": "O manual restringe expressamente o preenchimento da NFT aos integrantes do Batalhão Fazendário.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "qualquer policial militar do Estado.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "policiais militares integrantes do Batalhão de Polícia Militar Fazendário.",
+                  "correct": true
+                },
+                {
+                  "label": "C",
+                  "text": "servidores municipais.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "condutores abordados.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "policiais civis.",
+                  "correct": false
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q059",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 607",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            },
+            {
+              "question_type": "multiple_choice",
+              "statement": "A busca veicular, revista pessoal e checagem de antecedentes no POP 607.1 devem ocorrer:",
+              "difficulty": "medium",
+              "primary_topic": "607.1",
+              "topics": [
+                "607.1"
+              ],
+              "source_pages": [
+                465,
+                468
+              ],
+              "explanation": "O manual repele checagens indiscriminadas e condiciona essas medidas à fundada suspeita.",
+              "alternatives": [
+                {
+                  "label": "A",
+                  "text": "em todas as abordagens, obrigatoriamente.",
+                  "correct": false
+                },
+                {
+                  "label": "B",
+                  "text": "apenas por solicitação do motorista.",
+                  "correct": false
+                },
+                {
+                  "label": "C",
+                  "text": "sem qualquer justificativa.",
+                  "correct": false
+                },
+                {
+                  "label": "D",
+                  "text": "somente após apreensão da carga.",
+                  "correct": false
+                },
+                {
+                  "label": "E",
+                  "text": "em caso de fundada suspeita, com brevidade e conforme a necessidade da ocorrência.",
+                  "correct": true
+                }
+              ],
+              "source_key": "POP6-LITERAL-Q060",
+              "source_label": "POP 6 - Módulo VI: Policiamento Especializado | Manual POP PMMT 2023, 2ª edição | Processo 607",
+              "origin": {
+                "type": "manual_pop_pmmt_2023",
+                "label": "Manual de Procedimento Operacional Padrão PMMT - 2ª edição - 2023"
+              },
+              "review": {
+                "status": "curada_por_literalidade",
+                "note": "Gabarito elaborado exclusivamente a partir do Manual POP PMMT 2023 fornecido pelo usuário."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
