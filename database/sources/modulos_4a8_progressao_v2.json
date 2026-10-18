@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "modules": [
     {
       "module_slug": "modulo-4-corregedoria-pmmt-ipm-sindicancia-portaria-160-e-desercao",
@@ -793,6 +793,46 @@
             "efetivo",
             "lc 529"
           ]
+        },
+        {
+          "selector": {
+            "slug": "8-lei-complementar-386-2010-organizacao-basica-pmmt"
+          },
+          "title": "Lei Complementar nº 386/2010 - Organização Básica da PMMT",
+          "keywords": [
+            "lc 386",
+            "organizacao basica",
+            "estrutura basica",
+            "forca auxiliar",
+            "reserva do exercito"
+          ]
+        },
+        {
+          "selector": {
+            "slug": "9-decreto-591-1980-regulamento-de-movimentacao"
+          },
+          "title": "Decreto nº 591/1980 - Regulamento de Movimentação",
+          "keywords": [
+            "decreto 591",
+            "movimentacao",
+            "transito",
+            "instalacao",
+            "guarnicao"
+          ]
+        },
+        {
+          "selector": {
+            "slug": "10-decreto-1172-2021-diretriz-conjunta-001-2021"
+          },
+          "title": "Decreto nº 1.172/2021 e Diretriz Conjunta nº 001/2021",
+          "keywords": [
+            "1.172",
+            "diretriz conjunta 001",
+            "porte de arma",
+            "posse de arma",
+            "municoes",
+            "coletes balisticos"
+          ]
         }
       ],
       "all_other_phases_optional": true
@@ -808,19 +848,19 @@
           "title": "Introdução e visão geral",
           "replace_first_block": {
             "type": "theory",
-            "title": "Como estudar os seis módulos do Manual POP PMMT 2023",
-            "content": "O módulo de POP deve ser estudado como sequência operacional, e não como coleção de frases isoladas. A trilha curricular passa a contemplar os seis módulos oficiais do Manual POP PMMT 2023: POP 1 - Níveis do Uso da Força Policial; POP 2 - Abordagens Policiais; POP 3 - Procedimentos Diversos; POP 4 - Ocorrências Policiais; POP 5 - Eventos Críticos; e POP 6 - Policiamento Especializado.\n\nEm cada processo, transforme o texto em uma linha mental: atividades críticas → sequência das ações → resultados esperados → ações corretivas → possibilidades de erro → esclarecimentos. Como a prova pode cobrar literalidade, números, distâncias, prazos, ordem das ações, condições e vedações devem ser estudados exatamente conforme o manual."
+            "title": "Como estudar os POPs cobrados e os módulos complementares",
+            "content": "O conteúdo programático atual cobra os Módulos I a IV do Manual POP PMMT. Por isso, a trilha obrigatória mantém POP 1, POP 2, POP 3 e POP 4. Os POP 5 (Eventos Críticos) e POP 6 (Policiamento Especializado) permanecem integralmente disponíveis no curso como conteúdo complementar, sem bloquear o avanço, pois podem ser úteis para atualização profissional ou futuros editais.\n\nNos módulos cobrados, estude sempre pela literalidade do manual: atividades críticas, sequência das ações, resultados esperados, ações corretivas, possibilidades de erro e esclarecimentos."
           },
           "extra_blocks": [
             {
               "type": "comparison",
-              "title": "Mapa dos seis POPs atualizados",
-              "content": "POP 1 → Níveis do Uso da Força Policial.\nPOP 2 → Abordagens Policiais.\nPOP 3 → Procedimentos Diversos.\nPOP 4 → Ocorrências Policiais.\nPOP 5 → Eventos Críticos: Processos 501 a 505.\nPOP 6 → Policiamento Especializado: Processos 601 a 607.\n\nAs fases antigas de recortes, mapas, revisão e mini-simulado permanecem como biblioteca complementar; a progressão obrigatória utiliza as versões atualizadas dos seis módulos do Manual POP PMMT 2023."
+              "title": "Mapa da trilha atual",
+              "content": "OBRIGATÓRIOS PELO EDITAL ATUAL:\nPOP 1 → Níveis do Uso da Força Policial.\nPOP 2 → Abordagens Policiais.\nPOP 3 → Procedimentos Diversos.\nPOP 4 → Ocorrências Policiais.\n\nCOMPLEMENTARES MANTIDOS NO CURSO:\nPOP 5 → Eventos Críticos.\nPOP 6 → Policiamento Especializado."
             },
             {
               "type": "warning",
               "title": "Método de prova para POP",
-              "content": "A banca pode trocar um número, inverter duas etapas, deslocar uma regra para outro processo ou transformar uma possibilidade de erro em procedimento correto. Leia o comando identificando o código do processo/POP e compare a alternativa com a literalidade do manual."
+              "content": "A banca pode trocar um número, inverter duas etapas, deslocar uma regra para outro processo ou transformar uma possibilidade de erro em procedimento correto. Identifique sempre o código do processo/POP e compare a alternativa com a literalidade do manual."
             }
           ],
           "new_questions": [
@@ -1012,20 +1052,6 @@
             "title_prefix": "POP 4 -"
           },
           "title": "POP 4 - Ocorrências Policiais",
-          "keywords": []
-        },
-        {
-          "selector": {
-            "title_prefix": "POP 5 -"
-          },
-          "title": "POP 5 - Eventos Críticos",
-          "keywords": []
-        },
-        {
-          "selector": {
-            "title_prefix": "POP 6 -"
-          },
-          "title": "POP 6 - Policiamento Especializado",
           "keywords": []
         }
       ],
@@ -1570,6 +1596,87 @@
             "acao controlada",
             "droga",
             "sisnad"
+          ]
+        },
+        {
+          "selector": {
+            "slug": "7-lei-7716-1989-crimes-resultantes-de-preconceito"
+          },
+          "title": "Lei nº 7.716/1989 - Crimes resultantes de preconceito",
+          "keywords": [
+            "7.716",
+            "racismo",
+            "injuria racial",
+            "discriminacao",
+            "preconceito"
+          ]
+        },
+        {
+          "selector": {
+            "slug": "8-lei-10826-2003-estatuto-do-desarmamento"
+          },
+          "title": "Lei nº 10.826/2003 - Estatuto do Desarmamento",
+          "keywords": [
+            "10.826",
+            "sinarm",
+            "porte ilegal",
+            "posse irregular",
+            "arma de fogo"
+          ]
+        },
+        {
+          "selector": {
+            "slug": "9-decreto-lei-3688-1941-contravencoes-penais"
+          },
+          "title": "Decreto-Lei nº 3.688/1941 - Lei das Contravenções Penais",
+          "keywords": [
+            "3.688",
+            "contravencoes",
+            "vias de fato",
+            "perturbacao do sossego",
+            "jogo de azar"
+          ]
+        },
+        {
+          "selector": {
+            "slug": "10-manual-tco-pmmt-2024"
+          },
+          "title": "Manual de Lavratura do TCO PMMT - 2024",
+          "keywords": [
+            "tco",
+            "termo circunstanciado",
+            "menor potencial ofensivo",
+            "compromisso de comparecimento"
+          ]
+        },
+        {
+          "selector": {
+            "slug": "11-codigo-penal-recorte-do-edital"
+          },
+          "title": "Código Penal - recorte integral do edital",
+          "keywords": [
+            "codigo penal",
+            "art. 121",
+            "art. 155",
+            "art. 213",
+            "art. 312",
+            "peculato",
+            "furto",
+            "roubo"
+          ]
+        },
+        {
+          "selector": {
+            "slug": "12-codigo-processo-penal-recorte-do-edital"
+          },
+          "title": "Código de Processo Penal - recorte integral do edital",
+          "keywords": [
+            "codigo de processo penal",
+            "inquerito policial",
+            "acao penal",
+            "prisao em flagrante",
+            "art. 301",
+            "art. 310"
           ]
         }
       ],
