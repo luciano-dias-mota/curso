@@ -265,6 +265,16 @@ final class StudyNoteService
         );
         $courseStmt->execute(['user_id' => $userId]);
         $courses = $courseStmt->fetchAll(PDO::FETCH_ASSOC);
+        $settings = new CourseSettingsService();
+        $courses = array_values(array_filter(
+            $courses,
+            static fn (array $row): bool => $settings->enabled(
+                (int) $row['id'],
+                'notes_enabled',
+                $pdo,
+                true
+            )
+        ));
         $courseIds = array_map(static fn (array $row): int => (int) $row['id'], $courses);
 
         if ($courseIds === []) {
@@ -346,6 +356,10 @@ final class StudyNoteService
         $courseStmt->execute(['user_id' => $userId, 'course_id' => $courseId]);
         if (!$courseStmt->fetchColumn()) {
             throw new RuntimeException('Curso inválido para esta anotação.');
+        }
+
+        if (!(new CourseSettingsService())->enabled($courseId, 'notes_enabled', $pdo, true)) {
+            throw new RuntimeException('As anotações estão desabilitadas para este curso.');
         }
 
         if ($moduleId === null) {
