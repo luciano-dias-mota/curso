@@ -7,6 +7,7 @@ namespace App\Controllers;
 use App\Core\Auth;
 use App\Core\Controller;
 use App\Core\Database;
+use App\Services\CourseSettingsService;
 use App\Services\ProgressInitializer;
 
 final class CourseController extends Controller
@@ -45,9 +46,7 @@ final class CourseController extends Controller
             return;
         }
 
-        // Política de estudo livre entre disciplinas: todo módulo publicado da
-        // matrícula fica disponível. A sequência obrigatória é preservada
-        // dentro de cada módulo.
+        // Reconcilia a matrícula com a política configurada para este curso.
         (new ProgressInitializer())->initializeEnrollment(
             (int) Auth::id(),
             $id,
@@ -92,6 +91,7 @@ final class CourseController extends Controller
         ]);
 
         $modules = $modulesStmt->fetchAll();
+        $settings = (new CourseSettingsService())->all($id, $pdo);
 
         foreach ($modules as &$module) {
             $title = (string) ($module['title'] ?? '');
@@ -125,6 +125,7 @@ final class CourseController extends Controller
                 'title' => $course['title'],
                 'course' => $course,
                 'modules' => $modules,
+                'settings' => $settings,
             ],
             'layouts/student'
         );
