@@ -9,6 +9,7 @@ use App\Core\Controller;
 use App\Core\Database;
 use App\Core\Request;
 use App\Core\Session;
+use App\Services\EnrollmentService;
 use App\Services\ProgressInitializer;
 use App\Services\UserAccessMonitor;
 use PDO;
@@ -399,95 +400,16 @@ final class StudentController extends Controller
     {
         $pdo = Database::connection();
         $this->findStudent($pdo, $id);
+
         $courseId = (int) $request->input('course_id', 0);
         $status = (string) $request->input('status', 'active');
 
-        if ($courseId <= 0 || !in_array($status, ['active', 'completed', 'cancelled'], true)) {
-            Session::flash('error', 'Dados de matrícula inválidos.');
-            $this->redirect('/admin/usuarios/' . $id);
-        }
-
-        $course = $pdo->prepare(
-            "SELECT id, title
-             FROM courses
-             WHERE id = :id
-               AND status <> 'archived'
-             LIMIT 1"
-        );
-        $course->execute(['id' => $courseId]);
-        $courseRow = $course->fetch(PDO::FETCH_ASSOC);
-
-        if (!$courseRow) {
-            Session::flash('error', 'Curso não encontrado ou arquivado.');
-            $this->redirect('/admin/usuarios/' . $id);
-        }
-
         try {
-            $pdo->beginTransaction();
-
-            $existing = $pdo->prepare(
-                "SELECT id
-                 FROM enrollments
-                 WHERE user_id = :user_id
-                   AND course_id = :course_id
-                 LIMIT 1
-                 FOR UPDATE"
-            );
-            $existing->execute([
-                'user_id' => $id,
-                'course_id' => $courseId,
-            ]);
-            $enrollmentId = (int) ($existing->fetchColumn() ?: 0);
-
-            if ($enrollmentId > 0) {
-                $stmt = $pdo->prepare(
-                    "UPDATE enrollments
-                     SET status = :status,
-                         completed_at = CASE
-                             WHEN :status_completed = 'completed' THEN NOW()
-                             ELSE NULL
-                         END
-                     WHERE id = :id"
-                );
-                $stmt->execute([
-                    'status' => $status,
-                    'status_completed' => $status,
-                    'id' => $enrollmentId,
-                ]);
-            } else {
-                $stmt = $pdo->prepare(
-                    "INSERT INTO enrollments
-                        (user_id, course_id, status, enrolled_at, completed_at)
-                     VALUES
-                        (:user_id, :course_id, :status, NOW(),
-                         CASE WHEN :status_completed = 'completed' THEN NOW() ELSE NULL END)"
-                );
-                $stmt->execute([
-                    'user_id' => $id,
-                    'course_id' => $courseId,
-                    'status' => $status,
-                    'status_completed' => $status,
-                ]);
-            }
-
-            if ($status === 'active') {
-                (new ProgressInitializer())->initializeEnrollment($id, $courseId, $pdo);
-            }
-
-            $this->audit(
-                $pdo,
-                'student_enrollment_changed',
-                $id,
-                "Matrícula em {$courseRow['title']} alterada para {$status}"
-            );
-
-            $pdo->commit();
+            (new EnrollmentService())->change($id, $courseId, $status, $pdo);
             Session::flash('success', 'Matrícula atualizada.');
+        } catch (RuntimeException $e) {
+            Session::flash('error', $e->getMessage());
         } catch (Throwable $e) {
-            if ($pdo->inTransaction()) {
-                $pdo->rollBack();
-            }
-
             error_log(
                 'Erro ao atualizar matrícula do aluno #' . $id
                 . ' no curso #' . $courseId . ': ' . $e->getMessage()
