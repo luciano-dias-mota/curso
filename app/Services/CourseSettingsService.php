@@ -12,6 +12,8 @@ final class CourseSettingsService
         'module_access_mode' => 'free',
         'lesson_access_mode' => 'sequential',
         'lesson_completion_mode' => 'quiz',
+        'phase_completion_mode' => 'quiz',
+        'module_completion_mode' => 'quiz',
         'exercises_enabled' => '1',
         'simulations_enabled' => '1',
         'notes_enabled' => '1',
@@ -99,6 +101,18 @@ final class CourseSettingsService
     {
         $mode = (string) ($this->all($courseId, $pdo)['lesson_completion_mode'] ?? 'quiz');
         return in_array($mode, ['reading', 'quiz', 'lab'], true) ? $mode : 'quiz';
+    }
+
+    public function phaseCompletionMode(int $courseId, PDO $pdo): string
+    {
+        $mode = (string) ($this->all($courseId, $pdo)['phase_completion_mode'] ?? 'quiz');
+        return in_array($mode, ['quiz', 'lessons'], true) ? $mode : 'quiz';
+    }
+
+    public function moduleCompletionMode(int $courseId, PDO $pdo): string
+    {
+        $mode = (string) ($this->all($courseId, $pdo)['module_completion_mode'] ?? 'quiz');
+        return in_array($mode, ['quiz', 'phases'], true) ? $mode : 'quiz';
     }
 
     private function tableExists(PDO $pdo): bool
