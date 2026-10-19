@@ -96,6 +96,15 @@ $action = $isEdit
                     <option value="free" <?= ($settings['lesson_access_mode'] ?? '') === 'free' ? 'selected' : '' ?>>Livre</option>
                 </select>
             </label>
+            <label>
+                <span>Conclusão padrão das aulas</span>
+                <select class="ld-admin-select" name="lesson_completion_mode">
+                    <option value="quiz" <?= ($settings['lesson_completion_mode'] ?? 'quiz') === 'quiz' ? 'selected' : '' ?>>Exercício / quiz</option>
+                    <option value="lab" <?= ($settings['lesson_completion_mode'] ?? '') === 'lab' ? 'selected' : '' ?>>Laboratório prático</option>
+                    <option value="reading" <?= ($settings['lesson_completion_mode'] ?? '') === 'reading' ? 'selected' : '' ?>>Somente leitura</option>
+                </select>
+                <small>Cada aula poderá sobrescrever esta regra quando necessário.</small>
+            </label>
         </div>
 
         <div class="ld-admin-checkbox-grid">
@@ -105,7 +114,7 @@ $action = $isEdit
                 'simulations_enabled' => ['Simulados', 'Simulados livres e avaliações'],
                 'notes_enabled' => ['Anotações', 'Caderno de estudo do aluno'],
                 'certificate_enabled' => ['Certificado', 'Estrutura reservada para emissão de certificado'],
-                'lab_enabled' => ['Laboratório', 'Recurso prático futuro, como laboratório SQL'],
+                'lab_enabled' => ['Laboratório', 'Atividades práticas executáveis por engines plugáveis'],
             ];
             foreach ($features as $key => [$label, $help]):
             ?>
