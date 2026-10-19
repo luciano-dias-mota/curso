@@ -102,3 +102,36 @@ O núcleo não conhece tecnologias específicas. Cada atividade usa uma `engine_
 
 As políticas de progressão também são configuráveis por curso: aulas podem fechar por leitura, quiz ou laboratório; fases podem fechar por avaliação ou pelas aulas concluídas; módulos podem fechar por avaliação final ou pelas fases concluídas. Os padrões continuam compatíveis com o curso PMMT.
 
+
+
+## Portal por perfil e seleção de curso
+
+O fluxo de entrada da plataforma passa a ser orientado pelo perfil autenticado.
+
+### Estudante
+
+Após o login, o estudante entra em `/dashboard`, que funciona como portal multi-curso. A tela exibe somente cursos que atendem simultaneamente a estas regras:
+
+- o estudante possui matrícula com `enrollments.status = active`;
+- o curso está com `courses.status = published`.
+
+Cada curso aparece como um card com progresso, quantidade de módulos/aulas e informação de retomada. Ao clicar no card, o estudante entra em `/curso/{id}`, onde a navegação passa a respeitar as configurações daquele curso.
+
+A ausência do card não é a única proteção: `CourseController` também valida matrícula ativa e curso publicado no backend.
+
+### Administrador
+
+Após o login, o administrador entra diretamente em `/admin`, a Central de Gestão, com acessos prioritários para:
+
+- criar e gerenciar alunos;
+- criar e gerenciar cursos;
+- liberar ou retirar cursos através da Central de Matrículas;
+- gerenciar conteúdo, questões, simulados, relatórios e vídeos.
+
+A rota `/admin/matriculas` centraliza a relação aluno ↔ curso. O perfil individual do aluno continua permitindo alterar matrícula, mas ambos os fluxos usam o mesmo `EnrollmentService`, evitando regras duplicadas.
+
+### Princípio de arquitetura
+
+O portal escolhe **qual curso** o usuário deseja acessar. O dashboard interno do curso cuida de **como aquele curso funciona**.
+
+Assim, novos cursos não exigem novos dashboards específicos como `dashboard_postgresql.php`, `dashboard_php.php` etc. O comportamento é orientado pelos dados e configurações de cada curso.
