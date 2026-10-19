@@ -8,6 +8,7 @@ use App\Controllers\DashboardController;
 use App\Controllers\ExerciseController;
 use App\Controllers\HomeController;
 use App\Controllers\LessonController;
+use App\Controllers\LabController;
 use App\Controllers\MediaController;
 use App\Controllers\ModuleController;
 use App\Controllers\PhaseController;
@@ -110,6 +111,10 @@ $router->get('/aula/{id}', [LessonController::class, 'show'])
 
 $router->post('/aula/{id}/concluir', [ProgressController::class, 'completeLesson'])
     ->middleware(['auth', 'student', 'csrf', 'lesson.unlocked']);
+
+// Laboratórios práticos usam uma casca genérica; a engine concreta é plugável.
+$router->get('/laboratorio/atividade/{id}', [LabController::class, 'show'])
+    ->middleware(['auth', 'student']);
 
 // Streaming protegido dos vídeos da biblioteca.
 // Administradores podem visualizar qualquer vídeo.
