@@ -103,17 +103,18 @@ final class CourseController extends Controller
                 continue;
             }
 
-            $module['display_number'] = null;
+            $module['display_number'] = (int) ($module['position'] ?? 0) ?: null;
 
             if (stripos($title, 'Simulado Final') === 0) {
                 $module['display_label'] = 'SIMULADO FINAL';
                 $module['rail_label'] = 'S';
-            } elseif (stripos($title, 'Fontes utilizadas') === 0) {
+            } elseif (stripos($title, 'Fontes utilizadas') === 0 || stripos($title, 'Biblioteca') === 0) {
                 $module['display_label'] = 'BIBLIOTECA';
                 $module['rail_label'] = 'F';
             } else {
-                $module['display_label'] = 'CONTEÚDO';
-                $module['rail_label'] = '•';
+                $position = max(1, (int) ($module['position'] ?? 1));
+                $module['display_label'] = 'MÓDULO ' . $position;
+                $module['rail_label'] = (string) $position;
             }
         }
         unset($module);
