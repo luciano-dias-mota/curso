@@ -356,6 +356,16 @@ final class CourseController extends Controller
             $completionMode = 'quiz';
         }
 
+        $phaseCompletionMode = (string) $request->input('phase_completion_mode', 'quiz');
+        if (!in_array($phaseCompletionMode, ['quiz', 'lessons'], true)) {
+            $phaseCompletionMode = 'quiz';
+        }
+
+        $moduleCompletionMode = (string) $request->input('module_completion_mode', 'quiz');
+        if (!in_array($moduleCompletionMode, ['quiz', 'phases'], true)) {
+            $moduleCompletionMode = 'quiz';
+        }
+
         $labEnabled = $request->input('lab_enabled') ? '1' : '0';
         if ($completionMode === 'lab') {
             $labEnabled = '1';
@@ -365,6 +375,8 @@ final class CourseController extends Controller
             'module_access_mode' => $moduleMode,
             'lesson_access_mode' => $lessonMode,
             'lesson_completion_mode' => $completionMode,
+            'phase_completion_mode' => $phaseCompletionMode,
+            'module_completion_mode' => $moduleCompletionMode,
             'exercises_enabled' => $request->input('exercises_enabled') ? '1' : '0',
             'simulations_enabled' => $request->input('simulations_enabled') ? '1' : '0',
             'notes_enabled' => $request->input('notes_enabled') ? '1' : '0',
