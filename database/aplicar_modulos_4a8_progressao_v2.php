@@ -223,7 +223,7 @@ echo "\nMudanças comuns:\n";
 echo " - introduções deixam de ser listas de fontes e passam a ensinar o mapa da matéria;\n";
 echo " - cada aula obrigatória recebe exercício de fixação 3/3 a 100%;\n";
 echo " - cada fase obrigatória recebe checkpoint 5 questões a 80%;\n";
-echo " - cada módulo recebe avaliação final de 10 questões a 80%;\n";
+echo " - cada módulo recebe avaliação final a 80%, cobrindo todos os eixos obrigatórios (mínimo de 10 questões).\n";
 echo " - aprofundamentos, mapas, revisões e mini-simulados antigos deixam de bloquear a trilha;\n";
 echo " - as questões já existentes são reaproveitadas e associadas aos temas corretos;\n";
 echo " - no POP, as quatro fases atualizadas passam a formar a trilha obrigatória.\n";
