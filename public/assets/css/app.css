@@ -2247,3 +2247,25 @@ html[data-theme="light"] .course-portal-summary article,html[data-theme="light"]
 @media(max-width:1100px){.course-portal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.course-portal-summary{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:720px){.course-portal{gap:16px}.course-portal-hero{align-items:stretch;flex-direction:column;padding:20px}.course-portal-profile{min-width:0}.course-portal-grid{grid-template-columns:1fr}.course-portal-cover{height:145px}.course-portal-card p{min-height:0}}
 @media(max-width:480px){.course-portal-summary{grid-template-columns:1fr 1fr;gap:8px}.course-portal-summary article{padding:12px}.course-portal-summary strong{font-size:21px}.course-portal-card-footer{align-items:flex-start;flex-direction:column}}
+
+
+/* ===== Laboratório SQL / PGlite ===== */
+.lab-room [data-lab-fallback-editor]{width:100%;min-height:260px;padding:16px;border:1px solid rgba(56,189,248,.20);border-radius:14px;background:#07111f;color:#dbeafe;font:500 13px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;resize:vertical;tab-size:4}
+.lab-room [data-lab-fallback-editor]:focus{outline:none;border-color:rgba(34,211,238,.58);box-shadow:0 0 0 3px rgba(34,211,238,.08)}
+.lab-room [data-lab-result]{margin-top:14px}
+.lab-sql-result{overflow:hidden;border:1px solid rgba(148,163,184,.14);border-radius:14px;background:rgba(2,6,23,.42)}
+.lab-sql-result-head{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:10px 12px;border-bottom:1px solid rgba(148,163,184,.10)}
+.lab-sql-result-head strong{color:#67e8f9;font-size:10px;letter-spacing:.08em}
+.lab-sql-result-head span,.lab-sql-result>small{color:var(--muted,#94a3b8);font-size:9px}
+.lab-sql-table-wrap{overflow:auto;max-height:340px}
+.lab-sql-table{width:100%;border-collapse:collapse;font:500 11px/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.lab-sql-table th,.lab-sql-table td{padding:9px 11px;border-right:1px solid rgba(148,163,184,.08);border-bottom:1px solid rgba(148,163,184,.08);text-align:left;white-space:nowrap}
+.lab-sql-table th{position:sticky;top:0;z-index:1;color:#bfdbfe;background:#0d1728;font-size:9px;text-transform:uppercase;letter-spacing:.06em}
+.lab-sql-table td{color:#dbeafe}
+.lab-sql-empty{margin:0;padding:16px;color:var(--muted,#94a3b8)}
+.lab-sql-completed{margin:12px 0 0;padding:11px 12px;border:1px solid rgba(34,197,94,.24);border-radius:11px;color:#86efac;background:rgba(34,197,94,.07);font-weight:800}
+html[data-theme="light"] .lab-room [data-lab-fallback-editor]{background:#f8fafc;color:#0f172a}
+html[data-theme="light"] .lab-sql-result{background:#fff}
+html[data-theme="light"] .lab-sql-table th{background:#f1f5f9;color:#0f172a}
+html[data-theme="light"] .lab-sql-table td{color:#334155}
+@media(max-width:720px){.lab-room [data-lab-fallback-editor]{min-height:220px;font-size:12px}.lab-sql-result-head{align-items:flex-start;flex-direction:column}.lab-sql-table-wrap{max-height:300px}}
