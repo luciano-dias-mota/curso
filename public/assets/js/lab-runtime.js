@@ -76,7 +76,7 @@ if (root) {
         );
     } else {
         try {
-            runtime.mount({
+            await runtime.mount({
                 root,
                 manifest,
                 submitUrl,
