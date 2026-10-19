@@ -9,6 +9,7 @@ use App\Core\Controller;
 use App\Core\Database;
 use App\Core\Request;
 use App\Core\Session;
+use App\Services\CourseSettingsService;
 use PDO;
 use RuntimeException;
 use Throwable;
@@ -18,15 +19,6 @@ final class CourseController extends Controller
     private const STATUSES = ['draft', 'published', 'archived'];
     private const DIFFICULTIES = ['beginner', 'intermediate', 'advanced'];
 
-    private const DEFAULT_SETTINGS = [
-        'module_access_mode' => 'free',
-        'lesson_access_mode' => 'sequential',
-        'exercises_enabled' => '1',
-        'simulations_enabled' => '1',
-        'notes_enabled' => '1',
-        'certificate_enabled' => '0',
-        'lab_enabled' => '0',
-    ];
 
     public function index(): void
     {
@@ -77,7 +69,7 @@ final class CourseController extends Controller
                 'xp_reward' => 0,
                 'position' => max(1, $nextPosition),
             ],
-            'settings' => self::DEFAULT_SETTINGS,
+            'settings' => CourseSettingsService::defaults(),
             'isEdit' => false,
         ], 'layouts/admin');
     }
@@ -122,7 +114,7 @@ final class CourseController extends Controller
             ]);
 
             $courseId = (int) $pdo->lastInsertId();
-            $this->saveSettings($pdo, $courseId, $this->settingsFromRequest($request));
+            (new CourseSettingsService())->save($courseId, $this->settingsFromRequest($request), $pdo);
             $this->audit($pdo, 'course_created', $courseId, 'Curso criado: ' . $data['title']);
 
             $pdo->commit();
@@ -142,7 +134,7 @@ final class CourseController extends Controller
     {
         $pdo = Database::connection();
         $course = $this->findCourse($pdo, $id);
-        $settings = $this->loadSettings($pdo, $id);
+        $settings = (new CourseSettingsService())->all($id, $pdo);
 
         $countsStmt = $pdo->prepare(
             "SELECT
@@ -174,7 +166,7 @@ final class CourseController extends Controller
         $this->view('admin/courses/form', [
             'title' => 'Editar curso',
             'course' => $this->findCourse($pdo, $id),
-            'settings' => $this->loadSettings($pdo, $id),
+            'settings' => (new CourseSettingsService())->all($id, $pdo),
             'isEdit' => true,
         ], 'layouts/admin');
     }
@@ -227,7 +219,7 @@ final class CourseController extends Controller
                 'id' => $id,
             ]);
 
-            $this->saveSettings($pdo, $id, $this->settingsFromRequest($request));
+            (new CourseSettingsService())->save($id, $this->settingsFromRequest($request), $pdo);
             $this->audit(
                 $pdo,
                 'course_updated',
@@ -368,84 +360,6 @@ final class CourseController extends Controller
             'certificate_enabled' => $request->input('certificate_enabled') ? '1' : '0',
             'lab_enabled' => $request->input('lab_enabled') ? '1' : '0',
         ];
-    }
-
-    private function loadSettings(PDO $pdo, int $courseId): array
-    {
-        $settings = self::DEFAULT_SETTINGS;
-
-        if (!$this->tableExists($pdo, 'course_settings')) {
-            return $settings;
-        }
-
-        $stmt = $pdo->prepare(
-            'SELECT setting_key, setting_value FROM course_settings WHERE course_id = :course_id'
-        );
-        $stmt->execute(['course_id' => $courseId]);
-
-        foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
-            $settings[(string) $row['setting_key']] = (string) ($row['setting_value'] ?? '');
-        }
-
-        return $settings;
-    }
-
-    private function saveSettings(PDO $pdo, int $courseId, array $settings): void
-    {
-        if (!$this->tableExists($pdo, 'course_settings')) {
-            return;
-        }
-
-        $stmt = $pdo->prepare(
-            "INSERT INTO course_settings (course_id, setting_key, setting_value, value_type)
-             VALUES (:course_id, :setting_key, :setting_value, :value_type)
-             ON DUPLICATE KEY UPDATE
-                setting_value = VALUES(setting_value),
-                value_type = VALUES(value_type)"
-        );
-
-        foreach ($settings as $key => $value) {
-            $stmt->execute([
-                'course_id' => $courseId,
-                'setting_key' => $key,
-                'setting_value' => (string) $value,
-                'value_type' => in_array($key, [
-                    'exercises_enabled',
-                    'simulations_enabled',
-                    'notes_enabled',
-                    'certificate_enabled',
-                    'lab_enabled',
-                ], true) ? 'boolean' : 'string',
-            ]);
-        }
-    }
-
-    private function findCourse(PDO $pdo, int $id): array
-    {
-        $stmt = $pdo->prepare('SELECT * FROM courses WHERE id = :id LIMIT 1');
-        $stmt->execute(['id' => $id]);
-        $course = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if (!$course) {
-            http_response_code(404);
-            $this->view('errors/404');
-            exit;
-        }
-
-        return $course;
-    }
-
-    private function tableExists(PDO $pdo, string $table): bool
-    {
-        $stmt = $pdo->prepare(
-            "SELECT 1
-             FROM information_schema.TABLES
-             WHERE TABLE_SCHEMA = DATABASE()
-               AND TABLE_NAME = :table
-             LIMIT 1"
-        );
-        $stmt->execute(['table' => $table]);
-        return (bool) $stmt->fetchColumn();
     }
 
     private function slugify(string $value): string
