@@ -9,6 +9,7 @@ use App\Core\Controller;
 use App\Core\Database;
 use App\Core\Request;
 use App\Core\Session;
+use App\Lab\LabEngineRegistry;
 use App\Services\CourseSettingsService;
 use PDO;
 use RuntimeException;
@@ -70,6 +71,7 @@ final class CourseController extends Controller
                 'position' => max(1, $nextPosition),
             ],
             'settings' => CourseSettingsService::defaults(),
+            'labEngines' => (new LabEngineRegistry())->descriptors(),
             'isEdit' => false,
         ], 'layouts/admin');
     }
@@ -167,6 +169,7 @@ final class CourseController extends Controller
             'title' => 'Editar curso',
             'course' => $this->findCourse($pdo, $id),
             'settings' => (new CourseSettingsService())->all($id, $pdo),
+            'labEngines' => (new LabEngineRegistry())->descriptors(),
             'isEdit' => true,
         ], 'layouts/admin');
     }
@@ -371,6 +374,20 @@ final class CourseController extends Controller
             $labEnabled = '1';
         }
 
+        $labEngineKey = trim((string) $request->input('lab_engine_key', ''));
+        if ($labEngineKey !== '') {
+            $registry = new LabEngineRegistry();
+            if (!$registry->has($labEngineKey)) {
+                throw new RuntimeException('Motor de laboratório inválido.');
+            }
+        }
+
+        if ($completionMode === 'lab' && $labEngineKey === '') {
+            throw new RuntimeException(
+                'Cursos com conclusão por laboratório precisam selecionar uma engine.'
+            );
+        }
+
         return [
             'module_access_mode' => $moduleMode,
             'lesson_access_mode' => $lessonMode,
@@ -382,6 +399,7 @@ final class CourseController extends Controller
             'notes_enabled' => $request->input('notes_enabled') ? '1' : '0',
             'certificate_enabled' => $request->input('certificate_enabled') ? '1' : '0',
             'lab_enabled' => $labEnabled,
+            'lab_engine_key' => $labEngineKey,
         ];
     }
 
