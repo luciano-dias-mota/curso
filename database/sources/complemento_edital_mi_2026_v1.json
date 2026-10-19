@@ -2592,7 +2592,8 @@
               "text": "Comando-Geral.",
               "is_correct": false
             }
-          ]
+          ],
+          "lesson_slug": "portaria-025-arts-1-a-3"
         },
         {
           "source_key": "EDITAL26-P025-Q02",
@@ -2625,7 +2626,8 @@
               "text": "Emitir salvo-conduto provisório.",
               "is_correct": false
             }
-          ]
+          ],
+          "lesson_slug": "portaria-025-arts-1-a-3"
         },
         {
           "source_key": "EDITAL26-P025-Q03",
@@ -2658,7 +2660,8 @@
               "text": "Arquivar a ocorrência.",
               "is_correct": false
             }
-          ]
+          ],
+          "lesson_slug": "portaria-025-arts-4-a-8"
         },
         {
           "source_key": "EDITAL26-P025-Q04",
@@ -2691,7 +2694,8 @@
               "text": "Encaminhamento apenas à Diretoria de Saúde.",
               "is_correct": false
             }
-          ]
+          ],
+          "lesson_slug": "portaria-025-arts-1-a-3"
         },
         {
           "source_key": "EDITAL26-P025-Q05",
@@ -2724,7 +2728,8 @@
               "text": "A policial militar do sexo feminino e as mulheres dependentes de militares.",
               "is_correct": true
             }
-          ]
+          ],
+          "lesson_slug": "portaria-025-arts-9-a-12"
         },
         {
           "source_key": "EDITAL26-P025-Q06",
@@ -2757,7 +2762,8 @@
               "text": "Arquivar a notícia.",
               "is_correct": false
             }
-          ]
+          ],
+          "lesson_slug": "portaria-025-arts-1-a-3"
         },
         {
           "source_key": "EDITAL26-P025-Q07",
@@ -2790,7 +2796,8 @@
               "text": "Revoga a Lei Maria da Penha.",
               "is_correct": false
             }
-          ]
+          ],
+          "lesson_slug": "portaria-025-arts-9-a-12"
         },
         {
           "source_key": "EDITAL26-P025-Q08",
@@ -2823,7 +2830,8 @@
               "text": "Arquivar o caso se não houver lesão aparente.",
               "is_correct": false
             }
-          ]
+          ],
+          "lesson_slug": "portaria-025-arts-1-a-3"
         },
         {
           "source_key": "EDITAL26-P025-Q09",
@@ -2856,7 +2864,8 @@
               "text": "É transferido compulsoriamente de unidade.",
               "is_correct": false
             }
-          ]
+          ],
+          "lesson_slug": "portaria-025-arts-1-a-3"
         },
         {
           "source_key": "EDITAL26-P025-Q10",
@@ -2889,7 +2898,8 @@
               "text": "Trânsito em julgado de processo civil.",
               "is_correct": false
             }
-          ]
+          ],
+          "lesson_slug": "portaria-025-arts-4-a-8"
         },
         {
           "source_key": "EDITAL26-P025-Q11",
@@ -2922,7 +2932,8 @@
               "text": "Regra aplicável apenas a inativos.",
               "is_correct": false
             }
-          ]
+          ],
+          "lesson_slug": "portaria-025-arts-4-a-8"
         },
         {
           "source_key": "EDITAL26-P025-Q12",
@@ -2955,7 +2966,8 @@
               "text": "Todos os registros abrangidos pelo SIRGAF/SIGAP e/ou SIGMA.",
               "is_correct": true
             }
-          ]
+          ],
+          "lesson_slug": "portaria-025-arts-4-a-8"
         },
         {
           "source_key": "EDITAL26-P025-Q13",
@@ -2988,7 +3000,8 @@
               "text": "Tribunal de Justiça.",
               "is_correct": false
             }
-          ]
+          ],
+          "lesson_slug": "portaria-025-arts-9-a-12"
         },
         {
           "source_key": "EDITAL26-P025-Q14",
@@ -3021,7 +3034,8 @@
               "text": "Somente o Código Civil.",
               "is_correct": false
             }
-          ]
+          ],
+          "lesson_slug": "portaria-025-arts-9-a-12"
         },
         {
           "source_key": "EDITAL26-P025-Q15",
@@ -3054,7 +3068,8 @@
               "text": "A lotação desejada pelo acusado.",
               "is_correct": false
             }
-          ]
+          ],
+          "lesson_slug": "portaria-025-arts-1-a-3"
         },
         {
           "source_key": "EDITAL26-P025-Q16",
@@ -3087,7 +3102,8 @@
               "text": "Sobre arquivamento automático da ocorrência criminal.",
               "is_correct": false
             }
-          ]
+          ],
+          "lesson_slug": "portaria-025-arts-4-a-8"
         }
       ]
     }
