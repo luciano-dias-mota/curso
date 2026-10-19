@@ -30,7 +30,8 @@ final class CurriculumController extends Controller
                     COALESCE(p.is_required, 1) AS phase_is_required,
                     l.id AS lesson_id, l.title AS lesson_title, l.slug AS lesson_slug,
                     l.position AS lesson_position, l.status AS lesson_status,
-                    l.estimated_minutes, COALESCE(l.is_required, 1) AS lesson_is_required
+                    l.estimated_minutes, l.completion_mode,
+                    COALESCE(l.is_required, 1) AS lesson_is_required
              FROM modules m
              LEFT JOIN phases p ON p.module_id = m.id
              LEFT JOIN lessons l ON l.phase_id = p.id
@@ -81,6 +82,7 @@ final class CurriculumController extends Controller
                     'position' => (int) $row['lesson_position'],
                     'status' => $row['lesson_status'],
                     'estimated_minutes' => (int) $row['estimated_minutes'],
+                    'completion_mode' => $row['completion_mode'],
                     'is_required' => (int) $row['lesson_is_required'],
                 ];
             }
@@ -170,6 +172,7 @@ final class CurriculumController extends Controller
                 'required_score' => $this->score($request->input('required_score', $module['required_score'] ?? 70)),
                 'xp_reward' => max(0, (int) $request->input('xp_reward', 50)),
                 'is_required' => $request->input('is_required') ? 1 : 0,
+                'completion_mode' => $completionMode !== '' ? $completionMode : null,
                 'status' => $this->status($request->input('status', 'draft')),
             ]);
 
@@ -197,13 +200,18 @@ final class CurriculumController extends Controller
             }
             $slug = $this->uniqueSlug($pdo, 'lessons', 'phase_id', $phaseId, $title, (string) $request->input('slug', ''));
 
+            $completionMode = trim((string) $request->input('completion_mode', ''));
+            if ($completionMode !== '' && !in_array($completionMode, ['reading', 'quiz', 'lab'], true)) {
+                throw new RuntimeException('Modo de conclusão da aula inválido.');
+            }
+
             $stmt = $pdo->prepare(
                 "INSERT INTO lessons
                     (phase_id, title, slug, summary, position, estimated_minutes,
-                     xp_reward, is_required, status)
+                     xp_reward, is_required, completion_mode, status)
                  VALUES
                     (:phase_id, :title, :slug, :summary, :position, :estimated_minutes,
-                     :xp_reward, :is_required, :status)"
+                     :xp_reward, :is_required, :completion_mode, :status)"
             );
             $stmt->execute([
                 'phase_id' => $phaseId,
