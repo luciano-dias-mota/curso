@@ -128,7 +128,7 @@ O terceiro script cria, em rascunho:
 O quarto cria, também em rascunho:
 
 - 18 fases;
-- 56 aulas-shell;
+- 68 aulas-shell;
 - `completion_mode=lab`.
 
 Nenhuma dessas estruturas do PostgreSQL aparece ao estudante porque curso, módulos, fases e aulas permanecem em `draft`.
