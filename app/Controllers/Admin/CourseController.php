@@ -362,6 +362,21 @@ final class CourseController extends Controller
         ];
     }
 
+    private function findCourse(PDO $pdo, int $id): array
+    {
+        $stmt = $pdo->prepare('SELECT * FROM courses WHERE id = :id LIMIT 1');
+        $stmt->execute(['id' => $id]);
+        $course = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if (!$course) {
+            http_response_code(404);
+            $this->view('errors/404');
+            exit;
+        }
+
+        return $course;
+    }
+
     private function slugify(string $value): string
     {
         $value = trim(mb_strtolower($value));
