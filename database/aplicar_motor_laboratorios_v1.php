@@ -78,6 +78,23 @@ function columnDataTypeLabV1(PDO $pdo, string $table, string $column): string
     return strtolower((string) ($stmt->fetchColumn() ?: ''));
 }
 
+function indexExistsLabV1(PDO $pdo, string $table, string $index): bool
+{
+    $stmt = $pdo->prepare(
+        "SELECT 1
+         FROM information_schema.STATISTICS
+         WHERE TABLE_SCHEMA = DATABASE()
+           AND TABLE_NAME = :table_name
+           AND INDEX_NAME = :index_name
+         LIMIT 1"
+    );
+    $stmt->execute([
+        'table_name' => $table,
+        'index_name' => $index,
+    ]);
+    return (bool) $stmt->fetchColumn();
+}
+
 $checks = [
     'lessons.completion_mode' => columnExistsLabV1($pdo, 'lessons', 'completion_mode'),
     'lab_activities' => tableExistsLabV1($pdo, 'lab_activities'),
@@ -86,6 +103,7 @@ $checks = [
     'lab_activity_progress' => tableExistsLabV1($pdo, 'lab_activity_progress'),
     'lab_course_state' => tableExistsLabV1($pdo, 'lab_course_state'),
     'xp_events.event_type extensível' => columnDataTypeLabV1($pdo, 'xp_events', 'event_type') === 'varchar',
+    'xp_events.uq_xp_event_once' => indexExistsLabV1($pdo, 'xp_events', 'uq_xp_event_once'),
 ];
 
 echo "=================================================================\n";
@@ -121,6 +139,13 @@ try {
         $pdo->exec(
             "ALTER TABLE xp_events
              MODIFY COLUMN event_type VARCHAR(50) NOT NULL"
+        );
+    }
+
+    if (!indexExistsLabV1($pdo, 'xp_events', 'uq_xp_event_once')) {
+        $pdo->exec(
+            "ALTER TABLE xp_events
+             ADD UNIQUE KEY uq_xp_event_once (user_id, event_type, reference_id)"
         );
     }
 
