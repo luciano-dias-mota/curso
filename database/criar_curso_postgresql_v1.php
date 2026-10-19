@@ -243,7 +243,8 @@ try {
          VALUES
             (:course_id, :setting_key, :setting_value, :value_type)
          ON DUPLICATE KEY UPDATE
-            setting_key = VALUES(setting_key)"
+            setting_value = VALUES(setting_value),
+            value_type = VALUES(value_type)"
     );
 
     foreach ($settings as [$key, $value, $type]) {
