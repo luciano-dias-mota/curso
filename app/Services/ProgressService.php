@@ -144,8 +144,8 @@ final class ProgressService
                 ];
             }
 
-            // A leitura obrigatória chega a 100%, mas a aula só vira completed
-            // após aprovação no exercício lesson_fixation.
+            // A leitura obrigatória chega a 100%. A política da aula decide
+            // se a conclusão ocorre por leitura, quiz/exercício ou laboratório.
             $pdo->prepare(
                 "UPDATE user_lesson_progress
                  SET status = CASE
