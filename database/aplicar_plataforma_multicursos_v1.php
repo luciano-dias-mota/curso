@@ -178,6 +178,7 @@ try {
     $defaults = [
         ['module_access_mode', 'free', 'string'],
         ['lesson_access_mode', 'sequential', 'string'],
+        ['lesson_completion_mode', 'quiz', 'string'],
         ['exercises_enabled', '1', 'boolean'],
         ['simulations_enabled', '1', 'boolean'],
         ['notes_enabled', '1', 'boolean'],
