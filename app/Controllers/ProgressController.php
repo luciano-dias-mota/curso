@@ -22,8 +22,21 @@ final class ProgressController extends Controller
                 $id
             );
 
-            if (!empty($result['optional']) || empty($result['quiz_id'])) {
+            if (!empty($result['optional'])) {
                 Session::flash('success', 'Leitura concluída.');
+                $this->redirect('/fase/' . (int) $result['phase_id']);
+            }
+
+            if (($result['next_step'] ?? '') === 'lab' && !empty($result['lab_activity_id'])) {
+                Session::flash(
+                    'success',
+                    'Leitura concluída. Agora finalize a atividade prática para liberar a progressão.'
+                );
+                $this->redirect('/laboratorio/atividade/' . (int) $result['lab_activity_id']);
+            }
+
+            if (($result['next_step'] ?? '') === 'completed') {
+                Session::flash('success', 'Aula concluída.');
                 $this->redirect('/fase/' . (int) $result['phase_id']);
             }
 
