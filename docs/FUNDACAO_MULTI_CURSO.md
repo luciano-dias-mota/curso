@@ -93,3 +93,12 @@ A migration:
 Nenhuma estrutura pedagógica específica de PostgreSQL foi criada nesta etapa.
 
 O próximo curso poderá ser montado sobre esta fundação depois de definir metodologia, módulos, aulas, exercícios, avaliações e eventual laboratório SQL, sem acoplar essas decisões ao núcleo da plataforma.
+
+## Motor genérico de atividades práticas
+
+A evolução multi-curso inclui uma fundação separada para laboratórios, documentada em `docs/MOTOR_LABORATORIOS.md`.
+
+O núcleo não conhece tecnologias específicas. Cada atividade usa uma `engine_key` e um provider que implementa `App\\Lab\\LabEngineInterface`. Isso permite adicionar no futuro motores diferentes sem criar tabelas ou fluxos exclusivos para PostgreSQL, JavaScript, HTML/CSS, PHP, Linux etc.
+
+As políticas de progressão também são configuráveis por curso: aulas podem fechar por leitura, quiz ou laboratório; fases podem fechar por avaliação ou pelas aulas concluídas; módulos podem fechar por avaliação final ou pelas fases concluídas. Os padrões continuam compatíveis com o curso PMMT.
+
