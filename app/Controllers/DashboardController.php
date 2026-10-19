@@ -109,6 +109,24 @@ final class DashboardController extends Controller
         ]);
         $continueLesson = $continueStmt->fetch(PDO::FETCH_ASSOC) ?: null;
 
+        $achievementScopeSql = '';
+        $achievementParams = ['user_id' => $userId];
+
+        if ($this->columnExists($pdo, 'achievements', 'course_id')) {
+            $achievementScopeSql = "
+                AND (
+                    a.course_id IS NULL
+                    OR EXISTS (
+                        SELECT 1
+                        FROM enrollments ea
+                        WHERE ea.user_id = :achievement_enrollment_user
+                          AND ea.course_id = a.course_id
+                          AND ea.status = 'active'
+                    )
+                )";
+            $achievementParams['achievement_enrollment_user'] = $userId;
+        }
+
         $achievementsStmt = $pdo->prepare(
             "SELECT a.id, a.name, a.slug, a.description, a.achievement_type,
                     a.requirement_value, a.xp_reward,
@@ -119,23 +137,11 @@ final class DashboardController extends Controller
                       ON ua.achievement_id = a.id
                      AND ua.user_id = :user_id
               WHERE a.active = 1
-                AND (
-                    a.course_id IS NULL
-                    OR EXISTS (
-                        SELECT 1
-                        FROM enrollments ea
-                        WHERE ea.user_id = :achievement_enrollment_user
-                          AND ea.course_id = a.course_id
-                          AND ea.status = 'active'
-                    )
-                )
+              {$achievementScopeSql}
               ORDER BY (ua.id IS NULL), ua.unlocked_at DESC, a.id
               LIMIT 8"
         );
-        $achievementsStmt->execute([
-            'user_id' => $userId,
-            'achievement_enrollment_user' => $userId,
-        ]);
+        $achievementsStmt->execute($achievementParams);
         $achievements = $achievementsStmt->fetchAll(PDO::FETCH_ASSOC);
 
         $achievementCountStmt = $pdo->prepare(
@@ -294,5 +300,23 @@ final class DashboardController extends Controller
             ],
             'layouts/student'
         );
+    }    private function columnExists(PDO $pdo, string $table, string $column): bool
+    {
+        $stmt = $pdo->prepare(
+            "SELECT 1
+             FROM information_schema.COLUMNS
+             WHERE TABLE_SCHEMA = DATABASE()
+               AND TABLE_NAME = :table_name
+               AND COLUMN_NAME = :column_name
+             LIMIT 1"
+        );
+        $stmt->execute([
+            'table_name' => $table,
+            'column_name' => $column,
+        ]);
+
+        return (bool) $stmt->fetchColumn();
     }
+
+
 }
