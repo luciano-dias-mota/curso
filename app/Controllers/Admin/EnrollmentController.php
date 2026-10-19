@@ -32,7 +32,6 @@ final class EnrollmentController extends Controller
              FROM users u
              INNER JOIN roles r ON r.id = u.role_id
              WHERE r.slug = 'student'
-               AND u.status <> 'blocked'
              ORDER BY u.name, u.id
              LIMIT 500"
         )->fetchAll(PDO::FETCH_ASSOC);
