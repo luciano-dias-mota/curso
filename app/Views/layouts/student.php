@@ -28,7 +28,7 @@ $firstName = explode(' ', trim((string) ($user['name'] ?? 'Aluno')))[0];
     <meta name="csrf-token" content="<?= e(Csrf::token()) ?>">
     <title><?= e($pageTitle) ?></title>
 
-    <link rel="stylesheet" href="<?= e(url('/assets/css/app.css') . '?v=20261003-2') ?>">
+    <link rel="stylesheet" href="<?= e(url('/assets/css/app.css') . '?v=20261019-portal1') ?>">
     <link rel="stylesheet" href="<?= e(url('/assets/css/learning-flow.css') . '?v=20261003-2') ?>">
     <link rel="stylesheet" href="<?= e(url('/assets/css/video-management.css') . '?v=20261003-2') ?>">
     <link rel="stylesheet" href="<?= e(url('/assets/css/mockup-v3.css') . '?v=20261003-2') ?>">
@@ -61,7 +61,6 @@ $firstName = explode(' ', trim((string) ($user['name'] ?? 'Aluno')))[0];
             <a class="<?= $isExercise ? 'active' : '' ?>" href="<?= e(url('/exercicios')) ?>"><span>✓</span>Exercícios</a>
             <a href="<?= e(url('/dashboard#resumo')) ?>"><span>▥</span>Resumo geral</a>
             <a class="<?= $isNotes ? 'active' : '' ?>" href="<?= e(url('/anotacoes')) ?>"><span>□</span>Anotações</a>
-            <a href="<?= e(url('/dashboard#perfil')) ?>"><span>♧</span>Comunidade</a>
         </nav>
 
         <div class="sidebar-bottom">
