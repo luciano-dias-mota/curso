@@ -566,6 +566,7 @@ CREATE TABLE xp_events (
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT fk_xp_events_user FOREIGN KEY (user_id) REFERENCES users(id)
         ON UPDATE CASCADE ON DELETE CASCADE,
+    UNIQUE KEY uq_xp_event_once (user_id, event_type, reference_id),
     INDEX idx_xp_events_user_date (user_id, created_at),
     INDEX idx_xp_events_type_reference (event_type, reference_id)
 ) ENGINE=InnoDB;
