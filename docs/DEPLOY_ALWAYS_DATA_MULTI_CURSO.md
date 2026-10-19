@@ -80,31 +80,71 @@ find app config routes database -name '*.php' -print0 | xargs -0 -n1 php -l
 
 Não aplique migrações se aparecer qualquer erro de sintaxe.
 
-## 9. Executar somente os dry-runs
+## 9. Validar e aplicar em ordem de dependência
 
-Na ordem:
+A criação do curso depende de `course_settings`, que nasce na fundação multi-curso. A grade depende do próprio curso. Por isso, valide e aplique etapa por etapa.
+
+### 9.1 Fundação multi-curso
+
+Dry-run:
 
 ```bash
 php database/aplicar_plataforma_multicursos_v1.php
-php database/aplicar_motor_laboratorios_v1.php
-php database/criar_curso_postgresql_v1.php
-php database/criar_grade_postgresql_v1.php
 ```
 
-Os quatro comandos devem terminar sem alterar o banco.
-
-## 10. Aplicar depois do backup e da revisão
-
-Somente se os quatro dry-runs estiverem corretos:
+Se estiver correto:
 
 ```bash
 php database/aplicar_plataforma_multicursos_v1.php --apply --force-production
+```
+
+Rode o dry-run novamente e confirme que tudo aparece como OK.
+
+### 9.2 Motor de laboratórios
+
+Dry-run:
+
+```bash
+php database/aplicar_motor_laboratorios_v1.php
+```
+
+Se estiver correto:
+
+```bash
 php database/aplicar_motor_laboratorios_v1.php --apply --force-production
+```
+
+Rode o dry-run novamente e confirme que tudo aparece como OK.
+
+### 9.3 Curso PostgreSQL
+
+Somente depois da fundação:
+
+```bash
+php database/criar_curso_postgresql_v1.php
+```
+
+Se a previsão estiver correta:
+
+```bash
 php database/criar_curso_postgresql_v1.php --apply --force-production
+```
+
+### 9.4 Grade PostgreSQL
+
+Somente depois que o curso existir:
+
+```bash
+php database/criar_grade_postgresql_v1.php
+```
+
+Se a previsão estiver correta:
+
+```bash
 php database/criar_grade_postgresql_v1.php --apply --force-production
 ```
 
-## 11. Rodar os dry-runs novamente
+## 10. Rodar os dry-runs novamente
 
 ```bash
 php database/aplicar_plataforma_multicursos_v1.php
