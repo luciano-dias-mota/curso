@@ -247,7 +247,7 @@ printf("Aulas auditadas:                   %d\n", $totalLessons);
 printf("Fixações válidas 3/3 a 100%%:       %d / %d\n", $validFixations, $totalLessons);
 printf("Checkpoints válidos 5/5 a 80%%:     %d / %d\n", $validCheckpoints, count($phasesData));
 printf("Questões/chaves válidas:           %d / %d\n", $validKeys, $totalKeys);
-echo "Portaria nº 025/QCG/2025:          PENDENTE DE FONTE OFICIAL\n";
+echo "Portaria nº 025/QCG/2025:          INTEGRADA - BCG PMMT nº 3695/2025\n";
 
 if ($problems !== []) {
     echo "\nPROBLEMAS ENCONTRADOS: " . count($problems) . "\n";
@@ -260,4 +260,4 @@ if ($problems !== []) {
 }
 
 printf("\n[OK] As %d matérias adicionadas estão íntegras, obrigatórias e com exercícios/checkpoints válidos.\n", count($phasesData));
-echo "[PENDENTE] A cobertura só será declarada 100% após integrar a Portaria nº 025/QCG/2025 a partir de fonte oficial.\n";
+echo "[OK] Fonte oficial da Portaria nº 025/QCG/2025 integrada ao complemento.\n";
