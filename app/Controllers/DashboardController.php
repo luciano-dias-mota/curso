@@ -300,7 +300,9 @@ final class DashboardController extends Controller
             ],
             'layouts/student'
         );
-    }    private function columnExists(PDO $pdo, string $table, string $column): bool
+    }
+
+    private function columnExists(PDO $pdo, string $table, string $column): bool
     {
         $stmt = $pdo->prepare(
             "SELECT 1
