@@ -1505,7 +1505,31 @@
             "art. 306",
             "20 pontos",
             "30 pontos",
-            "40 pontos"
+            "40 pontos",
+            "responsabilidade objetiva",
+            "camaras tematicas",
+            "contrandife",
+            "jari",
+            "municipios integrar-se-ao",
+            "engenharia de trafego",
+            "expedicao da cnh",
+            "art. 13",
+            "art. 14",
+            "art. 15",
+            "art. 19",
+            "art. 22",
+            "art. 24",
+            "art. 33",
+            "art. 40",
+            "art. 61",
+            "art. 68",
+            "art. 69",
+            "art. 77",
+            "art. 91",
+            "art. 93",
+            "art. 95",
+            "art. 148-a",
+            "2 anos e 6 meses"
           ],
           "extra_blocks": [
             {
@@ -1532,6 +1556,36 @@
               "type": "summary",
               "title": "Fonte oficial integral para literalidade",
               "content": "Código de Trânsito Brasileiro - texto compilado oficial\nhttps://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm\n\nA aula organiza os pontos de maior incidência e as regras operacionais, mas a literalidade integral deve ser conferida nesta fonte oficial. Questões do banco devem ser compatíveis com a redação vigente da lei."
+            },
+            {
+              "type": "theory",
+              "title": "SNT: conceito, responsabilidade objetiva e composição",
+              "content": "Art. 1º, § 3º: os órgãos e entidades componentes do SNT respondem objetivamente, no âmbito de suas competências, por danos decorrentes de ação, omissão ou erro na execução e manutenção de programas, projetos e serviços que garantam o trânsito seguro. Art. 5º: o SNT é o conjunto de órgãos e entidades da União, Estados, Distrito Federal e Municípios destinado às atividades de planejamento, administração, normatização, pesquisa, registro/licenciamento, formação/habilitação, educação, engenharia, operação viária, policiamento, fiscalização, julgamento de infrações/recursos e aplicação de penalidades. Art. 7º: integram o SNT, entre outros, CONTRAN, CETRAN, CONTRANDIFE, órgãos executivos de trânsito e rodoviários, PRF, Polícias Militares e JARI. Art. 13: Câmaras Temáticas são órgãos técnicos vinculados ao CONTRAN, integrados por especialistas, para estudos, sugestões e embasamento técnico."
+            },
+            {
+              "type": "comparison",
+              "title": "Competências: CONTRAN, CETRAN/CONTRANDIFE, órgão executivo federal, Estados/DF e PM",
+              "content": "CONTRAN (art. 12) → órgão máximo normativo e consultivo, coordena o SNT e edita normas/diretrizes gerais. CETRAN/CONTRANDIFE (art. 14) → entre outras competências, julgam recursos contra decisões das JARI e dirimem conflitos municipais de circunscrição/competência. Art. 15 → presidentes dos CETRAN e do CONTRANDIFE são nomeados pelos Governadores dos Estados e do Distrito Federal, respectivamente. Órgão máximo executivo de trânsito da União (art. 19, V) → supervisiona a implantação de projetos e programas de engenharia, educação, administração, policiamento e fiscalização, buscando uniformidade de procedimento. Órgãos executivos estaduais/DF (art. 22, IV) → estabelecem, em conjunto com as Polícias Militares, as diretrizes para o policiamento ostensivo de trânsito. PM (art. 23, III) → executa fiscalização quando e conforme convênio firmado."
+            },
+            {
+              "type": "theory",
+              "title": "Municípios, recursos administrativos e expedição da CNH",
+              "content": "Município não exerce automaticamente todas as competências do art. 24: o § 2º exige integração ao SNT por órgão/entidade executivo de trânsito ou diretamente pela prefeitura, conforme o art. 333. Recursos: a JARI julga inicialmente os recursos contra penalidades do órgão junto ao qual funciona; CETRAN/CONTRANDIFE julgam recursos contra decisões da JARI nas hipóteses do art. 14, V. CNH: CETRAN/CONTRANDIFE não são órgãos expedidores; o art. 19, VII, atribui a expedição ao órgão máximo executivo de trânsito da União mediante delegação aos órgãos executivos dos Estados e do Distrito Federal, e o art. 22, II, disciplina a execução estadual/distrital desse processo."
+            },
+            {
+              "type": "comparison",
+              "title": "Normas de circulação, pedestres, velocidade e iluminação",
+              "content": "Arts. 29 a 49: circulação pelo lado direito; regras de preferência, ultrapassagem, interseções, sinalização de manobras, luzes, buzina, redução de velocidade, parada/estacionamento e embarque/desembarque. Art. 33: não se ultrapassa em interseções e proximidades. Art. 40: luz baixa à noite e também durante o dia em túneis e sob chuva, neblina ou cerração; pisca-alerta em imobilizações/situações de emergência ou quando a regulamentação determinar. Art. 43: o condutor não deve obstruir a marcha normal por velocidade anormalmente reduzida e deve sinalizar previamente a redução. Arts. 68 a 70: ciclista somente se equipara ao pedestre quando desmontado e empurrando a bicicleta; regras de travessia e prioridade dos pedestres. Art. 61: sem sinalização, velocidades urbanas máximas de 80 km/h (trânsito rápido), 60 (arterial), 40 (coletora) e 30 (local)."
+            },
+            {
+              "type": "theory",
+              "title": "Engenharia, educação, medidas administrativas e exame toxicológico",
+              "content": "Art. 19, V: supervisão federal de projetos/programas de engenharia e demais áreas para uniformidade. Arts. 91, 93 e 95: CONTRAN fixa normas/padrões de engenharia; polos geradores exigem anuência e estrutura adequada; obra/evento que perturbe a circulação exige permissão prévia e, salvo emergência, interdição deve ser comunicada à comunidade com 48 horas de antecedência. Art. 77: cabe ao Ministério da Saúde, mediante proposta do CONTRAN, campanha nacional de primeiros socorros. Art. 148-A, § 2º: condutores C, D e E com menos de 70 anos fazem novo exame toxicológico a cada 2 anos e 6 meses. Art. 269: medidas administrativas incluem retenção, remoção, recolhimentos, transbordo, alcoolemia/perícia toxicológica e exames de aptidão. Art. 269, § 5º: documentos digitais são tratados por registro no Renach/Renavam."
+            },
+            {
+              "type": "warning",
+              "title": "Como a banca troca o sujeito da competência",
+              "content": "Nas questões de SNT, a pegadinha mais frequente é atribuir a competência ao órgão errado. Grave estas associações: CONTRAN = norma/coordenação geral; CETRAN/CONTRANDIFE = coordenação estadual/distrital e julgamento recursal; órgão máximo executivo da União = execução/supervisão nacional; DETRAN/órgão executivo estadual = habilitação, registro, licenciamento e diretrizes com PM; Polícia Militar = integra o SNT e fiscaliza quando e conforme convênio. Outra pegadinha recorrente é afirmar que o município já integra automaticamente o SNT ou que CETRAN/CONTRANDIFE expedem CNH."
             }
           ],
           "new_questions": [
