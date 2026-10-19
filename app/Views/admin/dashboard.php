@@ -103,9 +103,9 @@ $chartCircles = static function (array $values, int $width = 720, int $left = 52
 
         <div class="ld-admin-management-v6-actions">
             <a class="ld-admin-management-action is-primary" href="<?= e(url('/admin/usuarios/novo')) ?>"><span>＋</span>Novo aluno</a>
-            <a class="ld-admin-management-action" href="<?= e(url('/admin/questoes/nova')) ?>"><span>＋</span>Nova questão</a>
-            <a class="ld-admin-management-action" href="<?= e(url('/admin/usuarios')) ?>"><span>◇</span>Gerenciar alunos</a>
-            <a class="ld-admin-management-action is-report" href="<?= e(url('/admin/relatorios')) ?>"><span>↗</span>Relatórios</a>
+            <a class="ld-admin-management-action" href="<?= e(url('/admin/matriculas')) ?>"><span>✓</span>Liberar curso</a>
+            <a class="ld-admin-management-action" href="<?= e(url('/admin/cursos')) ?>"><span>◫</span>Gerenciar cursos</a>
+            <a class="ld-admin-management-action is-report" href="<?= e(url('/admin/usuarios')) ?>"><span>◇</span>Alunos</a>
         </div>
     </header>
 
@@ -119,7 +119,7 @@ $chartCircles = static function (array $values, int $width = 720, int $left = 52
                     <span class="ld-admin-management-kpi-spark"><b></b><b></b><b></b><b></b><b></b><b></b></span>
                 </a>
 
-                <a class="ld-admin-management-kpi is-courses" href="<?= e(url('/admin/conteudo')) ?>">
+                <a class="ld-admin-management-kpi is-courses" href="<?= e(url('/admin/cursos')) ?>">
                     <div class="ld-admin-management-kpi-head"><span>Cursos</span><i>→</i></div>
                     <strong><?= $courses ?></strong>
                     <small><?= $modules ?> módulos • <?= $lessons ?> aulas</small>
@@ -275,13 +275,14 @@ $chartCircles = static function (array $values, int $width = 720, int $left = 52
             <section class="ld-admin-management-access ld-admin-panel">
                 <div class="ld-admin-management-rail-title"><span>01</span><strong>Acessos administrativos</strong><i>⌄</i></div>
                 <nav>
-                    <a href="<?= e(url('/admin/conteudo')) ?>"><span>01</span><strong>📚 Cursos e conteúdo</strong><i>›</i></a>
-                    <a href="<?= e(url('/admin/aulas')) ?>"><span>02</span><strong>🎓 Gerenciar aulas</strong><i>›</i></a>
-                    <a href="<?= e(url('/admin/questoes')) ?>"><span>03</span><strong>🧠 Banco de questões</strong><i>›</i></a>
-                    <a href="<?= e(url('/admin/simulados')) ?>"><span>04</span><strong>🎯 Simulados</strong><i>›</i></a>
-                    <a href="<?= e(url('/admin/usuarios')) ?>"><span>05</span><strong>👥 Gestão de alunos</strong><i>›</i></a>
-                    <a href="<?= e(url('/admin/relatorios')) ?>"><span>06</span><strong>📊 Relatórios</strong><i>›</i></a>
-                    <a href="<?= e(url('/admin/videos')) ?>"><span>07</span><strong>🎬 Biblioteca de vídeos</strong><i>›</i></a>
+                    <a href="<?= e(url('/admin/cursos')) ?>"><span>01</span><strong>📚 Gerenciar cursos</strong><i>›</i></a>
+                    <a href="<?= e(url('/admin/usuarios')) ?>"><span>02</span><strong>👥 Gestão de alunos</strong><i>›</i></a>
+                    <a href="<?= e(url('/admin/matriculas')) ?>"><span>03</span><strong>🔐 Matrículas / liberar curso</strong><i>›</i></a>
+                    <a href="<?= e(url('/admin/conteudo')) ?>"><span>04</span><strong>🧩 Conteúdo acadêmico</strong><i>›</i></a>
+                    <a href="<?= e(url('/admin/questoes')) ?>"><span>05</span><strong>🧠 Banco de questões</strong><i>›</i></a>
+                    <a href="<?= e(url('/admin/simulados')) ?>"><span>06</span><strong>🎯 Simulados</strong><i>›</i></a>
+                    <a href="<?= e(url('/admin/relatorios')) ?>"><span>07</span><strong>📊 Relatórios</strong><i>›</i></a>
+                    <a href="<?= e(url('/admin/videos')) ?>"><span>08</span><strong>🎬 Biblioteca de vídeos</strong><i>›</i></a>
                 </nav>
             </section>
 
