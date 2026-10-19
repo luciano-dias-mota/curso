@@ -170,6 +170,16 @@ final class SimulationService
         );
         $courseStmt->execute(['user_id' => $userId]);
         $courses = $courseStmt->fetchAll();
+        $settings = new CourseSettingsService();
+        $courses = array_values(array_filter(
+            $courses,
+            static fn (array $row): bool => $settings->enabled(
+                (int) $row['id'],
+                'simulations_enabled',
+                $pdo,
+                true
+            )
+        ));
 
         if ($courses === []) {
             throw new RuntimeException('Nenhum curso ativo foi encontrado para este estudante.');
@@ -227,6 +237,11 @@ final class SimulationService
 
         $pdo = Database::connection();
         $this->assertEnrollment($pdo, $userId, $courseId);
+
+        if (!(new CourseSettingsService())->enabled($courseId, 'simulations_enabled', $pdo, true)) {
+            throw new RuntimeException('Os simulados estão desabilitados para este curso.');
+        }
+
         $this->finishExpiredAttempts($pdo, $userId);
 
         if ($moduleId !== null && $moduleId > 0) {
