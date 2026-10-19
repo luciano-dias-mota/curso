@@ -186,6 +186,7 @@ try {
         ['notes_enabled', '1', 'boolean'],
         ['certificate_enabled', '0', 'boolean'],
         ['lab_enabled', '0', 'boolean'],
+        ['lab_engine_key', '', 'string'],
     ];
 
     $insertSetting = $pdo->prepare(
