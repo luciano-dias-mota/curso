@@ -2,7 +2,7 @@
   "format_version": 1,
   "verified_at": "2026-10-18",
   "exam_basis": "ANEXO D - Conteúdo Programático do Exame Intelectual enviado pelo usuário",
-  "note": "Conteúdo criado a partir de fontes oficiais ou institucionais. A Portaria nº 025/QCG/2025 não integra este arquivo por ausência de cópia oficial localizada com segurança; deve ser importada somente após obtenção do documento oficial.",
+  "note": "Conteúdo criado a partir de fontes oficiais ou institucionais. A Portaria nº 025/QCG/2025 foi incorporada a partir do BCG PMMT nº 3695, de 30/09/2025, fornecido pelo usuário.",
   "phases": [
     {
       "module_slug": "modulo-2-administracao-publica-e-gestao-fundamentos-organizacao-atos-controle-modelos-e-materiais",
@@ -2481,6 +2481,86 @@
           ]
         }
       ]
+    },
+    {
+      "module_slug": "modulo-6-direito-constitucional-e-legislacao-institucional-da-pmmt",
+      "slug": "11-portaria-025-qcg-2025-violencia-domestica",
+      "title": "11. Portaria nº 025/QCG/2025 - Violência doméstica e tramitação administrativa",
+      "source_label": "Portaria nº 025/QCG/2025 - BCG PMMT nº 3695, de 30/09/2025 - documento oficial fornecido pelo usuário",
+      "source_url": "",
+      "required_score": 80,
+      "lessons": [
+        {
+          "slug": "portaria-025-arts-1-a-3",
+          "title": "Portaria 025/QCG/2025: prioridade, competência e medidas administrativas",
+          "summary": "Arts. 1º a 3º.",
+          "estimated_minutes": 25,
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "Arts. 1º e 2º",
+              "content": "A Corregedoria-Geral e os DJDs devem priorizar a instauração, instrução e conclusão dos procedimentos e processos de violência doméstica e familiar contra a mulher envolvendo policiais militares. Quem exerce comando, direção ou chefia deve encaminhar imediatamente os documentos ao DJD ou à Corregedoria, conforme a competência. O Comandante Regional, ao tomar ciência do fato, deve determinar a instauração sem emitir juízo de valor prévio."
+            },
+            {
+              "type": "theory",
+              "title": "Art. 3º, § 1º",
+              "content": "A portaria de instauração deve conter as previsões pertinentes do Decreto nº 1.172/2021 e da Diretriz Conjunta nº 001/2021, incluindo comunicação ao comandante imediato para adoção das medidas administrativas cabíveis, apresentação do sindicado/acusado ao setor de identificação para nova identidade funcional e as providências de recolhimento e guarda previstas na norma."
+            },
+            {
+              "type": "warning",
+              "title": "Art. 3º, §§ 2º a 4º",
+              "content": "A autoridade delegada deve verificar medidas protetivas de urgência. Durante a suspensão prevista na norma, o policial deve ser escalado em funções administrativas e não pode portar arma, salvo decisão judicial em sentido diverso. As SJDs não podem instaurar procedimento ou processo administrativo relativo a esses casos."
+            }
+          ]
+        },
+        {
+          "slug": "portaria-025-arts-4-a-8",
+          "title": "Portaria 025/QCG/2025: instrução, relatório e restituição",
+          "summary": "Arts. 4º a 8º.",
+          "estimated_minutes": 25,
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "Arts. 4º e 5º",
+              "content": "Devem ser juntadas certidões de busca de processos administrativos e judiciais relacionados ao tema. O relatório deve conter parecer fundamentado favorável ou não ao restabelecimento da prerrogativa suspensa. Também se deve verificar se o atendimento inicial seguiu o Manual POP e as normas pertinentes; irregularidades dos policiais que atenderam a ocorrência devem ser registradas no relatório para apuração posterior em autos apartados."
+            },
+            {
+              "type": "theory",
+              "title": "Art. 6º",
+              "content": "A decisão deve conter parecer da autoridade delegante quanto à restituição. Pelo § 1º, a restituição somente pode ocorrer mediante parecer favorável da autoridade delegante, homologado pelo Corregedor-Geral. O § 2º admite decisão fundamentada do Corregedor-Geral em caso de diligências complementares, desde que não haja restrições judiciais ou administrativas vigentes."
+            },
+            {
+              "type": "comparison",
+              "title": "Arts. 7º e 8º",
+              "content": "A expressão “até a remessa dos autos à autoridade delegante” não cria direito subjetivo nem obrigação para a Administração; é mera expectativa de direito condicionada à Portaria. O art. 8º esclarece a abrangência dos registros institucionais mencionados no Decreto nº 1.172/2021 e na Diretriz Conjunta nº 001/2021."
+            }
+          ]
+        },
+        {
+          "slug": "portaria-025-arts-9-a-12",
+          "title": "Portaria 025/QCG/2025: execução, assistência e vigência",
+          "summary": "Arts. 9º a 12.",
+          "estimated_minutes": 20,
+          "blocks": [
+            {
+              "type": "theory",
+              "title": "Arts. 9º e 10",
+              "content": "A DGP e a Superintendência de Apoio Logístico e Patrimônio devem cumprir as medidas previstas na Diretriz Conjunta nº 001/2021 após a instauração do procedimento/processo pela Corregedoria-Geral ou DJDs. Autoridades delegantes e encarregados devem observar a Lei Maria da Penha no que couber."
+            },
+            {
+              "type": "theory",
+              "title": "Art. 11",
+              "content": "Diretoria de Saúde, CAS e NAS devem priorizar o atendimento à mulher vítima, independentemente de quem seja o agressor, com assistência multidisciplinar. Fazem jus ao atendimento tanto a policial militar do sexo feminino quanto as mulheres dependentes de militares."
+            },
+            {
+              "type": "summary",
+              "title": "Art. 12",
+              "content": "A Portaria entra em vigor na data da publicação e revoga a Portaria nº 74/DGP/QCG/PMMT, de 3 de março de 2015, e disposições em contrário."
+            }
+          ]
+        }
+      ],
+      "questions": []
     }
   ]
 }
