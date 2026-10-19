@@ -36,7 +36,7 @@ $baseQuery = array_filter($baseQuery, static fn ($value) => $value !== '' && $va
             <option value="0">Todos os módulos</option>
             <?php foreach ($modules as $module): ?>
                 <option value="<?= (int) $module['id'] ?>" <?= (int) ($filters['moduleId'] ?? 0) === (int) $module['id'] ? 'selected' : '' ?>>
-                    <?= e($module['title']) ?>
+                    <?= e(($module['course_title'] ?? 'Curso') . ' • ' . $module['title']) ?>
                 </option>
             <?php endforeach; ?>
         </select>
@@ -91,6 +91,7 @@ $baseQuery = array_filter($baseQuery, static fn ($value) => $value !== '' && $va
                         <h2><?= e($q['statement']) ?></h2>
 
                         <div class="ld-admin-question-details">
+                            <span><strong>Curso:</strong> <?= e($q['course_title'] ?? 'Sem curso') ?></span>
                             <span><strong>Módulo:</strong> <?= e($q['module_title'] ?? 'Sem módulo') ?></span>
                             <span><strong>Fonte:</strong> <?= e($q['source_label'] ?: 'Não informada') ?></span>
                             <span><strong>Alternativas:</strong> <?= (int) ($q['alternatives_count'] ?? 0) ?></span>
