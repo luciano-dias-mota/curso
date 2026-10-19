@@ -44,6 +44,16 @@ final class ExerciseService
         );
         $courseStmt->execute(['user_id' => $userId]);
         $courses = $courseStmt->fetchAll(PDO::FETCH_ASSOC);
+        $settings = new CourseSettingsService();
+        $courses = array_values(array_filter(
+            $courses,
+            static fn (array $row): bool => $settings->enabled(
+                (int) $row['id'],
+                'exercises_enabled',
+                $pdo,
+                true
+            )
+        ));
 
         $courseIds = array_map(static fn (array $row): int => (int) $row['id'], $courses);
         if ($courseIds === []) {
@@ -150,6 +160,10 @@ final class ExerciseService
 
         $pdo = Database::connection();
         $course = $this->assertEnrollment($pdo, $userId, $courseId);
+
+        if (!(new CourseSettingsService())->enabled($courseId, 'exercises_enabled', $pdo, true)) {
+            throw new RuntimeException('Os exercícios estão desabilitados para este curso.');
+        }
 
         $module = null;
         if ($moduleId !== null && $moduleId > 0) {
