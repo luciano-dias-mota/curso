@@ -844,18 +844,15 @@ SET FOREIGN_KEY_CHECKS = 1;
 -- REGRAS QUE DEVEM SER IMPLEMENTADAS NO BACKEND
 -- ============================================================================
 -- 1. O estudante conclui todos os blocos obrigatórios da aula.
--- 2. A politica da aula decide o fechamento: reading, quiz ou lab.
--- 3. Em lab, todas as atividades obrigatorias publicadas devem ser validadas.
+-- 2. A política da aula decide o fechamento: reading, quiz ou lab.
+-- 3. Em lab, todas as atividades obrigatórias publicadas devem ser validadas.
 -- 4. A aula passa a completed.
--- 5. Ao concluir as aulas exigidas, a prova da fase é liberada.
--- 4. QuizService calcula a nota no servidor.
--- 5. Se nota >= phases.required_score:
---      - fase = completed
---      - registra XP
---      - atualiza nível
---      - libera próxima fase
--- 6. Última fase concluída -> recalcula módulo.
--- 7. Último módulo concluído -> recalcula curso.
+-- 5. A política da fase decide: avaliação/checkpoint ou conclusão das aulas.
+-- 6. A política do módulo decide: avaliação final ou conclusão das fases.
+-- 7. QuizService calcula notas de avaliações sempre no servidor.
+-- 8. Conclusões registram XP de forma idempotente e atualizam o nível.
+-- 9. A progressão do curso libera a próxima fase/módulo conforme sua configuração.
+-- 10. O progresso do curso é recalculado após a conclusão dos módulos.
 --
 -- SEGURANÇA:
 -- - password_hash()/password_verify()
