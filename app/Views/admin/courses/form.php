@@ -119,6 +119,18 @@ $action = $isEdit
                     <option value="phases" <?= ($settings['module_completion_mode'] ?? '') === 'phases' ? 'selected' : '' ?>>Ao concluir as fases obrigatórias</option>
                 </select>
             </label>
+            <label>
+                <span>Engine do laboratório</span>
+                <select class="ld-admin-select" name="lab_engine_key">
+                    <option value="">Nenhuma / não se aplica</option>
+                    <?php foreach (($labEngines ?? []) as $engine): ?>
+                        <option value="<?= e($engine['key']) ?>" <?= ($settings['lab_engine_key'] ?? '') === $engine['key'] ? 'selected' : '' ?>>
+                            <?= e($engine['label']) ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+                <small>Escolha somente quando o curso usar atividades práticas executáveis.</small>
+            </label>
         </div>
 
         <div class="ld-admin-checkbox-grid">
