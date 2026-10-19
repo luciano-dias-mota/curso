@@ -124,7 +124,6 @@ $error = Session::pullFlash('error');
 <nav class="ld-admin-mobile-nav" aria-label="Navegação administrativa móvel">
     <a class="<?= $section === 'home' ? 'is-active' : '' ?>" href="<?= e(url('/admin')) ?>"><span>⌂</span><small>Painel</small></a>
     <a class="<?= $section === 'courses' ? 'is-active' : '' ?>" href="<?= e(url('/admin/cursos')) ?>"><span>◫</span><small>Cursos</small></a>
-    <a class="<?= $section === 'questions' ? 'is-active' : '' ?>" href="<?= e(url('/admin/questoes')) ?>"><span>?</span><small>Questões</small></a>
     <a class="<?= $section === 'users' ? 'is-active' : '' ?>" href="<?= e(url('/admin/usuarios')) ?>"><span>♙</span><small>Alunos</small></a>
     <a class="<?= $section === 'enrollments' ? 'is-active' : '' ?>" href="<?= e(url('/admin/matriculas')) ?>"><span>✓</span><small>Matrículas</small></a>
     <form action="<?= e(url('/logout')) ?>" method="post"><?= Csrf::input() ?><button type="submit"><span>↪</span><small>Sair</small></button></form>
