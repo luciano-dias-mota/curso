@@ -3022,6 +3022,72 @@
               "is_correct": false
             }
           ]
+        },
+        {
+          "source_key": "EDITAL26-P025-Q15",
+          "statement": "Conforme o art. 3º, § 2º, ao receber a portaria de instauração, a autoridade delegada deve verificar especialmente:",
+          "difficulty": "medium",
+          "explanation": "Gabarito: B. A Portaria manda verificar a existência de medidas protetivas de urgência decretadas judicialmente, sobretudo as relacionadas à suspensão prevista na norma.",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Apenas a ficha financeira do militar.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "A existência de medidas protetivas de urgência decretadas judicialmente.",
+              "is_correct": true
+            },
+            {
+              "label": "C",
+              "text": "A conveniência de promover conciliação.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "A existência de férias programadas.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "A lotação desejada pelo acusado.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-P025-Q16",
+          "statement": "Nos termos do art. 4º da Portaria nº 025/QCG/2025, o relatório deve conter parecer fundamentado:",
+          "difficulty": "hard",
+          "explanation": "Gabarito: C. O art. 4º exige parecer favorável ou não ao restabelecimento da prerrogativa suspensa, observadas as normas de referência.",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Sobre promoção funcional do acusado.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "Sobre transferência compulsória para a reserva.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "Favorável ou não ao restabelecimento da prerrogativa suspensa.",
+              "is_correct": true
+            },
+            {
+              "label": "D",
+              "text": "Sobre concessão de medalha.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "Sobre arquivamento automático da ocorrência criminal.",
+              "is_correct": false
+            }
+          ]
         }
       ]
     }
