@@ -18,7 +18,8 @@ final class LessonCompletionService
     ): array {
         $stmt = $pdo->prepare(
             "SELECT l.id, l.phase_id, l.position, l.xp_reward,
-                    p.module_id, m.course_id
+                    p.module_id, p.position AS phase_position, p.xp_reward AS phase_xp_reward,
+                    m.course_id, m.position AS module_position, m.xp_reward AS module_xp_reward
              FROM lessons l
              INNER JOIN phases p ON p.id = l.phase_id
              INNER JOIN modules m ON m.id = p.module_id
@@ -63,7 +64,9 @@ final class LessonCompletionService
         }
 
         if ((float) ($row['progress_pct'] ?? 0) < 100) {
-            throw new RuntimeException('Conclua a leitura da aula antes de finalizar a atividade obrigatória.');
+            throw new RuntimeException(
+                'Conclua a leitura da aula antes de finalizar a atividade obrigatória.'
+            );
         }
 
         $pdo->prepare(
@@ -90,37 +93,91 @@ final class LessonCompletionService
 
         $courseId = (int) $lesson['course_id'];
         $phaseId = (int) $lesson['phase_id'];
+        $moduleId = (int) $lesson['module_id'];
+        $settings = new CourseSettingsService();
 
-        if ((new CourseSettingsService())->lessonAccessMode($courseId, $pdo) === 'sequential') {
-            $next = $pdo->prepare(
-                "SELECT id
-                 FROM lessons
-                 WHERE phase_id = :phase_id
-                   AND status = 'published'
-                   AND is_required = 1
-                   AND position > :position
-                 ORDER BY position, id
-                 LIMIT 1"
+        if ($settings->lessonAccessMode($courseId, $pdo) === 'sequential') {
+            $this->unlockNextLesson(
+                $pdo,
+                $userId,
+                $phaseId,
+                (int) $lesson['position']
             );
-            $next->execute([
-                'phase_id' => $phaseId,
-                'position' => (int) $lesson['position'],
-            ]);
-            $nextLessonId = (int) ($next->fetchColumn() ?: 0);
-
-            if ($nextLessonId > 0) {
-                $this->unlockLesson($pdo, $userId, $nextLessonId);
-            }
         }
 
-        $this->refreshPhaseProgress($pdo, $userId, $phaseId);
+        $phaseStats = $this->refreshPhaseProgress($pdo, $userId, $phaseId);
+
+        if (
+            $settings->phaseCompletionMode($courseId, $pdo) === 'lessons'
+            && $phaseStats['total'] > 0
+            && $phaseStats['completed'] === $phaseStats['total']
+        ) {
+            $this->completePhase(
+                $pdo,
+                $userId,
+                $phaseId,
+                (int) ($lesson['phase_xp_reward'] ?? 0)
+            );
+
+            $moduleStats = $this->refreshModuleProgress($pdo, $userId, $moduleId);
+
+            if (
+                $settings->moduleCompletionMode($courseId, $pdo) === 'phases'
+                && $moduleStats['total'] > 0
+                && $moduleStats['completed'] === $moduleStats['total']
+            ) {
+                $this->completeModule(
+                    $pdo,
+                    $userId,
+                    $moduleId,
+                    (int) ($lesson['module_xp_reward'] ?? 0)
+                );
+                $this->refreshCourseProgress($pdo, $userId, $courseId);
+            }
+
+            // Reaplica as regras de navegação do curso. Isso libera a próxima
+            // fase e, quando o módulo foi concluído, o próximo módulo sequencial.
+            (new ProgressInitializer())->initializeEnrollment(
+                $userId,
+                $courseId,
+                $pdo
+            );
+        }
 
         return [
             'lesson_id' => $lessonId,
             'phase_id' => $phaseId,
-            'module_id' => (int) $lesson['module_id'],
+            'module_id' => $moduleId,
             'course_id' => $courseId,
         ];
+    }
+
+    private function unlockNextLesson(
+        PDO $pdo,
+        int $userId,
+        int $phaseId,
+        int $position
+    ): void {
+        $next = $pdo->prepare(
+            "SELECT id
+             FROM lessons
+             WHERE phase_id = :phase_id
+               AND status = 'published'
+               AND is_required = 1
+               AND position > :position
+             ORDER BY position, id
+             LIMIT 1"
+        );
+        $next->execute([
+            'phase_id' => $phaseId,
+            'position' => $position,
+        ]);
+
+        $nextLessonId = (int) ($next->fetchColumn() ?: 0);
+
+        if ($nextLessonId > 0) {
+            $this->unlockLesson($pdo, $userId, $nextLessonId);
+        }
     }
 
     private function unlockLesson(PDO $pdo, int $userId, int $lessonId): void
@@ -142,7 +199,10 @@ final class LessonCompletionService
         ]);
     }
 
-    private function refreshPhaseProgress(PDO $pdo, int $userId, int $phaseId): void
+    /**
+     * @return array{total:int,completed:int}
+     */
+    private function refreshPhaseProgress(PDO $pdo, int $userId, int $phaseId): array
     {
         $stmt = $pdo->prepare(
             "SELECT COUNT(l.id) AS total,
@@ -185,6 +245,168 @@ final class LessonCompletionService
             'completed2' => $completed,
             'user_id' => $userId,
             'phase_id' => $phaseId,
+        ]);
+
+        return ['total' => $total, 'completed' => $completed];
+    }
+
+    private function completePhase(
+        PDO $pdo,
+        int $userId,
+        int $phaseId,
+        int $xpReward
+    ): void {
+        $pdo->prepare(
+            "UPDATE user_phase_progress
+             SET status = 'completed',
+                 progress_pct = 100,
+                 completed_at = COALESCE(completed_at, NOW())
+             WHERE user_id = :user_id
+               AND phase_id = :phase_id"
+        )->execute([
+            'user_id' => $userId,
+            'phase_id' => $phaseId,
+        ]);
+
+        $this->awardOnce(
+            $pdo,
+            $userId,
+            'phase_completed',
+            $phaseId,
+            $xpReward,
+            'Fase concluída pelas atividades obrigatórias'
+        );
+    }
+
+    /**
+     * @return array{total:int,completed:int}
+     */
+    private function refreshModuleProgress(PDO $pdo, int $userId, int $moduleId): array
+    {
+        $stmt = $pdo->prepare(
+            "SELECT COUNT(p.id) AS total,
+                    SUM(CASE WHEN upp.status = 'completed' THEN 1 ELSE 0 END) AS completed
+             FROM phases p
+             LEFT JOIN user_phase_progress upp
+               ON upp.phase_id = p.id
+              AND upp.user_id = :user_id
+             WHERE p.module_id = :module_id
+               AND p.status = 'published'
+               AND p.is_required = 1"
+        );
+        $stmt->execute([
+            'user_id' => $userId,
+            'module_id' => $moduleId,
+        ]);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC) ?: [];
+
+        $total = (int) ($row['total'] ?? 0);
+        $completed = (int) ($row['completed'] ?? 0);
+        $pct = $total > 0 ? round(($completed / $total) * 100, 2) : 0;
+
+        $pdo->prepare(
+            "UPDATE user_module_progress
+             SET progress_pct = :progress_pct,
+                 status = CASE
+                    WHEN status = 'completed' THEN 'completed'
+                    WHEN :completed > 0 THEN 'in_progress'
+                    ELSE status
+                 END,
+                 started_at = CASE
+                    WHEN :completed2 > 0 THEN COALESCE(started_at, NOW())
+                    ELSE started_at
+                 END
+             WHERE user_id = :user_id
+               AND module_id = :module_id"
+        )->execute([
+            'progress_pct' => $pct,
+            'completed' => $completed,
+            'completed2' => $completed,
+            'user_id' => $userId,
+            'module_id' => $moduleId,
+        ]);
+
+        return ['total' => $total, 'completed' => $completed];
+    }
+
+    private function completeModule(
+        PDO $pdo,
+        int $userId,
+        int $moduleId,
+        int $xpReward
+    ): void {
+        $pdo->prepare(
+            "UPDATE user_module_progress
+             SET status = 'completed',
+                 progress_pct = 100,
+                 completed_at = COALESCE(completed_at, NOW())
+             WHERE user_id = :user_id
+               AND module_id = :module_id"
+        )->execute([
+            'user_id' => $userId,
+            'module_id' => $moduleId,
+        ]);
+
+        $this->awardOnce(
+            $pdo,
+            $userId,
+            'module_completed',
+            $moduleId,
+            $xpReward,
+            'Módulo concluído pelas fases obrigatórias'
+        );
+    }
+
+    private function refreshCourseProgress(PDO $pdo, int $userId, int $courseId): void
+    {
+        $stmt = $pdo->prepare(
+            "SELECT COUNT(m.id) AS total,
+                    SUM(CASE WHEN ump.status = 'completed' THEN 1 ELSE 0 END) AS completed
+             FROM modules m
+             LEFT JOIN user_module_progress ump
+               ON ump.module_id = m.id
+              AND ump.user_id = :user_id
+             WHERE m.course_id = :course_id
+               AND m.status = 'published'"
+        );
+        $stmt->execute([
+            'user_id' => $userId,
+            'course_id' => $courseId,
+        ]);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC) ?: [];
+
+        $total = (int) ($row['total'] ?? 0);
+        $completed = (int) ($row['completed'] ?? 0);
+        $pct = $total > 0 ? round(($completed / $total) * 100, 2) : 0;
+        $allCompleted = $total > 0 && $completed === $total;
+
+        $pdo->prepare(
+            "UPDATE user_course_progress
+             SET progress_pct = :progress_pct,
+                 status = CASE
+                    WHEN :all_completed = 1 THEN 'completed'
+                    WHEN :completed > 0 THEN 'in_progress'
+                    ELSE status
+                 END,
+                 started_at = CASE
+                    WHEN :completed2 > 0 THEN COALESCE(started_at, NOW())
+                    ELSE started_at
+                 END,
+                 completed_at = CASE
+                    WHEN :all_completed2 = 1 THEN COALESCE(completed_at, NOW())
+                    ELSE completed_at
+                 END,
+                 last_accessed_at = NOW()
+             WHERE user_id = :user_id
+               AND course_id = :course_id"
+        )->execute([
+            'progress_pct' => $pct,
+            'all_completed' => $allCompleted ? 1 : 0,
+            'completed' => $completed,
+            'completed2' => $completed,
+            'all_completed2' => $allCompleted ? 1 : 0,
+            'user_id' => $userId,
+            'course_id' => $courseId,
         ]);
     }
 
