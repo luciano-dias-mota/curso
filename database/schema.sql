@@ -140,6 +140,7 @@ CREATE TABLE lessons (
     estimated_minutes SMALLINT UNSIGNED NOT NULL DEFAULT 10,
     xp_reward INT UNSIGNED NOT NULL DEFAULT 10,
     is_required TINYINT(1) NOT NULL DEFAULT 1,
+    completion_mode VARCHAR(30) NULL,
     status ENUM('draft','published','archived') NOT NULL DEFAULT 'draft',
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -170,6 +171,116 @@ CREATE TABLE lesson_blocks (
         ON UPDATE CASCADE ON DELETE CASCADE,
     UNIQUE KEY uq_lesson_blocks_position (lesson_id, position),
     INDEX idx_lesson_blocks_type (lesson_id, block_type)
+) ENGINE=InnoDB;
+
+-- ============================================================================
+-- MOTOR GENERICO DE LABORATORIOS
+-- ============================================================================
+-- O nucleo nao conhece tecnologias concretas. Cada atividade informa engine_key
+-- e o provider correspondente e registrado em config/lab.php.
+
+CREATE TABLE lab_activities (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    lesson_id BIGINT UNSIGNED NOT NULL,
+    engine_key VARCHAR(80) NOT NULL,
+    activity_type VARCHAR(50) NOT NULL DEFAULT 'code',
+    title VARCHAR(200) NOT NULL,
+    instructions LONGTEXT NOT NULL,
+    starter_code LONGTEXT NULL,
+    validator_type VARCHAR(80) NOT NULL DEFAULT 'custom',
+    validator_config LONGTEXT NULL,
+    bootstrap_config LONGTEXT NULL,
+    unlock_rule ENUM('lesson_available','reading_complete') NOT NULL DEFAULT 'reading_complete',
+    state_version INT UNSIGNED NOT NULL DEFAULT 0,
+    xp_reward INT UNSIGNED NOT NULL DEFAULT 0,
+    is_required TINYINT(1) NOT NULL DEFAULT 1,
+    max_attempts INT UNSIGNED NULL,
+    position INT UNSIGNED NOT NULL DEFAULT 1,
+    status ENUM('draft','published','archived') NOT NULL DEFAULT 'draft',
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_lab_activities_lesson FOREIGN KEY (lesson_id) REFERENCES lessons(id)
+        ON UPDATE CASCADE ON DELETE CASCADE,
+    UNIQUE KEY uq_lab_activity_position (lesson_id, position),
+    INDEX idx_lab_activity_engine_status (engine_key, status),
+    INDEX idx_lab_activity_lesson_required (lesson_id, is_required, status)
+) ENGINE=InnoDB;
+
+CREATE TABLE lab_activity_hints (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    activity_id BIGINT UNSIGNED NOT NULL,
+    position SMALLINT UNSIGNED NOT NULL DEFAULT 1,
+    title VARCHAR(180) NULL,
+    content LONGTEXT NOT NULL,
+    unlock_after_attempts INT UNSIGNED NOT NULL DEFAULT 1,
+    xp_penalty INT UNSIGNED NOT NULL DEFAULT 0,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_lab_hints_activity FOREIGN KEY (activity_id) REFERENCES lab_activities(id)
+        ON UPDATE CASCADE ON DELETE CASCADE,
+    UNIQUE KEY uq_lab_hint_position (activity_id, position)
+) ENGINE=InnoDB;
+
+CREATE TABLE lab_attempts (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    activity_id BIGINT UNSIGNED NOT NULL,
+    user_id BIGINT UNSIGNED NOT NULL,
+    attempt_number INT UNSIGNED NOT NULL,
+    submission_payload LONGTEXT NOT NULL,
+    result_payload LONGTEXT NULL,
+    passed TINYINT(1) NOT NULL DEFAULT 0,
+    score DECIMAL(5,2) NOT NULL DEFAULT 0.00,
+    verification_source ENUM('server','client_evidence','hybrid') NOT NULL DEFAULT 'server',
+    execution_ms INT UNSIGNED NOT NULL DEFAULT 0,
+    hints_used SMALLINT UNSIGNED NOT NULL DEFAULT 0,
+    xp_earned INT UNSIGNED NOT NULL DEFAULT 0,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_lab_attempt_activity FOREIGN KEY (activity_id) REFERENCES lab_activities(id)
+        ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT fk_lab_attempt_user FOREIGN KEY (user_id) REFERENCES users(id)
+        ON UPDATE CASCADE ON DELETE CASCADE,
+    UNIQUE KEY uq_lab_attempt_number (activity_id, user_id, attempt_number),
+    INDEX idx_lab_attempt_user_date (user_id, created_at),
+    INDEX idx_lab_attempt_activity_passed (activity_id, passed)
+) ENGINE=InnoDB;
+
+CREATE TABLE lab_activity_progress (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    user_id BIGINT UNSIGNED NOT NULL,
+    activity_id BIGINT UNSIGNED NOT NULL,
+    status ENUM('available','in_progress','completed') NOT NULL DEFAULT 'available',
+    attempts_count INT UNSIGNED NOT NULL DEFAULT 0,
+    hints_used SMALLINT UNSIGNED NOT NULL DEFAULT 0,
+    best_score DECIMAL(5,2) NOT NULL DEFAULT 0.00,
+    completed_at DATETIME NULL,
+    last_attempt_at DATETIME NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_lab_progress_user FOREIGN KEY (user_id) REFERENCES users(id)
+        ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT fk_lab_progress_activity FOREIGN KEY (activity_id) REFERENCES lab_activities(id)
+        ON UPDATE CASCADE ON DELETE CASCADE,
+    UNIQUE KEY uq_lab_progress_user_activity (user_id, activity_id),
+    INDEX idx_lab_progress_user_status (user_id, status)
+) ENGINE=InnoDB;
+
+CREATE TABLE lab_course_state (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    user_id BIGINT UNSIGNED NOT NULL,
+    course_id BIGINT UNSIGNED NOT NULL,
+    engine_key VARCHAR(80) NOT NULL,
+    state_version INT UNSIGNED NOT NULL DEFAULT 0,
+    last_activity_id BIGINT UNSIGNED NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_lab_state_user FOREIGN KEY (user_id) REFERENCES users(id)
+        ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT fk_lab_state_course FOREIGN KEY (course_id) REFERENCES courses(id)
+        ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT fk_lab_state_activity FOREIGN KEY (last_activity_id) REFERENCES lab_activities(id)
+        ON UPDATE CASCADE ON DELETE SET NULL,
+    UNIQUE KEY uq_lab_state_user_course_engine (user_id, course_id, engine_key),
+    INDEX idx_lab_state_course_engine (course_id, engine_key)
 ) ENGINE=InnoDB;
 
 CREATE TABLE enrollments (
@@ -448,11 +559,7 @@ CREATE TABLE levels (
 CREATE TABLE xp_events (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     user_id BIGINT UNSIGNED NOT NULL,
-    event_type ENUM(
-        'lesson_completed','phase_completed','module_completed',
-        'quiz_passed','simulation_completed','achievement',
-        'streak_bonus','admin_adjustment'
-    ) NOT NULL,
+    event_type VARCHAR(50) NOT NULL,
     reference_id BIGINT UNSIGNED NULL,
     xp_amount INT NOT NULL,
     description VARCHAR(255) NULL,
@@ -736,8 +843,10 @@ SET FOREIGN_KEY_CHECKS = 1;
 -- REGRAS QUE DEVEM SER IMPLEMENTADAS NO BACKEND
 -- ============================================================================
 -- 1. O estudante conclui todos os blocos obrigatórios da aula.
--- 2. A aula passa a completed.
--- 3. Ao concluir as aulas exigidas, a prova da fase é liberada.
+-- 2. A politica da aula decide o fechamento: reading, quiz ou lab.
+-- 3. Em lab, todas as atividades obrigatorias publicadas devem ser validadas.
+-- 4. A aula passa a completed.
+-- 5. Ao concluir as aulas exigidas, a prova da fase é liberada.
 -- 4. QuizService calcula a nota no servidor.
 -- 5. Se nota >= phases.required_score:
 --      - fase = completed
