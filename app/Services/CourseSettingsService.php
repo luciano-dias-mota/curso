@@ -11,6 +11,7 @@ final class CourseSettingsService
     private const DEFAULTS = [
         'module_access_mode' => 'free',
         'lesson_access_mode' => 'sequential',
+        'lesson_completion_mode' => 'quiz',
         'exercises_enabled' => '1',
         'simulations_enabled' => '1',
         'notes_enabled' => '1',
@@ -92,6 +93,12 @@ final class CourseSettingsService
     {
         $mode = (string) ($this->all($courseId, $pdo)['lesson_access_mode'] ?? 'sequential');
         return in_array($mode, ['free', 'sequential'], true) ? $mode : 'sequential';
+    }
+
+    public function lessonCompletionMode(int $courseId, PDO $pdo): string
+    {
+        $mode = (string) ($this->all($courseId, $pdo)['lesson_completion_mode'] ?? 'quiz');
+        return in_array($mode, ['reading', 'quiz', 'lab'], true) ? $mode : 'quiz';
     }
 
     private function tableExists(PDO $pdo): bool
