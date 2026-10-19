@@ -119,6 +119,7 @@ CREATE TABLE phases (
     required_lessons_pct DECIMAL(5,2) NOT NULL DEFAULT 100.00,
     max_attempts INT UNSIGNED NULL,
     xp_reward INT UNSIGNED NOT NULL DEFAULT 50,
+    is_required TINYINT(1) NOT NULL DEFAULT 1,
     status ENUM('draft','published','archived') NOT NULL DEFAULT 'draft',
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -138,6 +139,7 @@ CREATE TABLE lessons (
     position INT UNSIGNED NOT NULL DEFAULT 1,
     estimated_minutes SMALLINT UNSIGNED NOT NULL DEFAULT 10,
     xp_reward INT UNSIGNED NOT NULL DEFAULT 10,
+    is_required TINYINT(1) NOT NULL DEFAULT 1,
     status ENUM('draft','published','archived') NOT NULL DEFAULT 'draft',
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -182,7 +184,22 @@ CREATE TABLE enrollments (
     CONSTRAINT fk_enrollments_course FOREIGN KEY (course_id) REFERENCES courses(id)
         ON UPDATE CASCADE ON DELETE CASCADE,
     UNIQUE KEY uq_enrollment_user_course (user_id, course_id),
-    INDEX idx_enrollments_course_status (course_id, status)
+    INDEX idx_enrollments_course_status (course_id, status),
+    INDEX idx_enrollments_user_status (user_id, status, course_id)
+) ENGINE=InnoDB;
+
+CREATE TABLE course_settings (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    course_id BIGINT UNSIGNED NOT NULL,
+    setting_key VARCHAR(120) NOT NULL,
+    setting_value LONGTEXT NULL,
+    value_type ENUM('string','integer','decimal','boolean','json') NOT NULL DEFAULT 'string',
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_course_settings_course FOREIGN KEY (course_id) REFERENCES courses(id)
+        ON UPDATE CASCADE ON DELETE CASCADE,
+    UNIQUE KEY uq_course_setting (course_id, setting_key),
+    INDEX idx_course_settings_course (course_id)
 ) ENGINE=InnoDB;
 
 -- ============================================================================
@@ -448,6 +465,7 @@ CREATE TABLE xp_events (
 
 CREATE TABLE achievements (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    course_id BIGINT UNSIGNED NULL,
     name VARCHAR(150) NOT NULL,
     slug VARCHAR(160) NOT NULL UNIQUE,
     description VARCHAR(500) NOT NULL,
@@ -459,7 +477,10 @@ CREATE TABLE achievements (
     xp_reward INT UNSIGNED NOT NULL DEFAULT 0,
     active TINYINT(1) NOT NULL DEFAULT 1,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_achievements_course FOREIGN KEY (course_id) REFERENCES courses(id)
+        ON UPDATE CASCADE ON DELETE CASCADE,
+    INDEX idx_achievements_course_active (course_id, active)
 ) ENGINE=InnoDB;
 
 CREATE TABLE user_achievements (
@@ -703,7 +724,7 @@ INSERT INTO achievements
 
 INSERT INTO system_settings
 (setting_key, setting_value, value_type, description) VALUES
-('platform_name', 'PMMT Academy', 'string', 'Nome público da plataforma.'),
+('platform_name', 'Curso MI', 'string', 'Nome público da plataforma.'),
 ('default_theme', 'dark', 'string', 'Tema padrão para novos usuários.'),
 ('default_passing_score', '70', 'decimal', 'Nota mínima padrão de aprovação.'),
 ('enable_ranking', '1', 'boolean', 'Ativa o ranking geral.'),
