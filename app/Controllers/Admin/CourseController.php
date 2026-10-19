@@ -85,7 +85,13 @@ final class CourseController extends Controller
     public function store(Request $request): void
     {
         $pdo = Database::connection();
-        $data = $this->validatedCourseData($request, $pdo);
+
+        try {
+            $data = $this->validatedCourseData($request, $pdo);
+        } catch (RuntimeException $e) {
+            Session::flash('error', $e->getMessage());
+            $this->redirect('/admin/cursos/novo');
+        }
 
         try {
             $pdo->beginTransaction();
@@ -177,7 +183,13 @@ final class CourseController extends Controller
     {
         $pdo = Database::connection();
         $current = $this->findCourse($pdo, $id);
-        $data = $this->validatedCourseData($request, $pdo, $id);
+
+        try {
+            $data = $this->validatedCourseData($request, $pdo, $id);
+        } catch (RuntimeException $e) {
+            Session::flash('error', $e->getMessage());
+            $this->redirect('/admin/cursos/' . $id . '/editar');
+        }
 
         try {
             $pdo->beginTransaction();
@@ -318,7 +330,6 @@ final class CourseController extends Controller
         }
 
         if ($errors !== []) {
-            Session::flash('error', implode(' ', $errors));
             throw new RuntimeException(implode(' ', $errors));
         }
 
