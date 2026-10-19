@@ -172,7 +172,7 @@ final class LabService
             }
 
             $xpEarned = 0;
-            if ($evaluation->passed) {
+            if ($evaluation->passed && ($lockedProgress['status'] ?? '') !== 'completed') {
                 $xpEarned = $this->activityXpAfterHints(
                     $pdo,
                     $activityId,
@@ -637,6 +637,33 @@ final class LabService
             'xp' => $xp,
             'user_id' => $userId,
         ]);
+
+        $xpStmt = $pdo->prepare('SELECT xp_total FROM users WHERE id = :user_id LIMIT 1');
+        $xpStmt->execute(['user_id' => $userId]);
+        $totalXp = (int) ($xpStmt->fetchColumn() ?: 0);
+
+        $levelStmt = $pdo->prepare(
+            "SELECT level_number
+             FROM levels
+             WHERE min_xp <= :xp
+               AND (max_xp IS NULL OR max_xp >= :xp_max)
+             ORDER BY level_number DESC
+             LIMIT 1"
+        );
+        $levelStmt->execute([
+            'xp' => $totalXp,
+            'xp_max' => $totalXp,
+        ]);
+        $level = (int) ($levelStmt->fetchColumn() ?: 0);
+
+        if ($level > 0) {
+            $pdo->prepare(
+                'UPDATE users SET current_level = :level WHERE id = :user_id'
+            )->execute([
+                'level' => $level,
+                'user_id' => $userId,
+            ]);
+        }
     }
 
     private function publicActivity(array $activity): array
@@ -651,8 +678,8 @@ final class LabService
             'instructions' => (string) $activity['instructions'],
             'starter_code' => (string) ($activity['starter_code'] ?? ''),
             'validator_type' => (string) $activity['validator_type'],
-            'validator_config' => $activity['validator_config'],
-            'bootstrap_config' => $activity['bootstrap_config'],
+            // validator_config e bootstrap_config ficam no servidor. A engine
+            // decide explicitamente o que pode sair em clientManifest().
             'state_version' => (int) $activity['state_version'],
             'xp_reward' => (int) $activity['xp_reward'],
             'is_required' => (int) $activity['is_required'] === 1,
