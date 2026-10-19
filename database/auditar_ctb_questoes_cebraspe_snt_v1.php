@@ -18,7 +18,7 @@ $pdo = Database::connection();
 
 $sourceFile = BASE_PATH . '/database/sources/ctb_questoes_cebraspe_snt_v1.json';
 if (!is_file($sourceFile)) {
-    fwrite(STDERR, "[FALHA] Fonte da Lei de Tortura não encontrada.\n");
+    fwrite(STDERR, "[FALHA] Fonte CTB/CEBRASPE não encontrada.\n");
     exit(2);
 }
 
@@ -79,6 +79,23 @@ if (!$tableExists($pdo,'question_import_keys')) {
     exit(5);
 }
 
+$coverageTitles = [
+    'SNT: conceito, responsabilidade objetiva e composição',
+    'Competências: CONTRAN, CETRAN/CONTRANDIFE, órgão executivo federal, Estados/DF e PM',
+    'Municípios, recursos administrativos e expedição da CNH',
+    'Normas de circulação, pedestres, velocidade e iluminação',
+    'Engenharia, educação, medidas administrativas e exame toxicológico',
+    'Como a banca troca o sujeito da competência',
+];
+
+$coverageStmt = $pdo->prepare(
+    "SELECT COUNT(*)
+     FROM lesson_blocks lb
+     INNER JOIN lessons l ON l.id=lb.lesson_id
+     WHERE l.phase_id=:phase_id
+       AND lb.title=:title"
+);
+
 $lookup = $pdo->prepare(
     "SELECT k.source_key,q.id,q.module_id,q.phase_id,q.lesson_id,
             q.question_type,q.statement,q.difficulty,q.active,
@@ -101,6 +118,24 @@ printf("Módulo: #%d - %s\n",(int)$module['id'],$module['title']);
 printf("Fase:   #%d - %s\n\n",(int)$phase['id'],$phase['title']);
 
 $problems = [];
+$coverageOk = 0;
+
+echo "Cobertura pedagógica dos temas CEBRASPE:\n";
+foreach ($coverageTitles as $title) {
+    $coverageStmt->execute([
+        'phase_id'=>(int)$phase['id'],
+        'title'=>$title,
+    ]);
+    $exists = (int)$coverageStmt->fetchColumn() > 0;
+    printf("  %s %s\n",$exists ? '[OK]' : '[FALTA]',$title);
+    if ($exists) {
+        $coverageOk++;
+    } else {
+        $problems[] = "Bloco pedagógico ausente: {$title}";
+    }
+}
+echo "\n";
+
 $found = 0;
 $mc = 0;
 $tf = 0;
@@ -121,7 +156,7 @@ foreach ($items as $item) {
     $questionIds[] = $questionId;
 
     if ((int)$row['module_id'] !== (int)$module['id']) {
-        $problems[] = "{$sourceKey}: questão #{$questionId} fora do Módulo 5.";
+        $problems[] = "{$sourceKey}: questão #{$questionId} fora do Módulo 8.";
     }
 
     if ((int)$row['active'] !== 1) {
@@ -167,6 +202,7 @@ foreach ($items as $item) {
 $uniqueQuestionIds = array_values(array_unique($questionIds));
 
 echo "\n-------------------------------------------------------------\n";
+printf("Blocos temáticos:       %d / %d\n",$coverageOk,count($coverageTitles));
 printf("Fonte curada:          %d\n",count($items));
 printf("Chaves encontradas:    %d / %d\n",$found,count($items));
 printf("Múltipla escolha:      %d\n",$mc);
@@ -183,7 +219,7 @@ if ($problems !== []) {
     foreach ($problems as $i=>$problem) {
         printf("%02d. %s\n",$i+1,$problem);
     }
-    fwrite(STDERR,"\n[FALHA] Banco de questões de Tortura inconsistente.\n");
+    fwrite(STDERR,"\n[FALHA] Banco de questões do CTB inconsistente.\n");
     exit(6);
 }
 
