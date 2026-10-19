@@ -105,7 +105,10 @@ $hasModule = static function (string $needle) use ($moduleExists,$courseId): boo
 $items = [
     ['1.1.1','Compreensão e intelecção de textos',fn()=> $hasText('compreensão')],
     ['1.1.2','Coesão textual',fn()=> $hasText('coesão')],
-    ['1.1.3','Variações linguísticas e funções da linguagem',fn()=> $hasText('variações linguísticas') && $hasText('funções de linguagem')],
+    ['1.1.3','Variações linguísticas e funções da linguagem',fn()=>
+        ($hasText('variação linguística') || $hasText('variações linguísticas'))
+        && ($hasText('funções da linguagem') || $hasText('funções de linguagem'))
+    ],
     ['1.1.4','Ortografia oficial',fn()=> $hasText('ortografia')],
     ['1.1.5','Morfossintaxe e verbos',fn()=> $hasText('morfossintaxe') || ($hasText('classe') && $hasText('modos verbais'))],
     ['1.1.6','Coordenação e subordinação',fn()=> $hasText('coordenação') && $hasText('subordinação')],
