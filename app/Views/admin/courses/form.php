@@ -105,6 +105,20 @@ $action = $isEdit
                 </select>
                 <small>Cada aula poderá sobrescrever esta regra quando necessário.</small>
             </label>
+            <label>
+                <span>Conclusão das fases</span>
+                <select class="ld-admin-select" name="phase_completion_mode">
+                    <option value="quiz" <?= ($settings['phase_completion_mode'] ?? 'quiz') === 'quiz' ? 'selected' : '' ?>>Por avaliação/checkpoint</option>
+                    <option value="lessons" <?= ($settings['phase_completion_mode'] ?? '') === 'lessons' ? 'selected' : '' ?>>Ao concluir as aulas obrigatórias</option>
+                </select>
+            </label>
+            <label>
+                <span>Conclusão dos módulos</span>
+                <select class="ld-admin-select" name="module_completion_mode">
+                    <option value="quiz" <?= ($settings['module_completion_mode'] ?? 'quiz') === 'quiz' ? 'selected' : '' ?>>Por avaliação final</option>
+                    <option value="phases" <?= ($settings['module_completion_mode'] ?? '') === 'phases' ? 'selected' : '' ?>>Ao concluir as fases obrigatórias</option>
+                </select>
+            </label>
         </div>
 
         <div class="ld-admin-checkbox-grid">
