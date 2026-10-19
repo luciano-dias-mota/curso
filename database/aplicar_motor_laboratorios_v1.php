@@ -95,6 +95,24 @@ function indexExistsLabV1(PDO $pdo, string $table, string $index): bool
     return (bool) $stmt->fetchColumn();
 }
 
+function duplicateXpEventGroupsLabV1(PDO $pdo): int
+{
+    if (!tableExistsLabV1($pdo, 'xp_events')) {
+        return 0;
+    }
+
+    $sql = "SELECT COUNT(*)
+            FROM (
+                SELECT user_id, event_type, reference_id
+                FROM xp_events
+                WHERE reference_id IS NOT NULL
+                GROUP BY user_id, event_type, reference_id
+                HAVING COUNT(*) > 1
+            ) duplicated";
+
+    return (int) $pdo->query($sql)->fetchColumn();
+}
+
 $checks = [
     'lessons.completion_mode' => columnExistsLabV1($pdo, 'lessons', 'completion_mode'),
     'lab_activities' => tableExistsLabV1($pdo, 'lab_activities'),
@@ -114,6 +132,25 @@ echo 'Modo:  ' . ($apply ? 'APLICAR' : 'DRY-RUN') . "\n\n";
 
 foreach ($checks as $name => $exists) {
     printf("%-45s %s\n", $name, $exists ? 'OK' : 'CRIAR/AJUSTAR');
+}
+
+$duplicateXpGroups = duplicateXpEventGroupsLabV1($pdo);
+printf(
+    "%-45s %s\n",
+    'Grupos duplicados em xp_events',
+    $duplicateXpGroups === 0 ? 'OK' : (string) $duplicateXpGroups
+);
+
+if (
+    $apply
+    && !$checks['xp_events.uq_xp_event_once']
+    && $duplicateXpGroups > 0
+) {
+    fwrite(
+        STDERR,
+        "\nABORTADO: existem eventos de XP duplicados. Corrija os duplicados antes de criar o índice uq_xp_event_once. Nenhuma alteração desta migração foi aplicada.\n"
+    );
+    exit(1);
 }
 
 if (!$apply) {
