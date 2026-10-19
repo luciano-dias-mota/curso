@@ -833,6 +833,22 @@
             "municoes",
             "coletes balisticos"
           ]
+        },
+        {
+          "selector": {
+            "slug": "11-portaria-025-qcg-2025-violencia-domestica"
+          },
+          "title": "Portaria nº 025/QCG/2025 - violência doméstica",
+          "keywords": [
+            "025/QCG/2025",
+            "violência doméstica",
+            "DJD",
+            "SJD",
+            "Corregedor-Geral",
+            "Diretoria de Saúde",
+            "CAS",
+            "NAS"
+          ]
         }
       ],
       "all_other_phases_optional": true
