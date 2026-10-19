@@ -12,8 +12,6 @@ require BASE_PATH . '/vendor/autoload.php';
 
 use App\Core\App;
 use App\Core\Database;
-use PDO;
-use Throwable;
 
 App::boot(BASE_PATH);
 
