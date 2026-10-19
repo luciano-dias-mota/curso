@@ -60,7 +60,7 @@
                             <?php foreach ($phase['lessons'] as $lesson): ?>
                                 <div>
                                     <strong><?= (int) $lesson['position'] ?>. <?= e($lesson['title']) ?></strong>
-                                    <small><?= (int) $lesson['estimated_minutes'] ?> min • <?= e($lesson['status']) ?><?= (int) $lesson['is_required'] === 0 ? ' • opcional' : '' ?> • <a href="<?= e(url('/admin/aulas/' . (int) $lesson['id'])) ?>">editar conteúdo</a></small>
+                                    <small><?= (int) $lesson['estimated_minutes'] ?> min • <?= e($lesson['status']) ?><?= (int) $lesson['is_required'] === 0 ? ' • opcional' : '' ?> • conclusão: <?= e($lesson['completion_mode'] ?: 'padrão do curso') ?> • <a href="<?= e(url('/admin/aulas/' . (int) $lesson['id'])) ?>">editar conteúdo</a></small>
                                 </div>
                             <?php endforeach; ?>
                         <?php endif; ?>
@@ -79,6 +79,15 @@
                                     <label><span>Duração estimada</span><input class="ld-admin-input" type="number" name="estimated_minutes" min="1" value="10"></label>
                                     <label><span>XP</span><input class="ld-admin-input" type="number" name="xp_reward" min="0" value="10"></label>
                                     <label><span>Status</span><select class="ld-admin-select" name="status"><option value="draft">Rascunho</option><option value="published">Publicado</option></select></label>
+                                    <label>
+                                        <span>Conclusão da aula</span>
+                                        <select class="ld-admin-select" name="completion_mode">
+                                            <option value="">Usar padrão do curso</option>
+                                            <option value="quiz">Quiz / exercício</option>
+                                            <option value="lab">Laboratório prático</option>
+                                            <option value="reading">Somente leitura</option>
+                                        </select>
+                                    </label>
                                     <label class="ld-admin-check"><input type="checkbox" name="is_required" value="1" checked><span><strong>Aula obrigatória</strong><small>Desmarque para conteúdo complementar.</small></span></label>
                                 </div>
                                 <label><span>Resumo</span><textarea class="ld-admin-input" name="summary" rows="2"></textarea></label>
