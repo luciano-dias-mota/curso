@@ -47,15 +47,17 @@ Registra a versão do estado prático por aluno, curso e engine. Serve para reco
 5. Assets de uma engine devem ser arquivos estáticos controlados pela aplicação.
 6. XP e conclusão são gravados pelo backend após a avaliação da engine.
 
-## Modos de conclusão de aula
+## Políticas genéricas de progressão
 
-O curso possui `lesson_completion_mode` com padrão `quiz` para preservar o comportamento atual. Uma aula pode sobrescrever esse valor em `lessons.completion_mode`.
+Para impedir que a plataforma fique acoplada ao modelo de concursos, cada curso define como sua progressão fecha cada nível.
 
-Valores previstos nesta versão:
+- `lesson_completion_mode`: `reading`, `quiz` ou `lab`. O padrão é `quiz`.
+- `phase_completion_mode`: `quiz` ou `lessons`. O padrão é `quiz`.
+- `module_completion_mode`: `quiz` ou `phases`. O padrão é `quiz`.
 
-- `reading`: a leitura obrigatória conclui a aula.
-- `quiz`: comportamento atual do Curso MI.
-- `lab`: todas as atividades práticas obrigatórias publicadas da aula precisam ser concluídas.
+Uma aula também pode sobrescrever `lesson_completion_mode` em `lessons.completion_mode`.
+
+Assim, o PMMT preserva aula → exercício, fase → checkpoint e módulo → avaliação final. Um futuro curso de programação pode usar aula → laboratório e avançar fase/módulo automaticamente pelas atividades concluídas.
 
 ## Como adicionar uma nova tecnologia
 
