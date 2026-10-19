@@ -119,10 +119,23 @@ final class DashboardController extends Controller
                       ON ua.achievement_id = a.id
                      AND ua.user_id = :user_id
               WHERE a.active = 1
+                AND (
+                    a.course_id IS NULL
+                    OR EXISTS (
+                        SELECT 1
+                        FROM enrollments ea
+                        WHERE ea.user_id = :achievement_enrollment_user
+                          AND ea.course_id = a.course_id
+                          AND ea.status = 'active'
+                    )
+                )
               ORDER BY (ua.id IS NULL), ua.unlocked_at DESC, a.id
               LIMIT 8"
         );
-        $achievementsStmt->execute(['user_id' => $userId]);
+        $achievementsStmt->execute([
+            'user_id' => $userId,
+            'achievement_enrollment_user' => $userId,
+        ]);
         $achievements = $achievementsStmt->fetchAll(PDO::FETCH_ASSOC);
 
         $achievementCountStmt = $pdo->prepare(
