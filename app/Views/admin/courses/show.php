@@ -40,6 +40,9 @@ $difficultyLabels = ['beginner'=>'Iniciante','intermediate'=>'Intermediário','a
                 <h3>Metodologia configurável</h3>
                 <p><strong>Módulos:</strong> <?= ($settings['module_access_mode'] ?? 'free') === 'sequential' ? 'sequenciais' : 'livres' ?></p>
                 <p><strong>Aulas:</strong> <?= ($settings['lesson_access_mode'] ?? 'sequential') === 'free' ? 'livres' : 'sequenciais' ?></p>
+                <?php $completionLabels = ['quiz'=>'quiz/exercício','lab'=>'laboratório','reading'=>'leitura']; ?>
+                <p><strong>Conclusão das aulas:</strong> <?= e($completionLabels[$settings['lesson_completion_mode'] ?? 'quiz'] ?? 'quiz/exercício') ?></p>
+                <p><strong>Laboratório:</strong> <?= ($settings['lab_enabled'] ?? '0') === '1' ? 'habilitado' : 'desabilitado' ?></p>
                 <p><strong>Exercícios:</strong> <?= ($settings['exercises_enabled'] ?? '1') === '1' ? 'habilitados' : 'desabilitados' ?></p>
                 <p><strong>Simulados:</strong> <?= ($settings['simulations_enabled'] ?? '1') === '1' ? 'habilitados' : 'desabilitados' ?></p>
             </div>
