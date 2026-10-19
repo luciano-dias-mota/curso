@@ -15,6 +15,7 @@ $adminPath = '/' . trim($adminPath, '/');
 
 $section = 'home';
 if (str_starts_with($adminPath, '/admin/cursos')) $section = 'courses';
+elseif (str_starts_with($adminPath, '/admin/matriculas')) $section = 'enrollments';
 elseif (str_starts_with($adminPath, '/admin/usuarios')) $section = 'users';
 elseif (str_starts_with($adminPath, '/admin/conteudo') || str_starts_with($adminPath, '/admin/aulas') || str_starts_with($adminPath, '/admin/videos')) $section = 'content';
 elseif (str_starts_with($adminPath, '/admin/questoes')) $section = 'questions';
@@ -70,6 +71,9 @@ $error = Session::pullFlash('error');
             <a class="ld-admin-nav-item <?= $section === 'users' ? 'is-active' : '' ?>" href="<?= e(url('/admin/usuarios')) ?>">
                 <span class="ld-admin-nav-icon">♙</span><span>Alunos</span>
             </a>
+            <a class="ld-admin-nav-item <?= $section === 'enrollments' ? 'is-active' : '' ?>" href="<?= e(url('/admin/matriculas')) ?>">
+                <span class="ld-admin-nav-icon">✓</span><span>Matrículas</span>
+            </a>
             <a class="ld-admin-nav-item <?= $section === 'reports' ? 'is-active' : '' ?>" href="<?= e(url('/admin/relatorios')) ?>">
                 <span class="ld-admin-nav-icon">▥</span><span>Relatórios</span>
             </a>
@@ -122,6 +126,7 @@ $error = Session::pullFlash('error');
     <a class="<?= $section === 'courses' ? 'is-active' : '' ?>" href="<?= e(url('/admin/cursos')) ?>"><span>◫</span><small>Cursos</small></a>
     <a class="<?= $section === 'questions' ? 'is-active' : '' ?>" href="<?= e(url('/admin/questoes')) ?>"><span>?</span><small>Questões</small></a>
     <a class="<?= $section === 'users' ? 'is-active' : '' ?>" href="<?= e(url('/admin/usuarios')) ?>"><span>♙</span><small>Alunos</small></a>
+    <a class="<?= $section === 'enrollments' ? 'is-active' : '' ?>" href="<?= e(url('/admin/matriculas')) ?>"><span>✓</span><small>Matrículas</small></a>
     <form action="<?= e(url('/logout')) ?>" method="post"><?= Csrf::input() ?><button type="submit"><span>↪</span><small>Sair</small></button></form>
 </nav>
 </body>
