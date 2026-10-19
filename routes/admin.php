@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Controllers\Admin\AdminOverviewController;
 use App\Controllers\Admin\DashboardController;
+use App\Controllers\Admin\EnrollmentController;
 use App\Controllers\Admin\CourseController as AdminCourseController;
 use App\Controllers\Admin\CurriculumController;
 use App\Controllers\Admin\LessonContentController;
@@ -40,6 +41,12 @@ $router->post('/admin/cursos/{id}/fases/{phaseId}/aulas', [CurriculumController:
     ->middleware(['auth', 'admin', 'csrf']);
 $router->get('/admin/cursos/{id}', [AdminCourseController::class, 'show'])
     ->middleware(['auth', 'admin']);
+
+// Gestão centralizada de matrículas / liberação de cursos.
+$router->get('/admin/matriculas', [EnrollmentController::class, 'index'])
+    ->middleware(['auth', 'admin']);
+$router->post('/admin/matriculas', [EnrollmentController::class, 'update'])
+    ->middleware(['auth', 'admin', 'csrf']);
 
 // Gestão de alunos.
 $router->get('/admin/usuarios', [StudentController::class, 'index'])
