@@ -114,8 +114,6 @@ if (!$apply) {
 }
 
 try {
-    $pdo->beginTransaction();
-
     if (!columnExists($pdo, 'phases', 'is_required')) {
         $pdo->exec(
             "ALTER TABLE phases
@@ -210,17 +208,12 @@ try {
     );
     $platformName->execute();
 
-    $pdo->commit();
-
     echo "\n[OK] Estrutura multi-curso aplicada.\n";
     echo "[OK] Colunas de conteúdo obrigatório sincronizadas.\n";
     echo "[OK] Configurações por curso disponíveis.\n";
     echo "[OK] Conquistas podem ser globais ou vinculadas a um curso.\n";
     echo "[OK] Índice de matrículas otimizado para múltiplos cursos.\n";
 } catch (Throwable $e) {
-    if ($pdo->inTransaction()) {
-        $pdo->rollBack();
-    }
     fwrite(STDERR, "\nERRO: {$e->getMessage()}\n");
     exit(1);
 }
