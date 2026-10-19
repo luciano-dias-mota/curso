@@ -85,9 +85,9 @@ $manifestJson = json_encode(
 </section>
 
 <script type="application/json" id="lab-manifest"><?= $manifestJson ?: '{}' ?></script>
-<script type="module" src="<?= e(url('/assets/js/lab-runtime.js')) ?>"></script>
 <?php foreach ($assets as $asset): ?>
     <?php if (is_string($asset) && str_starts_with($asset, '/assets/')): ?>
         <script type="module" src="<?= e(url($asset)) ?>"></script>
     <?php endif; ?>
 <?php endforeach; ?>
+<script type="module" src="<?= e(url('/assets/js/lab-runtime.js')) ?>"></script>
