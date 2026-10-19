@@ -46,22 +46,20 @@ $firstName = explode(' ', trim((string) ($user['name'] ?? 'Aluno')))[0];
 <body class="student-body <?= $isLesson ? 'page-lesson' : '' ?> <?= $isQuiz ? 'page-quiz' : '' ?> <?= $isSimulation ? 'page-simulation' : '' ?> <?= $isSimulationHub ? 'page-simulation-hub' : '' ?> <?= $isExercise ? 'page-exercise' : '' ?> <?= $isNotes ? 'page-notes' : '' ?>">
 <div class="academy-app-frame">
     <aside class="academy-sidebar" aria-label="Navegação principal">
-        <a class="sidebar-brand" href="<?= e(url('/dashboard')) ?>" aria-label="PMMT Academy">
+        <a class="sidebar-brand" href="<?= e(url('/dashboard')) ?>" aria-label="Curso MI">
             <span class="sidebar-brand-shield">✦</span>
             <span>
-                <strong>LD</strong>
-                <small>ACADEMY</small>
+                <strong>CURSO</strong>
+                <small>MI</small>
             </span>
         </a>
 
         <nav class="sidebar-menu">
             <a class="<?= $isDashboard ? 'active' : '' ?>" href="<?= e(url('/dashboard')) ?>"><span>⌂</span>Início</a>
-            <a class="<?= $isLesson ? 'active' : '' ?>" href="<?= e(url('/dashboard#trilhas')) ?>"><span>▣</span>Minhas Aulas</a>
+            <a href="<?= e(url('/dashboard#meus-cursos')) ?>"><span>▣</span>Meus Cursos</a>
             <a class="<?= $isSimulation ? 'active' : '' ?>" href="<?= e(url('/simulados')) ?>"><span>◉</span>Simulados</a>
             <a class="<?= $isExercise ? 'active' : '' ?>" href="<?= e(url('/exercicios')) ?>"><span>✓</span>Exercícios</a>
-            <a href="<?= e(url('/dashboard#missoes')) ?>"><span>✥</span>Missões</a>
-            <a href="<?= e(url('/dashboard#conquistas')) ?>"><span>♙</span>Conquistas</a>
-            <a href="<?= e(url('/dashboard#desempenho')) ?>"><span>▥</span>Meu Desempenho</a>
+            <a href="<?= e(url('/dashboard#resumo')) ?>"><span>▥</span>Resumo geral</a>
             <a class="<?= $isNotes ? 'active' : '' ?>" href="<?= e(url('/anotacoes')) ?>"><span>□</span>Anotações</a>
             <a href="<?= e(url('/dashboard#perfil')) ?>"><span>♧</span>Comunidade</a>
         </nav>
@@ -80,7 +78,7 @@ $firstName = explode(' ', trim((string) ($user['name'] ?? 'Aluno')))[0];
     <div class="academy-workspace">
         <header class="academy-commandbar">
             <a class="mobile-brand" href="<?= e(url('/dashboard')) ?>">
-                <span>✦</span><strong>PMMT <em>ACADEMY</em></strong>
+                <span>✦</span><strong>CURSO <em>MI</em></strong>
             </a>
 
             <label class="academy-search" aria-label="Buscar na tela atual">
@@ -106,7 +104,7 @@ $firstName = explode(' ', trim((string) ($user['name'] ?? 'Aluno')))[0];
 
 <nav class="mobile-bottom-nav" aria-label="Navegação móvel">
     <a class="<?= $isDashboard ? 'active' : '' ?>" href="<?= e(url('/dashboard')) ?>"><span>⌂</span><small>Início</small></a>
-    <a class="<?= $isLesson ? 'active' : '' ?>" href="<?= e(url('/dashboard#trilhas')) ?>"><span>▣</span><small>Aulas</small></a>
+    <a href="<?= e(url('/dashboard#meus-cursos')) ?>"><span>▣</span><small>Cursos</small></a>
     <a class="<?= $isExercise ? 'active' : '' ?>" href="<?= e(url('/exercicios')) ?>"><span>✓</span><small>Exercícios</small></a>
     <a class="<?= $isSimulation ? 'active' : '' ?>" href="<?= e(url('/simulados')) ?>"><span>◉</span><small>Simulados</small></a>
     <a class="<?= $isNotes ? 'active' : '' ?>" href="<?= e(url('/anotacoes')) ?>"><span>□</span><small>Notas</small></a>
