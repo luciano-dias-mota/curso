@@ -1,0 +1,236 @@
+{
+  "format_version": 1,
+  "title": "CTB - questões CEBRASPE sobre Sistema Nacional de Trânsito",
+  "legal_basis": {
+    "law": "Lei nº 9.503/1997 - Código de Trânsito Brasileiro",
+    "official_source": "Planalto - texto compilado",
+    "verified_at": "2026-10-19",
+    "note": "Gabaritos revisados contra a redação compilada vigente em 19/10/2026."
+  },
+  "target": {
+    "module_slug": "modulo-8-legislacao-profissional-eca-maria-da-penha-juizados-ctb-crimes-ambientais-e-lei-de-drogas",
+    "phase_slug": "4-ctb-mapa-mental-fornecido"
+  },
+  "selection": {
+    "received": 10,
+    "selected": 10,
+    "excluded": []
+  },
+  "items": [
+    {
+      "source_key": "CTB-CEBRASPE-SNT-01",
+      "origin": "CEBRASPE",
+      "question_type": "multiple_choice",
+      "statement": "(CEBRASPE) Julgue os itens subsequentes com respeito ao SNT.\n\nI Os órgãos e entidades componentes do SNT respondem, no âmbito das respectivas competências, objetivamente, por danos causados aos cidadãos em virtude de ação, omissão ou erro na execução e manutenção de programas, projetos e serviços que garantam o exercício do direito do trânsito seguro.\n\nII O SNT é o conjunto de órgãos e entidades da União, dos estados, do DF e dos municípios que tem por finalidade o exercício das atividades de planejamento, administração, normatização, pesquisa, registro e licenciamento de veículos, formação, habilitação e reciclagem de condutores, educação, engenharia, operação do sistema viário, policiamento, fiscalização, julgamento de infrações e de recursos e aplicação de penalidades.\n\nIII Compõem o SNT: o CONTRAN, os CETRAN e o CONTRANDIFE, os órgãos e entidades executivos de trânsito e rodoviários da União, dos estados, do DF e dos municípios, a PRF, as polícias militares dos estados e do DF e as JARI.\n\nIV As Câmaras Temáticas, órgãos técnicos vinculados ao CONTRAN, são integradas por especialistas e têm como objetivo estudar e oferecer sugestões e embasamento técnico sobre assuntos específicos para decisões daquele colegiado.\n\nA quantidade de itens certos é igual a:",
+      "difficulty": "hard",
+      "explanation": "Gabarito: 4. Os quatro itens permanecem compatíveis com a redação vigente: art. 1º, § 3º; art. 5º; art. 7º; e art. 13 do CTB.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "0.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "1.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "2.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "3.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "4.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "source_key": "CTB-CEBRASPE-SNT-02",
+      "origin": "CEBRASPE",
+      "question_type": "true_false",
+      "statement": "(CEBRASPE) Simone, multada pelo DETRAN/DF por infração à legislação de trânsito, recorreu da decisão proferida pela JARI. Nessa situação, compete ao CONTRANDIFE julgar o recurso.",
+      "difficulty": "medium",
+      "explanation": "Gabarito: CERTO. O art. 14, V, a, atribui aos CETRAN e ao CONTRANDIFE o julgamento dos recursos contra decisões das JARI.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Certo",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Errado",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "source_key": "CTB-CEBRASPE-SNT-03",
+      "origin": "CEBRASPE",
+      "question_type": "true_false",
+      "statement": "(CEBRASPE) Compete ao órgão máximo executivo de trânsito da União supervisionar a implantação de projetos e programas relacionados com a engenharia de tráfego, visando à uniformidade de procedimento.",
+      "difficulty": "medium",
+      "explanation": "Gabarito: CERTO. A competência consta do art. 19, V, do CTB.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Certo",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Errado",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "source_key": "CTB-CEBRASPE-SNT-04",
+      "origin": "CEBRASPE",
+      "question_type": "true_false",
+      "statement": "(CEBRASPE) A Polícia Rodoviária Federal compõe o Sistema Nacional de Trânsito, mas as polícias militares dos estados não compõem esse sistema.",
+      "difficulty": "medium",
+      "explanation": "Gabarito: ERRADO. O art. 7º inclui tanto a PRF quanto as Polícias Militares dos Estados e do Distrito Federal.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Certo",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Errado",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "source_key": "CTB-CEBRASPE-SNT-05",
+      "origin": "CEBRASPE",
+      "question_type": "true_false",
+      "statement": "(CEBRASPE) O presidente do CONTRANDIFE é nomeado pelo governador do Distrito Federal.",
+      "difficulty": "medium",
+      "explanation": "Gabarito: CERTO. O art. 15 dispõe que os presidentes dos CETRAN e do CONTRANDIFE são nomeados pelos Governadores dos Estados e do Distrito Federal, respectivamente.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Certo",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Errado",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "source_key": "CTB-CEBRASPE-SNT-06",
+      "origin": "CEBRASPE",
+      "question_type": "true_false",
+      "statement": "(CEBRASPE) Os municípios integram automaticamente o Sistema Nacional de Trânsito.",
+      "difficulty": "medium",
+      "explanation": "Gabarito: ERRADO. O art. 24, § 2º, exige integração ao SNT para o exercício das competências municipais, por órgão/entidade executivo de trânsito ou diretamente pela prefeitura, conforme o art. 333.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Certo",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Errado",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "source_key": "CTB-CEBRASPE-SNT-07",
+      "origin": "CEBRASPE",
+      "question_type": "true_false",
+      "statement": "(CEBRASPE) O CONTRAN, na condição de órgão máximo do SNT, é responsável por estabelecer, em conjunto com as polícias militares, as diretrizes para o policiamento ostensivo de trânsito.",
+      "difficulty": "hard",
+      "explanation": "Gabarito: ERRADO. A competência de estabelecer, em conjunto com as Polícias Militares, as diretrizes para o policiamento ostensivo de trânsito é dos órgãos ou entidades executivos de trânsito dos Estados e do Distrito Federal, conforme art. 22, IV.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Certo",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Errado",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "source_key": "CTB-CEBRASPE-SNT-08",
+      "origin": "CEBRASPE",
+      "question_type": "true_false",
+      "statement": "(CEBRASPE) Compete à PMDF executar a fiscalização de trânsito, independentemente de convênio.",
+      "difficulty": "medium",
+      "explanation": "Gabarito: ERRADO. O art. 23, III, prevê que a Polícia Militar executa fiscalização de trânsito quando e conforme convênio firmado.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Certo",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Errado",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "source_key": "CTB-CEBRASPE-SNT-09",
+      "origin": "CEBRASPE",
+      "question_type": "true_false",
+      "statement": "(CEBRASPE) A Carteira Nacional de Habilitação é expedida pelos respectivos CETRAN, dos estados, ou pelo CONTRANDIFE, do Distrito Federal.",
+      "difficulty": "hard",
+      "explanation": "Gabarito: ERRADO. CETRAN/CONTRANDIFE não são os órgãos expedidores da CNH. O art. 19, VII, atribui a expedição ao órgão máximo executivo de trânsito da União mediante delegação aos órgãos executivos dos Estados e do Distrito Federal; o art. 22, II, disciplina a atuação desses órgãos executivos estaduais/distrital.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Certo",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Errado",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "source_key": "CTB-CEBRASPE-SNT-10",
+      "origin": "CEBRASPE",
+      "question_type": "true_false",
+      "statement": "(CEBRASPE) A PMDF compõe o Sistema Nacional de Trânsito.",
+      "difficulty": "medium",
+      "explanation": "Gabarito: CERTO. O art. 7º, VI, inclui as Polícias Militares dos Estados e do Distrito Federal no SNT.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Certo",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Errado",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}
