@@ -19,6 +19,7 @@ final class CourseSettingsService
         'notes_enabled' => '1',
         'certificate_enabled' => '0',
         'lab_enabled' => '0',
+        'lab_engine_key' => '',
     ];
 
     public static function defaults(): array
