@@ -71,6 +71,10 @@ final class AuthController extends Controller
             (new UserAccessMonitor())->registerLogin($studentId);
         }
 
+        if (Auth::isAdmin()) {
+            $this->redirect('/admin');
+        }
+
         $this->redirect('/dashboard');
     }
 
