@@ -607,11 +607,16 @@ final class QuizService
                 'Checkpoint da fase aprovado'
             );
 
-            // Dentro do módulo a sequência continua obrigatória: somente a
-            // próxima fase é liberada após aprovação. Os demais módulos do
-            // curso já permanecem disponíveis independentemente desta fase.
+            // A fase seguinte continua sendo liberada em sequência. Em seguida,
+            // reconciliamos a matrícula para aplicar as preferências do curso,
+            // como aulas livres dentro da fase recém-desbloqueada.
             $this->unlockNextPhaseOnly($pdo, $userId, $phaseId, (int) $attempt['module_id']);
             $this->refreshModuleProgress($pdo, $userId, (int) $attempt['module_id']);
+            (new ProgressInitializer())->initializeEnrollment(
+                $userId,
+                (int) $attempt['course_id'],
+                $pdo
+            );
             return;
         }
 
@@ -641,13 +646,18 @@ final class QuizService
                 'Módulo aprovado na avaliação final'
             );
 
-            // Os módulos já são livres desde a matrícula. A avaliação final
-            // continua obrigatória para CONCLUIR este módulo, mas não serve
-            // mais como chave de acesso ao módulo seguinte.
             $this->refreshCourseProgress(
                 $pdo,
                 $userId,
                 (int) $attempt['course_id']
+            );
+
+            // Reaplica a política de navegação do curso. Em cursos livres nada
+            // muda; em cursos sequenciais isto libera o próximo módulo.
+            (new ProgressInitializer())->initializeEnrollment(
+                $userId,
+                (int) $attempt['course_id'],
+                $pdo
             );
         }
     }
