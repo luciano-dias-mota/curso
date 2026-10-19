@@ -2791,6 +2791,237 @@
               "is_correct": false
             }
           ]
+        },
+        {
+          "source_key": "EDITAL26-P025-Q08",
+          "statement": "(UFMT - Portaria 025/25) Pelo art. 3º, § 1º, I, a autoridade delegada deve:",
+          "difficulty": "medium",
+          "explanation": "Gabarito: B. Deve expedir ofício ao comandante imediato, com cópia da portaria, solicitando as medidas administrativas previstas na norma.",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Aguardar a conclusão do relatório final.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "Expedir ofício ao comandante imediato solicitando as medidas administrativas previstas na portaria.",
+              "is_correct": true
+            },
+            {
+              "label": "C",
+              "text": "Encaminhar o caso diretamente ao Judiciário.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "Substituir o procedimento por conciliação.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "Arquivar o caso se não houver lesão aparente.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-P025-Q09",
+          "statement": "(UFMT - Portaria 025/25) Durante a suspensão prevista no art. 3º, § 3º, o policial militar:",
+          "difficulty": "medium",
+          "explanation": "Gabarito: C. Deve ser escalado em funções administrativas e não pode portar arma, salvo decisão judicial em sentido diverso.",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Fica automaticamente afastado do serviço.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "Mantém escala operacional sem restrições.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "Deve ser escalado em funções administrativas, sem porte, salvo decisão judicial em sentido diverso.",
+              "is_correct": true
+            },
+            {
+              "label": "D",
+              "text": "Passa à disposição exclusiva do Judiciário.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "É transferido compulsoriamente de unidade.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-P025-Q10",
+          "statement": "(UFMT - Portaria 025/25) Segundo o art. 6º, § 1º, a restituição somente pode ocorrer mediante:",
+          "difficulty": "hard",
+          "explanation": "Gabarito: D. Exige parecer favorável da autoridade delegante devidamente homologado pelo Corregedor-Geral.",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Pedido simples do comandante imediato.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "Parecer exclusivo da Diretoria de Saúde.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "Encerramento automático do procedimento.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "Parecer favorável da autoridade delegante, homologado pelo Corregedor-Geral.",
+              "is_correct": true
+            },
+            {
+              "label": "E",
+              "text": "Trânsito em julgado de processo civil.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-P025-Q11",
+          "statement": "Segundo o art. 7º da Portaria nº 025/QCG/2025, a expressão “até a remessa dos autos à autoridade delegante” representa:",
+          "difficulty": "hard",
+          "explanation": "Gabarito: D. A norma afasta direito subjetivo e trata a situação como mera expectativa de direito condicionada.",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Direito subjetivo imediato.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "Obrigação automática da Administração.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "Revogação de toda restrição judicial.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "Mera expectativa de direito condicionada ao disposto na Portaria.",
+              "is_correct": true
+            },
+            {
+              "label": "E",
+              "text": "Regra aplicável apenas a inativos.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-P025-Q12",
+          "statement": "Para fins do art. 8º da Portaria nº 025/QCG/2025, a abrangência institucional mencionada na norma alcança:",
+          "difficulty": "hard",
+          "explanation": "Gabarito: E. O art. 8º referencia todos os registros indicados nos sistemas SIRGAF/SIGAP e/ou SIGMA.",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Somente bens de dotação coletiva.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "Apenas bens de uso restrito da chefia.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "Somente bens particulares.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "Somente o item relacionado diretamente ao fato.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "Todos os registros abrangidos pelo SIRGAF/SIGAP e/ou SIGMA.",
+              "is_correct": true
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-P025-Q13",
+          "statement": "O art. 9º determina providências institucionais à:",
+          "difficulty": "medium",
+          "explanation": "Gabarito: A. O dispositivo dirige a determinação à DGP e à Superintendência de Apoio Logístico e Patrimônio.",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Diretoria de Gestão de Pessoas e Superintendência de Apoio Logístico e Patrimônio.",
+              "is_correct": true
+            },
+            {
+              "label": "B",
+              "text": "SJD exclusivamente.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "Diretoria de Saúde exclusivamente.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "CAS exclusivamente.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "Tribunal de Justiça.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-P025-Q14",
+          "statement": "O art. 10 da Portaria nº 025/QCG/2025 determina que autoridades delegantes e encarregados observem, no que couber:",
+          "difficulty": "medium",
+          "explanation": "Gabarito: B. O dispositivo remete expressamente à Lei nº 11.340/2006, Lei Maria da Penha.",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Somente o Código de Trânsito Brasileiro.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "A Lei nº 11.340/2006, Lei Maria da Penha.",
+              "is_correct": true
+            },
+            {
+              "label": "C",
+              "text": "Somente a Lei de Drogas.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "Somente a Lei de Contravenções.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "Somente o Código Civil.",
+              "is_correct": false
+            }
+          ]
         }
       ]
     }
