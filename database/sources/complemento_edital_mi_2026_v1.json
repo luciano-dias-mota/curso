@@ -2560,7 +2560,239 @@
           ]
         }
       ],
-      "questions": []
+      "questions": [
+        {
+          "source_key": "EDITAL26-P025-Q01",
+          "statement": "(UFMT - Portaria 025/25) O art. 3º, § 4º, veda a instauração desses procedimentos ou processos por:",
+          "difficulty": "medium",
+          "explanation": "Gabarito: C. A vedação recai sobre as Seções de Justiça e Disciplina (SJDs).",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Corregedoria-Geral.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "DJDs.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "SJDs.",
+              "is_correct": true
+            },
+            {
+              "label": "D",
+              "text": "DGP.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "Comando-Geral.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-P025-Q02",
+          "statement": "(UFMT - Portaria 025/25) Pelo art. 3º, § 1º, II, o comandante imediato deve apresentar o militar ao setor de identificação para:",
+          "difficulty": "medium",
+          "explanation": "Gabarito: B. A finalidade é confeccionar nova identidade funcional sem a prerrogativa relacionada ao porte.",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Coletar impressões para inquérito sanitário.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "Confeccionar nova identidade funcional sem a prerrogativa relacionada ao porte.",
+              "is_correct": true
+            },
+            {
+              "label": "C",
+              "text": "Transferir compulsoriamente para a reserva.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "Cadastrar novo equipamento particular.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "Emitir salvo-conduto provisório.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-P025-Q03",
+          "statement": "(UFMT - Portaria 025/25) Constatadas irregularidades dos policiais militares que atenderam a ocorrência, o art. 5º, parágrafo único, determina:",
+          "difficulty": "medium",
+          "explanation": "Gabarito: D. As irregularidades devem constar do relatório para posterior apuração em autos apartados.",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Ignorar o fato.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "Decretar segredo absoluto.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "Remeter diretamente ao Tribunal de Justiça.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "Mencionar as irregularidades no relatório para posterior apuração em autos apartados.",
+              "is_correct": true
+            },
+            {
+              "label": "E",
+              "text": "Arquivar a ocorrência.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-P025-Q04",
+          "statement": "(UFMT - Portaria 025/25) Os arts. 1º e 2º determinam, em essência:",
+          "difficulty": "medium",
+          "explanation": "Gabarito: A. A norma exige priorização e encaminhamento imediato conforme a competência.",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Priorização dos procedimentos e encaminhamento imediato conforme a competência.",
+              "is_correct": true
+            },
+            {
+              "label": "B",
+              "text": "Sobrestamento automático por 180 dias.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "Arquivamento sumário.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "Remessa exclusiva às SJDs.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "Encaminhamento apenas à Diretoria de Saúde.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-P025-Q05",
+          "statement": "(UFMT - Portaria 025/25) Segundo o art. 11, § 2º, fazem jus ao atendimento prioritário:",
+          "difficulty": "medium",
+          "explanation": "Gabarito: E. O § 2º contempla a policial militar do sexo feminino e as mulheres dependentes de militares.",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Apenas oficiais da ativa.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "Exclusivamente parentes de oficiais superiores.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "Somente testemunhas.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "Apenas integrantes de SJD.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "A policial militar do sexo feminino e as mulheres dependentes de militares.",
+              "is_correct": true
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-P025-Q06",
+          "statement": "(UFMT - Portaria 025/25) Ao tomar ciência de fato relacionado a violência doméstica, o Comandante Regional deve:",
+          "difficulty": "medium",
+          "explanation": "Gabarito: A. Deve determinar a instauração sem emissão de juízo de valor prévio.",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Determinar a instauração sem emissão de juízo de valor prévio.",
+              "is_correct": true
+            },
+            {
+              "label": "B",
+              "text": "Aguardar manifestação da DGP.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "Realizar conciliação antes de qualquer providência.",
+              "is_correct": false
+            },
+            {
+              "label": "D",
+              "text": "Emitir parecer definitivo de culpabilidade.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "Arquivar a notícia.",
+              "is_correct": false
+            }
+          ]
+        },
+        {
+          "source_key": "EDITAL26-P025-Q07",
+          "statement": "Nos termos do art. 12, a Portaria nº 025/QCG/2025:",
+          "difficulty": "medium",
+          "explanation": "Gabarito: C. Entra em vigor na data da publicação e revoga a Portaria nº 74/DGP/QCG/PMMT, de 3 de março de 2015, e disposições em contrário.",
+          "alternatives": [
+            {
+              "label": "A",
+              "text": "Entra em vigor 180 dias depois.",
+              "is_correct": false
+            },
+            {
+              "label": "B",
+              "text": "Não revoga nenhum ato anterior.",
+              "is_correct": false
+            },
+            {
+              "label": "C",
+              "text": "Entra em vigor na publicação e revoga a Portaria nº 74/DGP/QCG/PMMT, de 3/3/2015, e disposições em contrário.",
+              "is_correct": true
+            },
+            {
+              "label": "D",
+              "text": "Revoga o Decreto nº 1.172/2021.",
+              "is_correct": false
+            },
+            {
+              "label": "E",
+              "text": "Revoga a Lei Maria da Penha.",
+              "is_correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }
