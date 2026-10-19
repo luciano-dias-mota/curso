@@ -356,6 +356,11 @@ final class CourseController extends Controller
             $completionMode = 'quiz';
         }
 
+        $labEnabled = $request->input('lab_enabled') ? '1' : '0';
+        if ($completionMode === 'lab') {
+            $labEnabled = '1';
+        }
+
         return [
             'module_access_mode' => $moduleMode,
             'lesson_access_mode' => $lessonMode,
@@ -364,7 +369,7 @@ final class CourseController extends Controller
             'simulations_enabled' => $request->input('simulations_enabled') ? '1' : '0',
             'notes_enabled' => $request->input('notes_enabled') ? '1' : '0',
             'certificate_enabled' => $request->input('certificate_enabled') ? '1' : '0',
-            'lab_enabled' => $request->input('lab_enabled') ? '1' : '0',
+            'lab_enabled' => $labEnabled,
         ];
     }
 
