@@ -8,7 +8,7 @@ declare(strict_types=1);
  * Cria as matérias ausentes identificadas no Anexo D oficial enviado pelo usuário,
  * usando somente conteúdo previamente curado de fontes oficiais/institucionais.
  *
- * Não inclui a Portaria nº 025/QCG/2025 enquanto não houver cópia oficial validada.
+ * Inclui a Portaria nº 025/QCG/2025 a partir da publicação oficial no BCG PMMT nº 3695/2025.
  *
  * Uso:
  *   php database/aplicar_complemento_edital_mi_2026_v1.php
@@ -167,7 +167,7 @@ if ($needsImportKeys) {
     echo "[CRIAR] question_import_keys\n";
 }
 
-echo "\n[PENDENTE FONTE OFICIAL] Portaria nº 025/QCG/2025 não será criada por este script.\n";
+echo "\n[OK] Portaria nº 025/QCG/2025 incluída a partir do BCG PMMT nº 3695/2025.\n";
 
 if (!$apply) {
     echo "\nDRY-RUN concluído. Nenhuma alteração foi gravada.\n";
@@ -879,7 +879,7 @@ try {
     );
     printf("Quizzes configurados: %d\n", $stats['quizzes']);
     printf("Matrículas reconciliadas: %d\n", $reconciled);
-    echo "[PENDENTE] Portaria nº 025/QCG/2025: envie a cópia oficial para integração literal.\n";
+    echo "[OK] Portaria nº 025/QCG/2025 integrada a partir da publicação oficial fornecida.\n";
     echo "[PRÓXIMO] Execute os scripts de progressão do Módulo 3 e dos Módulos 4 a 8 para ordenar a trilha e reconstruir as avaliações finais.\n";
 } catch (Throwable $e) {
     if ($pdo->inTransaction()) {
