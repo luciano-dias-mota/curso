@@ -351,9 +351,15 @@ final class CourseController extends Controller
             $lessonMode = 'sequential';
         }
 
+        $completionMode = (string) $request->input('lesson_completion_mode', 'quiz');
+        if (!in_array($completionMode, ['reading', 'quiz', 'lab'], true)) {
+            $completionMode = 'quiz';
+        }
+
         return [
             'module_access_mode' => $moduleMode,
             'lesson_access_mode' => $lessonMode,
+            'lesson_completion_mode' => $completionMode,
             'exercises_enabled' => $request->input('exercises_enabled') ? '1' : '0',
             'simulations_enabled' => $request->input('simulations_enabled') ? '1' : '0',
             'notes_enabled' => $request->input('notes_enabled') ? '1' : '0',
