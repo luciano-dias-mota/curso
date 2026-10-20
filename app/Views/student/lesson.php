@@ -7,6 +7,16 @@ use App\Services\PedagogyService;
 $error = Session::pullFlash('error');
 $success = Session::pullFlash('success');
 $completionMode = (string) ($completionMode ?? 'quiz');
+$isPostgresLesson = (string) Session::get('active_course_experience', 'generic') === 'postgresql';
+$courseId = (int) ($lesson['course_id'] ?? 0);
+
+$lessonBasePath = $isPostgresLesson && $courseId > 0
+    ? '/curso/' . $courseId . '/aula/' . (int) $lesson['id']
+    : '/aula/' . (int) $lesson['id'];
+
+$phasePath = $isPostgresLesson && $courseId > 0
+    ? '/curso/' . $courseId . '/fase/' . (int) $lesson['phase_id']
+    : '/fase/' . (int) $lesson['phase_id'];
 
 $optional = (int) ($lesson['is_required'] ?? 1) === 0
     || (int) ($lesson['phase_required'] ?? 1) === 0;
@@ -224,11 +234,11 @@ $renderQuestionPreview = static function (string $text): string {
 };
 
 $prevUrl = $currentIndex > 1
-    ? url('/aula/' . $lesson['id'] . '?bloco=' . ($currentIndex - 1))
+    ? url($lessonBasePath . '?bloco=' . ($currentIndex - 1))
     : null;
 
 $nextUrl = $currentIndex < $totalBlocks
-    ? url('/aula/' . $lesson['id'] . '?bloco=' . ($currentIndex + 1))
+    ? url($lessonBasePath . '?bloco=' . ($currentIndex + 1))
     : null;
 ?>
 
@@ -236,7 +246,7 @@ $nextUrl = $currentIndex < $totalBlocks
 
     <aside class="study-map">
         <div class="study-map-head">
-            <a class="back study-back" href="<?= e(url('/fase/' . $lesson['phase_id'])) ?>">
+            <a class="back study-back" href="<?= e(url($phasePath)) ?>">
                 ← Voltar à fase
             </a>
 
@@ -281,7 +291,7 @@ $nextUrl = $currentIndex < $totalBlocks
 
                 <a
                     class="map-item <?= $number === $currentIndex ? 'active' : '' ?>"
-                    href="<?= e(url('/aula/' . $lesson['id'] . '?bloco=' . $number)) ?>"
+                    href="<?= e(url($lessonBasePath . '?bloco=' . $number)) ?>"
                 >
                     <span><?= $number ?></span>
 
@@ -348,7 +358,7 @@ $nextUrl = $currentIndex < $totalBlocks
                 <?php else: ?>
                     <form
                         class="inline nav-finish-form"
-                        action="<?= e(url('/aula/' . $lesson['id'] . '/concluir')) ?>"
+                        action="<?= e(url($lessonBasePath . '/concluir')) ?>"
                         method="post"
                     >
                         <?= Csrf::input() ?>
