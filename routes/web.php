@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 use App\Controllers\AuthController;
 use App\Controllers\CourseController;
+use App\Controllers\CourseContextController;
 use App\Controllers\DashboardController;
+use App\Controllers\PmmtHomeController;
 use App\Controllers\ExerciseController;
 use App\Controllers\HomeController;
 use App\Controllers\LessonController;
@@ -95,6 +97,12 @@ $router->get('/simulados/tentativa/{id}/revisao', [SimulationController::class, 
     ->middleware(['auth', 'student']);
 
 $router->post('/simulados/tentativa/{id}/abandonar', [SimulationController::class, 'abandon'])
+    ->middleware(['auth', 'student', 'csrf']);
+
+$router->get('/curso/{id}/inicio', [PmmtHomeController::class, 'show'])
+    ->middleware(['auth', 'student']);
+
+$router->post('/curso/sair', [CourseContextController::class, 'leave'])
     ->middleware(['auth', 'student', 'csrf']);
 
 $router->get('/curso/{id}', [CourseController::class, 'show'])
