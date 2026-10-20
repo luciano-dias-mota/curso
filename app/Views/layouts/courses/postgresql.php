@@ -22,10 +22,6 @@ $currentPath = parse_url((string) ($_SERVER['REQUEST_URI'] ?? ''), PHP_URL_PATH)
 $pageTitle = isset($title)
     ? $title . ' • PostgreSQL • LD Academy'
     : 'PostgreSQL • LD Academy';
-
-$navItemClass = static function (string $needle) use ($currentPath): string {
-    return str_contains($currentPath, $needle) ? ' is-active' : '';
-};
 ?>
 <!doctype html>
 <html lang="pt-BR">
@@ -52,35 +48,38 @@ $navItemClass = static function (string $needle) use ($currentPath): string {
             </div>
 
             <nav class="pg-side-nav" aria-label="Navegação do curso">
-                <a class="pg-side-link<?= e($navItemClass('/curso/' . $courseId)) ?>" href="<?= e(url($courseHome)) ?>">
+                <a
+                    class="pg-side-link <?= $currentPath === url($courseHome) ? 'is-active' : '' ?>"
+                    href="<?= e(url($courseHome)) ?>"
+                >
                     <span aria-hidden="true">⌂</span>
                     <strong>Início</strong>
                 </a>
 
-                <a class="pg-side-link is-primary<?= str_contains($currentPath, '/dashboard') ? ' is-active' : '' ?>" href="<?= e(url('/dashboard')) ?>">
+                <a class="pg-side-link is-primary" href="<?= e(url('/dashboard')) ?>">
                     <span aria-hidden="true">◇</span>
                     <strong>Meus Cursos</strong>
                 </a>
 
-                <a class="pg-side-link" href="#">
+                <span class="pg-side-link is-passive">
                     <span aria-hidden="true">▣</span>
                     <strong>Certificados</strong>
-                </a>
+                </span>
 
-                <a class="pg-side-link" href="#">
+                <span class="pg-side-link is-passive">
                     <span aria-hidden="true">▥</span>
                     <strong>Ranking</strong>
-                </a>
+                </span>
 
-                <a class="pg-side-link" href="#">
+                <span class="pg-side-link is-passive">
                     <span aria-hidden="true">♙</span>
                     <strong>Meu Perfil</strong>
-                </a>
+                </span>
 
-                <a class="pg-side-link" href="#">
+                <span class="pg-side-link is-passive">
                     <span aria-hidden="true">?</span>
                     <strong>Ajuda</strong>
-                </a>
+                </span>
             </nav>
 
             <form class="pg-sidebar-logout" method="post" action="<?= e(url('/curso/sair')) ?>">
@@ -95,10 +94,10 @@ $navItemClass = static function (string $needle) use ($currentPath): string {
         <div class="pg-workspace">
             <header class="pg-topbar">
                 <nav class="pg-top-nav" aria-label="Atalhos da plataforma">
-                    <a href="<?= e(url('/dashboard')) ?>"><span>▤</span> Meus Cursos</a>
-                    <span class="pg-top-nav-item"><span>▣</span> Certificados</span>
-                    <span class="pg-top-nav-item"><span>▥</span> Ranking</span>
-                    <span class="pg-top-nav-item"><span>☆</span> Ajuda</span>
+                    <a href="<?= e(url('/dashboard')) ?>"><span aria-hidden="true">▤</span> Meus Cursos</a>
+                    <span class="pg-top-nav-item"><span aria-hidden="true">▣</span> Certificados</span>
+                    <span class="pg-top-nav-item"><span aria-hidden="true">▥</span> Ranking</span>
+                    <span class="pg-top-nav-item"><span aria-hidden="true">☆</span> Ajuda</span>
                 </nav>
 
                 <div class="pg-top-account">
