@@ -194,3 +194,51 @@ composer install --no-dev --optimize-autoloader
 ```
 
 Não troque o site de produção para a feature branch antes dos testes.
+
+## 12. Aplicar isolamento de experiências V2
+
+Depois que a fundação multi-curso V1 já estiver instalada, a evolução seguinte adiciona uma chave explícita de experiência por curso.
+
+Primeiro atualize a branch e rode o dry-run:
+
+```bash
+cd ~/www/cursomi-multicurso
+git pull origin feature/multi-course-platform
+
+php database/aplicar_isolamento_cursos_v2.php
+```
+
+O dry-run deve prever:
+
+```text
+courses.experience_key                         CRIAR/AJUSTAR
+courses.idx_courses_experience_status          CRIAR/AJUSTAR
+Backfill previsto: cursos PMMT -> pmmt; curso PostgreSQL -> postgresql.
+```
+
+A migração não publica cursos nem altera matrículas.
+
+Depois do backup já validado e da revisão do dry-run:
+
+```bash
+php database/aplicar_isolamento_cursos_v2.php --apply --force-production
+```
+
+Confirme:
+
+```bash
+php database/aplicar_isolamento_cursos_v2.php
+```
+
+O esperado é:
+
+```text
+courses.experience_key                         OK
+courses.idx_courses_experience_status          OK
+Cursos experience_key=pmmt: 1
+Cursos experience_key=postgresql: 1
+```
+
+O site atual em `~/www/cursomi` pode continuar no `main`: a coluna nova é aditiva e o código antigo simplesmente a ignora.
+
+A branch multi-curso mais recente só deve ser testada pelo navegador **depois** dessa V2, pois portal, admin e autorização passam a ler `courses.experience_key`.
