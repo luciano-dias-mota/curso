@@ -413,6 +413,12 @@ final class CourseController extends Controller
             'certificate_enabled' => $request->input('certificate_enabled') ? '1' : '0',
             'lab_enabled' => $labEnabled,
             'lab_engine_key' => $labEngineKey,
+            'catalog_preview_enabled' => $request->input('catalog_preview_enabled') ? '1' : '0',
+            'catalog_preview_message' => mb_substr(
+                trim((string) $request->input('catalog_preview_message', '')),
+                0,
+                500
+            ),
         ];
     }
 
