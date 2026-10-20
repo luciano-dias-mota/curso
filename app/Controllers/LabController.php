@@ -9,15 +9,32 @@ use App\Core\Controller;
 use App\Core\Csrf;
 use App\Core\Request;
 use App\Core\Session;
+use App\Services\CourseAccessService;
+use App\Services\CourseLayoutResolver;
 use App\Services\LabService;
 use RuntimeException;
 use Throwable;
 
 final class LabController extends Controller
 {
-    public function show(int $id): void
+    public function show(int $id, ?int $courseId = null): void
     {
         try {
+            $scope = (new CourseAccessService())->requireLabActivity(
+                (int) Auth::id(),
+                $id
+            );
+
+            if ($courseId !== null && $courseId > 0 && $courseId !== (int) $scope['course_id']) {
+                throw new RuntimeException('A atividade não pertence ao curso informado.');
+            }
+
+            Session::put('active_course_id', (int) $scope['course_id']);
+            Session::put(
+                'active_course_experience',
+                (string) ($scope['experience_key'] ?? 'generic')
+            );
+
             $manifest = (new LabService())->manifest((int) Auth::id(), $id);
 
             $this->view('student/lab', [
@@ -25,7 +42,9 @@ final class LabController extends Controller
                 'manifest' => $manifest,
                 'csrfToken' => Csrf::token(),
                 'user' => Auth::user(),
-            ], 'layouts/student');
+            ], (new CourseLayoutResolver())->layoutForKey(
+                (string) ($scope['experience_key'] ?? 'generic')
+            ));
         } catch (RuntimeException $e) {
             Session::flash('error', $e->getMessage());
             $this->redirect('/dashboard');
@@ -36,9 +55,17 @@ final class LabController extends Controller
         }
     }
 
-    public function submit(Request $request, int $id): void
+    public function submit(Request $request, int $id, ?int $courseId = null): void
     {
         try {
+            $scope = (new CourseAccessService())->requireLabActivity(
+                (int) Auth::id(),
+                $id
+            );
+            if ($courseId !== null && $courseId > 0 && $courseId !== (int) $scope['course_id']) {
+                throw new RuntimeException('A atividade não pertence ao curso informado.');
+            }
+
             $payload = $request->all();
             unset($payload['_token']);
 
@@ -63,9 +90,17 @@ final class LabController extends Controller
         }
     }
 
-    public function hint(int $id): void
+    public function hint(int $id, ?int $courseId = null): void
     {
         try {
+            $scope = (new CourseAccessService())->requireLabActivity(
+                (int) Auth::id(),
+                $id
+            );
+            if ($courseId !== null && $courseId > 0 && $courseId !== (int) $scope['course_id']) {
+                throw new RuntimeException('A atividade não pertence ao curso informado.');
+            }
+
             $hint = (new LabService())->nextHint((int) Auth::id(), $id);
 
             $this->json([
