@@ -111,6 +111,53 @@ final class CourseController extends Controller
 
         $modules = $modulesStmt->fetchAll();
 
+        $courseStatsStmt = $pdo->prepare(
+            "SELECT
+                (SELECT COUNT(*)
+                   FROM modules m2
+                  WHERE m2.course_id = :c1
+                    AND m2.status <> 'archived') AS modules_total,
+                (SELECT COUNT(*)
+                   FROM modules m3
+                  WHERE m3.course_id = :c2
+                    AND m3.status = 'published') AS modules_published,
+                (SELECT COUNT(*)
+                   FROM lessons l2
+                   INNER JOIN phases p2 ON p2.id = l2.phase_id
+                   INNER JOIN modules m4 ON m4.id = p2.module_id
+                  WHERE m4.course_id = :c3
+                    AND l2.status <> 'archived') AS lessons_total,
+                (SELECT COUNT(*)
+                   FROM lessons l3
+                   INNER JOIN phases p3 ON p3.id = l3.phase_id
+                   INNER JOIN modules m5 ON m5.id = p3.module_id
+                  WHERE m5.course_id = :c4
+                    AND l3.status = 'published') AS lessons_published,
+                (SELECT COUNT(*)
+                   FROM lab_activities la
+                   INNER JOIN lessons l4 ON l4.id = la.lesson_id
+                   INNER JOIN phases p4 ON p4.id = l4.phase_id
+                   INNER JOIN modules m6 ON m6.id = p4.module_id
+                  WHERE m6.course_id = :c5
+                    AND la.status <> 'archived') AS labs_total,
+                (SELECT COUNT(*)
+                   FROM lab_activities la2
+                   INNER JOIN lessons l5 ON l5.id = la2.lesson_id
+                   INNER JOIN phases p5 ON p5.id = l5.phase_id
+                   INNER JOIN modules m7 ON m7.id = p5.module_id
+                  WHERE m7.course_id = :c6
+                    AND la2.status = 'published') AS labs_published"
+        );
+        $courseStatsStmt->execute([
+            'c1' => $id,
+            'c2' => $id,
+            'c3' => $id,
+            'c4' => $id,
+            'c5' => $id,
+            'c6' => $id,
+        ]);
+        $courseStats = $courseStatsStmt->fetch() ?: [];
+
         foreach ($modules as &$module) {
             $title = (string) ($module['title'] ?? '');
 
@@ -145,6 +192,7 @@ final class CourseController extends Controller
                 'modules' => $modules,
                 'settings' => $settings,
                 'showConstructionModules' => $showConstructionModules,
+                'courseStats' => $courseStats,
             ],
             (new CourseLayoutResolver())->layoutForKey($experience)
         );
