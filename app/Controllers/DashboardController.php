@@ -7,7 +7,7 @@ namespace App\Controllers;
 use App\Core\Auth;
 use App\Core\Controller;
 use App\Core\Database;
-use App\Core\Session;
+use App\Services\CourseContextService;
 use App\Services\CourseExperienceRegistry;
 use PDO;
 
@@ -21,8 +21,7 @@ final class DashboardController extends Controller
 
         // O portal é a fronteira entre experiências de curso.
         // Nunca carregue contexto residual de uma navegação anterior.
-        Session::forget('active_course_id');
-        Session::forget('active_course_experience');
+        (new CourseContextService())->clear();
 
         $pdo = Database::connection();
         $userId = (int) Auth::id();
