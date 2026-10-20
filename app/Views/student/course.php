@@ -90,11 +90,19 @@ if ($isPostgres):
             </div>
         </div>
 
-        <div
-            class="pg-hero-art"
-            role="img"
-            aria-label="Ilustração de PostgreSQL, banco de dados, SQL e circuitos"
-        ></div>
+        <div class="pg-hero-art" aria-hidden="true">
+            <div class="pg-sql-chip">
+                <span>SELECT *</span>
+                <span>FROM dados</span>
+                <span>WHERE ativo = true;</span>
+            </div>
+            <div class="pg-data-cylinder">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <strong class="pg-data-label">SQL</strong>
+        </div>
     </section>
 
     <section class="pg-progress-panel" aria-label="Resumo do progresso">
