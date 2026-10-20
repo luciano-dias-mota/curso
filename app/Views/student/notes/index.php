@@ -8,6 +8,10 @@ $notes = $notes ?? [];
 $options = $options ?? ['courses' => [], 'modules' => [], 'phases' => []];
 $stats = $stats ?? [];
 $filters = $filters ?? ['search' => '', 'courseId' => 0, 'moduleId' => 0];
+$activeCourseId = max(0, (int) ($activeCourseId ?? 0));
+$notesBasePath = $activeCourseId > 0
+    ? '/curso/' . $activeCourseId . '/anotacoes'
+    : '/anotacoes';
 ?>
 <section class="study-tools-page notes-center">
     <?php if ($error): ?><div class="study-alert is-error"><?= e((string) $error) ?></div><?php endif; ?>
@@ -32,7 +36,7 @@ $filters = $filters ?? ['search' => '', 'courseId' => 0, 'moduleId' => 0];
         <section class="study-panel card notes-editor-panel">
             <div class="study-panel-heading"><div><span>NOVA ANOTAÇÃO</span><h2>Registre algo importante</h2></div></div>
 
-            <form class="study-scope-form notes-form" action="<?= e(url('/anotacoes')) ?>" method="post">
+            <form class="study-scope-form notes-form" action="<?= e(url($notesBasePath)) ?>" method="post">
                 <?= Csrf::input() ?>
 
                 <label class="notes-title-field">
@@ -82,7 +86,7 @@ $filters = $filters ?? ['search' => '', 'courseId' => 0, 'moduleId' => 0];
         <section class="study-panel card notes-library-panel">
             <div class="study-panel-heading"><div><span>BIBLIOTECA</span><h2>Minhas anotações</h2></div></div>
 
-            <form class="notes-filter-form" action="<?= e(url('/anotacoes')) ?>" method="get">
+            <form class="notes-filter-form" action="<?= e(url($notesBasePath)) ?>" method="get">
                 <input type="search" name="q" value="<?= e((string) ($filters['search'] ?? '')) ?>" placeholder="Buscar nas anotações...">
                 <select name="course_id">
                     <option value="">Todos os cursos</option>
