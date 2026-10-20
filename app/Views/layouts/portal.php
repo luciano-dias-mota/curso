@@ -25,8 +25,8 @@ $initial = mb_strtoupper(mb_substr((string) ($user['name'] ?? 'E'), 0, 1));
         Não carregamos app.css nem layouts/student.php para impedir que
         futuras alterações de um curso afetem a vitrine da plataforma.
     -->
-    <link rel="stylesheet" href="<?= e(url('/assets/css/portal.css') . '?v=20261020-1') ?>">
-    <script src="<?= e(url('/assets/js/portal.js') . '?v=20261020-1') ?>" defer></script>
+    <link rel="stylesheet" href="<?= e(url('/assets/css/portal.css') . '?v=20261020-2') ?>">
+    <script src="<?= e(url('/assets/js/portal.js') . '?v=20261020-2') ?>" defer></script>
 </head>
 <body class="platform-portal-body">
     <header class="platform-portal-header">
