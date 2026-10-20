@@ -7,7 +7,7 @@ namespace App\Controllers;
 use App\Core\Auth;
 use App\Core\Controller;
 use App\Core\Database;
-use App\Services\CourseExperienceService;
+use App\Services\CourseExperienceRegistry;
 use PDO;
 
 final class DashboardController extends Controller
@@ -133,13 +133,13 @@ final class DashboardController extends Controller
         $myCourses = [];
         $otherCourses = [];
         $completedCourses = 0;
-        $experienceService = new CourseExperienceService();
+        $experienceRegistry = new CourseExperienceRegistry();
 
         foreach ($courses as $course) {
             $courseId = (int) $course['id'];
             $course['continue_lesson'] = $continueByCourse[$courseId] ?? null;
             $course['has_access'] = (int) ($course['has_access'] ?? 0) === 1;
-            $course['entry_path'] = $experienceService->entryPath($course);
+            $course['entry_path'] = $experienceRegistry->entryPath($course);
 
             if ($course['has_access']) {
                 if (($course['progress_status'] ?? '') === 'completed') {
