@@ -10,6 +10,7 @@ use App\Core\Database;
 use App\Core\Session;
 use App\Services\CourseAccessService;
 use App\Services\CourseExperienceRegistry;
+use App\Services\CourseLayoutResolver;
 use App\Services\CourseSettingsService;
 use App\Services\ProgressInitializer;
 use RuntimeException;
@@ -139,7 +140,7 @@ final class CourseController extends Controller
                 'modules' => $modules,
                 'settings' => $settings,
             ],
-            'layouts/student'
+            (new CourseLayoutResolver())->layoutForKey($experience)
         );
     }
 }
