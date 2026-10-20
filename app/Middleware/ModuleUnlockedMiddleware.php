@@ -6,6 +6,7 @@ namespace App\Middleware;
 
 use App\Core\Auth;
 use App\Core\Database;
+use App\Core\Session;
 use App\Core\View;
 use App\Services\CourseAccessService;
 use App\Services\ProgressInitializer;
@@ -38,6 +39,9 @@ final class ModuleUnlockedMiddleware
         }
 
         $courseId = (int) $module['course_id'];
+        Session::put('active_course_id', $courseId);
+        Session::put('active_course_experience', (string) ($module['experience_key'] ?? 'generic'));
+
         $routeCourseId = (int) ($params['courseId'] ?? 0);
         if ($routeCourseId > 0 && $routeCourseId !== $courseId) {
             $this->deny('Este módulo não pertence ao curso informado.');
