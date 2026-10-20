@@ -8,15 +8,9 @@ $errors = Session::pullFlash('errors', []);
 ?>
 <section class="academy-login-card" aria-labelledby="login-title">
     <div class="academy-login-heading">
-        <div>
-            <span class="academy-login-kicker">ÁREA DO ESTUDANTE</span>
-            <h1 id="login-title">LD Academy</h1>
-            <p>Continue sua missão de estudos.</p>
-        </div>
-
-        <div class="academy-login-emblem" aria-hidden="true">
-            <span>LD</span>
-        </div>
+        <span class="academy-login-kicker">ACESSO À PLATAFORMA</span>
+        <h2 id="login-title">Bem-vindo de volta</h2>
+        <p>Entre com seu e-mail e senha para acessar a LD Academy.</p>
     </div>
 
     <form class="academy-login-form" action="<?= e(url('/login')) ?>" method="post" novalidate>
@@ -31,6 +25,7 @@ $errors = Session::pullFlash('errors', []);
                         <path d="m3 7 9 6 9-6"></path>
                     </svg>
                 </span>
+
                 <input
                     id="email"
                     type="email"
@@ -43,6 +38,7 @@ $errors = Session::pullFlash('errors', []);
                     autofocus
                 >
             </div>
+
             <?php if (!empty($errors['email'])): ?>
                 <small class="academy-field-error"><?= e($errors['email'][0]) ?></small>
             <?php endif; ?>
@@ -57,6 +53,7 @@ $errors = Session::pullFlash('errors', []);
                         <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
                     </svg>
                 </span>
+
                 <input
                     id="password"
                     type="password"
@@ -67,20 +64,33 @@ $errors = Session::pullFlash('errors', []);
                     maxlength="255"
                     required
                 >
-                <button class="academy-password-toggle" type="button" data-password-toggle="password" aria-label="Mostrar senha" title="Mostrar senha">
-                    <svg class="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+
+                <button
+                    class="academy-password-toggle"
+                    type="button"
+                    data-password-toggle="password"
+                    aria-label="Mostrar senha"
+                    title="Mostrar senha"
+                >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"></path>
                         <circle cx="12" cy="12" r="2.5"></circle>
                     </svg>
                 </button>
             </div>
+
             <?php if (!empty($errors['password'])): ?>
                 <small class="academy-field-error"><?= e($errors['password'][0]) ?></small>
             <?php endif; ?>
         </div>
 
         <button class="academy-login-submit" type="submit">
-            <span>Entrar</span>
+            <span>Entrar na LD Academy</span>
+            <span aria-hidden="true">→</span>
         </button>
     </form>
+
+    <p class="academy-login-footnote">
+        Acesso restrito a usuários autorizados.
+    </p>
 </section>
