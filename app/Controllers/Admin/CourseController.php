@@ -10,6 +10,7 @@ use App\Core\Database;
 use App\Core\Request;
 use App\Core\Session;
 use App\Lab\LabEngineRegistry;
+use App\Services\CourseExperienceRegistry;
 use App\Services\CourseSettingsService;
 use PDO;
 use RuntimeException;
@@ -26,7 +27,7 @@ final class CourseController extends Controller
         $pdo = Database::connection();
 
         $courses = $pdo->query(
-            "SELECT c.id, c.title, c.slug, c.short_description, c.status, c.difficulty,
+            "SELECT c.id, c.title, c.slug, c.experience_key, c.short_description, c.status, c.difficulty,
                     c.required_score, c.position, c.published_at, c.updated_at,
                     (SELECT COUNT(*) FROM modules m WHERE m.course_id = c.id) AS modules_count,
                     (SELECT COUNT(*) FROM phases p INNER JOIN modules m2 ON m2.id = p.module_id WHERE m2.course_id = c.id) AS phases_count,
@@ -61,6 +62,7 @@ final class CourseController extends Controller
                 'id' => null,
                 'title' => '',
                 'slug' => '',
+                'experience_key' => 'generic',
                 'short_description' => '',
                 'description' => '',
                 'cover_image' => '',
@@ -72,6 +74,7 @@ final class CourseController extends Controller
             ],
             'settings' => CourseSettingsService::defaults(),
             'labEngines' => (new LabEngineRegistry())->descriptors(),
+            'courseExperiences' => (new CourseExperienceRegistry())->descriptors(),
             'isEdit' => false,
         ], 'layouts/admin');
     }
@@ -92,10 +95,10 @@ final class CourseController extends Controller
 
             $stmt = $pdo->prepare(
                 "INSERT INTO courses
-                    (title, slug, short_description, description, cover_image, status,
+                    (title, slug, experience_key, short_description, description, cover_image, status,
                      difficulty, required_score, xp_reward, position, published_at, created_by)
                  VALUES
-                    (:title, :slug, :short_description, :description, :cover_image, :status,
+                    (:title, :slug, :experience_key, :short_description, :description, :cover_image, :status,
                      :difficulty, :required_score, :xp_reward, :position,
                      CASE WHEN :publish_status = 'published' THEN NOW() ELSE NULL END,
                      :created_by)"
@@ -103,6 +106,7 @@ final class CourseController extends Controller
             $stmt->execute([
                 'title' => $data['title'],
                 'slug' => $data['slug'],
+                'experience_key' => $data['experience_key'],
                 'short_description' => $data['short_description'],
                 'description' => $data['description'],
                 'cover_image' => $data['cover_image'],
@@ -170,6 +174,7 @@ final class CourseController extends Controller
             'course' => $this->findCourse($pdo, $id),
             'settings' => (new CourseSettingsService())->all($id, $pdo),
             'labEngines' => (new LabEngineRegistry())->descriptors(),
+            'courseExperiences' => (new CourseExperienceRegistry())->descriptors(),
             'isEdit' => true,
         ], 'layouts/admin');
     }
@@ -193,6 +198,7 @@ final class CourseController extends Controller
                 "UPDATE courses
                  SET title = :title,
                      slug = :slug,
+                     experience_key = :experience_key,
                      short_description = :short_description,
                      description = :description,
                      cover_image = :cover_image,
@@ -210,6 +216,7 @@ final class CourseController extends Controller
             $stmt->execute([
                 'title' => $data['title'],
                 'slug' => $data['slug'],
+                'experience_key' => $data['experience_key'],
                 'short_description' => $data['short_description'],
                 'description' => $data['description'],
                 'cover_image' => $data['cover_image'],
@@ -279,6 +286,7 @@ final class CourseController extends Controller
         $title = trim((string) $request->input('title', ''));
         $slugInput = trim((string) $request->input('slug', ''));
         $slug = $this->slugify($slugInput !== '' ? $slugInput : $title);
+        $experienceKey = trim((string) $request->input('experience_key', 'generic'));
         $shortDescription = trim((string) $request->input('short_description', ''));
         $description = trim((string) $request->input('description', ''));
         $coverImage = trim((string) $request->input('cover_image', ''));
@@ -294,6 +302,10 @@ final class CourseController extends Controller
         }
         if ($slug === '' || mb_strlen($slug) > 190) {
             $errors[] = 'Slug inválido.';
+        }
+        $experienceRegistry = new CourseExperienceRegistry();
+        if (!$experienceRegistry->has($experienceKey)) {
+            $errors[] = 'Experiência de curso inválida.';
         }
         if (mb_strlen($shortDescription) > 500) {
             $errors[] = 'A descrição curta deve ter no máximo 500 caracteres.';
@@ -331,6 +343,7 @@ final class CourseController extends Controller
         return [
             'title' => $title,
             'slug' => $slug,
+            'experience_key' => $experienceKey,
             'short_description' => $shortDescription !== '' ? $shortDescription : null,
             'description' => $description !== '' ? $description : null,
             'cover_image' => $coverImage !== '' ? $coverImage : null,
