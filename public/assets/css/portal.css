@@ -285,6 +285,10 @@ button:focus-visible {
     align-items: stretch;
 }
 
+.portal-course-grid-unified {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .portal-course-card {
     position: relative;
     min-width: 0;
@@ -721,7 +725,7 @@ button.portal-course-card {
 }
 
 .portal-section-catalog {
-    padding-top: 4px;
+    padding-top: 0;
 }
 
 .portal-empty {
@@ -842,7 +846,247 @@ body.portal-modal-open {
     overflow: hidden;
 }
 
+@media (min-width: 841px) and (min-height: 680px) {
+    .platform-portal-header,
+    .platform-portal-header-inner {
+        min-height: 62px;
+    }
+
+    .platform-brand-logo {
+        width: 188px;
+        max-height: 50px;
+    }
+
+    .platform-avatar {
+        width: 34px;
+        height: 34px;
+    }
+
+    .platform-logout {
+        min-height: 36px;
+        padding: 0 16px;
+    }
+
+    .platform-portal-main {
+        min-height: calc(100vh - 62px);
+        padding: 18px 0 18px;
+    }
+
+    .portal-intro {
+        margin-bottom: 14px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+    }
+
+    .portal-intro p {
+        max-width: 560px;
+        font-size: 14px;
+        line-height: 1.35;
+    }
+
+    .portal-overview {
+        justify-content: flex-end;
+        gap: 7px;
+    }
+
+    .portal-overview > span {
+        min-height: 30px;
+        padding: 0 11px;
+        font-size: 11px;
+    }
+
+    .portal-section-head {
+        margin-bottom: 14px;
+        align-items: center;
+    }
+
+    .portal-section-head > div {
+        gap: 3px;
+    }
+
+    .portal-section-head > div > span {
+        font-size: 10px;
+    }
+
+    .portal-section-head h1,
+    .portal-section-head h2 {
+        font-size: 25px;
+    }
+
+    .portal-section-head p {
+        max-width: 420px;
+        font-size: 11.5px;
+        line-height: 1.35;
+    }
+
+    .portal-course-grid {
+        gap: 18px;
+    }
+
+    .portal-course-card {
+        padding: 9px;
+        border-radius: 22px;
+    }
+
+    .portal-card-media {
+        height: 112px;
+        border-radius: 15px;
+    }
+
+    .portal-card-access {
+        left: 10px;
+        bottom: 10px;
+        min-height: 24px;
+        padding: 0 9px;
+        font-size: 10.5px;
+    }
+
+    .portal-lock-mark {
+        right: 10px;
+        top: 10px;
+        width: 31px;
+        height: 31px;
+        border-radius: 10px;
+        font-size: 13px;
+    }
+
+    .portal-card-body {
+        padding: 11px 5px 3px;
+        gap: 9px;
+    }
+
+    .portal-card-meta {
+        gap: 5px;
+    }
+
+    .portal-meta-pill {
+        min-height: 23px;
+        padding: 0 8px;
+        font-size: 10.5px;
+    }
+
+    .portal-card-copy {
+        gap: 4px;
+    }
+
+    .portal-card-copy h3 {
+        font-size: 17px;
+        line-height: 1.15;
+    }
+
+    .portal-card-description {
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        font-size: 11.5px;
+        line-height: 1.35;
+    }
+
+    .portal-resume,
+    .portal-locked-note {
+        padding: 9px 10px;
+        gap: 9px;
+        border-radius: 14px;
+    }
+
+    .portal-resume-icon,
+    .portal-locked-note > span {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+
+    .portal-resume-copy > span {
+        font-size: 9.5px;
+    }
+
+    .portal-resume-copy strong,
+    .portal-locked-note strong {
+        font-size: 11.5px;
+    }
+
+    .portal-resume-copy small,
+    .portal-locked-note small {
+        font-size: 10.5px;
+        line-height: 1.3;
+    }
+
+    .portal-locked-note small {
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+    }
+
+    .portal-progress {
+        gap: 5px;
+    }
+
+    .portal-progress-row {
+        font-size: 11px;
+    }
+
+    .portal-progress-track {
+        height: 6px;
+    }
+
+    .portal-card-footer {
+        gap: 8px;
+    }
+
+    .portal-card-state small {
+        font-size: 10.5px;
+    }
+
+    .portal-card-action {
+        min-height: 36px;
+        padding: 0 15px;
+        border-radius: 11px;
+        font-size: 11.5px;
+    }
+}
+
+@media (min-width: 841px) and (max-height: 679px) {
+    .platform-portal-main {
+        padding: 14px 0 18px;
+    }
+
+    .portal-intro {
+        margin-bottom: 12px;
+    }
+
+    .portal-intro p {
+        font-size: 13px;
+    }
+
+    .portal-section-head {
+        margin-bottom: 12px;
+    }
+
+    .portal-card-media {
+        height: 102px;
+    }
+
+    .portal-card-body {
+        padding-top: 10px;
+        gap: 8px;
+    }
+
+    .portal-card-description,
+    .portal-locked-note small {
+        -webkit-line-clamp: 1;
+    }
+}
+
 @media (max-width: 840px) {
+    .portal-course-grid-unified {
+        grid-template-columns: 1fr;
+    }
+
     .portal-section-head {
         align-items: flex-start;
         flex-direction: column;
