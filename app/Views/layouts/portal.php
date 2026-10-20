@@ -5,8 +5,8 @@ use App\Core\Csrf;
 
 $user = Auth::user() ?? [];
 $pageTitle = isset($title)
-    ? $title . ' • ' . (string) config('app.name', 'Curso MI')
-    : (string) config('app.name', 'Curso MI');
+    ? $title . ' • LD Academy'
+    : 'LD Academy';
 
 $firstName = explode(' ', trim((string) ($user['name'] ?? 'Estudante')))[0];
 $initial = mb_strtoupper(mb_substr((string) ($user['name'] ?? 'E'), 0, 1));
@@ -25,18 +25,20 @@ $initial = mb_strtoupper(mb_substr((string) ($user['name'] ?? 'E'), 0, 1));
         Não carregamos app.css nem layouts/student.php para impedir que
         futuras alterações de um curso afetem a vitrine da plataforma.
     -->
-    <link rel="stylesheet" href="<?= e(url('/assets/css/portal.css') . '?v=20261020-2') ?>">
+    <link rel="stylesheet" href="<?= e(url('/assets/css/portal.css') . '?v=20261020-3') ?>">
     <script src="<?= e(url('/assets/js/portal.js') . '?v=20261020-2') ?>" defer></script>
 </head>
 <body class="platform-portal-body">
     <header class="platform-portal-header">
         <div class="platform-portal-header-inner">
-            <a class="platform-brand" href="<?= e(url('/dashboard')) ?>" aria-label="Curso MI - Portal de cursos">
-                <span class="platform-brand-mark">MI</span>
-                <span>
-                    <strong>CURSO MI</strong>
-                    <small>Plataforma de aprendizagem</small>
-                </span>
+            <a class="platform-brand" href="<?= e(url('/dashboard')) ?>" aria-label="LD Academy - Portal de cursos">
+                <img
+                    class="platform-brand-logo"
+                    src="<?= e(url('/assets/img/ld-academy-logo.webp')) ?>"
+                    alt="LD Academy - Portal de cursos"
+                    width="900"
+                    height="295"
+                >
             </a>
 
             <div class="platform-account">
