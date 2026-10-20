@@ -60,6 +60,18 @@ final class CourseController extends Controller
             $pdo
         );
 
+        $settings = (new CourseSettingsService())->all($id, $pdo);
+        $showConstructionModules = $experience === 'postgresql'
+            && (string) ($settings['catalog_preview_enabled'] ?? '0') === '1';
+
+        $moduleStatusSql = $showConstructionModules
+            ? "m.status <> 'archived'"
+            : "m.status = 'published'";
+
+        $phaseStatusSql = $showConstructionModules
+            ? "p.status <> 'archived'"
+            : "p.status = 'published'";
+
         $modulesStmt = $pdo->prepare(
             "SELECT m.*,
                     COALESCE(ump.status, 'locked') AS user_status,
@@ -68,14 +80,14 @@ final class CourseController extends Controller
                         SELECT COUNT(*)
                         FROM phases p
                         WHERE p.module_id = m.id
-                          AND p.status = 'published'
+                          AND {$phaseStatusSql}
                           AND p.is_required = 1
                     ) AS required_phase_count,
                     (
                         SELECT COUNT(*)
                         FROM phases p
                         WHERE p.module_id = m.id
-                          AND p.status = 'published'
+                          AND {$phaseStatusSql}
                           AND p.is_required = 0
                     ) AS library_phase_count
              FROM modules m
@@ -83,7 +95,7 @@ final class CourseController extends Controller
                ON ump.module_id = m.id
               AND ump.user_id = :user_id
              WHERE m.course_id = :course_id
-               AND m.status = 'published'
+               AND {$moduleStatusSql}
              ORDER BY
                 CASE
                     WHEN m.title LIKE 'Módulo 0 -%' THEN 0
@@ -98,7 +110,6 @@ final class CourseController extends Controller
         ]);
 
         $modules = $modulesStmt->fetchAll();
-        $settings = (new CourseSettingsService())->all($id, $pdo);
 
         foreach ($modules as &$module) {
             $title = (string) ($module['title'] ?? '');
@@ -133,6 +144,7 @@ final class CourseController extends Controller
                 'course' => $course,
                 'modules' => $modules,
                 'settings' => $settings,
+                'showConstructionModules' => $showConstructionModules,
             ],
             (new CourseLayoutResolver())->layoutForKey($experience)
         );
