@@ -135,3 +135,37 @@ A rota `/admin/matriculas` centraliza a relação aluno ↔ curso. O perfil indi
 O portal escolhe **qual curso** o usuário deseja acessar. O dashboard interno do curso cuida de **como aquele curso funciona**.
 
 Assim, novos cursos não exigem novos dashboards específicos como `dashboard_postgresql.php`, `dashboard_php.php` etc. O comportamento é orientado pelos dados e configurações de cada curso.
+
+## Isolamento visual entre plataforma e cursos
+
+A interface deve ser tratada em três camadas independentes:
+
+1. **Portal da plataforma**
+   - rota: `/dashboard`;
+   - layout: `app/Views/layouts/portal.php`;
+   - CSS exclusivo: `public/assets/css/portal.css`;
+   - JS exclusivo: `public/assets/js/portal.js`;
+   - não carrega `app.css` nem `layouts/student.php`.
+
+2. **Preparatório PMMT existente**
+   - mantém `layouts/student.php` e o conjunto de estilos atuais;
+   - clicar no card liberado apenas leva para `/curso/{id}`;
+   - o portal não redefine cores, navegação ou estrutura interna do PMMT.
+
+3. **Novos cursos**
+   - não devem reutilizar CSS específico do PMMT quando houver identidade própria;
+   - devem receber layout/stylesheet próprios antes de serem publicados;
+   - PostgreSQL continuará em `draft` enquanto sua experiência prática específica estiver sendo construída.
+
+Regra de arquitetura: alterações visuais no portal devem permanecer em `portal.*`; alterações visuais específicas de um curso devem permanecer no shell/assets desse curso. Nenhum novo tema deve ser implementado alterando seletores globais compartilhados com outros cursos.
+
+### Visibilidade no portal
+
+O portal mostra todos os cursos com `courses.status = 'published'`.
+
+- matrícula `active`: card liberado, com link real para `/curso/{id}`;
+- sem matrícula ativa: card visível e bloqueado, sem link para o curso;
+- `draft` ou `archived`: não aparece para estudantes.
+
+A autorização real continua no backend de `CourseController`; portanto digitar manualmente `/curso/{id}` sem matrícula ativa não libera o conteúdo.
+
