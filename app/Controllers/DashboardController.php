@@ -21,40 +21,66 @@ final class DashboardController extends Controller
         $userId = (int) Auth::id();
         $user = Auth::user() ?? [];
 
+        /*
+         * O dashboard do estudante é o PORTAL da plataforma, não o dashboard
+         * interno de nenhum curso. Todos os cursos publicados aparecem aqui.
+         * A matrícula ativa apenas decide se o card entra ou permanece bloqueado.
+         */
         $coursesStmt = $pdo->prepare(
             "SELECT c.id, c.title, c.slug, c.short_description, c.cover_image,
-                    c.difficulty, c.xp_reward,
+                    c.difficulty, c.position,
+                    e.status AS enrollment_status,
                     e.enrolled_at,
-                    COALESCE(ucp.status, 'not_started') AS progress_status,
-                    COALESCE(ucp.progress_pct, 0) AS progress_pct,
-                    COALESCE(ucp.average_score, 0) AS average_score,
-                    ucp.last_accessed_at,
+                    CASE WHEN e.status = 'active' THEN 1 ELSE 0 END AS has_access,
+                    CASE
+                        WHEN e.status = 'active' THEN COALESCE(ucp.status, 'not_started')
+                        ELSE 'not_started'
+                    END AS progress_status,
+                    CASE
+                        WHEN e.status = 'active' THEN COALESCE(ucp.progress_pct, 0)
+                        ELSE 0
+                    END AS progress_pct,
+                    CASE
+                        WHEN e.status = 'active' THEN COALESCE(ucp.average_score, 0)
+                        ELSE 0
+                    END AS average_score,
+                    CASE
+                        WHEN e.status = 'active' THEN ucp.last_accessed_at
+                        ELSE NULL
+                    END AS last_accessed_at,
                     (SELECT COUNT(*)
                        FROM modules m
                       WHERE m.course_id = c.id
                         AND m.status = 'published') AS module_count,
                     (SELECT COUNT(*)
                        FROM lessons l
-                       INNER JOIN phases p ON p.id = l.phase_id AND p.status = 'published'
-                       INNER JOIN modules m ON m.id = p.module_id AND m.status = 'published'
+                       INNER JOIN phases p
+                         ON p.id = l.phase_id
+                        AND p.status = 'published'
+                       INNER JOIN modules m
+                         ON m.id = p.module_id
+                        AND m.status = 'published'
                       WHERE m.course_id = c.id
                         AND l.status = 'published') AS lesson_count
-             FROM enrollments e
-             INNER JOIN courses c
-               ON c.id = e.course_id
-              AND c.status = 'published'
+             FROM courses c
+             LEFT JOIN enrollments e
+               ON e.course_id = c.id
+              AND e.user_id = :user_id
              LEFT JOIN user_course_progress ucp
-               ON ucp.user_id = e.user_id
-              AND ucp.course_id = e.course_id
-             WHERE e.user_id = :user_id
-               AND e.status = 'active'
+               ON ucp.course_id = c.id
+              AND ucp.user_id = :progress_user
+             WHERE c.status = 'published'
              ORDER BY
-                CASE WHEN ucp.last_accessed_at IS NULL THEN 1 ELSE 0 END,
+                CASE WHEN e.status = 'active' THEN 0 ELSE 1 END,
+                CASE WHEN e.status = 'active' AND ucp.last_accessed_at IS NOT NULL THEN 0 ELSE 1 END,
                 ucp.last_accessed_at DESC,
                 c.position,
                 c.id"
         );
-        $coursesStmt->execute(['user_id' => $userId]);
+        $coursesStmt->execute([
+            'user_id' => $userId,
+            'progress_user' => $userId,
+        ]);
         $courses = $coursesStmt->fetchAll(PDO::FETCH_ASSOC);
 
         $continueStmt = $pdo->prepare(
@@ -103,52 +129,42 @@ final class DashboardController extends Controller
             }
         }
 
-        $totalProgress = 0.0;
+        $myCourses = [];
+        $otherCourses = [];
         $completedCourses = 0;
-        $totalModules = 0;
 
-        foreach ($courses as &$course) {
+        foreach ($courses as $course) {
             $courseId = (int) $course['id'];
             $course['continue_lesson'] = $continueByCourse[$courseId] ?? null;
-            $totalProgress += (float) $course['progress_pct'];
-            $totalModules += (int) $course['module_count'];
+            $course['has_access'] = (int) ($course['has_access'] ?? 0) === 1;
 
-            if (($course['progress_status'] ?? '') === 'completed') {
-                $completedCourses++;
+            if ($course['has_access']) {
+                if (($course['progress_status'] ?? '') === 'completed') {
+                    $completedCourses++;
+                }
+
+                $myCourses[] = $course;
+                continue;
             }
+
+            $otherCourses[] = $course;
         }
-        unset($course);
-
-        $courseCount = count($courses);
-        $averageProgress = $courseCount > 0
-            ? round($totalProgress / $courseCount, 1)
-            : 0.0;
-
-        $levelStmt = $pdo->prepare(
-            "SELECT title
-             FROM levels
-             WHERE level_number = :level
-             LIMIT 1"
-        );
-        $levelStmt->execute(['level' => (int) ($user['current_level'] ?? 1)]);
-        $levelTitle = (string) ($levelStmt->fetchColumn() ?: 'Estudante');
 
         $this->view(
             'student/dashboard',
             [
-                'title' => 'Meus Cursos',
+                'title' => 'Portal de Cursos',
                 'user' => $user,
-                'courses' => $courses,
+                'myCourses' => $myCourses,
+                'otherCourses' => $otherCourses,
                 'summary' => [
-                    'courses' => $courseCount,
+                    'published_courses' => count($courses),
+                    'accessible_courses' => count($myCourses),
+                    'locked_courses' => count($otherCourses),
                     'completed_courses' => $completedCourses,
-                    'average_progress' => $averageProgress,
-                    'modules' => $totalModules,
-                    'xp_total' => (int) ($user['xp_total'] ?? 0),
-                    'level_title' => $levelTitle,
                 ],
             ],
-            'layouts/student'
+            'layouts/portal'
         );
     }
 }
