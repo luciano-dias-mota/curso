@@ -8,6 +8,7 @@ use App\Core\Auth;
 use App\Core\Controller;
 use App\Core\Request;
 use App\Core\Session;
+use App\Services\CourseAccessService;
 use App\Services\SimulationService;
 use PDOException;
 use RuntimeException;
@@ -15,13 +16,20 @@ use Throwable;
 
 final class SimulationController extends Controller
 {
-    public function index(): void
+    public function index(?int $courseId = null): void
     {
         try {
-            $data = (new SimulationService())->dashboard((int) Auth::id());
+            $courseId = $this->resolveCourseContext($courseId);
+            $data = (new SimulationService())->dashboard(
+                (int) Auth::id(),
+                $courseId > 0 ? $courseId : null
+            );
             $this->view(
                 'student/simulations/index',
-                array_merge(['title' => 'Simulados'], $data),
+                array_merge([
+                    'title' => 'Simulados',
+                    'activeCourseId' => $courseId,
+                ], $data),
                 'layouts/student'
             );
         } catch (Throwable $e) {
@@ -31,13 +39,20 @@ final class SimulationController extends Controller
         }
     }
 
-    public function create(): void
+    public function create(?int $courseId = null): void
     {
         try {
-            $data = (new SimulationService())->configuration((int) Auth::id());
+            $courseId = $this->resolveCourseContext($courseId);
+            $data = (new SimulationService())->configuration(
+                (int) Auth::id(),
+                $courseId > 0 ? $courseId : null
+            );
             $this->view(
                 'student/simulations/create',
-                array_merge(['title' => 'Novo simulado'], $data),
+                array_merge([
+                    'title' => 'Novo simulado',
+                    'activeCourseId' => $courseId,
+                ], $data),
                 'layouts/student'
             );
         } catch (Throwable $e) {
@@ -47,10 +62,20 @@ final class SimulationController extends Controller
         }
     }
 
-    public function generate(Request $request): void
+    public function generate(Request $request, ?int $courseId = null): void
     {
         try {
-            $courseId = (int) $request->input('course_id', 0);
+            $routeCourseId = $this->resolveCourseContext($courseId, false);
+            $courseId = $routeCourseId > 0
+                ? $routeCourseId
+                : (int) $request->input('course_id', 0);
+
+            if ($courseId > 0) {
+                (new CourseAccessService())->requireCourseEnrollment(
+                    (int) Auth::id(),
+                    $courseId
+                );
+            }
             $questionLimit = (int) $request->input('question_limit', 20);
             $moduleId = (int) $request->input('module_id', 0);
 
@@ -209,6 +234,24 @@ final class SimulationController extends Controller
         }
         $this->redirect('/simulados');
     }
+    private function resolveCourseContext(?int $courseId, bool $useSession = true): int
+    {
+        $resolved = max(0, (int) ($courseId ?? 0));
+
+        if ($resolved <= 0 && $useSession) {
+            $resolved = max(0, (int) Session::get('active_course_id', 0));
+        }
+
+        if ($resolved > 0) {
+            (new CourseAccessService())->requireCourseEnrollment(
+                (int) Auth::id(),
+                $resolved
+            );
+        }
+
+        return $resolved;
+    }
+
     private function logSimulationError(string $context, Throwable $e): void
     {
         error_log(sprintf(
