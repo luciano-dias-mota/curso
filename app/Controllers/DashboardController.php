@@ -28,47 +28,88 @@ final class DashboardController extends Controller
         $user = Auth::user() ?? [];
 
         /*
-         * O dashboard do estudante é o PORTAL da plataforma, não o dashboard
-         * interno de nenhum curso. Todos os cursos publicados aparecem aqui.
-         * A matrícula ativa apenas decide se o card entra ou permanece bloqueado.
+         * O portal mostra:
+         * - cursos publicados;
+         * - cursos em rascunho explicitamente marcados como prévia de catálogo.
+         *
+         * Prévia nunca concede acesso. O backend continua exigindo curso publicado
+         * + matrícula ativa para qualquer entrada real.
          */
         $coursesStmt = $pdo->prepare(
             "SELECT c.id, c.title, c.slug, c.experience_key, c.short_description, c.cover_image,
-                    c.difficulty, c.position,
+                    c.status, c.difficulty, c.position,
+                    COALESCE(preview.setting_value, '0') AS catalog_preview_enabled,
+                    COALESCE(preview_message.setting_value, '') AS catalog_preview_message,
+                    CASE
+                        WHEN c.status = 'draft'
+                         AND COALESCE(preview.setting_value, '0') = '1'
+                        THEN 1 ELSE 0
+                    END AS is_preview,
                     e.status AS enrollment_status,
                     e.enrolled_at,
-                    CASE WHEN e.status = 'active' THEN 1 ELSE 0 END AS has_access,
                     CASE
-                        WHEN e.status = 'active' THEN COALESCE(ucp.status, 'not_started')
+                        WHEN c.status = 'published' AND e.status = 'active'
+                        THEN 1 ELSE 0
+                    END AS has_access,
+                    CASE
+                        WHEN c.status = 'published' AND e.status = 'active'
+                        THEN COALESCE(ucp.status, 'not_started')
                         ELSE 'not_started'
                     END AS progress_status,
                     CASE
-                        WHEN e.status = 'active' THEN COALESCE(ucp.progress_pct, 0)
+                        WHEN c.status = 'published' AND e.status = 'active'
+                        THEN COALESCE(ucp.progress_pct, 0)
                         ELSE 0
                     END AS progress_pct,
                     CASE
-                        WHEN e.status = 'active' THEN COALESCE(ucp.average_score, 0)
+                        WHEN c.status = 'published' AND e.status = 'active'
+                        THEN COALESCE(ucp.average_score, 0)
                         ELSE 0
                     END AS average_score,
                     CASE
-                        WHEN e.status = 'active' THEN ucp.last_accessed_at
+                        WHEN c.status = 'published' AND e.status = 'active'
+                        THEN ucp.last_accessed_at
                         ELSE NULL
                     END AS last_accessed_at,
-                    (SELECT COUNT(*)
-                       FROM modules m
-                      WHERE m.course_id = c.id
-                        AND m.status = 'published') AS module_count,
-                    (SELECT COUNT(*)
-                       FROM lessons l
-                       INNER JOIN phases p
-                         ON p.id = l.phase_id
-                        AND p.status = 'published'
-                       INNER JOIN modules m
-                         ON m.id = p.module_id
-                        AND m.status = 'published'
-                      WHERE m.course_id = c.id
-                        AND l.status = 'published') AS lesson_count
+                    (
+                        SELECT COUNT(*)
+                        FROM modules m
+                        WHERE m.course_id = c.id
+                          AND (
+                              (c.status = 'published' AND m.status = 'published')
+                              OR
+                              (c.status = 'draft' AND m.status <> 'archived')
+                          )
+                    ) AS module_count,
+                    (
+                        SELECT COUNT(*)
+                        FROM lessons l
+                        INNER JOIN phases p ON p.id = l.phase_id
+                        INNER JOIN modules m ON m.id = p.module_id
+                        WHERE m.course_id = c.id
+                          AND (
+                              (
+                                  c.status = 'published'
+                                  AND m.status = 'published'
+                                  AND p.status = 'published'
+                                  AND l.status = 'published'
+                              )
+                              OR
+                              (
+                                  c.status = 'draft'
+                                  AND m.status <> 'archived'
+                                  AND p.status <> 'archived'
+                                  AND l.status <> 'archived'
+                              )
+                          )
+                    ) AS lesson_count
              FROM courses c
+             LEFT JOIN course_settings preview
+               ON preview.course_id = c.id
+              AND preview.setting_key = 'catalog_preview_enabled'
+             LEFT JOIN course_settings preview_message
+               ON preview_message.course_id = c.id
+              AND preview_message.setting_key = 'catalog_preview_message'
              LEFT JOIN enrollments e
                ON e.course_id = c.id
               AND e.user_id = :user_id
@@ -76,9 +117,22 @@ final class DashboardController extends Controller
                ON ucp.course_id = c.id
               AND ucp.user_id = :progress_user
              WHERE c.status = 'published'
+                OR (
+                    c.status = 'draft'
+                    AND COALESCE(preview.setting_value, '0') = '1'
+                )
              ORDER BY
-                CASE WHEN e.status = 'active' THEN 0 ELSE 1 END,
-                CASE WHEN e.status = 'active' AND ucp.last_accessed_at IS NOT NULL THEN 0 ELSE 1 END,
+                CASE
+                    WHEN c.status = 'published' AND e.status = 'active' THEN 0
+                    WHEN c.status = 'published' THEN 1
+                    ELSE 2
+                END,
+                CASE
+                    WHEN c.status = 'published'
+                     AND e.status = 'active'
+                     AND ucp.last_accessed_at IS NOT NULL
+                    THEN 0 ELSE 1
+                END,
                 ucp.last_accessed_at DESC,
                 c.position,
                 c.id"
@@ -137,6 +191,8 @@ final class DashboardController extends Controller
 
         $myCourses = [];
         $otherCourses = [];
+        $previewCourses = 0;
+        $lockedPublishedCourses = 0;
         $completedCourses = 0;
         $experienceRegistry = new CourseExperienceRegistry();
 
@@ -144,6 +200,7 @@ final class DashboardController extends Controller
             $courseId = (int) $course['id'];
             $course['continue_lesson'] = $continueByCourse[$courseId] ?? null;
             $course['has_access'] = (int) ($course['has_access'] ?? 0) === 1;
+            $course['is_preview'] = (int) ($course['is_preview'] ?? 0) === 1;
             $course['entry_path'] = $experienceRegistry->entryPath($course);
 
             if ($course['has_access']) {
@@ -153,6 +210,12 @@ final class DashboardController extends Controller
 
                 $myCourses[] = $course;
                 continue;
+            }
+
+            if ($course['is_preview']) {
+                $previewCourses++;
+            } else {
+                $lockedPublishedCourses++;
             }
 
             $otherCourses[] = $course;
@@ -166,9 +229,10 @@ final class DashboardController extends Controller
                 'myCourses' => $myCourses,
                 'otherCourses' => $otherCourses,
                 'summary' => [
-                    'published_courses' => count($courses),
+                    'catalog_courses' => count($courses),
                     'accessible_courses' => count($myCourses),
-                    'locked_courses' => count($otherCourses),
+                    'locked_courses' => $lockedPublishedCourses,
+                    'preview_courses' => $previewCourses,
                     'completed_courses' => $completedCourses,
                 ],
             ],
