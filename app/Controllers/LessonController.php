@@ -8,6 +8,8 @@ use App\Core\Auth;
 use App\Core\Controller;
 use App\Core\Database;
 use App\Core\Request;
+use App\Core\Session;
+use App\Services\CourseLayoutResolver;
 use App\Services\ProgressService;
 
 final class LessonController extends Controller
@@ -95,7 +97,9 @@ final class LessonController extends Controller
                 'lessonQuiz' => $quizStmt->fetch() ?: null,
                 'user' => Auth::user(),
             ],
-            'layouts/student'
+            (new CourseLayoutResolver())->layoutForKey(
+                (string) Session::get('active_course_experience', 'generic')
+            )
         );
     }
 }
