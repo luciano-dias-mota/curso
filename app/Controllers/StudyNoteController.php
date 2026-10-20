@@ -9,6 +9,7 @@ use App\Core\Controller;
 use App\Core\Request;
 use App\Core\Session;
 use App\Services\CourseAccessService;
+use App\Services\CourseContextService;
 use App\Services\StudyNoteService;
 use RuntimeException;
 use Throwable;
@@ -38,7 +39,7 @@ final class StudyNoteController extends Controller
                     'title' => 'Anotações',
                     'activeCourseId' => $routeCourseId,
                 ], $data),
-                'layouts/student'
+                (new CourseContextService())->currentLayout()
             );
         } catch (Throwable $e) {
             error_log('notes.index: ' . $e->getMessage());
@@ -77,10 +78,18 @@ final class StudyNoteController extends Controller
     {
         try {
             $data = (new StudyNoteService())->editData((int) Auth::id(), $id);
+            $noteCourseId = (int) ($data['note']['course_id'] ?? 0);
+            if ($noteCourseId > 0) {
+                (new CourseContextService())->activate(
+                    (int) Auth::id(),
+                    $noteCourseId
+                );
+            }
+
             $this->view(
                 'student/notes/edit',
                 array_merge(['title' => 'Editar anotação'], $data),
-                'layouts/student'
+                (new CourseContextService())->currentLayout()
             );
         } catch (RuntimeException $e) {
             Session::flash('error', $e->getMessage());
@@ -155,7 +164,7 @@ final class StudyNoteController extends Controller
         }
 
         if ($resolved > 0) {
-            (new CourseAccessService())->requireCourseEnrollment(
+            (new CourseContextService())->activate(
                 (int) Auth::id(),
                 $resolved
             );
