@@ -9,6 +9,7 @@ return [
             'description' => 'Experiência padrão da plataforma para cursos sem shell específico.',
             'entry_pattern' => '/curso/{id}',
             'asset_namespace' => 'generic',
+            'layout' => 'layouts/courses/generic',
         ],
 
         'pmmt' => [
@@ -16,6 +17,7 @@ return [
             'description' => 'Experiência legada preservada do Preparatório PMMT.',
             'entry_pattern' => '/curso/{id}/inicio',
             'asset_namespace' => 'pmmt',
+            'layout' => 'layouts/student',
             'legacy_assets' => [
                 'css' => [
                     '/assets/css/app.css',
@@ -36,6 +38,7 @@ return [
             'description' => 'Experiência prática de banco de dados com laboratórios PGlite.',
             'entry_pattern' => '/curso/{id}',
             'asset_namespace' => 'postgresql',
+            'layout' => 'layouts/courses/postgresql',
         ],
     ],
 ];
