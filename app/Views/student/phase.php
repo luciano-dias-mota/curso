@@ -9,6 +9,7 @@ $quizRequiredCorrect = (int) ($quiz['required_correct'] ?? 0);
 $quizRequiredScore = (float) ($quiz['required_score'] ?? 0);
 $quizReady = $quiz && $quizExpected > 0 && (int) $quiz['question_count'] === $quizExpected;
 $phasePassed = $phase['user_status'] === 'completed';
+$isPostgresPhase = (string) Session::get('active_course_experience', 'generic') === 'postgresql';
 ?>
 <section class="phase-page">
     <?php if ($success): ?>
@@ -21,7 +22,9 @@ $phasePassed = $phase['user_status'] === 'completed';
 
     <header class="trail-hero card <?= $library ? 'library-hero' : '' ?>">
         <div>
-            <a class="back" href="<?= e(url('/modulo/' . $phase['module_id'])) ?>">← Voltar ao módulo</a>
+            <a class="back" href="<?= e(url($isPostgresPhase
+                ? '/curso/' . (int) $phase['course_id'] . '/modulo/' . (int) $phase['module_id']
+                : '/modulo/' . (int) $phase['module_id'])) ?>">← Voltar ao módulo</a>
             <span class="eyebrow"><?= $library ? 'BIBLIOTECA DE REFERÊNCIA' : 'FASE ' . (int) $phase['position'] ?></span>
             <h1><?= e($phase['title']) ?></h1>
             <p><?= e($phase['description'] ?? '') ?></p>
@@ -47,7 +50,9 @@ $phasePassed = $phase['user_status'] === 'completed';
         <p>
             <?= $library
                 ? 'Literalidade e recortes completos para consulta.'
-                : 'Conclua as aulas e depois vença o checkpoint de 5 questões.' ?>
+                : ($isPostgresPhase
+                    ? 'Conclua a leitura e o laboratório SQL de cada aula para avançar.'
+                    : 'Conclua as aulas e depois vença o checkpoint de 5 questões.') ?>
         </p>
     </div>
 
@@ -77,7 +82,9 @@ $phasePassed = $phase['user_status'] === 'completed';
                     <?php if ($locked): ?>
                         <button class="secondary" disabled>🔒 Bloqueada</button>
                     <?php else: ?>
-                        <a class="<?= $library ? 'secondary' : 'primary' ?>" href="<?= e(url('/aula/' . $lesson['id'])) ?>">
+                        <a class="<?= $library ? 'secondary' : 'primary' ?>" href="<?= e(url($isPostgresPhase
+                            ? '/curso/' . (int) $phase['course_id'] . '/aula/' . (int) $lesson['id']
+                            : '/aula/' . (int) $lesson['id'])) ?>">
                             <?= $done ? 'Revisar' : ($progressing ? 'Continuar' : 'Iniciar') ?> →
                         </a>
                     <?php endif; ?>
@@ -86,7 +93,7 @@ $phasePassed = $phase['user_status'] === 'completed';
         <?php endforeach; ?>
     </div>
 
-    <?php if (!$library && $allRequiredCompleted): ?>
+    <?php if (!$isPostgresPhase && !$library && $allRequiredCompleted): ?>
         <section class="card phase-exam-card <?= $phasePassed ? 'passed' : '' ?>">
             <div class="phase-exam-icon"><?= $phasePassed ? '🏆' : '🎯' ?></div>
             <div class="phase-exam-content">
