@@ -10,6 +10,13 @@ use App\Controllers\ProfileController;
 $router->post('/api/perfil/tema', [ProfileController::class, 'updateTheme'])
     ->middleware(['auth', 'csrf']);
 
+$router->post('/api/curso/{courseId}/laboratorio/atividade/{id}/executar', [LabController::class, 'submit'])
+    ->middleware(['auth', 'student', 'csrf']);
+
+$router->post('/api/curso/{courseId}/laboratorio/atividade/{id}/dica', [LabController::class, 'hint'])
+    ->middleware(['auth', 'student', 'csrf']);
+
+// Compatibilidade temporária com URLs antigas.
 $router->post('/api/laboratorio/atividade/{id}/executar', [LabController::class, 'submit'])
     ->middleware(['auth', 'student', 'csrf']);
 
