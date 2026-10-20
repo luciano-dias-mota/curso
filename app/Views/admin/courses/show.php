@@ -32,6 +32,7 @@ $difficultyLabels = ['beginner'=>'Iniciante','intermediate'=>'Intermediário','a
             <div>
                 <h3>Curso</h3>
                 <p><strong>Slug:</strong> <?= e($course['slug']) ?></p>
+                <p><strong>Experiência:</strong> <code><?= e($course['experience_key'] ?? 'generic') ?></code></p>
                 <p><strong>Dificuldade:</strong> <?= e($difficultyLabels[$course['difficulty']] ?? $course['difficulty']) ?></p>
                 <p><strong>Nota mínima:</strong> <?= number_format((float) $course['required_score'], 1, ',', '.') ?>%</p>
                 <p><strong>Questões:</strong> <?= (int) ($counts['questions_count'] ?? 0) ?></p>
