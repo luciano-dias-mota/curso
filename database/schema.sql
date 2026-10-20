@@ -70,6 +70,7 @@ CREATE TABLE courses (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(180) NOT NULL,
     slug VARCHAR(190) NOT NULL UNIQUE,
+    experience_key VARCHAR(80) NOT NULL DEFAULT 'generic',
     short_description VARCHAR(500) NULL,
     description LONGTEXT NULL,
     cover_image VARCHAR(255) NULL,
@@ -84,7 +85,8 @@ CREATE TABLE courses (
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     CONSTRAINT fk_courses_created_by FOREIGN KEY (created_by) REFERENCES users(id)
         ON UPDATE CASCADE ON DELETE SET NULL,
-    INDEX idx_courses_status_position (status, position)
+    INDEX idx_courses_status_position (status, position),
+    INDEX idx_courses_experience_status (experience_key, status, position)
 ) ENGINE=InnoDB;
 
 CREATE TABLE modules (
