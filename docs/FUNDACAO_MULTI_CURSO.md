@@ -169,3 +169,16 @@ O portal mostra todos os cursos com `courses.status = 'published'`.
 
 A autorização real continua no backend de `CourseController`; portanto digitar manualmente `/curso/{id}` sem matrícula ativa não libera o conteúdo.
 
+### Retorno ao portal sem desmontar o curso
+
+O Preparatório PMMT preserva o comportamento legado dentro do curso:
+
+- entrada pelo portal: `/curso/{id}/inicio`;
+- `Início`, logo e atalhos internos voltam para a home PMMT, não para `/dashboard`;
+- a home PMMT usa a view restaurada `student/pmmt/dashboard.php` com o hero do soldado e os componentes antigos;
+- `Sair` dentro do curso faz POST em `/curso/sair`, limpa o contexto ativo do curso e retorna ao portal;
+- o logout real da conta permanece no portal;
+- `/dashboard` continua sendo exclusivamente a vitrine de cursos.
+
+O contexto ativo fica em sessão apenas para navegação interna. A autorização continua sendo validada no backend por matrícula ativa e curso publicado.
+
