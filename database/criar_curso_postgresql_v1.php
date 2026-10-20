@@ -205,10 +205,10 @@ try {
 
         $insertCourse = $pdo->prepare(
             "INSERT INTO courses
-                (title, slug, short_description, description, cover_image, status,
+                (title, slug, experience_key, short_description, description, cover_image, status,
                  difficulty, required_score, xp_reward, position, published_at, created_by)
              VALUES
-                (:title, :slug, :short_description, :description, NULL, 'draft',
+                (:title, :slug, 'postgresql', :short_description, :description, NULL, 'draft',
                  'beginner', 70.00, 500, :position, NULL, NULL)"
         );
         $insertCourse->execute([
