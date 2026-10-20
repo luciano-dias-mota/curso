@@ -1063,22 +1063,13 @@ final class QuizService
             throw new RuntimeException('Avaliação sem curso válido.');
         }
 
-        $stmt = $pdo->prepare(
-            "SELECT 1
-             FROM enrollments e
-             INNER JOIN courses c ON c.id = e.course_id
-             WHERE e.user_id = :user_id
-               AND e.course_id = :course_id
-               AND e.status = 'active'
-               AND c.status = 'published'
-             LIMIT 1"
-        );
-        $stmt->execute([
-            'user_id' => $userId,
-            'course_id' => $courseId,
-        ]);
-
-        if (!$stmt->fetchColumn()) {
+        try {
+            (new CourseAccessService())->requireCourseEnrollment(
+                $userId,
+                $courseId,
+                $pdo
+            );
+        } catch (RuntimeException) {
             throw new RuntimeException('Sua matrícula não está ativa para esta avaliação.');
         }
     }
