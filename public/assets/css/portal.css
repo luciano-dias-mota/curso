@@ -227,6 +227,11 @@ button:focus-visible {
     background: var(--portal-amber);
 }
 
+.portal-overview .is-preview i {
+    background: #2f80ed;
+    box-shadow: 0 0 0 3px rgba(47, 128, 237, .12);
+}
+
 .portal-section + .portal-section {
     margin-top: 42px;
 }
@@ -418,6 +423,11 @@ button.portal-course-card {
     box-shadow: 0 0 0 3px rgba(255, 209, 102, .20);
 }
 
+.portal-card-access.is-preview::before {
+    background: #67c8ff;
+    box-shadow: 0 0 0 3px rgba(103, 200, 255, .22);
+}
+
 .portal-lock-mark {
     position: absolute;
     z-index: 4;
@@ -433,6 +443,21 @@ button.portal-course-card {
     background: rgba(12, 16, 48, .54);
     backdrop-filter: blur(10px);
     font-size: 15px;
+}
+
+.portal-lock-mark.is-preview {
+    background: rgba(9, 63, 104, .66);
+}
+
+.portal-course-card.is-preview {
+    cursor: default;
+    border-color: rgba(133, 211, 255, .82);
+    background: rgba(242, 249, 255, .76);
+}
+
+.portal-course-card.is-preview:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 30px 66px -28px rgba(20, 88, 145, .34), inset 0 1px 0 rgba(255, 255, 255, .98);
 }
 
 .portal-course-card.is-locked .portal-card-media > img,
@@ -576,6 +601,15 @@ button.portal-course-card {
     line-height: 1.4;
 }
 
+.portal-locked-note.is-preview {
+    border-color: rgba(47, 128, 237, .13);
+    background: rgba(234, 246, 255, .84);
+}
+
+.portal-locked-note.is-preview > span {
+    background: #dff2ff;
+}
+
 .portal-progress {
     margin-top: auto;
     display: flex;
@@ -643,6 +677,10 @@ button.portal-course-card {
     background: var(--portal-amber);
 }
 
+.portal-card-state.is-preview > span {
+    background: #2f80ed;
+}
+
 .portal-card-state small {
     font-size: 12.5px;
 }
@@ -673,6 +711,13 @@ button.portal-course-card {
     color: #6b4a08;
     background: linear-gradient(135deg, #fff1c4, #ffd982);
     box-shadow: 0 12px 24px -14px rgba(146, 98, 0, .48);
+}
+
+.portal-card-action.is-preview,
+.portal-course-card.is-preview .portal-card-action {
+    color: #0a4e78;
+    background: linear-gradient(135deg, #dff3ff, #bfe7ff);
+    box-shadow: 0 12px 24px -14px rgba(23, 107, 161, .42);
 }
 
 .portal-section-catalog {
