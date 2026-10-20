@@ -8,17 +8,21 @@ use App\Core\Auth;
 use App\Core\Controller;
 use App\Core\Request;
 use App\Core\Session;
+use App\Services\CourseAccessService;
 use App\Services\StudyNoteService;
 use RuntimeException;
 use Throwable;
 
 final class StudyNoteController extends Controller
 {
-    public function index(Request $request): void
+    public function index(Request $request, ?int $courseId = null): void
     {
         try {
             $search = trim((string) $request->input('q', ''));
-            $courseId = max(0, (int) $request->input('course_id', 0));
+            $routeCourseId = $this->resolveCourseContext($courseId);
+            $courseId = $routeCourseId > 0
+                ? $routeCourseId
+                : max(0, (int) $request->input('course_id', 0));
             $moduleId = max(0, (int) $request->input('module_id', 0));
 
             $data = (new StudyNoteService())->dashboard(
@@ -30,7 +34,10 @@ final class StudyNoteController extends Controller
 
             $this->view(
                 'student/notes/index',
-                array_merge(['title' => 'Anotações'], $data),
+                array_merge([
+                    'title' => 'Anotações',
+                    'activeCourseId' => $routeCourseId,
+                ], $data),
                 'layouts/student'
             );
         } catch (Throwable $e) {
@@ -40,14 +47,17 @@ final class StudyNoteController extends Controller
         }
     }
 
-    public function store(Request $request): void
+    public function store(Request $request, ?int $courseId = null): void
     {
         try {
+            $routeCourseId = $this->resolveCourseContext($courseId);
             (new StudyNoteService())->create(
                 (int) Auth::id(),
                 (string) $request->input('title', ''),
                 (string) $request->input('content', ''),
-                $this->nullableId($request->input('course_id')),
+                $routeCourseId > 0
+                    ? $routeCourseId
+                    : $this->nullableId($request->input('course_id')),
                 $this->nullableId($request->input('module_id')),
                 $this->nullableId($request->input('phase_id'))
             );
@@ -134,6 +144,24 @@ final class StudyNoteController extends Controller
         }
 
         $this->redirect('/anotacoes');
+    }
+
+    private function resolveCourseContext(?int $courseId): int
+    {
+        $resolved = max(0, (int) ($courseId ?? 0));
+
+        if ($resolved <= 0) {
+            $resolved = max(0, (int) Session::get('active_course_id', 0));
+        }
+
+        if ($resolved > 0) {
+            (new CourseAccessService())->requireCourseEnrollment(
+                (int) Auth::id(),
+                $resolved
+            );
+        }
+
+        return $resolved;
     }
 
     private function nullableId(mixed $value): ?int
