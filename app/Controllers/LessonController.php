@@ -8,6 +8,9 @@ use App\Core\Auth;
 use App\Core\Controller;
 use App\Core\Database;
 use App\Core\Request;
+use App\Core\Session;
+use App\Services\CourseLayoutResolver;
+use App\Services\LessonCompletionPolicyService;
 use App\Services\ProgressService;
 
 final class LessonController extends Controller
@@ -82,6 +85,11 @@ final class LessonController extends Controller
         );
         $quizStmt->execute(['lesson_id' => $id]);
 
+        $completionMode = (new LessonCompletionPolicyService())->modeForLesson(
+            $id,
+            $pdo
+        );
+
         $this->view(
             'student/lesson',
             [
@@ -93,9 +101,12 @@ final class LessonController extends Controller
                 'totalBlocks' => count($blocks),
                 'progress' => $progressStmt->fetch() ?: null,
                 'lessonQuiz' => $quizStmt->fetch() ?: null,
+                'completionMode' => $completionMode,
                 'user' => Auth::user(),
             ],
-            'layouts/student'
+            (new CourseLayoutResolver())->layoutForKey(
+                (string) Session::get('active_course_experience', 'generic')
+            )
         );
     }
 }

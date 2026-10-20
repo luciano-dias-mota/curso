@@ -6,7 +6,10 @@ namespace App\Middleware;
 
 use App\Core\Auth;
 use App\Core\Database;
+use App\Core\Session;
 use App\Core\View;
+use App\Services\CourseAccessService;
+use RuntimeException;
 
 final class PhaseUnlockedMiddleware
 {
@@ -22,35 +25,41 @@ final class PhaseUnlockedMiddleware
             $this->deny('Fase inválida.');
         }
 
-        $stmt = Database::connection()->prepare(
+        $pdo = Database::connection();
+
+        try {
+            $phase = (new CourseAccessService())->requirePhase(
+                (int) Auth::id(),
+                $phaseId,
+                $pdo
+            );
+        } catch (RuntimeException) {
+            $this->deny('Esta fase não está disponível para sua matrícula.');
+        }
+
+        Session::put('active_course_id', (int) $phase['course_id']);
+        Session::put('active_course_experience', (string) ($phase['experience_key'] ?? 'generic'));
+
+        $routeCourseId = (int) ($params['courseId'] ?? 0);
+        if ($routeCourseId > 0 && $routeCourseId !== (int) $phase['course_id']) {
+            $this->deny('Esta fase não pertence ao curso informado.');
+        }
+
+        $stmt = $pdo->prepare(
             "SELECT upp.status
-             FROM phases p
-             INNER JOIN modules m
-               ON m.id = p.module_id
-              AND m.status = 'published'
-             INNER JOIN courses c
-               ON c.id = m.course_id
-              AND c.status = 'published'
-             INNER JOIN enrollments e
-               ON e.course_id = c.id
-              AND e.user_id = :user_id
-              AND e.status = 'active'
-             INNER JOIN user_module_progress ump
-               ON ump.module_id = m.id
-              AND ump.user_id = :module_user_id
-              AND ump.status <> 'locked'
+             FROM user_module_progress ump
              INNER JOIN user_phase_progress upp
-               ON upp.phase_id = p.id
-              AND upp.user_id = :phase_user_id
-             WHERE p.id = :phase_id
-               AND p.status = 'published'
+               ON upp.user_id = ump.user_id
+              AND upp.phase_id = :phase_id
+             WHERE ump.user_id = :user_id
+               AND ump.module_id = :module_id
+               AND ump.status <> 'locked'
              LIMIT 1"
         );
         $stmt->execute([
-            'user_id' => Auth::id(),
-            'module_user_id' => Auth::id(),
-            'phase_user_id' => Auth::id(),
             'phase_id' => $phaseId,
+            'user_id' => Auth::id(),
+            'module_id' => (int) $phase['module_id'],
         ]);
 
         $status = $stmt->fetchColumn();

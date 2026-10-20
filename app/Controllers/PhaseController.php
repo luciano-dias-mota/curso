@@ -7,6 +7,8 @@ namespace App\Controllers;
 use App\Core\Auth;
 use App\Core\Controller;
 use App\Core\Database;
+use App\Core\Session;
+use App\Services\CourseLayoutResolver;
 
 final class PhaseController extends Controller
 {
@@ -106,7 +108,9 @@ final class PhaseController extends Controller
                 'quiz' => $quiz,
                 'allRequiredCompleted' => $allRequiredCompleted,
             ],
-            'layouts/student'
+            (new CourseLayoutResolver())->layoutForKey(
+                (string) Session::get('active_course_experience', 'generic')
+            )
         );
     }
 }

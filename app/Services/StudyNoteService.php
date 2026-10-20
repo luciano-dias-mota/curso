@@ -23,8 +23,8 @@ final class StudyNoteService
 
         return [
             'notes' => $this->notes($pdo, $userId, $search, $courseId, $moduleId),
-            'options' => $this->scopeOptions($pdo, $userId),
-            'stats' => $this->stats($pdo, $userId),
+            'options' => $this->scopeOptions($pdo, $userId, $courseId),
+            'stats' => $this->stats($pdo, $userId, $courseId),
             'filters' => [
                 'search' => $search,
                 'courseId' => $courseId,
@@ -233,16 +233,21 @@ final class StudyNoteService
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    private function stats(PDO $pdo, int $userId): array
+    private function stats(PDO $pdo, int $userId, int $courseId = 0): array
     {
         $stmt = $pdo->prepare(
             "SELECT COUNT(*) AS total,
                     SUM(pinned = 1) AS pinned,
                     MAX(updated_at) AS last_update
              FROM study_notes
-             WHERE user_id = :user_id"
+             WHERE user_id = :user_id
+               AND (:course_id = 0 OR course_id = :course_id_filter)"
         );
-        $stmt->execute(['user_id' => $userId]);
+        $stmt->execute([
+            'user_id' => $userId,
+            'course_id' => max(0, $courseId),
+            'course_id_filter' => max(0, $courseId),
+        ]);
         $row = $stmt->fetch(PDO::FETCH_ASSOC) ?: [];
 
         return [
@@ -252,7 +257,7 @@ final class StudyNoteService
         ];
     }
 
-    private function scopeOptions(PDO $pdo, int $userId): array
+    private function scopeOptions(PDO $pdo, int $userId, int $courseId = 0): array
     {
         $courseStmt = $pdo->prepare(
             "SELECT c.id, c.title
@@ -261,10 +266,25 @@ final class StudyNoteService
              WHERE e.user_id = :user_id
                AND e.status = 'active'
                AND c.status = 'published'
+               AND (:course_id = 0 OR c.id = :course_id_filter)
              ORDER BY c.position, c.id"
         );
-        $courseStmt->execute(['user_id' => $userId]);
+        $courseStmt->execute([
+            'user_id' => $userId,
+            'course_id' => max(0, $courseId),
+            'course_id_filter' => max(0, $courseId),
+        ]);
         $courses = $courseStmt->fetchAll(PDO::FETCH_ASSOC);
+        $settings = new CourseSettingsService();
+        $courses = array_values(array_filter(
+            $courses,
+            static fn (array $row): bool => $settings->enabled(
+                (int) $row['id'],
+                'notes_enabled',
+                $pdo,
+                true
+            )
+        ));
         $courseIds = array_map(static fn (array $row): int => (int) $row['id'], $courses);
 
         if ($courseIds === []) {
@@ -333,19 +353,18 @@ final class StudyNoteService
             return [null, null, null];
         }
 
-        $courseStmt = $pdo->prepare(
-            "SELECT 1
-             FROM enrollments e
-             INNER JOIN courses c ON c.id = e.course_id
-             WHERE e.user_id = :user_id
-               AND e.course_id = :course_id
-               AND e.status = 'active'
-               AND c.status = 'published'
-             LIMIT 1"
-        );
-        $courseStmt->execute(['user_id' => $userId, 'course_id' => $courseId]);
-        if (!$courseStmt->fetchColumn()) {
+        try {
+            (new CourseAccessService())->requireCourseEnrollment(
+                $userId,
+                $courseId,
+                $pdo
+            );
+        } catch (RuntimeException) {
             throw new RuntimeException('Curso inválido para esta anotação.');
+        }
+
+        if (!(new CourseSettingsService())->enabled($courseId, 'notes_enabled', $pdo, true)) {
+            throw new RuntimeException('As anotações estão desabilitadas para este curso.');
         }
 
         if ($moduleId === null) {

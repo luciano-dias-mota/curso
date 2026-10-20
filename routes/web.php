@@ -4,10 +4,13 @@ declare(strict_types=1);
 
 use App\Controllers\AuthController;
 use App\Controllers\CourseController;
+use App\Controllers\CourseContextController;
 use App\Controllers\DashboardController;
+use App\Controllers\PmmtHomeController;
 use App\Controllers\ExerciseController;
 use App\Controllers\HomeController;
 use App\Controllers\LessonController;
+use App\Controllers\LabController;
 use App\Controllers\MediaController;
 use App\Controllers\ModuleController;
 use App\Controllers\PhaseController;
@@ -15,6 +18,7 @@ use App\Controllers\ProgressController;
 use App\Controllers\QuizController;
 use App\Controllers\SimulationController;
 use App\Controllers\StudyNoteController;
+use App\Controllers\StudentAreaController;
 
 /** @var \App\Core\Router $router */
 
@@ -34,6 +38,13 @@ $router->get('/dashboard', [DashboardController::class, 'index'])
 
 
 // Exercícios de fixação: questões médias, feedback imediato e seleção anti-repetição.
+$router->get('/curso/{courseId}/exercicios', [ExerciseController::class, 'index'])
+    ->middleware(['auth', 'student']);
+
+$router->post('/curso/{courseId}/exercicios/gerar', [ExerciseController::class, 'generate'])
+    ->middleware(['auth', 'student', 'csrf']);
+
+// Compatibilidade com URLs anteriores.
 $router->get('/exercicios', [ExerciseController::class, 'index'])
     ->middleware(['auth', 'student']);
 
@@ -50,6 +61,13 @@ $router->get('/exercicios/sessao/{id}/resultado', [ExerciseController::class, 'r
     ->middleware(['auth', 'student']);
 
 // Caderno de anotações do estudante.
+$router->get('/curso/{courseId}/anotacoes', [StudyNoteController::class, 'index'])
+    ->middleware(['auth', 'student']);
+
+$router->post('/curso/{courseId}/anotacoes', [StudyNoteController::class, 'store'])
+    ->middleware(['auth', 'student', 'csrf']);
+
+// Compatibilidade com URLs anteriores.
 $router->get('/anotacoes', [StudyNoteController::class, 'index'])
     ->middleware(['auth', 'student']);
 
@@ -69,6 +87,16 @@ $router->post('/anotacoes/{id}/fixar', [StudyNoteController::class, 'togglePin']
     ->middleware(['auth', 'student', 'csrf']);
 
 // Simulados livres: independentes da progressão pedagógica.
+$router->get('/curso/{courseId}/simulados', [SimulationController::class, 'index'])
+    ->middleware(['auth', 'student']);
+
+$router->get('/curso/{courseId}/simulados/novo', [SimulationController::class, 'create'])
+    ->middleware(['auth', 'student']);
+
+$router->post('/curso/{courseId}/simulados/gerar', [SimulationController::class, 'generate'])
+    ->middleware(['auth', 'student', 'csrf']);
+
+// Compatibilidade com URLs anteriores.
 $router->get('/simulados', [SimulationController::class, 'index'])
     ->middleware(['auth', 'student']);
 
@@ -96,8 +124,37 @@ $router->get('/simulados/tentativa/{id}/revisao', [SimulationController::class, 
 $router->post('/simulados/tentativa/{id}/abandonar', [SimulationController::class, 'abandon'])
     ->middleware(['auth', 'student', 'csrf']);
 
+$router->get('/curso/{id}/inicio', [PmmtHomeController::class, 'show'])
+    ->middleware(['auth', 'student']);
+
+$router->post('/curso/sair', [CourseContextController::class, 'leave'])
+    ->middleware(['auth', 'student', 'csrf']);
+
 $router->get('/curso/{id}', [CourseController::class, 'show'])
     ->middleware(['auth', 'student']);
+
+$router->get('/curso/{courseId}/perfil', [StudentAreaController::class, 'profile'])
+    ->middleware(['auth', 'student']);
+
+$router->get('/curso/{courseId}/certificados', [StudentAreaController::class, 'certificates'])
+    ->middleware(['auth', 'student']);
+
+$router->get('/curso/{courseId}/ajuda', [StudentAreaController::class, 'help'])
+    ->middleware(['auth', 'student']);
+
+// Rotas contextualizadas: preferidas para novos cursos.
+// As rotas legadas abaixo permanecem durante a transição do PMMT.
+$router->get('/curso/{courseId}/modulo/{id}', [ModuleController::class, 'show'])
+    ->middleware(['auth', 'student', 'module.unlocked']);
+
+$router->get('/curso/{courseId}/fase/{id}', [PhaseController::class, 'show'])
+    ->middleware(['auth', 'student', 'phase.unlocked']);
+
+$router->get('/curso/{courseId}/aula/{id}', [LessonController::class, 'show'])
+    ->middleware(['auth', 'student', 'lesson.unlocked']);
+
+$router->post('/curso/{courseId}/aula/{id}/concluir', [ProgressController::class, 'completeLesson'])
+    ->middleware(['auth', 'student', 'csrf', 'lesson.unlocked']);
 
 $router->get('/modulo/{id}', [ModuleController::class, 'show'])
     ->middleware(['auth', 'student', 'module.unlocked']);
@@ -110,6 +167,13 @@ $router->get('/aula/{id}', [LessonController::class, 'show'])
 
 $router->post('/aula/{id}/concluir', [ProgressController::class, 'completeLesson'])
     ->middleware(['auth', 'student', 'csrf', 'lesson.unlocked']);
+
+// Laboratórios práticos usam uma casca genérica; a engine concreta é plugável.
+$router->get('/curso/{courseId}/laboratorio/atividade/{id}', [LabController::class, 'show'])
+    ->middleware(['auth', 'student']);
+
+$router->get('/laboratorio/atividade/{id}', [LabController::class, 'show'])
+    ->middleware(['auth', 'student']);
 
 // Streaming protegido dos vídeos da biblioteca.
 // Administradores podem visualizar qualquer vídeo.

@@ -65,10 +65,14 @@ final class AuthController extends Controller
         if (Auth::isStudent() && Auth::id() !== null) {
             $studentId = (int) Auth::id();
 
-            // Ao entrar, garante a política atual: todos os módulos publicados
-            // da matrícula ficam livres, preservando a sequência interna.
+            // Ao entrar, reconcilia todas as matrículas ativas com as
+            // políticas de navegação configuradas em cada curso.
             (new ProgressInitializer())->initializeActiveEnrollments($studentId);
             (new UserAccessMonitor())->registerLogin($studentId);
+        }
+
+        if (Auth::isAdmin()) {
+            $this->redirect('/admin');
         }
 
         $this->redirect('/dashboard');

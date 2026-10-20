@@ -7,11 +7,15 @@ $courses = $courses ?? [];
 $modules = $modules ?? [];
 $allowedLimits = $allowedLimits ?? [10, 20, 30, 50];
 $firstCourseId = (int) ($courses[0]['id'] ?? 0);
+$activeCourseId = max(0, (int) ($activeCourseId ?? 0));
+$simulationBasePath = $activeCourseId > 0
+    ? '/curso/' . $activeCourseId . '/simulados'
+    : '/simulados';
 ?>
 <section class="simulation-create-page" data-simulation-create>
     <?php if ($error): ?><div class="alert error"><?= e($error) ?></div><?php endif; ?>
 
-    <div class="simulation-back"><a href="<?= e(url('/simulados')) ?>">← Voltar para simulados</a></div>
+    <div class="simulation-back"><a href="<?= e(url($simulationBasePath)) ?>">← Voltar para simulados</a></div>
 
     <header class="simulation-create-header card">
         <span class="simulation-eyebrow">NOVO TREINO</span>
@@ -19,7 +23,7 @@ $firstCourseId = (int) ($courses[0]['id'] ?? 0);
         <p>As questões são escolhidas no servidor com prioridade para itens que você ainda não viu. No simulado geral, o sistema distribui as questões entre os módulos para evitar concentração em uma única matéria.</p>
     </header>
 
-    <form class="simulation-builder" action="<?= e(url('/simulados/gerar')) ?>" method="post" data-simulation-builder>
+    <form class="simulation-builder" action="<?= e(url($simulationBasePath . '/gerar')) ?>" method="post" data-simulation-builder>
         <?= Csrf::input() ?>
 
         <section class="card simulation-builder-card">

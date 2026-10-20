@@ -74,7 +74,7 @@ if ($isEdit) {
                     <option value="">Selecione o módulo...</option>
                     <?php foreach ($modules as $module): ?>
                         <option value="<?= (int) $module['id'] ?>" <?= $currentModuleId === (int) $module['id'] ? 'selected' : '' ?>>
-                            <?= e($module['title']) ?>
+                            <?= e(($module['course_title'] ?? 'Curso') . ' • ' . $module['title']) ?>
                         </option>
                     <?php endforeach; ?>
                 </select>

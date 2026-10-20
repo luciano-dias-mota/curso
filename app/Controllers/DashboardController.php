@@ -7,6 +7,8 @@ namespace App\Controllers;
 use App\Core\Auth;
 use App\Core\Controller;
 use App\Core\Database;
+use App\Services\CourseContextService;
+use App\Services\CourseExperienceRegistry;
 use PDO;
 
 final class DashboardController extends Controller
@@ -17,269 +19,252 @@ final class DashboardController extends Controller
             $this->redirect('/admin');
         }
 
+        // O portal é a fronteira entre experiências de curso.
+        // Nunca carregue contexto residual de uma navegação anterior.
+        (new CourseContextService())->clear();
+
         $pdo = Database::connection();
         $userId = (int) Auth::id();
         $user = Auth::user() ?? [];
 
+        /*
+         * O portal mostra:
+         * - cursos publicados;
+         * - cursos em rascunho explicitamente marcados como prévia de catálogo.
+         *
+         * Um curso pode permanecer com a prévia de catálogo ligada mesmo durante
+         * testes privados. Nesse caso, apenas a matrícula ativa recebe acesso; para
+         * os demais alunos o card continua aparecendo como "Em construção".
+         *
+         * Prévia nunca concede acesso. O backend continua exigindo curso publicado
+         * + matrícula ativa para qualquer entrada real.
+         */
         $coursesStmt = $pdo->prepare(
-            "SELECT c.id, c.title, c.slug, c.short_description, c.difficulty,
-                    COALESCE(p.progress_pct, 0) AS progress_pct,
-                    COALESCE(p.average_score, 0) AS average_score,
-                    p.last_accessed_at,
-                    (SELECT COUNT(*)
-                       FROM modules m
-                      WHERE m.course_id = c.id
-                        AND m.status = 'published') AS module_count
-             FROM enrollments e
-             INNER JOIN courses c ON c.id = e.course_id
-             LEFT JOIN user_course_progress p
-                    ON p.course_id = c.id
-                   AND p.user_id = e.user_id
-             WHERE e.user_id = :user_id
-               AND e.status = 'active'
-               AND c.status = 'published'
-             ORDER BY COALESCE(p.last_accessed_at, e.enrolled_at, c.published_at) DESC,
-                      c.position, c.id"
+            "SELECT c.id, c.title, c.slug, c.experience_key, c.short_description, c.cover_image,
+                    c.status, c.difficulty, c.position,
+                    COALESCE(preview.setting_value, '0') AS catalog_preview_enabled,
+                    COALESCE(preview_message.setting_value, '') AS catalog_preview_message,
+                    CASE
+                        WHEN COALESCE(preview.setting_value, '0') = '1'
+                         AND NOT (c.status = 'published' AND e.status = 'active')
+                        THEN 1 ELSE 0
+                    END AS is_preview,
+                    e.status AS enrollment_status,
+                    e.enrolled_at,
+                    CASE
+                        WHEN c.status = 'published' AND e.status = 'active'
+                        THEN 1 ELSE 0
+                    END AS has_access,
+                    CASE
+                        WHEN c.status = 'published' AND e.status = 'active'
+                        THEN COALESCE(ucp.status, 'not_started')
+                        ELSE 'not_started'
+                    END AS progress_status,
+                    CASE
+                        WHEN c.status = 'published' AND e.status = 'active'
+                        THEN COALESCE(ucp.progress_pct, 0)
+                        ELSE 0
+                    END AS progress_pct,
+                    CASE
+                        WHEN c.status = 'published' AND e.status = 'active'
+                        THEN COALESCE(ucp.average_score, 0)
+                        ELSE 0
+                    END AS average_score,
+                    CASE
+                        WHEN c.status = 'published' AND e.status = 'active'
+                        THEN ucp.last_accessed_at
+                        ELSE NULL
+                    END AS last_accessed_at,
+                    (
+                        SELECT COUNT(*)
+                        FROM modules m
+                        WHERE m.course_id = c.id
+                          AND (
+                              (
+                                  c.status = 'published'
+                                  AND e.status = 'active'
+                                  AND m.status = 'published'
+                              )
+                              OR
+                              (
+                                  COALESCE(preview.setting_value, '0') = '1'
+                                  AND NOT (c.status = 'published' AND e.status = 'active')
+                                  AND m.status <> 'archived'
+                              )
+                              OR
+                              (
+                                  c.status = 'published'
+                                  AND COALESCE(preview.setting_value, '0') <> '1'
+                                  AND m.status = 'published'
+                              )
+                          )
+                    ) AS module_count,
+                    (
+                        SELECT COUNT(*)
+                        FROM lessons l
+                        INNER JOIN phases p ON p.id = l.phase_id
+                        INNER JOIN modules m ON m.id = p.module_id
+                        WHERE m.course_id = c.id
+                          AND (
+                              (
+                                  c.status = 'published'
+                                  AND e.status = 'active'
+                                  AND m.status = 'published'
+                                  AND p.status = 'published'
+                                  AND l.status = 'published'
+                              )
+                              OR
+                              (
+                                  COALESCE(preview.setting_value, '0') = '1'
+                                  AND NOT (c.status = 'published' AND e.status = 'active')
+                                  AND m.status <> 'archived'
+                                  AND p.status <> 'archived'
+                                  AND l.status <> 'archived'
+                              )
+                              OR
+                              (
+                                  c.status = 'published'
+                                  AND COALESCE(preview.setting_value, '0') <> '1'
+                                  AND m.status = 'published'
+                                  AND p.status = 'published'
+                                  AND l.status = 'published'
+                              )
+                          )
+                    ) AS lesson_count
+             FROM courses c
+             LEFT JOIN course_settings preview
+               ON preview.course_id = c.id
+              AND preview.setting_key = 'catalog_preview_enabled'
+             LEFT JOIN course_settings preview_message
+               ON preview_message.course_id = c.id
+              AND preview_message.setting_key = 'catalog_preview_message'
+             LEFT JOIN enrollments e
+               ON e.course_id = c.id
+              AND e.user_id = :user_id
+             LEFT JOIN user_course_progress ucp
+               ON ucp.course_id = c.id
+              AND ucp.user_id = :progress_user
+             WHERE c.status = 'published'
+                OR (
+                    c.status = 'draft'
+                    AND COALESCE(preview.setting_value, '0') = '1'
+                )
+             ORDER BY
+                CASE
+                    WHEN c.status = 'published' AND e.status = 'active' THEN 0
+                    WHEN c.status = 'published' THEN 1
+                    ELSE 2
+                END,
+                CASE
+                    WHEN c.status = 'published'
+                     AND e.status = 'active'
+                     AND ucp.last_accessed_at IS NOT NULL
+                    THEN 0 ELSE 1
+                END,
+                ucp.last_accessed_at DESC,
+                c.position,
+                c.id"
         );
-        $coursesStmt->execute(['user_id' => $userId]);
+        $coursesStmt->execute([
+            'user_id' => $userId,
+            'progress_user' => $userId,
+        ]);
         $courses = $coursesStmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $levelStmt = $pdo->prepare(
-            "SELECT id, level_number, title, min_xp, max_xp
-               FROM levels
-              WHERE level_number = :level
-              LIMIT 1"
-        );
-        $levelStmt->execute(['level' => (int) ($user['current_level'] ?? 1)]);
-        $currentLevel = $levelStmt->fetch(PDO::FETCH_ASSOC) ?: [
-            'level_number' => (int) ($user['current_level'] ?? 1),
-            'title' => 'Estudante',
-            'min_xp' => 0,
-            'max_xp' => null,
-        ];
-
-        $nextLevelStmt = $pdo->prepare(
-            "SELECT id, level_number, title, min_xp, max_xp
-               FROM levels
-              WHERE level_number > :level
-              ORDER BY level_number
-              LIMIT 1"
-        );
-        $nextLevelStmt->execute(['level' => (int) $currentLevel['level_number']]);
-        $nextLevel = $nextLevelStmt->fetch(PDO::FETCH_ASSOC) ?: null;
-
-        $xpTotal = (int) ($user['xp_total'] ?? 0);
-        $levelMinXp = (int) ($currentLevel['min_xp'] ?? 0);
-        $nextMinXp = $nextLevel ? (int) $nextLevel['min_xp'] : max($xpTotal, $levelMinXp + 1);
-        $xpRange = max(1, $nextMinXp - $levelMinXp);
-        $xpIntoLevel = max(0, $xpTotal - $levelMinXp);
-        $xpProgressPct = $nextLevel
-            ? min(100, round(($xpIntoLevel / $xpRange) * 100, 1))
-            : 100.0;
-
         $continueStmt = $pdo->prepare(
-            "SELECT l.id AS lesson_id,
+            "SELECT c.id AS course_id,
+                    l.id AS lesson_id,
                     l.title AS lesson_title,
                     p.title AS phase_title,
                     m.title AS module_title,
-                    c.id AS course_id,
-                    c.title AS course_title,
                     ulp.status AS lesson_status,
-                    COALESCE(ulp.progress_pct, 0) AS progress_pct,
-                    COALESCE(ulp.last_accessed_at, ulp.started_at) AS last_accessed_at
+                    COALESCE(ulp.progress_pct, 0) AS lesson_progress_pct,
+                    COALESCE(ulp.last_accessed_at, ulp.started_at) AS activity_at
              FROM user_lesson_progress ulp
-             INNER JOIN lessons l ON l.id = ulp.lesson_id AND l.status = 'published'
-             INNER JOIN phases p ON p.id = l.phase_id AND p.status = 'published'
-             INNER JOIN modules m ON m.id = p.module_id AND m.status = 'published'
-             INNER JOIN courses c ON c.id = m.course_id AND c.status = 'published'
+             INNER JOIN lessons l
+               ON l.id = ulp.lesson_id
+              AND l.status = 'published'
+             INNER JOIN phases p
+               ON p.id = l.phase_id
+              AND p.status = 'published'
+             INNER JOIN modules m
+               ON m.id = p.module_id
+              AND m.status = 'published'
+             INNER JOIN courses c
+               ON c.id = m.course_id
+              AND c.status = 'published'
              INNER JOIN enrollments e
-                     ON e.course_id = c.id
-                    AND e.user_id = :enrollment_user
-                    AND e.status = 'active'
+               ON e.course_id = c.id
+              AND e.user_id = :enrollment_user
+              AND e.status = 'active'
              WHERE ulp.user_id = :progress_user
                AND ulp.status IN ('in_progress', 'available')
-             ORDER BY (ulp.status = 'in_progress') DESC,
+             ORDER BY c.id,
+                      (ulp.status = 'in_progress') DESC,
                       COALESCE(ulp.last_accessed_at, ulp.started_at, '1970-01-01 00:00:00') DESC,
-                      m.position, p.position, l.position
-             LIMIT 1"
+                      m.position, p.position, l.position"
         );
         $continueStmt->execute([
             'enrollment_user' => $userId,
             'progress_user' => $userId,
         ]);
-        $continueLesson = $continueStmt->fetch(PDO::FETCH_ASSOC) ?: null;
 
-        $achievementsStmt = $pdo->prepare(
-            "SELECT a.id, a.name, a.slug, a.description, a.achievement_type,
-                    a.requirement_value, a.xp_reward,
-                    ua.unlocked_at,
-                    CASE WHEN ua.id IS NULL THEN 0 ELSE 1 END AS unlocked
-               FROM achievements a
-               LEFT JOIN user_achievements ua
-                      ON ua.achievement_id = a.id
-                     AND ua.user_id = :user_id
-              WHERE a.active = 1
-              ORDER BY (ua.id IS NULL), ua.unlocked_at DESC, a.id
-              LIMIT 8"
-        );
-        $achievementsStmt->execute(['user_id' => $userId]);
-        $achievements = $achievementsStmt->fetchAll(PDO::FETCH_ASSOC);
+        $continueByCourse = [];
+        foreach ($continueStmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
+            $courseId = (int) $row['course_id'];
+            if (!isset($continueByCourse[$courseId])) {
+                $continueByCourse[$courseId] = $row;
+            }
+        }
 
-        $achievementCountStmt = $pdo->prepare(
-            'SELECT COUNT(*) FROM user_achievements WHERE user_id = :user_id'
-        );
-        $achievementCountStmt->execute(['user_id' => $userId]);
-        $achievementCount = (int) $achievementCountStmt->fetchColumn();
+        $myCourses = [];
+        $otherCourses = [];
+        $previewCourses = 0;
+        $lockedPublishedCourses = 0;
+        $completedCourses = 0;
+        $experienceRegistry = new CourseExperienceRegistry();
 
-        $lessonsTodayStmt = $pdo->prepare(
-            "SELECT COUNT(*)
-               FROM user_lesson_progress
-              WHERE user_id = :user_id
-                AND status = 'completed'
-                AND completed_at >= CURDATE()
-                AND completed_at < CURDATE() + INTERVAL 1 DAY"
-        );
-        $lessonsTodayStmt->execute(['user_id' => $userId]);
-        $lessonsToday = (int) $lessonsTodayStmt->fetchColumn();
+        foreach ($courses as $course) {
+            $courseId = (int) $course['id'];
+            $course['continue_lesson'] = $continueByCourse[$courseId] ?? null;
+            $course['has_access'] = (int) ($course['has_access'] ?? 0) === 1;
+            $course['is_preview'] = (int) ($course['is_preview'] ?? 0) === 1;
+            $course['entry_path'] = $experienceRegistry->entryPath($course);
 
-        $questionsTodayStmt = $pdo->prepare(
-            "SELECT COUNT(*)
-               FROM quiz_answers qa
-               INNER JOIN quiz_attempts qta ON qta.id = qa.attempt_id
-              WHERE qta.user_id = :user_id
-                AND qa.answered_at >= CURDATE()
-                AND qa.answered_at < CURDATE() + INTERVAL 1 DAY"
-        );
-        $questionsTodayStmt->execute(['user_id' => $userId]);
-        $questionsToday = (int) $questionsTodayStmt->fetchColumn();
+            if ($course['has_access']) {
+                if (($course['progress_status'] ?? '') === 'completed') {
+                    $completedCourses++;
+                }
 
-        $studyTodayStmt = $pdo->prepare(
-            "SELECT COALESCE(SUM(duration_seconds), 0)
-               FROM study_sessions
-              WHERE user_id = :user_id
-                AND started_at >= CURDATE()
-                AND started_at < CURDATE() + INTERVAL 1 DAY"
-        );
-        $studyTodayStmt->execute(['user_id' => $userId]);
-        $studyMinutesToday = (int) floor(((int) $studyTodayStmt->fetchColumn()) / 60);
+                $myCourses[] = $course;
+                continue;
+            }
 
-        $xpTodayStmt = $pdo->prepare(
-            "SELECT COALESCE(SUM(xp_amount), 0)
-               FROM xp_events
-              WHERE user_id = :user_id
-                AND created_at >= CURDATE()
-                AND created_at < CURDATE() + INTERVAL 1 DAY"
-        );
-        $xpTodayStmt->execute(['user_id' => $userId]);
-        $xpToday = (int) $xpTodayStmt->fetchColumn();
+            if ($course['is_preview']) {
+                $previewCourses++;
+            } else {
+                $lockedPublishedCourses++;
+            }
 
-        $lessonOverviewStmt = $pdo->prepare(
-            "SELECT COUNT(DISTINCT l.id) AS total,
-                    COUNT(DISTINCT CASE WHEN ulp.status = 'completed' THEN l.id END) AS completed
-               FROM enrollments e
-               INNER JOIN modules m ON m.course_id = e.course_id AND m.status = 'published'
-               INNER JOIN phases p ON p.module_id = m.id AND p.status = 'published'
-               INNER JOIN lessons l ON l.phase_id = p.id AND l.status = 'published'
-               LEFT JOIN user_lesson_progress ulp
-                      ON ulp.lesson_id = l.id
-                     AND ulp.user_id = e.user_id
-              WHERE e.user_id = :user_id
-                AND e.status = 'active'"
-        );
-        $lessonOverviewStmt->execute(['user_id' => $userId]);
-        $lessonOverview = $lessonOverviewStmt->fetch(PDO::FETCH_ASSOC) ?: ['total' => 0, 'completed' => 0];
-
-        $questionOverviewStmt = $pdo->prepare(
-            "SELECT
-                (SELECT COUNT(DISTINCT qq.question_id)
-                   FROM enrollments e1
-                   INNER JOIN quizzes qz ON qz.course_id = e1.course_id AND qz.active = 1
-                   INNER JOIN quiz_questions qq ON qq.quiz_id = qz.id
-                  WHERE e1.user_id = :total_user
-                    AND e1.status = 'active') AS total,
-                (SELECT COUNT(DISTINCT qa.question_id)
-                   FROM quiz_answers qa
-                   INNER JOIN quiz_attempts qta ON qta.id = qa.attempt_id
-                  WHERE qta.user_id = :answered_user) AS completed"
-        );
-        $questionOverviewStmt->execute([
-            'total_user' => $userId,
-            'answered_user' => $userId,
-        ]);
-        $questionOverview = $questionOverviewStmt->fetch(PDO::FETCH_ASSOC) ?: ['total' => 0, 'completed' => 0];
-
-        $simulationOverviewStmt = $pdo->prepare(
-            "SELECT
-                (SELECT COUNT(DISTINCT s.id)
-                   FROM enrollments e2
-                   INNER JOIN simulations s ON s.course_id = e2.course_id AND s.active = 1
-                  WHERE e2.user_id = :sim_total_user
-                    AND e2.status = 'active') AS total,
-                (SELECT COUNT(DISTINCT sa.simulation_id)
-                   FROM simulation_attempts sa
-                  WHERE sa.user_id = :sim_done_user
-                    AND sa.status = 'finished') AS completed"
-        );
-        $simulationOverviewStmt->execute([
-            'sim_total_user' => $userId,
-            'sim_done_user' => $userId,
-        ]);
-        $simulationOverview = $simulationOverviewStmt->fetch(PDO::FETCH_ASSOC) ?: ['total' => 0, 'completed' => 0];
-
-        $studyTotalStmt = $pdo->prepare(
-            "SELECT COALESCE(SUM(duration_seconds), 0)
-               FROM study_sessions
-              WHERE user_id = :user_id"
-        );
-        $studyTotalStmt->execute(['user_id' => $userId]);
-        $studySecondsTotal = (int) $studyTotalStmt->fetchColumn();
-
-        $dailyQuests = [
-            [
-                'icon' => '▶',
-                'title' => 'Concluir 2 aulas',
-                'current' => $lessonsToday,
-                'target' => 2,
-                'unit' => 'aulas',
-            ],
-            [
-                'icon' => '?',
-                'title' => 'Responder 10 questões',
-                'current' => $questionsToday,
-                'target' => 10,
-                'unit' => 'questões',
-            ],
-            [
-                'icon' => '◷',
-                'title' => 'Estudar por 30 minutos',
-                'current' => $studyMinutesToday,
-                'target' => 30,
-                'unit' => 'min',
-            ],
-        ];
+            $otherCourses[] = $course;
+        }
 
         $this->view(
             'student/dashboard',
             [
-                'title' => 'Painel do Estudante',
+                'title' => 'Portal de Cursos',
                 'user' => $user,
-                'courses' => $courses,
-                'currentLevel' => $currentLevel,
-                'nextLevel' => $nextLevel,
-                'xpProgressPct' => $xpProgressPct,
-                'xpIntoLevel' => $xpIntoLevel,
-                'xpRange' => $xpRange,
-                'continueLesson' => $continueLesson,
-                'achievements' => $achievements,
-                'achievementCount' => $achievementCount,
-                'dailyQuests' => $dailyQuests,
-                'xpToday' => $xpToday,
-                'lessonOverview' => $lessonOverview,
-                'questionOverview' => $questionOverview,
-                'simulationOverview' => $simulationOverview,
-                'studySecondsTotal' => $studySecondsTotal,
+                'myCourses' => $myCourses,
+                'otherCourses' => $otherCourses,
+                'summary' => [
+                    'catalog_courses' => count($courses),
+                    'accessible_courses' => count($myCourses),
+                    'locked_courses' => $lockedPublishedCourses,
+                    'preview_courses' => $previewCourses,
+                    'completed_courses' => $completedCourses,
+                ],
             ],
-            'layouts/student'
+            'layouts/portal'
         );
     }
 }

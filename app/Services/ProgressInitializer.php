@@ -60,8 +60,13 @@ final class ProgressInitializer
             'course_id' => $courseId,
         ]);
 
+        $settings = new CourseSettingsService();
+        $moduleAccessMode = $settings->moduleAccessMode($courseId, $pdo);
+        $lessonAccessMode = $settings->lessonAccessMode($courseId, $pdo);
+
         $modules = $pdo->prepare(
             "SELECT m.id,
+                    COALESCE(ump.status, 'locked') AS user_status,
                     (
                         SELECT COUNT(*)
                         FROM phases p
@@ -70,23 +75,42 @@ final class ProgressInitializer
                           AND p.is_required = 1
                     ) AS required_phases
              FROM modules m
+             LEFT JOIN user_module_progress ump
+               ON ump.module_id = m.id
+              AND ump.user_id = :user_id
              WHERE m.course_id = :course_id
                AND m.status = 'published'
              ORDER BY m.position, m.id"
         );
-        $modules->execute(['course_id' => $courseId]);
+        $modules->execute([
+            'user_id' => $userId,
+            'course_id' => $courseId,
+        ]);
+
+        $firstIncompleteModuleUnlocked = false;
 
         foreach ($modules->fetchAll(PDO::FETCH_ASSOC) as $module) {
             $moduleId = (int) $module['id'];
+            $userStatus = (string) ($module['user_status'] ?? 'locked');
 
-            // Todos os módulos publicados ficam disponíveis desde o início para
-            // o aluno escolher a disciplina que deseja estudar no dia.
-            //
-            // A liberdade existe ENTRE módulos. DENTRO de cada módulo a
-            // progressão continua obrigatória: primeira fase -> aulas em ordem
-            // -> exercício de fixação -> checkpoint -> próxima fase -> avaliação final.
-            $this->unlockModule($pdo, $userId, $moduleId);
-            $this->unlockModuleEntryPoints($pdo, $userId, $moduleId);
+            if ($moduleAccessMode === 'free') {
+                $this->unlockModule($pdo, $userId, $moduleId);
+                $this->unlockModuleEntryPoints($pdo, $userId, $moduleId, $lessonAccessMode);
+                continue;
+            }
+
+            // No modo sequencial, módulos já concluídos permanecem acessíveis e
+            // apenas o primeiro módulo ainda não concluído é liberado.
+            if ($userStatus === 'completed') {
+                $this->unlockModule($pdo, $userId, $moduleId);
+                continue;
+            }
+
+            if (!$firstIncompleteModuleUnlocked) {
+                $this->unlockModule($pdo, $userId, $moduleId);
+                $this->unlockModuleEntryPoints($pdo, $userId, $moduleId, $lessonAccessMode);
+                $firstIncompleteModuleUnlocked = true;
+            }
         }
     }
 
@@ -110,7 +134,7 @@ final class ProgressInitializer
         ]);
     }
 
-    private function unlockModuleEntryPoints(PDO $pdo, int $userId, int $moduleId): void
+    private function unlockModuleEntryPoints(PDO $pdo, int $userId, int $moduleId, string $lessonAccessMode): void
     {
         $stmt = $pdo->prepare(
             "SELECT p.id,
@@ -151,7 +175,13 @@ final class ProgressInitializer
 
             if (!$firstIncompleteRequiredUnlocked) {
                 $this->unlockPhase($pdo, $userId, $phaseId);
-                $this->unlockPhaseEntryLessons($pdo, $userId, $phaseId);
+
+                if ($lessonAccessMode === 'free') {
+                    $this->unlockAllLessons($pdo, $userId, $phaseId);
+                } else {
+                    $this->unlockPhaseEntryLessons($pdo, $userId, $phaseId);
+                }
+
                 $firstIncompleteRequiredUnlocked = true;
             }
         }

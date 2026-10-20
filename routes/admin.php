@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 use App\Controllers\Admin\AdminOverviewController;
 use App\Controllers\Admin\DashboardController;
+use App\Controllers\Admin\EnrollmentController;
+use App\Controllers\Admin\CourseController as AdminCourseController;
+use App\Controllers\Admin\CurriculumController;
 use App\Controllers\Admin\LessonContentController;
 use App\Controllers\Admin\MediaController;
 use App\Controllers\Admin\QuestionController;
@@ -13,6 +16,37 @@ use App\Controllers\Admin\StudentController;
 
 $router->get('/admin', [DashboardController::class, 'index'])
     ->middleware(['auth', 'admin']);
+
+
+// Gestão genérica de cursos e estrutura acadêmica.
+$router->get('/admin/cursos', [AdminCourseController::class, 'index'])
+    ->middleware(['auth', 'admin']);
+$router->get('/admin/cursos/novo', [AdminCourseController::class, 'create'])
+    ->middleware(['auth', 'admin']);
+$router->post('/admin/cursos', [AdminCourseController::class, 'store'])
+    ->middleware(['auth', 'admin', 'csrf']);
+$router->get('/admin/cursos/{id}/editar', [AdminCourseController::class, 'edit'])
+    ->middleware(['auth', 'admin']);
+$router->post('/admin/cursos/{id}/atualizar', [AdminCourseController::class, 'update'])
+    ->middleware(['auth', 'admin', 'csrf']);
+$router->post('/admin/cursos/{id}/status', [AdminCourseController::class, 'setStatus'])
+    ->middleware(['auth', 'admin', 'csrf']);
+$router->get('/admin/cursos/{id}/estrutura', [CurriculumController::class, 'show'])
+    ->middleware(['auth', 'admin']);
+$router->post('/admin/cursos/{id}/modulos', [CurriculumController::class, 'storeModule'])
+    ->middleware(['auth', 'admin', 'csrf']);
+$router->post('/admin/cursos/{id}/modulos/{moduleId}/fases', [CurriculumController::class, 'storePhase'])
+    ->middleware(['auth', 'admin', 'csrf']);
+$router->post('/admin/cursos/{id}/fases/{phaseId}/aulas', [CurriculumController::class, 'storeLesson'])
+    ->middleware(['auth', 'admin', 'csrf']);
+$router->get('/admin/cursos/{id}', [AdminCourseController::class, 'show'])
+    ->middleware(['auth', 'admin']);
+
+// Gestão centralizada de matrículas / liberação de cursos.
+$router->get('/admin/matriculas', [EnrollmentController::class, 'index'])
+    ->middleware(['auth', 'admin']);
+$router->post('/admin/matriculas', [EnrollmentController::class, 'update'])
+    ->middleware(['auth', 'admin', 'csrf']);
 
 // Gestão de alunos.
 $router->get('/admin/usuarios', [StudentController::class, 'index'])

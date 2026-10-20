@@ -7,6 +7,8 @@ namespace App\Controllers;
 use App\Core\Auth;
 use App\Core\Controller;
 use App\Core\Database;
+use App\Core\Session;
+use App\Services\CourseLayoutResolver;
 
 final class ModuleController extends Controller
 {
@@ -16,7 +18,7 @@ final class ModuleController extends Controller
         $userId = (int) Auth::id();
 
         $stmt = $pdo->prepare(
-            "SELECT m.*, c.title AS course_title, c.id AS course_id,
+            "SELECT m.*, c.title AS course_title, c.id AS course_id, c.experience_key,
                     ump.status AS user_status,
                     COALESCE(ump.progress_pct, 0) AS progress_pct,
                     COALESCE(ump.best_score, 0) AS best_score
@@ -124,7 +126,9 @@ final class ModuleController extends Controller
                 'allPhasesComplete' => $allPhasesComplete,
                 'moduleQuiz' => $quizStmt->fetch() ?: null,
             ],
-            'layouts/student'
+            (new CourseLayoutResolver())->layoutForKey(
+                (string) ($module['experience_key'] ?? Session::get('active_course_experience', 'generic'))
+            )
         );
     }
 }

@@ -17,10 +17,18 @@
             type="search"
             name="q"
             value="<?= e($search) ?>"
-            placeholder="Buscar aula, fase, módulo ou curso..."
+            placeholder="Buscar aula, fase ou módulo..."
         >
+        <select class="ld-admin-select" name="course_id" aria-label="Curso">
+            <option value="0">Todos os cursos</option>
+            <?php foreach (($courses ?? []) as $course): ?>
+                <option value="<?= (int) $course['id'] ?>" <?= (int) ($courseId ?? 0) === (int) $course['id'] ? 'selected' : '' ?>>
+                    <?= e($course['title']) ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
         <button class="ld-admin-btn" type="submit">Buscar</button>
-        <?php if ($search !== ''): ?>
+        <?php if ($search !== '' || (int) ($courseId ?? 0) > 0): ?>
             <a class="ld-admin-btn is-ghost" href="<?= e(url('/admin/aulas')) ?>">Limpar</a>
         <?php endif; ?>
     </form>

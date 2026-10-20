@@ -16,7 +16,7 @@ if ($appUrl === '') {
 }
 
 return [
-    'name' => env('APP_NAME', 'PMMT Academy'),
+    'name' => env('APP_NAME', 'Curso MI'),
     'env' => $environment,
     'debug' => (bool) env('APP_DEBUG', false),
     'url' => rtrim($appUrl, '/'),

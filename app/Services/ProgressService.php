@@ -144,8 +144,8 @@ final class ProgressService
                 ];
             }
 
-            // A leitura obrigatória chega a 100%, mas a aula só vira completed
-            // após aprovação no exercício lesson_fixation.
+            // A leitura obrigatória chega a 100%. A política da aula decide
+            // se a conclusão ocorre por leitura, quiz/exercício ou laboratório.
             $pdo->prepare(
                 "UPDATE user_lesson_progress
                  SET status = CASE
@@ -163,6 +163,64 @@ final class ProgressService
                 'user_id' => $userId,
                 'lesson_id' => $lessonId,
             ]);
+
+            $completionMode = (new LessonCompletionPolicyService())->modeForLesson(
+                $lessonId,
+                $pdo
+            );
+
+            if ($completionMode === 'reading') {
+                (new LessonCompletionService())->complete(
+                    $pdo,
+                    $userId,
+                    $lessonId,
+                    'Aula concluída após leitura'
+                );
+
+                $pdo->commit();
+
+                return [
+                    'phase_id' => (int) $lesson['phase_id'],
+                    'quiz_id' => null,
+                    'lab_activity_id' => null,
+                    'optional' => false,
+                    'next_step' => 'completed',
+                ];
+            }
+
+            if ($completionMode === 'lab') {
+                if (!(new CourseSettingsService())->enabled(
+                    (int) $lesson['course_id'],
+                    'lab_enabled',
+                    $pdo,
+                    false
+                )) {
+                    throw new RuntimeException(
+                        'Esta aula usa laboratório, mas o recurso está desabilitado para o curso.'
+                    );
+                }
+
+                $labActivityId = (new LabService())->firstPendingRequiredActivity(
+                    $userId,
+                    $lessonId
+                );
+
+                if ($labActivityId === null) {
+                    throw new RuntimeException(
+                        'O laboratório obrigatório desta aula ainda não foi configurado.'
+                    );
+                }
+
+                $pdo->commit();
+
+                return [
+                    'phase_id' => (int) $lesson['phase_id'],
+                    'quiz_id' => null,
+                    'lab_activity_id' => $labActivityId,
+                    'optional' => false,
+                    'next_step' => 'lab',
+                ];
+            }
 
             $quizStmt = $pdo->prepare(
                 "SELECT qz.id, qz.question_limit, COUNT(qq.question_id) AS question_count
@@ -193,7 +251,9 @@ final class ProgressService
             $result = [
                 'phase_id' => (int) $lesson['phase_id'],
                 'quiz_id' => (int) $quiz['id'],
+                'lab_activity_id' => null,
                 'optional' => false,
+                'next_step' => 'quiz',
             ];
 
             $pdo->commit();
@@ -216,6 +276,7 @@ final class ProgressService
                     l.phase_id,
                     l.is_required AS lesson_required,
                     p.is_required AS phase_required,
+                    m.course_id,
                     ulp.status
              FROM lessons l
              INNER JOIN phases p

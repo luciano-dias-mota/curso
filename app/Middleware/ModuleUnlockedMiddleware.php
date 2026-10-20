@@ -6,8 +6,11 @@ namespace App\Middleware;
 
 use App\Core\Auth;
 use App\Core\Database;
+use App\Core\Session;
 use App\Core\View;
+use App\Services\CourseAccessService;
 use App\Services\ProgressInitializer;
+use RuntimeException;
 
 final class ModuleUnlockedMiddleware
 {
@@ -24,29 +27,24 @@ final class ModuleUnlockedMiddleware
         }
 
         $pdo = Database::connection();
-        $stmt = $pdo->prepare(
-            "SELECT m.course_id
-             FROM modules m
-             INNER JOIN courses c
-               ON c.id = m.course_id
-              AND c.status = 'published'
-             INNER JOIN enrollments e
-               ON e.course_id = c.id
-              AND e.user_id = :user_id
-              AND e.status = 'active'
-             WHERE m.id = :module_id
-               AND m.status = 'published'
-             LIMIT 1"
-        );
-        $stmt->execute([
-            'user_id' => Auth::id(),
-            'module_id' => $moduleId,
-        ]);
 
-        $courseId = (int) ($stmt->fetchColumn() ?: 0);
-
-        if ($courseId <= 0) {
+        try {
+            $module = (new CourseAccessService())->requireModule(
+                (int) Auth::id(),
+                $moduleId,
+                $pdo
+            );
+        } catch (RuntimeException) {
             $this->deny('Este módulo não está disponível para sua matrícula.');
+        }
+
+        $courseId = (int) $module['course_id'];
+        Session::put('active_course_id', $courseId);
+        Session::put('active_course_experience', (string) ($module['experience_key'] ?? 'generic'));
+
+        $routeCourseId = (int) ($params['courseId'] ?? 0);
+        if ($routeCourseId > 0 && $routeCourseId !== $courseId) {
+            $this->deny('Este módulo não pertence ao curso informado.');
         }
 
         // Autocorreção para alunos antigos: ao abrir qualquer módulo, garante

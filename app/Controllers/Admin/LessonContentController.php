@@ -18,6 +18,7 @@ final class LessonContentController extends Controller
     {
         $pdo = Database::connection();
         $search = trim((string) $request->input('q', ''));
+        $courseId = max(0, (int) $request->input('course_id', 0));
 
         $sql = "SELECT l.id, l.title, l.status, l.position,
                        p.title AS phase_title,
@@ -30,16 +31,26 @@ final class LessonContentController extends Controller
                 INNER JOIN modules m ON m.id = p.module_id
                 INNER JOIN courses c ON c.id = m.course_id";
 
+        $where = [];
         $params = [];
 
         if ($search !== '') {
-            $sql .= " WHERE (
-                        l.title LIKE :q
-                        OR p.title LIKE :q
-                        OR m.title LIKE :q
-                        OR c.title LIKE :q
-                      )";
+            $where[] = "(
+                l.title LIKE :q
+                OR p.title LIKE :q
+                OR m.title LIKE :q
+                OR c.title LIKE :q
+            )";
             $params['q'] = '%' . $search . '%';
+        }
+
+        if ($courseId > 0) {
+            $where[] = 'c.id = :course_id';
+            $params['course_id'] = $courseId;
+        }
+
+        if ($where !== []) {
+            $sql .= ' WHERE ' . implode(' AND ', $where);
         }
 
         $sql .= " ORDER BY c.position, c.id, m.position, m.id, p.position, p.id, l.position, l.id
@@ -53,7 +64,11 @@ final class LessonContentController extends Controller
             [
                 'title' => 'Gerenciar Aulas',
                 'lessons' => $stmt->fetchAll(),
+                'courses' => $pdo->query(
+                    "SELECT id, title FROM courses WHERE status <> 'archived' ORDER BY position, id"
+                )->fetchAll(PDO::FETCH_ASSOC),
                 'search' => $search,
+                'courseId' => $courseId,
             ],
             'layouts/admin'
         );

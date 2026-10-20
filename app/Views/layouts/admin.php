@@ -14,7 +14,9 @@ $adminPath = $basePos !== false ? substr($requestPath, $basePos) : '/admin';
 $adminPath = '/' . trim($adminPath, '/');
 
 $section = 'home';
-if (str_starts_with($adminPath, '/admin/usuarios')) $section = 'users';
+if (str_starts_with($adminPath, '/admin/cursos')) $section = 'courses';
+elseif (str_starts_with($adminPath, '/admin/matriculas')) $section = 'enrollments';
+elseif (str_starts_with($adminPath, '/admin/usuarios')) $section = 'users';
 elseif (str_starts_with($adminPath, '/admin/conteudo') || str_starts_with($adminPath, '/admin/aulas') || str_starts_with($adminPath, '/admin/videos')) $section = 'content';
 elseif (str_starts_with($adminPath, '/admin/questoes')) $section = 'questions';
 elseif (str_starts_with($adminPath, '/admin/simulados')) $section = 'simulations';
@@ -54,8 +56,11 @@ $error = Session::pullFlash('error');
             </a>
 
             <span class="ld-admin-nav-label">GESTÃO</span>
+            <a class="ld-admin-nav-item <?= $section === 'courses' ? 'is-active' : '' ?>" href="<?= e(url('/admin/cursos')) ?>">
+                <span class="ld-admin-nav-icon">◫</span><span>Cursos</span>
+            </a>
             <a class="ld-admin-nav-item <?= $section === 'content' ? 'is-active' : '' ?>" href="<?= e(url('/admin/conteudo')) ?>">
-                <span class="ld-admin-nav-icon">▦</span><span>Cursos e conteúdo</span>
+                <span class="ld-admin-nav-icon">▦</span><span>Conteúdo</span>
             </a>
             <a class="ld-admin-nav-item <?= $section === 'questions' ? 'is-active' : '' ?>" href="<?= e(url('/admin/questoes')) ?>">
                 <span class="ld-admin-nav-icon">?</span><span>Questões</span>
@@ -65,6 +70,9 @@ $error = Session::pullFlash('error');
             </a>
             <a class="ld-admin-nav-item <?= $section === 'users' ? 'is-active' : '' ?>" href="<?= e(url('/admin/usuarios')) ?>">
                 <span class="ld-admin-nav-icon">♙</span><span>Alunos</span>
+            </a>
+            <a class="ld-admin-nav-item <?= $section === 'enrollments' ? 'is-active' : '' ?>" href="<?= e(url('/admin/matriculas')) ?>">
+                <span class="ld-admin-nav-icon">✓</span><span>Matrículas</span>
             </a>
             <a class="ld-admin-nav-item <?= $section === 'reports' ? 'is-active' : '' ?>" href="<?= e(url('/admin/relatorios')) ?>">
                 <span class="ld-admin-nav-icon">▥</span><span>Relatórios</span>
@@ -115,9 +123,9 @@ $error = Session::pullFlash('error');
 
 <nav class="ld-admin-mobile-nav" aria-label="Navegação administrativa móvel">
     <a class="<?= $section === 'home' ? 'is-active' : '' ?>" href="<?= e(url('/admin')) ?>"><span>⌂</span><small>Painel</small></a>
-    <a class="<?= $section === 'content' ? 'is-active' : '' ?>" href="<?= e(url('/admin/conteudo')) ?>"><span>▦</span><small>Conteúdo</small></a>
-    <a class="<?= $section === 'questions' ? 'is-active' : '' ?>" href="<?= e(url('/admin/questoes')) ?>"><span>?</span><small>Questões</small></a>
+    <a class="<?= $section === 'courses' ? 'is-active' : '' ?>" href="<?= e(url('/admin/cursos')) ?>"><span>◫</span><small>Cursos</small></a>
     <a class="<?= $section === 'users' ? 'is-active' : '' ?>" href="<?= e(url('/admin/usuarios')) ?>"><span>♙</span><small>Alunos</small></a>
+    <a class="<?= $section === 'enrollments' ? 'is-active' : '' ?>" href="<?= e(url('/admin/matriculas')) ?>"><span>✓</span><small>Matrículas</small></a>
     <form action="<?= e(url('/logout')) ?>" method="post"><?= Csrf::input() ?><button type="submit"><span>↪</span><small>Sair</small></button></form>
 </nav>
 </body>
