@@ -8,19 +8,27 @@ use App\Core\Auth;
 use App\Core\Controller;
 use App\Core\Request;
 use App\Core\Session;
+use App\Services\CourseAccessService;
 use App\Services\ExerciseService;
 use RuntimeException;
 use Throwable;
 
 final class ExerciseController extends Controller
 {
-    public function index(): void
+    public function index(?int $courseId = null): void
     {
         try {
-            $data = (new ExerciseService())->dashboard((int) Auth::id());
+            $courseId = $this->resolveCourseContext($courseId);
+            $data = (new ExerciseService())->dashboard(
+                (int) Auth::id(),
+                $courseId > 0 ? $courseId : null
+            );
             $this->view(
                 'student/exercises/index',
-                array_merge(['title' => 'Exercícios'], $data),
+                array_merge([
+                    'title' => 'Exercícios',
+                    'activeCourseId' => $courseId,
+                ], $data),
                 'layouts/student'
             );
         } catch (Throwable $e) {
@@ -30,10 +38,20 @@ final class ExerciseController extends Controller
         }
     }
 
-    public function generate(Request $request): void
+    public function generate(Request $request, ?int $courseId = null): void
     {
         try {
-            $courseId = (int) $request->input('course_id', 0);
+            $routeCourseId = $this->resolveCourseContext($courseId, false);
+            $courseId = $routeCourseId > 0
+                ? $routeCourseId
+                : (int) $request->input('course_id', 0);
+
+            if ($courseId > 0) {
+                (new CourseAccessService())->requireCourseEnrollment(
+                    (int) Auth::id(),
+                    $courseId
+                );
+            }
             $moduleId = (int) $request->input('module_id', 0);
             $phaseId = (int) $request->input('phase_id', 0);
             $questionLimit = (int) $request->input('question_limit', 10);
