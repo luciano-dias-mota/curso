@@ -8,8 +8,10 @@ use App\Core\Auth;
 use App\Core\Controller;
 use App\Core\Database;
 use App\Core\Session;
-use App\Services\CourseExperienceService;
+use App\Services\CourseAccessService;
+use App\Services\CourseExperienceRegistry;
 use PDO;
+use RuntimeException;
 
 final class PmmtHomeController extends Controller
 {
@@ -19,43 +21,54 @@ final class PmmtHomeController extends Controller
         $userId = (int) Auth::id();
         $user = Auth::user() ?? [];
 
-        $courseStmt = $pdo->prepare(
-            "SELECT c.id, c.title, c.slug, c.short_description, c.difficulty,
-                    COALESCE(p.progress_pct, 0) AS progress_pct,
-                    COALESCE(p.average_score, 0) AS average_score,
-                    p.last_accessed_at,
-                    (SELECT COUNT(*)
-                       FROM modules m
-                      WHERE m.course_id = c.id
-                        AND m.status = 'published') AS module_count
-             FROM courses c
-             INNER JOIN enrollments e
-               ON e.course_id = c.id
-              AND e.user_id = :user_id
-              AND e.status = 'active'
-             LEFT JOIN user_course_progress p
-               ON p.course_id = c.id
-              AND p.user_id = :progress_user
-             WHERE c.id = :course_id
-               AND c.status = 'published'
-             LIMIT 1"
-        );
-        $courseStmt->execute([
-            'user_id' => $userId,
-            'progress_user' => $userId,
-            'course_id' => $id,
-        ]);
-        $course = $courseStmt->fetch(PDO::FETCH_ASSOC);
-
-        if (!$course) {
+        try {
+            $course = (new CourseAccessService())->requireCourseEnrollment(
+                $userId,
+                $id,
+                $pdo
+            );
+        } catch (RuntimeException) {
             http_response_code(404);
             $this->view('errors/404');
             return;
         }
 
-        if ((new CourseExperienceService())->key($course) !== 'pmmt') {
+        if ((new CourseExperienceRegistry())->get(
+            (string) ($course['experience_key'] ?? 'generic')
+        )['key'] !== 'pmmt') {
             $this->redirect('/curso/' . $id);
         }
+
+        $progressStmt = $pdo->prepare(
+            "SELECT COALESCE(progress_pct, 0) AS progress_pct,
+                    COALESCE(average_score, 0) AS average_score,
+                    last_accessed_at
+               FROM user_course_progress
+              WHERE course_id = :course_id
+                AND user_id = :user_id
+              LIMIT 1"
+        );
+        $progressStmt->execute([
+            'course_id' => $id,
+            'user_id' => $userId,
+        ]);
+        $course = array_merge(
+            $course,
+            $progressStmt->fetch(PDO::FETCH_ASSOC) ?: [
+                'progress_pct' => 0,
+                'average_score' => 0,
+                'last_accessed_at' => null,
+            ]
+        );
+
+        $moduleCountStmt = $pdo->prepare(
+            "SELECT COUNT(*)
+               FROM modules
+              WHERE course_id = :course_id
+                AND status = 'published'"
+        );
+        $moduleCountStmt->execute(['course_id' => $id]);
+        $course['module_count'] = (int) $moduleCountStmt->fetchColumn();
 
         Session::put('active_course_id', $id);
         Session::put('active_course_experience', 'pmmt');
