@@ -42,6 +42,7 @@ final class LabController extends Controller
                 'manifest' => $manifest,
                 'csrfToken' => Csrf::token(),
                 'user' => Auth::user(),
+                'activeCourseId' => (int) $scope['course_id'],
             ], (new CourseLayoutResolver())->layoutForKey(
                 (string) ($scope['experience_key'] ?? 'generic')
             ));
