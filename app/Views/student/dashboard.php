@@ -248,8 +248,6 @@ $renderCourseBody = static function (
 <?php endif; ?>
 
 <section class="portal-intro">
-    <p>Escolha seu curso e continue seus estudos no ambiente próprio de cada formação.</p>
-
     <div class="portal-overview" aria-label="Resumo dos cursos">
         <span><?= $catalogCount ?> curso<?= $catalogCount === 1 ? '' : 's' ?> no portal</span>
 
@@ -272,6 +270,8 @@ $renderCourseBody = static function (
             </span>
         <?php endif; ?>
     </div>
+
+    <p>Escolha seu curso e continue seus estudos no ambiente próprio de cada formação.</p>
 </section>
 
 <section class="portal-section portal-section-unified" aria-labelledby="portal-courses-title">
