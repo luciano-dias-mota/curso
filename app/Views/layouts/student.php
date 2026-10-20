@@ -15,6 +15,15 @@ $courseHomePath = $activeCourseId > 0
     ? '/curso/' . $activeCourseId . '/inicio'
     : '/dashboard';
 $courseHomeUrl = url($courseHomePath);
+$exerciseUrl = $activeCourseId > 0
+    ? url('/curso/' . $activeCourseId . '/exercicios')
+    : url('/exercicios');
+$simulationUrl = $activeCourseId > 0
+    ? url('/curso/' . $activeCourseId . '/simulados')
+    : url('/simulados');
+$notesUrl = $activeCourseId > 0
+    ? url('/curso/' . $activeCourseId . '/anotacoes')
+    : url('/anotacoes');
 $isDashboard = preg_match('#/curso/\\d+/inicio$#', rtrim($currentPath, '/')) === 1;
 $isLesson = str_contains($currentPath, '/aula/');
 $isQuiz = str_contains($currentPath, '/prova/');
@@ -63,12 +72,12 @@ $firstName = explode(' ', trim((string) ($user['name'] ?? 'Aluno')))[0];
         <nav class="sidebar-menu">
             <a class="<?= $isDashboard ? 'active' : '' ?>" href="<?= e($courseHomeUrl) ?>"><span>⌂</span>Início</a>
             <a class="<?= $isLesson ? 'active' : '' ?>" href="<?= e($courseHomeUrl . '#trilhas') ?>"><span>▣</span>Minhas Aulas</a>
-            <a class="<?= $isSimulation ? 'active' : '' ?>" href="<?= e(url('/simulados')) ?>"><span>◉</span>Simulados</a>
-            <a class="<?= $isExercise ? 'active' : '' ?>" href="<?= e(url('/exercicios')) ?>"><span>✓</span>Exercícios</a>
+            <a class="<?= $isSimulation ? 'active' : '' ?>" href="<?= e($simulationUrl) ?>"><span>◉</span>Simulados</a>
+            <a class="<?= $isExercise ? 'active' : '' ?>" href="<?= e($exerciseUrl) ?>"><span>✓</span>Exercícios</a>
             <a href="<?= e($courseHomeUrl . '#missoes') ?>"><span>✥</span>Missões</a>
             <a href="<?= e($courseHomeUrl . '#conquistas') ?>"><span>♙</span>Conquistas</a>
             <a href="<?= e($courseHomeUrl . '#desempenho') ?>"><span>▥</span>Meu Desempenho</a>
-            <a class="<?= $isNotes ? 'active' : '' ?>" href="<?= e(url('/anotacoes')) ?>"><span>□</span>Anotações</a>
+            <a class="<?= $isNotes ? 'active' : '' ?>" href="<?= e($notesUrl) ?>"><span>□</span>Anotações</a>
             <a href="<?= e($courseHomeUrl . '#perfil') ?>"><span>♧</span>Comunidade</a>
         </nav>
 
@@ -113,9 +122,9 @@ $firstName = explode(' ', trim((string) ($user['name'] ?? 'Aluno')))[0];
 <nav class="mobile-bottom-nav" aria-label="Navegação móvel">
     <a class="<?= $isDashboard ? 'active' : '' ?>" href="<?= e($courseHomeUrl) ?>"><span>⌂</span><small>Início</small></a>
     <a class="<?= $isLesson ? 'active' : '' ?>" href="<?= e($courseHomeUrl . '#trilhas') ?>"><span>▣</span><small>Aulas</small></a>
-    <a class="<?= $isExercise ? 'active' : '' ?>" href="<?= e(url('/exercicios')) ?>"><span>✓</span><small>Exercícios</small></a>
-    <a class="<?= $isSimulation ? 'active' : '' ?>" href="<?= e(url('/simulados')) ?>"><span>◉</span><small>Simulados</small></a>
-    <a class="<?= $isNotes ? 'active' : '' ?>" href="<?= e(url('/anotacoes')) ?>"><span>□</span><small>Notas</small></a>
+    <a class="<?= $isExercise ? 'active' : '' ?>" href="<?= e($exerciseUrl) ?>"><span>✓</span><small>Exercícios</small></a>
+    <a class="<?= $isSimulation ? 'active' : '' ?>" href="<?= e($simulationUrl) ?>"><span>◉</span><small>Simulados</small></a>
+    <a class="<?= $isNotes ? 'active' : '' ?>" href="<?= e($notesUrl) ?>"><span>□</span><small>Notas</small></a>
 </nav>
 </body>
 </html>
