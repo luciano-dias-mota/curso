@@ -286,7 +286,8 @@ button:focus-visible {
 }
 
 .portal-course-grid-unified {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(320px, 380px));
+    justify-content: start;
 }
 
 .portal-course-card {
@@ -926,13 +927,17 @@ body.portal-modal-open {
         gap: 18px;
     }
 
+    .portal-course-grid-unified {
+        grid-template-columns: repeat(2, minmax(320px, 370px));
+    }
+
     .portal-course-card {
         padding: 9px;
         border-radius: 22px;
     }
 
     .portal-card-media {
-        height: 112px;
+        height: 128px;
         border-radius: 15px;
     }
 
@@ -973,8 +978,8 @@ body.portal-modal-open {
     }
 
     .portal-card-copy h3 {
-        font-size: 17px;
-        line-height: 1.15;
+        font-size: 18px;
+        line-height: 1.18;
     }
 
     .portal-card-description {
@@ -982,8 +987,8 @@ body.portal-modal-open {
         overflow: hidden;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
-        font-size: 11.5px;
-        line-height: 1.35;
+        font-size: 12px;
+        line-height: 1.4;
     }
 
     .portal-resume,
@@ -1068,7 +1073,7 @@ body.portal-modal-open {
     }
 
     .portal-card-media {
-        height: 102px;
+        height: 118px;
     }
 
     .portal-card-body {
