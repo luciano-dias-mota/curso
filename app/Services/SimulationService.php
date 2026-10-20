@@ -762,22 +762,13 @@ final class SimulationService
 
     private function assertEnrollment(PDO $pdo, int $userId, int $courseId): void
     {
-        $stmt = $pdo->prepare(
-            "SELECT 1
-             FROM enrollments e
-             INNER JOIN courses c ON c.id = e.course_id
-             WHERE e.user_id = :user_id
-               AND e.course_id = :course_id
-               AND e.status = 'active'
-               AND c.status = 'published'
-             LIMIT 1"
-        );
-        $stmt->execute([
-            'user_id' => $userId,
-            'course_id' => $courseId,
-        ]);
-
-        if (!$stmt->fetchColumn()) {
+        try {
+            (new CourseAccessService())->requireCourseEnrollment(
+                $userId,
+                $courseId,
+                $pdo
+            );
+        } catch (RuntimeException) {
             throw new RuntimeException('Você não possui matrícula ativa neste curso.');
         }
     }
