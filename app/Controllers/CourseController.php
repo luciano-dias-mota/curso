@@ -7,9 +7,7 @@ namespace App\Controllers;
 use App\Core\Auth;
 use App\Core\Controller;
 use App\Core\Database;
-use App\Core\Session;
-use App\Services\CourseAccessService;
-use App\Services\CourseExperienceRegistry;
+use App\Services\CourseContextService;
 use App\Services\CourseLayoutResolver;
 use App\Services\CourseSettingsService;
 use App\Services\ProgressInitializer;
@@ -22,11 +20,13 @@ final class CourseController extends Controller
         $pdo = Database::connection();
 
         try {
-            $course = (new CourseAccessService())->requireCourseEnrollment(
+            $context = (new CourseContextService())->activate(
                 (int) Auth::id(),
                 $id,
                 $pdo
             );
+            $course = $context['course'];
+            $experience = (string) $context['experience_key'];
         } catch (RuntimeException) {
             http_response_code(404);
             $this->view('errors/404');
@@ -52,12 +52,6 @@ final class CourseController extends Controller
                 'average_score' => 0,
             ]
         );
-
-        $experience = (new CourseExperienceRegistry())->get(
-            (string) ($course['experience_key'] ?? 'generic')
-        )['key'];
-        Session::put('active_course_id', $id);
-        Session::put('active_course_experience', $experience);
 
         // Reconcilia a matrícula com a política configurada para este curso.
         (new ProgressInitializer())->initializeEnrollment(
