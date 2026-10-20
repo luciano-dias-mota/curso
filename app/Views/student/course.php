@@ -10,38 +10,66 @@ if ($isPostgres):
     $lessonsPublished = (int) ($courseStats['lessons_published'] ?? 0);
     $labsTotal = (int) ($courseStats['labs_total'] ?? 0);
     $labsPublished = (int) ($courseStats['labs_published'] ?? 0);
+    $plannedLabs = max($labsTotal, $lessonsTotal);
     $progressPct = max(0, min(100, (float) ($course['progress_pct'] ?? 0)));
 
+    $completedModules = 0;
     $continueModule = null;
+
     foreach ($modules as $candidate) {
+        if (($candidate['user_status'] ?? '') === 'completed') {
+            $completedModules++;
+        }
+
         if (
-            (string) ($candidate['status'] ?? '') === 'published'
+            $continueModule === null
+            && (string) ($candidate['status'] ?? '') === 'published'
             && (string) ($candidate['user_status'] ?? 'locked') !== 'locked'
         ) {
             $continueModule = $candidate;
-            if (($candidate['user_status'] ?? '') === 'in_progress') {
-                break;
-            }
+        }
+
+        if (
+            (string) ($candidate['status'] ?? '') === 'published'
+            && ($candidate['user_status'] ?? '') === 'in_progress'
+        ) {
+            $continueModule = $candidate;
+            break;
         }
     }
 ?>
 <section class="pg-course-home">
-    <header class="pg-course-hero">
-        <div class="pg-course-hero-copy">
-            <a class="pg-back-link" href="<?= e(url('/dashboard')) ?>">← Voltar ao portal</a>
-            <span class="pg-kicker">SQL / BANCO DE DADOS</span>
+    <nav class="pg-breadcrumb" aria-label="Navegação estrutural">
+        <a href="<?= e(url('/dashboard')) ?>">Meus Cursos</a>
+        <span aria-hidden="true">›</span>
+        <strong><?= e((string) $course['title']) ?></strong>
+    </nav>
 
-            <h1>PostgreSQL <span>— Do Zero ao Intermediário</span></h1>
+    <section class="pg-course-hero">
+        <div class="pg-course-hero-copy">
+            <h1>PostgreSQL — Do Zero ao Intermediário</h1>
             <p>
                 Aprenda banco de dados na prática, escrevendo SQL e construindo
                 um projeto real passo a passo.
             </p>
 
-            <div class="pg-hero-stats">
-                <span><strong><?= $modulesTotal ?></strong> módulos</span>
-                <span><strong><?= $lessonsTotal ?></strong> aulas</span>
-                <span><strong><?= $labsTotal ?></strong> laboratórios</span>
-                <span><strong>Iniciante</strong> ao Intermediário</span>
+            <div class="pg-hero-stats" aria-label="Informações do curso">
+                <span>
+                    <i aria-hidden="true">▥</i>
+                    <b><strong><?= $modulesTotal ?></strong> Módulos</b>
+                </span>
+                <span>
+                    <i aria-hidden="true">▤</i>
+                    <b><strong><?= $lessonsTotal ?></strong> Aulas</b>
+                </span>
+                <span>
+                    <i aria-hidden="true">♜</i>
+                    <b><strong><?= $plannedLabs ?></strong> Laboratórios</b>
+                </span>
+                <span>
+                    <i aria-hidden="true">▥</i>
+                    <b><strong>Iniciante ao</strong> Intermediário</b>
+                </span>
             </div>
 
             <div class="pg-hero-actions">
@@ -50,178 +78,139 @@ if ($isPostgres):
                         class="pg-primary"
                         href="<?= e(url('/curso/' . (int) $course['id'] . '/modulo/' . (int) $continueModule['id'])) ?>"
                     >
-                        ▶ Continuar curso
+                        <span aria-hidden="true">▶</span> Continuar curso
                     </a>
                 <?php else: ?>
                     <span class="pg-primary is-disabled">Curso em preparação</span>
                 <?php endif; ?>
 
-                <a class="pg-secondary" href="#modulos">☷ Ver módulos</a>
+                <a class="pg-secondary" href="#modulos">
+                    <span aria-hidden="true">☷</span> Ver módulos
+                </a>
             </div>
         </div>
 
-        <div class="pg-tech-scene" aria-hidden="true">
-            <div class="pg-sql-window">
-                <span>SQL</span>
-                <code>SELECT *<br>FROM produtos<br>WHERE estoque &gt; 0;</code>
-            </div>
+        <div
+            class="pg-hero-art"
+            role="img"
+            aria-label="Ilustração de PostgreSQL, banco de dados, SQL e circuitos"
+        ></div>
+    </section>
 
-            <svg class="pg-database-art" viewBox="0 0 420 260" role="presentation">
-                <defs>
-                    <linearGradient id="pgCylinder" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0" stop-color="#ffffff"/>
-                        <stop offset=".35" stop-color="#8bd5ff"/>
-                        <stop offset="1" stop-color="#1677c8"/>
-                    </linearGradient>
-                    <linearGradient id="pgCylinderDark" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0" stop-color="#67c8ff"/>
-                        <stop offset="1" stop-color="#075da6"/>
-                    </linearGradient>
-                </defs>
-                <g opacity=".18" stroke="#0b72c8" fill="none">
-                    <path d="M15 56h90l30 30h84"/>
-                    <path d="M24 206h110l34-34h76"/>
-                    <path d="M260 22v45l42 34"/>
-                    <circle cx="105" cy="56" r="4" fill="#0b72c8"/>
-                    <circle cx="219" cy="86" r="4" fill="#0b72c8"/>
-                    <circle cx="168" cy="172" r="4" fill="#0b72c8"/>
-                </g>
-                <g transform="translate(202 42)">
-                    <ellipse cx="92" cy="30" rx="74" ry="23" fill="url(#pgCylinder)"/>
-                    <path d="M18 30v54c0 13 33 23 74 23s74-10 74-23V30" fill="url(#pgCylinderDark)" opacity=".94"/>
-                    <ellipse cx="92" cy="84" rx="74" ry="23" fill="#76cef9" opacity=".72"/>
-                    <path d="M18 84v52c0 13 33 23 74 23s74-10 74-23V84" fill="url(#pgCylinderDark)" opacity=".92"/>
-                    <ellipse cx="92" cy="136" rx="74" ry="23" fill="#c7efff"/>
-                    <path d="M18 136v45c0 13 33 23 74 23s74-10 74-23v-45" fill="url(#pgCylinderDark)"/>
-                    <ellipse cx="92" cy="181" rx="74" ry="23" fill="#e6f8ff"/>
-                </g>
-                <g transform="translate(38 112)">
-                    <rect width="112" height="82" rx="16" fill="rgba(255,255,255,.76)" stroke="rgba(20,112,190,.18)"/>
-                    <path d="M18 24h76M18 42h48M18 60h64" stroke="#1680d6" stroke-width="7" stroke-linecap="round" opacity=".62"/>
-                </g>
-            </svg>
-        </div>
-    </header>
+    <section class="pg-progress-panel" aria-label="Resumo do progresso">
+        <div class="pg-progress-main">
+            <h2>Seu progresso no curso</h2>
 
-    <section class="pg-course-summary">
-        <div class="pg-summary-progress">
-            <div>
-                <span>Seu progresso no curso</span>
+            <div class="pg-progress-line">
+                <div class="pg-progress-track">
+                    <span style="width:<?= e((string) $progressPct) ?>%"></span>
+                </div>
                 <strong><?= number_format($progressPct, 0, ',', '.') ?>%</strong>
             </div>
-            <div class="pg-progress-track">
-                <span style="width:<?= e((string) $progressPct) ?>%"></span>
+
+            <p>
+                <?= $completedModules ?> de <?= $modulesTotal ?>
+                módulo<?= $modulesTotal === 1 ? '' : 's' ?> concluído<?= $completedModules === 1 ? '' : 's' ?>
+            </p>
+        </div>
+
+        <div class="pg-progress-stat">
+            <span class="is-blue" aria-hidden="true">▥</span>
+            <div>
+                <small>Módulos</small>
+                <strong><?= $modulesTotal ?></strong>
             </div>
-            <small><?= $modulesPublished ?> de <?= $modulesTotal ?> módulos já liberados para teste.</small>
         </div>
 
-        <div class="pg-summary-card">
-            <span>▥</span>
-            <div><small>Módulos</small><strong><?= $modulesTotal ?></strong></div>
+        <div class="pg-progress-stat">
+            <span class="is-blue" aria-hidden="true">▤</span>
+            <div>
+                <small>Aulas</small>
+                <strong><?= $lessonsTotal ?></strong>
+            </div>
         </div>
 
-        <div class="pg-summary-card">
-            <span>▷</span>
-            <div><small>Aulas</small><strong><?= $lessonsTotal ?></strong></div>
+        <div class="pg-progress-stat">
+            <span class="is-blue" aria-hidden="true">♜</span>
+            <div>
+                <small>Laboratórios</small>
+                <strong><?= $plannedLabs ?></strong>
+            </div>
         </div>
 
-        <div class="pg-summary-card">
-            <span>⌨</span>
-            <div><small>Laboratórios</small><strong><?= $labsTotal ?></strong></div>
-        </div>
-
-        <div class="pg-summary-card">
-            <span>↗</span>
-            <div><small>Nível</small><strong>Iniciante</strong></div>
+        <div class="pg-progress-stat">
+            <span class="is-green" aria-hidden="true">▥</span>
+            <div>
+                <small>Seu nível</small>
+                <strong>Iniciante</strong>
+            </div>
         </div>
     </section>
 
     <section class="pg-course-modules" id="modulos">
-        <div class="pg-section-head">
+        <header class="pg-learning-head">
+            <span class="pg-learning-icon" aria-hidden="true">▭</span>
             <div>
-                <span class="pg-kicker">TRILHA DE APRENDIZAGEM</span>
-                <h2>Módulos do curso</h2>
+                <h2>Trilha de Aprendizagem</h2>
+                <p>Siga a ordem dos módulos para construir seu conhecimento em PostgreSQL.</p>
             </div>
-            <p>
-                A trilha começa nos fundamentos e avança até um projeto completo
-                da LD Informática.
-            </p>
-        </div>
+        </header>
 
         <div class="pg-module-grid">
             <?php foreach ($modules as $m): ?>
                 <?php
                 $isDraft = (string) ($m['status'] ?? '') !== 'published';
-                $locked = !$isDraft && (($m['user_status'] ?? 'locked') === 'locked');
-                $done = !$isDraft && (($m['user_status'] ?? '') === 'completed');
+                $userStatus = (string) ($m['user_status'] ?? 'locked');
+                $locked = $isDraft || $userStatus === 'locked';
+                $done = !$isDraft && $userStatus === 'completed';
+                $inProgress = !$isDraft && $userStatus === 'in_progress';
                 $progress = max(0, min(100, (float) ($m['progress_pct'] ?? 0)));
                 ?>
-                <article class="pg-module-card <?= $isDraft ? 'is-coming' : ($locked ? 'is-locked' : ($done ? 'is-done' : 'is-active')) ?>">
-                    <div class="pg-module-card-top">
-                        <span class="pg-module-number">
-                            <?= e((string) ($m['rail_label'] ?? $m['position'])) ?>
-                        </span>
+                <article class="pg-module-card <?= $done ? 'is-done' : ($inProgress ? 'is-current' : ($locked ? 'is-locked' : 'is-available')) ?>">
+                    <div class="pg-module-content">
+                        <span class="pg-module-number"><?= e((string) ($m['rail_label'] ?? $m['position'])) ?></span>
 
-                        <span class="pg-module-status">
-                            <?php if ($isDraft): ?>
-                                Em breve
-                            <?php elseif ($done): ?>
-                                Concluído
+                        <div class="pg-module-copy">
+                            <h3><?= e((string) $m['title']) ?></h3>
+                            <p><?= e((string) ($m['description'] ?? '')) ?></p>
+                        </div>
+                    </div>
+
+                    <div class="pg-module-progress-row">
+                        <div class="pg-progress-track is-small">
+                            <span style="width:<?= e((string) $progress) ?>%"></span>
+                        </div>
+                        <strong><?= number_format($progress, 0, ',', '.') ?>%</strong>
+                    </div>
+
+                    <footer class="pg-module-footer">
+                        <span class="pg-module-state">
+                            <?php if ($done): ?>
+                                ✓ Concluído
+                            <?php elseif ($inProgress): ?>
+                                ▣ Em andamento
                             <?php elseif ($locked): ?>
-                                Bloqueado
+                                ♙ Bloqueado
                             <?php else: ?>
                                 Disponível
                             <?php endif; ?>
                         </span>
-                    </div>
 
-                    <h3><?= e((string) $m['title']) ?></h3>
-                    <p><?= e((string) ($m['description'] ?? '')) ?></p>
-
-                    <div class="pg-module-meta">
-                        <span>▤ <?= (int) ($m['lesson_count'] ?? 0) ?> aulas</span>
-                        <span>⌨ <?= (int) ($m['lab_count'] ?? 0) ?> labs</span>
-                    </div>
-
-                    <div class="pg-progress-track is-small">
-                        <span style="width:<?= e((string) $progress) ?>%"></span>
-                    </div>
-
-                    <div class="pg-module-footer">
-                        <small><?= number_format($progress, 0, ',', '.') ?>%</small>
-
-                        <?php if ($isDraft): ?>
-                            <span class="pg-module-button is-disabled">Em construção</span>
-                        <?php elseif ($locked): ?>
-                            <span class="pg-module-button is-disabled">Aguardando liberação</span>
-                        <?php else: ?>
+                        <?php if (!$locked): ?>
                             <a
-                                class="pg-module-button"
+                                class="pg-module-action <?= $inProgress ? 'is-primary' : '' ?>"
                                 href="<?= e(url('/curso/' . (int) $course['id'] . '/modulo/' . (int) $m['id'])) ?>"
                             >
-                                <?= $done ? 'Revisar módulo' : 'Entrar no módulo' ?> →
+                                <?= $done ? 'Revisar módulo' : ($inProgress ? 'Continuar módulo' : 'Acessar módulo') ?>
                             </a>
+                        <?php elseif (!$isDraft): ?>
+                            <span class="pg-module-action is-disabled">Aguardando liberação</span>
+                        <?php else: ?>
+                            <span class="pg-module-action is-disabled">Ver conteúdo</span>
                         <?php endif; ?>
-                    </div>
+                    </footer>
                 </article>
             <?php endforeach; ?>
-        </div>
-    </section>
-
-    <section class="pg-lab-banner">
-        <div>
-            <span class="pg-kicker">APRENDA FAZENDO</span>
-            <h2>Laboratório PostgreSQL no navegador</h2>
-            <p>
-                Escreva SQL, execute consultas e receba validação automática sem
-                precisar instalar um servidor PostgreSQL no computador.
-            </p>
-        </div>
-
-        <div class="pg-lab-banner-stats">
-            <strong><?= $labsPublished ?></strong>
-            <span>laboratórios liberados</span>
-            <small><?= max(0, $labsTotal - $labsPublished) ?> em preparação</small>
         </div>
     </section>
 </section>
