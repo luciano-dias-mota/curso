@@ -3,6 +3,18 @@ $activity = $manifest['activity'] ?? [];
 $engine = $manifest['engine'] ?? [];
 $progress = $manifest['progress'] ?? [];
 $assets = is_array($engine['assets'] ?? null) ? $engine['assets'] : [];
+$courseId = (int) ($activeCourseId ?? 0);
+$activityId = (int) ($activity['id'] ?? 0);
+$lessonId = (int) ($activity['lesson_id'] ?? 0);
+$submitPath = $courseId > 0
+    ? '/api/curso/' . $courseId . '/laboratorio/atividade/' . $activityId . '/executar'
+    : '/api/laboratorio/atividade/' . $activityId . '/executar';
+$hintPath = $courseId > 0
+    ? '/api/curso/' . $courseId . '/laboratorio/atividade/' . $activityId . '/dica'
+    : '/api/laboratorio/atividade/' . $activityId . '/dica';
+$lessonPath = $courseId > 0
+    ? '/curso/' . $courseId . '/aula/' . $lessonId
+    : '/aula/' . $lessonId;
 
 $manifestJson = json_encode(
     $manifest,
@@ -16,13 +28,13 @@ $manifestJson = json_encode(
 ?>
 <section class="study-room lab-room" data-lab-root
     data-engine-key="<?= e($engine['key'] ?? '') ?>"
-    data-submit-url="<?= e(url('/api/laboratorio/atividade/' . (int) ($activity['id'] ?? 0) . '/executar')) ?>"
-    data-hint-url="<?= e(url('/api/laboratorio/atividade/' . (int) ($activity['id'] ?? 0) . '/dica')) ?>"
+    data-submit-url="<?= e(url($submitPath)) ?>"
+    data-hint-url="<?= e(url($hintPath)) ?>"
     data-csrf-token="<?= e($csrfToken ?? '') ?>"
 >
     <aside class="study-map">
         <div class="study-map-head">
-            <a class="back study-back" href="<?= e(url('/aula/' . (int) ($activity['lesson_id'] ?? 0))) ?>">← Voltar à aula</a>
+            <a class="back study-back" href="<?= e(url($lessonPath)) ?>">← Voltar à aula</a>
             <span class="eyebrow">ATIVIDADE PRÁTICA</span>
             <h2><?= e($activity['title'] ?? 'Laboratório') ?></h2>
             <p><?= e($engine['label'] ?? $activity['engine_key'] ?? '') ?></p>
