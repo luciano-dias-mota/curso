@@ -86,6 +86,16 @@ $router->post('/anotacoes/{id}/fixar', [StudyNoteController::class, 'togglePin']
     ->middleware(['auth', 'student', 'csrf']);
 
 // Simulados livres: independentes da progressão pedagógica.
+$router->get('/curso/{courseId}/simulados', [SimulationController::class, 'index'])
+    ->middleware(['auth', 'student']);
+
+$router->get('/curso/{courseId}/simulados/novo', [SimulationController::class, 'create'])
+    ->middleware(['auth', 'student']);
+
+$router->post('/curso/{courseId}/simulados/gerar', [SimulationController::class, 'generate'])
+    ->middleware(['auth', 'student', 'csrf']);
+
+// Compatibilidade com URLs anteriores.
 $router->get('/simulados', [SimulationController::class, 'index'])
     ->middleware(['auth', 'student']);
 
