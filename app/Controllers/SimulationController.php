@@ -54,7 +54,7 @@ final class SimulationController extends Controller
                     'title' => 'Novo simulado',
                     'activeCourseId' => $courseId,
                 ], $data),
-                'layouts/student'
+                (new CourseContextService())->currentLayout()
             );
         } catch (Throwable $e) {
             $this->logSimulationError('simulations.create', $e);
