@@ -34,7 +34,7 @@ final class DashboardController extends Controller
          * A matrícula ativa apenas decide se o card entra ou permanece bloqueado.
          */
         $coursesStmt = $pdo->prepare(
-            "SELECT c.id, c.title, c.slug, c.short_description, c.cover_image,
+            "SELECT c.id, c.title, c.slug, c.experience_key, c.short_description, c.cover_image,
                     c.difficulty, c.position,
                     e.status AS enrollment_status,
                     e.enrolled_at,
