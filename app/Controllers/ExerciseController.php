@@ -148,4 +148,23 @@ final class ExerciseController extends Controller
             $this->redirect('/exercicios');
         }
     }
+
+    private function resolveCourseContext(?int $courseId, bool $useSession = true): int
+    {
+        $resolved = max(0, (int) ($courseId ?? 0));
+
+        if ($resolved <= 0 && $useSession) {
+            $resolved = max(0, (int) Session::get('active_course_id', 0));
+        }
+
+        if ($resolved > 0) {
+            (new CourseAccessService())->requireCourseEnrollment(
+                (int) Auth::id(),
+                $resolved
+            );
+        }
+
+        return $resolved;
+    }
+
 }
