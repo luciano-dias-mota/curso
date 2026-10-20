@@ -182,3 +182,27 @@ O Preparatório PMMT preserva o comportamento legado dentro do curso:
 
 O contexto ativo fica em sessão apenas para navegação interna. A autorização continua sendo validada no backend por matrícula ativa e curso publicado.
 
+## Experiências isoladas e autorização central
+
+A plataforma não identifica mais o comportamento de um curso pelo título ou slug.
+
+`courses.experience_key` é a fonte explícita e as definições ficam em:
+
+```text
+config/course_experiences.php
+```
+
+Serviços principais:
+
+```text
+CourseExperienceRegistry   -> catálogo de experiências
+CourseLayoutResolver        -> layout de cada experiência
+CourseAccessService         -> autorização curso/recurso/matrícula
+CourseContextService        -> contexto de navegação, nunca autorização
+```
+
+O contexto de sessão é limpo quando o estudante volta ao portal e reconstruído a partir do banco ao abrir recursos profundos.
+
+Rotas contextualizadas foram adicionadas para módulo, fase, aula, exercícios, simulados, anotações e laboratório. Rotas antigas continuam temporariamente para compatibilidade do PMMT.
+
+O PMMT continua usando `layouts/student`. PostgreSQL possui shell e namespace de assets próprios, ainda não publicados.
