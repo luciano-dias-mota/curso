@@ -10,11 +10,16 @@ $difficultyLabels = [
     'advanced' => 'Avançado',
 ];
 
-$publishedCount = (int) ($summary['published_courses'] ?? 0);
+$catalogCount = (int) ($summary['catalog_courses'] ?? 0);
 $accessibleCount = (int) ($summary['accessible_courses'] ?? 0);
 $lockedCount = (int) ($summary['locked_courses'] ?? 0);
+$previewCount = (int) ($summary['preview_courses'] ?? 0);
 
-$renderCourseMedia = static function (array $course, bool $locked = false): void {
+$renderCourseMedia = static function (
+    array $course,
+    bool $locked = false,
+    bool $preview = false
+): void {
     $cover = trim((string) ($course['cover_image'] ?? ''));
     $experience = trim((string) ($course['experience_key'] ?? 'generic'));
 
@@ -93,16 +98,26 @@ $renderCourseMedia = static function (array $course, bool $locked = false): void
     }
 
     echo '<span class="portal-card-media-overlay" aria-hidden="true"></span>';
-    echo '<span class="portal-card-access ' . ($locked ? 'is-locked' : 'is-open') . '">'
-        . ($locked ? 'Acesso não liberado' : 'Acesso liberado')
-        . '</span>';
 
-    if ($locked) {
-        echo '<span class="portal-lock-mark" aria-hidden="true">🔒</span>';
+    if ($preview) {
+        echo '<span class="portal-card-access is-preview">Em construção</span>';
+        echo '<span class="portal-lock-mark is-preview" aria-hidden="true">🛠️</span>';
+    } else {
+        echo '<span class="portal-card-access ' . ($locked ? 'is-locked' : 'is-open') . '">'
+            . ($locked ? 'Acesso não liberado' : 'Acesso liberado')
+            . '</span>';
+
+        if ($locked) {
+            echo '<span class="portal-lock-mark" aria-hidden="true">🔒</span>';
+        }
     }
 };
 
-$renderCourseBody = static function (array $course, bool $locked = false) use ($difficultyLabels): void {
+$renderCourseBody = static function (
+    array $course,
+    bool $locked = false,
+    bool $preview = false
+) use ($difficultyLabels): void {
     $progress = max(0, min(100, (float) ($course['progress_pct'] ?? 0)));
     $continue = $course['continue_lesson'] ?? null;
     $continueStatus = (string) ($continue['lesson_status'] ?? '');
@@ -140,7 +155,20 @@ $renderCourseBody = static function (array $course, bool $locked = false) use ($
             </p>
         </div>
 
-        <?php if (!$locked && $continue): ?>
+        <?php if ($preview): ?>
+            <div class="portal-locked-note is-preview">
+                <span aria-hidden="true">🛠️</span>
+                <div>
+                    <strong>Curso em construção</strong>
+                    <small>
+                        <?= e(
+                            trim((string) ($course['catalog_preview_message'] ?? ''))
+                            ?: 'Estamos preparando este curso. Em breve ele estará disponível para os estudantes.'
+                        ) ?>
+                    </small>
+                </div>
+            </div>
+        <?php elseif (!$locked && $continue): ?>
             <div class="portal-resume">
                 <span class="portal-resume-icon" aria-hidden="true">▶</span>
                 <div class="portal-resume-copy">
@@ -159,7 +187,7 @@ $renderCourseBody = static function (array $course, bool $locked = false) use ($
             </div>
         <?php endif; ?>
 
-        <?php if (!$locked): ?>
+        <?php if (!$locked && !$preview): ?>
             <div class="portal-progress">
                 <div class="portal-progress-row">
                     <span>Seu progresso</span>
@@ -179,10 +207,12 @@ $renderCourseBody = static function (array $course, bool $locked = false) use ($
         <?php endif; ?>
 
         <div class="portal-card-footer">
-            <div class="portal-card-state <?= $locked ? 'is-locked' : 'is-ready' ?>">
+            <div class="portal-card-state <?= $preview ? 'is-preview' : ($locked ? 'is-locked' : 'is-ready') ?>">
                 <span aria-hidden="true"></span>
                 <small>
-                    <?php if ($locked): ?>
+                    <?php if ($preview): ?>
+                        Em breve
+                    <?php elseif ($locked): ?>
                         Aguardando liberação
                     <?php elseif (!empty($course['last_accessed_at'])): ?>
                         Último acesso <?= e(date('d/m/Y', strtotime((string) $course['last_accessed_at']))) ?>
@@ -192,11 +222,15 @@ $renderCourseBody = static function (array $course, bool $locked = false) use ($
                 </small>
             </div>
 
-            <span class="portal-card-action">
-                <?= $locked
-                    ? 'Solicitar acesso'
-                    : ($progress > 0 ? 'Continuar curso' : 'Entrar no curso') ?>
-                <span aria-hidden="true">→</span>
+            <span class="portal-card-action <?= $preview ? 'is-preview' : '' ?>">
+                <?= $preview
+                    ? 'Em breve'
+                    : (
+                        $locked
+                            ? 'Solicitar acesso'
+                            : ($progress > 0 ? 'Continuar curso' : 'Entrar no curso')
+                    ) ?>
+                <?php if (!$preview): ?><span aria-hidden="true">→</span><?php endif; ?>
             </span>
         </div>
     </div>
@@ -216,12 +250,19 @@ $renderCourseBody = static function (array $course, bool $locked = false) use ($
     <p>Escolha onde deseja continuar seus estudos. Cada curso possui ambiente, identidade visual e estrutura próprios.</p>
 
     <div class="portal-overview" aria-label="Resumo dos cursos">
-        <span><?= $publishedCount ?> curso<?= $publishedCount === 1 ? '' : 's' ?> disponível<?= $publishedCount === 1 ? '' : 'is' ?></span>
+        <span><?= $catalogCount ?> curso<?= $catalogCount === 1 ? '' : 's' ?> no portal</span>
 
         <span class="is-accessible">
             <i aria-hidden="true"></i>
             <?= $accessibleCount ?> liberado<?= $accessibleCount === 1 ? '' : 's' ?>
         </span>
+
+        <?php if ($previewCount > 0): ?>
+            <span class="is-preview">
+                <i aria-hidden="true"></i>
+                <?= $previewCount ?> em construção
+            </span>
+        <?php endif; ?>
 
         <?php if ($lockedCount > 0): ?>
             <span class="is-locked">
@@ -268,27 +309,43 @@ $renderCourseBody = static function (array $course, bool $locked = false) use ($
     <section class="portal-section portal-section-catalog" aria-labelledby="outros-cursos-title">
         <div class="portal-section-head">
             <div>
-                <span>Catálogo Curso MI</span>
+                <span>Catálogo LD Academy</span>
                 <h2 id="outros-cursos-title">Outros cursos</h2>
             </div>
-            <p>Conheça os demais cursos publicados. O conteúdo permanece protegido até a liberação da matrícula.</p>
+            <p>Conheça os cursos disponíveis e também os próximos lançamentos da LD Academy.</p>
         </div>
 
         <div class="portal-course-grid">
             <?php foreach ($otherCourses as $course): ?>
-                <?php $experience = (string) ($course['experience_key'] ?? 'generic'); ?>
-                <button
-                    class="portal-course-card is-locked experience-<?= e($experience) ?>"
-                    type="button"
-                    data-course-locked
-                    data-course-title="<?= e($course['title']) ?>"
-                    aria-haspopup="dialog"
-                >
-                    <div class="portal-card-media">
-                        <?php $renderCourseMedia($course, true); ?>
-                    </div>
-                    <?php $renderCourseBody($course, true); ?>
-                </button>
+                <?php
+                $experience = (string) ($course['experience_key'] ?? 'generic');
+                $isPreview = !empty($course['is_preview']);
+                ?>
+
+                <?php if ($isPreview): ?>
+                    <article
+                        class="portal-course-card is-preview experience-<?= e($experience) ?>"
+                        aria-label="<?= e($course['title']) ?> — curso em construção"
+                    >
+                        <div class="portal-card-media">
+                            <?php $renderCourseMedia($course, true, true); ?>
+                        </div>
+                        <?php $renderCourseBody($course, true, true); ?>
+                    </article>
+                <?php else: ?>
+                    <button
+                        class="portal-course-card is-locked experience-<?= e($experience) ?>"
+                        type="button"
+                        data-course-locked
+                        data-course-title="<?= e($course['title']) ?>"
+                        aria-haspopup="dialog"
+                    >
+                        <div class="portal-card-media">
+                            <?php $renderCourseMedia($course, true, false); ?>
+                        </div>
+                        <?php $renderCourseBody($course, true, false); ?>
+                    </button>
+                <?php endif; ?>
             <?php endforeach; ?>
         </div>
     </section>
