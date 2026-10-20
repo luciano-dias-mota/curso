@@ -9,6 +9,10 @@ $activeAttempts = $activeAttempts ?? [];
 $subjects = $subjects ?? [];
 $stats = $stats ?? [];
 $chart = $chart ?? [];
+$activeCourseId = max(0, (int) ($activeCourseId ?? 0));
+$simulationBasePath = $activeCourseId > 0
+    ? '/curso/' . $activeCourseId . '/simulados'
+    : '/simulados';
 ?>
 <section class="simulation-hub simulation-hub-v2">
     <?php if ($error): ?><div class="alert error simulation-hub-alert"><?= e($error) ?></div><?php endif; ?>
@@ -21,7 +25,7 @@ $chart = $chart ?? [];
                 <h1>Treine. Meça. Evolua.</h1>
                 <p>Gere provas diferentes, acompanhe sua evolução e identifique rapidamente os conteúdos que merecem revisão.</p>
                 <div class="simulation-hero-actions">
-                    <a class="primary" href="<?= e(url('/simulados/novo')) ?>">＋ Novo simulado</a>
+                    <a class="primary" href="<?= e(url($simulationBasePath . '/novo')) ?>">＋ Novo simulado</a>
                     <span>Treino livre • não altera o desbloqueio das aulas</span>
                 </div>
             </div>
@@ -133,7 +137,7 @@ $chart = $chart ?? [];
             <section class="card simulation-hub-side-panel simulation-history-panel">
                 <div class="simulation-panel-head compact-head">
                     <div><span>HISTÓRICO</span><h2>Tentativas anteriores</h2></div>
-                    <a class="simulation-mini-link" href="<?= e(url('/simulados/novo')) ?>">Novo +</a>
+                    <a class="simulation-mini-link" href="<?= e(url($simulationBasePath . '/novo')) ?>">Novo +</a>
                 </div>
 
                 <?php if ($history): ?>
