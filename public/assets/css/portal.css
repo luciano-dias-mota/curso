@@ -889,8 +889,13 @@ body.portal-modal-open {
     }
 
     .portal-overview {
-        justify-content: flex-end;
+        justify-content: flex-start;
         gap: 7px;
+    }
+
+    .portal-intro > p {
+        margin-left: auto;
+        text-align: right;
     }
 
     .portal-overview > span {
@@ -1160,6 +1165,8 @@ body.portal-modal-open {
 
     .portal-intro p {
         font-size: 14px;
+        margin-left: 0;
+        text-align: left;
     }
 
     .portal-overview > span {
