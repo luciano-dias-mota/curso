@@ -8,49 +8,40 @@ use RuntimeException;
 
 final class CourseExperienceRegistry
 {
-    private const DEFINITIONS = [
-        'generic' => [
-            'label' => 'Genérica',
-            'description' => 'Experiência padrão da plataforma.',
-            'entry_pattern' => '/curso/{id}',
-            'asset_namespace' => 'generic',
-        ],
-        'pmmt' => [
-            'label' => 'Preparatório PMMT',
-            'description' => 'Experiência legada preservada do curso PMMT.',
-            'entry_pattern' => '/curso/{id}/inicio',
-            'asset_namespace' => 'pmmt',
-        ],
-        'postgresql' => [
-            'label' => 'PostgreSQL',
-            'description' => 'Experiência prática com laboratórios SQL.',
-            'entry_pattern' => '/curso/{id}',
-            'asset_namespace' => 'postgresql',
-        ],
-    ];
+    private function definitions(): array
+    {
+        $definitions = config('course_experiences.experiences', []);
+
+        return is_array($definitions) ? $definitions : [];
+    }
 
     public function has(string $key): bool
     {
-        return isset(self::DEFINITIONS[$key]);
+        return isset($this->definitions()[$key]);
     }
 
     public function get(string $key): array
     {
         $key = trim($key) !== '' ? trim($key) : 'generic';
+        $definitions = $this->definitions();
 
-        if (!$this->has($key)) {
+        if (!isset($definitions[$key]) || !is_array($definitions[$key])) {
             throw new RuntimeException('Experiência de curso não registrada: ' . $key);
         }
 
-        return ['key' => $key] + self::DEFINITIONS[$key];
+        return ['key' => $key] + $definitions[$key];
     }
 
     public function descriptors(): array
     {
         $items = [];
 
-        foreach (self::DEFINITIONS as $key => $definition) {
-            $items[] = ['key' => $key] + $definition;
+        foreach ($this->definitions() as $key => $definition) {
+            if (!is_array($definition)) {
+                continue;
+            }
+
+            $items[] = ['key' => (string) $key] + $definition;
         }
 
         return $items;
@@ -63,7 +54,14 @@ final class CourseExperienceRegistry
         return str_replace(
             '{id}',
             (string) (int) ($course['id'] ?? 0),
-            (string) $definition['entry_pattern']
+            (string) ($definition['entry_pattern'] ?? '/curso/{id}')
         );
+    }
+
+    public function assetNamespace(array $course): string
+    {
+        $definition = $this->get((string) ($course['experience_key'] ?? 'generic'));
+
+        return (string) ($definition['asset_namespace'] ?? 'generic');
     }
 }
