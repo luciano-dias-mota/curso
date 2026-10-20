@@ -43,7 +43,7 @@
                 <tr>
                     <td>
                         <strong><?= e($course['title']) ?></strong>
-                        <small><?= e($course['slug']) ?> • <?= e($course['difficulty']) ?></small>
+                        <small><?= e($course['slug']) ?> • <?= e($course['difficulty']) ?> • experiência: <?= e($course['experience_key'] ?? 'generic') ?></small>
                     </td>
                     <td><span class="ld-admin-status is-<?= e($course['status']) ?>"><?= e($course['status']) ?></span></td>
                     <td>
