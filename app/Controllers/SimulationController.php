@@ -9,6 +9,7 @@ use App\Core\Controller;
 use App\Core\Request;
 use App\Core\Session;
 use App\Services\CourseAccessService;
+use App\Services\CourseContextService;
 use App\Services\SimulationService;
 use PDOException;
 use RuntimeException;
@@ -30,7 +31,7 @@ final class SimulationController extends Controller
                     'title' => 'Simulados',
                     'activeCourseId' => $courseId,
                 ], $data),
-                'layouts/student'
+                (new CourseContextService())->currentLayout()
             );
         } catch (Throwable $e) {
             $this->logSimulationError('simulations.index', $e);
@@ -71,7 +72,7 @@ final class SimulationController extends Controller
                 : (int) $request->input('course_id', 0);
 
             if ($courseId > 0) {
-                (new CourseAccessService())->requireCourseEnrollment(
+                (new CourseContextService())->activate(
                     (int) Auth::id(),
                     $courseId
                 );
@@ -106,6 +107,14 @@ final class SimulationController extends Controller
     {
         try {
             $attempt = (new SimulationService())->attemptData($id, (int) Auth::id());
+            $attemptCourseId = (int) ($attempt['course_id'] ?? 0);
+            if ($attemptCourseId > 0) {
+                (new CourseContextService())->activate(
+                    (int) Auth::id(),
+                    $attemptCourseId
+                );
+            }
+
             if (($attempt['status'] ?? '') === 'finished') {
                 $this->redirect('/simulados/tentativa/' . $id . '/resultado');
             }
@@ -116,7 +125,7 @@ final class SimulationController extends Controller
             $this->view(
                 'student/simulations/attempt',
                 ['title' => 'Realizar simulado', 'attempt' => $attempt],
-                'layouts/student'
+                (new CourseContextService())->currentLayout()
             );
         } catch (RuntimeException $e) {
             if ($e instanceof PDOException) {
@@ -179,10 +188,18 @@ final class SimulationController extends Controller
     {
         try {
             $attempt = (new SimulationService())->resultData($id, (int) Auth::id());
+            $attemptCourseId = (int) ($attempt['course_id'] ?? 0);
+            if ($attemptCourseId > 0) {
+                (new CourseContextService())->activate(
+                    (int) Auth::id(),
+                    $attemptCourseId
+                );
+            }
+
             $this->view(
                 'student/simulations/result',
                 ['title' => 'Resultado do simulado', 'attempt' => $attempt],
-                'layouts/student'
+                (new CourseContextService())->currentLayout()
             );
         } catch (RuntimeException $e) {
             if ($e instanceof PDOException) {
@@ -203,10 +220,18 @@ final class SimulationController extends Controller
     {
         try {
             $attempt = (new SimulationService())->resultData($id, (int) Auth::id());
+            $attemptCourseId = (int) ($attempt['course_id'] ?? 0);
+            if ($attemptCourseId > 0) {
+                (new CourseContextService())->activate(
+                    (int) Auth::id(),
+                    $attemptCourseId
+                );
+            }
+
             $this->view(
                 'student/simulations/review',
                 ['title' => 'Revisão do simulado', 'attempt' => $attempt],
-                'layouts/student'
+                (new CourseContextService())->currentLayout()
             );
         } catch (RuntimeException $e) {
             if ($e instanceof PDOException) {
@@ -243,7 +268,7 @@ final class SimulationController extends Controller
         }
 
         if ($resolved > 0) {
-            (new CourseAccessService())->requireCourseEnrollment(
+            (new CourseContextService())->activate(
                 (int) Auth::id(),
                 $resolved
             );
