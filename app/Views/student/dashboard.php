@@ -14,6 +14,7 @@ $catalogCount = (int) ($summary['catalog_courses'] ?? 0);
 $accessibleCount = (int) ($summary['accessible_courses'] ?? 0);
 $lockedCount = (int) ($summary['locked_courses'] ?? 0);
 $previewCount = (int) ($summary['preview_courses'] ?? 0);
+$portalCourses = array_merge($myCourses ?? [], $otherCourses ?? []);
 
 $renderCourseMedia = static function (
     array $course,
@@ -247,7 +248,7 @@ $renderCourseBody = static function (
 <?php endif; ?>
 
 <section class="portal-intro">
-    <p>Escolha onde deseja continuar seus estudos. Cada curso possui ambiente, identidade visual e estrutura próprios.</p>
+    <p>Escolha seu curso e continue seus estudos no ambiente próprio de cada formação.</p>
 
     <div class="portal-overview" aria-label="Resumo dos cursos">
         <span><?= $catalogCount ?> curso<?= $catalogCount === 1 ? '' : 's' ?> no portal</span>
@@ -273,56 +274,40 @@ $renderCourseBody = static function (
     </div>
 </section>
 
-<section class="portal-section" aria-labelledby="meus-cursos-title">
+<section class="portal-section portal-section-unified" aria-labelledby="portal-courses-title">
     <div class="portal-section-head">
         <div>
             <span>Minha área de estudo</span>
-            <h1 id="meus-cursos-title">Meus cursos</h1>
+            <h1 id="portal-courses-title">Cursos</h1>
         </div>
-        <p>Ao entrar, você será levado para o ambiente próprio do curso exatamente como ele foi configurado.</p>
+        <p>Os cursos liberados podem ser acessados agora. Os demais aparecem como catálogo ou próximos lançamentos.</p>
     </div>
 
-    <?php if (empty($myCourses)): ?>
+    <?php if (empty($portalCourses)): ?>
         <div class="portal-empty">
-            <strong>Nenhum curso liberado ainda.</strong>
-            <span>Sua conta está ativa. Solicite ao gestor a liberação de um curso publicado.</span>
+            <strong>Nenhum curso disponível no momento.</strong>
+            <span>Novas formações aparecerão aqui quando forem adicionadas à LD Academy.</span>
         </div>
     <?php else: ?>
-        <div class="portal-course-grid">
-            <?php foreach ($myCourses as $course): ?>
-                <?php $experience = (string) ($course['experience_key'] ?? 'generic'); ?>
-                <a
-                    class="portal-course-card experience-<?= e($experience) ?>"
-                    href="<?= e(url((string) ($course['entry_path'] ?? ('/curso/' . (int) $course['id'])))) ?>"
-                >
-                    <div class="portal-card-media">
-                        <?php $renderCourseMedia($course, false); ?>
-                    </div>
-                    <?php $renderCourseBody($course, false); ?>
-                </a>
-            <?php endforeach; ?>
-        </div>
-    <?php endif; ?>
-</section>
-
-<?php if (!empty($otherCourses)): ?>
-    <section class="portal-section portal-section-catalog" aria-labelledby="outros-cursos-title">
-        <div class="portal-section-head">
-            <div>
-                <span>Catálogo LD Academy</span>
-                <h2 id="outros-cursos-title">Outros cursos</h2>
-            </div>
-            <p>Conheça os cursos disponíveis e também os próximos lançamentos da LD Academy.</p>
-        </div>
-
-        <div class="portal-course-grid">
-            <?php foreach ($otherCourses as $course): ?>
+        <div class="portal-course-grid portal-course-grid-unified">
+            <?php foreach ($portalCourses as $course): ?>
                 <?php
                 $experience = (string) ($course['experience_key'] ?? 'generic');
                 $isPreview = !empty($course['is_preview']);
+                $hasAccess = !empty($course['has_access']);
                 ?>
 
-                <?php if ($isPreview): ?>
+                <?php if ($hasAccess): ?>
+                    <a
+                        class="portal-course-card experience-<?= e($experience) ?>"
+                        href="<?= e(url((string) ($course['entry_path'] ?? ('/curso/' . (int) $course['id'])))) ?>"
+                    >
+                        <div class="portal-card-media">
+                            <?php $renderCourseMedia($course, false, false); ?>
+                        </div>
+                        <?php $renderCourseBody($course, false, false); ?>
+                    </a>
+                <?php elseif ($isPreview): ?>
                     <article
                         class="portal-course-card is-preview experience-<?= e($experience) ?>"
                         aria-label="<?= e($course['title']) ?> — curso em construção"
@@ -348,8 +333,8 @@ $renderCourseBody = static function (
                 <?php endif; ?>
             <?php endforeach; ?>
         </div>
-    </section>
-<?php endif; ?>
+    <?php endif; ?>
+</section>
 
 <div
     class="portal-modal"
