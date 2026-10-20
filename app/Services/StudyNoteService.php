@@ -353,18 +353,13 @@ final class StudyNoteService
             return [null, null, null];
         }
 
-        $courseStmt = $pdo->prepare(
-            "SELECT 1
-             FROM enrollments e
-             INNER JOIN courses c ON c.id = e.course_id
-             WHERE e.user_id = :user_id
-               AND e.course_id = :course_id
-               AND e.status = 'active'
-               AND c.status = 'published'
-             LIMIT 1"
-        );
-        $courseStmt->execute(['user_id' => $userId, 'course_id' => $courseId]);
-        if (!$courseStmt->fetchColumn()) {
+        try {
+            (new CourseAccessService())->requireCourseEnrollment(
+                $userId,
+                $courseId,
+                $pdo
+            );
+        } catch (RuntimeException) {
             throw new RuntimeException('Curso inválido para esta anotação.');
         }
 
