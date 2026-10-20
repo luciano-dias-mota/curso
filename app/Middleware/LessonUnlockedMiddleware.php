@@ -6,6 +6,7 @@ namespace App\Middleware;
 
 use App\Core\Auth;
 use App\Core\Database;
+use App\Core\Session;
 use App\Core\View;
 use App\Services\CourseAccessService;
 use RuntimeException;
@@ -35,6 +36,9 @@ final class LessonUnlockedMiddleware
         } catch (RuntimeException) {
             $this->deny('Esta aula não está disponível para sua matrícula.');
         }
+
+        Session::put('active_course_id', (int) $lesson['course_id']);
+        Session::put('active_course_experience', (string) ($lesson['experience_key'] ?? 'generic'));
 
         $routeCourseId = (int) ($params['courseId'] ?? 0);
         if ($routeCourseId > 0 && $routeCourseId !== (int) $lesson['course_id']) {
