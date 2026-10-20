@@ -108,6 +108,20 @@ $router->post('/curso/sair', [CourseContextController::class, 'leave'])
 $router->get('/curso/{id}', [CourseController::class, 'show'])
     ->middleware(['auth', 'student']);
 
+// Rotas contextualizadas: preferidas para novos cursos.
+// As rotas legadas abaixo permanecem durante a transição do PMMT.
+$router->get('/curso/{courseId}/modulo/{id}', [ModuleController::class, 'show'])
+    ->middleware(['auth', 'student', 'module.unlocked']);
+
+$router->get('/curso/{courseId}/fase/{id}', [PhaseController::class, 'show'])
+    ->middleware(['auth', 'student', 'phase.unlocked']);
+
+$router->get('/curso/{courseId}/aula/{id}', [LessonController::class, 'show'])
+    ->middleware(['auth', 'student', 'lesson.unlocked']);
+
+$router->post('/curso/{courseId}/aula/{id}/concluir', [ProgressController::class, 'completeLesson'])
+    ->middleware(['auth', 'student', 'csrf', 'lesson.unlocked']);
+
 $router->get('/modulo/{id}', [ModuleController::class, 'show'])
     ->middleware(['auth', 'student', 'module.unlocked']);
 
