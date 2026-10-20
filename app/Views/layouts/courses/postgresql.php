@@ -17,6 +17,9 @@ $courseId = (int) (
 );
 
 $courseHome = $courseId > 0 ? '/curso/' . $courseId : '/dashboard';
+$certificatesUrl = $courseId > 0 ? '/curso/' . $courseId . '/certificados' : '/dashboard';
+$profileUrl = $courseId > 0 ? '/curso/' . $courseId . '/perfil' : '/dashboard';
+$helpUrl = $courseId > 0 ? '/curso/' . $courseId . '/ajuda' : '/dashboard';
 $currentPath = parse_url((string) ($_SERVER['REQUEST_URI'] ?? ''), PHP_URL_PATH) ?: '';
 
 $pageTitle = isset($title)
@@ -31,7 +34,7 @@ $pageTitle = isset($title)
     <meta name="csrf-token" content="<?= e(Csrf::token()) ?>">
     <meta name="theme-color" content="#075a9e">
     <title><?= e($pageTitle) ?></title>
-    <link rel="stylesheet" href="<?= e(url('/assets/courses/postgresql/course.css') . '?v=20261020-3') ?>">
+    <link rel="stylesheet" href="<?= e(url('/assets/courses/postgresql/course.css') . '?v=20261020-4') ?>">
 </head>
 <body class="postgres-course-body">
     <div class="pg-app-shell">
@@ -41,8 +44,8 @@ $pageTitle = isset($title)
                     <img
                         src="<?= e(url('/assets/img/ld-academy-logo.webp')) ?>"
                         alt="LD Academy"
-                        width="900"
-                        height="295"
+                        width="300"
+                        height="98"
                     >
                 </a>
             </div>
@@ -61,25 +64,29 @@ $pageTitle = isset($title)
                     <strong>Meus Cursos</strong>
                 </a>
 
-                <span class="pg-side-link is-passive">
+                <a
+                    class="pg-side-link <?= str_contains($currentPath, '/certificados') ? 'is-active' : '' ?>"
+                    href="<?= e(url($certificatesUrl)) ?>"
+                >
                     <span aria-hidden="true">▣</span>
                     <strong>Certificados</strong>
-                </span>
+                </a>
 
-                <span class="pg-side-link is-passive">
-                    <span aria-hidden="true">▥</span>
-                    <strong>Ranking</strong>
-                </span>
-
-                <span class="pg-side-link is-passive">
+                <a
+                    class="pg-side-link <?= str_contains($currentPath, '/perfil') ? 'is-active' : '' ?>"
+                    href="<?= e(url($profileUrl)) ?>"
+                >
                     <span aria-hidden="true">♙</span>
                     <strong>Meu Perfil</strong>
-                </span>
+                </a>
 
-                <span class="pg-side-link is-passive">
+                <a
+                    class="pg-side-link <?= str_contains($currentPath, '/ajuda') ? 'is-active' : '' ?>"
+                    href="<?= e(url($helpUrl)) ?>"
+                >
                     <span aria-hidden="true">?</span>
                     <strong>Ajuda</strong>
-                </span>
+                </a>
             </nav>
 
             <form class="pg-sidebar-logout" method="post" action="<?= e(url('/curso/sair')) ?>">
@@ -95,9 +102,9 @@ $pageTitle = isset($title)
             <header class="pg-topbar">
                 <nav class="pg-top-nav" aria-label="Atalhos da plataforma">
                     <a href="<?= e(url('/dashboard')) ?>"><span aria-hidden="true">▤</span> Meus Cursos</a>
-                    <span class="pg-top-nav-item"><span aria-hidden="true">▣</span> Certificados</span>
-                    <span class="pg-top-nav-item"><span aria-hidden="true">▥</span> Ranking</span>
-                    <span class="pg-top-nav-item"><span aria-hidden="true">☆</span> Ajuda</span>
+                    <a class="pg-top-nav-item" href="<?= e(url($certificatesUrl)) ?>"><span aria-hidden="true">▣</span> Certificados</a>
+                    <a class="pg-top-nav-item" href="<?= e(url($profileUrl)) ?>"><span aria-hidden="true">♙</span> Meu Perfil</a>
+                    <a class="pg-top-nav-item" href="<?= e(url($helpUrl)) ?>"><span aria-hidden="true">☆</span> Ajuda</a>
                 </nav>
 
                 <div class="pg-top-account">
