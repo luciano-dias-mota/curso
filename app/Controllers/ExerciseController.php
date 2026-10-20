@@ -9,6 +9,7 @@ use App\Core\Controller;
 use App\Core\Request;
 use App\Core\Session;
 use App\Services\CourseAccessService;
+use App\Services\CourseContextService;
 use App\Services\ExerciseService;
 use RuntimeException;
 use Throwable;
@@ -29,7 +30,7 @@ final class ExerciseController extends Controller
                     'title' => 'Exercícios',
                     'activeCourseId' => $courseId,
                 ], $data),
-                'layouts/student'
+                (new CourseContextService())->currentLayout()
             );
         } catch (Throwable $e) {
             error_log('exercise.index: ' . $e->getMessage());
@@ -47,7 +48,7 @@ final class ExerciseController extends Controller
                 : (int) $request->input('course_id', 0);
 
             if ($courseId > 0) {
-                (new CourseAccessService())->requireCourseEnrollment(
+                (new CourseContextService())->activate(
                     (int) Auth::id(),
                     $courseId
                 );
@@ -91,6 +92,13 @@ final class ExerciseController extends Controller
     {
         try {
             $data = (new ExerciseService())->sessionData($id, (int) Auth::id());
+            $sessionCourseId = (int) ($data['session']['course_id'] ?? 0);
+            if ($sessionCourseId > 0) {
+                (new CourseContextService())->activate(
+                    (int) Auth::id(),
+                    $sessionCourseId
+                );
+            }
 
             if (($data['session']['status'] ?? '') === 'finished' || empty($data['current'])) {
                 $this->redirect('/exercicios/sessao/' . $id . '/resultado');
@@ -99,7 +107,7 @@ final class ExerciseController extends Controller
             $this->view(
                 'student/exercises/attempt',
                 array_merge(['title' => 'Resolver exercícios'], $data),
-                'layouts/student'
+                (new CourseContextService())->currentLayout()
             );
         } catch (RuntimeException $e) {
             Session::flash('error', $e->getMessage());
@@ -134,10 +142,18 @@ final class ExerciseController extends Controller
     {
         try {
             $data = (new ExerciseService())->resultData($id, (int) Auth::id());
+            $sessionCourseId = (int) ($data['session']['course_id'] ?? 0);
+            if ($sessionCourseId > 0) {
+                (new CourseContextService())->activate(
+                    (int) Auth::id(),
+                    $sessionCourseId
+                );
+            }
+
             $this->view(
                 'student/exercises/result',
                 array_merge(['title' => 'Resultado dos exercícios'], $data),
-                'layouts/student'
+                (new CourseContextService())->currentLayout()
             );
         } catch (RuntimeException $e) {
             Session::flash('error', $e->getMessage());
@@ -158,7 +174,7 @@ final class ExerciseController extends Controller
         }
 
         if ($resolved > 0) {
-            (new CourseAccessService())->requireCourseEnrollment(
+            (new CourseContextService())->activate(
                 (int) Auth::id(),
                 $resolved
             );
