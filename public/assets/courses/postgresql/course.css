@@ -1550,3 +1550,797 @@ textarea[data-lab-fallback-editor]:focus {
         scroll-behavior: auto;
     }
 }
+
+
+/* ========================================================================
+   PostgreSQL dashboard shell — referência visual 2026-10-20
+   ======================================================================== */
+
+.pg-app-shell {
+    min-height: 100vh;
+}
+
+.pg-sidebar {
+    position: fixed;
+    z-index: 80;
+    inset: 0 auto 0 0;
+    width: 216px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(10, 74, 130, .10);
+    background: rgba(248, 252, 255, .96);
+    box-shadow: 12px 0 34px -32px rgba(4, 64, 117, .54);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.pg-sidebar-brand {
+    min-height: 60px;
+    padding: 7px 13px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, .14);
+    background: linear-gradient(135deg, #084f8d, #0b69ad);
+}
+
+.pg-sidebar-brand a {
+    width: 100%;
+    height: 46px;
+    padding: 3px 7px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .96);
+    text-decoration: none;
+}
+
+.pg-sidebar-brand img {
+    width: 168px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.pg-side-nav {
+    padding: 18px 12px 12px;
+    display: grid;
+    gap: 5px;
+}
+
+.pg-side-link {
+    min-height: 44px;
+    padding: 0 13px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 10px;
+    color: #254766;
+    text-decoration: none;
+    font-size: 12px;
+    cursor: default;
+}
+
+a.pg-side-link {
+    cursor: pointer;
+}
+
+.pg-side-link > span:first-child {
+    width: 22px;
+    display: inline-grid;
+    place-items: center;
+    color: #315c80;
+    font-size: 18px;
+    font-weight: 850;
+}
+
+.pg-side-link strong {
+    font-weight: 650;
+}
+
+.pg-side-link.is-active,
+.pg-side-link.is-primary {
+    color: #0759ac;
+    background: linear-gradient(90deg, #e5f2ff, #d8edff);
+}
+
+.pg-side-link.is-active > span:first-child,
+.pg-side-link.is-primary > span:first-child {
+    color: #0872da;
+}
+
+.pg-side-link.is-passive {
+    user-select: none;
+}
+
+.pg-sidebar-logout {
+    margin: auto 16px 20px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(17, 84, 148, .12);
+}
+
+.pg-sidebar-logout button {
+    width: 100%;
+    min-height: 42px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 0;
+    border-radius: 10px;
+    color: #294c6a;
+    background: transparent;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: left;
+}
+
+.pg-sidebar-logout button:hover {
+    color: #0759ac;
+    background: #eaf5ff;
+}
+
+.pg-workspace {
+    min-height: 100vh;
+    margin-left: 216px;
+}
+
+.pg-topbar {
+    position: sticky;
+    z-index: 70;
+    top: 0;
+    min-height: 60px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, .13);
+    background:
+        linear-gradient(90deg, #07528e 0%, #0b70b2 58%, #08609c 100%);
+    box-shadow: 0 10px 28px -24px rgba(2, 51, 94, .82);
+}
+
+.pg-top-nav {
+    display: flex;
+    align-items: stretch;
+    align-self: stretch;
+}
+
+.pg-top-nav > a,
+.pg-top-nav-item {
+    min-width: 104px;
+    padding: 0 13px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    color: rgba(255,255,255,.93);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.pg-top-nav > a {
+    border-bottom: 3px solid rgba(255,255,255,.88);
+}
+
+.pg-top-nav > a span,
+.pg-top-nav-item span {
+    font-size: 15px;
+}
+
+.pg-top-account {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: rgba(255,255,255,.96);
+    font-size: 11px;
+}
+
+.pg-top-avatar {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #fff;
+    background: #0879dc;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.18);
+    font-size: 12px;
+    font-weight: 850;
+}
+
+.pg-notification {
+    width: 26px;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-size: 8px;
+}
+
+.postgres-course-main {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 17px 20px 32px;
+}
+
+.pg-course-home {
+    width: 100%;
+    max-width: 1420px;
+    margin: 0 auto;
+    display: grid;
+    gap: 13px;
+}
+
+.pg-breadcrumb {
+    min-height: 23px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #315a7c;
+    font-size: 10.5px;
+}
+
+.pg-breadcrumb a {
+    color: #315a7c;
+    text-decoration: none;
+}
+
+.pg-breadcrumb strong {
+    color: #173c61;
+    font-weight: 700;
+}
+
+.pg-course-hero {
+    min-height: 287px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: minmax(520px, 1.05fr) minmax(460px, .95fr);
+    border: 0;
+    border-radius: 0;
+    background: linear-gradient(90deg, #eaf8ff 0%, #d9f1ff 47%, #a8ddf8 100%);
+    box-shadow: none;
+}
+
+.pg-course-hero-copy {
+    z-index: 3;
+    padding: 28px 0 23px 18px;
+    align-self: center;
+}
+
+.pg-course-hero h1 {
+    max-width: 760px;
+    margin: 0 0 7px;
+    color: #0b244d;
+    font-size: clamp(31px, 3vw, 45px);
+    line-height: 1.06;
+    letter-spacing: -.035em;
+}
+
+.pg-course-hero h1 span {
+    display: inline;
+    margin: 0;
+    font-size: inherit;
+    letter-spacing: inherit;
+}
+
+.pg-course-hero-copy > p {
+    max-width: 650px;
+    margin: 0;
+    color: #365b7d;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.pg-hero-stats {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+}
+
+.pg-hero-stats > span {
+    min-height: 47px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    border: 0;
+    border-right: 1px solid rgba(18, 86, 144, .12);
+    border-radius: 0;
+    color: #2d5274;
+    background: transparent;
+    box-shadow: none;
+    font-size: 10px;
+}
+
+.pg-hero-stats > span:first-child {
+    padding-left: 0;
+}
+
+.pg-hero-stats > span:last-child {
+    border-right: 0;
+}
+
+.pg-hero-stats i {
+    color: #0877df;
+    font-size: 21px;
+    font-style: normal;
+}
+
+.pg-hero-stats b {
+    display: grid;
+    gap: 1px;
+    font-weight: 500;
+}
+
+.pg-hero-stats strong {
+    color: #0b244d;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.pg-hero-actions {
+    margin-top: 16px;
+    gap: 12px;
+}
+
+.pg-primary,
+.pg-secondary {
+    min-height: 48px;
+    padding: 0 22px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+.pg-primary {
+    min-width: 194px;
+    background: linear-gradient(135deg, #0763c4, #0877dc);
+    box-shadow: 0 12px 24px -15px rgba(4, 83, 166, .68);
+}
+
+.pg-secondary {
+    min-width: 150px;
+    color: #0b315d;
+    border-color: rgba(14, 94, 166, .15);
+    background: rgba(255,255,255,.78);
+    box-shadow: 0 12px 24px -20px rgba(22, 82, 137, .42);
+}
+
+.pg-hero-art {
+    min-height: 287px;
+    background-image:
+        linear-gradient(90deg, rgba(217,241,255,0) 0%, rgba(217,241,255,.05) 15%),
+        url("../postgresql/hero-database.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.pg-progress-panel {
+    min-height: 110px;
+    padding: 15px 16px;
+    display: grid;
+    grid-template-columns: minmax(360px, 2.6fr) repeat(4, minmax(118px, .72fr));
+    gap: 12px;
+    align-items: stretch;
+    border: 1px solid rgba(17,84,148,.07);
+    border-radius: 17px;
+    background: rgba(255,255,255,.91);
+    box-shadow: 0 15px 34px -30px rgba(13, 70, 123, .42);
+}
+
+.pg-progress-main {
+    padding: 2px 4px;
+}
+
+.pg-progress-main h2 {
+    margin: 0 0 11px;
+    color: #0d2a54;
+    font-size: 17px;
+}
+
+.pg-progress-line {
+    display: grid;
+    grid-template-columns: minmax(120px, 1fr) 42px;
+    gap: 12px;
+    align-items: center;
+}
+
+.pg-progress-line .pg-progress-track {
+    height: 14px;
+    margin: 0;
+    background: #e1e9f0;
+}
+
+.pg-progress-line strong {
+    color: #0b2b57;
+    font-size: 12px;
+}
+
+.pg-progress-main p {
+    margin: 7px 0 0;
+    color: #385b7c;
+    font-size: 10.5px;
+}
+
+.pg-progress-stat {
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(17,84,148,.09);
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 11px 25px -22px rgba(15, 70, 122, .48);
+}
+
+.pg-progress-stat > span {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 850;
+}
+
+.pg-progress-stat > span.is-blue {
+    color: #0877df;
+    background: #e9f5ff;
+}
+
+.pg-progress-stat > span.is-green {
+    color: #11a868;
+    background: #eafaf2;
+}
+
+.pg-progress-stat small,
+.pg-progress-stat strong {
+    display: block;
+}
+
+.pg-progress-stat small {
+    color: #4d6b87;
+    font-size: 9px;
+}
+
+.pg-progress-stat strong {
+    margin-top: 2px;
+    color: #0d2a54;
+    font-size: 16px;
+}
+
+.pg-course-modules {
+    padding: 3px 0 0;
+}
+
+.pg-learning-head {
+    margin: 0 0 10px 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.pg-learning-icon {
+    color: #0877df;
+    font-size: 25px;
+    line-height: 1;
+}
+
+.pg-learning-head h2 {
+    margin: 0;
+    color: #0b2a53;
+    font-size: 19px;
+}
+
+.pg-learning-head p {
+    margin: 2px 0 0;
+    color: #3e607f;
+    font-size: 10.5px;
+}
+
+.pg-module-grid {
+    display: grid;
+    grid-template-columns: repeat(20, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.pg-module-card {
+    grid-column: span 5;
+    min-height: 205px;
+    padding: 13px 13px 11px;
+    gap: 8px;
+    border: 1px solid rgba(16, 75, 128, .10);
+    border-radius: 12px;
+    background: rgba(255,255,255,.93);
+    box-shadow: 0 12px 25px -23px rgba(16, 70, 122, .48);
+}
+
+.pg-module-card:nth-child(n+5) {
+    grid-column: span 4;
+    min-height: 173px;
+}
+
+.pg-module-card.is-done {
+    border-color: rgba(22, 178, 105, .15);
+}
+
+.pg-module-card.is-current {
+    border-color: rgba(8, 119, 223, .18);
+}
+
+.pg-module-card.is-locked {
+    background: rgba(255,255,255,.82);
+}
+
+.pg-module-content {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 10px;
+}
+
+.pg-module-number {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    color: #173858;
+    background: #e6eef5;
+    font-size: 14px;
+}
+
+.pg-module-card.is-done .pg-module-number {
+    color: #fff;
+    background: linear-gradient(135deg, #22be75, #13a95f);
+}
+
+.pg-module-card.is-current .pg-module-number {
+    color: #fff;
+    background: linear-gradient(135deg, #1184ef, #0871d5);
+}
+
+.pg-module-copy h3 {
+    min-height: auto;
+    margin: 0 0 5px;
+    color: #10264b;
+    font-size: 13px;
+    line-height: 1.25;
+}
+
+.pg-module-copy p {
+    display: -webkit-box;
+    overflow: hidden;
+    margin: 0;
+    color: #3f6180;
+    font-size: 9.8px;
+    line-height: 1.42;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.pg-module-card:nth-child(n+5) .pg-module-copy p {
+    -webkit-line-clamp: 2;
+    font-size: 9.2px;
+}
+
+.pg-module-progress-row {
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 30px;
+    gap: 8px;
+    align-items: center;
+}
+
+.pg-module-progress-row .pg-progress-track {
+    margin: 0;
+    height: 8px;
+    background: #e4ebf1;
+}
+
+.pg-module-card.is-done .pg-progress-track > span {
+    background: #16b76b;
+}
+
+.pg-module-progress-row strong {
+    color: #244d74;
+    font-size: 9px;
+    text-align: right;
+}
+
+.pg-module-footer {
+    display: grid;
+    grid-template-columns: minmax(96px, .9fr) minmax(110px, 1.1fr);
+    gap: 8px;
+}
+
+.pg-module-state,
+.pg-module-action {
+    min-height: 32px;
+    padding: 0 9px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 9.5px;
+    font-weight: 750;
+    white-space: nowrap;
+}
+
+.pg-module-state {
+    color: #3c5875;
+    background: #edf3f7;
+}
+
+.pg-module-card.is-done .pg-module-state {
+    color: #078a4b;
+    background: #e4f8ed;
+}
+
+.pg-module-card.is-current .pg-module-state {
+    color: #0768c9;
+    background: #e3f1ff;
+}
+
+.pg-module-action {
+    color: #075eaf;
+    border: 1px solid rgba(8,112,211,.22);
+    background: #fff;
+    text-decoration: none;
+}
+
+.pg-module-action.is-primary {
+    color: #fff;
+    border-color: transparent;
+    background: linear-gradient(135deg, #0766c7, #0879de);
+}
+
+.pg-module-action.is-disabled {
+    color: #245077;
+    border-color: rgba(17,84,148,.10);
+    background: rgba(255,255,255,.70);
+}
+
+@media (min-width: 1180px) and (min-height: 760px) {
+    .postgres-course-main {
+        padding-top: 15px;
+    }
+
+    .pg-course-home {
+        gap: 11px;
+    }
+}
+
+@media (max-width: 1180px) {
+    .pg-course-hero {
+        grid-template-columns: minmax(470px, 1fr) minmax(360px, .85fr);
+    }
+
+    .pg-progress-panel {
+        grid-template-columns: minmax(320px, 2fr) repeat(2, 1fr);
+    }
+
+    .pg-progress-main {
+        grid-row: span 2;
+    }
+
+    .pg-module-grid {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+
+    .pg-module-card,
+    .pg-module-card:nth-child(n+5) {
+        grid-column: span 4;
+    }
+}
+
+@media (max-width: 900px) {
+    .pg-sidebar {
+        position: static;
+        width: 100%;
+        min-height: auto;
+        display: block;
+    }
+
+    .pg-sidebar-brand {
+        min-height: 58px;
+    }
+
+    .pg-side-nav,
+    .pg-sidebar-logout {
+        display: none;
+    }
+
+    .pg-workspace {
+        margin-left: 0;
+    }
+
+    .pg-topbar {
+        min-height: 54px;
+        padding-inline: 12px;
+    }
+
+    .pg-top-nav-item {
+        display: none;
+    }
+
+    .pg-top-nav > a {
+        min-width: auto;
+        padding-inline: 8px;
+    }
+
+    .postgres-course-main {
+        padding: 12px 10px 28px;
+    }
+
+    .pg-course-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .pg-course-hero-copy {
+        padding: 22px 18px 12px;
+    }
+
+    .pg-hero-art {
+        min-height: 220px;
+        background-position: center;
+    }
+
+    .pg-progress-panel {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pg-progress-main {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+}
+
+@media (max-width: 680px) {
+    .pg-top-account strong {
+        display: none;
+    }
+
+    .pg-breadcrumb {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .pg-course-hero h1 {
+        font-size: 29px;
+    }
+
+    .pg-hero-stats > span {
+        width: 50%;
+        padding: 7px 9px;
+        border-bottom: 1px solid rgba(18,86,144,.08);
+    }
+
+    .pg-hero-stats > span:first-child {
+        padding-left: 9px;
+    }
+
+    .pg-hero-actions,
+    .pg-primary,
+    .pg-secondary {
+        width: 100%;
+    }
+
+    .pg-progress-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .pg-module-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pg-module-card,
+    .pg-module-card:nth-child(n+5) {
+        grid-column: auto;
+        min-height: 185px;
+    }
+}
