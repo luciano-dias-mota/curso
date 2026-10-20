@@ -5,14 +5,13 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use App\Core\Controller;
-use App\Core\Session;
+use App\Services\CourseContextService;
 
 final class CourseContextController extends Controller
 {
     public function leave(): void
     {
-        Session::forget('active_course_id');
-        Session::forget('active_course_experience');
+        (new CourseContextService())->clear();
 
         $this->redirect('/dashboard');
     }
