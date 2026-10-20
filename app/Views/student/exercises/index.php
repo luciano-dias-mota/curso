@@ -12,6 +12,10 @@ $taxonomyAvailable = (bool) ($taxonomyAvailable ?? false);
 $history = $history ?? [];
 $stats = $stats ?? [];
 $allowedLimits = $allowedLimits ?? [5, 10, 15, 20, 30];
+$activeCourseId = max(0, (int) ($activeCourseId ?? 0));
+$exerciseBasePath = $activeCourseId > 0
+    ? '/curso/' . $activeCourseId . '/exercicios'
+    : '/exercicios';
 
 $popTopics = array_values(array_filter($topics, static fn (array $t): bool => ($t['topic_type'] ?? '') === 'pop' && (int) ($t['question_count'] ?? 0) > 0));
 $processTopics = array_values(array_filter($topics, static fn (array $t): bool => ($t['topic_type'] ?? '') === 'process' && (int) ($t['question_count'] ?? 0) > 0));
@@ -48,7 +52,7 @@ $totalPopQuestions = array_sum(array_map(static fn (array $t): int => (int) ($t[
             <?php if (empty($courses)): ?>
                 <div class="study-empty">Você precisa de uma matrícula ativa para gerar exercícios.</div>
             <?php else: ?>
-                <form class="study-scope-form exercise-generator-form" action="<?= e(url('/exercicios/gerar')) ?>" method="post">
+                <form class="study-scope-form exercise-generator-form" action="<?= e(url($exerciseBasePath . '/gerar')) ?>" method="post">
                     <?= Csrf::input() ?>
 
                     <label>
