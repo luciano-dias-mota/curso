@@ -7,9 +7,7 @@ namespace App\Controllers;
 use App\Core\Auth;
 use App\Core\Controller;
 use App\Core\Database;
-use App\Core\Session;
-use App\Services\CourseAccessService;
-use App\Services\CourseExperienceRegistry;
+use App\Services\CourseContextService;
 use PDO;
 use RuntimeException;
 
@@ -22,20 +20,19 @@ final class PmmtHomeController extends Controller
         $user = Auth::user() ?? [];
 
         try {
-            $course = (new CourseAccessService())->requireCourseEnrollment(
+            $context = (new CourseContextService())->activate(
                 $userId,
                 $id,
                 $pdo
             );
+            $course = $context['course'];
         } catch (RuntimeException) {
             http_response_code(404);
             $this->view('errors/404');
             return;
         }
 
-        if ((new CourseExperienceRegistry())->get(
-            (string) ($course['experience_key'] ?? 'generic')
-        )['key'] !== 'pmmt') {
+        if (($context['experience_key'] ?? 'generic') !== 'pmmt') {
             $this->redirect('/curso/' . $id);
         }
 
@@ -69,9 +66,6 @@ final class PmmtHomeController extends Controller
         );
         $moduleCountStmt->execute(['course_id' => $id]);
         $course['module_count'] = (int) $moduleCountStmt->fetchColumn();
-
-        Session::put('active_course_id', $id);
-        Session::put('active_course_experience', 'pmmt');
 
         $courses = [$course];
 
