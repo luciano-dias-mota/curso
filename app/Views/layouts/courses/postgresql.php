@@ -2,13 +2,30 @@
 
 use App\Core\Auth;
 use App\Core\Csrf;
+use App\Core\Session;
 
 $user = Auth::user() ?? [];
 $firstName = explode(' ', trim((string) ($user['name'] ?? 'Estudante')))[0];
 $initial = mb_strtoupper(mb_substr((string) ($user['name'] ?? 'E'), 0, 1));
+
+$courseId = (int) (
+    $course['id']
+    ?? $module['course_id']
+    ?? $phase['course_id']
+    ?? $lesson['course_id']
+    ?? Session::get('active_course_id', 0)
+);
+
+$courseHome = $courseId > 0 ? '/curso/' . $courseId : '/dashboard';
+$currentPath = parse_url((string) ($_SERVER['REQUEST_URI'] ?? ''), PHP_URL_PATH) ?: '';
+
 $pageTitle = isset($title)
     ? $title . ' • PostgreSQL • LD Academy'
     : 'PostgreSQL • LD Academy';
+
+$navItemClass = static function (string $needle) use ($currentPath): string {
+    return str_contains($currentPath, $needle) ? ' is-active' : '';
+};
 ?>
 <!doctype html>
 <html lang="pt-BR">
@@ -16,47 +33,86 @@ $pageTitle = isset($title)
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="csrf-token" content="<?= e(Csrf::token()) ?>">
-    <meta name="theme-color" content="#e9f6ff">
+    <meta name="theme-color" content="#075a9e">
     <title><?= e($pageTitle) ?></title>
-
-    <link rel="stylesheet" href="<?= e(url('/assets/courses/postgresql/course.css') . '?v=20261020-2') ?>">
+    <link rel="stylesheet" href="<?= e(url('/assets/courses/postgresql/course.css') . '?v=20261020-3') ?>">
 </head>
 <body class="postgres-course-body">
-    <header class="postgres-course-header">
-        <div class="postgres-course-header-left">
-            <a href="<?= e(url('/dashboard')) ?>" class="postgres-academy-brand" aria-label="LD Academy">
-                <img
-                    src="<?= e(url('/assets/img/ld-academy-logo.webp')) ?>"
-                    alt="LD Academy"
-                    width="900"
-                    height="295"
-                >
-            </a>
-
-            <span class="postgres-header-separator" aria-hidden="true"></span>
-
-            <a href="<?= e(url('/dashboard')) ?>" class="postgres-back-portal">
-                ← Portal de cursos
-            </a>
-        </div>
-
-        <div class="postgres-course-account">
-            <div class="postgres-account-copy">
-                <span>PostgreSQL</span>
-                <strong><?= e($firstName) ?></strong>
+    <div class="pg-app-shell">
+        <aside class="pg-sidebar">
+            <div class="pg-sidebar-brand">
+                <a href="<?= e(url('/dashboard')) ?>" aria-label="LD Academy">
+                    <img
+                        src="<?= e(url('/assets/img/ld-academy-logo.webp')) ?>"
+                        alt="LD Academy"
+                        width="900"
+                        height="295"
+                    >
+                </a>
             </div>
 
-            <span class="postgres-avatar" aria-hidden="true"><?= e($initial) ?></span>
+            <nav class="pg-side-nav" aria-label="Navegação do curso">
+                <a class="pg-side-link<?= e($navItemClass('/curso/' . $courseId)) ?>" href="<?= e(url($courseHome)) ?>">
+                    <span aria-hidden="true">⌂</span>
+                    <strong>Início</strong>
+                </a>
 
-            <form method="post" action="<?= e(url('/curso/sair')) ?>">
+                <a class="pg-side-link is-primary<?= str_contains($currentPath, '/dashboard') ? ' is-active' : '' ?>" href="<?= e(url('/dashboard')) ?>">
+                    <span aria-hidden="true">◇</span>
+                    <strong>Meus Cursos</strong>
+                </a>
+
+                <a class="pg-side-link" href="#">
+                    <span aria-hidden="true">▣</span>
+                    <strong>Certificados</strong>
+                </a>
+
+                <a class="pg-side-link" href="#">
+                    <span aria-hidden="true">▥</span>
+                    <strong>Ranking</strong>
+                </a>
+
+                <a class="pg-side-link" href="#">
+                    <span aria-hidden="true">♙</span>
+                    <strong>Meu Perfil</strong>
+                </a>
+
+                <a class="pg-side-link" href="#">
+                    <span aria-hidden="true">?</span>
+                    <strong>Ajuda</strong>
+                </a>
+            </nav>
+
+            <form class="pg-sidebar-logout" method="post" action="<?= e(url('/curso/sair')) ?>">
                 <?= Csrf::input() ?>
-                <button type="submit">Sair do curso</button>
+                <button type="submit">
+                    <span aria-hidden="true">↪</span>
+                    <strong>Sair</strong>
+                </button>
             </form>
-        </div>
-    </header>
+        </aside>
 
-    <main class="postgres-course-main">
-        <?= $content ?? '' ?>
-    </main>
+        <div class="pg-workspace">
+            <header class="pg-topbar">
+                <nav class="pg-top-nav" aria-label="Atalhos da plataforma">
+                    <a href="<?= e(url('/dashboard')) ?>"><span>▤</span> Meus Cursos</a>
+                    <span class="pg-top-nav-item"><span>▣</span> Certificados</span>
+                    <span class="pg-top-nav-item"><span>▥</span> Ranking</span>
+                    <span class="pg-top-nav-item"><span>☆</span> Ajuda</span>
+                </nav>
+
+                <div class="pg-top-account">
+                    <span class="pg-notification" aria-label="Notificações">●</span>
+                    <span class="pg-top-avatar" aria-hidden="true"><?= e($initial) ?></span>
+                    <strong><?= e($firstName) ?></strong>
+                    <span aria-hidden="true">⌄</span>
+                </div>
+            </header>
+
+            <main class="postgres-course-main">
+                <?= $content ?? '' ?>
+            </main>
+        </div>
+    </div>
 </body>
 </html>
