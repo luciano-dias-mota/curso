@@ -2187,68 +2187,6 @@ html[data-theme="light"] .reference-hero::after { background:linear-gradient(90d
   .reference-stat-card { min-height:78px; }
 }
 
-
-/* ===== Portal multi-curso do estudante ===== */
-.course-portal{display:grid;gap:22px}
-.course-portal-hero{display:flex;align-items:flex-end;justify-content:space-between;gap:22px;padding:28px;border:1px solid rgba(148,163,184,.14);border-radius:24px;background:linear-gradient(135deg,rgba(15,23,42,.96),rgba(17,24,39,.88));box-shadow:0 22px 70px rgba(0,0,0,.20)}
-.course-portal-kicker,.course-portal-section-head span{display:block;color:#67e8f9;font-size:11px;font-weight:900;letter-spacing:.12em}
-.course-portal-hero h1{margin:8px 0 7px;font-size:clamp(26px,3vw,42px);line-height:1.05}
-.course-portal-hero p,.course-portal-section-head p{margin:0;color:var(--muted,#94a3b8);line-height:1.5}
-.course-portal-profile{min-width:190px;padding:16px 18px;border:1px solid rgba(34,211,238,.18);border-radius:18px;background:rgba(34,211,238,.06)}
-.course-portal-profile span,.course-portal-profile strong,.course-portal-profile small{display:block}
-.course-portal-profile span{color:#67e8f9;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.10em}
-.course-portal-profile strong{margin-top:5px;font-size:18px}
-.course-portal-profile small{margin-top:4px;color:var(--muted,#94a3b8)}
-.course-portal-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.course-portal-summary article{padding:16px 18px;border:1px solid rgba(148,163,184,.13);border-radius:18px;background:rgba(15,23,42,.58)}
-.course-portal-summary span,.course-portal-summary strong,.course-portal-summary small{display:block}
-.course-portal-summary span{color:var(--muted,#94a3b8);font-size:10px;font-weight:800}
-.course-portal-summary strong{margin:5px 0 2px;font-size:25px}
-.course-portal-summary small{color:var(--muted,#94a3b8);font-size:9px}
-.course-portal-section{display:grid;gap:14px}
-.course-portal-section-head{display:flex;justify-content:space-between;gap:16px}
-.course-portal-section-head h2{margin:4px 0 3px;font-size:24px}
-.course-portal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.course-portal-card{min-width:0;overflow:hidden;border:1px solid rgba(148,163,184,.14);border-radius:22px;background:linear-gradient(180deg,rgba(15,23,42,.82),rgba(15,23,42,.62));color:inherit;text-decoration:none;box-shadow:0 18px 50px rgba(0,0,0,.16);transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
-.course-portal-card:hover{transform:translateY(-4px);border-color:rgba(34,211,238,.35);box-shadow:0 26px 65px rgba(0,0,0,.24)}
-.course-portal-cover{position:relative;height:160px;overflow:hidden;background:linear-gradient(135deg,#0f172a,#172554)}
-.course-portal-cover img{width:100%;height:100%;object-fit:cover}
-.course-portal-cover-fallback{position:absolute;inset:0;display:grid;place-items:center;font-size:64px;font-weight:950;color:rgba(255,255,255,.88);background:radial-gradient(circle at 70% 20%,rgba(34,211,238,.28),transparent 34%),linear-gradient(135deg,#172554,#111827)}
-.course-portal-cover-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%,rgba(2,6,23,.72))}
-.course-portal-index{position:absolute;left:14px;top:13px;display:grid;place-items:center;width:34px;height:30px;border:1px solid rgba(255,255,255,.16);border-radius:10px;background:rgba(2,6,23,.45);font-size:10px;font-weight:950}
-.course-portal-status{position:absolute;right:14px;top:13px;padding:7px 9px;border-radius:999px;background:rgba(15,23,42,.68);font-size:9px;font-weight:900}
-.course-portal-status.is-in_progress{color:#67e8f9}
-.course-portal-status.is-completed{color:#86efac}
-.course-portal-status.is-not_started{color:#facc15}
-.course-portal-card-body{display:grid;gap:12px;padding:17px}
-.course-portal-card-meta{display:flex;gap:8px;flex-wrap:wrap}
-.course-portal-card-meta span{padding:4px 7px;border-radius:999px;background:rgba(148,163,184,.08);color:var(--muted,#94a3b8);font-size:8px;font-weight:800}
-.course-portal-card h3{margin:0;font-size:19px;line-height:1.22}
-.course-portal-card p{margin:0;min-height:42px;color:var(--muted,#94a3b8);font-size:11px;line-height:1.5}
-.course-portal-resume{padding:11px 12px;border:1px solid rgba(34,211,238,.14);border-radius:13px;background:rgba(34,211,238,.05)}
-.course-portal-resume span,.course-portal-resume strong,.course-portal-resume small{display:block}
-.course-portal-resume span{color:#67e8f9;font-size:8px;font-weight:950;letter-spacing:.11em}
-.course-portal-resume strong{margin-top:4px;font-size:11px}
-.course-portal-resume small{margin-top:3px;color:var(--muted,#94a3b8);font-size:8px}
-.course-portal-progress>div:first-child{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:6px}
-.course-portal-progress span{color:var(--muted,#94a3b8);font-size:9px}
-.course-portal-progress strong{font-size:10px}
-.course-portal-progress .progress{height:7px;overflow:hidden;border-radius:999px;background:rgba(148,163,184,.10)}
-.course-portal-progress .progress span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#22d3ee,#6366f1)}
-.course-portal-card-footer{display:flex;justify-content:space-between;gap:10px;align-items:center;padding-top:2px}
-.course-portal-card-footer span{color:var(--muted,#94a3b8);font-size:8px}
-.course-portal-card-footer strong{color:#67e8f9;font-size:9px}
-.course-portal-empty{padding:42px 24px;border:1px dashed rgba(148,163,184,.22);border-radius:22px;text-align:center;background:rgba(15,23,42,.38)}
-.course-portal-empty>span{font-size:34px}
-.course-portal-empty h3{margin:10px 0 5px;font-size:19px}
-.course-portal-empty p{max-width:620px;margin:0 auto;color:var(--muted,#94a3b8);line-height:1.5}
-html[data-theme="light"] .course-portal-hero{background:linear-gradient(135deg,#fff,#f1f5f9)}
-html[data-theme="light"] .course-portal-summary article,html[data-theme="light"] .course-portal-card,html[data-theme="light"] .course-portal-empty{background:#fff}
-@media(max-width:1100px){.course-portal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.course-portal-summary{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:720px){.course-portal{gap:16px}.course-portal-hero{align-items:stretch;flex-direction:column;padding:20px}.course-portal-profile{min-width:0}.course-portal-grid{grid-template-columns:1fr}.course-portal-cover{height:145px}.course-portal-card p{min-height:0}}
-@media(max-width:480px){.course-portal-summary{grid-template-columns:1fr 1fr;gap:8px}.course-portal-summary article{padding:12px}.course-portal-summary strong{font-size:21px}.course-portal-card-footer{align-items:flex-start;flex-direction:column}}
-
-
 /* ===== Laboratório SQL / PGlite ===== */
 .lab-room [data-lab-fallback-editor]{width:100%;min-height:260px;padding:16px;border:1px solid rgba(56,189,248,.20);border-radius:14px;background:#07111f;color:#dbeafe;font:500 13px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;resize:vertical;tab-size:4}
 .lab-room [data-lab-fallback-editor]:focus{outline:none;border-color:rgba(34,211,238,.58);box-shadow:0 0 0 3px rgba(34,211,238,.08)}
