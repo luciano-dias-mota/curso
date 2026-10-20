@@ -59,7 +59,7 @@ $pageTitle = isset($title)
                     <strong>Início</strong>
                 </a>
 
-                <a class="pg-side-link is-primary" href="<?= e(url('/dashboard')) ?>">
+                <a class="pg-side-link" href="<?= e(url('/dashboard')) ?>">
                     <span aria-hidden="true">◇</span>
                     <strong>Meus Cursos</strong>
                 </a>
@@ -102,9 +102,9 @@ $pageTitle = isset($title)
             <header class="pg-topbar">
                 <nav class="pg-top-nav" aria-label="Atalhos da plataforma">
                     <a href="<?= e(url('/dashboard')) ?>"><span aria-hidden="true">▤</span> Meus Cursos</a>
-                    <a class="pg-top-nav-item" href="<?= e(url($certificatesUrl)) ?>"><span aria-hidden="true">▣</span> Certificados</a>
-                    <a class="pg-top-nav-item" href="<?= e(url($profileUrl)) ?>"><span aria-hidden="true">♙</span> Meu Perfil</a>
-                    <a class="pg-top-nav-item" href="<?= e(url($helpUrl)) ?>"><span aria-hidden="true">☆</span> Ajuda</a>
+                    <a class="pg-top-nav-item <?= str_contains($currentPath, '/certificados') ? 'is-active' : '' ?>" href="<?= e(url($certificatesUrl)) ?>"><span aria-hidden="true">▣</span> Certificados</a>
+                    <a class="pg-top-nav-item <?= str_contains($currentPath, '/perfil') ? 'is-active' : '' ?>" href="<?= e(url($profileUrl)) ?>"><span aria-hidden="true">♙</span> Meu Perfil</a>
+                    <a class="pg-top-nav-item <?= str_contains($currentPath, '/ajuda') ? 'is-active' : '' ?>" href="<?= e(url($helpUrl)) ?>"><span aria-hidden="true">☆</span> Ajuda</a>
                 </nav>
 
                 <div class="pg-top-account">
