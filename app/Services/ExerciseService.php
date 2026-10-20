@@ -16,20 +16,24 @@ final class ExerciseService
     private const MIN_ALTERNATIVES_TRUE_FALSE = 2;
     private const ALLOWED_DIFFICULTIES = ['all', 'medium', 'hard'];
 
-    public function dashboard(int $userId): array
+    public function dashboard(int $userId, ?int $courseId = null): array
     {
         $pdo = Database::connection();
 
         return array_merge(
-            $this->configuration($userId, $pdo),
+            $this->configuration($userId, $pdo, $courseId),
             [
-                'history' => $this->history($userId, $pdo),
-                'stats' => $this->stats($userId, $pdo),
+                'history' => $this->history($userId, $pdo, $courseId),
+                'stats' => $this->stats($userId, $pdo, $courseId),
             ]
         );
     }
 
-    public function configuration(int $userId, ?PDO $pdo = null): array
+    public function configuration(
+        int $userId,
+        ?PDO $pdo = null,
+        ?int $courseId = null
+    ): array
     {
         $pdo ??= Database::connection();
 
@@ -40,9 +44,14 @@ final class ExerciseService
              WHERE e.user_id = :user_id
                AND e.status = 'active'
                AND c.status = 'published'
+               AND (:course_id = 0 OR c.id = :course_id_filter)
              ORDER BY c.position, c.id"
         );
-        $courseStmt->execute(['user_id' => $userId]);
+        $courseStmt->execute([
+            'user_id' => $userId,
+            'course_id' => max(0, (int) ($courseId ?? 0)),
+            'course_id_filter' => max(0, (int) ($courseId ?? 0)),
+        ]);
         $courses = $courseStmt->fetchAll(PDO::FETCH_ASSOC);
         $settings = new CourseSettingsService();
         $courses = array_values(array_filter(
@@ -636,7 +645,7 @@ final class ExerciseService
         ];
     }
 
-    private function stats(int $userId, PDO $pdo): array
+    private function stats(int $userId, PDO $pdo, ?int $courseId = null): array
     {
         $stmt = $pdo->prepare(
             "SELECT COUNT(*) AS total,
@@ -645,9 +654,14 @@ final class ExerciseService
                     COALESCE(SUM(correct_count), 0) AS correct_answers
              FROM exercise_sessions
              WHERE user_id = :user_id
-               AND status = 'finished'"
+               AND status = 'finished'
+               AND (:course_id = 0 OR course_id = :course_id_filter)"
         );
-        $stmt->execute(['user_id' => $userId]);
+        $stmt->execute([
+            'user_id' => $userId,
+            'course_id' => max(0, (int) ($courseId ?? 0)),
+            'course_id_filter' => max(0, (int) ($courseId ?? 0)),
+        ]);
         $stats = $stmt->fetch(PDO::FETCH_ASSOC) ?: [];
 
         return [
@@ -658,18 +672,23 @@ final class ExerciseService
         ];
     }
 
-    private function history(int $userId, PDO $pdo): array
+    private function history(int $userId, PDO $pdo, ?int $courseId = null): array
     {
         $stmt = $pdo->prepare(
-            "SELECT id, course_title_snapshot, module_title_snapshot, phase_title_snapshot,
+            "SELECT id, course_id, course_title_snapshot, module_title_snapshot, phase_title_snapshot,
                     topic_title_snapshot, difficulty_filter,
                     question_limit, correct_count, percentage, status, started_at, finished_at
              FROM exercise_sessions
              WHERE user_id = :user_id
+               AND (:course_id = 0 OR course_id = :course_id_filter)
              ORDER BY id DESC
              LIMIT 12"
         );
-        $stmt->execute(['user_id' => $userId]);
+        $stmt->execute([
+            'user_id' => $userId,
+            'course_id' => max(0, (int) ($courseId ?? 0)),
+            'course_id_filter' => max(0, (int) ($courseId ?? 0)),
+        ]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
