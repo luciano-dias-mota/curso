@@ -166,7 +166,7 @@ $renderCourseBody = static function (array $course, bool $locked = false) use ($
                     ? ' is-postgresql'
                     : '';
                 ?>
-                <a class="portal-course-card" href="<?= e(url('/curso/' . (int) $course['id'])) ?>">
+                <a class="portal-course-card" href="<?= e(url((string) ($course['entry_path'] ?? ('/curso/' . (int) $course['id'])))) ?>">
                     <div class="portal-card-media<?= e($mediaClass) ?>">
                         <?php $renderCourseMedia($course, false); ?>
                     </div>
