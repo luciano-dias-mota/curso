@@ -135,6 +135,9 @@ $router->post('/aula/{id}/concluir', [ProgressController::class, 'completeLesson
     ->middleware(['auth', 'student', 'csrf', 'lesson.unlocked']);
 
 // Laboratórios práticos usam uma casca genérica; a engine concreta é plugável.
+$router->get('/curso/{courseId}/laboratorio/atividade/{id}', [LabController::class, 'show'])
+    ->middleware(['auth', 'student']);
+
 $router->get('/laboratorio/atividade/{id}', [LabController::class, 'show'])
     ->middleware(['auth', 'student']);
 
