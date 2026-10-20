@@ -235,6 +235,8 @@ try {
         ['certificate_enabled', '1', 'boolean'],
         ['lab_enabled', '1', 'boolean'],
         ['lab_engine_key', 'postgresql_pglite', 'string'],
+        ['catalog_preview_enabled', '1', 'boolean'],
+        ['catalog_preview_message', 'Curso em construção. Estamos preparando aulas práticas e laboratórios. Em breve estará disponível.', 'string'],
     ];
 
     $insertSetting = $pdo->prepare(
@@ -312,7 +314,8 @@ try {
     echo "[OK] Configurações práticas registradas.\n";
     echo "[OK] 9 módulos-base garantidos como rascunho.\n";
     echo "[OK] Nenhuma fase, aula ou atividade prática foi criada.\n";
-    echo "[OK] O curso não será mostrado aos alunos enquanto permanecer em rascunho.\n";
+    echo "[OK] O curso permanece em rascunho e sem acesso aos alunos.\n";
+    echo "[OK] A prévia do card pode ser exibida no portal como 'Em construção'.\n";
 } catch (Throwable $e) {
     if ($pdo->inTransaction()) {
         $pdo->rollBack();
