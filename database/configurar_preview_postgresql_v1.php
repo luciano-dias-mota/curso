@@ -12,10 +12,6 @@ require BASE_PATH . '/vendor/autoload.php';
 
 use App\Core\App;
 use App\Core\Database;
-use PDO;
-use RuntimeException;
-use Throwable;
-
 App::boot(BASE_PATH);
 
 $apply = in_array('--apply', $argv ?? [], true);
