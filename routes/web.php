@@ -37,6 +37,13 @@ $router->get('/dashboard', [DashboardController::class, 'index'])
 
 
 // Exercícios de fixação: questões médias, feedback imediato e seleção anti-repetição.
+$router->get('/curso/{courseId}/exercicios', [ExerciseController::class, 'index'])
+    ->middleware(['auth', 'student']);
+
+$router->post('/curso/{courseId}/exercicios/gerar', [ExerciseController::class, 'generate'])
+    ->middleware(['auth', 'student', 'csrf']);
+
+// Compatibilidade com URLs anteriores.
 $router->get('/exercicios', [ExerciseController::class, 'index'])
     ->middleware(['auth', 'student']);
 
