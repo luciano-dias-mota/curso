@@ -76,42 +76,21 @@ button:focus-visible {
 }
 
 .platform-brand {
+    flex: none;
     display: inline-flex;
     align-items: center;
-    gap: 12px;
     color: var(--portal-ink);
     text-decoration: none;
 }
 
-.platform-brand-mark {
-    width: 40px;
-    height: 40px;
-    display: grid;
-    place-items: center;
-    border-radius: 12px;
-    color: #fff;
-    background: linear-gradient(135deg, #2a8cf0, #14b5c9);
-    box-shadow: 0 8px 18px -6px rgba(24, 130, 220, .60);
-    font-size: 15px;
-    font-weight: 800;
-    letter-spacing: -.02em;
-}
-
-.platform-brand strong,
-.platform-brand small {
+.platform-brand-logo {
+    width: 205px;
+    height: auto;
+    max-height: 56px;
     display: block;
-}
-
-.platform-brand strong {
-    font-size: 14px;
-    font-weight: 800;
-    letter-spacing: .18em;
-}
-
-.platform-brand small {
-    margin-top: 2px;
-    color: var(--portal-muted);
-    font-size: 11px;
+    object-fit: contain;
+    object-position: left center;
+    filter: drop-shadow(0 7px 12px rgba(72, 24, 31, .10));
 }
 
 .platform-account {
@@ -848,18 +827,13 @@ body.portal-modal-open {
         min-height: 62px;
     }
 
-    .platform-brand small,
     .platform-account-copy {
         display: none;
     }
 
-    .platform-brand-mark {
-        width: 36px;
-        height: 36px;
-    }
-
-    .platform-brand strong {
-        font-size: 12px;
+    .platform-brand-logo {
+        width: 160px;
+        max-height: 48px;
     }
 
     .platform-account {
@@ -939,6 +913,17 @@ body.portal-modal-open {
 
     .portal-card-action {
         width: 100%;
+    }
+}
+
+@media (max-width: 390px) {
+    .platform-brand-logo {
+        width: 142px;
+        max-height: 44px;
+    }
+
+    .platform-logout {
+        padding: 0 10px;
     }
 }
 
