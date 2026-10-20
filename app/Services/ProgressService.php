@@ -164,6 +164,28 @@ final class ProgressService
                 'lesson_id' => $lessonId,
             ]);
 
+            $completionMode = $this->completionMode($pdo, $lessonId);
+
+            if ($completionMode === 'reading') {
+                $this->completeByReading(
+                    $pdo,
+                    $userId,
+                    $lessonId,
+                    (int) $lesson['phase_id'],
+                    (int) $lesson['module_id'],
+                    (int) $lesson['course_id']
+                );
+
+                $pdo->commit();
+
+                return [
+                    'phase_id' => (int) $lesson['phase_id'],
+                    'quiz_id' => null,
+                    'optional' => false,
+                    'next_step' => 'completed',
+                ];
+            }
+
             $quizStmt = $pdo->prepare(
                 "SELECT qz.id, qz.question_limit, COUNT(qq.question_id) AS question_count
                  FROM quizzes qz
@@ -216,6 +238,8 @@ final class ProgressService
                     l.phase_id,
                     l.is_required AS lesson_required,
                     p.is_required AS phase_required,
+                    m.id AS module_id,
+                    m.course_id,
                     ulp.status
              FROM lessons l
              INNER JOIN phases p
@@ -261,6 +285,293 @@ final class ProgressService
         }
 
         return $lesson;
+    }
+
+    private function completionMode(PDO $pdo, int $lessonId): string
+    {
+        $column = $pdo->prepare(
+            "SELECT 1
+             FROM information_schema.COLUMNS
+             WHERE TABLE_SCHEMA = DATABASE()
+               AND TABLE_NAME = 'lessons'
+               AND COLUMN_NAME = 'completion_mode'
+             LIMIT 1"
+        );
+        $column->execute();
+
+        if (!$column->fetchColumn()) {
+            return 'quiz';
+        }
+
+        $stmt = $pdo->prepare(
+            "SELECT completion_mode
+             FROM lessons
+             WHERE id = :lesson_id
+             LIMIT 1"
+        );
+        $stmt->execute(['lesson_id' => $lessonId]);
+
+        $mode = trim((string) ($stmt->fetchColumn() ?: 'quiz'));
+
+        return in_array($mode, ['reading', 'quiz'], true)
+            ? $mode
+            : 'quiz';
+    }
+
+    private function completeByReading(
+        PDO $pdo,
+        int $userId,
+        int $lessonId,
+        int $phaseId,
+        int $moduleId,
+        int $courseId
+    ): void {
+        $pdo->prepare(
+            "UPDATE user_lesson_progress
+             SET status = 'completed',
+                 progress_pct = 100,
+                 completed_at = COALESCE(completed_at, NOW()),
+                 last_accessed_at = NOW()
+             WHERE user_id = :user_id
+               AND lesson_id = :lesson_id
+               AND status <> 'locked'"
+        )->execute([
+            'user_id' => $userId,
+            'lesson_id' => $lessonId,
+        ]);
+
+        $next = $pdo->prepare(
+            "SELECT l2.id
+             FROM lessons l1
+             INNER JOIN lessons l2
+               ON l2.phase_id = l1.phase_id
+              AND l2.status = 'published'
+              AND l2.is_required = 1
+              AND l2.position > l1.position
+             WHERE l1.id = :lesson_id
+             ORDER BY l2.position, l2.id
+             LIMIT 1"
+        );
+        $next->execute(['lesson_id' => $lessonId]);
+        $nextLessonId = (int) ($next->fetchColumn() ?: 0);
+
+        if ($nextLessonId > 0) {
+            $pdo->prepare(
+                "INSERT INTO user_lesson_progress
+                    (user_id, lesson_id, status, current_block, blocks_viewed, progress_pct)
+                 VALUES
+                    (:user_id, :lesson_id, 'available', 1, 0, 0)
+                 ON DUPLICATE KEY UPDATE
+                    status = CASE
+                        WHEN status = 'completed' THEN 'completed'
+                        WHEN status = 'in_progress' THEN 'in_progress'
+                        ELSE 'available'
+                    END"
+            )->execute([
+                'user_id' => $userId,
+                'lesson_id' => $nextLessonId,
+            ]);
+        }
+
+        $phaseStats = $pdo->prepare(
+            "SELECT COUNT(l.id) AS total,
+                    SUM(CASE WHEN ulp.status = 'completed' THEN 1 ELSE 0 END) AS completed
+             FROM lessons l
+             LEFT JOIN user_lesson_progress ulp
+               ON ulp.lesson_id = l.id
+              AND ulp.user_id = :user_id
+             WHERE l.phase_id = :phase_id
+               AND l.status = 'published'
+               AND l.is_required = 1"
+        );
+        $phaseStats->execute([
+            'user_id' => $userId,
+            'phase_id' => $phaseId,
+        ]);
+        $phaseRow = $phaseStats->fetch() ?: [];
+        $phaseTotal = (int) ($phaseRow['total'] ?? 0);
+        $phaseCompleted = (int) ($phaseRow['completed'] ?? 0);
+        $phasePct = $phaseTotal > 0
+            ? round(($phaseCompleted / $phaseTotal) * 100, 2)
+            : 0;
+
+        $pdo->prepare(
+            "UPDATE user_phase_progress
+             SET progress_pct = :progress_pct,
+                 status = CASE
+                    WHEN status = 'completed' THEN 'completed'
+                    WHEN :completed > 0 THEN 'in_progress'
+                    ELSE status
+                 END,
+                 started_at = CASE
+                    WHEN :completed2 > 0 THEN COALESCE(started_at, NOW())
+                    ELSE started_at
+                 END
+             WHERE user_id = :user_id
+               AND phase_id = :phase_id"
+        )->execute([
+            'progress_pct' => $phasePct,
+            'completed' => $phaseCompleted,
+            'completed2' => $phaseCompleted,
+            'user_id' => $userId,
+            'phase_id' => $phaseId,
+        ]);
+
+        $phaseExam = $pdo->prepare(
+            "SELECT 1
+             FROM quizzes
+             WHERE phase_id = :phase_id
+               AND quiz_type = 'phase_exam'
+               AND active = 1
+             LIMIT 1"
+        );
+        $phaseExam->execute(['phase_id' => $phaseId]);
+
+        if (
+            $phaseTotal > 0
+            && $phaseCompleted === $phaseTotal
+            && !$phaseExam->fetchColumn()
+        ) {
+            $pdo->prepare(
+                "UPDATE user_phase_progress
+                 SET status = 'completed',
+                     progress_pct = 100,
+                     completed_at = COALESCE(completed_at, NOW())
+                 WHERE user_id = :user_id
+                   AND phase_id = :phase_id"
+            )->execute([
+                'user_id' => $userId,
+                'phase_id' => $phaseId,
+            ]);
+        }
+
+        $moduleStats = $pdo->prepare(
+            "SELECT COUNT(p.id) AS total,
+                    SUM(CASE WHEN upp.status = 'completed' THEN 1 ELSE 0 END) AS completed
+             FROM phases p
+             LEFT JOIN user_phase_progress upp
+               ON upp.phase_id = p.id
+              AND upp.user_id = :user_id
+             WHERE p.module_id = :module_id
+               AND p.status = 'published'
+               AND p.is_required = 1"
+        );
+        $moduleStats->execute([
+            'user_id' => $userId,
+            'module_id' => $moduleId,
+        ]);
+        $moduleRow = $moduleStats->fetch() ?: [];
+        $moduleTotal = (int) ($moduleRow['total'] ?? 0);
+        $moduleCompleted = (int) ($moduleRow['completed'] ?? 0);
+        $modulePct = $moduleTotal > 0
+            ? round(($moduleCompleted / $moduleTotal) * 100, 2)
+            : 0;
+
+        $pdo->prepare(
+            "UPDATE user_module_progress
+             SET progress_pct = :progress_pct,
+                 status = CASE
+                    WHEN status = 'completed' THEN 'completed'
+                    WHEN :completed > 0 THEN 'in_progress'
+                    ELSE status
+                 END,
+                 started_at = CASE
+                    WHEN :completed2 > 0 THEN COALESCE(started_at, NOW())
+                    ELSE started_at
+                 END
+             WHERE user_id = :user_id
+               AND module_id = :module_id"
+        )->execute([
+            'progress_pct' => $modulePct,
+            'completed' => $moduleCompleted,
+            'completed2' => $moduleCompleted,
+            'user_id' => $userId,
+            'module_id' => $moduleId,
+        ]);
+
+        $moduleBoss = $pdo->prepare(
+            "SELECT 1
+             FROM quizzes
+             WHERE module_id = :module_id
+               AND quiz_type = 'module_boss'
+               AND active = 1
+             LIMIT 1"
+        );
+        $moduleBoss->execute(['module_id' => $moduleId]);
+
+        if (
+            $moduleTotal > 0
+            && $moduleCompleted === $moduleTotal
+            && !$moduleBoss->fetchColumn()
+        ) {
+            $pdo->prepare(
+                "UPDATE user_module_progress
+                 SET status = 'completed',
+                     progress_pct = 100,
+                     completed_at = COALESCE(completed_at, NOW())
+                 WHERE user_id = :user_id
+                   AND module_id = :module_id"
+            )->execute([
+                'user_id' => $userId,
+                'module_id' => $moduleId,
+            ]);
+        }
+
+        (new ProgressInitializer())->initializeEnrollment(
+            $userId,
+            $courseId,
+            $pdo
+        );
+
+        $courseStats = $pdo->prepare(
+            "SELECT COUNT(m.id) AS total,
+                    SUM(CASE WHEN ump.status = 'completed' THEN 1 ELSE 0 END) AS completed
+             FROM modules m
+             LEFT JOIN user_module_progress ump
+               ON ump.module_id = m.id
+              AND ump.user_id = :user_id
+             WHERE m.course_id = :course_id
+               AND m.status = 'published'"
+        );
+        $courseStats->execute([
+            'user_id' => $userId,
+            'course_id' => $courseId,
+        ]);
+        $courseRow = $courseStats->fetch() ?: [];
+        $courseTotal = (int) ($courseRow['total'] ?? 0);
+        $courseCompleted = (int) ($courseRow['completed'] ?? 0);
+        $coursePct = $courseTotal > 0
+            ? round(($courseCompleted / $courseTotal) * 100, 2)
+            : 0;
+
+        $pdo->prepare(
+            "UPDATE user_course_progress
+             SET progress_pct = :progress_pct,
+                 status = CASE
+                    WHEN :all_completed = 1 THEN 'completed'
+                    WHEN :completed > 0 THEN 'in_progress'
+                    ELSE status
+                 END,
+                 started_at = CASE
+                    WHEN :completed2 > 0 THEN COALESCE(started_at, NOW())
+                    ELSE started_at
+                 END,
+                 completed_at = CASE
+                    WHEN :all_completed2 = 1 THEN COALESCE(completed_at, NOW())
+                    ELSE completed_at
+                 END,
+                 last_accessed_at = NOW()
+             WHERE user_id = :user_id
+               AND course_id = :course_id"
+        )->execute([
+            'progress_pct' => $coursePct,
+            'all_completed' => $courseTotal > 0 && $courseCompleted === $courseTotal ? 1 : 0,
+            'completed' => $courseCompleted,
+            'completed2' => $courseCompleted,
+            'all_completed2' => $courseTotal > 0 && $courseCompleted === $courseTotal ? 1 : 0,
+            'user_id' => $userId,
+            'course_id' => $courseId,
+        ]);
     }
 
     private function blockCounts(PDO $pdo, int $userId, int $lessonId): array
