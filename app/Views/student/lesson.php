@@ -6,6 +6,7 @@ use App\Services\PedagogyService;
 
 $error = Session::pullFlash('error');
 $success = Session::pullFlash('success');
+$completionMode = (string) ($lesson['completion_mode'] ?? 'quiz');
 
 $optional = (int) ($lesson['is_required'] ?? 1) === 0
     || (int) ($lesson['phase_required'] ?? 1) === 0;
@@ -353,7 +354,13 @@ $nextUrl = $currentIndex < $totalBlocks
                         <?= Csrf::input() ?>
 
                         <button class="success" type="submit">
-                            <?= $optional ? 'Concluir leitura' : 'Ir para exercícios' ?> →
+                            <?php if ($optional): ?>
+                                Concluir leitura →
+                            <?php elseif ($completionMode === 'reading'): ?>
+                                Concluir aula →
+                            <?php else: ?>
+                                Ir para exercícios →
+                            <?php endif; ?>
                         </button>
                     </form>
                 <?php endif; ?>
@@ -479,12 +486,18 @@ $nextUrl = $currentIndex < $totalBlocks
                         <div class="gate-icon">✓</div>
 
                         <div>
-                            <strong>Leitura concluída — agora vem a fixação</strong>
-
-                            <p>
-                                O exercício da aula é corrigido pelo sistema.
-                                A próxima aula só é liberada após atingir a nota mínima.
-                            </p>
+                            <?php if ($completionMode === 'reading'): ?>
+                                <strong>Leitura concluída</strong>
+                                <p>
+                                    Finalize a aula para registrar sua conclusão e seguir na trilha.
+                                </p>
+                            <?php else: ?>
+                                <strong>Leitura concluída — agora vem a fixação</strong>
+                                <p>
+                                    O exercício da aula é corrigido pelo sistema.
+                                    A próxima aula só é liberada após atingir a nota mínima.
+                                </p>
+                            <?php endif; ?>
                         </div>
                     </aside>
                 <?php endif; ?>
