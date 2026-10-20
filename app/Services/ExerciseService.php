@@ -694,24 +694,15 @@ final class ExerciseService
 
     private function assertEnrollment(PDO $pdo, int $userId, int $courseId): array
     {
-        $stmt = $pdo->prepare(
-            "SELECT c.id, c.title
-             FROM enrollments e
-             INNER JOIN courses c ON c.id = e.course_id
-             WHERE e.user_id = :user_id
-               AND e.course_id = :course_id
-               AND e.status = 'active'
-               AND c.status = 'published'
-             LIMIT 1"
-        );
-        $stmt->execute(['user_id' => $userId, 'course_id' => $courseId]);
-        $course = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if (!$course) {
+        try {
+            return (new CourseAccessService())->requireCourseEnrollment(
+                $userId,
+                $courseId,
+                $pdo
+            );
+        } catch (RuntimeException) {
             throw new RuntimeException('Curso inválido ou matrícula inativa.');
         }
-
-        return $course;
     }
 
     private function questionCandidates(
