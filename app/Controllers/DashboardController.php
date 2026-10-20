@@ -32,6 +32,10 @@ final class DashboardController extends Controller
          * - cursos publicados;
          * - cursos em rascunho explicitamente marcados como prévia de catálogo.
          *
+         * Um curso pode permanecer com a prévia de catálogo ligada mesmo durante
+         * testes privados. Nesse caso, apenas a matrícula ativa recebe acesso; para
+         * os demais alunos o card continua aparecendo como "Em construção".
+         *
          * Prévia nunca concede acesso. O backend continua exigindo curso publicado
          * + matrícula ativa para qualquer entrada real.
          */
@@ -41,8 +45,8 @@ final class DashboardController extends Controller
                     COALESCE(preview.setting_value, '0') AS catalog_preview_enabled,
                     COALESCE(preview_message.setting_value, '') AS catalog_preview_message,
                     CASE
-                        WHEN c.status = 'draft'
-                         AND COALESCE(preview.setting_value, '0') = '1'
+                        WHEN COALESCE(preview.setting_value, '0') = '1'
+                         AND NOT (c.status = 'published' AND e.status = 'active')
                         THEN 1 ELSE 0
                     END AS is_preview,
                     e.status AS enrollment_status,
@@ -76,9 +80,23 @@ final class DashboardController extends Controller
                         FROM modules m
                         WHERE m.course_id = c.id
                           AND (
-                              (c.status = 'published' AND m.status = 'published')
+                              (
+                                  c.status = 'published'
+                                  AND e.status = 'active'
+                                  AND m.status = 'published'
+                              )
                               OR
-                              (c.status = 'draft' AND m.status <> 'archived')
+                              (
+                                  COALESCE(preview.setting_value, '0') = '1'
+                                  AND NOT (c.status = 'published' AND e.status = 'active')
+                                  AND m.status <> 'archived'
+                              )
+                              OR
+                              (
+                                  c.status = 'published'
+                                  AND COALESCE(preview.setting_value, '0') <> '1'
+                                  AND m.status = 'published'
+                              )
                           )
                     ) AS module_count,
                     (
@@ -90,16 +108,26 @@ final class DashboardController extends Controller
                           AND (
                               (
                                   c.status = 'published'
+                                  AND e.status = 'active'
                                   AND m.status = 'published'
                                   AND p.status = 'published'
                                   AND l.status = 'published'
                               )
                               OR
                               (
-                                  c.status = 'draft'
+                                  COALESCE(preview.setting_value, '0') = '1'
+                                  AND NOT (c.status = 'published' AND e.status = 'active')
                                   AND m.status <> 'archived'
                                   AND p.status <> 'archived'
                                   AND l.status <> 'archived'
+                              )
+                              OR
+                              (
+                                  c.status = 'published'
+                                  AND COALESCE(preview.setting_value, '0') <> '1'
+                                  AND m.status = 'published'
+                                  AND p.status = 'published'
+                                  AND l.status = 'published'
                               )
                           )
                     ) AS lesson_count
