@@ -18,6 +18,7 @@ use App\Controllers\ProgressController;
 use App\Controllers\QuizController;
 use App\Controllers\SimulationController;
 use App\Controllers\StudyNoteController;
+use App\Controllers\StudentAreaController;
 
 /** @var \App\Core\Router $router */
 
@@ -130,6 +131,15 @@ $router->post('/curso/sair', [CourseContextController::class, 'leave'])
     ->middleware(['auth', 'student', 'csrf']);
 
 $router->get('/curso/{id}', [CourseController::class, 'show'])
+    ->middleware(['auth', 'student']);
+
+$router->get('/curso/{courseId}/perfil', [StudentAreaController::class, 'profile'])
+    ->middleware(['auth', 'student']);
+
+$router->get('/curso/{courseId}/certificados', [StudentAreaController::class, 'certificates'])
+    ->middleware(['auth', 'student']);
+
+$router->get('/curso/{courseId}/ajuda', [StudentAreaController::class, 'help'])
     ->middleware(['auth', 'student']);
 
 // Rotas contextualizadas: preferidas para novos cursos.
