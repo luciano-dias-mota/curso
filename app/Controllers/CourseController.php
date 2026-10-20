@@ -89,7 +89,22 @@ final class CourseController extends Controller
                         WHERE p.module_id = m.id
                           AND {$phaseStatusSql}
                           AND p.is_required = 0
-                    ) AS library_phase_count
+                    ) AS library_phase_count,
+                    (
+                        SELECT COUNT(*)
+                        FROM lessons l
+                        INNER JOIN phases p2 ON p2.id = l.phase_id
+                        WHERE p2.module_id = m.id
+                          AND l.status <> 'archived'
+                    ) AS lesson_count,
+                    (
+                        SELECT COUNT(*)
+                        FROM lab_activities la
+                        INNER JOIN lessons l2 ON l2.id = la.lesson_id
+                        INNER JOIN phases p3 ON p3.id = l2.phase_id
+                        WHERE p3.module_id = m.id
+                          AND la.status <> 'archived'
+                    ) AS lab_count
              FROM modules m
              LEFT JOIN user_module_progress ump
                ON ump.module_id = m.id
