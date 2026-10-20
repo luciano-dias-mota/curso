@@ -60,6 +60,13 @@ $router->get('/exercicios/sessao/{id}/resultado', [ExerciseController::class, 'r
     ->middleware(['auth', 'student']);
 
 // Caderno de anotações do estudante.
+$router->get('/curso/{courseId}/anotacoes', [StudyNoteController::class, 'index'])
+    ->middleware(['auth', 'student']);
+
+$router->post('/curso/{courseId}/anotacoes', [StudyNoteController::class, 'store'])
+    ->middleware(['auth', 'student', 'csrf']);
+
+// Compatibilidade com URLs anteriores.
 $router->get('/anotacoes', [StudyNoteController::class, 'index'])
     ->middleware(['auth', 'student']);
 
