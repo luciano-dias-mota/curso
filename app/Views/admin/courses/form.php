@@ -30,6 +30,20 @@ $action = $isEdit
                 <input class="ld-admin-input" type="text" name="slug" maxlength="190" value="<?= e($course['slug'] ?? '') ?>" placeholder="gerado automaticamente se ficar vazio">
             </label>
             <label>
+                <span>Experiência do curso</span>
+                <select class="ld-admin-select" name="experience_key" required>
+                    <?php foreach (($courseExperiences ?? []) as $experience): ?>
+                        <option
+                            value="<?= e($experience['key']) ?>"
+                            <?= ($course['experience_key'] ?? 'generic') === $experience['key'] ? 'selected' : '' ?>
+                        >
+                            <?= e($experience['label']) ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+                <small>Define o shell/fluxo próprio do curso. Não depende do título nem do slug.</small>
+            </label>
+            <label>
                 <span>Dificuldade</span>
                 <select class="ld-admin-select" name="difficulty">
                     <?php foreach (['beginner'=>'Iniciante','intermediate'=>'Intermediário','advanced'=>'Avançado'] as $value=>$label): ?>
