@@ -7,6 +7,8 @@ namespace App\Controllers;
 use App\Core\Auth;
 use App\Core\Controller;
 use App\Core\Database;
+use App\Core\Session;
+use App\Services\CourseExperienceService;
 use App\Services\CourseSettingsService;
 use App\Services\ProgressInitializer;
 
@@ -45,6 +47,10 @@ final class CourseController extends Controller
             $this->view('errors/404');
             return;
         }
+
+        $experience = (new CourseExperienceService())->key($course);
+        Session::put('active_course_id', $id);
+        Session::put('active_course_experience', $experience);
 
         // Reconcilia a matrícula com a política configurada para este curso.
         (new ProgressInitializer())->initializeEnrollment(
