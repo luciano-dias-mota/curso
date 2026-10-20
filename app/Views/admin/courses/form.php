@@ -155,6 +155,7 @@ $action = $isEdit
                 'notes_enabled' => ['Anotações', 'Caderno de estudo do aluno'],
                 'certificate_enabled' => ['Certificado', 'Estrutura reservada para emissão de certificado'],
                 'lab_enabled' => ['Laboratório', 'Atividades práticas executáveis por engines plugáveis'],
+                'catalog_preview_enabled' => ['Prévia no portal', 'Mostra o card mesmo em rascunho, sem liberar acesso ao conteúdo'],
             ];
             foreach ($features as $key => [$label, $help]):
             ?>
@@ -163,6 +164,21 @@ $action = $isEdit
                     <span><strong><?= e($label) ?></strong><small><?= e($help) ?></small></span>
                 </label>
             <?php endforeach; ?>
+        </div>
+
+        <div class="ld-admin-form-grid" style="margin-top:16px">
+            <label style="grid-column:1/-1">
+                <span>Mensagem da prévia no portal</span>
+                <input
+                    class="ld-admin-input"
+                    type="text"
+                    name="catalog_preview_message"
+                    maxlength="500"
+                    value="<?= e($settings['catalog_preview_message'] ?? '') ?>"
+                    placeholder="Ex.: Curso em construção. Em breve estará disponível."
+                >
+                <small>Usada somente quando a prévia no portal estiver ativada.</small>
+            </label>
         </div>
 
         <div class="ld-admin-form-actions">
