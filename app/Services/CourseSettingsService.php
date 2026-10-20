@@ -20,6 +20,8 @@ final class CourseSettingsService
         'certificate_enabled' => '0',
         'lab_enabled' => '0',
         'lab_engine_key' => '',
+        'catalog_preview_enabled' => '0',
+        'catalog_preview_message' => '',
     ];
 
     public static function defaults(): array
