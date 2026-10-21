@@ -409,6 +409,49 @@ final class LabService
         }
     }
 
+    public function firstRequiredActivity(int $userId, int $lessonId): ?int
+    {
+        $pdo = Database::connection();
+
+        if (!$this->tableExists($pdo, 'lab_activities')) {
+            return null;
+        }
+
+        $stmt = $pdo->prepare(
+            "SELECT la.id
+             FROM lab_activities la
+             INNER JOIN lessons l
+               ON l.id = la.lesson_id
+              AND l.status = 'published'
+             INNER JOIN phases p
+               ON p.id = l.phase_id
+              AND p.status = 'published'
+             INNER JOIN modules m
+               ON m.id = p.module_id
+              AND m.status = 'published'
+             INNER JOIN courses c
+               ON c.id = m.course_id
+              AND c.status = 'published'
+             INNER JOIN enrollments e
+               ON e.course_id = c.id
+              AND e.user_id = :user_id
+              AND e.status = 'active'
+             WHERE la.lesson_id = :lesson_id
+               AND la.status = 'published'
+               AND la.is_required = 1
+             ORDER BY la.position, la.id
+             LIMIT 1"
+        );
+        $stmt->execute([
+            'user_id' => $userId,
+            'lesson_id' => $lessonId,
+        ]);
+
+        $id = (int) ($stmt->fetchColumn() ?: 0);
+
+        return $id > 0 ? $id : null;
+    }
+
     public function firstPendingRequiredActivity(int $userId, int $lessonId): ?int
     {
         $pdo = Database::connection();
