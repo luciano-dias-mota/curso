@@ -167,7 +167,7 @@ final class ProgressService
             $completionMode = $this->completionMode($pdo, $lessonId);
 
             if ($completionMode === 'reading') {
-                $this->completeByReading(
+                $nextLessonId = $this->completeByReading(
                     $pdo,
                     $userId,
                     $lessonId,
@@ -183,6 +183,7 @@ final class ProgressService
                     'quiz_id' => null,
                     'optional' => false,
                     'next_step' => 'completed',
+                    'next_lesson_id' => $nextLessonId,
                 ];
             }
 
@@ -325,7 +326,7 @@ final class ProgressService
         int $phaseId,
         int $moduleId,
         int $courseId
-    ): void {
+    ): ?int {
         $pdo->prepare(
             "UPDATE user_lesson_progress
              SET status = 'completed',
@@ -572,6 +573,66 @@ final class ProgressService
             'user_id' => $userId,
             'course_id' => $courseId,
         ]);
+
+        return $this->nextPublishedLessonId(
+            $pdo,
+            $userId,
+            $courseId,
+            $lessonId
+        );
+    }
+
+    private function nextPublishedLessonId(
+        PDO $pdo,
+        int $userId,
+        int $courseId,
+        int $currentLessonId
+    ): ?int {
+        $stmt = $pdo->prepare(
+            "SELECT l.id
+             FROM lessons l
+             INNER JOIN phases p
+               ON p.id = l.phase_id
+              AND p.status = 'published'
+             INNER JOIN modules m
+               ON m.id = p.module_id
+              AND m.status = 'published'
+             INNER JOIN user_lesson_progress ulp
+               ON ulp.lesson_id = l.id
+              AND ulp.user_id = :user_id
+              AND ulp.status <> 'locked'
+             INNER JOIN lessons current_l
+               ON current_l.id = :current_lesson_id
+             INNER JOIN phases current_p
+               ON current_p.id = current_l.phase_id
+             INNER JOIN modules current_m
+               ON current_m.id = current_p.module_id
+             WHERE m.course_id = :course_id
+               AND l.status = 'published'
+               AND (
+                    m.position > current_m.position
+                    OR (
+                        m.position = current_m.position
+                        AND p.position > current_p.position
+                    )
+                    OR (
+                        m.position = current_m.position
+                        AND p.position = current_p.position
+                        AND l.position > current_l.position
+                    )
+               )
+             ORDER BY m.position, p.position, l.position, l.id
+             LIMIT 1"
+        );
+        $stmt->execute([
+            'user_id' => $userId,
+            'current_lesson_id' => $currentLessonId,
+            'course_id' => $courseId,
+        ]);
+
+        $nextLessonId = (int) ($stmt->fetchColumn() ?: 0);
+
+        return $nextLessonId > 0 ? $nextLessonId : null;
     }
 
     private function blockCounts(PDO $pdo, int $userId, int $lessonId): array
