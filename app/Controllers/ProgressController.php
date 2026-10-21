@@ -24,6 +24,14 @@ final class ProgressController extends Controller
 
             if (!empty($result['optional']) || empty($result['quiz_id'])) {
                 Session::flash('success', 'Leitura concluída.');
+
+                if (
+                    ($result['next_step'] ?? '') === 'completed'
+                    && !empty($result['next_lesson_id'])
+                ) {
+                    $this->redirect('/aula/' . (int) $result['next_lesson_id']);
+                }
+
                 $this->redirect('/fase/' . (int) $result['phase_id']);
             }
 
