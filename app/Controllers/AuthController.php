@@ -6,10 +6,12 @@ namespace App\Controllers;
 
 use App\Core\Auth;
 use App\Core\Controller;
+use App\Core\Database;
 use App\Core\Request;
 use App\Core\Session;
 use App\Core\Validator;
 use App\Services\LoginThrottle;
+use App\Services\PmmtCourseScopeService;
 use App\Services\ProgressInitializer;
 use App\Services\UserAccessMonitor;
 
@@ -65,9 +67,16 @@ final class AuthController extends Controller
         if (Auth::isStudent() && Auth::id() !== null) {
             $studentId = (int) Auth::id();
 
-            // Ao entrar, garante a política atual: todos os módulos publicados
-            // da matrícula ficam livres, preservando a sequência interna.
-            (new ProgressInitializer())->initializeActiveEnrollments($studentId);
+            // O ambiente de produção /cursomi é exclusivo do Preparatório PMMT.
+            // Uma matrícula usada em outro ambiente/curso não pode alterar esta trilha.
+            $pdo = Database::connection();
+            $pmmtCourseId = (new PmmtCourseScopeService())->courseId($pdo);
+
+            (new ProgressInitializer())->initializeEnrollment(
+                $studentId,
+                $pmmtCourseId,
+                $pdo
+            );
             (new UserAccessMonitor())->registerLogin($studentId);
         }
 
