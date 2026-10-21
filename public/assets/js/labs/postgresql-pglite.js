@@ -94,7 +94,7 @@ window.CursoMILabEngines.postgresql_pglite = {
                 const next = document.createElement('a');
                 next.className = 'ld-admin-btn';
                 next.href = activityUrlBase + String(validation.next_activity_id);
-                next.textContent = 'Ir para o desafio →';
+                next.textContent = 'Próximo exercício →';
                 actions.appendChild(next);
             } else if (validation?.lesson_completed && validation?.next_lesson_id && lessonUrlBase) {
                 const next = document.createElement('a');
