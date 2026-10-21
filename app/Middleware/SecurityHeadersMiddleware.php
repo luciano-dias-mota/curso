@@ -17,6 +17,17 @@ final class SecurityHeadersMiddleware
         header('Referrer-Policy: strict-origin-when-cross-origin');
         header('Permissions-Policy: camera=(), microphone=(), geolocation=()');
 
+        $requestPath = parse_url((string) ($_SERVER['REQUEST_URI'] ?? '/'), PHP_URL_PATH) ?: '/';
+        $isLabPage = str_contains($requestPath, '/laboratorio/');
+
+        $connectSrc = $isLabPage
+            ? "connect-src 'self' https://cdn.jsdelivr.net"
+            : "connect-src 'self'";
+
+        $scriptSrc = $isLabPage
+            ? "script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdn.jsdelivr.net"
+            : "script-src 'self' 'unsafe-inline'";
+
         header(
             "Content-Security-Policy: "
             . "default-src 'self'; "
@@ -27,8 +38,8 @@ final class SecurityHeadersMiddleware
             . "img-src 'self' data:; "
             . "media-src 'self'; "
             . "font-src 'self' data:; "
-            . "connect-src 'self'; "
-            . "script-src 'self' 'unsafe-inline'; "
+            . $connectSrc . "; "
+            . $scriptSrc . "; "
             . "style-src 'self' 'unsafe-inline'"
         );
 
