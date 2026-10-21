@@ -32,6 +32,7 @@ final class ExerciseService
     public function configuration(int $userId, ?PDO $pdo = null): array
     {
         $pdo ??= Database::connection();
+        $pmmtCourseId = (new PmmtCourseScopeService())->courseId($pdo);
 
         $courseStmt = $pdo->prepare(
             "SELECT c.id, c.title
@@ -40,9 +41,10 @@ final class ExerciseService
              WHERE e.user_id = :user_id
                AND e.status = 'active'
                AND c.status = 'published'
+               AND c.id = :course_id
              ORDER BY c.position, c.id"
         );
-        $courseStmt->execute(['user_id' => $userId]);
+        $courseStmt->execute(['user_id' => $userId, 'course_id' => $pmmtCourseId]);
         $courses = $courseStmt->fetchAll(PDO::FETCH_ASSOC);
 
         $courseIds = array_map(static fn (array $row): int => (int) $row['id'], $courses);
@@ -149,6 +151,7 @@ final class ExerciseService
         }
 
         $pdo = Database::connection();
+        (new PmmtCourseScopeService())->assertCourse($pdo, $courseId);
         $course = $this->assertEnrollment($pdo, $userId, $courseId);
 
         $module = null;
@@ -443,10 +446,15 @@ final class ExerciseService
                  FROM exercise_sessions
                  WHERE id = :id
                    AND user_id = :user_id
+                   AND course_id = :course_id
                  LIMIT 1
                  FOR UPDATE"
             );
-            $sessionStmt->execute(['id' => $sessionId, 'user_id' => $userId]);
+            $sessionStmt->execute([
+                'id' => $sessionId,
+                'user_id' => $userId,
+                'course_id' => (new PmmtCourseScopeService())->courseId($pdo),
+            ]);
             $session = $sessionStmt->fetch(PDO::FETCH_ASSOC);
             if (!$session) {
                 throw new RuntimeException('Sessão de exercícios não encontrada.');
@@ -631,9 +639,13 @@ final class ExerciseService
                     COALESCE(SUM(correct_count), 0) AS correct_answers
              FROM exercise_sessions
              WHERE user_id = :user_id
+               AND course_id = :course_id
                AND status = 'finished'"
         );
-        $stmt->execute(['user_id' => $userId]);
+        $stmt->execute([
+            'user_id' => $userId,
+            'course_id' => (new PmmtCourseScopeService())->courseId($pdo),
+        ]);
         $stats = $stmt->fetch(PDO::FETCH_ASSOC) ?: [];
 
         return [
@@ -652,10 +664,14 @@ final class ExerciseService
                     question_limit, correct_count, percentage, status, started_at, finished_at
              FROM exercise_sessions
              WHERE user_id = :user_id
+               AND course_id = :course_id
              ORDER BY id DESC
              LIMIT 12"
         );
-        $stmt->execute(['user_id' => $userId]);
+        $stmt->execute([
+            'user_id' => $userId,
+            'course_id' => (new PmmtCourseScopeService())->courseId($pdo),
+        ]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -846,9 +862,14 @@ final class ExerciseService
              FROM exercise_sessions
              WHERE id = :id
                AND user_id = :user_id
+               AND course_id = :course_id
              LIMIT 1"
         );
-        $stmt->execute(['id' => $sessionId, 'user_id' => $userId]);
+        $stmt->execute([
+            'id' => $sessionId,
+            'user_id' => $userId,
+            'course_id' => (new PmmtCourseScopeService())->courseId($pdo),
+        ]);
         $session = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if (!$session) {
