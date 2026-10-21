@@ -233,6 +233,7 @@ final class LabService
 
             $lessonCompleted = false;
             $nextActivityId = null;
+            $nextLessonId = null;
 
             if ($evaluation->passed) {
                 $this->awardActivityXp(
@@ -278,13 +279,19 @@ final class LabService
                         (int) $activity['lesson_id']
                     )
                 ) {
-                    (new LessonCompletionService())->complete(
+                    $completion = (new LessonCompletionService())->complete(
                         $pdo,
                         $userId,
                         (int) $activity['lesson_id'],
                         'Aula concluída após laboratório prático'
                     );
                     $lessonCompleted = true;
+                    $nextLessonId = $this->nextAvailableLessonId(
+                        $pdo,
+                        $userId,
+                        (int) ($completion['course_id'] ?? $activity['course_id']),
+                        (int) $activity['lesson_id']
+                    );
                 }
 
                 if (!$lessonCompleted) {
@@ -309,6 +316,7 @@ final class LabService
                 'xp_earned' => $xpEarned,
                 'lesson_completed' => $lessonCompleted,
                 'next_activity_id' => $nextActivityId,
+                'next_lesson_id' => $nextLessonId,
             ];
         } catch (Throwable $e) {
             if ($pdo->inTransaction()) {
@@ -626,6 +634,59 @@ final class LabService
             'last_activity_id' => null,
             'updated_at' => null,
         ];
+    }
+
+    private function nextAvailableLessonId(
+        PDO $pdo,
+        int $userId,
+        int $courseId,
+        int $currentLessonId
+    ): ?int {
+        $stmt = $pdo->prepare(
+            "SELECT l.id
+             FROM lessons l
+             INNER JOIN phases p
+               ON p.id = l.phase_id
+              AND p.status = 'published'
+             INNER JOIN modules m
+               ON m.id = p.module_id
+              AND m.status = 'published'
+             INNER JOIN user_lesson_progress ulp
+               ON ulp.lesson_id = l.id
+              AND ulp.user_id = :user_id
+              AND ulp.status IN ('available', 'in_progress')
+             INNER JOIN lessons current_l
+               ON current_l.id = :current_lesson_id
+             INNER JOIN phases current_p
+               ON current_p.id = current_l.phase_id
+             INNER JOIN modules current_m
+               ON current_m.id = current_p.module_id
+             WHERE m.course_id = :course_id
+               AND l.status = 'published'
+               AND (
+                    m.position > current_m.position
+                    OR (
+                        m.position = current_m.position
+                        AND p.position > current_p.position
+                    )
+                    OR (
+                        m.position = current_m.position
+                        AND p.position = current_p.position
+                        AND l.position > current_l.position
+                    )
+               )
+             ORDER BY m.position, p.position, l.position, l.id
+             LIMIT 1"
+        );
+        $stmt->execute([
+            'user_id' => $userId,
+            'current_lesson_id' => $currentLessonId,
+            'course_id' => $courseId,
+        ]);
+
+        $lessonId = (int) ($stmt->fetchColumn() ?: 0);
+
+        return $lessonId > 0 ? $lessonId : null;
     }
 
     private function nextPendingRequiredActivityId(
