@@ -83,6 +83,16 @@ $challengeStmt = $pdo->prepare(
 $challengeStmt->execute(['lesson_id' => (int) $lesson['lesson_id']]);
 $challenge = $challengeStmt->fetch(PDO::FETCH_ASSOC) ?: null;
 
+$reinforcementStmt = $pdo->prepare(
+    "SELECT id, title, activity_type, status
+       FROM lab_activities
+      WHERE lesson_id = :lesson_id
+        AND position = 3
+      LIMIT 1"
+);
+$reinforcementStmt->execute(['lesson_id' => (int) $lesson['lesson_id']]);
+$reinforcement = $reinforcementStmt->fetch(PDO::FETCH_ASSOC) ?: null;
+
 echo "=================================================================\n";
 echo " LD ACADEMY - METODO GUIADO + DESAFIO POSTGRESQL V1\n";
 echo "=================================================================\n";
@@ -96,6 +106,12 @@ printf(
         ? ('#' . (int) $challenge['id'] . ' | tipo=' . (string) $challenge['activity_type'] . ' | status=' . (string) $challenge['status'])
         : 'CRIAR'
 );
+printf(
+    "Reforço #3: %s\n",
+    $reinforcement
+        ? ('#' . (int) $reinforcement['id'] . ' | tipo=' . (string) $reinforcement['activity_type'] . ' | status=' . (string) $reinforcement['status'])
+        : 'CRIAR'
+);
 printf("Modo:        %s\n", $apply ? 'APLICAR' : 'DRY-RUN');
 
 echo "\nPrática guiada:\n";
@@ -106,7 +122,12 @@ echo "  Após acertar, o sistema exibirá uma explicação prática do comando.\
 echo "\nDesafio sem modelo:\n";
 echo "  O aluno deverá retornar LD Informática em uma coluna chamada empresa.\n";
 echo "  O comando correto NÃO será mostrado na tela.\n";
-echo "  Após acertar, o sistema exibirá a explicação do desafio e liberará a próxima aula.\n";
+echo "  Após acertar, o sistema exibirá a explicação e liberará o exercício de reforço.\n";
+
+echo "\nExercício de reforço sem modelo:\n";
+echo "  O aluno deverá retornar Tech Center em uma coluna chamada cliente.\n";
+echo "  O comando correto NÃO será mostrado na tela.\n";
+echo "  Somente após concluir este reforço a próxima aula será liberada.\n";
 
 if (!$apply) {
     echo "\nNenhuma alteração foi realizada.\n";
@@ -137,6 +158,15 @@ $challengeValidator = [
     'ordered' => true,
 ];
 
+$reinforcementValidator = [
+    'columns' => ['cliente'],
+    'rows' => [
+        ['cliente' => 'Tech Center'],
+    ],
+    'row_count' => 1,
+    'ordered' => true,
+];
+
 $guidedBootstrap = [
     'sql' => 'SELECT 1;',
     'statement_timeout_ms' => 10000,
@@ -153,6 +183,15 @@ $challengeBootstrap = [
     'success_title' => 'Muito bem! Você resolveu sem copiar.',
     'success_explanation' => 'Você montou sozinho uma consulta SELECT que retorna um valor e definiu o nome da coluna com AS empresa. Isso confirma que você entendeu a estrutura básica do comando e não apenas reproduziu o exemplo anterior.',
     'practical_context' => 'No trabalho real, essa mesma lógica aparece em consultas muito maiores. Um DBA ou desenvolvedor usa SELECT para escolher o que deseja visualizar e aliases com AS para deixar nomes de colunas mais claros em relatórios, consultas de suporte e resultados enviados para aplicações.',
+];
+
+$reinforcementBootstrap = [
+    'sql' => 'SELECT 1;',
+    'statement_timeout_ms' => 10000,
+    'max_result_rows' => 100,
+    'success_title' => 'Excelente! Conceito fixado.',
+    'success_explanation' => 'Neste reforço você aplicou novamente a estrutura SELECT valor AS alias, mas precisou trocar tanto o valor retornado quanto o nome da coluna. Isso mostra que você compreendeu a lógica do comando e consegue adaptá-la a outra situação.',
+    'practical_context' => 'Na rotina profissional, a estrutura de uma consulta é reaproveitada o tempo todo com valores, tabelas, filtros e aliases diferentes. O importante é reconhecer o padrão e saber adaptá-lo ao dado que precisa consultar ou apresentar.',
 ];
 
 $pdo->beginTransaction();
@@ -243,15 +282,76 @@ try {
         throw new RuntimeException('Não foi possível localizar o desafio criado.');
     }
 
-    // O desafio deve ser resolvido sem dicas prontas.
-    $pdo->prepare(
+    $upsertReinforcement = $pdo->prepare(
+        "INSERT INTO lab_activities
+            (lesson_id, engine_key, activity_type, title, instructions, starter_code,
+             validator_type, validator_config, bootstrap_config, unlock_rule,
+             state_version, xp_reward, is_required, max_attempts, position, status)
+         VALUES
+            (:lesson_id, 'postgresql_pglite', 'sql_challenge', :title, :instructions, NULL,
+             'query_result', :validator_config, :bootstrap_config, 'reading_complete',
+             :state_version, :xp_reward, 1, NULL, 3, :status)
+         ON DUPLICATE KEY UPDATE
+            engine_key = VALUES(engine_key),
+            activity_type = VALUES(activity_type),
+            title = VALUES(title),
+            instructions = VALUES(instructions),
+            starter_code = NULL,
+            validator_type = VALUES(validator_type),
+            validator_config = VALUES(validator_config),
+            bootstrap_config = VALUES(bootstrap_config),
+            unlock_rule = VALUES(unlock_rule),
+            state_version = VALUES(state_version),
+            xp_reward = VALUES(xp_reward),
+            is_required = 1,
+            max_attempts = NULL,
+            status = VALUES(status),
+            updated_at = NOW()"
+    );
+    $upsertReinforcement->execute([
+        'lesson_id' => (int) $lesson['lesson_id'],
+        'title' => 'Reforço: aplique o mesmo conceito sozinho',
+        'instructions' => 'Sem consultar um código pronto: escreva uma consulta que retorne o texto Tech Center em uma coluna chamada cliente.',
+        'validator_config' => json_encode(
+            $reinforcementValidator,
+            JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR
+        ),
+        'bootstrap_config' => json_encode(
+            $reinforcementBootstrap,
+            JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR
+        ),
+        'state_version' => max(1, (int) $guided['state_version']),
+        'xp_reward' => max(20, (int) $guided['xp_reward']),
+        'status' => (string) $guided['status'],
+    ]);
+
+    $reinforcementIdStmt = $pdo->prepare(
+        "SELECT id
+           FROM lab_activities
+          WHERE lesson_id = :lesson_id
+            AND position = 3
+          LIMIT 1"
+    );
+    $reinforcementIdStmt->execute(['lesson_id' => (int) $lesson['lesson_id']]);
+    $reinforcementId = (int) ($reinforcementIdStmt->fetchColumn() ?: 0);
+
+    if ($reinforcementId <= 0) {
+        throw new RuntimeException('Não foi possível localizar o exercício de reforço criado.');
+    }
+
+    // Desafios sem modelo devem ser resolvidos sem dicas prontas.
+    $deleteHints = $pdo->prepare(
         'DELETE FROM lab_activity_hints WHERE activity_id = :activity_id'
-    )->execute(['activity_id' => $challengeId]);
+    );
+    $deleteHints->execute(['activity_id' => $challengeId]);
+    $deleteHints->execute(['activity_id' => $reinforcementId]);
 
     $pdo->commit();
 
     echo "\n[OK] Prática guiada configurada na atividade #" . (int) $guided['id'] . ".\n";
     echo "[OK] Desafio sem modelo configurado na atividade #{$challengeId}.\n";
+    echo "[OK] Reforço sem modelo configurado na atividade #{$reinforcementId}.\n";
+    echo "[OK] A próxima aula só será concluída/liberada após as 3 atividades obrigatórias.\n";
     echo "[OK] O status atual do laboratório foi preservado: " . (string) $guided['status'] . ".\n";
     echo "[OK] Nenhum conteúdo do curso PMMT foi alterado.\n";
 } catch (Throwable $e) {
