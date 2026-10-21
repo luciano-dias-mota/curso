@@ -76,10 +76,10 @@ final class SimulationService
         $history = $historyStmt->fetchAll();
 
         $statsStmt = $pdo->prepare(
-            "SELECT COUNT(*) AS attempts,
-                    COALESCE(AVG(percentage), 0) AS average,
-                    COALESCE(MAX(percentage), 0) AS best,
-                    COALESCE(SUM(question_limit), 0) AS questions
+            "SELECT COUNT(sa.id) AS attempts,
+                    COALESCE(AVG(sa.percentage), 0) AS average,
+                    COALESCE(MAX(sa.percentage), 0) AS best,
+                    COALESCE(SUM(sa.question_limit), 0) AS questions
              FROM simulation_attempts sa
              INNER JOIN simulations s ON s.id = sa.simulation_id
              WHERE sa.user_id = :user_id
