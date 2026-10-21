@@ -30,7 +30,9 @@ final class ProgressController extends Controller
             if (($result['next_step'] ?? '') === 'lab' && !empty($result['lab_activity_id'])) {
                 Session::flash(
                     'success',
-                    'Leitura concluída. Agora finalize a atividade prática para liberar a progressão.'
+                    !empty($result['lab_review'])
+                        ? 'Aula já concluída. Abrindo o laboratório para revisão.'
+                        : 'Leitura concluída. Agora finalize a atividade prática para liberar a progressão.'
                 );
                 $this->redirect('/laboratorio/atividade/' . (int) $result['lab_activity_id']);
             }
