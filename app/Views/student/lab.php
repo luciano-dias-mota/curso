@@ -6,6 +6,13 @@ $assets = is_array($engine['assets'] ?? null) ? $engine['assets'] : [];
 $courseId = (int) ($activeCourseId ?? 0);
 $activityId = (int) ($activity['id'] ?? 0);
 $lessonId = (int) ($activity['lesson_id'] ?? 0);
+$activityType = (string) ($activity['activity_type'] ?? 'sql');
+$isChallenge = $activityType === 'sql_challenge';
+$isGuided = !$isChallenge && trim((string) ($activity['starter_code'] ?? '')) !== '';
+$referenceCode = $isGuided ? (string) ($activity['starter_code'] ?? '') : '';
+$activityUrlBase = $courseId > 0
+    ? '/curso/' . $courseId . '/laboratorio/atividade/'
+    : '/laboratorio/atividade/';
 $submitPath = $courseId > 0
     ? '/api/curso/' . $courseId . '/laboratorio/atividade/' . $activityId . '/executar'
     : '/api/laboratorio/atividade/' . $activityId . '/executar';
@@ -31,6 +38,7 @@ $manifestJson = json_encode(
     data-submit-url="<?= e(url($submitPath)) ?>"
     data-hint-url="<?= e(url($hintPath)) ?>"
     data-csrf-token="<?= e($csrfToken ?? '') ?>"
+    data-activity-url-base="<?= e(url($activityUrlBase)) ?>"
 >
     <aside class="study-map">
         <div class="study-map-head">
@@ -64,7 +72,7 @@ $manifestJson = json_encode(
             <header>
                 <span class="symbol">⌨</span>
                 <div>
-                    <span class="eyebrow">DESAFIO PRÁTICO</span>
+                    <span class="eyebrow"><?= $isChallenge ? 'DESAFIO SEM MODELO' : 'PRÁTICA GUIADA' ?></span>
                     <h2><?= e($activity['title'] ?? '') ?></h2>
                 </div>
             </header>
@@ -72,20 +80,52 @@ $manifestJson = json_encode(
             <div class="study-content">
                 <p class="content-p"><?= nl2br(e($activity['instructions'] ?? '')) ?></p>
 
+                <?php if ($isGuided): ?>
+                    <section class="lab-guided-example" aria-label="Comando para praticar">
+                        <div class="lab-guided-example-head">
+                            <span>1</span>
+                            <div>
+                                <strong>Digite exatamente este comando</strong>
+                                <small>Leia o exemplo e escreva manualmente no campo abaixo.</small>
+                            </div>
+                        </div>
+                        <pre><code><?= e($referenceCode) ?></code></pre>
+                    </section>
+                <?php else: ?>
+                    <section class="lab-independent-banner">
+                        <span>2</span>
+                        <div>
+                            <strong>Agora é com você</strong>
+                            <small>Resolva um exercício semelhante sem o comando pronto na tela.</small>
+                        </div>
+                    </section>
+                <?php endif; ?>
+
                 <div data-lab-status class="alert" hidden></div>
+
+                <label class="lab-editor-label" for="lab-sql-editor">
+                    <?= $isChallenge ? 'Escreva sua solução SQL' : 'Digite o comando mostrado acima' ?>
+                </label>
 
                 <div data-lab-editor-host>
                     <textarea
-                        class="ld-admin-input"
+                        id="lab-sql-editor"
+                        class="ld-admin-input lab-sql-editor"
                         data-lab-fallback-editor
-                        rows="14"
+                        rows="12"
                         spellcheck="false"
-                    ><?= e($activity['starter_code'] ?? '') ?></textarea>
+                        autocapitalize="off"
+                        autocomplete="off"
+                        autocorrect="off"
+                        placeholder="<?= $isChallenge ? 'Digite aqui sua solução SQL...' : 'Digite aqui o comando do exemplo...' ?>"
+                    ></textarea>
                 </div>
 
                 <div class="ld-admin-form-actions">
                     <button class="ld-admin-btn" type="button" data-lab-run>Executar / validar</button>
-                    <button class="ld-admin-btn is-ghost" type="button" data-lab-hint>Solicitar dica</button>
+                    <?php if ($isChallenge && (int) ($manifest['hints_count'] ?? 0) > 0): ?>
+                        <button class="ld-admin-btn is-ghost" type="button" data-lab-hint>Solicitar dica</button>
+                    <?php endif; ?>
                     <button class="ld-admin-btn is-ghost" type="button" data-lab-reset>Resetar atividade</button>
                 </div>
 
@@ -99,7 +139,7 @@ $manifestJson = json_encode(
 <script type="application/json" id="lab-manifest"><?= $manifestJson ?: '{}' ?></script>
 <?php foreach ($assets as $asset): ?>
     <?php if (is_string($asset) && str_starts_with($asset, '/assets/')): ?>
-        <script type="module" src="<?= e(url($asset)) ?>"></script>
+        <script type="module" src="<?= e(url($asset) . '?v=20261021-1') ?>"></script>
     <?php endif; ?>
 <?php endforeach; ?>
-<script type="module" src="<?= e(url('/assets/js/lab-runtime.js')) ?>"></script>
+<script type="module" src="<?= e(url('/assets/js/lab-runtime.js') . '?v=20261021-1') ?>"></script>
