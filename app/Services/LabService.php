@@ -232,6 +232,7 @@ final class LabService
             ]);
 
             $lessonCompleted = false;
+            $nextActivityId = null;
 
             if ($evaluation->passed) {
                 $this->awardActivityXp(
@@ -285,6 +286,14 @@ final class LabService
                     );
                     $lessonCompleted = true;
                 }
+
+                if (!$lessonCompleted) {
+                    $nextActivityId = $this->nextPendingRequiredActivityId(
+                        $pdo,
+                        $userId,
+                        (int) $activity['lesson_id']
+                    );
+                }
             }
 
             $pdo->commit();
@@ -299,6 +308,7 @@ final class LabService
                 'result' => $evaluation->result,
                 'xp_earned' => $xpEarned,
                 'lesson_completed' => $lessonCompleted,
+                'next_activity_id' => $nextActivityId,
             ];
         } catch (Throwable $e) {
             if ($pdo->inTransaction()) {
@@ -491,6 +501,32 @@ final class LabService
             throw new RuntimeException('O laboratório está desabilitado para este curso.');
         }
 
+        $previous = $pdo->prepare(
+            "SELECT la_prev.id
+             FROM lab_activities la_prev
+             LEFT JOIN lab_activity_progress lap_prev
+               ON lap_prev.activity_id = la_prev.id
+              AND lap_prev.user_id = :user_id
+             WHERE la_prev.lesson_id = :lesson_id
+               AND la_prev.status = 'published'
+               AND la_prev.is_required = 1
+               AND la_prev.position < :position
+               AND COALESCE(lap_prev.status, 'available') <> 'completed'
+             ORDER BY la_prev.position, la_prev.id
+             LIMIT 1"
+        );
+        $previous->execute([
+            'user_id' => $userId,
+            'lesson_id' => (int) $activity['lesson_id'],
+            'position' => (int) $activity['position'],
+        ]);
+
+        if ($previous->fetchColumn()) {
+            throw new RuntimeException(
+                'Conclua a prática anterior antes de iniciar este desafio.'
+            );
+        }
+
         if (
             ($activity['unlock_rule'] ?? 'reading_complete') === 'reading_complete'
             && (float) ($activity['lesson_progress_pct'] ?? 0) < 100
@@ -547,6 +583,34 @@ final class LabService
             'last_activity_id' => null,
             'updated_at' => null,
         ];
+    }
+
+    private function nextPendingRequiredActivityId(
+        PDO $pdo,
+        int $userId,
+        int $lessonId
+    ): ?int {
+        $stmt = $pdo->prepare(
+            "SELECT la.id
+             FROM lab_activities la
+             LEFT JOIN lab_activity_progress lap
+               ON lap.activity_id = la.id
+              AND lap.user_id = :user_id
+             WHERE la.lesson_id = :lesson_id
+               AND la.status = 'published'
+               AND la.is_required = 1
+               AND COALESCE(lap.status, 'available') <> 'completed'
+             ORDER BY la.position, la.id
+             LIMIT 1"
+        );
+        $stmt->execute([
+            'user_id' => $userId,
+            'lesson_id' => $lessonId,
+        ]);
+
+        $activityId = (int) ($stmt->fetchColumn() ?: 0);
+
+        return $activityId > 0 ? $activityId : null;
     }
 
     private function allRequiredActivitiesComplete(
