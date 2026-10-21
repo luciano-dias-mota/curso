@@ -26,8 +26,37 @@ final class SimulationController extends Controller
             );
         } catch (Throwable $e) {
             $this->logSimulationError('simulations.index', $e);
-            Session::flash('error', $this->userError('Não foi possível carregar os simulados agora.', $e));
-            $this->redirect('/dashboard');
+
+            // O painel analítico é secundário. Uma inconsistência em histórico,
+            // estatísticas ou dados antigos não deve impedir o estudante de
+            // acessar a Central e gerar um novo simulado.
+            Session::flash(
+                'error',
+                $this->userError(
+                    'Parte do histórico dos simulados não pôde ser carregada, mas você ainda pode gerar um novo simulado.',
+                    $e
+                )
+            );
+
+            $this->view(
+                'student/simulations/index',
+                [
+                    'title' => 'Simulados',
+                    'activeAttempts' => [],
+                    'history' => [],
+                    'stats' => [
+                        'attempts' => 0,
+                        'average' => 0.0,
+                        'best' => 0.0,
+                        'latest' => 0.0,
+                        'questions' => 0,
+                        'trend' => 0.0,
+                    ],
+                    'subjects' => [],
+                    'chart' => [],
+                ],
+                'layouts/student'
+            );
         }
     }
 
