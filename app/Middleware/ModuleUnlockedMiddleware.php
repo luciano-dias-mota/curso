@@ -7,6 +7,7 @@ namespace App\Middleware;
 use App\Core\Auth;
 use App\Core\Database;
 use App\Core\View;
+use App\Services\PmmtCourseScopeService;
 use App\Services\ProgressInitializer;
 
 final class ModuleUnlockedMiddleware
@@ -47,6 +48,10 @@ final class ModuleUnlockedMiddleware
 
         if ($courseId <= 0) {
             $this->deny('Este módulo não está disponível para sua matrícula.');
+        }
+
+        if ($courseId !== (new PmmtCourseScopeService())->courseId($pdo)) {
+            $this->deny('Este módulo não pertence ao curso Preparatório PMMT.');
         }
 
         // Autocorreção para alunos antigos: ao abrir qualquer módulo, garante
