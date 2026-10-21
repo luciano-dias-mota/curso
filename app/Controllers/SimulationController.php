@@ -35,8 +35,43 @@ final class SimulationController extends Controller
             );
         } catch (Throwable $e) {
             $this->logSimulationError('simulations.index', $e);
-            Session::flash('error', $this->userError('Não foi possível carregar os simulados agora.', $e));
-            $this->redirect('/dashboard');
+
+            // Histórico e estatísticas são secundários. Mesmo que exista algum
+            // dado antigo inconsistente, o estudante deve permanecer na
+            // Central de Simulados em vez de ser expulso para o portal.
+            Session::flash(
+                'error',
+                $this->userError(
+                    'Parte do histórico dos simulados não pôde ser carregada, mas você ainda pode gerar um novo simulado.',
+                    $e
+                )
+            );
+
+            $resolvedCourseId = max(
+                0,
+                (int) ($courseId ?? Session::get('active_course_id', 0))
+            );
+
+            $this->view(
+                'student/simulations/index',
+                [
+                    'title' => 'Simulados',
+                    'activeCourseId' => $resolvedCourseId,
+                    'activeAttempts' => [],
+                    'history' => [],
+                    'stats' => [
+                        'attempts' => 0,
+                        'average' => 0.0,
+                        'best' => 0.0,
+                        'latest' => 0.0,
+                        'questions' => 0,
+                        'trend' => 0.0,
+                    ],
+                    'subjects' => [],
+                    'chart' => [],
+                ],
+                (new CourseContextService())->currentLayout()
+            );
         }
     }
 
