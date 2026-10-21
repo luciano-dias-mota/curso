@@ -7,6 +7,7 @@ namespace App\Middleware;
 use App\Core\Auth;
 use App\Core\Database;
 use App\Core\View;
+use App\Services\PmmtCourseScopeService;
 
 final class LessonUnlockedMiddleware
 {
@@ -23,7 +24,7 @@ final class LessonUnlockedMiddleware
         }
 
         $stmt = Database::connection()->prepare(
-            "SELECT ulp.status
+            "SELECT ulp.status, m.course_id
              FROM lessons l
              INNER JOIN phases p
                ON p.id = l.phase_id
@@ -61,9 +62,15 @@ final class LessonUnlockedMiddleware
             'lesson_id' => $lessonId,
         ]);
 
-        $status = $stmt->fetchColumn();
+        $row = $stmt->fetch();
+        $status = (string) ($row['status'] ?? '');
+        $courseId = (int) ($row['course_id'] ?? 0);
 
-        if (!$status || $status === 'locked') {
+        if ($courseId !== (new PmmtCourseScopeService())->courseId(Database::connection())) {
+            $this->deny('Esta aula não pertence ao curso Preparatório PMMT.');
+        }
+
+        if ($status === '' || $status === 'locked') {
             $this->deny('Conclua a aula anterior para desbloquear esta etapa.');
         }
     }
