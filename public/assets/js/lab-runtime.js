@@ -67,11 +67,27 @@ if (root) {
         });
     }
 
-    const runtime = window.CursoMILabEngines?.[engineKey];
+    const waitForRuntime = async () => {
+        const attempts = 40;
 
-    if (!runtime || typeof runtime.mount !== 'function') {
+        for (let index = 0; index < attempts; index += 1) {
+            const candidate = window.CursoMILabEngines?.[engineKey];
+
+            if (candidate && typeof candidate.mount === 'function') {
+                return candidate;
+            }
+
+            await new Promise((resolve) => window.setTimeout(resolve, 75));
+        }
+
+        return null;
+    };
+
+    const runtime = await waitForRuntime();
+
+    if (!runtime) {
         showStatus(
-            'O núcleo do laboratório está pronto, mas o runtime desta engine ainda não foi carregado.',
+            'O editor está disponível, mas o motor PostgreSQL não terminou de carregar. Atualize a página se o botão Executar continuar indisponível.',
             'warning'
         );
     } else {
