@@ -34,7 +34,7 @@ $pageTitle = isset($title)
     <meta name="csrf-token" content="<?= e(Csrf::token()) ?>">
     <meta name="theme-color" content="#075a9e">
     <title><?= e($pageTitle) ?></title>
-    <link rel="stylesheet" href="<?= e(url('/assets/courses/postgresql/course.css') . '?v=20261021-1') ?>">
+    <link rel="stylesheet" href="<?= e(url('/assets/courses/postgresql/course.css') . '?v=20261021-2') ?>">
 </head>
 <body class="postgres-course-body">
     <div class="pg-app-shell">
