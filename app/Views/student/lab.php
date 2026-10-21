@@ -139,7 +139,7 @@ $manifestJson = json_encode(
 <script type="application/json" id="lab-manifest"><?= $manifestJson ?: '{}' ?></script>
 <?php foreach ($assets as $asset): ?>
     <?php if (is_string($asset) && str_starts_with($asset, '/assets/')): ?>
-        <script type="module" src="<?= e(url($asset) . '?v=20261021-1') ?>"></script>
+        <script type="module" src="<?= e(url($asset) . '?v=20261021-2') ?>"></script>
     <?php endif; ?>
 <?php endforeach; ?>
-<script type="module" src="<?= e(url('/assets/js/lab-runtime.js') . '?v=20261021-1') ?>"></script>
+<script type="module" src="<?= e(url('/assets/js/lab-runtime.js') . '?v=20261021-2') ?>"></script>
