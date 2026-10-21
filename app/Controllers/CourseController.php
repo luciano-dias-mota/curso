@@ -7,6 +7,7 @@ namespace App\Controllers;
 use App\Core\Auth;
 use App\Core\Controller;
 use App\Core\Database;
+use App\Services\PmmtCourseScopeService;
 use App\Services\ProgressInitializer;
 
 final class CourseController extends Controller
@@ -14,6 +15,13 @@ final class CourseController extends Controller
     public function show(int $id): void
     {
         $pdo = Database::connection();
+        $pmmtCourseId = (new PmmtCourseScopeService())->courseId($pdo);
+
+        if ($id !== $pmmtCourseId) {
+            http_response_code(404);
+            $this->view('errors/404');
+            return;
+        }
 
         $courseStmt = $pdo->prepare(
             "SELECT c.*,
