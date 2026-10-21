@@ -7,6 +7,8 @@ window.CursoMILabEngines.postgresql_pglite = {
         const resetButton = root.querySelector('[data-lab-reset]');
         const resultHost = root.querySelector('[data-lab-result]');
         const activityUrlBase = root.dataset.activityUrlBase || '';
+        const lessonUrlBase = root.dataset.lessonUrlBase || '';
+        const courseHomeUrl = root.dataset.courseHomeUrl || '';
         const config = manifest?.engine?.config || {};
         const activity = manifest?.activity || {};
 
@@ -27,10 +29,11 @@ window.CursoMILabEngines.postgresql_pglite = {
         const successTitle = String(config.success_title || '').trim();
         const successExplanation = String(config.success_explanation || '').trim();
         const practicalContext = String(config.practical_context || '').trim();
-        const isGuidedActivity = String(activity.activity_type || '') === 'sql_guided';
+        const activityType = String(activity.activity_type || '');
+        const isGuidedActivity = activityType === 'sql_guided';
+        const isChallengeActivity = activityType === 'sql_challenge';
 
-        const showGuidedSuccess = (validation) => {
-            if (!isGuidedActivity) return;
+        const showSuccessFeedback = (validation) => {
 
             const existing = document.querySelector('[data-lab-success-modal]');
             existing?.remove();
@@ -51,7 +54,9 @@ window.CursoMILabEngines.postgresql_pglite = {
 
             const eyebrow = document.createElement('span');
             eyebrow.className = 'lab-success-eyebrow';
-            eyebrow.textContent = 'PRÁTICA GUIADA CONCLUÍDA';
+            eyebrow.textContent = isChallengeActivity
+                ? 'DESAFIO CONCLUÍDO'
+                : (isGuidedActivity ? 'PRÁTICA GUIADA CONCLUÍDA' : 'ATIVIDADE CONCLUÍDA');
 
             const title = document.createElement('h2');
             title.id = 'lab-success-title';
@@ -77,7 +82,10 @@ window.CursoMILabEngines.postgresql_pglite = {
             const close = document.createElement('button');
             close.type = 'button';
             close.className = 'ld-admin-btn is-ghost';
-            close.textContent = validation?.next_activity_id ? 'Rever resultado' : 'Fechar';
+            close.textContent = (
+                validation?.next_activity_id
+                || validation?.next_lesson_id
+            ) ? 'Rever resultado' : 'Fechar';
             close.addEventListener('click', () => backdrop.remove());
 
             actions.appendChild(close);
@@ -87,6 +95,18 @@ window.CursoMILabEngines.postgresql_pglite = {
                 next.className = 'ld-admin-btn';
                 next.href = activityUrlBase + String(validation.next_activity_id);
                 next.textContent = 'Ir para o desafio →';
+                actions.appendChild(next);
+            } else if (validation?.lesson_completed && validation?.next_lesson_id && lessonUrlBase) {
+                const next = document.createElement('a');
+                next.className = 'ld-admin-btn';
+                next.href = lessonUrlBase + String(validation.next_lesson_id);
+                next.textContent = 'Próxima aula →';
+                actions.appendChild(next);
+            } else if (validation?.lesson_completed && courseHomeUrl) {
+                const next = document.createElement('a');
+                next.className = 'ld-admin-btn';
+                next.href = courseHomeUrl;
+                next.textContent = 'Voltar ao curso →';
                 actions.appendChild(next);
             }
 
@@ -364,7 +384,7 @@ window.CursoMILabEngines.postgresql_pglite = {
                 );
 
                 if (validation.passed) {
-                    showGuidedSuccess(validation);
+                    showSuccessFeedback(validation);
                 }
 
                 if (validation.lesson_completed) {
@@ -372,6 +392,21 @@ window.CursoMILabEngines.postgresql_pglite = {
                     note.className = 'lab-sql-completed';
                     note.textContent = '✓ Aula concluída. Você já pode seguir para a próxima etapa.';
                     resultHost.appendChild(note);
+
+                    const next = document.createElement('a');
+                    next.className = 'ld-admin-btn lab-next-activity';
+
+                    if (validation.next_lesson_id && lessonUrlBase) {
+                        next.href = lessonUrlBase + String(validation.next_lesson_id);
+                        next.textContent = 'Próxima aula →';
+                    } else if (courseHomeUrl) {
+                        next.href = courseHomeUrl;
+                        next.textContent = 'Voltar ao curso →';
+                    }
+
+                    if (next.href) {
+                        resultHost.appendChild(next);
+                    }
                 } else if (validation.passed && validation.next_activity_id && activityUrlBase) {
                     const next = document.createElement('a');
                     next.className = 'ld-admin-btn lab-next-activity';
