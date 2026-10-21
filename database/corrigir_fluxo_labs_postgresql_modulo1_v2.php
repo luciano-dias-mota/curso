@@ -612,9 +612,92 @@ try {
         }
     }
 
+    // Migração pedagógica: a atividade posição 1 já existia no modelo antigo
+    // e pode estar marcada como concluída. Se o aluno ainda não concluiu o
+    // desafio posição 2, reabra a prática guiada para que o novo fluxo comece
+    // corretamente por ela. Histórico, tentativas e melhor nota são preservados.
+    $affectedUsers = [];
+    $guidedReopened = 0;
+
+    foreach ($rows as $slug => $row) {
+        $lessonId = (int) $row['lesson']['id'];
+
+        $activitiesByPosition = $pdo->prepare(
+            "SELECT id, position
+               FROM lab_activities
+              WHERE lesson_id = :lesson_id
+                AND status = 'published'
+                AND is_required = 1
+                AND position IN (1, 2, 3)"
+        );
+        $activitiesByPosition->execute(['lesson_id' => $lessonId]);
+
+        $ids = [];
+        foreach ($activitiesByPosition->fetchAll(PDO::FETCH_ASSOC) as $activityRow) {
+            $ids[(int) $activityRow['position']] = (int) $activityRow['id'];
+        }
+
+        if (empty($ids[1]) || empty($ids[2]) || empty($ids[3])) {
+            throw new RuntimeException(
+                "Fluxo incompleto após sincronização na aula {$slug}."
+            );
+        }
+
+        $legacyUsers = $pdo->prepare(
+            "SELECT lap1.user_id
+               FROM lab_activity_progress lap1
+               LEFT JOIN lab_activity_progress lap2
+                 ON lap2.user_id = lap1.user_id
+                AND lap2.activity_id = :activity2
+              WHERE lap1.activity_id = :activity1
+                AND lap1.status = 'completed'
+                AND COALESCE(lap2.status, 'available') <> 'completed'"
+        );
+        $legacyUsers->execute([
+            'activity1' => $ids[1],
+            'activity2' => $ids[2],
+        ]);
+
+        foreach (array_map('intval', $legacyUsers->fetchAll(PDO::FETCH_COLUMN)) as $userId) {
+            $pdo->prepare(
+                "UPDATE lab_activity_progress
+                    SET status = 'available',
+                        completed_at = NULL,
+                        updated_at = NOW()
+                  WHERE user_id = :user_id
+                    AND activity_id = :activity_id
+                    AND status = 'completed'"
+            )->execute([
+                'user_id' => $userId,
+                'activity_id' => $ids[1],
+            ]);
+
+            if ($pdo->query('SELECT ROW_COUNT()')->fetchColumn()) {
+                $guidedReopened++;
+            }
+
+            $affectedUsers[$userId] = true;
+
+            // A leitura da aula continua concluída; apenas a prática volta a
+            // ficar pendente no novo ciclo guiado -> desafio -> reforço.
+            $pdo->prepare(
+                "UPDATE user_lesson_progress
+                    SET status = 'in_progress',
+                        progress_pct = 100,
+                        completed_at = NULL,
+                        last_accessed_at = NOW()
+                  WHERE user_id = :user_id
+                    AND lesson_id = :lesson_id
+                    AND status <> 'locked'"
+            )->execute([
+                'user_id' => $userId,
+                'lesson_id' => $lessonId,
+            ]);
+        }
+    }
+
     // Reabre somente aulas que foram dadas como concluídas antes de existirem
     // as três atividades obrigatórias. A leitura permanece em 100%.
-    $affectedUsers = [];
 
     foreach ($rows as $slug => $row) {
         $lessonId = (int) $row['lesson']['id'];
@@ -755,8 +838,9 @@ try {
     echo "[OK] Atividade 2 = desafio sem código.\n";
     echo "[OK] Atividade 3 = reforço sem código.\n";
     echo "[OK] A próxima aula só é concluída/liberada após as três atividades.\n";
-    echo "[OK] Tentativas e progresso de laboratório existentes foram preservados.\n";
-    printf("[OK] Usuários com conclusão prematura reconciliados: %d.\n", count($affectedUsers));
+    echo "[OK] Tentativas, melhor nota e histórico de laboratório foram preservados.\n";
+    printf("[OK] Práticas guiadas legadas reabertas: %d.\n", $guidedReopened);
+    printf("[OK] Usuários com progresso reconciliado: %d.\n", count($affectedUsers));
     echo "[OK] Nenhum conteúdo do Preparatório MI foi alterado.\n";
 } catch (Throwable $e) {
     if ($pdo->inTransaction()) {
