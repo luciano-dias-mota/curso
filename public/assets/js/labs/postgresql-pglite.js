@@ -24,6 +24,108 @@ window.CursoMILabEngines.postgresql_pglite = {
         const maxRows = Math.max(10, Math.min(500, Number(config.max_result_rows || 200)));
         const timeoutMs = Math.max(1000, Math.min(30000, Number(config.statement_timeout_ms || 10000)));
 
+        const successTitle = String(config.success_title || '').trim();
+        const successExplanation = String(config.success_explanation || '').trim();
+        const practicalContext = String(config.practical_context || '').trim();
+        const isGuidedActivity = String(activity.activity_type || '') === 'sql_guided';
+
+        const showGuidedSuccess = (validation) => {
+            if (!isGuidedActivity) return;
+
+            const existing = document.querySelector('[data-lab-success-modal]');
+            existing?.remove();
+
+            const backdrop = document.createElement('div');
+            backdrop.className = 'lab-success-backdrop';
+            backdrop.dataset.labSuccessModal = 'true';
+
+            const dialog = document.createElement('section');
+            dialog.className = 'lab-success-dialog';
+            dialog.setAttribute('role', 'dialog');
+            dialog.setAttribute('aria-modal', 'true');
+            dialog.setAttribute('aria-labelledby', 'lab-success-title');
+
+            const icon = document.createElement('div');
+            icon.className = 'lab-success-icon';
+            icon.textContent = '✓';
+
+            const eyebrow = document.createElement('span');
+            eyebrow.className = 'lab-success-eyebrow';
+            eyebrow.textContent = 'PRÁTICA GUIADA CONCLUÍDA';
+
+            const title = document.createElement('h2');
+            title.id = 'lab-success-title';
+            title.textContent = successTitle || 'Parabéns, você acertou!';
+
+            const explanationTitle = document.createElement('strong');
+            explanationTitle.textContent = 'O que você acabou de fazer';
+
+            const explanation = document.createElement('p');
+            explanation.textContent = successExplanation
+                || 'Você executou corretamente uma instrução SQL e obteve o resultado esperado.';
+
+            const practicalTitle = document.createElement('strong');
+            practicalTitle.textContent = 'Na prática profissional';
+
+            const practical = document.createElement('p');
+            practical.textContent = practicalContext
+                || 'Esse tipo de comando é usado para consultar, conferir ou validar informações armazenadas no banco de dados.';
+
+            const actions = document.createElement('div');
+            actions.className = 'lab-success-actions';
+
+            const close = document.createElement('button');
+            close.type = 'button';
+            close.className = 'ld-admin-btn is-ghost';
+            close.textContent = validation?.next_activity_id ? 'Rever resultado' : 'Fechar';
+            close.addEventListener('click', () => backdrop.remove());
+
+            actions.appendChild(close);
+
+            if (validation?.next_activity_id && activityUrlBase) {
+                const next = document.createElement('a');
+                next.className = 'ld-admin-btn';
+                next.href = activityUrlBase + String(validation.next_activity_id);
+                next.textContent = 'Ir para o desafio →';
+                actions.appendChild(next);
+            }
+
+            const content = document.createElement('div');
+            content.className = 'lab-success-content';
+            content.append(
+                eyebrow,
+                title,
+                explanationTitle,
+                explanation,
+                practicalTitle,
+                practical,
+                actions
+            );
+
+            dialog.append(icon, content);
+            backdrop.appendChild(dialog);
+            document.body.appendChild(backdrop);
+
+            window.requestAnimationFrame(() => {
+                backdrop.classList.add('is-visible');
+            });
+
+            backdrop.addEventListener('click', (event) => {
+                if (event.target === backdrop) {
+                    backdrop.remove();
+                }
+            });
+
+            const onKeyDown = (event) => {
+                if (event.key === 'Escape') {
+                    backdrop.remove();
+                    document.removeEventListener('keydown', onKeyDown);
+                }
+            };
+            document.addEventListener('keydown', onKeyDown);
+            close.focus();
+        };
+
         // O aluno pode começar a digitar imediatamente. Apenas a execução
         // aguarda o PostgreSQL ficar pronto.
         editor.disabled = false;
@@ -260,6 +362,10 @@ window.CursoMILabEngines.postgresql_pglite = {
                     validation.message || (validation.passed ? 'Atividade concluída.' : 'Revise sua solução.'),
                     validation.passed ? 'success' : 'warning'
                 );
+
+                if (validation.passed) {
+                    showGuidedSuccess(validation);
+                }
 
                 if (validation.lesson_completed) {
                     const note = document.createElement('p');
