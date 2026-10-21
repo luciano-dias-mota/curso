@@ -7,6 +7,7 @@ namespace App\Controllers;
 use App\Core\Auth;
 use App\Core\Controller;
 use App\Core\Database;
+use App\Services\PmmtCourseScopeService;
 use PDO;
 
 final class DashboardController extends Controller
@@ -18,6 +19,7 @@ final class DashboardController extends Controller
         }
 
         $pdo = Database::connection();
+        $pmmtCourseId = (new PmmtCourseScopeService())->courseId($pdo);
         $userId = (int) Auth::id();
         $user = Auth::user() ?? [];
 
@@ -38,10 +40,11 @@ final class DashboardController extends Controller
              WHERE e.user_id = :user_id
                AND e.status = 'active'
                AND c.status = 'published'
+               AND c.id = :course_id
              ORDER BY COALESCE(p.last_accessed_at, e.enrolled_at, c.published_at) DESC,
                       c.position, c.id"
         );
-        $coursesStmt->execute(['user_id' => $userId]);
+        $coursesStmt->execute(['user_id' => $userId, 'course_id' => $pmmtCourseId]);
         $courses = $coursesStmt->fetchAll(PDO::FETCH_ASSOC);
 
         $levelStmt = $pdo->prepare(
@@ -97,6 +100,7 @@ final class DashboardController extends Controller
                     AND e.user_id = :enrollment_user
                     AND e.status = 'active'
              WHERE ulp.user_id = :progress_user
+               AND c.id = :course_id
                AND ulp.status IN ('in_progress', 'available')
              ORDER BY (ulp.status = 'in_progress') DESC,
                       COALESCE(ulp.last_accessed_at, ulp.started_at, '1970-01-01 00:00:00') DESC,
@@ -106,6 +110,7 @@ final class DashboardController extends Controller
         $continueStmt->execute([
             'enrollment_user' => $userId,
             'progress_user' => $userId,
+            'course_id' => $pmmtCourseId,
         ]);
         $continueLesson = $continueStmt->fetch(PDO::FETCH_ASSOC) ?: null;
 
@@ -133,34 +138,41 @@ final class DashboardController extends Controller
 
         $lessonsTodayStmt = $pdo->prepare(
             "SELECT COUNT(*)
-               FROM user_lesson_progress
-              WHERE user_id = :user_id
-                AND status = 'completed'
-                AND completed_at >= CURDATE()
-                AND completed_at < CURDATE() + INTERVAL 1 DAY"
+               FROM user_lesson_progress ulp
+               INNER JOIN lessons l ON l.id = ulp.lesson_id
+               INNER JOIN phases p ON p.id = l.phase_id
+               INNER JOIN modules m ON m.id = p.module_id
+              WHERE ulp.user_id = :user_id
+                AND m.course_id = :course_id
+                AND ulp.status = 'completed'
+                AND ulp.completed_at >= CURDATE()
+                AND ulp.completed_at < CURDATE() + INTERVAL 1 DAY"
         );
-        $lessonsTodayStmt->execute(['user_id' => $userId]);
+        $lessonsTodayStmt->execute(['user_id' => $userId, 'course_id' => $pmmtCourseId]);
         $lessonsToday = (int) $lessonsTodayStmt->fetchColumn();
 
         $questionsTodayStmt = $pdo->prepare(
             "SELECT COUNT(*)
                FROM quiz_answers qa
                INNER JOIN quiz_attempts qta ON qta.id = qa.attempt_id
+               INNER JOIN quizzes qz ON qz.id = qta.quiz_id
               WHERE qta.user_id = :user_id
+                AND qz.course_id = :course_id
                 AND qa.answered_at >= CURDATE()
                 AND qa.answered_at < CURDATE() + INTERVAL 1 DAY"
         );
-        $questionsTodayStmt->execute(['user_id' => $userId]);
+        $questionsTodayStmt->execute(['user_id' => $userId, 'course_id' => $pmmtCourseId]);
         $questionsToday = (int) $questionsTodayStmt->fetchColumn();
 
         $studyTodayStmt = $pdo->prepare(
             "SELECT COALESCE(SUM(duration_seconds), 0)
                FROM study_sessions
               WHERE user_id = :user_id
+                AND course_id = :course_id
                 AND started_at >= CURDATE()
                 AND started_at < CURDATE() + INTERVAL 1 DAY"
         );
-        $studyTodayStmt->execute(['user_id' => $userId]);
+        $studyTodayStmt->execute(['user_id' => $userId, 'course_id' => $pmmtCourseId]);
         $studyMinutesToday = (int) floor(((int) $studyTodayStmt->fetchColumn()) / 60);
 
         $xpTodayStmt = $pdo->prepare(
@@ -184,9 +196,10 @@ final class DashboardController extends Controller
                       ON ulp.lesson_id = l.id
                      AND ulp.user_id = e.user_id
               WHERE e.user_id = :user_id
-                AND e.status = 'active'"
+                AND e.status = 'active'
+                AND e.course_id = :course_id"
         );
-        $lessonOverviewStmt->execute(['user_id' => $userId]);
+        $lessonOverviewStmt->execute(['user_id' => $userId, 'course_id' => $pmmtCourseId]);
         $lessonOverview = $lessonOverviewStmt->fetch(PDO::FETCH_ASSOC) ?: ['total' => 0, 'completed' => 0];
 
         $questionOverviewStmt = $pdo->prepare(
@@ -196,15 +209,20 @@ final class DashboardController extends Controller
                    INNER JOIN quizzes qz ON qz.course_id = e1.course_id AND qz.active = 1
                    INNER JOIN quiz_questions qq ON qq.quiz_id = qz.id
                   WHERE e1.user_id = :total_user
-                    AND e1.status = 'active') AS total,
+                    AND e1.status = 'active'
+                    AND e1.course_id = :total_course) AS total,
                 (SELECT COUNT(DISTINCT qa.question_id)
                    FROM quiz_answers qa
                    INNER JOIN quiz_attempts qta ON qta.id = qa.attempt_id
-                  WHERE qta.user_id = :answered_user) AS completed"
+                   INNER JOIN quizzes qz2 ON qz2.id = qta.quiz_id
+                  WHERE qta.user_id = :answered_user
+                    AND qz2.course_id = :answered_course) AS completed"
         );
         $questionOverviewStmt->execute([
             'total_user' => $userId,
+            'total_course' => $pmmtCourseId,
             'answered_user' => $userId,
+            'answered_course' => $pmmtCourseId,
         ]);
         $questionOverview = $questionOverviewStmt->fetch(PDO::FETCH_ASSOC) ?: ['total' => 0, 'completed' => 0];
 
@@ -214,24 +232,30 @@ final class DashboardController extends Controller
                    FROM enrollments e2
                    INNER JOIN simulations s ON s.course_id = e2.course_id AND s.active = 1
                   WHERE e2.user_id = :sim_total_user
-                    AND e2.status = 'active') AS total,
+                    AND e2.status = 'active'
+                    AND e2.course_id = :sim_total_course) AS total,
                 (SELECT COUNT(DISTINCT sa.simulation_id)
                    FROM simulation_attempts sa
+                   INNER JOIN simulations s2 ON s2.id = sa.simulation_id
                   WHERE sa.user_id = :sim_done_user
-                    AND sa.status = 'finished') AS completed"
+                    AND sa.status = 'finished'
+                    AND s2.course_id = :sim_done_course) AS completed"
         );
         $simulationOverviewStmt->execute([
             'sim_total_user' => $userId,
+            'sim_total_course' => $pmmtCourseId,
             'sim_done_user' => $userId,
+            'sim_done_course' => $pmmtCourseId,
         ]);
         $simulationOverview = $simulationOverviewStmt->fetch(PDO::FETCH_ASSOC) ?: ['total' => 0, 'completed' => 0];
 
         $studyTotalStmt = $pdo->prepare(
             "SELECT COALESCE(SUM(duration_seconds), 0)
                FROM study_sessions
-              WHERE user_id = :user_id"
+              WHERE user_id = :user_id
+                AND course_id = :course_id"
         );
-        $studyTotalStmt->execute(['user_id' => $userId]);
+        $studyTotalStmt->execute(['user_id' => $userId, 'course_id' => $pmmtCourseId]);
         $studySecondsTotal = (int) $studyTotalStmt->fetchColumn();
 
         $dailyQuests = [
