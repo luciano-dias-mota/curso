@@ -19,6 +19,7 @@ final class SimulationService
     public function dashboard(int $userId): array
     {
         $pdo = Database::connection();
+        $pmmtCourseId = (new PmmtCourseScopeService())->courseId($pdo);
         $this->finishExpiredAttempts($pdo, $userId);
 
         $activeStmt = $pdo->prepare(
@@ -38,9 +39,13 @@ final class SimulationService
              ) ans ON ans.attempt_id = sa.id
              WHERE sa.user_id = :user_id
                AND sa.status = 'in_progress'
+               AND s.course_id = :course_id
              ORDER BY sa.started_at DESC"
         );
-        $activeStmt->execute(['user_id' => $userId]);
+        $activeStmt->execute([
+            'user_id' => $userId,
+            'course_id' => $pmmtCourseId,
+        ]);
         $active = $activeStmt->fetchAll();
 
         foreach ($active as &$row) {
@@ -60,10 +65,14 @@ final class SimulationService
              LEFT JOIN modules m ON m.id = sa.scope_module_id
              WHERE sa.user_id = :user_id
                AND sa.status = 'finished'
+               AND s.course_id = :course_id
              ORDER BY sa.finished_at DESC, sa.id DESC
              LIMIT 30"
         );
-        $historyStmt->execute(['user_id' => $userId]);
+        $historyStmt->execute([
+            'user_id' => $userId,
+            'course_id' => $pmmtCourseId,
+        ]);
         $history = $historyStmt->fetchAll();
 
         $statsStmt = $pdo->prepare(
@@ -71,11 +80,16 @@ final class SimulationService
                     COALESCE(AVG(percentage), 0) AS average,
                     COALESCE(MAX(percentage), 0) AS best,
                     COALESCE(SUM(question_limit), 0) AS questions
-             FROM simulation_attempts
-             WHERE user_id = :user_id
-               AND status = 'finished'"
+             FROM simulation_attempts sa
+             INNER JOIN simulations s ON s.id = sa.simulation_id
+             WHERE sa.user_id = :user_id
+               AND sa.status = 'finished'
+               AND s.course_id = :course_id"
         );
-        $statsStmt->execute(['user_id' => $userId]);
+        $statsStmt->execute([
+            'user_id' => $userId,
+            'course_id' => $pmmtCourseId,
+        ]);
         $statsRow = $statsStmt->fetch() ?: [];
 
         $stats = [
@@ -104,6 +118,7 @@ final class SimulationService
                     SUM(CASE WHEN COALESCE(sa2.is_correct, 0) = 1 THEN 1 ELSE 0 END) AS correct
              FROM simulation_attempt_questions saq
              INNER JOIN simulation_attempts sa ON sa.id = saq.attempt_id
+             INNER JOIN simulations s ON s.id = sa.simulation_id
              INNER JOIN questions q ON q.id = saq.question_id
              LEFT JOIN modules m ON m.id = q.module_id
              LEFT JOIN simulation_answers sa2
@@ -111,10 +126,14 @@ final class SimulationService
               AND sa2.question_id = q.id
              WHERE sa.user_id = :user_id
                AND sa.status = 'finished'
+               AND s.course_id = :course_id
              GROUP BY m.id, m.title, m.position
              ORDER BY m.position, m.id"
         );
-        $subjectStmt->execute(['user_id' => $userId]);
+        $subjectStmt->execute([
+            'user_id' => $userId,
+            'course_id' => $pmmtCourseId,
+        ]);
         $subjects = $subjectStmt->fetchAll();
 
         foreach ($subjects as &$row) {
@@ -138,6 +157,7 @@ final class SimulationService
     public function configuration(int $userId): array
     {
         $pdo = Database::connection();
+        $pmmtCourseId = (new PmmtCourseScopeService())->courseId($pdo);
 
         $courseStmt = $pdo->prepare(
             "SELECT c.id, c.title,
@@ -165,10 +185,14 @@ final class SimulationService
              WHERE e.user_id = :user_id
                AND e.status = 'active'
                AND c.status = 'published'
+               AND c.id = :course_id
              GROUP BY c.id, c.title, c.position
              ORDER BY c.position, c.id"
         );
-        $courseStmt->execute(['user_id' => $userId]);
+        $courseStmt->execute([
+            'user_id' => $userId,
+            'course_id' => $pmmtCourseId,
+        ]);
         $courses = $courseStmt->fetchAll();
 
         if ($courses === []) {
@@ -226,6 +250,7 @@ final class SimulationService
         }
 
         $pdo = Database::connection();
+        (new PmmtCourseScopeService())->assertCourse($pdo, $courseId);
         $this->assertEnrollment($pdo, $userId, $courseId);
         $this->finishExpiredAttempts($pdo, $userId);
 
@@ -956,11 +981,13 @@ final class SimulationService
              LEFT JOIN modules m ON m.id = sa.scope_module_id
              WHERE sa.id = :attempt_id
                AND sa.user_id = :user_id
+               AND s.course_id = :course_id
              LIMIT 1" . $lock
         );
         $stmt->execute([
             'attempt_id' => $attemptId,
             'user_id' => $userId,
+            'course_id' => (new PmmtCourseScopeService())->courseId($pdo),
         ]);
         $attempt = $stmt->fetch();
 
@@ -974,13 +1001,18 @@ final class SimulationService
     private function finishExpiredAttempts(PDO $pdo, int $userId): void
     {
         $stmt = $pdo->prepare(
-            "SELECT id
-             FROM simulation_attempts
-             WHERE user_id = :user_id
-               AND status = 'in_progress'
-               AND TIMESTAMPDIFF(SECOND, started_at, NOW()) >= (time_limit_minutes * 60)"
+            "SELECT sa.id
+             FROM simulation_attempts sa
+             INNER JOIN simulations s ON s.id = sa.simulation_id
+             WHERE sa.user_id = :user_id
+               AND sa.status = 'in_progress'
+               AND s.course_id = :course_id
+               AND TIMESTAMPDIFF(SECOND, sa.started_at, NOW()) >= (sa.time_limit_minutes * 60)"
         );
-        $stmt->execute(['user_id' => $userId]);
+        $stmt->execute([
+            'user_id' => $userId,
+            'course_id' => (new PmmtCourseScopeService())->courseId($pdo),
+        ]);
         $ids = array_map('intval', $stmt->fetchAll(PDO::FETCH_COLUMN));
 
         foreach ($ids as $id) {
