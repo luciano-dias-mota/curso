@@ -2972,3 +2972,124 @@ a.pg-side-link:hover,
         min-height: 190px;
     }
 }
+
+
+/* Feedback pedagógico após acerto da prática guiada */
+.lab-success-backdrop {
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    padding: 22px;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    background: rgba(5, 25, 46, .62);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    transition: opacity .2s ease;
+}
+
+.lab-success-backdrop.is-visible {
+    opacity: 1;
+}
+
+.lab-success-dialog {
+    width: min(660px, 100%);
+    max-height: min(86vh, 720px);
+    overflow-y: auto;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 18px;
+    border: 1px solid rgba(34, 180, 112, .24);
+    border-radius: 20px;
+    background:
+        radial-gradient(circle at 92% 8%, rgba(68, 209, 144, .13), transparent 26%),
+        #ffffff;
+    box-shadow:
+        0 32px 70px -30px rgba(3, 42, 76, .65),
+        0 0 36px -20px rgba(31, 190, 119, .75);
+}
+
+.lab-success-icon {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #fff;
+    background: linear-gradient(135deg, #1fc274, #0c9855);
+    box-shadow: 0 14px 28px -15px rgba(16, 158, 92, .74);
+    font-size: 27px;
+    font-weight: 900;
+}
+
+.lab-success-content {
+    min-width: 0;
+}
+
+.lab-success-eyebrow {
+    display: block;
+    margin-bottom: 5px;
+    color: #11915a;
+    font-size: 9.5px;
+    font-weight: 900;
+    letter-spacing: .13em;
+}
+
+.lab-success-dialog h2 {
+    margin: 0 0 17px;
+    color: #0d2a52;
+    font-size: clamp(23px, 3vw, 31px);
+    line-height: 1.08;
+}
+
+.lab-success-dialog strong {
+    display: block;
+    margin-top: 13px;
+    color: #0d3157;
+    font-size: 12.5px;
+}
+
+.lab-success-dialog p {
+    margin: 5px 0 0;
+    color: #496985;
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+.lab-success-actions {
+    margin-top: 21px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.lab-success-actions .ld-admin-btn {
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .lab-success-backdrop {
+        padding: 12px;
+    }
+
+    .lab-success-dialog {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .lab-success-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+    }
+
+    .lab-success-actions {
+        display: grid;
+    }
+
+    .lab-success-actions .ld-admin-btn {
+        width: 100%;
+    }
+}
