@@ -200,14 +200,28 @@ final class ProgressService
                     );
                 }
 
-                $labActivityId = (new LabService())->firstPendingRequiredActivity(
+                $labService = new LabService();
+                $labActivityId = $labService->firstPendingRequiredActivity(
                     $userId,
                     $lessonId
                 );
+                $labReview = false;
+
+                if ($labActivityId === null) {
+                    // Se não há atividade pendente, a aula pode já ter tido o
+                    // laboratório concluído. Nesse caso, permita reabrir a
+                    // primeira prática publicada para revisão em vez de
+                    // informar incorretamente que o laboratório não existe.
+                    $labActivityId = $labService->firstRequiredActivity(
+                        $userId,
+                        $lessonId
+                    );
+                    $labReview = $labActivityId !== null;
+                }
 
                 if ($labActivityId === null) {
                     throw new RuntimeException(
-                        'O laboratório obrigatório desta aula ainda não foi configurado.'
+                        'Nenhum laboratório obrigatório publicado foi encontrado para esta aula.'
                     );
                 }
 
@@ -219,6 +233,7 @@ final class ProgressService
                     'lab_activity_id' => $labActivityId,
                     'optional' => false,
                     'next_step' => 'lab',
+                    'lab_review' => $labReview,
                 ];
             }
 
