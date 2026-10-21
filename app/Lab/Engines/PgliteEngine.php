@@ -113,6 +113,9 @@ final class PgliteEngine implements LabEngineInterface
                 10,
                 min(500, (int) ($bootstrap['max_result_rows'] ?? 200))
             ),
+            'success_title' => trim((string) ($bootstrap['success_title'] ?? '')),
+            'success_explanation' => trim((string) ($bootstrap['success_explanation'] ?? '')),
+            'practical_context' => trim((string) ($bootstrap['practical_context'] ?? '')),
             'activity_id' => $activityId,
         ];
     }
