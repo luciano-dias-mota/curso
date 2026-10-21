@@ -106,6 +106,7 @@ echo "  Após acertar, o sistema exibirá uma explicação prática do comando.\
 echo "\nDesafio sem modelo:\n";
 echo "  O aluno deverá retornar LD Informática em uma coluna chamada empresa.\n";
 echo "  O comando correto NÃO será mostrado na tela.\n";
+echo "  Após acertar, o sistema exibirá a explicação do desafio e liberará a próxima aula.\n";
 
 if (!$apply) {
     echo "\nNenhuma alteração foi realizada.\n";
@@ -136,13 +137,22 @@ $challengeValidator = [
     'ordered' => true,
 ];
 
-$bootstrap = [
+$guidedBootstrap = [
     'sql' => 'SELECT 1;',
     'statement_timeout_ms' => 10000,
     'max_result_rows' => 100,
     'success_title' => 'Parabéns, você acertou!',
     'success_explanation' => 'O SELECT é o comando usado para pedir informações ao PostgreSQL. Neste exemplo, você pediu que o banco retornasse o texto HD Ferramentas. O trecho AS empresa deu o nome empresa à coluna exibida no resultado. Isso ajuda a deixar consultas e relatórios mais claros.',
     'practical_context' => 'No dia a dia, DBAs e desenvolvedores usam SELECT para consultar e conferir dados antes de tomar uma decisão ou fazer uma alteração. Por exemplo: SELECT nome, telefone FROM clientes WHERE id = 10; localiza os dados de um cliente específico. Antes de UPDATE ou DELETE, é comum executar um SELECT com o mesmo filtro para confirmar exatamente quais registros serão afetados.',
+];
+
+$challengeBootstrap = [
+    'sql' => 'SELECT 1;',
+    'statement_timeout_ms' => 10000,
+    'max_result_rows' => 100,
+    'success_title' => 'Muito bem! Você resolveu sem copiar.',
+    'success_explanation' => 'Você montou sozinho uma consulta SELECT que retorna um valor e definiu o nome da coluna com AS empresa. Isso confirma que você entendeu a estrutura básica do comando e não apenas reproduziu o exemplo anterior.',
+    'practical_context' => 'No trabalho real, essa mesma lógica aparece em consultas muito maiores. Um DBA ou desenvolvedor usa SELECT para escolher o que deseja visualizar e aliases com AS para deixar nomes de colunas mais claros em relatórios, consultas de suporte e resultados enviados para aplicações.',
 ];
 
 $pdo->beginTransaction();
@@ -170,7 +180,7 @@ try {
             JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR
         ),
         'bootstrap_config' => json_encode(
-            $bootstrap,
+            $guidedBootstrap,
             JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR
         ),
         'id' => (int) $guided['id'],
@@ -211,7 +221,7 @@ try {
             JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR
         ),
         'bootstrap_config' => json_encode(
-            $bootstrap,
+            $challengeBootstrap,
             JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR
         ),
         'state_version' => max(1, (int) $guided['state_version']),
