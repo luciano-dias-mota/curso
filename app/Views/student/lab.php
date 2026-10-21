@@ -101,7 +101,7 @@ $manifestJson = json_encode(
                     </section>
                 <?php else: ?>
                     <section class="lab-independent-banner">
-                        <span>2</span>
+                        <span><?= max(2, (int) ($activity['position'] ?? 2)) ?></span>
                         <div>
                             <strong>Agora é com você</strong>
                             <small>Resolva um exercício semelhante sem o comando pronto na tela.</small>
@@ -147,7 +147,7 @@ $manifestJson = json_encode(
 <script type="application/json" id="lab-manifest"><?= $manifestJson ?: '{}' ?></script>
 <?php foreach ($assets as $asset): ?>
     <?php if (is_string($asset) && str_starts_with($asset, '/assets/')): ?>
-        <script type="module" src="<?= e(url($asset) . '?v=20261021-3') ?>"></script>
+        <script type="module" src="<?= e(url($asset) . '?v=20261021-4') ?>"></script>
     <?php endif; ?>
 <?php endforeach; ?>
-<script type="module" src="<?= e(url('/assets/js/lab-runtime.js') . '?v=20261021-3') ?>"></script>
+<script type="module" src="<?= e(url('/assets/js/lab-runtime.js') . '?v=20261021-4') ?>"></script>
