@@ -96,8 +96,10 @@ final class LessonCompletionService
         $moduleId = (int) $lesson['module_id'];
         $settings = new CourseSettingsService();
 
+        $nextLessonId = null;
+
         if ($settings->lessonAccessMode($courseId, $pdo) === 'sequential') {
-            $this->unlockNextLesson(
+            $nextLessonId = $this->unlockNextLesson(
                 $pdo,
                 $userId,
                 $phaseId,
@@ -144,11 +146,21 @@ final class LessonCompletionService
             );
         }
 
+        if ($nextLessonId === null) {
+            $nextLessonId = $this->firstAvailableLessonAfter(
+                $pdo,
+                $userId,
+                $courseId,
+                $lessonId
+            );
+        }
+
         return [
             'lesson_id' => $lessonId,
             'phase_id' => $phaseId,
             'module_id' => $moduleId,
             'course_id' => $courseId,
+            'next_lesson_id' => $nextLessonId,
         ];
     }
 
@@ -157,7 +169,7 @@ final class LessonCompletionService
         int $userId,
         int $phaseId,
         int $position
-    ): void {
+    ): ?int {
         $next = $pdo->prepare(
             "SELECT id
              FROM lessons
@@ -177,7 +189,63 @@ final class LessonCompletionService
 
         if ($nextLessonId > 0) {
             $this->unlockLesson($pdo, $userId, $nextLessonId);
+            return $nextLessonId;
         }
+
+        return null;
+    }
+
+    private function firstAvailableLessonAfter(
+        PDO $pdo,
+        int $userId,
+        int $courseId,
+        int $currentLessonId
+    ): ?int {
+        $stmt = $pdo->prepare(
+            "SELECT l.id
+             FROM lessons l
+             INNER JOIN phases p
+               ON p.id = l.phase_id
+              AND p.status = 'published'
+             INNER JOIN modules m
+               ON m.id = p.module_id
+              AND m.status = 'published'
+             INNER JOIN user_lesson_progress ulp
+               ON ulp.lesson_id = l.id
+              AND ulp.user_id = :user_id
+              AND ulp.status IN ('available', 'in_progress')
+             INNER JOIN lessons current_l
+               ON current_l.id = :current_lesson_id
+             INNER JOIN phases current_p
+               ON current_p.id = current_l.phase_id
+             INNER JOIN modules current_m
+               ON current_m.id = current_p.module_id
+             WHERE m.course_id = :course_id
+               AND l.status = 'published'
+               AND (
+                    m.position > current_m.position
+                    OR (
+                        m.position = current_m.position
+                        AND p.position > current_p.position
+                    )
+                    OR (
+                        m.position = current_m.position
+                        AND p.position = current_p.position
+                        AND l.position > current_l.position
+                    )
+               )
+             ORDER BY m.position, p.position, l.position, l.id
+             LIMIT 1"
+        );
+        $stmt->execute([
+            'user_id' => $userId,
+            'current_lesson_id' => $currentLessonId,
+            'course_id' => $courseId,
+        ]);
+
+        $lessonId = (int) ($stmt->fetchColumn() ?: 0);
+
+        return $lessonId > 0 ? $lessonId : null;
     }
 
     private function unlockLesson(PDO $pdo, int $userId, int $lessonId): void
