@@ -21,7 +21,7 @@ final class LessonController extends Controller
 
         $stmt = $pdo->prepare(
             "SELECT l.*, p.title AS phase_title, p.id AS phase_id,
-                    p.module_id, m.title AS module_title
+                    p.module_id, m.title AS module_title, m.course_id
              FROM lessons l
              INNER JOIN phases p ON p.id = l.phase_id
              INNER JOIN modules m ON m.id = p.module_id
