@@ -13,6 +13,12 @@ $referenceCode = $isGuided ? (string) ($activity['starter_code'] ?? '') : '';
 $activityUrlBase = $courseId > 0
     ? '/curso/' . $courseId . '/laboratorio/atividade/'
     : '/laboratorio/atividade/';
+$lessonUrlBase = $courseId > 0
+    ? '/curso/' . $courseId . '/aula/'
+    : '/aula/';
+$courseHomePath = $courseId > 0
+    ? '/curso/' . $courseId
+    : '/dashboard';
 $submitPath = $courseId > 0
     ? '/api/curso/' . $courseId . '/laboratorio/atividade/' . $activityId . '/executar'
     : '/api/laboratorio/atividade/' . $activityId . '/executar';
@@ -39,6 +45,8 @@ $manifestJson = json_encode(
     data-hint-url="<?= e(url($hintPath)) ?>"
     data-csrf-token="<?= e($csrfToken ?? '') ?>"
     data-activity-url-base="<?= e(url($activityUrlBase)) ?>"
+    data-lesson-url-base="<?= e(url($lessonUrlBase)) ?>"
+    data-course-home-url="<?= e(url($courseHomePath)) ?>"
 >
     <aside class="study-map">
         <div class="study-map-head">
@@ -139,7 +147,7 @@ $manifestJson = json_encode(
 <script type="application/json" id="lab-manifest"><?= $manifestJson ?: '{}' ?></script>
 <?php foreach ($assets as $asset): ?>
     <?php if (is_string($asset) && str_starts_with($asset, '/assets/')): ?>
-        <script type="module" src="<?= e(url($asset) . '?v=20261021-2') ?>"></script>
+        <script type="module" src="<?= e(url($asset) . '?v=20261021-3') ?>"></script>
     <?php endif; ?>
 <?php endforeach; ?>
-<script type="module" src="<?= e(url('/assets/js/lab-runtime.js') . '?v=20261021-2') ?>"></script>
+<script type="module" src="<?= e(url('/assets/js/lab-runtime.js') . '?v=20261021-3') ?>"></script>
