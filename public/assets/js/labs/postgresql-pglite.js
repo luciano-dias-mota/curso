@@ -6,6 +6,7 @@ window.CursoMILabEngines.postgresql_pglite = {
         const runButton = root.querySelector('[data-lab-run]');
         const resetButton = root.querySelector('[data-lab-reset]');
         const resultHost = root.querySelector('[data-lab-result]');
+        const activityUrlBase = root.dataset.activityUrlBase || '';
         const config = manifest?.engine?.config || {};
         const activity = manifest?.activity || {};
 
@@ -23,9 +24,13 @@ window.CursoMILabEngines.postgresql_pglite = {
         const maxRows = Math.max(10, Math.min(500, Number(config.max_result_rows || 200)));
         const timeoutMs = Math.max(1000, Math.min(30000, Number(config.statement_timeout_ms || 10000)));
 
-        editor.disabled = true;
+        // O aluno pode começar a digitar imediatamente. Apenas a execução
+        // aguarda o PostgreSQL ficar pronto.
+        editor.disabled = false;
+        editor.readOnly = false;
         runButton.disabled = true;
-        showStatus('Carregando o PostgreSQL no navegador...', 'warning');
+        showStatus('Você já pode digitar. Carregando o PostgreSQL para liberar a execução...', 'warning');
+        editor.focus();
 
         const imported = await import(moduleUrl);
         const PGlite = imported?.PGlite;
@@ -66,6 +71,7 @@ window.CursoMILabEngines.postgresql_pglite = {
         }
 
         editor.disabled = false;
+        editor.readOnly = false;
         runButton.disabled = false;
         showStatus('PostgreSQL pronto. Digite seu SQL e execute.', 'success');
 
@@ -260,6 +266,12 @@ window.CursoMILabEngines.postgresql_pglite = {
                     note.className = 'lab-sql-completed';
                     note.textContent = '✓ Aula concluída. Você já pode seguir para a próxima etapa.';
                     resultHost.appendChild(note);
+                } else if (validation.passed && validation.next_activity_id && activityUrlBase) {
+                    const next = document.createElement('a');
+                    next.className = 'ld-admin-btn lab-next-activity';
+                    next.href = activityUrlBase + String(validation.next_activity_id);
+                    next.textContent = 'Próximo exercício →';
+                    resultHost.appendChild(next);
                 }
             } catch (error) {
                 const elapsed = performance.now() - startedAt;
@@ -285,12 +297,12 @@ window.CursoMILabEngines.postgresql_pglite = {
         });
 
         if (resetButton) {
-            resetButton.textContent = 'Restaurar código inicial';
+            resetButton.textContent = 'Limpar editor';
             resetButton.addEventListener('click', () => {
-                editor.value = String(activity.starter_code || '');
+                editor.value = '';
                 clearResult();
                 showStatus(
-                    'O código inicial foi restaurado. O banco desta trilha foi preservado.',
+                    'Editor limpo. O banco desta trilha foi preservado.',
                     'warning'
                 );
                 editor.focus();
