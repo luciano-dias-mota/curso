@@ -286,12 +286,15 @@ final class LabService
                         'Aula concluída após laboratório prático'
                     );
                     $lessonCompleted = true;
-                    $nextLessonId = $this->nextAvailableLessonId(
-                        $pdo,
-                        $userId,
-                        (int) ($completion['course_id'] ?? $activity['course_id']),
-                        (int) $activity['lesson_id']
-                    );
+                    $nextLessonId = isset($completion['next_lesson_id'])
+                        && (int) $completion['next_lesson_id'] > 0
+                            ? (int) $completion['next_lesson_id']
+                            : $this->nextAvailableLessonId(
+                                $pdo,
+                                $userId,
+                                (int) ($completion['course_id'] ?? $activity['course_id']),
+                                (int) $activity['lesson_id']
+                            );
                 }
 
                 if (!$lessonCompleted) {
