@@ -3138,7 +3138,7 @@ a.pg-side-link:hover,
 .pg-reading-reflection h3 {margin:0 0 5px;font-size:15px;color:#0b376f}
 .pg-reading-reflection p {margin:0 0 11px;color:#345a83;font-size:12px;line-height:1.6}
 .pg-reading-reflection label {display:block;margin:0 0 6px;font-size:12px;font-weight:800;color:#0b376f}
-.pg-reading-reflection textarea {display:block;width:100%;min-height:90px;box-sizing:border-box;padding:12px 13px;border:1px solid #a9c9ff;border-radius:9px;resize:vertical;background:#fff;color:#163758;font:13px/1.5 inherit}
+.pg-reading-reflection textarea {display:block;width:100%;min-height:90px;box-sizing:border-box;padding:12px 13px;border:1px solid #a9c9ff;border-radius:9px;resize:vertical;background:#fff;color:#163758;font-size:13px;line-height:1.5;font-family:inherit}
 .pg-reading-reflection textarea:focus-visible {outline:3px solid rgba(13,101,232,.24);border-color:#0d65e8}
 .pg-reading-reflection small {display:block;margin-top:7px;color:#4c719b;font-size:10px}
 .pg-lesson-footer-nav {display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0 20px}
