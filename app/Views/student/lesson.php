@@ -242,7 +242,7 @@ $nextUrl = $currentIndex < $totalBlocks
     : null;
 ?>
 
-<section class="study-room">
+<section class="study-room <?= $isPostgresLesson ? 'study-room--postgres-didactic' : '' ?>">
 
     <aside class="study-map">
         <div class="study-map-head">
@@ -390,7 +390,7 @@ $nextUrl = $currentIndex < $totalBlocks
 
                     <a
                         class="<?= $number === $currentIndex ? 'active' : '' ?>"
-                        href="<?= e(url('/aula/' . $lesson['id'] . '?bloco=' . $number)) ?>"
+                        href="<?= e(url($lessonBasePath . '?bloco=' . $number)) ?>"
                     >
                         <span><?= $number ?></span>
                         <?= e($block['title'] ?: 'Tela ' . $number) ?>
@@ -520,6 +520,51 @@ $nextUrl = $currentIndex < $totalBlocks
 
             </div>
         </article>
+
+        <?php if ($isPostgresLesson): ?>
+            <section class="pg-reading-reflection" aria-labelledby="pg-reflection-title">
+                <div class="pg-reading-reflection-head">
+                    <span aria-hidden="true">✎</span>
+                    <div>
+                        <h3 id="pg-reflection-title">Leitura ativa</h3>
+                        <p>Explique com suas palavras o conceito principal desta tela e onde você usaria isso em um banco de dados.</p>
+                    </div>
+                </div>
+                <label for="pg-reading-notes">Seu resumo pessoal</label>
+                <textarea id="pg-reading-notes" rows="3" placeholder="Ex.: Usaria SELECT para consultar os dados de uma tabela..." data-lesson-note="<?= (int) $lesson['id'] ?>:<?= (int) $currentIndex ?>"></textarea>
+                <small>Rascunho local neste navegador. Não substitui o laboratório obrigatório.</small>
+            </section>
+
+            <nav class="pg-lesson-footer-nav" aria-label="Navegação ao final do conteúdo">
+                <?php if ($prevUrl): ?>
+                    <a class="secondary" href="<?= e($prevUrl) ?>">← Anterior</a>
+                <?php else: ?>
+                    <span></span>
+                <?php endif; ?>
+                <small>Tela <?= $currentIndex ?> de <?= $totalBlocks ?></small>
+                <?php if ($nextUrl): ?>
+                    <a class="primary" href="<?= e($nextUrl) ?>">Próximo →</a>
+                <?php else: ?>
+                    <form action="<?= e(url($lessonBasePath . '/concluir')) ?>" method="post">
+                        <?= Csrf::input() ?>
+                        <button type="submit" class="success"><?= $completionMode === 'lab' ? 'Abrir laboratório SQL →' : 'Concluir etapa →' ?></button>
+                    </form>
+                <?php endif; ?>
+            </nav>
+
+            <script>
+            (() => {
+                const notes = document.querySelectorAll('[data-lesson-note]');
+                for (const area of notes) {
+                    const key = 'ldacademy:pgsql:reading:' + area.dataset.lessonNote;
+                    try { area.value = localStorage.getItem(key) || ''; } catch (_) {}
+                    area.addEventListener('input', () => {
+                        try { localStorage.setItem(key, area.value); } catch (_) {}
+                    });
+                }
+            })();
+            </script>
+        <?php endif; ?>
 
     </section>
 
