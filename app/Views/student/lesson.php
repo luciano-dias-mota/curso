@@ -55,7 +55,7 @@ $meta = $types[$currentType] ?? $types['theory'];
 
 $visited = (int) ($progress['blocks_viewed'] ?? 0);
 $pct = $totalBlocks > 0
-    ? min(100, (int) round(($visited / $totalBlocks) * 100))
+    ? min(100, (int) round(($currentIndex / $totalBlocks) * 100))
     : 0;
 
 $analogy = $currentType === 'video'
@@ -233,6 +233,32 @@ $renderQuestionPreview = static function (string $text): string {
     return $html;
 };
 
+
+$renderPostgresLessonContent = static function (string $text) use ($renderNormalContent): string {
+    // Renderização pedagógica de comandos SQL; demais conteúdos usam o renderer original escapado.
+    $lines = preg_split('/\\R/', $text) ?: [];
+    $html = '';
+    $buffer = [];
+    $flush = static function () use (&$buffer, &$html, $renderNormalContent): void {
+        if ($buffer) {
+            $html .= $renderNormalContent(implode("\\n", $buffer));
+            $buffer = [];
+        }
+    };
+    foreach ($lines as $line) {
+        $trim = trim($line);
+        if ($trim !== '' && preg_match('/^(?:SELECT|WHERE|FROM|ORDER\\s+BY|GROUP\\s+BY|HAVING|INSERT|UPDATE|DELETE|CREATE|ALTER|DROP|WITH|JOIN|AND|OR|NOT)\\b/i', $trim)) {
+            $flush();
+            $html .= '<div class="pg-sql-demo"><div class="pg-sql-demo-label">SQL · exemplo de consulta</div><pre><code>'
+                . e($trim) . '</code></pre></div>';
+        } else {
+            $buffer[] = $line;
+        }
+    }
+    $flush();
+    return $html;
+};
+
 $prevUrl = $currentIndex > 1
     ? url($lessonBasePath . '?bloco=' . ($currentIndex - 1))
     : null;
@@ -242,10 +268,25 @@ $nextUrl = $currentIndex < $totalBlocks
     : null;
 ?>
 
+<?php if ($isPostgresLesson): ?>
+<div class="pg-lesson-hero">
+    <div class="pg-lesson-hero-row">
+        <a href="<?= e(url($phasePath)) ?>">← Voltar à fase</a>
+        <button type="button" data-focus-toggle aria-pressed="false">◉ Modo foco</button>
+    </div>
+    <span class="pg-lesson-kicker"><?= e($lesson['module_title']) ?></span>
+    <h1><?= e($lesson['title']) ?></h1>
+    <p><?= e($lesson['phase_title']) ?></p>
+    <div class="pg-lesson-chips"><span>Tela <?= $currentIndex ?> de <?= $totalBlocks ?></span><span>~<?= (int) $lesson['estimated_minutes'] ?> min</span><span>+<?= (int) $lesson['xp_reward'] ?> XP</span></div>
+    <div class="pg-lesson-track"><span style="width:<?= $pct ?>%"></span></div>
+    <small>Tela <?= $currentIndex ?> de <?= $totalBlocks ?> · <?= $pct ?>% concluído</small>
+</div>
+<?php endif; ?>
 <section class="study-room <?= $isPostgresLesson ? 'study-room--postgres-didactic' : '' ?>">
 
     <aside class="study-map">
-        <div class="study-map-head">
+        <?php if ($isPostgresLesson): ?><div class="pg-map-heading">Mapa da aula</div><?php endif; ?>
+        <div class="study-map-head" <?= $isPostgresLesson ? 'hidden' : '' ?>>
             <a class="back study-back" href="<?= e(url($phasePath)) ?>">
                 ← Voltar à fase
             </a>
@@ -306,7 +347,7 @@ $nextUrl = $currentIndex < $totalBlocks
 
     <section class="study-stage">
 
-        <header class="stage-top">
+        <header class="stage-top" <?= $isPostgresLesson ? 'hidden' : '' ?>>
             <div>
                 <span class="eyebrow"><?= e($lesson['module_title']) ?></span>
                 <h1><?= e($lesson['phase_title']) ?></h1>
@@ -328,7 +369,7 @@ $nextUrl = $currentIndex < $totalBlocks
         </header>
 
         <!-- Navegação principal fica no topo: nunca fica escondida abaixo da dobra. -->
-        <nav class="study-nav-top" aria-label="Navegação da aula">
+        <nav class="study-nav-top" <?= $isPostgresLesson ? 'hidden' : '' ?> aria-label="Navegação da aula">
             <div class="study-nav-side">
                 <?php if ($prevUrl): ?>
                     <a class="secondary" data-prev href="<?= e($prevUrl) ?>">
@@ -461,7 +502,11 @@ $nextUrl = $currentIndex < $totalBlocks
 
                     <?= $renderQuestionPreview($displayContent) ?>
                 <?php else: ?>
-                    <?= $renderNormalContent($displayContent) ?>
+                    <?php if ($isPostgresLesson): ?>
+                        <?= $renderPostgresLessonContent($displayContent) ?>
+                    <?php else: ?>
+                        <?= $renderNormalContent($displayContent) ?>
+                    <?php endif; ?>
                 <?php endif; ?>
 
                 <?php if ($analogy): ?>
@@ -481,6 +526,7 @@ $nextUrl = $currentIndex < $totalBlocks
                     </aside>
                 <?php endif; ?>
 
+                <?php if (!$isPostgresLesson): ?>
                 <aside class="pedagogy-card study-tip-card">
                     <div class="pedagogy-icon">✓</div>
 
@@ -492,6 +538,8 @@ $nextUrl = $currentIndex < $totalBlocks
                         <p><?= e($studyPrompt['text']) ?></p>
                     </div>
                 </aside>
+
+                <?php endif; ?>
 
                 <?php if ($currentIndex >= $totalBlocks && !$optional): ?>
                     <aside class="lesson-exercise-gate">

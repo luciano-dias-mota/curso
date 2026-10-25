@@ -3160,3 +3160,46 @@ a.pg-side-link:hover,
  .pg-lesson-footer-nav {flex-wrap:wrap}
  .pg-lesson-footer-nav small {order:-1;width:100%;text-align:center}
 }
+
+
+/* Ajustes fiéis ao layout didático de referência */
+.pg-lesson-hero{max-width:1210px;margin:0 auto 17px;padding:4px 2px;color:#102d52}
+.pg-lesson-hero-row{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px}
+.pg-lesson-hero-row a{color:#075ed1;font-size:12px;font-weight:800;text-decoration:none}
+.pg-lesson-hero-row button{cursor:pointer;border:1px solid #bfd5f5;background:#fff;color:#174a85;padding:8px 13px;border-radius:9px;font-size:11px;font-weight:750}
+.pg-lesson-kicker{display:block;color:#0a62d5;letter-spacing:.08em;text-transform:uppercase;font-size:10px;font-weight:900}
+.pg-lesson-hero h1{margin:5px 0;font-size:clamp(23px,2.45vw,34px);line-height:1.15;letter-spacing:-.045em;color:#102a4e}
+.pg-lesson-hero p{margin:0 0 13px;color:#607793;font-size:13px}
+.pg-lesson-chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:13px}
+.pg-lesson-chips span{padding:6px 11px;border-radius:999px;background:#fff;border:1px solid #d1e1f8;color:#194b8e;font-size:11px;font-weight:750}
+.pg-lesson-chips span:last-child{background:#e7f0ff}
+.pg-lesson-track{height:6px;overflow:hidden;border-radius:99px;background:#d4e2f7}
+.pg-lesson-track span{display:block;height:100%;border-radius:99px;background:#107af0}
+.pg-lesson-hero > small{display:block;margin-top:7px;font-size:10px;color:#5c7493}
+.study-room--postgres-didactic{max-width:1210px;margin:auto;grid-template-columns:250px minmax(0,1fr);gap:16px}
+.study-room--postgres-didactic .study-map{top:72px;position:sticky;max-height:calc(100vh - 90px)}
+.study-room--postgres-didactic .pg-map-heading{text-align:center;color:#112f56;font-size:15px;font-weight:850;margin:0 0 8px}
+.study-room--postgres-didactic .ring{width:76px;height:76px;margin:9px auto 15px}
+.study-room--postgres-didactic .study-stage{gap:0;border:1px solid #dce8f8;border-radius:17px;background:#fff;overflow:hidden;box-shadow:0 10px 32px rgba(12,52,103,.07)}
+.study-room--postgres-didactic .study-card{box-shadow:none;border:0;border-radius:0;overflow:visible}
+.study-room--postgres-didactic .study-card > header{padding:17px 21px;border-bottom:1px solid #e0e8f4;background:#f4f8ff}
+.study-room--postgres-didactic .study-content{padding:20px 22px 8px}
+.study-room--postgres-didactic .content-p{margin:0 0 16px;font-size:13.5px;line-height:1.75}
+.study-room--postgres-didactic .study-content .pg-sql-demo{margin:14px 0;border-radius:12px;background:#0b2342;overflow:hidden;box-shadow:0 5px 14px rgba(3,25,54,.22)}
+.pg-sql-demo-label{padding:10px 13px;background:#153761;color:#d2e5ff;font-size:11px;font-weight:700}
+.pg-sql-demo pre{margin:0;padding:17px 14px;overflow:auto;color:#e8f4ff;font:600 13px/1.65 Consolas,Monaco,monospace;white-space:pre-wrap}
+.study-room--postgres-didactic .pg-reading-reflection{margin:5px 22px 0;padding:18px;border-radius:12px}
+.study-room--postgres-didactic .pg-lesson-footer-nav{margin:0 22px;padding:17px 0}
+.study-room--postgres-didactic .study-tip-card{display:none}
+.study-room--postgres-didactic .map-item{font-size:11px}
+@media(max-width:820px){
+ .study-room--postgres-didactic{grid-template-columns:1fr}
+ .study-room--postgres-didactic .study-map{position:static;max-height:none}
+ .pg-lesson-hero{padding-inline:5px}
+}
+@media(max-width:560px){
+ .study-room--postgres-didactic .study-map{display:none}
+ .study-room--postgres-didactic .pg-reading-reflection{margin:8px 12px 0}
+ .study-room--postgres-didactic .pg-lesson-footer-nav{margin:0 12px}
+ .study-room--postgres-didactic .study-content{padding:16px 13px 5px}
+}
