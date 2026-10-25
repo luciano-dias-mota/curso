@@ -3335,3 +3335,129 @@ a.pg-side-link:hover,
  .study-room--postgres-didactic .pg-reading-reflection textarea {min-height:37px}
  .study-room--postgres-didactic {height:max(400px,calc(100dvh - 215px))}
 }
+
+
+/* PostgreSQL: laboratório compacto com área de leitura rolável internamente.
+   Apenas a folha exclusiva PostgreSQL; não afeta o Preparatório PMMT. */
+@media (min-width: 900px) and (min-height: 640px) {
+ .postgres-course-main:has(.lab-room[data-lab-root]) {
+   padding-top: 8px;
+   padding-bottom: 8px;
+ }
+ .postgres-course-main .lab-room[data-lab-root] {
+   height: max(440px, calc(100dvh - 105px));
+   min-height: 0;
+   grid-template-columns: 218px minmax(0, 1fr);
+   gap: 12px;
+   align-items: stretch;
+ }
+ .postgres-course-main .lab-room[data-lab-root] > .study-map {
+   position: static;
+   height: 100%;
+   min-height: 0;
+   max-height: none;
+   overflow: auto;
+   padding: 12px;
+ }
+ .postgres-course-main .lab-room[data-lab-root] .study-map-head h2 {
+   font-size: 15px;
+   line-height: 1.3;
+ }
+ .postgres-course-main .lab-room[data-lab-root] .ld-admin-panel {
+   margin-top: 9px;
+   padding: 9px;
+ }
+ .postgres-course-main .lab-room[data-lab-root] .ld-admin-panel p {
+   margin: 3px 0;
+ }
+ .postgres-course-main .lab-room[data-lab-root] > .study-stage {
+   min-height: 0;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   gap: 7px;
+   overflow: hidden;
+ }
+ .postgres-course-main .lab-room[data-lab-root] .stage-top {
+   flex: 0 0 auto;
+   padding: 9px 13px;
+ }
+ .postgres-course-main .lab-room[data-lab-root] .stage-top h1 {
+   font-size: 17px;
+   line-height: 1.25;
+ }
+ .postgres-course-main .lab-room[data-lab-root] .study-card {
+   min-height: 0;
+   flex: 1 1 auto;
+   display: flex;
+   flex-direction: column;
+   background: #fff;
+   border: 1px solid rgba(17,84,148,.12);
+ }
+ .postgres-course-main .lab-room[data-lab-root] .study-card > header {
+   flex: 0 0 auto;
+   padding: 9px 13px;
+ }
+ .postgres-course-main .lab-room[data-lab-root] .study-card > header h2 {
+   font-size: 15px;
+ }
+ .postgres-course-main .lab-room[data-lab-root] .study-content {
+   flex: 1 1 auto;
+   min-height: 0;
+   overflow-y: auto;
+   overscroll-behavior: contain;
+   scrollbar-width: thin;
+   padding: 9px 14px 12px;
+ }
+ .postgres-course-main .lab-room[data-lab-root] .study-content > .content-p {
+   margin: 0 0 7px;
+   font-size: 12px;
+   line-height: 1.48;
+ }
+ .postgres-course-main .lab-room[data-lab-root] .lab-guided-example,
+ .postgres-course-main .lab-room[data-lab-root] .lab-independent-banner {
+   margin: 7px 0;
+   padding: 9px 11px;
+ }
+ .postgres-course-main .lab-room[data-lab-root] .lab-guided-example-head {
+   margin-bottom: 7px;
+ }
+ .postgres-course-main .lab-room[data-lab-root] .lab-guided-example pre {
+   padding: 9px 11px;
+   font-size: 12px;
+   line-height: 1.45;
+   max-height: 150px;
+   overflow: auto;
+ }
+ .postgres-course-main .lab-room[data-lab-root] .lab-editor-label {
+   margin: 8px 0 5px;
+ }
+ .postgres-course-main .lab-room[data-lab-root] .lab-sql-editor,
+ .postgres-course-main .lab-room[data-lab-root] textarea[data-lab-fallback-editor] {
+   min-height: 105px;
+   height: clamp(105px, 19dvh, 185px);
+   padding: 10px 12px;
+   font-size: 12px;
+ }
+ .postgres-course-main .lab-room[data-lab-root] .ld-admin-form-actions {
+   margin-top: 8px;
+   padding: 5px 0;
+   position: sticky;
+   bottom: 0;
+   z-index: 3;
+   background: #fff;
+   border-top: 1px solid #e5eef8;
+ }
+ .postgres-course-main .lab-room[data-lab-root] .ld-admin-btn {
+   min-height: 32px;
+ }
+}
+@media (min-width: 900px) and (min-height: 640px) and (max-height: 770px) {
+ .postgres-course-main .lab-room[data-lab-root] {
+   height: max(400px, calc(100dvh - 98px));
+ }
+ .postgres-course-main .lab-room[data-lab-root] .lab-sql-editor,
+ .postgres-course-main .lab-room[data-lab-root] textarea[data-lab-fallback-editor] {
+   height: 105px;
+ }
+}
