@@ -21,7 +21,8 @@ $certificatesUrl = $courseId > 0 ? '/curso/' . $courseId . '/certificados' : '/d
 $profileUrl = $courseId > 0 ? '/curso/' . $courseId . '/perfil' : '/dashboard';
 $helpUrl = $courseId > 0 ? '/curso/' . $courseId . '/ajuda' : '/dashboard';
 $currentPath = parse_url((string) ($_SERVER['REQUEST_URI'] ?? ''), PHP_URL_PATH) ?: '';
-$isPgHome = $courseId > 0 && $currentPath === url($courseHome);
+$courseHomePath = parse_url(url($courseHome), PHP_URL_PATH) ?: '';
+$isPgHome = $courseId > 0 && rtrim($currentPath, '/') === rtrim($courseHomePath, '/');
 
 $pageTitle = isset($title)
     ? $title . ' • PostgreSQL • LD Academy'
@@ -56,7 +57,7 @@ $pageTitle = isset($title)
 
             <nav class="pg-side-nav" aria-label="Navegação do curso">
                 <a
-                    class="pg-side-link <?= $currentPath === url($courseHome) ? 'is-active' : '' ?>"
+                    class="pg-side-link <?= $isPgHome ? 'is-active' : '' ?>"
                     href="<?= e(url($courseHome)) ?>"
                 >
                     <span aria-hidden="true">⌂</span>
