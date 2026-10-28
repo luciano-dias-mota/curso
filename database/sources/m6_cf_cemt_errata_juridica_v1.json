@@ -1,0 +1,95 @@
+{
+  "format_version": 1,
+  "verified_on": "2026-10-28",
+  "module_slug": "modulo-6-direito-constitucional-e-legislacao-institucional-da-pmmt",
+  "notice": "Errata jurídica para estudo e questões inéditas. Esta fonte não afirma correção automática de aulas preexistentes do banco, que precisam ser auditadas separadamente.",
+  "items": [
+    {
+      "key": "CF_DOMICILIO_HORARIO",
+      "severity": "alto",
+      "topic": "CF art. 5º, XI: entrada em domicílio por mandado",
+      "incorrect": "A Constituição define, de modo rígido, o período diurno como 6h a 18h.",
+      "correct": "A Constituição exige cumprimento de determinação judicial durante o dia, mas não fixa no inciso XI o intervalo 6h–18h. No RHC 196.496/RN, Terceira Seção do STJ, divulgado em 15/01/2026, entendeu que a Lei 13.869/2019 demarca, para mandado de busca e apreensão domiciliar, a faixa de 5h a 21h. Não confundir regra do mandado com as exceções constitucionais de flagrante, desastre, socorro e consentimento.",
+      "sources": [
+        "https://www4.planalto.gov.br/legislacao/portal-legis/legislacao-1/constituicao",
+        "https://www.stj.jus.br/sites/portalp/paginas/comunicacao/noticias/2026/15012026-para-terceira-secao--busca-domiciliar-pode-ocorrer-a-partir-das-5h--mesmo-sem-luz-solar.aspx"
+      ]
+    },
+    {
+      "key": "CF_PM_EXCLUSIVIDADE",
+      "severity": "alto",
+      "topic": "CF art. 144, § 5º e STF Tema 656",
+      "incorrect": "O policiamento ostensivo é exclusivo e privativo da Polícia Militar, sem outras possibilidades constitucionais.",
+      "correct": "A CF atribui às PMs a polícia ostensiva e a preservação da ordem pública. O STF, Tema 656 (RE 608588, julgamento em 20/02/2025), reconheceu constitucional a atuação das guardas municipais em segurança urbana, inclusive policiamento ostensivo e comunitário, respeitadas atribuições dos demais órgãos e vedadas funções de polícia judiciária.",
+      "sources": [
+        "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=RE&incidente=3832832&numeroProcesso=608588&numeroTema=656",
+        "https://www4.planalto.gov.br/legislacao/portal-legis/legislacao-1/constituicao"
+      ]
+    },
+    {
+      "key": "CF_PRESO_INCISOS",
+      "severity": "alto",
+      "topic": "CF art. 5º, incisos LVIII e LXI a LXVI",
+      "incorrect": "A identificação dos responsáveis pela prisão ou interrogatório consta do inciso LXI; a CF veda identificação datiloscópica sempre que houver documento civil.",
+      "correct": "A identidade dos responsáveis pela prisão/interrogatório é garantida no inciso LXIV. O inciso LVIII diz que o civilmente identificado não será submetido a identificação CRIMINAL, salvo hipóteses legais; não reduzir a garantia apenas à coleta de digitais. Os incisos LXI, LXII, LXIII, LXV e LXVI disciplinam prisão, comunicação, silêncio/assistência, relaxamento e liberdade provisória.",
+      "sources": [
+        "https://www4.planalto.gov.br/legislacao/portal-legis/legislacao-1/constituicao"
+      ]
+    },
+    {
+      "key": "CE_COMANDO_ARTIGO",
+      "severity": "alto",
+      "topic": "CE-MT art. 66, XII versus arts. 80/81",
+      "incorrect": "O comando supremo do Governador está previsto no art. 80 ou 81 da Constituição Estadual.",
+      "correct": "O comando supremo do Governador sobre Polícia Penal, PM e CBM está no art. 66, XII, após a EC 96/2021; o art. 80 trata da direção da PM e escolha do Comandante-Geral e o art. 81 da atuação da PM, inclusive polícia judiciária militar.",
+      "sources": [
+        "https://iomat.mt.gov.br/legislacao/diario_oficial/detalhes/174399",
+        "https://www2.senado.leg.br/bdsf/bitstream/handle/id/70444/Constituicao_Estado_MT.pdf"
+      ]
+    },
+    {
+      "key": "CE_ART_40_41",
+      "severity": "alto",
+      "topic": "CE-MT arts. 39, 40 e 41",
+      "incorrect": "É proibido aumento de despesa em QUALQUER hipótese; 45 dias de urgência correm inclusive no recesso e nos projetos de lei complementar.",
+      "correct": "Art. 40, I, ressalva o art. 164; art. 41, §2º, suspende o prazo de 45 dias no recesso e exclui projetos de lei complementar. Art. 39, parágrafo único, III: efetivos da Polícia Penal; a expressão de iniciativa legislativa 'à Procuradoria-Geral do Estado' no caput sofreu declaração de inconstitucionalidade na ADI 291.",
+      "sources": [
+        "https://www2.senado.leg.br/bdsf/bitstream/handle/id/70444/Constituicao_Estado_MT.pdf"
+      ]
+    },
+    {
+      "key": "CE_JUSTICA_MILITAR",
+      "severity": "alto",
+      "topic": "CE-MT art. 101 e CF art. 125, §§4º e 5º",
+      "incorrect": "Todos os crimes militares estaduais são necessariamente julgados pelo Conselho de Justiça Militar em primeiro grau.",
+      "correct": "É indispensável ler o art. 101 estadual com a CF art. 125, §§4º e 5º: juiz de direito do juízo militar decide singularmente crimes militares cometidos contra civis e ações contra atos disciplinares; o Conselho, sob presidência de juiz de direito, julga demais crimes militares; competência do Tribunal do Júri ressalvada quando vítima civil nos termos da CF. Não tratar o art. 101 estadual isoladamente como regra absoluta.",
+      "sources": [
+        "https://www4.planalto.gov.br/legislacao/portal-legis/legislacao-1/constituicao",
+        "https://www2.senado.leg.br/bdsf/bitstream/handle/id/70444/Constituicao_Estado_MT.pdf"
+      ]
+    },
+    {
+      "key": "CE_TCE_NOMEACAO",
+      "severity": "medio",
+      "topic": "CE-MT art. 49 composição de conselheiros",
+      "incorrect": "Os quatro Conselheiros indicados pela Assembleia são nomeados diretamente pela Assembleia, não pelo Governador.",
+      "correct": "Art. 49: TCE-MT tem sete Conselheiros; art. 49, §2º: três escolhidos pelo Governador (um livre, dois alternadamente em lista tríplice de auditores e Ministério Público junto ao TCE) e quatro escolhidos pela ALMT; o §1º dispõe sobre nomeação pelo Governador após aprovação da ALMT. Diferenciar escolha de nomeação. Requisitos etários: mais de 30 e menos de 70 anos (EC 107/2022).",
+      "sources": [
+        "https://www2.senado.leg.br/bdsf/bitstream/handle/id/70444/Constituicao_Estado_MT.pdf",
+        "https://diariooficial.al.mt.gov.br/publicacoes/16070/"
+      ]
+    },
+    {
+      "key": "CE_EMENDAS",
+      "severity": "medio",
+      "topic": "CE-MT versão do texto constitucional",
+      "incorrect": "Texto compilado até dezembro de 2024 representa necessariamente a redação integral vigente em outubro de 2026.",
+      "correct": "A versão compilada oficial recuperada está atualizada até EC 119/2024. Houve EC 121/2025 e EC 122/2026; a EC 122/2026 adicionou §3º ao art. 85 (Polícia Penal). Ao citar vigência, cotejar emendas posteriores no Diário Oficial e conferir texto da avaliação.",
+      "sources": [
+        "https://www2.senado.leg.br/bdsf/bitstream/handle/id/70444/Constituicao_Estado_MT.pdf",
+        "https://diariooficial.al.mt.gov.br/publicacoes/33520/",
+        "https://diariooficial.al.mt.gov.br/publicacoes/34997/"
+      ]
+    }
+  ]
+}
