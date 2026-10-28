@@ -1,0 +1,1911 @@
+{
+  "format_version": 1,
+  "module_slug": "modulo-6-direito-constitucional-e-legislacao-institucional-da-pmmt",
+  "source_label": "M6 CF+CE-MT | 56 exercícios inéditos UFMT | dificuldade Medium | revisão 2026-10-28",
+  "questions": [
+    {
+      "topic": "cf5",
+      "source_key": "M6-CF-CEMT-V1-CF5-01",
+      "statement": "Qual conjunto corresponde ao art. 1º, I a V, da CF?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Fundamentos são diferentes dos objetivos fundamentais e dos princípios internacionais.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Legislativo, Executivo e Judiciário, independentes e harmônicos.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Soberania, cidadania, dignidade da pessoa humana, valores sociais do trabalho e da livre iniciativa, pluralismo político.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Flagrante delito, desastre ou para prestar socorro.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Das 5h às 21h, na interpretação do RHC 196.496/RN.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Civilmente identificado não será submetido a identificação criminal, salvo hipóteses previstas em lei.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "cf5",
+      "source_key": "M6-CF-CEMT-V1-CF5-02",
+      "statement": "Segundo o art. 2º da CF, quais são os Poderes da União?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). O art. 2º estabelece três Poderes independentes e harmônicos.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Flagrante delito, desastre ou para prestar socorro.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Das 5h às 21h, na interpretação do RHC 196.496/RN.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Civilmente identificado não será submetido a identificação criminal, salvo hipóteses previstas em lei.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Art. 5º, LXIV.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Legislativo, Executivo e Judiciário, independentes e harmônicos.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "cf5",
+      "source_key": "M6-CF-CEMT-V1-CF5-03",
+      "statement": "O art. 5º, XI, permite ingresso sem consentimento, independentemente do horário, em quais situações?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Essas exceções não exigem horário diurno como o mandado judicial.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Das 5h às 21h, na interpretação do RHC 196.496/RN.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Civilmente identificado não será submetido a identificação criminal, salvo hipóteses previstas em lei.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Flagrante delito, desastre ou para prestar socorro.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "Art. 5º, LXIV.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Ao juiz competente e à família ou pessoa indicada pelo preso.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "cf5",
+      "source_key": "M6-CF-CEMT-V1-CF5-04",
+      "statement": "Qual horário foi reconhecido pelo STJ, em janeiro de 2026, para cumprimento de mandado de busca e apreensão domiciliar?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). A CF exige dia para mandado; a Terceira Seção do STJ considerou o marco legal de 5h–21h.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Das 5h às 21h, na interpretação do RHC 196.496/RN.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Civilmente identificado não será submetido a identificação criminal, salvo hipóteses previstas em lei.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Art. 5º, LXIV.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Ao juiz competente e à família ou pessoa indicada pelo preso.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Art. 5º, LXIII.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "cf5",
+      "source_key": "M6-CF-CEMT-V1-CF5-05",
+      "statement": "Qual expressão consta do inciso LVIII do art. 5º?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). A expressão constitucional é identificação criminal, não apenas coleta datiloscópica.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Art. 5º, LXIV.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Ao juiz competente e à família ou pessoa indicada pelo preso.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Art. 5º, LXIII.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Civilmente identificado não será submetido a identificação criminal, salvo hipóteses previstas em lei.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "Relaxamento imediato pela autoridade judiciária.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "cf5",
+      "source_key": "M6-CF-CEMT-V1-CF5-06",
+      "statement": "Qual inciso assegura a identificação dos responsáveis pela prisão ou interrogatório?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Não confundir com LXI, que regula os fundamentos da prisão.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Ao juiz competente e à família ou pessoa indicada pelo preso.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Art. 5º, LXIV.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Art. 5º, LXIII.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Relaxamento imediato pela autoridade judiciária.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Não manter alguém preso quando a lei admitir liberdade provisória, com ou sem fiança.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "cf5",
+      "source_key": "M6-CF-CEMT-V1-CF5-07",
+      "statement": "A quem deve ser comunicada imediatamente a prisão e seu local, art. 5º, LXII?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Art. 5º, LXII: comunicação imediata.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Art. 5º, LXIII.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Relaxamento imediato pela autoridade judiciária.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Não manter alguém preso quando a lei admitir liberdade provisória, com ou sem fiança.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Soberania, cidadania, dignidade da pessoa humana, valores sociais do trabalho e da livre iniciativa, pluralismo político.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Ao juiz competente e à família ou pessoa indicada pelo preso.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "cf5",
+      "source_key": "M6-CF-CEMT-V1-CF5-08",
+      "statement": "Em qual inciso estão direito ao silêncio e assistência da família e advogado?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). O inciso LXIII contém esse conjunto de garantias do preso.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Relaxamento imediato pela autoridade judiciária.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Não manter alguém preso quando a lei admitir liberdade provisória, com ou sem fiança.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Art. 5º, LXIII.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "Soberania, cidadania, dignidade da pessoa humana, valores sociais do trabalho e da livre iniciativa, pluralismo político.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Legislativo, Executivo e Judiciário, independentes e harmônicos.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "cf5",
+      "source_key": "M6-CF-CEMT-V1-CF5-09",
+      "statement": "O que determina a CF quanto à prisão ilegal no art. 5º, LXV?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Relaxamento da prisão ilegal difere de liberdade provisória.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Relaxamento imediato pela autoridade judiciária.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Não manter alguém preso quando a lei admitir liberdade provisória, com ou sem fiança.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Soberania, cidadania, dignidade da pessoa humana, valores sociais do trabalho e da livre iniciativa, pluralismo político.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Legislativo, Executivo e Judiciário, independentes e harmônicos.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Flagrante delito, desastre ou para prestar socorro.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "cf5",
+      "source_key": "M6-CF-CEMT-V1-CF5-10",
+      "statement": "Qual é a garantia do art. 5º, LXVI?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Art. 5º, LXVI, traz liberdade provisória nas hipóteses legais.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Soberania, cidadania, dignidade da pessoa humana, valores sociais do trabalho e da livre iniciativa, pluralismo político.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Legislativo, Executivo e Judiciário, independentes e harmônicos.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Flagrante delito, desastre ou para prestar socorro.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Não manter alguém preso quando a lei admitir liberdade provisória, com ou sem fiança.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "Das 5h às 21h, na interpretação do RHC 196.496/RN.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "seguranca",
+      "source_key": "M6-CF-CEMT-V1-SEGURANCA-01",
+      "statement": "Como o art. 144 caput caracteriza a segurança pública?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Visa ordem pública e incolumidade das pessoas e patrimônio.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Polícias penais federal, estaduais e distrital.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Dever do Estado, direito e responsabilidade de todos.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Polícia Rodoviária Federal.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Polícia ostensiva e preservação da ordem pública.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Execução de atividades de defesa civil, além das atribuições legais.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "seguranca",
+      "source_key": "M6-CF-CEMT-V1-SEGURANCA-02",
+      "statement": "Que forças foram incluídas no inciso VI do art. 144 pela EC 104/2019?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Polícias penais passaram a constar expressamente do rol do caput.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Polícia Rodoviária Federal.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Polícia ostensiva e preservação da ordem pública.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Execução de atividades de defesa civil, além das atribuições legais.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Segurança dos estabelecimentos penais.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Polícias penais federal, estaduais e distrital.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "seguranca",
+      "source_key": "M6-CF-CEMT-V1-SEGURANCA-03",
+      "statement": "Quem patrulha ostensivamente as rodovias federais, art. 144, §2º?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). PRF exerce patrulhamento ostensivo das rodovias federais.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Polícia ostensiva e preservação da ordem pública.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Execução de atividades de defesa civil, além das atribuições legais.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Polícia Rodoviária Federal.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "Segurança dos estabelecimentos penais.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Forças auxiliares e reserva do Exército.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "seguranca",
+      "source_key": "M6-CF-CEMT-V1-SEGURANCA-04",
+      "statement": "Às PMs, o art. 144, §5º, atribui qual tarefa?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Não deduzir exclusividade absoluta após Tema 656 do STF.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Polícia ostensiva e preservação da ordem pública.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Execução de atividades de defesa civil, além das atribuições legais.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Segurança dos estabelecimentos penais.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Forças auxiliares e reserva do Exército.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Governadores dos Estados, do Distrito Federal e dos Territórios, conforme o ente.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "seguranca",
+      "source_key": "M6-CF-CEMT-V1-SEGURANCA-05",
+      "statement": "Ao CBM, o art. 144, §5º, confere qual atribuição expressa?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Competência expressa de defesa civil é do CBM.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Segurança dos estabelecimentos penais.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Forças auxiliares e reserva do Exército.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Governadores dos Estados, do Distrito Federal e dos Territórios, conforme o ente.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Execução de atividades de defesa civil, além das atribuições legais.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "Segurança urbana, inclusive policiamento ostensivo e comunitário, sem polícia judiciária.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "seguranca",
+      "source_key": "M6-CF-CEMT-V1-SEGURANCA-06",
+      "statement": "Qual é a incumbência da Polícia Penal no art. 144, §5º-A?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). EC 104/2019: Polícia Penal e segurança prisional.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Forças auxiliares e reserva do Exército.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Segurança dos estabelecimentos penais.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Governadores dos Estados, do Distrito Federal e dos Territórios, conforme o ente.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Segurança urbana, inclusive policiamento ostensivo e comunitário, sem polícia judiciária.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "No art. 144, §8º.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "seguranca",
+      "source_key": "M6-CF-CEMT-V1-SEGURANCA-07",
+      "statement": "PM e CBM têm qual condição em relação ao Exército, art. 144, §6º?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Essa condição militar não se estende automaticamente à Polícia Civil.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Governadores dos Estados, do Distrito Federal e dos Territórios, conforme o ente.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Segurança urbana, inclusive policiamento ostensivo e comunitário, sem polícia judiciária.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "No art. 144, §8º.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Dever do Estado, direito e responsabilidade de todos.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Forças auxiliares e reserva do Exército.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "seguranca",
+      "source_key": "M6-CF-CEMT-V1-SEGURANCA-08",
+      "statement": "Quem exerce a subordinação indicada no art. 144, §6º, para polícias estaduais e distritais?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). PM, CBM, Polícias Civis e Penais estaduais/distrital subordinam-se aos governadores.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Segurança urbana, inclusive policiamento ostensivo e comunitário, sem polícia judiciária.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "No art. 144, §8º.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Governadores dos Estados, do Distrito Federal e dos Territórios, conforme o ente.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "Dever do Estado, direito e responsabilidade de todos.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Polícias penais federal, estaduais e distrital.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "seguranca",
+      "source_key": "M6-CF-CEMT-V1-SEGURANCA-09",
+      "statement": "Segundo o STF no Tema 656, o que podem fazer as guardas municipais?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Tema 656, RE 608588: respeitar atribuições dos outros órgãos.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Segurança urbana, inclusive policiamento ostensivo e comunitário, sem polícia judiciária.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "No art. 144, §8º.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Dever do Estado, direito e responsabilidade de todos.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Polícias penais federal, estaduais e distrital.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Polícia Rodoviária Federal.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "seguranca",
+      "source_key": "M6-CF-CEMT-V1-SEGURANCA-10",
+      "statement": "Onde a CF trata textualmente da possibilidade de constituir guardas municipais?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Guardas não integram os incisos I–VI do caput.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Dever do Estado, direito e responsabilidade de todos.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Polícias penais federal, estaduais e distrital.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Polícia Rodoviária Federal.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "No art. 144, §8º.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "Polícia ostensiva e preservação da ordem pública.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "legislativo",
+      "source_key": "M6-CF-CEMT-V1-LEGISLATIVO-01",
+      "statement": "Quem tem iniciativa privativa para leis sobre efetivos da PM e CBM na CE-MT?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Constituição Estadual, art. 39.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Polícia Penal (EC 96/2021).",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Governador do Estado (art. 39, parágrafo único, I).",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Iniciativa legislativa atribuída à Procuradoria-Geral do Estado.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "A ressalva do art. 164 da CE-MT.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Organização dos serviços administrativos da ALMT, dos Tribunais e do MP.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "legislativo",
+      "source_key": "M6-CF-CEMT-V1-LEGISLATIVO-02",
+      "statement": "Qual força também passou a constar da iniciativa de leis sobre efetivos, art. 39, III?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Art. 39, parágrafo único, III.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Iniciativa legislativa atribuída à Procuradoria-Geral do Estado.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "A ressalva do art. 164 da CE-MT.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Organização dos serviços administrativos da ALMT, dos Tribunais e do MP.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Quarenta e cinco dias.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Polícia Penal (EC 96/2021).",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "legislativo",
+      "source_key": "M6-CF-CEMT-V1-LEGISLATIVO-03",
+      "statement": "Qual expressão do art. 39 caput sofreu declaração de inconstitucionalidade na ADI 291?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). A expressão foi declarada inconstitucional pelo STF.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "A ressalva do art. 164 da CE-MT.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Organização dos serviços administrativos da ALMT, dos Tribunais e do MP.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Iniciativa legislativa atribuída à Procuradoria-Geral do Estado.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "Quarenta e cinco dias.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Não, fica suspenso durante o recesso.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "legislativo",
+      "source_key": "M6-CF-CEMT-V1-LEGISLATIVO-04",
+      "statement": "Que ressalva existe na proibição de aumento de despesa em projeto privativo do Governador?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Art. 40, I, não autoriza fórmula absoluta 'sem exceções'.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "A ressalva do art. 164 da CE-MT.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Organização dos serviços administrativos da ALMT, dos Tribunais e do MP.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Quarenta e cinco dias.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Não, fica suspenso durante o recesso.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Não, o art. 41, §2º, exclui projetos de lei complementar.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "legislativo",
+      "source_key": "M6-CF-CEMT-V1-LEGISLATIVO-05",
+      "statement": "Que projetos institucionais o art. 40, II, protege contra aumento de despesa?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Art. 40, II.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Quarenta e cinco dias.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Não, fica suspenso durante o recesso.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Não, o art. 41, §2º, exclui projetos de lei complementar.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Organização dos serviços administrativos da ALMT, dos Tribunais e do MP.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "Em qualquer fase de tramitação, começando o prazo da leitura no expediente.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "legislativo",
+      "source_key": "M6-CF-CEMT-V1-LEGISLATIVO-06",
+      "statement": "Qual é o prazo de urgência do art. 41, §1º, da CE-MT?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). A não manifestação leva inclusão na ordem do dia e sobrestamento.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Não, fica suspenso durante o recesso.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Quarenta e cinco dias.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Não, o art. 41, §2º, exclui projetos de lei complementar.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Em qualquer fase de tramitação, começando o prazo da leitura no expediente.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Governador do Estado (art. 39, parágrafo único, I).",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "legislativo",
+      "source_key": "M6-CF-CEMT-V1-LEGISLATIVO-07",
+      "statement": "O prazo de 45 dias da urgência corre no recesso da ALMT?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Art. 41, §2º.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Não, o art. 41, §2º, exclui projetos de lei complementar.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Em qualquer fase de tramitação, começando o prazo da leitura no expediente.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Governador do Estado (art. 39, parágrafo único, I).",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Polícia Penal (EC 96/2021).",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Não, fica suspenso durante o recesso.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "legislativo",
+      "source_key": "M6-CF-CEMT-V1-LEGISLATIVO-08",
+      "statement": "O prazo de urgência de 45 dias vale para projeto de lei complementar?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Essa é exceção expressa da Constituição Estadual.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Em qualquer fase de tramitação, começando o prazo da leitura no expediente.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Governador do Estado (art. 39, parágrafo único, I).",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Não, o art. 41, §2º, exclui projetos de lei complementar.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "Polícia Penal (EC 96/2021).",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Iniciativa legislativa atribuída à Procuradoria-Geral do Estado.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "legislativo",
+      "source_key": "M6-CF-CEMT-V1-LEGISLATIVO-09",
+      "statement": "Quando pode ser solicitada urgência depois de apresentado o projeto, art. 41, §3º?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). A urgência não precisa ser solicitada apenas no protocolo inicial.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Em qualquer fase de tramitação, começando o prazo da leitura no expediente.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Governador do Estado (art. 39, parágrafo único, I).",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Polícia Penal (EC 96/2021).",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Iniciativa legislativa atribuída à Procuradoria-Geral do Estado.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "A ressalva do art. 164 da CE-MT.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "tce",
+      "source_key": "M6-CF-CEMT-V1-TCE-01",
+      "statement": "Quantos Conselheiros integram o TCE-MT, segundo o art. 49?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). CE-MT art. 49, caput.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Três pelo Governador e quatro pela Assembleia Legislativa.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Uma livre e duas alternadas entre auditores e membros do MP de Contas em lista tríplice.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Mais de 30 e menos de 70 anos.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Sete Conselheiros.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "Um cargo de magistério.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "tce",
+      "source_key": "M6-CF-CEMT-V1-TCE-02",
+      "statement": "Como se distribui a escolha de conselheiros do TCE-MT?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Art. 49, §2º; escolha não é sinônimo do ato formal de nomeação.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Uma livre e duas alternadas entre auditores e membros do MP de Contas em lista tríplice.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Três pelo Governador e quatro pela Assembleia Legislativa.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Mais de 30 e menos de 70 anos.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Um cargo de magistério.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Atividades político-partidárias.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "tce",
+      "source_key": "M6-CF-CEMT-V1-TCE-03",
+      "statement": "Como se distribuem as três escolhas do Governador no TCE?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Art. 49, §2º, I.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Mais de 30 e menos de 70 anos.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Um cargo de magistério.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Atividades político-partidárias.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Prestar contas, segundo as regras constitucionais.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Uma livre e duas alternadas entre auditores e membros do MP de Contas em lista tríplice.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "tce",
+      "source_key": "M6-CF-CEMT-V1-TCE-04",
+      "statement": "Qual faixa de idade exige o art. 49, §1º, I, após a EC 107/2022?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Não usar o limite antigo de menos de 65.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Um cargo de magistério.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Atividades político-partidárias.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Mais de 30 e menos de 70 anos.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "Prestar contas, segundo as regras constitucionais.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Cinco dias.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "tce",
+      "source_key": "M6-CF-CEMT-V1-TCE-05",
+      "statement": "Qual atividade pública é excepcionalmente admitida a conselheiro do TCE, art. 49, §4º?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Há vedação a outras funções públicas, com essa exceção.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Um cargo de magistério.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Atividades político-partidárias.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Prestar contas, segundo as regras constitucionais.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Cinco dias.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Trinta dias.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "tce",
+      "source_key": "M6-CF-CEMT-V1-TCE-06",
+      "statement": "Segundo art. 49, §4º, qual dedicação é vedada ao conselheiro?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). A vedação é expressa.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Prestar contas, segundo as regras constitucionais.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Cinco dias.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Trinta dias.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Atividades político-partidárias.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "Se julgar que a despesa pode causar dano irreparável ou grave lesão à economia pública.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "tce",
+      "source_key": "M6-CF-CEMT-V1-TCE-07",
+      "statement": "Qual dever recai sobre quem gerencia bens ou valores públicos, no âmbito do art. 46?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). A obrigação alcança gestores e demais responsáveis abrangidos pela norma.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Cinco dias.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Prestar contas, segundo as regras constitucionais.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Trinta dias.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Se julgar que a despesa pode causar dano irreparável ou grave lesão à economia pública.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Sete Conselheiros.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "tce",
+      "source_key": "M6-CF-CEMT-V1-TCE-08",
+      "statement": "Em quanto tempo são exigidos esclarecimentos sobre indício de despesa irregular, art. 48?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). CE-MT art. 48, caput.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Trinta dias.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Se julgar que a despesa pode causar dano irreparável ou grave lesão à economia pública.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Sete Conselheiros.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Três pelo Governador e quatro pela Assembleia Legislativa.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Cinco dias.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "tce",
+      "source_key": "M6-CF-CEMT-V1-TCE-09",
+      "statement": "Em qual prazo o TCE profere pronunciamento conclusivo após insuficiência de esclarecimentos?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Art. 48, §1º.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Se julgar que a despesa pode causar dano irreparável ou grave lesão à economia pública.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Sete Conselheiros.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Trinta dias.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "Três pelo Governador e quatro pela Assembleia Legislativa.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Uma livre e duas alternadas entre auditores e membros do MP de Contas em lista tríplice.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "tce",
+      "source_key": "M6-CF-CEMT-V1-TCE-10",
+      "statement": "Quando a ALMT pode determinar sustação de despesa tida por irregular, art. 48, §2º?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Há juízo da ALMT conforme o §2º.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Se julgar que a despesa pode causar dano irreparável ou grave lesão à economia pública.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Sete Conselheiros.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Três pelo Governador e quatro pela Assembleia Legislativa.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Uma livre e duas alternadas entre auditores e membros do MP de Contas em lista tríplice.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Mais de 30 e menos de 70 anos.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "instituicoes",
+      "source_key": "M6-CF-CEMT-V1-INSTITUICOES-01",
+      "statement": "Em que artigo da CE-MT está o comando supremo do Governador sobre PM, CBM e Polícia Penal?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). A regra não está nos arts. 80 e 81; EC 96/2021.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Ser oficial da ativa do Quadro de Oficiais da PM no último posto de carreira.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Polícia judiciária militar.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Prevenção e extinção de incêndios, busca, salvamento e defesa civil na área de competência.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Art. 66, XII.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "Criminalística, medicina legal e odontologia legal, com identificação civil e criminal.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "instituicoes",
+      "source_key": "M6-CF-CEMT-V1-INSTITUICOES-02",
+      "statement": "Qual requisito tem o escolhido Comandante-Geral da PM, art. 80, parágrafo único?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). A livre escolha/exoneração pertence ao Governador, dentro dos requisitos.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Polícia judiciária militar.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Ser oficial da ativa do Quadro de Oficiais da PM no último posto de carreira.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Prevenção e extinção de incêndios, busca, salvamento e defesa civil na área de competência.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Criminalística, medicina legal e odontologia legal, com identificação civil e criminal.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Sim, conforme art. 83, §1º, da CE-MT.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "instituicoes",
+      "source_key": "M6-CF-CEMT-V1-INSTITUICOES-03",
+      "statement": "Que função além de policiamento ostensivo e ordem pública pertence à PM, art. 81?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). A Constituição Estadual a menciona expressamente.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Prevenção e extinção de incêndios, busca, salvamento e defesa civil na área de competência.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Criminalística, medicina legal e odontologia legal, com identificação civil e criminal.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Sim, conforme art. 83, §1º, da CE-MT.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "A competência da União.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Polícia judiciária militar.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "instituicoes",
+      "source_key": "M6-CF-CEMT-V1-INSTITUICOES-04",
+      "statement": "Que tarefas o art. 82 atribui ao CBM?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Art. 82 detalha atribuições do CBM.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Criminalística, medicina legal e odontologia legal, com identificação civil e criminal.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Sim, conforme art. 83, §1º, da CE-MT.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Prevenção e extinção de incêndios, busca, salvamento e defesa civil na área de competência.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "A competência da União.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Art. 80: direção da PM; art. 81: atribuições da PM; art. 83: POLITEC.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "instituicoes",
+      "source_key": "M6-CF-CEMT-V1-INSTITUICOES-05",
+      "statement": "Quais perícias são atribuídas à POLITEC no art. 83?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Ressalvada competência da União, conforme art. 83.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Criminalística, medicina legal e odontologia legal, com identificação civil e criminal.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Sim, conforme art. 83, §1º, da CE-MT.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "A competência da União.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Art. 80: direção da PM; art. 81: atribuições da PM; art. 83: POLITEC.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Art. 66, XII.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "instituicoes",
+      "source_key": "M6-CF-CEMT-V1-INSTITUICOES-06",
+      "statement": "O presidente de IPM pode requisitar trabalhos e informações da POLITEC?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Requisições de presidentes de inquérito civil ou militar, MP ou ordem judicial.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "A competência da União.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Art. 80: direção da PM; art. 81: atribuições da PM; art. 83: POLITEC.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Art. 66, XII.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Sim, conforme art. 83, §1º, da CE-MT.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "Ser oficial da ativa do Quadro de Oficiais da PM no último posto de carreira.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "instituicoes",
+      "source_key": "M6-CF-CEMT-V1-INSTITUICOES-07",
+      "statement": "Qual ressalva limita a competência material da POLITEC, art. 83?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). O caput faz ressalva expressa.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Art. 80: direção da PM; art. 81: atribuições da PM; art. 83: POLITEC.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "A competência da União.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Art. 66, XII.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Ser oficial da ativa do Quadro de Oficiais da PM no último posto de carreira.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Polícia judiciária militar.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "instituicoes",
+      "source_key": "M6-CF-CEMT-V1-INSTITUICOES-08",
+      "statement": "Qual combinação entre artigos estaduais está correta?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Artigos do mesmo capítulo regulam instituições distintas.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Art. 66, XII.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Ser oficial da ativa do Quadro de Oficiais da PM no último posto de carreira.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Polícia judiciária militar.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Prevenção e extinção de incêndios, busca, salvamento e defesa civil na área de competência.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Art. 80: direção da PM; art. 81: atribuições da PM; art. 83: POLITEC.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "justica",
+      "source_key": "M6-CF-CEMT-V1-JUSTICA-01",
+      "statement": "Que órgão judicial militar consta do art. 91 da CE-MT?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Não confundir Conselho de Justiça com autoridade de investigação administrativa.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Art. 125, §§4º e 5º, da CF.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Juiz de direito do juízo militar.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Conselhos de Justiça Militar.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "Conselhos de Justiça sob a presidência de juiz de direito.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Art. 125, §4º, da CF.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "justica",
+      "source_key": "M6-CF-CEMT-V1-JUSTICA-02",
+      "statement": "Qual artigo da CF deve harmonizar a leitura do art. 101 estadual?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Reparte competências de juiz singular, Conselhos e Tribunal do Júri.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Art. 125, §§4º e 5º, da CF.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Juiz de direito do juízo militar.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Conselhos de Justiça sob a presidência de juiz de direito.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Art. 125, §4º, da CF.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Comandantes-Gerais da PM e do CBM.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "justica",
+      "source_key": "M6-CF-CEMT-V1-JUSTICA-03",
+      "statement": "Quem julga singularmente crime militar contra civil de competência do juízo militar estadual, art. 125, §5º?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Há ressalva do Júri conforme art. 125, §4º.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Conselhos de Justiça sob a presidência de juiz de direito.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Art. 125, §4º, da CF.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Comandantes-Gerais da PM e do CBM.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Juiz de direito do juízo militar.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "Art. 96, I, f, da CE-MT.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "justica",
+      "source_key": "M6-CF-CEMT-V1-JUSTICA-04",
+      "statement": "Quem julga os demais crimes militares estaduais de competência dos Conselhos, art. 125, §5º?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Diferenciar da competência do juiz singular.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Art. 125, §4º, da CF.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Conselhos de Justiça sob a presidência de juiz de direito.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Comandantes-Gerais da PM e do CBM.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Art. 96, I, f, da CE-MT.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Tribunal de Justiça estadual.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "justica",
+      "source_key": "M6-CF-CEMT-V1-JUSTICA-05",
+      "statement": "Qual dispositivo ressalva competência do Júri quando a vítima for civil?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Aplica-se nos termos do regime constitucional dos crimes dolosos contra a vida de civil.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Comandantes-Gerais da PM e do CBM.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Art. 96, I, f, da CE-MT.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Tribunal de Justiça estadual.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Não; aplicar o art. 101 em harmonia com a divisão do art. 125, §§4º e 5º, da CF.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Art. 125, §4º, da CF.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "justica",
+      "source_key": "M6-CF-CEMT-V1-JUSTICA-06",
+      "statement": "Que autoridades militares são referidas no foro do art. 96, I, a, CE-MT após EC 86/2020?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). O artigo elenca outras autoridades e ressalvas de competência.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Art. 96, I, f, da CE-MT.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Tribunal de Justiça estadual.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Comandantes-Gerais da PM e do CBM.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "Não; aplicar o art. 101 em harmonia com a divisão do art. 125, §§4º e 5º, da CF.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Conselhos de Justiça Militar.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "justica",
+      "source_key": "M6-CF-CEMT-V1-JUSTICA-07",
+      "statement": "Onde está previsto o conflito entre juiz de direito e Conselho de Justiça Militar?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Competência do Tribunal de Justiça.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Art. 96, I, f, da CE-MT.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Tribunal de Justiça estadual.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Não; aplicar o art. 101 em harmonia com a divisão do art. 125, §§4º e 5º, da CF.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Conselhos de Justiça Militar.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Art. 125, §§4º e 5º, da CF.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "justica",
+      "source_key": "M6-CF-CEMT-V1-JUSTICA-08",
+      "statement": "Qual órgão julga mandado de segurança contra ato do Comandante-Geral PM, na hipótese do art. 96, I, g?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). CE-MT art. 96, I, g.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Não; aplicar o art. 101 em harmonia com a divisão do art. 125, §§4º e 5º, da CF.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Conselhos de Justiça Militar.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Art. 125, §§4º e 5º, da CF.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Tribunal de Justiça estadual.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "Juiz de direito do juízo militar.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "justica",
+      "source_key": "M6-CF-CEMT-V1-JUSTICA-09",
+      "statement": "É correto dizer que todo crime militar estadual deve ir ao Conselho previsto no art. 101 CE-MT?",
+      "difficulty": "medium",
+      "explanation": "Exercício inédito (não extraído de prova UFMT). Há causas do juiz singular e ressalva de competência do Tribunal do Júri.",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Conselhos de Justiça Militar.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Não; aplicar o art. 101 em harmonia com a divisão do art. 125, §§4º e 5º, da CF.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Art. 125, §§4º e 5º, da CF.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Juiz de direito do juízo militar.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Conselhos de Justiça sob a presidência de juiz de direito.",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}
