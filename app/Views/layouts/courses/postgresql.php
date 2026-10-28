@@ -21,13 +21,14 @@ $certificatesUrl = $courseId > 0 ? '/curso/' . $courseId . '/certificados' : '/d
 $profileUrl = $courseId > 0 ? '/curso/' . $courseId . '/perfil' : '/dashboard';
 $helpUrl = $courseId > 0 ? '/curso/' . $courseId . '/ajuda' : '/dashboard';
 $currentPath = parse_url((string) ($_SERVER['REQUEST_URI'] ?? ''), PHP_URL_PATH) ?: '';
+$isPgHome = $courseId > 0 && $currentPath === url($courseHome);
 
 $pageTitle = isset($title)
     ? $title . ' • PostgreSQL • LD Academy'
     : 'PostgreSQL • LD Academy';
 ?>
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-pg-theme="light">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -35,8 +36,11 @@ $pageTitle = isset($title)
     <meta name="theme-color" content="#075a9e">
     <title><?= e($pageTitle) ?></title>
     <link rel="stylesheet" href="<?= e(url('/assets/courses/postgresql/course.css') . '?v=20261021-2') ?>">
+    <link rel="stylesheet" href="<?= e(url('/assets/courses/postgresql/theme-viewport.css') . '?v=20261028-1') ?>">
+    <script>try{if(localStorage.getItem("ldacademy:postgresql:theme")==="dark")document.documentElement.dataset.pgTheme="dark"}catch(_){}</script>
+    <script defer src="<?= e(url('/assets/courses/postgresql/theme-viewport.js') . '?v=20261028-1') ?>"></script>
 </head>
-<body class="postgres-course-body">
+<body class="postgres-course-body <?= $isPgHome ? 'pg-is-home' : '' ?>">
     <div class="pg-app-shell">
         <aside class="pg-sidebar">
             <div class="pg-sidebar-brand">
@@ -108,6 +112,10 @@ $pageTitle = isset($title)
                 </nav>
 
                 <div class="pg-top-account">
+                    <button type="button" id="pg-theme-toggle" class="pg-theme-toggle" aria-pressed="false" aria-label="Ativar modo escuro">
+                        <span data-pg-theme-icon aria-hidden="true">☾</span>
+                        <span data-pg-theme-label>Modo escuro</span>
+                    </button>
                     <span class="pg-notification" aria-label="Notificações">●</span>
                     <span class="pg-top-avatar" aria-hidden="true"><?= e($initial) ?></span>
                     <strong><?= e($firstName) ?></strong>

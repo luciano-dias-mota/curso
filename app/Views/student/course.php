@@ -162,9 +162,14 @@ if ($isPostgres):
                 <h2>Trilha de Aprendizagem</h2>
                 <p>Siga a ordem dos módulos para construir seu conhecimento em PostgreSQL.</p>
             </div>
+            <div class="pg-home-pager" data-pg-pager hidden aria-label="Navegação de módulos">
+                <button type="button" id="pg-modules-prev" aria-label="Módulos anteriores">‹</button>
+                <span id="pg-modules-counter" data-pg-count aria-live="polite"></span>
+                <button type="button" id="pg-modules-next" aria-label="Próximos módulos">›</button>
+            </div>
         </header>
 
-        <div class="pg-module-grid">
+        <div class="pg-module-grid" data-pg-module-grid>
             <?php foreach ($modules as $m): ?>
                 <?php
                 $isDraft = (string) ($m['status'] ?? '') !== 'published';
@@ -174,7 +179,7 @@ if ($isPostgres):
                 $inProgress = !$isDraft && $userStatus === 'in_progress';
                 $progress = max(0, min(100, (float) ($m['progress_pct'] ?? 0)));
                 ?>
-                <article class="pg-module-card <?= $done ? 'is-done' : ($inProgress ? 'is-current' : ($locked ? 'is-locked' : 'is-available')) ?>">
+                <article class="pg-module-card <?= $done ? 'is-done' : ($inProgress ? 'is-current' : ($locked ? 'is-locked' : 'is-available')) ?>" data-pg-module-card>
                     <div class="pg-module-content">
                         <span class="pg-module-number"><?= e((string) ($m['rail_label'] ?? $m['position'])) ?></span>
 

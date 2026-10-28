@@ -1,0 +1,105 @@
+/* LD Academy: somente layout PostgreSQL. Carregado após course.css. */
+html[data-pg-theme="light"] body.postgres-course-body{--pg-focus:#1b5fd6;--pg-home-accent:#1b5fd6;--pg-home-accent-ink:#fff}
+html[data-pg-theme="dark"] body.postgres-course-body{
+ color-scheme:dark;--pg-ink:#e9effb;--pg-ink-soft:#bdc9e2;--pg-muted:#a3b0ce;
+ --pg-blue:#35e0a5;--pg-blue-deep:#2cc18f;--pg-blue-soft:rgba(53,224,165,.13);
+ --pg-cyan:#55c8f5;--pg-green:#35e0a5;--pg-line:rgba(148,168,210,.23);
+ --pg-panel:#111a31;--pg-panel-strong:#16213e;--pg-shadow:0 16px 40px -22px rgba(0,0,0,.75);
+ --pg-focus:#35e0a5;--pg-home-accent:#35e0a5;--pg-home-accent-ink:#04261b;
+ color:var(--pg-ink);background-color:#080d1b;
+ background-image:radial-gradient(760px 450px at 90% 0%,rgba(143,125,255,.13),transparent 65%),radial-gradient(500px 350px at 0% 50%,rgba(53,224,165,.06),transparent 65%);
+}
+.pg-theme-toggle{min-height:36px;padding:0 12px;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.34);border-radius:10px;background:rgba(255,255,255,.13);color:#fff;font-size:12px;font-weight:750;cursor:pointer;white-space:nowrap}
+.pg-theme-toggle:hover{background:rgba(255,255,255,.22)}
+.pg-theme-toggle [data-pg-theme-icon]{font-size:19px;line-height:1}
+html[data-pg-theme="dark"] body.postgres-course-body .pg-sidebar{background:#0c1326;border-color:var(--pg-line)}
+html[data-pg-theme="dark"] body.postgres-course-body .pg-sidebar-brand{background:#0e1930}
+html[data-pg-theme="dark"] body.postgres-course-body .pg-sidebar-brand a{background:#f4f8fc}
+html[data-pg-theme="dark"] body.postgres-course-body .pg-topbar{background:#0c1326;border-color:var(--pg-line)}
+html[data-pg-theme="dark"] body.postgres-course-body .pg-side-link,
+html[data-pg-theme="dark"] body.postgres-course-body .pg-side-link>span:first-child,
+html[data-pg-theme="dark"] body.postgres-course-body .pg-sidebar-logout button{color:#a3b0ce}
+html[data-pg-theme="dark"] body.postgres-course-body .pg-side-link.is-active,
+html[data-pg-theme="dark"] body.postgres-course-body a.pg-side-link:hover,
+html[data-pg-theme="dark"] body.postgres-course-body .pg-sidebar-logout button:hover{background:rgba(53,224,165,.12);color:#35e0a5;box-shadow:none}
+html[data-pg-theme="dark"] body.postgres-course-body .pg-side-link.is-active>span:first-child{color:#35e0a5}
+html[data-pg-theme="dark"] body.postgres-course-body .pg-top-avatar{background:#35e0a5;color:#04261b}
+html[data-pg-theme="dark"] body.postgres-course-body .pg-breadcrumb,
+html[data-pg-theme="dark"] body.postgres-course-body .pg-breadcrumb a{color:#a3b0ce}
+html[data-pg-theme="dark"] body.postgres-course-body .pg-breadcrumb strong{color:#e9effb}
+html[data-pg-theme="dark"] body.postgres-course-body .pg-course-hero{background:radial-gradient(600px 320px at 100% 0%,rgba(143,125,255,.23),transparent 70%),#111a31;border:1px solid var(--pg-line)}
+html[data-pg-theme="dark"] body.postgres-course-body :is(.pg-course-hero h1,.pg-progress-main h2,.pg-progress-stat strong,.pg-learning-head h2,.pg-module-copy h3,.pg-area-hero h1,.pg-area-panel h2,.pg-certificate-card h2,.pg-area-card h2,.pg-area-card>strong,.trail-hero h1,.lesson-info h3,.phase-card h3,.module-head h3,.lab-success-dialog h2,.lab-success-dialog strong){color:var(--pg-ink)}
+html[data-pg-theme="dark"] body.postgres-course-body :is(.pg-course-hero-copy>p,.pg-progress-main p,.pg-progress-stat small,.pg-learning-head p,.pg-module-copy p,.pg-module-progress-row strong,.pg-area-hero p,.pg-area-card p,.pg-area-panel p,.pg-certificate-card p,.trail-hero p,.lesson-info p,.phase-card>p,.module-box>p,.lab-success-dialog p){color:var(--pg-muted)}
+html[data-pg-theme="dark"] body.postgres-course-body .pg-hero-art{background:radial-gradient(350px 190px at 70% 35%,rgba(143,125,255,.14),transparent 80%),#10192e}
+html[data-pg-theme="dark"] body.postgres-course-body .pg-sql-chip{background:#060a16;border-color:var(--pg-line)}
+html[data-pg-theme="dark"] body.postgres-course-body .pg-data-label{color:#35e0a5;text-shadow:none}
+html[data-pg-theme="dark"] body.postgres-course-body .pg-data-cylinder{filter:hue-rotate(50deg) saturate(.8)}
+html[data-pg-theme="dark"] body.postgres-course-body :is(.pg-progress-panel,.pg-progress-stat,.pg-module-card,.pg-module-card.is-locked,.pg-area-card,.pg-area-panel,.pg-certificate-card,.pg-area-hero,.trail-hero,.card,.phase-card,.lesson-row,.study-card,.module-boss-card,.phase-exam-card,.alert,.lab-guided-example,.lab-independent-banner,.lab-success-dialog){color:var(--pg-ink);background:#111a31;border-color:var(--pg-line);box-shadow:var(--pg-shadow)}
+html[data-pg-theme="dark"] body.postgres-course-body :is(.pg-progress-track,.pg-progress-line .pg-progress-track,.pg-module-progress-row .pg-progress-track){background:#263350}
+html[data-pg-theme="dark"] body.postgres-course-body .pg-progress-track>span{background:linear-gradient(90deg,#35e0a5,#55c8f5)}
+html[data-pg-theme="dark"] body.postgres-course-body .pg-progress-main>div strong{color:#35e0a5}
+html[data-pg-theme="dark"] body.postgres-course-body :is(.pg-progress-stat>span.is-blue,.pg-module-number,.phase-index,.lesson-num,.rail>span){background:rgba(53,224,165,.12);color:#35e0a5}
+html[data-pg-theme="dark"] body.postgres-course-body :is(.pg-module-card.is-current .pg-module-number,.pg-module-card.is-done .pg-module-number){background:#35e0a5;color:#04261b}
+html[data-pg-theme="dark"] body.postgres-course-body .pg-module-state{background:#1a2944;color:#bdc9e2}
+html[data-pg-theme="dark"] body.postgres-course-body :is(.pg-module-action,.pg-secondary,.pg-area-button.is-disabled,.secondary){background:#16213e;color:#35e0a5;border:1px solid var(--pg-line)}
+html[data-pg-theme="dark"] body.postgres-course-body :is(.pg-primary,.pg-module-action.is-primary,.pg-area-button:not(.is-disabled),.primary:not(.disabled)){background:#35e0a5;border-color:#35e0a5;color:#04261b}
+html[data-pg-theme="dark"] body.postgres-course-body :is(.pg-area-card small,.pg-certificate-progress span,.lab-guided-example-head small,.lab-independent-banner small){color:var(--pg-muted)}
+html[data-pg-theme="dark"] body.postgres-course-body :is(.lab-guided-example-head strong,.lab-independent-banner strong){color:var(--pg-ink)}
+html[data-pg-theme="dark"] body.postgres-course-body .lab-editor-label{color:#bdc9e2}
+html[data-pg-theme="dark"] body.postgres-course-body :focus-visible{outline:2px solid var(--pg-focus);outline-offset:3px}
+.pg-home-pager{margin-left:auto;display:flex;align-items:center;gap:8px}
+.pg-home-pager[hidden]{display:none!important}
+.pg-home-pager button{min-width:34px;min-height:34px;border:1px solid var(--pg-line);border-radius:8px;background:var(--pg-panel);color:var(--pg-ink);font-size:16px;cursor:pointer}
+.pg-home-pager button:disabled{opacity:.38;cursor:not-allowed}
+.pg-home-pager [data-pg-count]{color:var(--pg-muted);font-size:11px;font-weight:700;white-space:nowrap}
+html.pg-js-ready .pg-is-home .pg-module-card[hidden]{display:none!important}
+@media (min-width:960px) and (min-height:700px){
+ html.pg-js-ready body.postgres-course-body.pg-is-home{overflow:hidden;height:100dvh}
+ html.pg-js-ready .pg-is-home .postgres-course-main{height:calc(100dvh - 60px);min-height:0;padding:12px 20px;overflow:hidden}
+ html.pg-js-ready .pg-is-home .pg-course-home{height:100%;min-height:0;display:grid;grid-template-rows:20px minmax(160px,.9fr) 88px minmax(210px,1.1fr);gap:10px}
+ html.pg-js-ready .pg-is-home .pg-course-hero{min-height:0;grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);border-radius:18px}
+ html.pg-js-ready .pg-is-home .pg-course-hero-copy{padding:10px 8px 12px 23px}
+ html.pg-js-ready .pg-is-home .pg-course-hero h1{font-size:clamp(26px,2.5vw,37px);line-height:1.03}
+ html.pg-js-ready .pg-is-home .pg-course-hero-copy>p{font-size:12px;line-height:1.4}
+ html.pg-js-ready .pg-is-home .pg-hero-stats{display:none}
+ html.pg-js-ready .pg-is-home .pg-hero-actions{margin-top:12px}
+ html.pg-js-ready .pg-is-home :is(.pg-primary,.pg-secondary){min-height:36px;padding:0 13px;min-width:0;font-size:11px}
+ html.pg-js-ready .pg-is-home .pg-hero-art{min-height:0}
+ html.pg-js-ready .pg-is-home .pg-sql-chip{top:18px;right:18px}
+ html.pg-js-ready .pg-is-home .pg-data-cylinder{transform:translateX(-18%) scale(.70);transform-origin:bottom;bottom:3px}
+ html.pg-js-ready .pg-is-home .pg-data-label{font-size:50px;bottom:18px}
+ html.pg-js-ready .pg-is-home .pg-progress-panel{min-height:0;padding:8px 12px;gap:8px}
+ html.pg-js-ready .pg-is-home .pg-progress-main{align-self:center}
+ html.pg-js-ready .pg-is-home .pg-progress-main h2{margin-bottom:5px;font-size:14px}
+ html.pg-js-ready .pg-is-home .pg-progress-main p{margin-top:4px}
+ html.pg-js-ready .pg-is-home .pg-progress-stat{padding:7px;gap:6px}
+ html.pg-js-ready .pg-is-home .pg-progress-stat>span{width:28px;height:28px;font-size:15px}
+ html.pg-js-ready .pg-is-home .pg-progress-stat strong{font-size:14px}
+ html.pg-js-ready .pg-is-home .pg-course-modules{min-height:0;display:flex;flex-direction:column}
+ html.pg-js-ready .pg-is-home .pg-learning-head{flex:none;min-height:39px;margin:0 0 7px;align-items:center}
+ html.pg-js-ready .pg-is-home .pg-learning-head h2{font-size:17px}
+ html.pg-js-ready .pg-is-home .pg-learning-head p{font-size:10px}
+ html.pg-js-ready .pg-is-home .pg-module-grid{min-height:0;flex:1;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:minmax(0,1fr);gap:12px}
+ html.pg-js-ready .pg-is-home :is(.pg-module-card,.pg-module-card:nth-child(n+5)){min-height:0;height:100%;padding:12px}
+ html.pg-js-ready .pg-is-home .pg-module-content{min-height:0}
+ html.pg-js-ready .pg-is-home .pg-module-copy h3{min-height:0;font-size:13px;line-height:1.23;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+ html.pg-js-ready .pg-is-home .pg-module-copy p{min-height:0;-webkit-line-clamp:2;font-size:10px}
+ html.pg-js-ready .pg-is-home .pg-module-footer{grid-template-columns:1fr 1fr}
+ html.pg-js-ready .pg-is-home :is(.pg-module-state,.pg-module-action){min-height:28px;padding:0 7px;font-size:9px}
+}
+@media (min-width:960px) and (max-width:1200px) and (min-height:700px){
+ html.pg-js-ready .pg-is-home .pg-progress-panel{grid-template-columns:minmax(220px,1.7fr) repeat(4,minmax(85px,1fr))}
+ html.pg-js-ready .pg-is-home .pg-progress-main{grid-row:auto;grid-column:auto}
+}
+@media (min-width:960px) and (max-width:1099px) and (min-height:700px){
+ html.pg-js-ready .pg-is-home .pg-module-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (min-width:700px) and (max-width:959px){.pg-is-home .pg-module-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:699px){.pg-is-home .pg-module-grid{grid-template-columns:1fr}}
+@media (max-width:690px){
+ .pg-theme-toggle{padding:0 9px;min-width:36px}
+ .pg-theme-toggle [data-pg-theme-label]{display:none}
+ .pg-is-home .pg-learning-head{flex-wrap:wrap}
+ .pg-is-home .pg-home-pager{width:100%;justify-content:flex-end}
+}
+@media (prefers-reduced-motion:reduce){.pg-is-home .pg-module-card{transition:none}}
