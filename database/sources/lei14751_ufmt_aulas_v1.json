@@ -1,0 +1,360 @@
+{
+  "format_version": 1,
+  "checked_at": "2026-10-28",
+  "module_slug": "modulo-6-direito-constitucional-e-legislacao-institucional-da-pmmt",
+  "source_label": "Lei 14.751/2023 (atualizada com promulgação de vetos em 2024) - reforço UFMT",
+  "note": "Nove aulas complementares OPCIONAIS na fase já publicada; a leitura integral dos blocos é necessária apenas para concluir cada aula opcional. Nenhum material original é apagado.",
+  "lessons": [
+    {
+      "topic": "natureza",
+      "phase_slug": "4-regime-dos-militares-e-seguranca-publica",
+      "slug": "reforco-lo-14751-ufmt-natureza-v1",
+      "title": "Natureza jurídica, princípios e integração sistêmica (arts. 2º–4º, 7º)",
+      "estimated_minutes": 28,
+      "blocks": [
+        {
+          "type": "theory",
+          "title": "Natureza das instituições — art. 2º",
+          "content": "PMs e CBMs são instituições militares permanentes, exclusivas e típicas de Estado, essenciais à Justiça Militar, forças auxiliares e reserva do Exército. Hierarquia e disciplina são a base de organização. Comandadas por oficial da ativa do último posto do QOEM. Não confundir a expressão 'exclusivas e típicas de Estado' com exclusividade universal de toda atuação ostensiva."
+        },
+        {
+          "type": "comparison",
+          "title": "Governadores e sistemas — art. 7º",
+          "content": "As instituições estaduais e distritais subordinam-se ao governador competente. A atuação articula-se com o Sistema Único de Segurança Pública (Susp), com a Defesa Nacional, com o Sistema Nacional de Proteção e Defesa Civil (Sinpdec) e com o Sistema Nacional do Meio Ambiente (Sisnama) nos âmbitos previstos na Lei."
+        },
+        {
+          "type": "theory",
+          "title": "Princípios e diretrizes — arts. 3º e 4º",
+          "content": "Distinguir princípio de diretriz: respeito aos direitos fundamentais e humanos, hierarquia/disciplina, universalidade no atendimento; coordenação, integração, intercâmbio de informações, participação comunitária e uso racional da força são eixos de estudo. Na prova, verificar expressamente em qual artigo a norma insere cada proposição."
+        },
+        {
+          "type": "case_study",
+          "title": "Caso de prova — autonomia e subordinação",
+          "content": "Situação: a PM coopera com órgãos municipais em segurança urbana. Essa atuação cooperativa não converte a PM em órgão municipal nem elimina a subordinação administrativa ao Governador. Do mesmo modo, força auxiliar/reserva do Exército não significa sujeição administrativa permanente ao Ministério da Defesa."
+        },
+        {
+          "type": "comparison",
+          "title": "Distinções cobradas",
+          "content": "Órgão de segurança pública (CF art. 144) não é sinônimo de sistema de integração (Susp/Sisnama/Sinpdec). A natureza militar e as funções típicas de Estado não autorizam extrapolar competências legais. Comando por oficial QOEM do último posto não significa escolha livre de qualquer praça."
+        },
+        {
+          "type": "memory",
+          "title": "Revisão prática",
+          "content": "Ao ler assertivas da UFMT, sublinhar: entidade, autoridade, verbo ('integra', 'subordina', 'reserva'), natureza ('diretriz' ou 'princípio') e ressalvas. Respostas que misturam subordinação estadual, comando federal permanente e competência municipal são suspeitas."
+        }
+      ]
+    },
+    {
+      "topic": "competencias",
+      "phase_slug": "4-regime-dos-militares-e-seguranca-publica",
+      "slug": "reforco-lo-14751-ufmt-competencias-v1",
+      "title": "Competências PM, CBM, cooperação e estrutura (arts. 5º–10)",
+      "estimated_minutes": 28,
+      "blocks": [
+        {
+          "type": "theory",
+          "title": "PM — art. 5º",
+          "content": "A PM atua na polícia de preservação da ordem pública e polícia ostensiva, no âmbito das competências constitucionais. Executa, PRIVATIVAMENTE, a polícia judiciária militar estadual nos limites legais. Também realiza correições, inspeções e auditorias relativas a seus órgãos e membros, conforme art. 5º, XII."
+        },
+        {
+          "type": "comparison",
+          "title": "CBM — art. 6º",
+          "content": "O CBM executa prioritariamente busca, salvamento e resgate, ressalvadas competências da União e municípios. Tem competências privativas de prevenção, combate e perícia administrativa de incêndios e PJM, bem como segurança contra incêndio, pânico e emergência na lei."
+        },
+        {
+          "type": "theory",
+          "title": "Proteção ambiental",
+          "content": "A lei prevê atribuições ambientais, incluindo ações de proteção, educação e fiscalização no âmbito legal. Não trocar a polícia administrativa ambiental com polícia judiciária federal. Casos de incêndio florestal no CBM dependem das condições legais e de instrumentos de parceria cabíveis."
+        },
+        {
+          "type": "case_study",
+          "title": "Correição e estrutura — art. 10",
+          "content": "A estrutura básica contempla órgãos de direção, assessoramento, apoio, execução e correição. Assessoramento não é órgão de apoio; a atividade de correição não afasta automaticamente a responsabilidade disciplinar e hierárquica das autoridades locais."
+        },
+        {
+          "type": "comparison",
+          "title": "Cooperação entre unidades da Federação",
+          "content": "Convênios, cooperação e atuação articulada permitem operações entre entes federados conforme condições legais. O exercício em área de outro Estado não torna os militares órgãos federais permanentes nem muda sua vinculação automática."
+        },
+        {
+          "type": "memory",
+          "title": "Caso de prova — perícia",
+          "content": "Após incêndio com suspeita de ilícito penal comum, a perícia administrativa de incêndio da corporação e a perícia criminal possuem objetos e competências próprios. A atividade administrativa não dispensa as cautelas da perícia criminal; a afirmação 'dispensa toda liberação do perito criminal' é excessiva."
+        }
+      ]
+    },
+    {
+      "topic": "ingresso",
+      "phase_slug": "4-regime-dos-militares-e-seguranca-publica",
+      "slug": "reforco-lo-14751-ufmt-ingresso-v1",
+      "title": "Ingresso, efetivo, tatuagens e escolaridade (arts. 11–13 e 39)",
+      "estimated_minutes": 28,
+      "blocks": [
+        {
+          "type": "theory",
+          "title": "Efetivo — art. 11",
+          "content": "A fixação e distribuição do efetivo deve observar elementos legais de planejamento e peculiaridades regionais, e não uma fórmula incondicional de divisão igual por município. Estrutura e efetivos serão regulados pelos respectivos entes na moldura federal."
+        },
+        {
+          "type": "comparison",
+          "title": "Ingresso — art. 13",
+          "content": "Verificar requisitos legais de nacionalidade brasileira, gozo dos direitos políticos, quitação militar/eleitoral, escolaridade, aptidão física e psicológica, saúde e teste toxicológico de larga janela de detecção, além das condições de legislação local."
+        },
+        {
+          "type": "theory",
+          "title": "Tatuagens — art. 13, X",
+          "content": "Não existe proibição genérica de TODA tatuagem visível. A vedação se relaciona às representações proibidas quando visíveis com os uniformes: suásticas, obscenidades, ideologias terroristas, apologia à violência, drogas ilícitas ou discriminação. Distinguir visibilidade de conteúdo da tatuagem."
+        },
+        {
+          "type": "case_study",
+          "title": "Escolaridade e transição — art. 39",
+          "content": "A adoção do requisito nacional de escolaridade para ingresso deve ocorrer em até SEIS anos da publicação da Lei (12/2023), nos termos do art. 39. Não exigir que toda transição tenha sido instantânea em 2023, nem confundir com prazo de 180 dias da opção de quadros do art. 40."
+        },
+        {
+          "type": "comparison",
+          "title": "Prova documental e títulos",
+          "content": "A comprovação de escolaridade pode observar os marcos previstos na legislação do ente federado; a avaliação de títulos deve seguir os critérios legais/editalícios. Uma regra nacional para concurso não revoga, por si, toda disposição local compatível."
+        },
+        {
+          "type": "memory",
+          "title": "Caso de prova",
+          "content": "Candidato com tatuagem visível de símbolo neutro e aprovado nos exames não deve ser considerado automaticamente impedido pelo inciso X só pela visibilidade. Em outro caso, símbolo visível com apologia à discriminação recai na vedação legal, com análise conforme as garantias constitucionais."
+        }
+      ]
+    },
+    {
+      "topic": "quadros",
+      "phase_slug": "4-regime-dos-militares-e-seguranca-publica",
+      "slug": "reforco-lo-14751-ufmt-quadros-v1",
+      "title": "Quadros militares, especialidades e promoção (arts. 14–15)",
+      "estimated_minutes": 28,
+      "blocks": [
+        {
+          "type": "theory",
+          "title": "Seis quadros — art. 15, I–VI",
+          "content": "A lei enumera QOEM, QOE, QOS, QORR, QP e QPRR. QORR (oficiais) e QPRR (praças) referem-se à reserva remunerada e aos reformados: é erro afirmar que há somente quatro quadros nacionais."
+        },
+        {
+          "type": "comparison",
+          "title": "QOEM e requisitos",
+          "content": "QOEM: comando, chefia, direção e alta administração; em regra exige ingresso por concurso público, curso de formação e bacharelado em Direito na PM. Para CBM, a lei permite outra graduação conforme lei do ente federado."
+        },
+        {
+          "type": "theory",
+          "title": "Praças que disputam QOEM — art. 15, §2º",
+          "content": "Integrantes da instituição militar não têm limite etário para concurso público de ingresso no QOEM, conforme parágrafo promulgado em junho/2024. Essa regra específica não significa isenção de requisitos de outros candidatos externos."
+        },
+        {
+          "type": "case_study",
+          "title": "QOE, QOS e QP",
+          "content": "QOE: oficiais oriundos das praças por curso de habilitação, podendo progredir até TENENTE-CORONEL, não Coronel. QOS: graduação superior em saúde e emprego obrigatório/exclusivo na área. QP: ingresso e educação superior conforme lei, progressão até SUBTENENTE."
+        },
+        {
+          "type": "comparison",
+          "title": "Temporários e reserva",
+          "content": "QOT e QPT podem ser instituídos facultativamente conforme legislação do ente federado, sem apagar QORR e QPRR. Diferenciar 'quadro obrigatório/nacional enumerado' de 'quadro que pode ser criado' e 'militar de reserva/reformado'."
+        },
+        {
+          "type": "memory",
+          "title": "Critérios de promoção — art. 14",
+          "content": "Analisar antiguidade e merecimento, além das hipóteses de bravura, post mortem, inatividade e ressarcimento de preterição previstas no dispositivo, com as especificidades da lei do ente federado. Evitar enunciado de que toda promoção é exclusivamente por antiguidade."
+        }
+      ]
+    },
+    {
+      "topic": "ensino",
+      "phase_slug": "4-regime-dos-militares-e-seguranca-publica",
+      "slug": "reforco-lo-14751-ufmt-ensino-v1",
+      "title": "Ensino militar e requisitos dos cursos (art. 16)",
+      "estimated_minutes": 28,
+      "blocks": [
+        {
+          "type": "theory",
+          "title": "Sistema próprio de ensino",
+          "content": "A lei prevê sistema de ensino militar próprio e integração/equivalência dos cursos regulares, observados requisitos do MEC, sem equivalência automática para cursos que não atendam aos critérios."
+        },
+        {
+          "type": "comparison",
+          "title": "CFO",
+          "content": "Curso de Formação de Oficiais: destinado a aprovados no concurso para QOEM, com ingresso como cadete e habilitação à condição de aspirante a oficial."
+        },
+        {
+          "type": "theory",
+          "title": "CAO",
+          "content": "Curso de Aperfeiçoamento de Oficiais: destinado a CAPITÃES e requisito de habilitação para promoção a MAJOR."
+        },
+        {
+          "type": "case_study",
+          "title": "CCEM",
+          "content": "Curso de Comando e Estado-Maior: destinado a MAJORES e TENENTES-CORONÉIS de quadros indicados na lei; requisito de habilitação ao posto de CORONEL."
+        },
+        {
+          "type": "comparison",
+          "title": "Cursos de habilitação e praças",
+          "content": "Cursos de habilitação de oficiais para quadros específicos; CFP habilita ingresso como aluno-soldado para soldado; CFS destina-se a aluno-sargento para 3º SARGENTO; CAP é destinado a SEGUNDOS-SARGENTOS e habilita promoção a PRIMEIRO-SARGENTO."
+        },
+        {
+          "type": "memory",
+          "title": "Pegadinha UFMT",
+          "content": "Observe par 'posto atual' e 'promoção desejada': Capitão→Major: CAO; Major/Ten-Cel→Coronel: CCEM; 2º Sargento→1º Sargento: CAP. É incorreto trocar CAP por curso dos primeiros-sargentos visando subtenente."
+        }
+      ]
+    },
+    {
+      "topic": "garantias",
+      "phase_slug": "4-regime-dos-militares-e-seguranca-publica",
+      "slug": "reforco-lo-14751-ufmt-garantias-v1",
+      "title": "Garantias, prerrogativas, prisão e estabilidade (arts. 17–18)",
+      "estimated_minutes": 28,
+      "blocks": [
+        {
+          "type": "theory",
+          "title": "Âmbito das garantias",
+          "content": "O art. 18 trata de garantias e prerrogativas das INSTITUIÇÕES e seus militares, não exclusivamente do 'preso militar'. Inclui documento de identidade militar, prerrogativas funcionais, assistência jurídica, regime de custódia e estabilidade, conforme cada inciso."
+        },
+        {
+          "type": "comparison",
+          "title": "Custódia antes do trânsito — art. 18, V",
+          "content": "Antes do trânsito em julgado, enquanto não houver perda do posto/patente ou graduação, militar preso civil ou criminalmente deve ser mantido em unidade prisional militar do respectivo ente e, na ausência, em unidade militar estadual, à disposição da autoridade judiciária competente."
+        },
+        {
+          "type": "theory",
+          "title": "Cumprimento após trânsito — art. 18, VI",
+          "content": "Após trânsito em julgado, o dispositivo distingue unidade prisional militar, falta de unidade e situação de perda de posto ou graduação, prevendo condições para unidade prisional especial. Evitar dizer que perda de posto gera sempre e automaticamente regime comum sem separação."
+        },
+        {
+          "type": "case_study",
+          "title": "Flagrante comum — art. 18, VIII",
+          "content": "Militar em flagrante de delito comum permanece na repartição policial civil apenas pelo tempo estritamente necessário à lavratura do auto e deve ser transferido imediatamente ao estabelecimento militar nas hipóteses do dispositivo."
+        },
+        {
+          "type": "comparison",
+          "title": "Direitos funcionais",
+          "content": "O art. 18 também abrange assistência jurídica relacionada ao exercício funcional, seguro ou indenização em caso de vitimização em razão da função, diárias e ajuda de custo nos termos da lei do ente e estabilidade de militar de carreira após TRÊS anos de serviço."
+        },
+        {
+          "type": "memory",
+          "title": "Permanência e cautelas",
+          "content": "Art. 18: tempo mínimo de um ano de permanência na unidade, ressalvadas transferências nos termos legais. Direito funcional não elimina possibilidade de movimentação compulsória fundamentada; aplicam-se condições da legislação do ente."
+        }
+      ]
+    },
+    {
+      "topic": "politicos",
+      "phase_slug": "4-regime-dos-militares-e-seguranca-publica",
+      "slug": "reforco-lo-14751-ufmt-politicos-v1",
+      "title": "Vedações, direitos políticos e elegibilidade (arts. 19 e 22)",
+      "estimated_minutes": 28,
+      "blocks": [
+        {
+          "type": "theory",
+          "title": "Vedações — art. 19",
+          "content": "Militar em atividade não pode exercer certas atividades gerenciais em sociedade comercial; participação como cotista, acionista ou comanditário é ressalvada. A hipótese de licença para tratar de interesse particular possui ressalva no texto. É vedada divulgação de imagens de pessoas sob custódia SEM prévia autorização judicial."
+        },
+        {
+          "type": "comparison",
+          "title": "Menos de dez anos — art. 22, I",
+          "content": "Militar alistável e elegível com MENOS de 10 anos de serviço que se candidata é afastado do serviço ativo no dia posterior ao pedido de registro na Justiça Eleitoral."
+        },
+        {
+          "type": "theory",
+          "title": "Mais de dez anos — art. 22, II",
+          "content": "Com MAIS de 10 anos de serviço, candidato é agregado no dia posterior ao pedido de registro; se eleito, no ato da diplomação passa para reserva remunerada com remuneração proporcional ao tempo de serviço. Atentar para situação de exatamente dez anos conforme texto constitucional e interpretação aplicável."
+        },
+        {
+          "type": "case_study",
+          "title": "Limite de remuneração — §1º",
+          "content": "O afastamento e a agregação só são remunerados durante os prazos estabelecidos na legislação eleitoral; não presumir pagamento irrestrito de todo período."
+        },
+        {
+          "type": "comparison",
+          "title": "Suplente e mandato",
+          "content": "Art. 22, III: eleito que toma posse como suplente é agregado enquanto durar mandato temporário e opta por uma das remunerações. §2º: para situação do inciso II, o tempo de mandato conta para recálculo de remuneração na inatividade quando não integral (parte promulgada em 2024)."
+        },
+        {
+          "type": "memory",
+          "title": "Caso de prova",
+          "content": "Para julgar uma questão de elegibilidade: identifique TEMPO de serviço, momento do PEDIDO DE REGISTRO, efeitos da DIPLOMAÇÃO, regra de remuneração do §1º e eventual suplência. Trocar esses marcos torna a alternativa errada."
+        }
+      ]
+    },
+    {
+      "topic": "mobilizacao",
+      "phase_slug": "4-regime-dos-militares-e-seguranca-publica",
+      "slug": "reforco-lo-14751-ufmt-mobilizacao-v1",
+      "title": "Convocação e mobilização pela União (arts. 24–27)",
+      "estimated_minutes": 28,
+      "blocks": [
+        {
+          "type": "theory",
+          "title": "Hipóteses excepcionais — arts. 24–25",
+          "content": "A União pode convocar ou mobilizar instituições estaduais nos termos legais em situações excepcionais como intervenção federal, estado de defesa e estado de sítio, ou em hipóteses específicas de apoio/convênio. A convocação não transforma permanentemente a instituição em órgão federal."
+        },
+        {
+          "type": "comparison",
+          "title": "Representação judicial — art. 26, II",
+          "content": "Militar convocado/mobilizado que responde inquérito ou ação judicial em razão de atuação efetiva no período será representado judicialmente pela ADVOCACIA-GERAL DA UNIÃO (AGU), no recorte legal."
+        },
+        {
+          "type": "theory",
+          "title": "Presença em atos — art. 26, III",
+          "content": "Atos de polícia judiciária e processuais que exijam presença do militar de outra unidade da Federação são realizados PRIORITARIAMENTE por videoconferência ou outro meio remoto equivalente, conforme lei."
+        },
+        {
+          "type": "case_study",
+          "title": "Competência — art. 26, IV",
+          "content": "Crimes militares imputados a convocado/mobilizado, mesmo praticados em outra UF, têm processamento e julgamento na JUSTIÇA MILITAR DO ENTE a que o militar pertencer. Não há deslocamento automático ao STM nem à Justiça Federal comum pelo simples fato de convocação."
+        },
+        {
+          "type": "comparison",
+          "title": "Cooperação entre entes",
+          "content": "Distinguir mobilização federal emergencial de cooperação voluntária mediante convênio entre Estados. Atuação fora da circunscrição original não implica perda automática de todas as garantias militares do ente de origem."
+        },
+        {
+          "type": "memory",
+          "title": "Caso aplicado",
+          "content": "Uma praça de MT mobilizada para atuar em outro estado responde por fato militar da operação: a lei aponta representação pela AGU, atos prioritariamente remotos quando cabíveis e competência penal militar do ente de origem nos termos do art. 26, sem eliminar exame dos requisitos concretos."
+        }
+      ]
+    },
+    {
+      "topic": "igpm",
+      "phase_slug": "4-regime-dos-militares-e-seguranca-publica",
+      "slug": "reforco-lo-14751-ufmt-igpm-v1",
+      "title": "IGPM, comando-geral, controle e transições (arts. 17, 28–30, 39–41)",
+      "estimated_minutes": 28,
+      "blocks": [
+        {
+          "type": "theory",
+          "title": "IGPM/BM — art. 28",
+          "content": "Inspetoria-Geral das PMs/CBMs integra Comando do EXÉRCITO, chefiada por OFICIAL-GENERAL DA ATIVA, não por coronel PM ou membro da Aeronáutica. Auxilia a administração de assuntos das corporações como forças auxiliares/reserva."
+        },
+        {
+          "type": "comparison",
+          "title": "Registros, visitas e dados",
+          "content": "IGPM/BM promove visitas de orientação técnica e procede ao registro de dados sobre organização, efetivos, armamento e material bélico, incluindo frota operacional (aeronaves, embarcações, veículos), no contexto da lei."
+        },
+        {
+          "type": "theory",
+          "title": "Comandante-Geral — art. 29",
+          "content": "Governador nomeia Comandante-Geral dentre oficiais da ativa do ÚLTIMO POSTO do QOEM, com CCEM conforme art. 29, §1º. Subordinação política-administrativa é estadual, distinta da função técnica de IGPM."
+        },
+        {
+          "type": "case_study",
+          "title": "Plano de comando — art. 29, §2º",
+          "content": "Comandante-Geral nomeado deve apresentar plano de comando em até SESSENTA DIAS da posse, com metas, indicadores, prestação de contas e participação social, conforme objetivos e diagnóstico institucional."
+        },
+        {
+          "type": "comparison",
+          "title": "Material controlado e SIGMA — art. 17",
+          "content": "Regime de produtos controlados de uso permitido/restrito e registro/controle depende do tipo de material e de normas competentes. Não reproduzir afirmação de que TODA arma particular se insere automaticamente no Sigma sem conferir hipóteses e normas."
+        },
+        {
+          "type": "memory",
+          "title": "Transições — arts. 39–41",
+          "content": "Escolaridade: até seis anos desde publicação (art. 39). Art. 40 promulgado em junho/2024 dispõe de 180 dias para opções de quadros de oficiais oriundos de praças e graduações suprimidas. Diferenciar esses prazos do art. 29, §2º (60 dias)."
+        }
+      ]
+    }
+  ]
+}
