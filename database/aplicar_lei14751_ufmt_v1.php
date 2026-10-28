@@ -193,7 +193,7 @@ foreach ($lessonMap as $topic=>$lesson) {
     }
     $actual=$records[0];
     $lessonIds[$topic]=(int)$actual['id'];
-    if ($actual['status'] !== 'published' || (int)$actual['is_required'] !== 0) {
+    if ($actual['status'] !== 'published' || !in_array((int)$actual['is_required'], [0, 1], true)) {
         throw new RuntimeException("Aula já existente com requisitos divergentes: {$lesson['slug']}");
     }
     $blockStmt->execute(['lesson'=>$lessonIds[$topic]]);
@@ -281,7 +281,7 @@ if ($audit) {
         fwrite(STDERR,"[PENDENTE] Conteúdo ainda não importado integralmente.\n");
         exit(6);
     }
-    echo "[OK] 9 aulas opcionais, 54 blocos, 90 questões validadas no banco.\n";
+    echo "[OK] 9 aulas (opcionais ou integradas), 54 blocos, 90 questões validadas no banco.\n";
     exit(0);
 }
 if (!$apply) {
@@ -363,7 +363,12 @@ try {
         $insertKey->execute(['key'=>$q['source_key'],'question'=>$id]);
         ++$createdQuestions;
     }
+    // Após a integração à sequência, aulas obrigatórias não podem ser
+    // liberadas em massa pela rotina original de importação.
+    $currentRequired=$pdo->prepare("SELECT is_required FROM lessons WHERE id=:id");
     foreach ($lessonMap as $topic=>$lesson) {
+        $currentRequired->execute(['id'=>$lessonIds[$topic]]);
+        if ((int)$currentRequired->fetchColumn() !== 0) { continue; }
         $unlock->execute([
             'lesson'=>$lessonIds[$topic],'phase'=>$phaseIds[$topic],'course'=>$courseId
         ]);
