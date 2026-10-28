@@ -133,7 +133,7 @@ $hasTable = static function (string $table) use ($pdo): bool {
     $statement->execute(['t' => $table]);
     return (int) $statement->fetchColumn() > 0;
 };
-foreach (['courses','modules','phases','lessons','lesson_blocks','questions','alternatives','question_import_keys'] as $table) {
+foreach (['courses','modules','phases','lessons','lesson_blocks','questions','alternatives','question_import_keys','enrollments','user_phase_progress','user_lesson_progress'] as $table) {
     if (!$hasTable($table)) {
         throw new RuntimeException("Tabela ausente: {$table}. Não criar estruturas automaticamente.");
     }
@@ -239,7 +239,7 @@ $verifyAlternatives = static function (int $id, array $expected) use ($alternati
     foreach ($expected as $i => $item) {
         if ((string)$saved[$i]['label'] !== (string)$item['label']
             || (string)$saved[$i]['text'] !== (string)$item['text']
-            || (int)$saved[$i]['is_correct'] !== (int)!empty($item['is_correct'])) {
+            || (int)$saved[$i]['is_correct'] !== (!empty($item['is_correct']) ? 1 : 0)) {
             return false;
         }
     }
@@ -436,7 +436,33 @@ try {
         ]);
         ++$createdKeys;
     }
+    // Liberar APENAS as novas aulas opcionais para alunos PMMT que já
+    // alcançaram a fase. Inserção nova e idempotente: sem reabrir/alterar
+    // progresso anteriormente concluído, quizzes ou checkpoints.
+    $unlockOptional = $pdo->prepare(
+        "INSERT IGNORE INTO user_lesson_progress
+            (user_id, lesson_id, status, current_block, blocks_viewed, progress_pct)
+         SELECT e.user_id, :lesson, 'available', 1, 0, 0
+         FROM enrollments e
+         INNER JOIN user_phase_progress upp
+           ON upp.user_id = e.user_id
+          AND upp.phase_id = :phase
+          AND upp.status IN ('available','in_progress','completed')
+         WHERE e.course_id = :course
+           AND e.status IN ('active','completed')"
+    );
+    $newUnlocks = 0;
+    foreach ($topicLessons as $topic => $lesson) {
+        $unlockOptional->execute([
+            'lesson' => $existingLessons[$topic],
+            'phase' => $phases[$topic],
+            'course' => $courseId,
+        ]);
+        $newUnlocks += $unlockOptional->rowCount();
+    }
+
     $pdo->commit();
+    printf("[OK] Acessos opcionais liberados: %d (sem alterar progresso existente).\n", $newUnlocks);
     printf("[OK] Importação: aulas criadas=%d, questões criadas=%d, chaves novas=%d.\n",
         $createdLessons,$createdQuestions,$createdKeys);
     echo "[OK] Aulas antigas, gabaritos, quizzes, checkpoints e progresso dos alunos não foram atualizados.\n";
