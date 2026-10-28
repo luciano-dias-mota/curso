@@ -1,0 +1,856 @@
+{
+  "format_version": 1,
+  "source_label": "Sindicância PMMT | UFMT treino inédito | Manual 2009 e Portaria 2018 expressamente identificados",
+  "questions": [
+    {
+      "topic": "fundamentos",
+      "source_key": "SIND-UFMT-V1-FUNDAMENTOS-01",
+      "statement": "Considerando EXCLUSIVAMENTE o art. 1º do Manual de Sindicância PMMT de 2009, qual é a finalidade básica da sindicância?",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Manual 2009, art. 1º: finalidade de apuração de transgressão disciplinar, com possibilidades de remessa diante de crime no art. 8º.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Proferir sentença judicial criminal contra militar estadual.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Colher elementos de autoria e materialidade de irregularidades atribuídas a militares estaduais, para apurar transgressões disciplinares.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Substituir o Inquérito Policial Militar em toda hipótese de crime.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Aplicar necessariamente exclusão a todo militar acusado.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Julgar diretamente recursos da Justiça Militar.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "fundamentos",
+      "source_key": "SIND-UFMT-V1-FUNDAMENTOS-02",
+      "statement": "Na literalidade do art. 2º, parágrafo único, do Manual PMMT de 2009, quem instaura a sindicância de CARÁTER DEMISSÓRIO?",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Manual 2009, art. 2º, parágrafo único; não confundir competência específica da demissória com o rol mais amplo do caput para sindicâncias ordinárias.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Qualquer comandante de companhia.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "O sindicante nomeado na portaria.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "O encarregado de seção de pessoal, em toda situação.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Exclusivamente o comandante de batalhão.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "O Comandante-Geral da PMMT.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "fundamentos",
+      "source_key": "SIND-UFMT-V1-FUNDAMENTOS-03",
+      "statement": "Segundo o art. 4º, I, do Manual ORIGINAL de Sindicância PMMT de 2009, qual é o prazo para autuar os documentos-origem após o recebimento da portaria?",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. A redação do Manual 2009 é 'dentro do prazo de 48 horas'. A Portaria de 2018 usa expressão própria 'até 02 dias'; cada enunciado deve indicar sua fonte.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Até 20 dias depois da solução.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Dentro de 72 horas após o interrogatório.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Dentro de 48 horas do recebimento.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "Apenas depois de concluídas as oitivas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "No máximo 30 dias contados do recebimento.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "fundamentos",
+      "source_key": "SIND-UFMT-V1-FUNDAMENTOS-04",
+      "statement": "No curso da sindicância surge indício de participação de oficial de posto superior ao do sindicante. O que prevê o art. 3º, §3º, do Manual 2009?",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Manual 2009, art. 3º, §3º: superioridade hierárquica descoberta impõe relatório e solicitação de substituição, não continuação automática.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Encerrar a apuração, confeccionar relatório e motivar pedido de substituição imediata à autoridade delegante.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Permanecer no feito obrigatoriamente até o julgamento.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Ignorar a participação do superior e apenas registrar em relatório final.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Transferir a competência diretamente ao Poder Judiciário, sem comunicar a autoridade delegante.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Cancelar retroativamente todas as portarias da corporação.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "fundamentos",
+      "source_key": "SIND-UFMT-V1-FUNDAMENTOS-05",
+      "statement": "Duas portarias instauram sindicâncias sobre o MESMO fato. Pelo art. 3º, §4º, do Manual original de 2009, qual prevalece?",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. O art. 3º, §4º, prefere a sindicância primeiro instaurada quando há duplicidade de portarias sobre mesmo fato.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "A portaria publicada por último.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "A portaria cujo sindicante tiver maior posto, necessariamente.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "A portaria com maior número de testemunhas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "A sindicância primeiro instaurada.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "Ambas devem sempre prosseguir até duas soluções distintas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "defesa",
+      "source_key": "SIND-UFMT-V1-DEFESA-01",
+      "statement": "Durante diligências iniciais, o sindicante obtém indícios de transgressão disciplinar. Qual providência expressa o art. 6º do Manual 2009?",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Manual 2009, arts. 4º, VIII, e 6º: citação do sindicado e garantia de defesa após os indícios de transgressão.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Puni-lo sumariamente antes de cientificá-lo.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Citar o sindicado como acusado, assegurando contraditório/ampla defesa e notificações para oitivas.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Instaurar automaticamente IPM para toda transgressão, sem sindicância.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Dispensar ciência do acusado por se tratar de procedimento administrativo.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Prosseguir até a solução omitindo a imputação.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "defesa",
+      "source_key": "SIND-UFMT-V1-DEFESA-02",
+      "statement": "Militar prestou declarações no 'Termo de Perguntas ao Sindicado'. Depois foi citado por indícios de transgressão. Pelo Manual 2009, qual ato continua obrigatório?",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Os modelos do Manual orientam que o acusado seja obrigatoriamente qualificado e interrogado após a citação, mesmo que já houvesse sido inquirido como sindicado.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Dispensar qualquer novo ato pessoal, pois a oitiva preliminar substitui obrigatoriamente o interrogatório.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Realizar somente sentença penal.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Apresentar defesa apenas depois de recurso.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Determinar que o militar se torne testemunha da própria acusação.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Qualificação e interrogatório como acusado, ainda que tenha prestado declarações antes.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "defesa",
+      "source_key": "SIND-UFMT-V1-DEFESA-03",
+      "statement": "Na fase acusatória, segundo o Manual de 2009, qual conjunto de testemunhas pode ser indicado pelo acusado/defensor?",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Manual 2009, orientações de inquirição e modelo de citação: três de defesa e mais três referidas ou informantes, categorias distintas.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "No máximo três pessoas em qualquer categoria, inclusive informantes.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Cinco testemunhas de defesa e nenhuma referida.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Até três testemunhas de defesa e mais três referidas ou informantes.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "Dez testemunhas de defesa, sem limite de informantes.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Apenas uma testemunha, obrigatoriamente militar.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "defesa",
+      "source_key": "SIND-UFMT-V1-DEFESA-04",
+      "statement": "Na sindicância demissória do Manual original de 2009, após qualificação e interrogatório, qual é o prazo do art. 15, §1º, para defesa prévia?",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Manual de Sindicância PMMT, art. 15, §1º: 72 horas após qualificação/interrogatório; não confundir com alegações finais ou prazo de autuação.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "72 horas.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "48 horas, por ser prazo de autuação do art. 4º.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Cinco dias úteis, como prazo de defesa prévia.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Vinte dias corridos, igual ao prazo antigo de conclusão.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Trinta dias, mesmo sem autorização.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "defesa",
+      "source_key": "SIND-UFMT-V1-DEFESA-05",
+      "statement": "O acusado não constitui defensor e, nas condições previstas no art. 15, §4º, do Manual 2009, não entrega defesa no prazo. Qual providência pode ser tomada pela autoridade delegante?",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Art. 15, §4º: pode ser nomeado defensor dativo; não há condenação automática pela falta de defesa.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Aplicar imediatamente pena máxima por presunção de culpa.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Suprimir em definitivo todas as garantias processuais.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Eliminar os autos sem relatório.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Nomear defensor dativo para proceder à defesa.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "Transformar automaticamente a sindicância em deserção.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "oitivas",
+      "source_key": "SIND-UFMT-V1-OITIVAS-01",
+      "statement": "Sem urgência imediata, a testemunha é chamada para oitiva às 19h. Conforme o Manual de 2009, qual horário ordinário é previsto para ouvir sindicado, ofendido e testemunhas?",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. O texto do Manual 2009 indica de 07h a 18h, ressalvando urgência imediata registrada no termo.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Das 06h às 22h, sem exceções.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Das 07h às 18h.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Somente das 08h às 12h.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Em qualquer horário sem necessidade de motivação.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Somente durante expediente bancário.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "oitivas",
+      "source_key": "SIND-UFMT-V1-OITIVAS-02",
+      "statement": "Uma testemunha já depôs por quatro horas consecutivas, mas será necessário continuar. Segundo a REDAÇÃO DO MANUAL de 2009, assinale a correta.",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. O Manual orienta máximo de quatro horas consecutivas e emprega a expressão 'facultado um período de descanso de meia-hora' se necessário prosseguir além desse período.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "É permitida oitiva de oito horas consecutivas sem intervalo.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "A oitiva sempre deve prosseguir sem interrupção até concluir.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "O limite é de duas horas e o descanso de duas horas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "A regra de quatro horas se aplica somente a civis e nunca a militares.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Não se admite oitiva por mais de quatro horas consecutivas; é facultado descanso de meia hora para continuação.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "oitivas",
+      "source_key": "SIND-UFMT-V1-OITIVAS-03",
+      "statement": "Às 18h, depoimento não está concluído; não há urgência imediata. O que prevê o Manual de 2009?",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. O Manual prevê encerramento às 18h e retomada no dia seguinte, com tratamento de dias não úteis e urgências.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Prosseguir obrigatoriamente até a madrugada.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Apagar os registros já realizados.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Encerrar o depoimento e prosseguir no dia seguinte, em horário determinado, respeitando ressalva sobre dia não útil.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "Iniciar imediatamente o relatório final sem outra oitiva.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Determinar que a testemunha assine depoimento ainda não concluído.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "oitivas",
+      "source_key": "SIND-UFMT-V1-OITIVAS-04",
+      "statement": "Segundo os arts. 6º, §1º, e 16 do Manual 2009, em que ordem devem ser ouvidas as testemunhas?",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Os dispositivos determinam ouvir acusação antes de defesa, permitindo contraditório quando cabível.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Primeiro as de acusação; depois as de defesa.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Primeiro as de defesa; depois as de acusação, em qualquer caso.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Sempre simultaneamente, sem distinção.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Apenas na ordem alfabética, obrigatoriamente.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Somente após decisão do Comandante-Geral.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "oitivas",
+      "source_key": "SIND-UFMT-V1-OITIVAS-05",
+      "statement": "Na fase acusatória, uma testemunha encontra-se em outra localidade e é ouvida por carta precatória. O Manual de 2009 assegura ao acusado/defensor:",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Manual 2009, art. 7º, parágrafo único, e explicação de inquirições: defesa pode oferecer quesitos na carta precatória.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Proibição absoluta de qualquer participação na oitiva.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Direito de escolher e substituir a autoridade judiciária por particular.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Impossibilidade de ouvir testemunha fora do município.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Oportunidade de formular quesitos/perguntas a serem consignados na carta precatória.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "Dispensa permanente do contraditório em toda a sindicância.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "demissoria",
+      "source_key": "SIND-UFMT-V1-DEMISSORIA-01",
+      "statement": "Pelo art. 9º do MANUAL ORIGINAL de 2009, a exclusão ex officio ali disciplinada refere-se especificamente a:",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Art. 9º da seção 'Sindicância (caráter demissório)' refere-se a praças sem estabilidade e exige garantia de defesa.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Todas as praças com estabilidade, automaticamente e sem defesa.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Praças sem estabilidade, após sindicância, observados contraditório e ampla defesa.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Somente civis que trabalhem em quartel.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Exclusivamente oficiais superiores, sem procedimento.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Todos os militares da reserva, sem apuração.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "demissoria",
+      "source_key": "SIND-UFMT-V1-DEMISSORIA-02",
+      "statement": "O art. 14, parágrafo único, do Manual de 2009 apresenta impedimentos do encarregado. Qual hipótese está CORRETAMENTE incluída?",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Art. 14, parágrafo único, alínea a; as demais alíneas tratam parentesco, interesse particular e participação como parte em procedimento anterior base da acusação.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Qualquer oficial apenas por ocupar posto superior ao acusado.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Somente oficiais com menos de cinco anos de serviço.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Qualquer testemunha que concorde com a defesa.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "O militar sem relação com os fatos, apenas por pertencer à PMMT.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "O oficial que formulou a acusação.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "demissoria",
+      "source_key": "SIND-UFMT-V1-DEMISSORIA-03",
+      "statement": "O oficial participou como PARTE em procedimento anterior que fundamenta a acusação. Ainda que não tenha formulado a nova acusação, qual regra do Manual original de 2009 impede sua nomeação?",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. A alínea d do art. 14, parágrafo único, veda encarregado que tenha sido parte em procedimento que serviu de base à acusação.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Art. 4º, I, que trata apenas de autuação.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Art. 17, referente a alegações finais.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Art. 14, parágrafo único, alínea d.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "Art. 20, que trata de solução.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Art. 15, §1º, sobre prazo de defesa prévia.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "demissoria",
+      "source_key": "SIND-UFMT-V1-DEMISSORIA-04",
+      "statement": "Após a conclusão de diligências, o acusado recebe vista dos autos. Conforme o art. 17 do Manual 2009, qual prazo para alegações finais?",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Art. 17: cinco dias corridos para alegações finais depois de concluídas as diligências e aberta vista dos autos.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Cinco dias corridos.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "72 horas, sempre e apenas para alegações finais.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "48 horas para autuação dos documentos.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Vinte dias para testemunhas da defesa.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Trinta dias para contestação do relatório.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "demissoria",
+      "source_key": "SIND-UFMT-V1-DEMISSORIA-05",
+      "statement": "Segundo o art. 20 do Manual de 2009, recebido o relatório de sindicância demissória, em qual prazo o Comandante-Geral deve proferir solução nos termos desse artigo?",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. O prazo de solução do art. 20, contado do recebimento dos autos, não se confunde com o prazo de CONCLUSÃO do art. 18 (historicamente alterado).",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Quarenta dias da expedição da portaria.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Setenta e duas horas após a citação.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Cinco dias após o parecer da testemunha.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Vinte dias após recebidos os autos.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "Dez dias contados da autuação.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "prazos",
+      "source_key": "SIND-UFMT-V1-PRAZOS-01",
+      "statement": "A questão pede EXPRESSAMENTE o art. 18 na REDAÇÃO ORIGINAL de 2009 do Manual, na seção demissória. Qual prazo de conclusão/remessa e prorrogação extraordinária nele constava?",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Art. 18 original de 2009 previa 20 + até 10 dias para a demissória; esse art. 18 foi expressamente revogado/substituído pela Portaria de 22/01/2018. A questão é HISTÓRICA, não afirma vigência em 2026.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "60 dias e 30 dias, como se fosse a redação original do art. 18.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "20 dias corridos desde autuação, prorrogáveis por até 10 dias corridos em motivos excepcionais.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "40 dias e 20 dias, como se fosse o prazo histórico do art. 18.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "24 horas e 48 horas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "5 dias úteis, sem qualquer extensão.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "prazos",
+      "source_key": "SIND-UFMT-V1-PRAZOS-02",
+      "statement": "Segundo o TEXTO DA PORTARIA nº 01/QCG/CORREGPM DE 22/01/2018, qual prazo de conclusão/remessa e prorrogação corresponde à sindicância INVESTIGATÓRIA/ACUSATÓRIA?",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Reprodução do art. 1º da Portaria de 2018: 40 dias + 20 de prorrogação mediante pedido e análise; não se afirma vigência consolidada em 2026.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "20 dias + 10 dias, como regime de 2018.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "60 dias + 30 dias, que no texto de 2018 corresponde ao rito demissório.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "72 horas + 5 dias corridos.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "48 horas + 20 dias, contados da solução.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "40 dias a partir da autuação, prorrogáveis por 20 dias nas condições previstas.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "prazos",
+      "source_key": "SIND-UFMT-V1-PRAZOS-03",
+      "statement": "Segundo o TEXTO DA PORTARIA nº 01/QCG/CORREGPM DE 22/01/2018, qual prazo de conclusão/remessa e prorrogação corresponde à sindicância DEMISSÓRIA?",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Reprodução do art. 2º da Portaria 2018: 60 + 30 dias, pedido ao Comandante-Geral antes do vencimento. Confirmar vigência antes de tratar como norma atual.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "20 dias + 10 dias como regra do art. 2º de 2018.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "40 dias + 20 dias, que se refere à investigatória/acusatória de 2018.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "60 dias a partir da autuação, prorrogáveis por 30 dias nas condições previstas.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "48 horas + 72 horas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "5 dias + 20 dias, contados da citação.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "prazos",
+      "source_key": "SIND-UFMT-V1-PRAZOS-04",
+      "statement": "Um pedido de prorrogação é formulado conforme a Portaria nº 01/QCG/CORREGPM DE 2018. Quanto à ANTECEDÊNCIA DO PROTOCOLO, o texto exige:",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Arts. 1º, §1º, e 2º, §1º: protocolo ao menos um dia antes do vencimento; conferir autoridade competente de acordo com o rito.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "No mínimo um dia antes do término do prazo.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Depois do prazo, sem justificativa, obrigatoriamente.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Exatamente trinta dias antes da autuação.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Somente após solução definitiva.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "No início do processo, antes de portaria de instauração.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "prazos",
+      "source_key": "SIND-UFMT-V1-PRAZOS-05",
+      "statement": "Segundo a Portaria nº 01/QCG/CORREGPM de 2018, reproduzida nos materiais de referência, o prazo para AUTUAÇÃO após recebimento da portaria é expresso como:",
+      "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. A Portaria de 2018 utiliza 'até 02 (dois) dias' para autuação. Na versão original de 2009, art. 4º, I, a fórmula é '48 horas'. Preservar a diferença na literalidade.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Somente após vinte dias corridos.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Sessenta dias corridos.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Trinta dias prorrogáveis automaticamente.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Até dois dias após o recebimento da portaria.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "Cinco dias úteis após o relatório.",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "format_version": 1,
+  "module_slug_contains": "modulo-4-corregedoria-pmmt",
+  "patches": [
+    {
+      "index": 14,
+      "old_statement": "Considerando o Manual de Inquérito Policial Militar da PMMT, no tema Defesa prévia, assinale a alternativa correta.",
+      "new_statement": "De acordo com o MANUAL DE SINDICÂNCIA PMMT DE 2009, art. 15, §1º (sindicância demissória), após qualificação e interrogatório do acusado, qual alternativa reproduz corretamente a defesa prévia?",
+      "old_explanation": "Após qualificação e interrogatório, o material reproduz prazo de 72 horas para apresentação da defesa prévia.",
+      "new_explanation": "Manual de Sindicância da PMMT de 2009, art. 15, §1º: defesa prévia em 72 horas após a qualificação e o interrogatório. A questão NÃO se refere ao Manual de IPM.",
+      "old_correct": "Após qualificação e interrogatório, o material reproduz prazo de 72 horas para apresentação da defesa prévia.",
+      "new_correct": "Após qualificação e interrogatório, o material reproduz prazo de 72 horas para apresentação da defesa prévia."
+    },
+    {
+      "index": 15,
+      "old_statement": "Considerando o Manual de Inquérito Policial Militar da PMMT, no tema Alegações finais, assinale a alternativa correta.",
+      "new_statement": "De acordo com o MANUAL DE SINDICÂNCIA PMMT DE 2009, arts. 6º, §2º, e 17, encerradas as diligências e aberta vista dos autos, qual alternativa reproduz o prazo das alegações finais?",
+      "old_explanation": "Concluídas as diligências, o material reproduz prazo de cinco dias corridos para alegações finais da defesa.",
+      "new_explanation": "Manual de Sindicância da PMMT de 2009, arts. 6º, §2º, e 17: cinco dias corridos para alegações finais, depois de concluídas as diligências e aberta vista dos autos. A questão NÃO se refere ao Manual de IPM.",
+      "old_correct": "Concluídas as diligências, o material reproduz prazo de cinco dias corridos para alegações finais da defesa.",
+      "new_correct": "Concluídas as diligências, o material reproduz prazo de cinco dias corridos para alegações finais da defesa."
+    },
+    {
+      "index": 16,
+      "old_statement": "À luz da Portaria nº 160/GCG/PMMT/09 e do Manual de Sindicância da PMMT, no tema Conclusão da sindicância, assinale a alternativa correta.",
+      "new_statement": "Segundo a REDAÇÃO ORIGINAL de 2009 do art. 18 do Manual de Sindicância PMMT, na seção do rito DEMISSÓRIO, qual afirmação reproduz o prazo histórico de conclusão e remessa?",
+      "old_explanation": "A sindicância dispõe de vinte dias corridos, a contar da autuação, para conclusão dos trabalhos, inclusive remessa do relatório.",
+      "new_explanation": "Na redação original de 2009, art. 18 (seção demissória), havia prazo de 20 dias corridos para conclusão e remessa desde a autuação. ATENÇÃO: o art. 18 foi expressamente revogado/substituído pela Portaria nº 01/QCG/CORREGPM, de 22/01/2018; este enunciado cobra apenas o texto histórico, não afirma prazo vigente em 2026.",
+      "old_correct": "A sindicância dispõe de vinte dias corridos, a contar da autuação, para conclusão dos trabalhos, inclusive remessa do relatório.",
+      "new_correct": "Na redação ORIGINAL DE 2009 do art. 18 do Manual (sindicância demissória), a conclusão e remessa eram previstas em 20 dias corridos contados da autuação."
+    },
+    {
+      "index": 17,
+      "old_statement": "À luz da Portaria nº 160/GCG/PMMT/09 e do Manual de Sindicância da PMMT, no tema Prorrogação da sindicância, assinale a alternativa correta.",
+      "new_statement": "Segundo o parágrafo único do art. 18 na REDAÇÃO ORIGINAL DE 2009 do Manual de Sindicância PMMT, qual alternativa descreve a prorrogação HISTÓRICA do rito demissório?",
+      "old_explanation": "Por motivos excepcionais, a autoridade delegante pode prorrogar em até dez dias corridos o prazo de conclusão da sindicância.",
+      "new_explanation": "Manual original de 2009, art. 18, parágrafo único: por motivos excepcionais, prorrogação até 10 dias corridos. Essa redação foi expressamente revogada/substituída pela Portaria de 22/01/2018. Não ensinar esse prazo como automaticamente vigente em 2026.",
+      "old_correct": "Por motivos excepcionais, a autoridade delegante pode prorrogar em até dez dias corridos o prazo de conclusão da sindicância.",
+      "new_correct": "O parágrafo único do art. 18 do Manual, na redação ORIGINAL de 2009 para o rito demissório, previa prorrogação de até 10 dias corridos por motivos excepcionais."
+    },
+    {
+      "index": 31,
+      "old_statement": "Considerando os Manuais de IPM, Sindicância e Deserção da PMMT e a Portaria nº 160/GCG/PMMT/09, analise as assertivas abaixo:\n\nI. O material reproduz prazo de vinte dias para terminar o IPM quando o indiciado estiver solto.\nII. A sindicância dispõe de vinte dias corridos, a contar da autuação, para conclusão dos trabalhos, inclusive remessa do relatório.\nIII. O material reproduz prazo de cinco dias para o Comandante-Geral proferir solução, sem possibilidade de motivação divergente.\n\nEstá correto o que se afirma em:",
+      "new_statement": "Considerando os Manuais de IPM, Sindicância e Deserção da PMMT e a Portaria nº 160/GCG/PMMT/09, analise as assertivas abaixo:\n\nI. O material reproduz prazo de vinte dias para terminar o IPM quando o indiciado estiver solto.\nII. No art. 18 do MANUAL ORIGINAL de 2009, a sindicância DEMISSÓRIA tinha prazo de 20 dias corridos contados da autuação para conclusão e remessa do relatório.\nIII. O material reproduz prazo de cinco dias para o Comandante-Geral proferir solução, sem possibilidade de motivação divergente.\n\nEstá correto o que se afirma em:",
+      "old_explanation": "A combinação correta é B. A questão confronta regras de Prazo do IPM com indiciado solto, Conclusão da sindicância, Solução pelo Comandante-Geral. Consulte as proposições literais indicadas no material do módulo.",
+      "new_explanation": "A combinação correta continua B (II apenas). II é correta SOMENTE quanto à redação original de 2009 do art. 18 do Manual (rito demissório), posteriormente revogada/substituída em 2018. I e III estão incorretas conforme os prazos do IPM e da solução do art. 20.",
+      "old_correct": "II, apenas.",
+      "new_correct": "II, apenas."
+    },
+    {
+      "index": 32,
+      "old_statement": "Considerando os Manuais de IPM, Sindicância e Deserção da PMMT e a Portaria nº 160/GCG/PMMT/09, analise as assertivas abaixo:\n\nI. No caso de indiciado solto, o prazo pode ser prorrogado por mais vinte dias pela autoridade militar superior nas hipóteses indicadas no material.\nII. Por motivos excepcionais, a autoridade delegante pode prorrogar em até dez dias corridos o prazo de conclusão da sindicância.\nIII. Cabe exclusivamente ao sindicante julgar, em última instância, todos os recursos, no prazo de 48 horas.\n\nEstá correto o que se afirma em:",
+      "new_statement": "Considerando os Manuais de IPM, Sindicância e Deserção da PMMT e a Portaria nº 160/GCG/PMMT/09, analise as assertivas abaixo:\n\nI. No caso de indiciado solto, o prazo pode ser prorrogado por mais vinte dias pela autoridade militar superior nas hipóteses indicadas no material.\nII. Pela redação ORIGINAL do art. 18, parágrafo único, do Manual de 2009, a sindicância DEMISSÓRIA podia ser prorrogada excepcionalmente por até dez dias corridos.\nIII. Cabe exclusivamente ao sindicante julgar, em última instância, todos os recursos, no prazo de 48 horas.\n\nEstá correto o que se afirma em:",
+      "old_explanation": "A combinação correta é C. A questão confronta regras de Prorrogação do IPM com indiciado solto, Prorrogação da sindicância, Recursos na última instância. Consulte as proposições literais indicadas no material do módulo.",
+      "new_explanation": "A combinação correta continua C (I e II apenas). II se refere apenas à redação histórica de 2009 do art. 18, substituída em 2018; III é falsa sobre competência recursal.",
+      "old_correct": "I e II, apenas.",
+      "new_correct": "I e II, apenas."
+    },
+    {
+      "index": 37,
+      "old_statement": "Considerando os Manuais de IPM, Sindicância e Deserção da PMMT e a Portaria nº 160/GCG/PMMT/09, analise as assertivas abaixo:\n\nI. Por motivos excepcionais, a autoridade delegante pode prorrogar em até dez dias corridos o prazo de conclusão da sindicância.\nII. O material reproduz prazo de vinte dias para o Comandante-Geral proferir solução nos autos recebidos, aceitando ou não o julgamento.\nIII. A parte de ausência somente é lavrada depois de consumados os oito dias do prazo de graça.\n\nEstá correto o que se afirma em:",
+      "new_statement": "Considerando os Manuais de IPM, Sindicância e Deserção da PMMT e a Portaria nº 160/GCG/PMMT/09, analise as assertivas abaixo:\n\nI. Na redação ORIGINAL de 2009 do art. 18, parágrafo único, a sindicância DEMISSÓRIA podia ser prorrogada excepcionalmente por até dez dias corridos.\nII. O material reproduz prazo de vinte dias para o Comandante-Geral proferir solução nos autos recebidos, aceitando ou não o julgamento.\nIII. A parte de ausência somente é lavrada depois de consumados os oito dias do prazo de graça.\n\nEstá correto o que se afirma em:",
+      "old_explanation": "A combinação correta é C. A questão confronta regras de Prorrogação da sindicância, Solução pelo Comandante-Geral, Parte de ausência. Consulte as proposições literais indicadas no material do módulo.",
+      "new_explanation": "A combinação correta continua C (I e II apenas). I é correta apenas na redação histórica do Manual de 2009, art. 18, revogada/substituída em 2018. II refere-se ao prazo de solução do art. 20 e III é falsa.",
+      "old_correct": "I e II, apenas.",
+      "new_correct": "I e II, apenas."
+    },
+    {
+      "index": 13,
+      "old_statement": "À luz da Portaria nº 160/GCG/PMMT/09 e do Manual de Sindicância da PMMT, no tema Autuação da sindicância, assinale a alternativa correta.",
+      "new_statement": "Segundo o art. 4º, I, do MANUAL ORIGINAL DE SINDICÂNCIA PMMT DE 2009, no tema autuação dos documentos-origem, assinale a alternativa correta.",
+      "old_explanation": "A Portaria nº 160 estudada determina autuação dos documentos de origem em até 48 horas após o recebimento da portaria.",
+      "new_explanation": "Manual original de 2009, art. 4º, I: autuação dentro de 48 horas do recebimento da portaria. A Portaria nº 01/QCG/CORREGPM/2018 utiliza a expressão 'até 02 dias'; a questão cobra apenas o texto de 2009.",
+      "old_correct": "A Portaria nº 160 estudada determina autuação dos documentos de origem em até 48 horas após o recebimento da portaria.",
+      "new_correct": "O Manual original de 2009, art. 4º, I, determina autuação dos documentos-origem em até 48 horas após recebimento da portaria."
+    }
+  ]
+}

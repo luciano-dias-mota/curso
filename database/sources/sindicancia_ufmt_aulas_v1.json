@@ -1,0 +1,196 @@
+{
+  "format_version": 1,
+  "module_slug": "modulo-4-corregedoria-pmmt-ipm-sindicancia-portaria-160-e-desercao",
+  "source_label": "Manual Sindicância PMMT 2009 | Portaria 01/QCG/CORREGPM 2018 - comparativo literal",
+  "legal_sources": [
+    "Portaria 218/GCG/PMMT/09 - Manual de Sindicância PMMT - 2009 (documento enviado)",
+    "Portaria 01/QCG/CORREGPM de 22/01/2018 - reprodução pública cotejada (boletim oficial vigente não validado)"
+  ],
+  "lessons": [
+    {
+      "topic": "fundamentos",
+      "phase_slug": "2-sindicancia-pmmt",
+      "slug": "reforco-ufmt-sindicancia-fundamentos-v1",
+      "title": "Reforço UFMT — Sindicância: fundamentos, competências e autuação",
+      "estimated_minutes": 16,
+      "blocks": [
+        {
+          "type": "theory",
+          "title": "Art. 1º — finalidade e diferença em relação ao IPM",
+          "content": "Pelo Manual de Sindicância Policial Militar da PMMT de 2009, a sindicância colhe elementos de autoria e materialidade de irregularidades atribuídas a militares estaduais, visando à apuração de transgressões disciplinares (o art. 1º remete aos arts. 12 e 13 do RDPM/MT). NÃO dizer que a sindicância serve apenas para crimes. Se surgirem indícios de crime, o art. 8º contempla encaminhamentos e eventual instauração de IPM; a sindicância não substitui, por si só, a investigação criminal."
+        },
+        {
+          "type": "comparison",
+          "title": "Art. 2º — competências diferentes",
+          "content": "Sindicância ordinária: o art. 2º do Manual de 2009 enumera Comandante-Geral, Chefe da Casa Militar, Corregedor-Geral, Diretores e os comandos/chefias militares indicados na norma, observadas as respectivas circunscrições. O parágrafo único atribui a instauração da sindicância DEMISSÓRIA ao Comandante-Geral. Não transportar a competência exclusiva do rito demissório para toda sindicância."
+        },
+        {
+          "type": "theory",
+          "title": "Art. 3º — sindicante e substituição",
+          "content": "O Manual de 2009 admite como sindicante oficial PM, aspirante-a-oficial, subtenente ou sargento mais antigo ou superior ao sindicado. Se a apuração revelar indício de participação de oficial ou graduado superior ao sindicante, este encerra a atividade apuratória, elabora relatório e solicita à autoridade delegante substituição imediata, motivadamente. Portarias duplicadas sobre o mesmo fato: prevalece a primeira instaurada (art. 3º, §§3º e 4º)."
+        },
+        {
+          "type": "case_study",
+          "title": "Art. 4º — documento origem e prazo de autuação",
+          "content": "Situação do MANUAL ORIGINAL DE 2009: oficial recebe a portaria numa segunda-feira, autuando os documentos-origem dentro de 48 horas do recebimento. É o prazo expresso no art. 4º, I. Em 2018, a Portaria nº 01/QCG/CORREGPM emprega a fórmula 'até 02 (dois) dias' a partir do recebimento para autuação. Em questões, NÃO substituir uma fonte pela outra sem informar o documento aplicado."
+        },
+        {
+          "type": "memory",
+          "title": "Sequência inicial — quem faz o quê?",
+          "content": "Instaurar por autoridade competente → designar sindicante → autuar documentos-origem → ouvir envolvidos/testemunhas e providenciar diligências → havendo indícios de transgressão, citar acusado → abrir contraditório/ampla defesa. Prazo e competência dependem do procedimento e da norma invocada."
+        }
+      ]
+    },
+    {
+      "topic": "defesa",
+      "phase_slug": "2-sindicancia-pmmt",
+      "slug": "reforco-ufmt-sindicancia-defesa-v1",
+      "title": "Reforço UFMT — Citação, interrogatório, defesa e testemunhas",
+      "estimated_minutes": 16,
+      "blocks": [
+        {
+          "type": "theory",
+          "title": "Fase inicial e conversão em acusatória",
+          "content": "Antes dos indícios de transgressão, o militar envolvido pode prestar esclarecimentos em Termo de Perguntas ao Sindicado. Quando houver indícios de transgressão, o art. 4º, VIII, e o art. 6º exigem citação e oportunidade de contraditório e ampla defesa. A partir daí, o sindicado passa a atuar como acusado, com ciência dos atos instrutórios pertinentes."
+        },
+        {
+          "type": "case_study",
+          "title": "Citação não substitui interrogatório",
+          "content": "O sindicado respondeu a perguntas preliminares antes da citação. Depois, surgem indícios de transgressão e ele é citado. O Manual exige que, já como acusado, seja QUALIFICADO E INTERROGADO, mesmo tendo sido inquirido anteriormente. Não confundir o modelo 'Termo de Perguntas ao Sindicado' com 'Termo de Qualificação e Interrogatório'."
+        },
+        {
+          "type": "theory",
+          "title": "Art. 6º — notificações, ordem das oitivas e ampla defesa",
+          "content": "O art. 6º determina notificação do acusado para inquirições de ofendido e testemunhas, com abertura de palavra ao acusado/defensor para formular perguntas. Primeiro são ouvidas testemunhas de acusação; depois as de defesa. A participação em atos processuais necessários à defesa deve observar a regra e as exceções expressas do art. 15, §2º (inclusive revelia)."
+        },
+        {
+          "type": "comparison",
+          "title": "Testemunhas — 3 + 3, não limite absoluto de três",
+          "content": "O texto orientativo do Manual de 2009 prevê até TRÊS testemunhas de defesa e mais TRÊS testemunhas referidas ou informantes. O sindicante pode ouvir outras testemunhas que considerar necessárias. Se a questão disser 'somente três pessoas, em qualquer categoria', a afirmação não corresponde ao texto apresentado."
+        },
+        {
+          "type": "theory",
+          "title": "72 horas e defensor dativo",
+          "content": "O art. 15, §1º, do rito demissório prevê DEFESA PRÉVIA em 72 horas após qualificação e interrogatório; o modelo explicativo do Manual de 2009 utiliza a expressão '72 horas corridas' contadas do recebimento da citação. Não confundir a data de início dos prazos sem verificar a norma/modelo expressamente cobrado. Art. 15, §§3º e 4º: nos casos indicados de incapacidade de constituir/apresentar defesa, ou inércia, pode ser nomeado defensor dativo pela autoridade delegante."
+        },
+        {
+          "type": "memory",
+          "title": "Garantias e documentos",
+          "content": "Identifique os termos: perguntas preliminares ao sindicado; citação; qualificação/interrogatório do acusado; defesa prévia; oitivas com notificação; vista dos autos; alegações finais. No art. 6º, §2º, o prazo das alegações finais é de CINCO DIAS CORRIDOS."
+        }
+      ]
+    },
+    {
+      "topic": "oitivas",
+      "phase_slug": "2-sindicancia-pmmt",
+      "slug": "reforco-ufmt-sindicancia-oitivas-v1",
+      "title": "Reforço UFMT — Inquirições, horários e carta precatória",
+      "estimated_minutes": 16,
+      "blocks": [
+        {
+          "type": "theory",
+          "title": "Horário ordinário das inquirições: 7h às 18h",
+          "content": "O Manual de 2009 orienta a ouvir sindicado, ofendido e testemunhas entre 07h e 18h, ressalvada urgência imediata que conste do respectivo termo. Se o depoimento não terminar às 18h, deve ser encerrado e retomado no dia seguinte em horário determinado; se dia não útil, pode ser adiado para o primeiro dia útil seguinte, ressalvadas urgências. Registrar início, término e interrupções."
+        },
+        {
+          "type": "comparison",
+          "title": "Quatro horas consecutivas e descanso de meia hora",
+          "content": "O Manual não permite ouvir qualquer pessoa por mais de QUATRO HORAS CONSECUTIVAS. Quando for necessário prosseguir além desse período, a redação emprega 'sendo-lhe facultado um período de descanso de meia-hora'. Em questão de literalidade, reproduzir 'facultado', sem inventar que o descanso é sempre vedado ou sem condições."
+        },
+        {
+          "type": "case_study",
+          "title": "Oitiva iniciada às 16h e ainda incompleta às 18h",
+          "content": "Inquirição iniciada às 16h continua sem conclusão às 18h, sem urgência imediata formalizada. Segundo a orientação do Manual, encerra-se e prossegue-se no dia seguinte, em hora determinada, observando-se o caso de dia não útil. Não é permitido normalizar continuação noturna irrestrita."
+        },
+        {
+          "type": "theory",
+          "title": "Carta precatória e participação da defesa",
+          "content": "Se testemunha estiver em outra localidade e deslocamento for inviável, pode ser expedida carta precatória à autoridade militar da circunscrição. Na fase acusatória, a defesa pode indicar quesitos/perguntas a integrar a precatória. O art. 16, parágrafo único, da sindicância demissória admite autoridade policial-militar ou, na falta, autoridade judiciária local."
+        },
+        {
+          "type": "memory",
+          "title": "Ordem e tipos de inquirição",
+          "content": "O ofendido presta declarações, o investigado/acusado é ouvido nas formas adequadas, e testemunhas prestam depoimento; registrar em termos. Testemunhas devem ser ouvidas separadamente. Não confundir ordem de testemunhas (acusação antes de defesa) com limite de duração da oitiva."
+        }
+      ]
+    },
+    {
+      "topic": "demissoria",
+      "phase_slug": "2-sindicancia-pmmt",
+      "slug": "reforco-ufmt-sindicancia-demissoria-v1",
+      "title": "Reforço UFMT — Sindicância demissória e impedimentos",
+      "estimated_minutes": 16,
+      "blocks": [
+        {
+          "type": "theory",
+          "title": "Seção II, arts. 9º a 13 — alcance da demissória",
+          "content": "O Manual de 2009 disciplina a exclusão ex officio de PRAÇA SEM ESTABILIDADE, observados contraditório e ampla defesa, nos casos do art. 9º. O art. 10 especifica hipóteses de submissão ao procedimento; o art. 11 prevê afastamento do exercício das funções e colocação à disposição do encarregado; o art. 13 estende as formalidades a processos demissórios de alunos dos cursos de formação. Não reduzir o rito apenas a 'qualquer praça em estágio probatório' sem ler os artigos."
+        },
+        {
+          "type": "comparison",
+          "title": "Art. 14, parágrafo único — todas as quatro hipóteses",
+          "content": "Não pode ser encarregado: a) oficial que formulou acusação; b) oficial com parentesco descrito na lei, em linha reta ou até quarto grau colateral, com acusador/acusado; c) oficial com particular interesse na solução; d) oficial que foi parte em procedimento que serviu de base à acusação. A alternativa que só cita a–c omite a alínea d."
+        },
+        {
+          "type": "case_study",
+          "title": "Impedimento por participação prévia",
+          "content": "Um oficial participou como parte em procedimento anterior utilizado para fundamentar a acusação de sindicância demissória. Ainda que não tenha formulado a acusação atual nem possua parentesco, incide o impedimento previsto na ALÍNEA D do art. 14, parágrafo único."
+        },
+        {
+          "type": "theory",
+          "title": "Art. 15, 16 e 17 — sequência da ampla defesa",
+          "content": "Realizada citação, o encarregado lê a portaria/documentos, qualifica e interroga o acusado (art. 15). Defesa prévia em 72 horas após qualificação/interrogatório (art. 15, §1º). Inquire-se primeiro acusação, depois defesa (art. 16). Concluídas as diligências, abre-se vista para alegações finais no prazo de CINCO DIAS CORRIDOS (art. 17)."
+        },
+        {
+          "type": "comparison",
+          "title": "Prazos diferentes: conclusão, solução e recurso",
+          "content": "No texto ORIGINAL de 2009, art. 18: conclusão e remessa em 20 dias corridos desde autuação, prorrogação até 10 dias. Esse art. 18 foi expressamente substituído/revogado pela Portaria nº 01/QCG/CORREGPM/2018. Separadamente, o art. 20 prevê prazo de 20 dias para a solução pelo Comandante-Geral após recebidos os autos e o art. 21 prevê 20 dias para julgamento dos recursos em última instância. Não confundir as três fases apenas porque a versão original cita '20 dias'."
+        },
+        {
+          "type": "memory",
+          "title": "Encadeamento do rito demissório",
+          "content": "Comandante-Geral instaura; encarregado conduz; acusado é citado, qualificado e interrogado; apresenta defesa; testemunhas de acusação e defesa são inquiridas; ocorre vista para alegações finais; encarregado emite relatório; autos são remetidos ao Comandante-Geral para solução. Atenção à substituição normativa do prazo do art. 18, sem apagar os arts. 20 e 21."
+        }
+      ]
+    },
+    {
+      "topic": "prazos",
+      "phase_slug": "2-sindicancia-pmmt",
+      "slug": "reforco-ufmt-sindicancia-prazos-v1",
+      "title": "Reforço UFMT — Cronologia dos prazos: 2009 × 2018",
+      "estimated_minutes": 16,
+      "blocks": [
+        {
+          "type": "warning",
+          "title": "Atenção às fontes e à vigência",
+          "content": "Leia separadamente: MANUAL ORIGINAL de 2009 (Portaria 218/GCG/PMMT/09), PORTARIA 160/GCG/PMMT/09 e PORTARIA nº 01/QCG/CORREGPM de 22/01/2018. O texto da Portaria 2018 foi cotejado em reproduções públicas, NÃO em boletim oficial consolidado de 2026. O curso apresenta literalidade histórica/comparativa; a confirmação de vigência atual e o edital exigem consulta ao boletim oficial."
+        },
+        {
+          "type": "comparison",
+          "title": "Manual original de 2009 — prazos expressos",
+          "content": "Art. 4º, I: autuação dos documentos-origem em 48 HORAS após recebimento da portaria. Art. 18, na redação original e NA SEÇÃO DEMISSÓRIA: 20 DIAS CORRIDOS desde a autuação para conclusão/remessa, com possibilidade excepcional de prorrogação de até 10 DIAS CORRIDOS. Estes prazos de conclusão NÃO podem ser expostos sem a identificação histórica depois da alteração de 2018."
+        },
+        {
+          "type": "comparison",
+          "title": "Portaria nº 01/QCG/CORREGPM de 2018 — sindicância investigatória/acusatória",
+          "content": "Reprodução do art. 1º da Portaria de 22/01/2018: conclusão e remessa em 40 DIAS, desde autuação; autuação em até 02 DIAS após recebimento da portaria; prorrogação de 20 DIAS mediante pedido apresentado pelo menos UM DIA antes do vencimento. Após prorrogação, dilação até 30 DIAS se necessidade comprovada; sobrestamento até 60 DIAS nas situações previstas. NÃO confundir os prazos de duração com hora de oitiva."
+        },
+        {
+          "type": "comparison",
+          "title": "Portaria nº 01/QCG/CORREGPM de 2018 — sindicância demissória",
+          "content": "Reprodução do art. 2º: conclusão e remessa em 60 DIAS, desde autuação; autuação até 02 DIAS após portaria; prorrogação por 30 DIAS mediante pedido ao Comandante-Geral no mínimo UM DIA antes de terminar o prazo. Para dilação/sobrestamento, o §2º remete aos §§2º e 3º do art. 1º (até 30 dias de dilação e até 60 de sobrestamento). Não presumir que esta Portaria não tenha sido alterada novamente em 2026."
+        },
+        {
+          "type": "case_study",
+          "title": "Quatro marcos da prova, sem misturar ritos",
+          "content": "O enunciado cobra 'art. 18 na redação ORIGINAL de 2009': resposta 20 + até 10 dias, sindicância demissória. Se cobra 'art. 2º da PORTARIA de 2018': 60 + 30 dias. Se cobra 'art. 1º da PORTARIA de 2018': 40 + 20 dias, rito investigatório/acusatório. Se cobra 'art. 20 do MANUAL de 2009': 20 dias para solução do Comandante-Geral após o recebimento dos autos. A data e o tipo de ato são parte da resposta."
+        },
+        {
+          "type": "memory",
+          "title": "Mapa final para fixação",
+          "content": "Autuação 2009: 48h; Portaria 2018: até 02 dias. Oitivas Manual 2009: 07–18h e máximo 4h consecutivas, descanso facultado de 30 min se continuar. Defesa prévia: 72h. Alegações finais: 5 dias corridos. Conclusão demissória original 2009: 20 + até 10 dias; Portaria 2018: 60 + 30 dias. Investigatória/acusatória conforme Portaria 2018: 40 + 20 dias. Antes de usar como 'vigente', confirme alterações posteriores no boletim oficial."
+        }
+      ]
+    }
+  ]
+}
