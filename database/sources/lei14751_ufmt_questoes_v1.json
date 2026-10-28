@@ -563,6 +563,2603 @@
           "is_correct": false
         }
       ]
+    },
+    {
+      "topic": "natureza",
+      "source_key": "LO14751-UFMT-V1-NATUREZA-002",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (arts. 2º–4º e 7º), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em arts. 2º–4º e 7º. A alternativa correta é: O Sistema Nacional de Proteção e Defesa Civil é conhecido como Sinpdec. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Sinpdec é a sigla do sistema nacional de Justiça Militar da União.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Ser força auxiliar exige que o Exército nomeie sempre o Comandante-Geral estadual.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "O Sistema Nacional de Proteção e Defesa Civil é conhecido como Sinpdec.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "As corporações militares estaduais não guardam qualquer vínculo de reserva com o Exército.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "A subordinação ordinária de todas as PMs é diretamente ao Ministro da Defesa.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "natureza",
+      "source_key": "LO14751-UFMT-V1-NATUREZA-003",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (arts. 2º–4º e 7º), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em arts. 2º–4º e 7º. A alternativa correta é: As PMs e os CBMs são forças auxiliares e reserva do Exército. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "As PMs e os CBMs são forças auxiliares e reserva do Exército.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "As corporações militares estaduais não guardam qualquer vínculo de reserva com o Exército.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "A lei permite que qualquer praça da ativa assuma o comando-geral independentemente do posto.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "A integração ao Susp extingue a autonomia federativa dos Estados.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "A lei veda toda aproximação entre corporações e comunidade local.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "natureza",
+      "source_key": "LO14751-UFMT-V1-NATUREZA-004",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (arts. 2º–4º e 7º), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em arts. 2º–4º e 7º. A alternativa correta é: O Susp é um dos sistemas nacionais com os quais as corporações se articulam. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "A integração ao Susp extingue a autonomia federativa dos Estados.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Atividades de defesa civil são proibidas a todos os CBMs.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "A participação ambiental transforma a PM em órgão federal independente do Estado.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "O Susp é um dos sistemas nacionais com os quais as corporações se articulam.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "Ser força auxiliar exige que o Exército nomeie sempre o Comandante-Geral estadual.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "natureza",
+      "source_key": "LO14751-UFMT-V1-NATUREZA-005",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 2º–4º e 7º). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. A participação no Sisnama guarda relação com ações ambientais legalmente previstas.\nII. Ser força auxiliar exige que o Exército nomeie sempre o Comandante-Geral estadual.\nIII. As PMs e os CBMs são forças auxiliares e reserva do Exército.\nIV. A subordinação ordinária de todas as PMs é diretamente ao Ministro da Defesa.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 2º–4º e 7º. Corretas: I, III. Incorretas: II, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "I e III, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "I, II e III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "I, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "I, III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "II e III, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "natureza",
+      "source_key": "LO14751-UFMT-V1-NATUREZA-006",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 2º–4º e 7º). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. As corporações militares estaduais não guardam qualquer vínculo de reserva com o Exército.\nII. A subordinação administrativa ordinária das corporações cabe ao governador do respectivo ente.\nIII. As instituições militares estaduais participam de ações de defesa civil conforme competências.\nIV. A participação ambiental transforma a PM em órgão federal independente do Estado.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 2º–4º e 7º. Corretas: II, III. Incorretas: I, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "I e III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Nenhuma das afirmativas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "I, II, III e IV.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "II e III, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "I e IV, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "natureza",
+      "source_key": "LO14751-UFMT-V1-NATUREZA-007",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 2º–4º e 7º). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. As instituições militares estaduais participam de ações de defesa civil conforme competências.\nII. A participação no Sisnama guarda relação com ações ambientais legalmente previstas.\nIII. Ser força auxiliar exige que o Exército nomeie sempre o Comandante-Geral estadual.\nIV. As PMs e os CBMs são forças auxiliares e reserva do Exército.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 2º–4º e 7º. Corretas: I, II, IV. Incorretas: III. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "II, III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "I, II e IV, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "II e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "I e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "I, II, III e IV.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "natureza",
+      "source_key": "LO14751-UFMT-V1-NATUREZA-008",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 2º–4º e 7º). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. A lei valoriza a interação comunitária e o respeito a direitos humanos na atuação institucional.\nII. Sinpdec é a sigla do sistema nacional de Justiça Militar da União.\nIII. PMs e CBMs são associações privadas de execução eventual de segurança pública.\nIV. O comando institucional deve ser exercido por oficial da ativa do último posto integrante do QOEM.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 2º–4º e 7º. Corretas: I, IV. Incorretas: II, III. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "I, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "II e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "I, II, III e IV.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Nenhuma das afirmativas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "I e IV, apenas.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "natureza",
+      "source_key": "LO14751-UFMT-V1-NATUREZA-009",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 2º–4º e 7º). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. PMs e CBMs são associações privadas de execução eventual de segurança pública.\nII. O comando institucional deve ser exercido por oficial da ativa do último posto integrante do QOEM.\nIII. A integração ao Susp extingue a autonomia federativa dos Estados.\nIV. A lei veda toda aproximação entre corporações e comunidade local.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 2º–4º e 7º. Corretas: II. Incorretas: I, III, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "I, III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "I, II e III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "II, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "I e II, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Nenhuma das afirmativas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "natureza",
+      "source_key": "LO14751-UFMT-V1-NATUREZA-010",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 2º–4º e 7º). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. A integração ao Susp extingue a autonomia federativa dos Estados.\nII. A lei valoriza a interação comunitária e o respeito a direitos humanos na atuação institucional.\nIII. O Sistema Nacional de Proteção e Defesa Civil é conhecido como Sinpdec.\nIV. PMs e CBMs são instituições militares permanentes e típicas de Estado, organizadas com base na hierarquia e disciplina.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 2º–4º e 7º. Corretas: II, III, IV. Incorretas: I. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "II, III e IV, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "II e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "II e III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "I, III e IV, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "competencias",
+      "source_key": "LO14751-UFMT-V1-COMPETENCIAS-003",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (arts. 5º, 6º, 8º–10), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em arts. 5º, 6º, 8º–10. A alternativa correta é: Cabe à PM realizar correições, inspeções e auditorias em seus órgãos e membros conforme art. 5º, XII. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Cabe à PM realizar correições, inspeções e auditorias em seus órgãos e membros conforme art. 5º, XII.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "A lei proíbe correição administrativa interna em órgãos da Polícia Militar.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "O CBM não pode realizar atividades de salvamento ou resgate.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "A estrutura básica só pode contar com dois órgãos: comando e tesouraria.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Todo acordo de cooperação transforma automaticamente a corporação estadual em órgão federal.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "competencias",
+      "source_key": "LO14751-UFMT-V1-COMPETENCIAS-004",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (arts. 5º, 6º, 8º–10), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em arts. 5º, 6º, 8º–10. A alternativa correta é: A corporação pode manter órgãos de direção, assessoramento, apoio, execução e correição. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "A estrutura básica só pode contar com dois órgãos: comando e tesouraria.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "A existência de corregedoria extingue a responsabilidade disciplinar de chefes locais.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "As funções ambientais da PM substituem a competência de todos os órgãos federais ambientais.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "A corporação pode manter órgãos de direção, assessoramento, apoio, execução e correição.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "A PM é proibida de executar polícia ostensiva e deve exercer somente defesa civil.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "competencias",
+      "source_key": "LO14751-UFMT-V1-COMPETENCIAS-005",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (arts. 5º, 6º, 8º–10), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em arts. 5º, 6º, 8º–10. A alternativa correta é: A PM atua em ações de proteção ambiental nos limites de sua competência. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "As funções ambientais da PM substituem a competência de todos os órgãos federais ambientais.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "A PM atua em ações de proteção ambiental nos limites de sua competência.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "O CBM não pode exercer fiscalização de segurança contra incêndios em nenhuma hipótese.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Todas as investigações penais civis municipais tornam-se privativas da PJM da PM.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "O CBM não pode realizar atividades de salvamento ou resgate.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "competencias",
+      "source_key": "LO14751-UFMT-V1-COMPETENCIAS-006",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 5º, 6º, 8º–10). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. A polícia judiciária militar estadual é competência privativa de instituições militares nos limites legais.\nII. O CBM não pode realizar atividades de salvamento ou resgate.\nIII. A corporação pode manter órgãos de direção, assessoramento, apoio, execução e correição.\nIV. Todo acordo de cooperação transforma automaticamente a corporação estadual em órgão federal.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 5º, 6º, 8º–10. Corretas: I, III. Incorretas: II, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "II e III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "I e III, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "I e II, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "II e IV, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "competencias",
+      "source_key": "LO14751-UFMT-V1-COMPETENCIAS-007",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 5º, 6º, 8º–10). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. A estrutura básica só pode contar com dois órgãos: comando e tesouraria.\nII. É possível cooperação entre unidades federadas conforme acordos e condições legais.\nIII. Há atribuições legais do CBM em segurança contra incêndio, pânico e emergência.\nIV. Todas as investigações penais civis municipais tornam-se privativas da PJM da PM.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 5º, 6º, 8º–10. Corretas: II, III. Incorretas: I, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "I e II, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "I, II e III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "II, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "II e III, apenas.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "competencias",
+      "source_key": "LO14751-UFMT-V1-COMPETENCIAS-008",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 5º, 6º, 8º–10). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. Há atribuições legais do CBM em segurança contra incêndio, pânico e emergência.\nII. A polícia judiciária militar estadual é competência privativa de instituições militares nos limites legais.\nIII. O CBM não pode realizar atividades de salvamento ou resgate.\nIV. A corporação pode manter órgãos de direção, assessoramento, apoio, execução e correição.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 5º, 6º, 8º–10. Corretas: I, II, IV. Incorretas: III. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "I e II, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "I, II e IV, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "I, III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "II, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "competencias",
+      "source_key": "LO14751-UFMT-V1-COMPETENCIAS-009",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 5º, 6º, 8º–10). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. A PM desempenha polícia ostensiva e de preservação da ordem pública conforme a Constituição e a lei.\nII. A lei proíbe correição administrativa interna em órgãos da Polícia Militar.\nIII. A perícia administrativa de incêndio cabe privativamente à Polícia Rodoviária Federal.\nIV. Os órgãos de correição não eliminam automaticamente o dever disciplinar de autoridades locais.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 5º, 6º, 8º–10. Corretas: I, IV. Incorretas: II, III. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "I e IV, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Nenhuma das afirmativas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "II e III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "IV, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "competencias",
+      "source_key": "LO14751-UFMT-V1-COMPETENCIAS-010",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 5º, 6º, 8º–10). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. A perícia administrativa de incêndio cabe privativamente à Polícia Rodoviária Federal.\nII. Os órgãos de correição não eliminam automaticamente o dever disciplinar de autoridades locais.\nIII. As funções ambientais da PM substituem a competência de todos os órgãos federais ambientais.\nIV. A PM é proibida de executar polícia ostensiva e deve exercer somente defesa civil.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 5º, 6º, 8º–10. Corretas: II. Incorretas: I, III, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Nenhuma das afirmativas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "II e III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "II e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "II, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "I, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "ingresso",
+      "source_key": "LO14751-UFMT-V1-INGRESSO-002",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (arts. 11–13 e 39), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em arts. 11–13 e 39. A alternativa correta é: O gozo de direitos políticos integra os requisitos de ingresso. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "O ingresso é obrigatório para qualquer candidato com direitos políticos suspensos.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "O gozo de direitos políticos integra os requisitos de ingresso.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "É proibido avaliar a aptidão psicológica no ingresso das corporações.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "É ilegal exigir qualquer exame toxicológico de candidato militar.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Toda tatuagem visível elimina o candidato, mesmo quando não contém símbolo vedado.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "ingresso",
+      "source_key": "LO14751-UFMT-V1-INGRESSO-003",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (arts. 11–13 e 39), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em arts. 11–13 e 39. A alternativa correta é: O exame toxicológico de larga janela de detecção integra os requisitos nacionais. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "É ilegal exigir qualquer exame toxicológico de candidato militar.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "A lei dispensa a quitação eleitoral de todos os candidatos a PM.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Tatuagem contendo propaganda de terrorismo é expressamente assegurada como irrestrita pelo art. 13, X.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "O efetivo deve ser dividido em partes rigorosamente iguais entre todos os municípios, sem critérios técnicos.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "O exame toxicológico de larga janela de detecção integra os requisitos nacionais.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "ingresso",
+      "source_key": "LO14751-UFMT-V1-INGRESSO-004",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (arts. 11–13 e 39), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em arts. 11–13 e 39. A alternativa correta é: A vedação de tatuagem do art. 13, X, está ligada à visibilidade e a representações como suásticas ou apologia à violência. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Tatuagem contendo propaganda de terrorismo é expressamente assegurada como irrestrita pelo art. 13, X.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "O requisito de escolaridade foi implementado instantaneamente para todos em 12/12/2023, sem transição.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "A vedação de tatuagem do art. 13, X, está ligada à visibilidade e a representações como suásticas ou apologia à violência.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "A legislação local é sempre juridicamente irrelevante para a comprovação da escolaridade.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "É proibido avaliar a aptidão psicológica no ingresso das corporações.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "ingresso",
+      "source_key": "LO14751-UFMT-V1-INGRESSO-005",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 11–13 e 39). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. A lei do ente federado pode disciplinar marcos de comprovação de escolaridade de acordo com a norma geral.\nII. É proibido avaliar a aptidão psicológica no ingresso das corporações.\nIII. O exame toxicológico de larga janela de detecção integra os requisitos nacionais.\nIV. Toda tatuagem visível elimina o candidato, mesmo quando não contém símbolo vedado.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 11–13 e 39. Corretas: I, III. Incorretas: II, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "I, II e III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "I e III, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "I, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "I, III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "II e III, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "ingresso",
+      "source_key": "LO14751-UFMT-V1-INGRESSO-006",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 11–13 e 39). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. É ilegal exigir qualquer exame toxicológico de candidato militar.\nII. Tatuagem visível não constitui impedimento automático quando não se enquadra nos conteúdos proibidos.\nIII. O requisito nacional de educação superior comporta prazo legal de implementação de até seis anos da publicação.\nIV. A legislação local é sempre juridicamente irrelevante para a comprovação da escolaridade.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 11–13 e 39. Corretas: II, III. Incorretas: I, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "I e III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Nenhuma das afirmativas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "I, II, III e IV.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "I e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "II e III, apenas.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "ingresso",
+      "source_key": "LO14751-UFMT-V1-INGRESSO-007",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 11–13 e 39). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. O requisito nacional de educação superior comporta prazo legal de implementação de até seis anos da publicação.\nII. A lei do ente federado pode disciplinar marcos de comprovação de escolaridade de acordo com a norma geral.\nIII. É proibido avaliar a aptidão psicológica no ingresso das corporações.\nIV. O exame toxicológico de larga janela de detecção integra os requisitos nacionais.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 11–13 e 39. Corretas: I, II, IV. Incorretas: III. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "II, III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "II e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "I, II e IV, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "I e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "I, II, III e IV.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "ingresso",
+      "source_key": "LO14751-UFMT-V1-INGRESSO-008",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 11–13 e 39). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. O efetivo deve ser distribuído segundo critérios e peculiaridades definidos pela legislação pertinente.\nII. O ingresso é obrigatório para qualquer candidato com direitos políticos suspensos.\nIII. A aptidão física é proibida como requisito de ingresso em concurso para PM.\nIV. A quitação com obrigações militares e eleitorais integra os requisitos previstos na norma.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 11–13 e 39. Corretas: I, IV. Incorretas: II, III. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "I e IV, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "I, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "II e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "I, II, III e IV.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Nenhuma das afirmativas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "ingresso",
+      "source_key": "LO14751-UFMT-V1-INGRESSO-009",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 11–13 e 39). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. A aptidão física é proibida como requisito de ingresso em concurso para PM.\nII. A quitação com obrigações militares e eleitorais integra os requisitos previstos na norma.\nIII. Tatuagem contendo propaganda de terrorismo é expressamente assegurada como irrestrita pelo art. 13, X.\nIV. O efetivo deve ser dividido em partes rigorosamente iguais entre todos os municípios, sem critérios técnicos.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 11–13 e 39. Corretas: II. Incorretas: I, III, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "I, III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "I, II e III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "I e II, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "II, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "Nenhuma das afirmativas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "ingresso",
+      "source_key": "LO14751-UFMT-V1-INGRESSO-010",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 11–13 e 39). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. Tatuagem contendo propaganda de terrorismo é expressamente assegurada como irrestrita pelo art. 13, X.\nII. O efetivo deve ser distribuído segundo critérios e peculiaridades definidos pela legislação pertinente.\nIII. O gozo de direitos políticos integra os requisitos de ingresso.\nIV. São exigências nacionais de ingresso a aptidão física e a avaliação de saúde previstas em lei.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 11–13 e 39. Corretas: II, III, IV. Incorretas: I. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "II, III e IV, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "II e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "II e III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "I, III e IV, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "quadros",
+      "source_key": "LO14751-UFMT-V1-QUADROS-002",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (arts. 14–15), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em arts. 14–15. A alternativa correta é: O §2º do art. 15 isenta integrantes da instituição militar de limite etário no concurso para ingresso no QOEM. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "A dispensa de limite etário do §2º aplica-se indistintamente a candidatos civis externos.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "O QOEM da PM exige apenas ensino fundamental, sem concurso ou formação.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "A lei prevê apenas QOEM, QOE, QOS e QP, vedando quadros de reserva e reformados.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "QPRR reúne somente oficiais que atingiram o último posto.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "O §2º do art. 15 isenta integrantes da instituição militar de limite etário no concurso para ingresso no QOEM.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "quadros",
+      "source_key": "LO14751-UFMT-V1-QUADROS-003",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (arts. 14–15), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em arts. 14–15. A alternativa correta é: O art. 15 enumera QOEM, QOE, QOS, QORR, QP e QPRR, entre outros quadros. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "A lei prevê apenas QOEM, QOE, QOS e QP, vedando quadros de reserva e reformados.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "QORR é quadro de praças recém-ingressas em estágio probatório.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "O art. 15 enumera QOEM, QOE, QOS, QORR, QP e QPRR, entre outros quadros.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "O QOE é exclusivamente recrutado entre candidatos civis sem origem na carreira de praça.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "O QOS não pode abrigar profissionais graduados em saúde.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "quadros",
+      "source_key": "LO14751-UFMT-V1-QUADROS-004",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (arts. 14–15), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em arts. 14–15. A alternativa correta é: O QOE é integrado por oficiais oriundos do quadro de praças, observada habilitação legal. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "O QOE é integrado por oficiais oriundos do quadro de praças, observada habilitação legal.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "O QOE é exclusivamente recrutado entre candidatos civis sem origem na carreira de praça.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "A progressão do QOE vai necessariamente até o posto de Coronel.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "O Quadro de Praças tem por graduação final o posto de Major.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "O QOEM da PM exige apenas ensino fundamental, sem concurso ou formação.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "quadros",
+      "source_key": "LO14751-UFMT-V1-QUADROS-005",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 14–15). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. O Quadro de Praças pode progredir até a graduação de subtenente.\nII. O QOEM da PM exige apenas ensino fundamental, sem concurso ou formação.\nIII. O art. 15 enumera QOEM, QOE, QOS, QORR, QP e QPRR, entre outros quadros.\nIV. QPRR reúne somente oficiais que atingiram o último posto.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 14–15. Corretas: I, III. Incorretas: II, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "I, II e III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "I e III, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "I, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "I, III e IV, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "quadros",
+      "source_key": "LO14751-UFMT-V1-QUADROS-006",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 14–15). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. A lei prevê apenas QOEM, QOE, QOS e QP, vedando quadros de reserva e reformados.\nII. O QPRR compreende praças da reserva remunerada e reformadas.\nIII. O limite de progressão funcional do QOE é o posto de tenente-coronel.\nIV. O Quadro de Praças tem por graduação final o posto de Major.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 14–15. Corretas: II, III. Incorretas: I, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "II e III, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "I e III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Nenhuma das afirmativas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "I, II, III e IV.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "I e IV, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "quadros",
+      "source_key": "LO14751-UFMT-V1-QUADROS-007",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 14–15). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. O limite de progressão funcional do QOE é o posto de tenente-coronel.\nII. O Quadro de Praças pode progredir até a graduação de subtenente.\nIII. O QOEM da PM exige apenas ensino fundamental, sem concurso ou formação.\nIV. O art. 15 enumera QOEM, QOE, QOS, QORR, QP e QPRR, entre outros quadros.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 14–15. Corretas: I, II, IV. Incorretas: III. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "II, III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "II e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "I, II e IV, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "I e IV, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "quadros",
+      "source_key": "LO14751-UFMT-V1-QUADROS-008",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 14–15). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. O QOS é destinado a atividades de saúde, com exigência de graduação na área e emprego na área de saúde.\nII. A dispensa de limite etário do §2º aplica-se indistintamente a candidatos civis externos.\nIII. É vedada, sob qualquer circunstância, instituição de quadros temporários em lei local.\nIV. O QORR é destinado a oficiais da reserva remunerada e reformados.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 14–15. Corretas: I, IV. Incorretas: II, III. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "I, III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "I e IV, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "I, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "II e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "I, II, III e IV.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "quadros",
+      "source_key": "LO14751-UFMT-V1-QUADROS-009",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 14–15). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. É vedada, sob qualquer circunstância, instituição de quadros temporários em lei local.\nII. O QORR é destinado a oficiais da reserva remunerada e reformados.\nIII. O QOE é exclusivamente recrutado entre candidatos civis sem origem na carreira de praça.\nIV. O QOS não pode abrigar profissionais graduados em saúde.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 14–15. Corretas: II. Incorretas: I, III, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "I, II e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "I, III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "I, II e III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "I e II, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "II, apenas.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "quadros",
+      "source_key": "LO14751-UFMT-V1-QUADROS-010",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 14–15). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. O QOE é exclusivamente recrutado entre candidatos civis sem origem na carreira de praça.\nII. O QOS é destinado a atividades de saúde, com exigência de graduação na área e emprego na área de saúde.\nIII. O §2º do art. 15 isenta integrantes da instituição militar de limite etário no concurso para ingresso no QOEM.\nIV. A lei admite instituição de quadros temporários conforme condições legais do ente federado.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 14–15. Corretas: II, III, IV. Incorretas: I. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "I, II, III e IV.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "II, III e IV, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "II e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "II e III, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "ensino",
+      "source_key": "LO14751-UFMT-V1-ENSINO-002",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (art. 16), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em art. 16. A alternativa correta é: O curso de formação de praças permite ingresso como aluno-soldado para formação de soldado. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "O curso de formação de praças destina-se a ingresso direto no posto de major.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "A lei proíbe toda integração dos cursos militares com cursos regulares de universidades públicas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "O curso de formação de praças permite ingresso como aluno-soldado para formação de soldado.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "O CCEM elimina o requisito de ingresso em concurso público para todos os candidatos.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "O CFO destina-se exclusivamente a subtenentes para habilitação a capitão.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "ensino",
+      "source_key": "LO14751-UFMT-V1-ENSINO-003",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (art. 16), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em art. 16. A alternativa correta é: O CCEM não substitui automaticamente todo curso de formação exigido para o ingresso no QOEM. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "O CCEM não substitui automaticamente todo curso de formação exigido para o ingresso no QOEM.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "O CCEM elimina o requisito de ingresso em concurso público para todos os candidatos.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Todo curso interno militar tem equivalência universitária automática, mesmo sem requisitos legais.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "O CAO é curso de soldados para promoção a cabo.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "O CFS habilita automaticamente à graduação de coronel.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "ensino",
+      "source_key": "LO14751-UFMT-V1-ENSINO-004",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (art. 16), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em art. 16. A alternativa correta é: O CAO destina-se a capitães como requisito de habilitação à promoção a major. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "O CAO é curso de soldados para promoção a cabo.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "O CCEM é curso exclusivo de alunos-soldados recém-aprovados.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "O CAP destina-se a primeiros-sargentos para promoção a subtenente, conforme art. 16.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "O CAO destina-se a capitães como requisito de habilitação à promoção a major.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "A lei proíbe toda integração dos cursos militares com cursos regulares de universidades públicas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "ensino",
+      "source_key": "LO14751-UFMT-V1-ENSINO-005",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (art. 16). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. O CAP é destinado a segundos-sargentos e habilita à promoção a primeiro-sargento.\nII. A lei proíbe toda integração dos cursos militares com cursos regulares de universidades públicas.\nIII. O CCEM não substitui automaticamente todo curso de formação exigido para o ingresso no QOEM.\nIV. O CFO destina-se exclusivamente a subtenentes para habilitação a capitão.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de art. 16. Corretas: I, III. Incorretas: II, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Nenhuma das afirmativas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "I, II e III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "I e III, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "I, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "ensino",
+      "source_key": "LO14751-UFMT-V1-ENSINO-006",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (art. 16). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. O CCEM elimina o requisito de ingresso em concurso público para todos os candidatos.\nII. O CFO destina-se à formação de aprovados para QOEM e habilita à condição de aspirante.\nIII. O CCEM destina-se a oficiais indicados na lei para habilitação à promoção a coronel.\nIV. O CAP destina-se a primeiros-sargentos para promoção a subtenente, conforme art. 16.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de art. 16. Corretas: II, III. Incorretas: I, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "II, III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "II e III, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "I e III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Nenhuma das afirmativas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "I, II, III e IV.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "ensino",
+      "source_key": "LO14751-UFMT-V1-ENSINO-007",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (art. 16). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. O CCEM destina-se a oficiais indicados na lei para habilitação à promoção a coronel.\nII. O CAP é destinado a segundos-sargentos e habilita à promoção a primeiro-sargento.\nIII. A lei proíbe toda integração dos cursos militares com cursos regulares de universidades públicas.\nIV. O CCEM não substitui automaticamente todo curso de formação exigido para o ingresso no QOEM.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de art. 16. Corretas: I, II, IV. Incorretas: III. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "II, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "II, III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "II e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "I, II e IV, apenas.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "ensino",
+      "source_key": "LO14751-UFMT-V1-ENSINO-008",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (art. 16). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. O CFS habilita o aluno-sargento para a graduação de terceiro-sargento.\nII. O curso de formação de praças destina-se a ingresso direto no posto de major.\nIII. Os cursos de habilitação de oficiais são proibidos para origem no quadro de praças.\nIV. O ensino militar possui sistema próprio, observados os requisitos legais para equivalência educacional.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de art. 16. Corretas: I, IV. Incorretas: II, III. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "I, II e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "I, III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "I e IV, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "I, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "II e IV, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "ensino",
+      "source_key": "LO14751-UFMT-V1-ENSINO-009",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (art. 16). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. Os cursos de habilitação de oficiais são proibidos para origem no quadro de praças.\nII. O ensino militar possui sistema próprio, observados os requisitos legais para equivalência educacional.\nIII. O CAO é curso de soldados para promoção a cabo.\nIV. O CFS habilita automaticamente à graduação de coronel.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de art. 16. Corretas: II. Incorretas: I, III, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "II, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "I, II e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "I, III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "I, II e III, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "ensino",
+      "source_key": "LO14751-UFMT-V1-ENSINO-010",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (art. 16). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. O CAO é curso de soldados para promoção a cabo.\nII. O CFS habilita o aluno-sargento para a graduação de terceiro-sargento.\nIII. O curso de formação de praças permite ingresso como aluno-soldado para formação de soldado.\nIV. Cursos de habilitação específicos se relacionam ao ingresso em quadros de oficiais especialistas ou saúde.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de art. 16. Corretas: II, III, IV. Incorretas: I. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "I, II e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "I, II, III e IV.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "II, III e IV, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "II e IV, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "garantias",
+      "source_key": "LO14751-UFMT-V1-GARANTIAS-003",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (arts. 17–18), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em arts. 17–18. A alternativa correta é: Diárias e ajuda de custo são direitos funcionais cujo pagamento observa a legislação aplicável. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Diárias e ajuda de custo são direitos funcionais cujo pagamento observa a legislação aplicável.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Ajuda de custo e diárias são proibidas em toda e qualquer missão fora da lotação.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "O art. 18 versa exclusivamente sobre prisão e não menciona outros direitos funcionais.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "A falta de presídio militar exige sempre prisão domiciliar sem análise judicial.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "A estabilidade nacional é adquirida somente após cinco anos, sem previsão de três.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "garantias",
+      "source_key": "LO14751-UFMT-V1-GARANTIAS-004",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (arts. 17–18), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em arts. 17–18. A alternativa correta é: Na ausência de unidade prisional militar, o inciso V prevê unidade militar estadual nas condições legais. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "A falta de presídio militar exige sempre prisão domiciliar sem análise judicial.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Militar preso em flagrante comum deve ficar sempre na delegacia por cinco dias corridos.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Assistência jurídica decorrente do serviço é expressamente vedada pela lei.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Na ausência de unidade prisional militar, o inciso V prevê unidade militar estadual nas condições legais.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "Seguro ou indenização é proibido para militares feridos em razão do exercício funcional.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "garantias",
+      "source_key": "LO14751-UFMT-V1-GARANTIAS-005",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (arts. 17–18), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em arts. 17–18. A alternativa correta é: A lei assegura assistência jurídica relacionada ao exercício funcional, conforme os requisitos do ente federado. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Assistência jurídica decorrente do serviço é expressamente vedada pela lei.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "A lei assegura assistência jurídica relacionada ao exercício funcional, conforme os requisitos do ente federado.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "É garantida permanência vitalícia na mesma unidade, sem movimentação compulsória.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "A prisão cautelar e a pena definitiva são regimes idênticos sem qualquer distinção legal.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "O art. 18 versa exclusivamente sobre prisão e não menciona outros direitos funcionais.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "garantias",
+      "source_key": "LO14751-UFMT-V1-GARANTIAS-006",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 17–18). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. O cumprimento de pena após trânsito possui regras específicas distintas da custódia cautelar.\nII. O art. 18 versa exclusivamente sobre prisão e não menciona outros direitos funcionais.\nIII. Na ausência de unidade prisional militar, o inciso V prevê unidade militar estadual nas condições legais.\nIV. A estabilidade nacional é adquirida somente após cinco anos, sem previsão de três.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 17–18. Corretas: I, III. Incorretas: II, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "I, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "I, III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "II e III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "I e III, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "I e II, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "garantias",
+      "source_key": "LO14751-UFMT-V1-GARANTIAS-007",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 17–18). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. A falta de presídio militar exige sempre prisão domiciliar sem análise judicial.\nII. A estabilidade do militar de carreira é garantida após três anos de efetivo serviço.\nIII. A garantia de permanência mínima de um ano na unidade possui ressalvas legais para movimentação.\nIV. A prisão cautelar e a pena definitiva são regimes idênticos sem qualquer distinção legal.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 17–18. Corretas: II, III. Incorretas: I, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Nenhuma das afirmativas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "II e III, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "I, II, III e IV.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "I e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "I e II, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "garantias",
+      "source_key": "LO14751-UFMT-V1-GARANTIAS-008",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 17–18). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. A garantia de permanência mínima de um ano na unidade possui ressalvas legais para movimentação.\nII. O cumprimento de pena após trânsito possui regras específicas distintas da custódia cautelar.\nIII. O art. 18 versa exclusivamente sobre prisão e não menciona outros direitos funcionais.\nIV. Na ausência de unidade prisional militar, o inciso V prevê unidade militar estadual nas condições legais.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 17–18. Corretas: I, II, IV. Incorretas: III. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "II e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "I e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "I, II, III e IV.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "I e II, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "I, II e IV, apenas.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "garantias",
+      "source_key": "LO14751-UFMT-V1-GARANTIAS-009",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 17–18). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. A Lei Orgânica contempla seguro ou indenização em caso de vitimização em razão da função conforme lei do ente.\nII. Ajuda de custo e diárias são proibidas em toda e qualquer missão fora da lotação.\nIII. Antes de trânsito em julgado é obrigatória cela comum indistinta do sistema penitenciário civil.\nIV. Em flagrante comum, o militar permanece na delegacia civil apenas o tempo necessário à lavratura do auto nas condições legais.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 17–18. Corretas: I, IV. Incorretas: II, III. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "II e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "I, II, III e IV.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "I e IV, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "Nenhuma das afirmativas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "II e III, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "garantias",
+      "source_key": "LO14751-UFMT-V1-GARANTIAS-010",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 17–18). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. Antes de trânsito em julgado é obrigatória cela comum indistinta do sistema penitenciário civil.\nII. Em flagrante comum, o militar permanece na delegacia civil apenas o tempo necessário à lavratura do auto nas condições legais.\nIII. Assistência jurídica decorrente do serviço é expressamente vedada pela lei.\nIV. Seguro ou indenização é proibido para militares feridos em razão do exercício funcional.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 17–18. Corretas: II. Incorretas: I, III, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "II, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "I, III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "I, II e III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "I e II, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Nenhuma das afirmativas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "politicos",
+      "source_key": "LO14751-UFMT-V1-POLITICOS-004",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (arts. 19 e 22), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em arts. 19 e 22. A alternativa correta é: A situação de suplente do art. 22, III não prevê exoneração automática sem direitos. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "A condição de suplente importa sempre cassação de vínculo por falta gravíssima.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "A situação de suplente do art. 22, III não prevê exoneração automática sem direitos.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "O art. 19 obriga militar da ativa a atuar como administrador de sociedade comercial sem ressalvas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "É permitido publicar imagens de custodiados sem autorização judicial sob argumento de publicidade.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Militar candidato com mais de dez anos é compulsoriamente demitido no pedido de registro.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "politicos",
+      "source_key": "LO14751-UFMT-V1-POLITICOS-005",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (arts. 19 e 22), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em arts. 19 e 22. A alternativa correta é: Divulgação de imagens de pessoas sob custódia exige prévia autorização judicial nos termos do art. 19. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "É permitido publicar imagens de custodiados sem autorização judicial sob argumento de publicidade.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Militar candidato com menos de dez anos permanece obrigatoriamente em patrulhamento regular até a diplomação.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "O eleito permanece necessariamente na ativa até o fim do mandato, ainda que inciso II se aplique.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "O suplente deve receber duas remunerações integrais cumulativamente sem opção.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Divulgação de imagens de pessoas sob custódia exige prévia autorização judicial nos termos do art. 19.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "politicos",
+      "source_key": "LO14751-UFMT-V1-POLITICOS-006",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (arts. 19 e 22), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em arts. 19 e 22. A alternativa correta é: O eleito na situação do inciso II passa à reserva remunerada no ato da diplomação. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "O eleito permanece necessariamente na ativa até o fim do mandato, ainda que inciso II se aplique.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "A remuneração da agregação independe de qualquer limite temporal da legislação eleitoral.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "O eleito na situação do inciso II passa à reserva remunerada no ato da diplomação.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "O tempo de mandato nunca pode servir a recálculo de proventos em nenhuma hipótese.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "O art. 19 obriga militar da ativa a atuar como administrador de sociedade comercial sem ressalvas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "politicos",
+      "source_key": "LO14751-UFMT-V1-POLITICOS-007",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 19 e 22). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. O §2º do art. 22 permite contagem do mandato para recálculo de remuneração na inatividade nas hipóteses legais.\nII. O art. 19 obriga militar da ativa a atuar como administrador de sociedade comercial sem ressalvas.\nIII. Divulgação de imagens de pessoas sob custódia exige prévia autorização judicial nos termos do art. 19.\nIV. Militar candidato com mais de dez anos é compulsoriamente demitido no pedido de registro.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 19 e 22. Corretas: I, III. Incorretas: II, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "I, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "I, III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "I e III, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "II e III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "I e II, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "politicos",
+      "source_key": "LO14751-UFMT-V1-POLITICOS-008",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 19 e 22). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. É permitido publicar imagens de custodiados sem autorização judicial sob argumento de publicidade.\nII. Militar candidato com mais de dez anos é agregado no dia posterior ao pedido de registro.\nIII. A remuneração de afastamento ou agregação limita-se aos prazos da legislação eleitoral.\nIV. O tempo de mandato nunca pode servir a recálculo de proventos em nenhuma hipótese.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 19 e 22. Corretas: II, III. Incorretas: I, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "II e III, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Nenhuma das afirmativas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "I, II, III e IV.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "I e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "I e II, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "politicos",
+      "source_key": "LO14751-UFMT-V1-POLITICOS-009",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 19 e 22). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. A remuneração de afastamento ou agregação limita-se aos prazos da legislação eleitoral.\nII. O §2º do art. 22 permite contagem do mandato para recálculo de remuneração na inatividade nas hipóteses legais.\nIII. O art. 19 obriga militar da ativa a atuar como administrador de sociedade comercial sem ressalvas.\nIV. Divulgação de imagens de pessoas sob custódia exige prévia autorização judicial nos termos do art. 19.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 19 e 22. Corretas: I, II, IV. Incorretas: III. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "II e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "I e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "I, II, III e IV.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "I, II e IV, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "I e II, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "politicos",
+      "source_key": "LO14751-UFMT-V1-POLITICOS-010",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 19 e 22). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. O militar eleito que toma posse como suplente deve optar por uma das remunerações.\nII. A condição de suplente importa sempre cassação de vínculo por falta gravíssima.\nIII. Todo militar em atividade está proibido até de ser mero acionista em qualquer hipótese.\nIV. Militar candidato com menos de dez anos é afastado do serviço ativo no dia posterior ao pedido de registro.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 19 e 22. Corretas: I, IV. Incorretas: II, III. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "II e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "I e IV, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "I, II, III e IV.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Nenhuma das afirmativas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "II e III, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "mobilizacao",
+      "source_key": "LO14751-UFMT-V1-MOBILIZACAO-004",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (arts. 24–27), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em arts. 24–27. A alternativa correta é: Convocação em intervenção federal não transforma permanentemente a PM em órgão do Ministério da Defesa. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Convocação em intervenção federal não transforma permanentemente a PM em órgão do Ministério da Defesa.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Qualquer convocação transfere para sempre todas as PMs à administração federal.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "O militar convocado tem defesa obrigatória apenas por associação privada de praças.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Todo crime militar do convocado praticado fora do Estado é automaticamente julgado pelo STM.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Operações de cooperação podem ocorrer sem qualquer fundamento ou acordo legal.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "mobilizacao",
+      "source_key": "LO14751-UFMT-V1-MOBILIZACAO-005",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (arts. 24–27), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em arts. 24–27. A alternativa correta é: A Justiça Militar do ente de origem pode ser competente para crime militar do convocado praticado em outra UF. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Todo crime militar do convocado praticado fora do Estado é automaticamente julgado pelo STM.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "O simples fato de estar em outra UF exige sempre Justiça Federal comum.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Em intervenção, nenhum direito processual do convocado subsiste.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "A Justiça Militar do ente de origem pode ser competente para crime militar do convocado praticado em outra UF.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "O art. 26, II abrange indistintamente qualquer fato privado sem ligação com atuação na convocação.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "mobilizacao",
+      "source_key": "LO14751-UFMT-V1-MOBILIZACAO-006",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (arts. 24–27), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em arts. 24–27. A alternativa correta é: A existência de intervenção federal não autoriza ignorar direitos processuais do militar. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Em intervenção, nenhum direito processual do convocado subsiste.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "A existência de intervenção federal não autoriza ignorar direitos processuais do militar.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "A convocação faz o crime militar estadual tornar-se automaticamente crime eleitoral.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "A União é proibida de convocar PMs mesmo durante intervenção federal.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "O militar convocado tem defesa obrigatória apenas por associação privada de praças.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "mobilizacao",
+      "source_key": "LO14751-UFMT-V1-MOBILIZACAO-007",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 24–27). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. A convocação ou mobilização pela União pode ocorrer nas hipóteses legais de excepcionalidade.\nII. O militar convocado tem defesa obrigatória apenas por associação privada de praças.\nIII. A Justiça Militar do ente de origem pode ser competente para crime militar do convocado praticado em outra UF.\nIV. Operações de cooperação podem ocorrer sem qualquer fundamento ou acordo legal.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 24–27. Corretas: I, III. Incorretas: II, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "I e III, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "I, III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "II e III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "I e II, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "III e IV, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "mobilizacao",
+      "source_key": "LO14751-UFMT-V1-MOBILIZACAO-008",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 24–27). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. Todo crime militar do convocado praticado fora do Estado é automaticamente julgado pelo STM.\nII. A atuação estadual em cooperação deve observar limites e acordos cabíveis.\nIII. Competência para julgamento de crime militar do convocado não se desloca automaticamente ao STM.\nIV. A União é proibida de convocar PMs mesmo durante intervenção federal.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 24–27. Corretas: II, III. Incorretas: I, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "I e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "I e II, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "I, II e III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "II e III, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "III, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "mobilizacao",
+      "source_key": "LO14751-UFMT-V1-MOBILIZACAO-009",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 24–27). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. Competência para julgamento de crime militar do convocado não se desloca automaticamente ao STM.\nII. A convocação ou mobilização pela União pode ocorrer nas hipóteses legais de excepcionalidade.\nIII. O militar convocado tem defesa obrigatória apenas por associação privada de praças.\nIV. A Justiça Militar do ente de origem pode ser competente para crime militar do convocado praticado em outra UF.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 24–27. Corretas: I, II, IV. Incorretas: III. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "I, II, III e IV.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "I, II e IV, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "I e II, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "I, III e IV, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "mobilizacao",
+      "source_key": "LO14751-UFMT-V1-MOBILIZACAO-010",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 24–27). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. A representação da AGU está ligada às condições especificadas no art. 26, II.\nII. Qualquer convocação transfere para sempre todas as PMs à administração federal.\nIII. A lei proíbe videoconferência em todos os atos processuais de convocados.\nIV. O simples deslocamento territorial do militar convocado não implica automaticamente foro penal federal comum.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 24–27. Corretas: I, IV. Incorretas: II, III. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Nenhuma das afirmativas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "II e III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "I e IV, apenas.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "igpm",
+      "source_key": "LO14751-UFMT-V1-IGPM-003",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (arts. 17, 28–30, 39–40), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em arts. 17, 28–30, 39–40. A alternativa correta é: O registro técnico inclui dados relativos à frota operacional e aos armamentos na moldura legal. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "O registro federal só pode envolver edifícios, jamais armamento ou frota operacional.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Qualquer cidadão pode ser nomeado Comandante-Geral independentemente de posto e curso.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "O plano de comando é proibido de conter metas e indicadores para as corporações.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "O prazo de opção do art. 40 foi fixado em sessenta anos, sem hipótese de 180 dias.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "O registro técnico inclui dados relativos à frota operacional e aos armamentos na moldura legal.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "igpm",
+      "source_key": "LO14751-UFMT-V1-IGPM-004",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (arts. 17, 28–30, 39–40), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em arts. 17, 28–30, 39–40. A alternativa correta é: O plano de comando abrange metas, indicadores e participação social, conforme art. 29. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "O plano de comando é proibido de conter metas e indicadores para as corporações.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "O art. 39 exige implantação da escolaridade em apenas 30 dias desde 2023.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "O plano de comando abrange metas, indicadores e participação social, conforme art. 29.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "A IGPM/BM integra a Força Aérea Brasileira.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Visitas de orientação técnica são expressamente proibidas à IGPM/BM.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "igpm",
+      "source_key": "LO14751-UFMT-V1-IGPM-005",
+      "statement": "Ao orientar um estudo de caso sobre a Lei nº 14.751/2023 (arts. 17, 28–30, 39–40), qual proposição deve ser considerada juridicamente CORRETA?",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Fundamento em arts. 17, 28–30, 39–40. A alternativa correta é: A IGPM/BM integra a estrutura do Comando do Exército. As demais proposições contrariam o texto ou suas ressalvas.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "A IGPM/BM integra a estrutura do Comando do Exército.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "A IGPM/BM integra a Força Aérea Brasileira.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "O Inspetor-Geral deve ser sempre sargento da reserva estadual.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "A IGPM/BM não pode registrar dados de efetivos em nenhuma hipótese.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Qualquer cidadão pode ser nomeado Comandante-Geral independentemente de posto e curso.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "igpm",
+      "source_key": "LO14751-UFMT-V1-IGPM-006",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 17, 28–30, 39–40). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. Registro de efetivos, organização e material bélico está entre as atribuições da IGPM/BM.\nII. Qualquer cidadão pode ser nomeado Comandante-Geral independentemente de posto e curso.\nIII. O plano de comando abrange metas, indicadores e participação social, conforme art. 29.\nIV. O prazo de opção do art. 40 foi fixado em sessenta anos, sem hipótese de 180 dias.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 17, 28–30, 39–40. Corretas: I, III. Incorretas: II, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "II e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Nenhuma das afirmativas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "I e III, apenas.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "igpm",
+      "source_key": "LO14751-UFMT-V1-IGPM-007",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 17, 28–30, 39–40). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. O plano de comando é proibido de conter metas e indicadores para as corporações.\nII. O art. 40, promulgado em 2024, previu prazo de 180 dias para opções de quadros nas hipóteses respectivas.\nIII. A função de Inspetor-Geral da IGPM/BM é exercida por oficial-general da ativa.\nIV. A IGPM/BM não pode registrar dados de efetivos em nenhuma hipótese.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 17, 28–30, 39–40. Corretas: II, III. Incorretas: I, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "II, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "II e III, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "II, III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "I e III, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "igpm",
+      "source_key": "LO14751-UFMT-V1-IGPM-008",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 17, 28–30, 39–40). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. A função de Inspetor-Geral da IGPM/BM é exercida por oficial-general da ativa.\nII. Registro de efetivos, organização e material bélico está entre as atribuições da IGPM/BM.\nIII. Qualquer cidadão pode ser nomeado Comandante-Geral independentemente de posto e curso.\nIV. O plano de comando abrange metas, indicadores e participação social, conforme art. 29.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 17, 28–30, 39–40. Corretas: I, II, IV. Incorretas: III. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "I, II e IV, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "I, III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "II, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "II, III e IV, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "igpm",
+      "source_key": "LO14751-UFMT-V1-IGPM-009",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 17, 28–30, 39–40). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. A IGPM/BM realiza visitas de orientação técnica às instituições militares estaduais.\nII. O registro federal só pode envolver edifícios, jamais armamento ou frota operacional.\nIII. O plano de comando deve ser apresentado obrigatoriamente após cinco anos da posse.\nIV. O art. 39 prevê até seis anos para adoção do requisito de escolaridade.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 17, 28–30, 39–40. Corretas: I, IV. Incorretas: II, III. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "III e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "I, II e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "I e IV, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "I, III e IV, apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "igpm",
+      "source_key": "LO14751-UFMT-V1-IGPM-010",
+      "statement": "Um examinador propôs um caso envolvendo as normas da Lei nº 14.751/2023 (arts. 17, 28–30, 39–40). Julgue as assertivas de literalidade e aplicação abaixo:\n\nI. O plano de comando deve ser apresentado obrigatoriamente após cinco anos da posse.\nII. O art. 39 prevê até seis anos para adoção do requisito de escolaridade.\nIII. A IGPM/BM integra a Força Aérea Brasileira.\nIV. Visitas de orientação técnica são expressamente proibidas à IGPM/BM.\n\nEstão CORRETAS as afirmativas:",
+      "difficulty": "medium",
+      "explanation": "Questão inédita elaborada no estilo de treino de múltipla escolha/itens da UFMT, não retirada de prova oficial. Aplicação de arts. 17, 28–30, 39–40. Corretas: II. Incorretas: I, III, IV. As corretas reproduzem a Lei e as demais introduzem exceções inexistentes, competência trocada ou prazo equivocado.",
+      "origin": "inedita_estilo_ufmt",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "II e IV, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "II, apenas.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "I, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "III, apenas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "I, II e IV, apenas.",
+          "is_correct": false
+        }
+      ]
     }
-  ]
+  ],
+  "source_review": {
+    "user_supplied_ufmt_labelled_without_authentication": 10,
+    "user_supplied_ineditas_with_full_alternatives_validated": 6,
+    "new_original_questions": 74,
+    "not_imported": 13,
+    "not_imported_notes": "4 enunciados parciais marcados IDHTEC/FGV/IDECAN e 6 questões inéditas sem alternativas, mais 3 completas não selecionadas por revisão jurídica/ênfase; usados apenas como referência de estilo; rótulo UFMT não é prova de origem."
+  }
 }
