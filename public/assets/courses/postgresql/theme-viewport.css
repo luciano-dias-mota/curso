@@ -79,8 +79,8 @@ html.pg-js-ready .pg-is-home .pg-module-card[hidden]{display:none!important}
  html.pg-js-ready .pg-is-home .pg-learning-head{flex:none;min-height:34px;margin:0 0 6px;align-items:center}
  html.pg-js-ready .pg-is-home .pg-learning-head h2{font-size:17px}
  html.pg-js-ready .pg-is-home .pg-learning-head p{font-size:10px}
- html.pg-js-ready .pg-is-home .pg-module-grid{min-height:0;flex:0 0 auto;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:clamp(158px,19.5dvh,184px);align-items:start;gap:10px}
- html.pg-js-ready .pg-is-home :is(.pg-module-card,.pg-module-card:nth-child(n+5)){min-height:0;height:100%;max-height:184px;padding:10px;gap:6px}
+ html.pg-js-ready .pg-is-home .pg-module-grid{min-height:0;flex:0 0 auto;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:clamp(172px,22dvh,204px);align-items:start;gap:10px}
+ html.pg-js-ready .pg-is-home :is(.pg-module-card,.pg-module-card:nth-child(n+5)){min-height:0;height:100%;max-height:204px;padding:12px;gap:7px}
  html.pg-js-ready .pg-is-home .pg-module-content{min-height:0}
  html.pg-js-ready .pg-is-home .pg-module-copy h3{min-height:0;font-size:13px;line-height:1.23;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
  html.pg-js-ready .pg-is-home .pg-module-copy p{min-height:0;-webkit-line-clamp:2;font-size:10px}
@@ -103,3 +103,29 @@ html.pg-js-ready .pg-is-home .pg-module-card[hidden]{display:none!important}
  .pg-is-home .pg-home-pager{width:100%;justify-content:flex-end}
 }
 @media (prefers-reduced-motion:reduce){.pg-is-home .pg-module-card{transition:none}}
+
+
+/* Cards de módulos — borda limpa, sem brilho/manchas no conteúdo.
+   Escopo exclusivo: página inicial do curso PostgreSQL. */
+body.postgres-course-body.pg-is-home .pg-module-card {
+    transition: border-color .18s ease, box-shadow .18s ease;
+}
+body.postgres-course-body.pg-is-home .pg-module-card::after {
+    content: none;
+}
+body.postgres-course-body.pg-is-home .pg-module-card:hover,
+body.postgres-course-body.pg-is-home .pg-module-card:focus-within {
+    transform: none;
+    background: rgba(255,255,255,.97);
+    border-color: #1b5fd6;
+    box-shadow: 0 0 0 2px rgba(27,95,214,.18), 0 8px 20px -16px rgba(20,63,148,.24);
+}
+html[data-pg-theme="dark"] body.postgres-course-body.pg-is-home .pg-module-card:hover,
+html[data-pg-theme="dark"] body.postgres-course-body.pg-is-home .pg-module-card:focus-within {
+    background: #111a31;
+    border-color: #35e0a5;
+    box-shadow: 0 0 0 2px rgba(53,224,165,.22), 0 8px 20px -16px rgba(0,0,0,.55);
+}
+@media (prefers-reduced-motion:reduce) {
+    body.postgres-course-body.pg-is-home .pg-module-card { transition:none; }
+}
