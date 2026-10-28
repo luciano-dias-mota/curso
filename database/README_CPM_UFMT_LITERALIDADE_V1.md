@@ -48,7 +48,7 @@ php database/aplicar_cpm_ufmt_literalidade_v1.php --audit
 ## Comportamento e garantias
 
 - Encontra **somente** o módulo PMMT publicado, conferindo `experience_key=pmmt` quando disponível.
-- Cria quatro aulas **`is_required=0`** dentro das fases CPM existentes, com blocos **`is_required=0`**.
+- Cria quatro aulas **`is_required=0`** dentro das fases CPM existentes. Seus blocos internos têm **`is_required=1`** para que o aluno percorra todas as telas antes de marcar a aula opcional como concluída. A aula em si continua opcional e não bloqueia fases nem módulos.
 - Não atualiza aulas existentes; não altera quizzes/checkpoints, percentuais de progresso, pontuação, matrícula ou outras experiências. Cria somente registros novos de disponibilidade das quatro aulas opcionais para alunos PMMT cuja fase já está liberada, sem modificar registros de progresso anteriores.
 - Importa as 24 questões vinculadas ao curso, módulo, fase e aula corretos, com `source_key` idempotente em `question_import_keys`.
 - Em reexecução, recusa dados existentes que divergirem da fonte, em vez de sobrescrevê-los silenciosamente.
