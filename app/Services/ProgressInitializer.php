@@ -146,6 +146,9 @@ final class ProgressInitializer
             // Fases obrigatórias já concluídas não devem impedir que uma
             // matrícula antiga seja reconciliada com uma trilha atualizada.
             if ($userStatus === 'completed') {
+                // Conteúdo opcional publicado após a conclusão da fase deve
+                // continuar acessível, sem reabrir aulas ou avaliações obrigatórias.
+                $this->unlockOptionalLessons($pdo, $userId, $phaseId);
                 continue;
             }
 
@@ -159,19 +162,7 @@ final class ProgressInitializer
 
     private function unlockPhaseEntryLessons(PDO $pdo, int $userId, int $phaseId): void
     {
-        $optional = $pdo->prepare(
-            "SELECT id
-             FROM lessons
-             WHERE phase_id = :phase_id
-               AND status = 'published'
-               AND is_required = 0
-             ORDER BY position, id"
-        );
-        $optional->execute(['phase_id' => $phaseId]);
-
-        foreach ($optional->fetchAll(PDO::FETCH_COLUMN) as $lessonId) {
-            $this->unlockLesson($pdo, $userId, (int) $lessonId);
-        }
+        $this->unlockOptionalLessons($pdo, $userId, $phaseId);
 
         $required = $pdo->prepare(
             "SELECT id
@@ -187,6 +178,27 @@ final class ProgressInitializer
 
         if ($firstRequired > 0) {
             $this->unlockLesson($pdo, $userId, $firstRequired);
+        }
+    }
+
+    /**
+     * Reconcilia aulas opcionais novas em fases já acessíveis ou concluídas.
+     * Não altera conclusão, checkpoints, nem desbloqueia aulas obrigatórias.
+     */
+    private function unlockOptionalLessons(PDO $pdo, int $userId, int $phaseId): void
+    {
+        $optional = $pdo->prepare(
+            "SELECT id
+             FROM lessons
+             WHERE phase_id = :phase_id
+               AND status = 'published'
+               AND is_required = 0
+             ORDER BY position, id"
+        );
+        $optional->execute(['phase_id' => $phaseId]);
+
+        foreach ($optional->fetchAll(PDO::FETCH_COLUMN) as $lessonId) {
+            $this->unlockLesson($pdo, $userId, (int) $lessonId);
         }
     }
 
