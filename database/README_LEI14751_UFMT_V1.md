@@ -62,3 +62,43 @@ A execução com `--apply` faz INSERTs no banco, e em `APP_ENV=production` exige
 ## Resultado das verificações de estrutura
 
 Os três arquivos desta branch foram relidos após os commits: 9 aulas, 54 blocos, 90 questões Medium, distribuição 10 por tópico, chaves exclusivas, 5 opções distintas por questão, um único gabarito marcado. O importador conserva o bloqueio para produção, transação e validação de conflitos. O lint PHP e dry-run real no banco ainda dependem de execução na pasta de revisão pelo usuário.
+
+
+## Integração às aulas regulares (fase 78 em produção)
+
+Após a importação V1, o aluno solicitou que as nove aulas novas não apareçam apenas como complementos opcionais, mas componham a sequência **normal e obrigatória da fase**. O banco foi importado inicialmente com `is_required=0`. A migração incremental abaixo é **necessária para o ambiente já importado** e **não duplica aulas ou questões**.
+
+Arquivo: `database/integrar_lei14751_sequencia_v1.php`.
+
+1. Valida escopo exato do Módulo 6 PMMT e da fase `4-regime-dos-militares-e-seguranca-publica`.
+2. Preserva a ordem relativa e os IDs de todas as aulas originais.
+3. Mantém as nove aulas existentes (IDs 322–330 no banco informado) depois das aulas originais, **na mesma fase**, antes de avaliação da fase, em ordem pedagógica da Lei.
+4. Altera **apenas as nove** para `is_required=1`, `completion_mode='quiz'` e ajusta sua ordem/descrição.
+5. Cria nove `lesson_fixation` com **10 questões já importadas cada**, cinco alternativas por questão, aprovação em **8/10** (80%), feedback e embaralhamento.
+6. Impede aplicação caso haja estudantes com fase em andamento/concluída ou com atividade/visualizações registradas em qualquer dessas nove aulas, para evitar regressão de progresso.
+7. Envolve todas as escritas em transação InnoDB; `--audit` verifica configurações e vínculos para repetição segura.
+
+```bash
+# Atualizar worktree destacado para a versão mais recente da branch (se sem modificações locais)
+git fetch origin
+git -C ~/revisao-lei14751 switch --detach origin/content/pmmt-lei-organica-ufmt-v1
+
+# Executar apenas após backup atualizado
+php -l ~/revisao-lei14751/database/integrar_lei14751_sequencia_v1.php
+php ~/revisao-lei14751/database/integrar_lei14751_sequencia_v1.php
+
+# Somente após revisão do DRY-RUN e backup validado:
+php ~/revisao-lei14751/database/integrar_lei14751_sequencia_v1.php --apply --force-production
+php ~/revisao-lei14751/database/integrar_lei14751_sequencia_v1.php --audit
+
+# Validação adicional da importação original, agora compatível com aulas obrigatórias
+php ~/revisao-lei14751/database/aplicar_lei14751_ufmt_v1.php --audit
+```
+
+O usuário informou 5 matrículas ativas, nenhuma com fase 78 liberada, e nenhuma com a fase concluída; ainda é necessário verificar o guarda da migração em produção, inclusive para alunos inativos/históricos.
+
+**Não é necessário executar novamente `aplicar_lei14751_ufmt_v1.php --apply`.**
+
+O PR anterior **#10**, sobre conciliação de aulas opcionais em fases já concluídas, é independente e não resolve o caso das nove aulas convertidas em obrigatórias.
+
+**Pendente:** lint e DRY-RUN no ambiente real, depois teste do fluxo leitura → exercício → aprovação → próxima aula, preservando as avaliações previamente configuradas.
