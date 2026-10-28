@@ -503,3 +503,149 @@ html[data-pg-theme="dark"] body.postgres-course-body .pg-sidebar-brand a::before
         padding: 3px 12px;
     }
 }
+
+
+/* Cartões PostgreSQL: estados e ações acessíveis nos dois temas.
+   Os estados continuam determinados pela lógica PHP existente. */
+body.postgres-course-body.pg-is-home .pg-module-card {
+    --pg-chip-fg: #0a6c56;
+    --pg-chip-bg: #e8f8f3;
+    --pg-chip-border: #bee9da;
+    --pg-btn-fg: #ffffff;
+    --pg-btn-bg: #1868c9;
+    --pg-btn-border: #1868c9;
+}
+body.postgres-course-body.pg-is-home .pg-module-card.is-current {
+    --pg-chip-fg: #195fb7;
+    --pg-chip-bg: #e8f2ff;
+    --pg-chip-border: #c1dafa;
+    --pg-btn-bg: #1266c8;
+    --pg-btn-border: #1266c8;
+}
+body.postgres-course-body.pg-is-home .pg-module-card.is-done {
+    --pg-chip-fg: #116740;
+    --pg-chip-bg: #e3f7eb;
+    --pg-chip-border: #bce7cd;
+    --pg-btn-fg: #14643e;
+    --pg-btn-bg: #eaf8f0;
+    --pg-btn-border: #addfc2;
+}
+body.postgres-course-body.pg-is-home .pg-module-card.is-locked {
+    --pg-chip-fg: #a83144;
+    --pg-chip-bg: #fff0f2;
+    --pg-chip-border: #f5c7ce;
+    --pg-btn-fg: #825765;
+    --pg-btn-bg: #f6f0f2;
+    --pg-btn-border: #e4ccd3;
+}
+body.postgres-course-body.pg-is-home .pg-module-card .pg-module-state {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 0;
+    text-align: center;
+    line-height: 1.25;
+    white-space: normal;
+    color: var(--pg-chip-fg);
+    background: var(--pg-chip-bg);
+    border: 1px solid var(--pg-chip-border);
+    border-radius: 9px;
+    font-weight: 800;
+}
+body.postgres-course-body.pg-is-home .pg-module-card .pg-state-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 15px;
+    min-width: 15px;
+    font-size: 11px;
+    line-height: 1;
+}
+body.postgres-course-body.pg-is-home .pg-module-card.is-available .pg-state-icon {
+    color: #099c75;
+}
+body.postgres-course-body.pg-is-home .pg-module-card .pg-module-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-width: 0;
+    line-height: 1.2;
+    text-align: center;
+    white-space: normal;
+    text-decoration: none;
+    border: 1px solid var(--pg-btn-border);
+    border-radius: 9px;
+    color: var(--pg-btn-fg);
+    background: var(--pg-btn-bg);
+    font-weight: 800;
+    box-shadow: none;
+}
+body.postgres-course-body.pg-is-home .pg-module-card a.pg-module-action {
+    transition: filter .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+body.postgres-course-body.pg-is-home .pg-module-card a.pg-module-action:hover,
+body.postgres-course-body.pg-is-home .pg-module-card a.pg-module-action:focus-visible {
+    filter: brightness(1.07);
+    box-shadow: 0 0 0 3px rgba(31, 113, 219, .12);
+}
+body.postgres-course-body.pg-is-home .pg-module-card.is-done a.pg-module-action:hover,
+body.postgres-course-body.pg-is-home .pg-module-card.is-done a.pg-module-action:focus-visible {
+    box-shadow: 0 0 0 3px rgba(17, 134, 79, .13);
+}
+body.postgres-course-body.pg-is-home .pg-module-card .pg-action-label {
+    min-width: 0;
+}
+body.postgres-course-body.pg-is-home .pg-module-card .pg-action-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    font-size: 12px;
+    line-height: 1;
+}
+body.postgres-course-body.pg-is-home .pg-module-card .pg-module-action.is-disabled {
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 1;
+}
+html[data-pg-theme="dark"] body.postgres-course-body.pg-is-home .pg-module-card {
+    --pg-chip-fg: #8ef3d3;
+    --pg-chip-bg: #133a33;
+    --pg-chip-border: #276b5b;
+    --pg-btn-fg: #061c2d;
+    --pg-btn-bg: #72d9f2;
+    --pg-btn-border: #72d9f2;
+}
+html[data-pg-theme="dark"] body.postgres-course-body.pg-is-home .pg-module-card.is-current {
+    --pg-chip-fg: #afd1ff;
+    --pg-chip-bg: #1b3155;
+    --pg-chip-border: #3c6296;
+    --pg-btn-fg: #091c31;
+    --pg-btn-bg: #86bbff;
+    --pg-btn-border: #86bbff;
+}
+html[data-pg-theme="dark"] body.postgres-course-body.pg-is-home .pg-module-card.is-done {
+    --pg-chip-fg: #a1f2be;
+    --pg-chip-bg: #173629;
+    --pg-chip-border: #327b52;
+    --pg-btn-fg: #a1f2be;
+    --pg-btn-bg: #193b2b;
+    --pg-btn-border: #347b54;
+}
+html[data-pg-theme="dark"] body.postgres-course-body.pg-is-home .pg-module-card.is-locked {
+    --pg-chip-fg: #ffbdc6;
+    --pg-chip-bg: #40222f;
+    --pg-chip-border: #814356;
+    --pg-btn-fg: #d7a6b3;
+    --pg-btn-bg: #2b2332;
+    --pg-btn-border: #59404e;
+}
+html[data-pg-theme="dark"] body.postgres-course-body.pg-is-home .pg-module-card.is-available .pg-state-icon {
+    color: #6ce2bd;
+}
+@media (prefers-reduced-motion: reduce) {
+    body.postgres-course-body.pg-is-home .pg-module-card a.pg-module-action {transition:none}
+}
