@@ -1,0 +1,243 @@
+{
+  "format_version": 1,
+  "module_slug": "modulo-6-direito-constitucional-e-legislacao-institucional-da-pmmt",
+  "source_label": "Reforço CF+CE/MT M6 | fontes oficiais e jurisprudência 2025/2026 | UFMT treinos inéditos",
+  "as_of": "2026-10-28",
+  "notice": "Aulas opcionais e de leitura integral de seus blocos. O texto novo corrige formulações juridicamente arriscadas; não altera automaticamente aulas já publicadas.",
+  "lessons": [
+    {
+      "topic": "cf5",
+      "phase_slug": "1-principios-fundamentais-arts-1o-a-4o",
+      "slug": "reforco-m6-ufmt-cf5-v1",
+      "title": "Reforço UFMT — Art. 5º: garantias fundamentais na atuação policial",
+      "estimated_minutes": 19,
+      "blocks": [
+        {
+          "type": "theory",
+          "title": "Arts. 1º a 4º — distingua as listas",
+          "content": "Fundamentos do art. 1º: soberania, cidadania, dignidade da pessoa humana, valores sociais do trabalho e da livre iniciativa e pluralismo político (SO-CI-DI-VA-PLU). Art. 2º: Poderes Legislativo, Executivo e Judiciário independentes e harmônicos; há funções típicas e funções atípicas previstas no ordenamento. Objetivos do art. 3º não são fundamentos. Princípios internacionais do art. 4º incluem direitos humanos, não intervenção, paz, cooperação, repúdio ao terrorismo/racismo e concessão de asilo político."
+        },
+        {
+          "type": "theory",
+          "title": "Inviolabilidade domiciliar — art. 5º, XI",
+          "content": "A casa é asilo inviolável: ingresso com consentimento; sem consentimento, hipóteses constitucionais de flagrante delito, desastre, prestar socorro; ou determinação judicial DURANTE O DIA. A própria CF não diz 'das 6h às 18h'. Para mandado de busca e apreensão domiciliar, a Terceira Seção do STJ admitiu cumprimento a partir das 5h (RHC 196.496/RN, publicado em 2025 e noticiado em 15/01/2026), considerando o art. 22 da Lei 13.869/2019 e o marco 5h–21h. Separar o texto constitucional da jurisprudência."
+        },
+        {
+          "type": "case_study",
+          "title": "Mandado às 5h05 não é sempre automaticamente inválido",
+          "content": "Situação: agentes cumprem mandado de busca domiciliar às 5h05, sem luz solar. Segundo o RHC 196.496/RN, o mero horário 5h05, por si, não viola o novo marco temporal jurisprudencial. Isso NÃO significa autorizar entrada sem mandado judicial e sem outra exceção constitucional."
+        },
+        {
+          "type": "comparison",
+          "title": "Identificação civil, identificação criminal e identidade dos agentes",
+          "content": "Art. 5º, LVIII: civilmente identificado não será submetido a identificação CRIMINAL salvo hipóteses previstas em lei; a identificação criminal não se resume a 'datiloscópica'. Art. 5º, LXIV: direito de identificação dos responsáveis pela prisão OU interrogatório policial. O LXI regula hipóteses de prisão e não a identidade dos agentes."
+        },
+        {
+          "type": "theory",
+          "title": "Prisão, comunicação, silêncio e assistência",
+          "content": "LXI: flagrante ou ordem escrita/fundamentada de autoridade judiciária, ressalvas legais para transgressão militar ou crime propriamente militar. LXII: comunicar imediatamente a prisão e local ao juiz competente e família ou pessoa indicada. LXIII: informação sobre direitos, silêncio, assistência familiar e de advogado. XLIX: integridade física e moral do preso. LXV: prisão ilegal imediatamente relaxada pela autoridade judiciária. LXVI: não manter preso quando a lei admitir liberdade provisória, com ou sem fiança."
+        },
+        {
+          "type": "memory",
+          "title": "Mapa de incisos para a prova",
+          "content": "XI = casa; XLIX = integridade; LVIII = identificação criminal; LXI = fundamento da prisão; LXII = comunicar prisão e local; LXIII = silêncio/assistência; LXIV = nomes dos responsáveis; LXV = relaxamento; LXVI = liberdade provisória. Procure no enunciado a distinção de garantias e não só números."
+        }
+      ]
+    },
+    {
+      "topic": "seguranca",
+      "phase_slug": "4-regime-dos-militares-e-seguranca-publica",
+      "slug": "reforco-m6-ufmt-seguranca-v1",
+      "title": "Reforço UFMT — Art. 144: segurança pública e competências",
+      "estimated_minutes": 19,
+      "blocks": [
+        {
+          "type": "theory",
+          "title": "Art. 144, caput e incisos I–VI",
+          "content": "Segurança pública: dever do Estado, direito e responsabilidade de todos; preservação da ordem pública e incolumidade das pessoas e patrimônio. Rol literal do caput: PF, PRF, Polícia Ferroviária Federal, Polícias Civis, PMs e CBMs, Polícias Penais federal/estaduais/distrital. Guardas municipais constam do §8º e não do rol de incisos I–VI; essa diferença não elimina sua participação constitucional na segurança urbana."
+        },
+        {
+          "type": "comparison",
+          "title": "§5º — PM x CBM x Polícia Penal",
+          "content": "Às PMs cabem polícia ostensiva e preservação da ordem pública; aos CBMs, além das atribuições legais, atividades de defesa civil. O §5º-A, incluído pela EC 104/2019, atribui à Polícia Penal a segurança dos estabelecimentos penais. Não atribuir investigação penal comum, defesa civil e administração prisional indistintamente à PM."
+        },
+        {
+          "type": "comparison",
+          "title": "§6º — forças auxiliares e subordinação",
+          "content": "PMs e CBMs são forças auxiliares e reserva do Exército e subordinam-se aos Governadores estaduais, do DF e dos Territórios, juntamente com Polícias Civis e Polícias Penais estaduais/distrital. A expressão 'forças auxiliares e reserva' refere-se PM e CBM, não automaticamente às Polícias Civis/Penais."
+        },
+        {
+          "type": "case_study",
+          "title": "Guarda municipal: Tema 656 do STF",
+          "content": "O STF (RE 608.588/SP, Tema 656, julgado em 20/02/2025) reconhece ações de segurança urbana por guardas municipais, inclusive policiamento ostensivo e comunitário, respeitadas atribuições dos demais órgãos e excluída qualquer atividade de polícia judiciária. Logo, 'somente PM pode exercer qualquer policiamento ostensivo' é assertiva excessivamente absoluta."
+        },
+        {
+          "type": "theory",
+          "title": "§§ 7º, 8º e 10: organização, guardas e trânsito",
+          "content": "§7º: lei organiza e disciplina funcionamento dos órgãos de segurança pública. §8º: municípios podem constituir guardas municipais para proteção de bens, serviços e instalações conforme a lei; ler com Tema 656. §10: segurança viária inclui educação, engenharia e fiscalização de trânsito, atribuída aos órgãos/entidades executivos e agentes de trânsito em âmbito estadual, distrital e municipal."
+        },
+        {
+          "type": "memory",
+          "title": "Mapa de competências",
+          "content": "PM: polícia ostensiva e ordem pública. CBM: defesa civil e tarefas legais. Polícia Penal: estabelecimentos penais. Polícia Civil: polícia judiciária e apuração de infrações penais, exceto militares, ressalvada competência federal. PF: polícia judiciária da União com exclusividade (art. 144, §1º, IV). Guardas: segurança urbana e policiamento ostensivo/comunitário nos limites do Tema 656, SEM polícia judiciária."
+        }
+      ]
+    },
+    {
+      "topic": "legislativo",
+      "phase_slug": "7-estatuto-dos-militares-de-mt-lc-no-555-2014",
+      "slug": "reforco-m6-ufmt-legislativo-v1",
+      "title": "Reforço CLIPM — CE-MT arts. 39 a 41: iniciativa e urgência",
+      "estimated_minutes": 19,
+      "blocks": [
+        {
+          "type": "theory",
+          "title": "Art. 39: iniciativa legislativa e ADI 291",
+          "content": "O caput do art. 39 enumera titulares da iniciativa legislativa estadual. A expressão que atribuía iniciativa legislativa à Procuradoria-Geral do Estado foi declarada inconstitucional pelo STF na ADI 291; a versão compilada anota a decisão. Diferenciar iniciativa legislativa de autonomia institucional e de organização administrativa da PGE."
+        },
+        {
+          "type": "theory",
+          "title": "Art. 39, parágrafo único: efetivos militares e Polícia Penal",
+          "content": "A iniciativa privativa do Governador abrange leis que fixem ou modifiquem efetivos da PM e do CBM (inciso I) e da Polícia Penal (inciso III, acrescido pela EC 96/2021). O inciso II contempla matérias de cargos/remuneração, servidores e estrutura de secretarias, nos limites do texto. Não dizer que só PM e CBM constam no artigo."
+        },
+        {
+          "type": "comparison",
+          "title": "Art. 40: proibição COM ressalva",
+          "content": "É vedado aumento de despesa previsto em projetos de iniciativa privativa do Governador, RESSALVADO o disposto no art. 164 da CE-MT; e em projetos sobre serviços administrativos da ALMT, dos Tribunais e do Ministério Público. A palavra 'jamais' ou 'em hipótese alguma' falseia o inciso I."
+        },
+        {
+          "type": "case_study",
+          "title": "Art. 41: pedido de urgência de projeto ordinário",
+          "content": "O Governador pode solicitar urgência para projeto de sua iniciativa. Se a ALMT não se manifestar em 45 dias, a proposição entra na ordem do dia, sobrestando os outros assuntos até votação. O prazo NÃO CORRE durante recesso e NÃO se aplica a projetos de lei complementar. Solicitação pode ocorrer mesmo depois da remessa, em qualquer fase, contando-se o prazo da leitura no expediente (§3º)."
+        },
+        {
+          "type": "memory",
+          "title": "Como evitar três erros de CLIPM",
+          "content": "Art. 39: iniciativa não é toda competência do Executivo; Polícia Penal também figura no texto. Art. 40: ressalva do art. 164. Art. 41: 45 dias, sem contar recesso, e não vale para lei complementar. Em dúvida, procure caput, inciso e parágrafo."
+        },
+        {
+          "type": "warning",
+          "title": "Atualização estadual após o compilado de 2024",
+          "content": "A compilação oficial da ALMT recuperada estava atualizada até EC 119/2024. Houve EC 121/2025 (mudança terminológica em artigos específicos) e EC 122/2026 (art. 85, §3º, sobre Polícia Penal). Conferir Diário Oficial para qualquer nova alteração e respeitar versão do edital."
+        }
+      ]
+    },
+    {
+      "topic": "tce",
+      "phase_slug": "7-estatuto-dos-militares-de-mt-lc-no-555-2014",
+      "slug": "reforco-m6-ufmt-tce-v1",
+      "title": "Reforço CLIPM — CE-MT arts. 46 a 49: TCE e fiscalização",
+      "estimated_minutes": 19,
+      "blocks": [
+        {
+          "type": "theory",
+          "title": "Arts. 46 e 47 — controle externo e contas públicas",
+          "content": "A fiscalização contábil, financeira, orçamentária, operacional e patrimonial da administração é realizada na forma da Constituição Estadual; a Assembleia Legislativa exerce controle externo com auxílio do Tribunal de Contas. Quem arrecada, utiliza, guarda, gerencia ou administra dinheiro, bens e valores públicos deve prestar contas, inclusive entidades e pessoas abrangidas pelo dispositivo."
+        },
+        {
+          "type": "case_study",
+          "title": "Art. 48 — indício de despesa não autorizada",
+          "content": "A Assembleia Legislativa ou Comissão competente pode solicitar esclarecimentos à autoridade governamental responsável, em cinco dias. Se ausentes/insuficientes, pede ao TCE pronunciamento conclusivo em trinta dias. Entendida irregular a despesa, ALMT poderá determinar sua sustação se considerar que causa dano irreparável ou grave lesão à economia pública."
+        },
+        {
+          "type": "comparison",
+          "title": "Art. 49, §2º — sete cadeiras e critério de escolha",
+          "content": "TCE-MT: SETE conselheiros. QUATRO escolhidos pela ALMT; TRÊS pelo Governador, após aprovação legislativa, sendo um de livre escolha e dois alternadamente dentre auditores e membros do Ministério Público junto ao TCE, indicados em lista tríplice pelo Tribunal conforme critérios. Não confundir a escolha de vagas com o ato formal de nomeação."
+        },
+        {
+          "type": "theory",
+          "title": "Art. 49, §1º — requisitos de nomeação",
+          "content": "Requisitos incluem nacionalidade brasileira, idoneidade moral/reputação ilibada, notório conhecimento jurídico, contábil, econômico/financeiro ou administração pública e exercício profissional exigido; idade MAIS DE 30 E MENOS DE 70 ANOS, conforme EC 107/2022. Regra de 'até 65' é antiga."
+        },
+        {
+          "type": "comparison",
+          "title": "Art. 49, §4º — impedimentos",
+          "content": "É vedado aos conselheiros, sob pena de perda do cargo, exercício de outra função pública ainda que em disponibilidade, EXCETO um cargo de magistério; igualmente vedados recebimento de custas/participações processuais e atividade político-partidária."
+        },
+        {
+          "type": "memory",
+          "title": "Revisão 7–3–4 / 30–70 / 5–30",
+          "content": "TCE: 7 cadeiras = 3 escolhas do Governador + 4 da ALMT; nomeação e aprovação seguem o art. 49. Mais de 30 e menos de 70 anos. Fiscalização da despesa do art. 48: esclarecimentos em 5 dias e pronunciamento TCE em 30 dias."
+        }
+      ]
+    },
+    {
+      "topic": "instituicoes",
+      "phase_slug": "7-estatuto-dos-militares-de-mt-lc-no-555-2014",
+      "slug": "reforco-m6-ufmt-instituicoes-v1",
+      "title": "Reforço CLIPM — CE-MT arts. 66, 80 a 83: PM, CBM e POLITEC",
+      "estimated_minutes": 19,
+      "blocks": [
+        {
+          "type": "comparison",
+          "title": "Art. 66, XII x arts. 80–81",
+          "content": "Art. 66, XII: GOVERNADOR exerce comando supremo da Polícia Penal, PM e CBM (EC 96/2021). Art. 80: PM é instituição permanente e regular, força auxiliar e reserva do Exército, hierarquia/disciplina, dirigida por Comandante-Geral. Parágrafo único: Comandante-Geral escolhido e exonerado livremente pelo Governador dentre oficiais da ativa do QUADRO DE OFICIAIS DA PM do último posto de carreira. Art. 81: PM = policiamento ostensivo, preservação da ordem pública e polícia judiciária MILITAR, mais atribuições legais."
+        },
+        {
+          "type": "theory",
+          "title": "Art. 82 — corpo de bombeiros estadual",
+          "content": "O CBM estadual é instituição permanente e regular, força auxiliar e reserva do Exército, organização fundada em hierarquia e disciplina, dirigida por Comandante-Geral. Suas atribuições listadas abrangem prevenção/extinção de incêndios, proteção/busca/salvamento, defesa civil na área de competência e segurança contra incêndio/pânico. Atenção: CE art. 82 é mais detalhado que o art. 144, §5º, da CF."
+        },
+        {
+          "type": "theory",
+          "title": "Art. 83 — POLITEC e rol material",
+          "content": "A Perícia Oficial e Identificação Técnica (POLITEC), ressalvada a competência da União, realiza criminalística, medicina e odontologia legal, identificação civil e criminal e outras atribuições previstas no art. 83, especialmente conforme EC 33/2005. É atividade técnico-científica, não atribuição indistinta dos agentes de policiamento ostensivo."
+        },
+        {
+          "type": "case_study",
+          "title": "Art. 83, §1º — quem pode requisitar perícias",
+          "content": "A norma determina prestação de trabalhos de perícia e identificação e fornecimento de informações sempre que requisitados por Presidentes de Inquérito Policial CIVIL ou MILITAR, pelo Ministério Público ou por determinação judicial, em qualquer fase da persecução penal. Pegadinha: negar legitimidade ao presidente de IPM."
+        },
+        {
+          "type": "comparison",
+          "title": "Separar cargos, funções e procedimentos",
+          "content": "Governador: comando supremo (art. 66, XII) e nomeação do Comandante-Geral (art. 80). Comandante-Geral: direção institucional, não sinônimo de presidente de IPM. PM: polícia ostensiva, ordem pública e PJM no art. 81. POLITEC: exame técnico e identificação quando requisitados nos termos do art. 83."
+        },
+        {
+          "type": "memory",
+          "title": "Quatro artigos, quatro palavras-chave",
+          "content": "66 = comando supremo. 80 = escolha do comandante. 81 = competências PM, incluindo PJM. 82 = CBM, inclusive defesa civil. 83 = POLITEC, perícias e requisições civis/militares."
+        }
+      ]
+    },
+    {
+      "topic": "justica",
+      "phase_slug": "7-estatuto-dos-militares-de-mt-lc-no-555-2014",
+      "slug": "reforco-m6-ufmt-justica-v1",
+      "title": "Reforço CLIPM — CE-MT arts. 91, 96 e 101 e CF art. 125",
+      "estimated_minutes": 19,
+      "blocks": [
+        {
+          "type": "theory",
+          "title": "Art. 91 — estrutura judiciária estadual",
+          "content": "O art. 91 enumera órgãos da Justiça Estadual, incluindo os Conselhos de Justiça Militar na organização do Poder Judiciário. Não confundir órgão judicante com autoridade de polícia judiciária militar ou com a Corregedoria da PM."
+        },
+        {
+          "type": "comparison",
+          "title": "Art. 101 estadual x art. 125 federal — qual prevalece",
+          "content": "O art. 101 da CE-MT prevê Conselhos de Justiça Militar e Vara Especializada em primeiro grau. Entretanto, o art. 125, §§4º e 5º, da Constituição Federal determina reparto: juízes de direito do juízo militar processam/julgam singularmente crimes militares contra civis e ações contra atos disciplinares; Conselhos, sob presidência de juiz de direito, julgam DEMAIS crimes militares. Ressalva constitucional do Tribunal do Júri na hipótese de crime doloso contra vida de civil, segundo as regras de competência. O texto estadual não pode eliminar essa divisão."
+        },
+        {
+          "type": "case_study",
+          "title": "Crime militar contra civil x crime militar entre militares",
+          "content": "Questão hipotética: um crime militar cometido contra civil, dentro da competência da Justiça Militar Estadual, não vai automaticamente ao Conselho. O art. 125, §5º, aponta atuação singular do juiz de direito no juízo militar, ressalvada competência do júri quando aplicável. Para demais crimes militares, competência do Conselho de Justiça sob a presidência do juiz de direito."
+        },
+        {
+          "type": "theory",
+          "title": "Art. 96 — competência originária do TJ-MT",
+          "content": "O art. 96, I, a, conforme redação consolidada incluindo a EC 86/2020, prevê competência originária do TJ-MT nos termos e ressalvas da norma para Comandantes-Gerais de PM e CBM, entre outras autoridades, em infrações penais comuns e de responsabilidade. A alínea f do inciso I trata conflito entre juízes de direito e Conselhos de Justiça Militar; a alínea g inclui mandados de segurança/habeas data contra atos das autoridades indicadas. Avaliar sempre limites de competência estabelecidos na CF e interpretação jurisprudencial."
+        },
+        {
+          "type": "comparison",
+          "title": "Crimes e procedimentos que não se misturam",
+          "content": "Autoridade originariamente julgadora do caso ≠ órgão responsável pela investigação. Crime militar em primeiro grau ≠ foro por prerrogativa para infrações penais comuns. Conselho ≠ juiz singular. Defesa disciplinar militar ≠ processo penal militar, embora haja controle judicial de atos disciplinares."
+        },
+        {
+          "type": "memory",
+          "title": "Mapa 91/96/101/125",
+          "content": "91 = órgãos judiciais estaduais. 96 = competências originárias do TJ. 101 = organização dos Conselhos/vara militar estadual, lido COM art. 125 da CF. Art. 125, §4º = Justiça Militar estadual, ressalva Júri; §5º = juiz singular nas hipóteses constitucionais x Conselhos nos demais crimes."
+        }
+      ]
+    }
+  ]
+}
