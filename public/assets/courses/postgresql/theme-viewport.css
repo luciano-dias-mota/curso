@@ -129,3 +129,307 @@ html[data-pg-theme="dark"] body.postgres-course-body.pg-is-home .pg-module-card:
 @media (prefers-reduced-motion:reduce) {
     body.postgres-course-body.pg-is-home .pg-module-card { transition:none; }
 }
+
+
+/* ======================================================================
+   LD Academy PostgreSQL — contraste das aulas no modo escuro
+   Escopo EXCLUSIVO: .study-room (aulas e laboratório PostgreSQL).
+   Sem qualquer alteração de cores do modo claro ou do curso PMMT.
+   ====================================================================== */
+html[data-pg-theme="dark"] body.postgres-course-body .study-room {
+    --pg-study-surface: #111a31;
+    --pg-study-surface-alt: #16213e;
+    --pg-study-surface-hover: #1b2d49;
+    --pg-study-border: rgba(163, 183, 216, .23);
+    --pg-study-text: #e9effb;
+    --pg-study-text-soft: #bdcbe2;
+    --pg-study-muted: #a3b4d1;
+    --pg-study-accent: #35e0a5;
+    --pg-study-accent-ink: #04261b;
+    color: var(--pg-study-text);
+}
+
+/* Estrutura: painel lateral, cabeçalho, aula e navegação */
+html[data-pg-theme="dark"] body.postgres-course-body .study-room :is(
+    .study-map,
+    .stage-top,
+    .study-nav-top,
+    .mobile-outline,
+    .study-card,
+    .ld-admin-panel
+) {
+    color: var(--pg-study-text);
+    background: var(--pg-study-surface);
+    border-color: var(--pg-study-border);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room .study-card > header {
+    color: var(--pg-study-text);
+    background: var(--pg-study-surface-alt);
+    border-bottom-color: var(--pg-study-border);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room :is(
+    .study-map-head h2,
+    .stage-top h1,
+    .study-card > header h2,
+    .study-content h2,
+    .study-content h3,
+    .study-content h4,
+    .study-content h5,
+    .study-content h6,
+    .ld-admin-panel strong
+) {
+    color: var(--pg-study-text);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room :is(
+    .study-map-head p,
+    .study-nav-progress small,
+    .study-content,
+    .study-content .content-p,
+    .study-content .content-list,
+    .study-content p,
+    .study-content li,
+    .study-content blockquote,
+    .study-content small,
+    .ld-admin-panel p
+) {
+    color: var(--pg-study-text-soft);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room :is(
+    .eyebrow,
+    .back,
+    .pedagogy-label
+) {
+    color: var(--pg-study-accent);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room :is(
+    .study-content strong,
+    .study-content b,
+    .study-content th
+) {
+    color: var(--pg-study-text);
+}
+
+/* Lista de blocos da aula e indicador de progresso */
+html[data-pg-theme="dark"] body.postgres-course-body .study-room .ring > div {
+    color: var(--pg-study-text);
+    background: var(--pg-study-surface-alt);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room .ring small {
+    color: var(--pg-study-muted);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room .map-item {
+    color: var(--pg-study-text);
+    background: transparent;
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room .map-item > span {
+    color: var(--pg-study-text);
+    background: #243451;
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room .map-item small {
+    color: var(--pg-study-muted);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room .map-item:hover,
+html[data-pg-theme="dark"] body.postgres-course-body .study-room .map-item.active {
+    color: var(--pg-study-text);
+    background: var(--pg-study-surface-hover);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room .map-item.active {
+    box-shadow: inset 3px 0 0 var(--pg-study-accent);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room .map-item.active > span {
+    background: var(--pg-study-accent);
+    color: var(--pg-study-accent-ink);
+}
+
+/* Barra superior da aula: botões, tempo, XP e navegação */
+html[data-pg-theme="dark"] body.postgres-course-body .study-room :is(
+    .stage-meta span,
+    .study-nav-progress,
+    .mobile-outline summary
+) {
+    color: var(--pg-study-text-soft);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room .stage-meta span {
+    background: var(--pg-study-surface-hover);
+    border: 1px solid var(--pg-study-border);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room :is(
+    .focus-toggle.secondary,
+    .study-nav-top .secondary,
+    .study-nav-top a.secondary,
+    .mobile-outline-list a
+) {
+    color: var(--pg-study-text);
+    background: var(--pg-study-surface-alt);
+    border-color: var(--pg-study-border);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room :is(
+    .focus-toggle.secondary:hover,
+    .study-nav-top .secondary:hover,
+    .mobile-outline-list a:hover,
+    .mobile-outline-list a.active
+) {
+    color: var(--pg-study-accent);
+    background: var(--pg-study-surface-hover);
+    border-color: rgba(53,224,165,.55);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room :is(
+    .study-nav-top .primary,
+    .nav-finish-form button.success
+) {
+    color: var(--pg-study-accent-ink);
+    background: var(--pg-study-accent);
+    border-color: var(--pg-study-accent);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room .mobile-outline-list {
+    color: var(--pg-study-text);
+    background: var(--pg-study-surface);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room :is(
+    .progress,
+    .study-nav-progress .progress
+) {
+    background: #293955;
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room .progress > span {
+    background: linear-gradient(90deg,#35e0a5,#55c8f5);
+}
+
+/* Conteúdo da aula: quadros, tabelas, códigos e exercícios */
+html[data-pg-theme="dark"] body.postgres-course-body .study-room :is(
+    .lesson-exercise-gate,
+    .study-prompt,
+    .analogy-box,
+    .pedagogy-card,
+    .question-preview-note,
+    .question-preview-option,
+    .lesson-video-note,
+    .lab-guided-example,
+    .lab-independent-banner,
+    .lab-sql-result,
+    [data-lab-hint-box],
+    [data-lab-result]
+) {
+    color: var(--pg-study-text);
+    background: var(--pg-study-surface-alt);
+    border-color: var(--pg-study-border);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room :is(
+    .lesson-exercise-gate,
+    .pedagogy-card,
+    .question-preview-note,
+    .question-preview-option,
+    .lab-guided-example,
+    .lab-independent-banner
+) :is(p,small,li) {
+    color: var(--pg-study-text-soft);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room :is(
+    .lesson-exercise-gate,
+    .pedagogy-card,
+    .question-preview-note,
+    .lab-guided-example,
+    .lab-independent-banner
+) :is(h2,h3,h4,strong) {
+    color: var(--pg-study-text);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room :is(
+    .pedagogy-icon,
+    .gate-icon,
+    .question-preview-option > span,
+    .study-card > header .symbol
+) {
+    color: var(--pg-study-accent);
+    background: rgba(53,224,165,.12);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room :is(
+    .content-table,
+    .lab-sql-table
+) {
+    color: var(--pg-study-text-soft);
+    background: #101b31;
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room :is(
+    .content-table th,
+    .content-table td,
+    .lab-sql-table th,
+    .lab-sql-table td
+) {
+    color: var(--pg-study-text-soft);
+    border-color: var(--pg-study-border);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room :is(
+    .content-table th,
+    .lab-sql-table th,
+    .lab-sql-result-head
+) {
+    color: var(--pg-study-text);
+    background: #21314d;
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room :is(
+    .study-content p code,
+    .study-content li code,
+    .study-content kbd
+) {
+    color: #a8f1d8;
+    background: #0b1528;
+    border: 1px solid var(--pg-study-border);
+    border-radius: 5px;
+    padding: 1px 4px;
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room .study-content pre {
+    color: #e0eafb;
+    background: #080f20;
+    border-color: var(--pg-study-border);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room .study-content pre code {
+    color: inherit;
+    background: transparent;
+    border: 0;
+    padding: 0;
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room :is(
+    .lab-sql-empty,
+    .lab-sql-result,
+    .lab-sql-result p,
+    .lab-sql-result td,
+    .lab-sql-result-head,
+    .lab-guided-example-head small,
+    .lab-independent-banner small
+) {
+    color: var(--pg-study-text-soft);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room .lab-editor-label {
+    color: var(--pg-study-text);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room .ld-admin-btn {
+    color: var(--pg-study-accent-ink);
+    background: var(--pg-study-accent);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room .ld-admin-btn.is-ghost {
+    color: var(--pg-study-accent);
+    background: var(--pg-study-surface-alt);
+    border-color: var(--pg-study-border);
+}
+
+/* Mensagens de feedback: contraste de texto/fundo específico por estado */
+html[data-pg-theme="dark"] body.postgres-course-body .study-room .alert {
+    color: var(--pg-study-text);
+    background: var(--pg-study-surface-alt);
+    border-color: var(--pg-study-border);
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room .alert.success {
+    color: #a5f1c9;
+    background: #123528;
+    border-color: #246a4b;
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room .alert.error {
+    color: #ffc5d0;
+    background: #381e2d;
+    border-color: #86415e;
+}
+html[data-pg-theme="dark"] body.postgres-course-body .study-room .alert.warning {
+    color: #ffe0a5;
+    background: #382b16;
+    border-color: #826436;
+}
