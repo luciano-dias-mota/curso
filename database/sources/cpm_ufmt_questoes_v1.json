@@ -1,0 +1,822 @@
+{
+  "format_version": 1,
+  "source_label": "CPM UFMT - questões inéditas de literalidade - 2026-10-27",
+  "questions": [
+    {
+      "topic": "art9",
+      "source_key": "CPM-UFMT-LIT26-ART9-01",
+      "statement": "Dois policiais militares da ativa, em serviço, encontram-se no quartel e um pratica delito previsto no CPM contra o outro. Qual hipótese do art. 9º, II, considera expressamente a condição dos dois militares?",
+      "explanation": "Base: CPM, art. 9º. A alínea a contempla militares da ativa nas posições de autor e vítima. O serviço aqui foi explicitado para não criar controvérsia sobre disputa privada fora de função.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Alínea b: exige vítima reserva/reformado ou civil.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Alínea c: exige vítima reserva/reformado ou civil.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Alínea d: pressupõe manobra ou exercício.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Alínea e: versa sobre patrimônio ou ordem administrativa.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Alínea a: militar da ativa contra militar da ativa.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "art9",
+      "source_key": "CPM-UFMT-LIT26-ART9-02",
+      "statement": "Um militar da ativa pratica crime previsto na legislação penal contra civil DENTRO de quartel. Sem se tratar de crime doloso contra a vida, qual alínea do art. 9º, II, combina o agente, o local e a vítima?",
+      "explanation": "Base: CPM, art. 9º. A alínea b prevê militar da ativa, em lugar sujeito à administração militar, contra civil, reserva ou reformado. A alínea f está revogada.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Alínea a, pois civil é militar ativo.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Alínea d, sempre que o crime ocorre no quartel.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Alínea b.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "Alínea e, que trata apenas de vítimas civis.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Alínea f, que segue vigente.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "art9",
+      "source_key": "CPM-UFMT-LIT26-ART9-03",
+      "statement": "Um militar em serviço de patrulhamento fora do quartel pratica delito previsto na legislação penal contra civil. Qual alínea do art. 9º, II, contempla expressamente a situação de serviço fora de lugar militar?",
+      "explanation": "Base: CPM, art. 9º. A alínea c abrange militar em serviço ou em razão da função, mesmo fora de local sujeito à administração militar, contra civil/reserva/reformado.",
+      "difficulty": "hard",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Alínea c.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Alínea b, que não menciona local.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Alínea a, pois civil equivale a militar ativo.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Alínea e, sobre a ordem administrativa.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Alínea f, revogada em 2023.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "art9",
+      "source_key": "CPM-UFMT-LIT26-ART9-04",
+      "statement": "Militar em período de manobras pratica crime previsto na legislação penal contra reformado. Qual alínea do art. 9º, II, menciona expressamente manobras ou exercício?",
+      "explanation": "Base: CPM, art. 9º. A alínea d trata de militar durante manobras/exercício contra reserva, reformado ou civil.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Alínea a.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Alínea b.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Alínea e.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Alínea d.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "Alínea f.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "art9",
+      "source_key": "CPM-UFMT-LIT26-ART9-05",
+      "statement": "Militar da ativa pratica crime contra patrimônio sob administração militar. Qual alínea do art. 9º, II, corresponde literalmente ao sujeito e ao objeto?",
+      "explanation": "Base: CPM, art. 9º. A alínea e é expressa quanto ao patrimônio sob administração militar e à ordem administrativa militar.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Alínea a, pois patrimônio é militar da ativa.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Alínea e.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Alínea b, pois exige vítima civil.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Alínea d, pois sempre exige manobras.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Alínea f, pois foi restaurada.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "art9",
+      "source_key": "CPM-UFMT-LIT26-ART9-06",
+      "statement": "Um civil pratica crime contra patrimônio sob administração militar. Considerando as hipóteses do art. 9º, III, qual alínea menciona expressamente tal patrimônio?",
+      "explanation": "Base: CPM, art. 9º. O inciso III alcança, nas hipóteses legais, civil/reserva/reformado; sua alínea a menciona patrimônio sob administração militar ou ordem administrativa militar.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Inciso II, alínea a.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Inciso II, alínea b.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Inciso II, alínea e.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Inciso III, alínea d, exclusivamente.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Inciso III, alínea a.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "art9",
+      "source_key": "CPM-UFMT-LIT26-ART9-07",
+      "statement": "Civil pratica crime previsto na legislação penal dentro de unidade militar contra militar da ativa. Qual alínea do art. 9º, III, descreve essa combinação de local e vítima?",
+      "explanation": "Base: CPM, art. 9º. O inciso III, b abrange crime por civil/reserva/reformado em local sujeito à administração militar contra militar da ativa, e as demais situações descritas na alínea.",
+      "difficulty": "hard",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Inciso II, alínea a.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Inciso II, alínea b.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Inciso III, alínea b.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "Inciso II, alínea c.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Inciso II, alínea e.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "art9",
+      "source_key": "CPM-UFMT-LIT26-ART9-08",
+      "statement": "Um policial militar estadual, em serviço, pratica crime doloso contra a vida de civil. Conforme a literalidade do art. 9º, §1º, do CPM e o art. 125, §4º, da CF, qual órgão é competente para julgamento?",
+      "explanation": "Base: CPM, art. 9º. A exceção expressa para crimes dolosos contra a vida de civil estabelece competência do Júri; não confundir com todo crime cometido contra civil.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Tribunal do Júri.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Justiça Militar da União, por regra absoluta.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Conselho de Justiça estadual, sem exceção.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Autoridade disciplinar estadual, exclusivamente.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Justiça Eleitoral.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "art9",
+      "source_key": "CPM-UFMT-LIT26-ART9-09",
+      "statement": "Uma questão afirma que o §2º do art. 9º transfere à Justiça Militar da União todos os crimes dolosos contra a vida de civil praticados por policial militar da PMMT. Qual correção é literal?",
+      "explanation": "Base: CPM, art. 9º. O §2º menciona militares das Forças Armadas e contextos qualificados. Não extrapolar para PMs estaduais.",
+      "difficulty": "hard",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "O §2º transformou policiais estaduais em integrantes das Forças Armadas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "O §2º afastou o §1º para todos os militares brasileiros.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "O §2º contém apenas crimes patrimoniais.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "O §2º refere-se a militares das Forças Armadas nas condições expressas, não à PMMT.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "O §2º trata apenas de transgressões.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "art9",
+      "source_key": "CPM-UFMT-LIT26-ART9-10",
+      "statement": "Segundo o art. 9º, II, do CPM, após a Lei nº 13.491/2017, podem ser crimes militares nas hipóteses descritas nesse inciso quais infrações?",
+      "explanation": "Base: CPM, art. 9º. O inciso II inclui crimes do CPM e os previstos na legislação penal, desde que atendidas as condições legais de suas alíneas.",
+      "difficulty": "hard",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Apenas crimes exclusivos do CPM.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Crimes previstos no CPM e crimes previstos na legislação penal.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Apenas transgressões disciplinares.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Somente infrações cometidas dentro de quartel.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Somente crimes contra a vida.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "art195",
+      "source_key": "CPM-UFMT-LIT26-ART195-01",
+      "statement": "Militar deliberadamente deixa posto designado, sem ordem superior, durante a escala e retorna duas horas depois, antes do término. Qual tipo corresponde aos elementos narrados?",
+      "explanation": "Base: CPM, art. 195. O art. 195 descreve abandono de posto ou serviço sem ordem superior antes do término, sem prazo mínimo de oito dias.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Deserção do art. 187, pelo prazo de duas horas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Motim do art. 149, ainda que esteja sozinho.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Apenas transgressão porque voltou.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Revolta, por ter se afastado durante o serviço.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Abandono de posto, art. 195.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "art195",
+      "source_key": "CPM-UFMT-LIT26-ART195-02",
+      "statement": "Militar deixa o posto de serviço por ordem superior de substituição. Qual condição do art. 195 falta na hipótese apresentada?",
+      "explanation": "Base: CPM, art. 195. A hipótese explicita ordem superior, contrariando a elementar 'sem ordem superior' do art. 195.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Existência de posto previamente designado.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Ausência de licença superior a oito dias.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "O abandono sem ordem superior.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "A condição de militar.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "A informação de que houve substituição.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "art195",
+      "source_key": "CPM-UFMT-LIT26-ART195-03",
+      "statement": "Militar abandona voluntariamente serviço devido antes do término, sem ordem superior. Não houve prejuízo patrimonial demonstrado. Pela literalidade do art. 195, assinale a correta.",
+      "explanation": "Base: CPM, art. 195. O art. 195 não estabelece dano patrimonial como elementar. Os requisitos narrados estão no próprio tipo: abandono, falta de ordem e saída antes de terminar.",
+      "difficulty": "hard",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "O tipo não exige prejuízo material como elemento expresso.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "O crime só existe se o dano for superior a um salário mínimo.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "A consumação exige ausência superior a oito dias.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "O crime exige reunião de ao menos três militares.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "O tipo exige uso efetivo de arma.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "art195",
+      "source_key": "CPM-UFMT-LIT26-ART195-04",
+      "statement": "Após concluir regularmente o serviço designado, militar deixa o local. Qual condição temporal expressa no art. 195 não foi demonstrada?",
+      "explanation": "Base: CPM, art. 195. A norma refere abandono antes de terminar o serviço devido; a saída após conclusão regular não cumpre esse elemento.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "A ausência superior a oito dias.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "A atuação em manobras.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "A condição de integrante da reserva.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "A saída antes de terminar o serviço.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "A reunião de militares.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "art195",
+      "source_key": "CPM-UFMT-LIT26-ART195-05",
+      "statement": "Qual é a pena prevista no art. 195 do CPM para abandono de posto?",
+      "explanation": "Base: CPM, art. 195. O art. 195 prevê detenção de três meses a um ano; não confundir com penas do art. 187 ou 149.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Reclusão de quatro a oito anos.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Detenção de três meses a um ano.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Detenção de seis meses a dois anos, agravada se oficial.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Reclusão de oito a vinte anos.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Multa penal isolada.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "art187",
+      "source_key": "CPM-UFMT-LIT26-ART187-01",
+      "statement": "Um militar se ausenta, sem licença, da unidade onde deve permanecer por nove dias completos. Qual requisito temporal expresso do art. 187 foi preenchido?",
+      "explanation": "Base: CPM, art. 187. O art. 187 exige ausência sem licença superior a oito dias; nove dias completos ultrapassam o prazo.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Ausência por mais de seis horas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Ausência por exatamente oito horas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Ausência por mais de trinta dias.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Ausência por uma escala de serviço.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Ausência por mais de oito dias.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic": "art187",
+      "source_key": "CPM-UFMT-LIT26-ART187-02",
+      "statement": "A única informação temporal é que o militar ficou ausente, sem licença, por exatamente oito dias. Qual conclusão cabe sobre o requisito do art. 187?",
+      "explanation": "Base: CPM, art. 187. O texto exige 'mais de oito dias', e exatamente oito dias não são mais de oito. Não se está afastando eventual outra infração.",
+      "difficulty": "hard",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "O art. 187 está necessariamente consumado.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "O art. 187 exige só oito horas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "O requisito de mais de oito dias ainda não está demonstrado.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "O prazo do art. 187 é de trinta dias.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "O art. 187 só se aplica se ele estava armado.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "art187",
+      "source_key": "CPM-UFMT-LIT26-ART187-03",
+      "statement": "Um militar fica ausente sem licença por nove dias completos e se apresenta posteriormente. Qual afirmação é compatível com o prazo previsto no art. 187?",
+      "explanation": "Base: CPM, art. 187. O retorno não desfaz que o prazo da descrição penal foi ultrapassado; eventual redução de pena pela apresentação se analisa no art. 189.",
+      "difficulty": "hard",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "O período superior a oito dias descrito já ocorreu.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "A apresentação apaga automaticamente o período anterior.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "O período mínimo é sempre de trinta dias.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "O art. 187 requer violência contra superior.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "O prazo da deserção é duas horas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "art187",
+      "source_key": "CPM-UFMT-LIT26-ART187-04",
+      "statement": "Um militar deixa posto designado sem ordem superior no meio do turno e volta após duas horas, sem ausência superior a oito dias. Qual distinção entre arts. 195 e 187 é literal?",
+      "explanation": "Base: CPM, art. 187. Art. 195: abandono de posto/serviço antes de terminar, sem ordem superior. Art. 187: ausência sem licença por mais de oito dias.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "O art. 187 exige apenas duas horas.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Ambos exigem mais de oito dias.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "O art. 195 só vale em tempo de guerra.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "O art. 195 não exige prazo superior a oito dias; o art. 187 exige mais de oito dias de ausência sem licença.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "O art. 187 requer reunião de militares armados.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "art187",
+      "source_key": "CPM-UFMT-LIT26-ART187-05",
+      "statement": "Qual é a pena-base do crime de deserção do art. 187 do CPM?",
+      "explanation": "Base: CPM, art. 187. A lei comina detenção de seis meses a dois anos e agravamento da pena se oficial.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Detenção de três meses a um ano para todos os militares.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Detenção de seis meses a dois anos; se oficial, a pena é agravada.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Reclusão de quatro a oito anos.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Reclusão de oito a vinte anos.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Multa administrativa apenas.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "art149",
+      "source_key": "CPM-UFMT-LIT26-ART149-01",
+      "statement": "Três militares reunidos e desarmados, em conduta coletiva, agem contra ordem recebida de superior. Qual figura do art. 149 é descrita?",
+      "explanation": "Base: CPM, art. 149. Art. 149, I prevê reunião de militares que ajam contra ordem recebida ou se neguem a cumpri-la. Sem o elemento armamento narrado, não se usa o parágrafo único.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Motim (art. 149, I).",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Revolta por ausência de armas.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Deserção pelo descumprimento coletivo.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Abandono de posto pela reunião de três.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Apenas infração administrativa em qualquer hipótese.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "art149",
+      "source_key": "CPM-UFMT-LIT26-ART149-02",
+      "statement": "Três militares reunidos e armados agem contra ordem recebida de superior, nos termos do art. 149, I. Que figura o parágrafo único indica?",
+      "explanation": "Base: CPM, art. 149. O parágrafo único do art. 149 requer que os agentes ESTAVAM ARMADOS, não disparos, desde que presente o motim do caput.",
+      "difficulty": "hard",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Motim básico porque não se afirma que houve disparos.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Deserção pelo fato de estarem armados.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Apenas falta disciplinar, pois eram três.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Revolta, porque os agentes estavam armados.",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "text": "Abandono de posto, independentemente de posto designado.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "art149",
+      "source_key": "CPM-UFMT-LIT26-ART149-03",
+      "statement": "Militares estão reunidos e armados em serviço regular; nada indica as condutas dos incisos I a IV do art. 149. Qual é a avaliação correta pela literalidade do dispositivo?",
+      "explanation": "Base: CPM, art. 149. Os elementos do caput continuam necessários; o parágrafo único sobre armamento não é tipo autônomo para qualquer reunião.",
+      "difficulty": "hard",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Todo grupo armado com uniforme configura revolta.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Reunião e armamento isolados não demonstram motim ou revolta sem as condutas do caput.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Toda reunião militar configura motim.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Não é necessário analisar os incisos do art. 149.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "O tipo do art. 149 exige ausência de oito dias.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic": "art149",
+      "source_key": "CPM-UFMT-LIT26-ART149-04",
+      "statement": "Conforme o art. 149, quais penas correspondem, respectivamente, a motim e revolta, ambas com aumento de um terço para os cabeças?",
+      "explanation": "Base: CPM, art. 149. Motim: reclusão 4–8 anos; revolta: reclusão 8–20 anos; aumento de um terço para cabeças nas duas hipóteses.",
+      "difficulty": "medium",
+      "alternatives": [
+        {
+          "label": "A",
+          "text": "Detenção de três meses a um ano; detenção de seis meses a dois anos.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Reclusão de oito a vinte anos; reclusão de quatro a oito anos.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Multa e advertência administrativa.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Detenção de seis meses a dois anos para ambas.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Reclusão de quatro a oito anos; reclusão de oito a vinte anos.",
+          "is_correct": true
+        }
+      ]
+    }
+  ]
+}

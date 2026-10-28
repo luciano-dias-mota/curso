@@ -1,0 +1,178 @@
+{
+  "format_version": 1,
+  "module_slug": "modulo-3-policia-judiciaria-militar-codigo-penal-militar-cppm-e-rdpm-mt",
+  "source_label": "CPM UFMT | literalidade legal | 2026-10-27",
+  "legal_sources": [
+    "https://www.planalto.gov.br/ccivil_03/decreto-lei/del1001compilado.htm",
+    "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm",
+    "https://processo.stj.jus.br/jurisprudencia/externo/informativo/?acao=pesquisarumaedicao&livre=0667.cod."
+  ],
+  "lessons": [
+    {
+      "topic": "art9",
+      "phase_slug": "1-codigo-penal-militar-recorte-do-edital",
+      "slug": "reforco-ufmt-literalidade-art9-2026",
+      "title": "Reforço UFMT — Art. 9º — crime militar em tempo de paz",
+      "estimated_minutes": 22,
+      "blocks": [
+        {
+          "type": "theory",
+          "title": "Os três incisos do art. 9º",
+          "content": "Inciso I: crimes do CPM definidos diversamente da lei comum ou nela não previstos, ressalvadas disposições especiais. Inciso II: crimes do CPM e também previstos na legislação penal, nas condições de suas alíneas. Inciso III: reserva, reformado ou civil contra instituições militares nas situações expressas. A Lei nº 13.491/2017 alterou a abertura do inciso II; a Lei nº 14.688/2023 atualizou diversas alíneas."
+        },
+        {
+          "type": "comparison",
+          "title": "Inciso II: alíneas a, b e c",
+          "content": "a) Militar da ativa contra militar na mesma situação; a lei não exige local militar na alínea. b) Militar da ativa EM LUGAR sujeito à administração militar contra reserva, reformado ou civil. c) Militar em SERVIÇO, em razão da função, comissão ou formatura, ainda que FORA do lugar sujeito à administração militar, contra reserva, reformado ou civil. Não trocar os critérios de local, serviço e vítima."
+        },
+        {
+          "type": "case_study",
+          "title": "Caso de fixação: alínea b",
+          "content": "Militar da ativa comete delito previsto na legislação penal contra civil DENTRO do quartel. Para analisar a natureza militar na hipótese narrada, confira art. 9º, II, b. O fato de a vítima ser civil, isoladamente, NÃO significa que todo delito seja da competência do Júri; a regra do §1º envolve crimes dolosos contra a vida."
+        },
+        {
+          "type": "case_study",
+          "title": "Caso de fixação: alínea c",
+          "content": "Durante patrulhamento externo em serviço, um policial militar comete delito previsto na legislação penal contra civil. Art. 9º, II, c, contempla serviço/função ainda que fora do quartel. Não acrescente o requisito de lugar sujeito à administração militar ao texto desta alínea."
+        },
+        {
+          "type": "theory",
+          "title": "Inciso II, alíneas d, e e f",
+          "content": "d) Militar durante manobras ou exercícios contra reserva, reformado ou civil. e) Militar da ativa contra patrimônio sob a administração militar ou contra a ordem administrativa militar. f) Revogada. O inciso II não se limita aos crimes exclusivos do CPM."
+        },
+        {
+          "type": "theory",
+          "title": "Inciso III: reserva, reformado e civil",
+          "content": "As hipóteses abrangem, entre outras: a) patrimônio ou ordem administrativa militar; b) lugar sujeito à administração militar contra militar da ativa ou servidor indicado no dispositivo, no exercício da função; c) militar em formatura ou nas situações especificadas; d) militar em função militar ou no serviço descrito na alínea, ainda que fora de local militar. Sempre observe os elementos expressos de cada alínea."
+        },
+        {
+          "type": "comparison",
+          "title": "§1º, §2º e Constituição — competência",
+          "content": "§1º: crimes dolosos contra a vida praticados por militar contra civil são da competência do Tribunal do Júri. Para policiais militares estaduais, art. 125, §4º, da CF reforça ressalva ao Júri. §2º: hipótese ESPECIAL de militares das FORÇAS ARMADAS contra civil, nas operações/atribuições previstas no próprio texto, submetida à Justiça Militar da União. Não estender essa exceção à PMMT."
+        },
+        {
+          "type": "theory",
+          "title": "Arts. 12 e 13: atenção à condição do inativo",
+          "content": "Art. 12: militar da reserva ou reformado, quando EMPREGADO NA ADMINISTRAÇÃO MILITAR, equipara-se ao da ativa para aplicação da lei penal militar. Emprego privado não basta. Art. 13: conserva responsabilidades e prerrogativas de posto/graduação quando pratica crime militar ou sofre crime militar. Uma regra não substitui a outra."
+        },
+        {
+          "type": "warning",
+          "title": "Literalidade separada de interpretação jurisprudencial",
+          "content": "O art. 9º, II, a, não traz expressamente a palavra 'serviço'. Contudo, conflito particular fora do serviço pode envolver interpretação jurisprudencial sobre competência (STJ, CC 170.201/PI, Informativo 667/2020). NÃO misturar esse precedente com gabarito que expressamente cobra a literalidade do artigo. Nas questões deste complemento, os fatos delimitam claramente os requisitos legais."
+        },
+        {
+          "type": "memory",
+          "title": "Método de resolução para a UFMT",
+          "content": "Passos: identifique agente (ativa/reserva/reformado/civil); vítima; lugar; situação de serviço/função/manobras; bem jurídico; e se é crime doloso contra a vida de civil. Só então localize inciso, alínea e eventual regra de competência. Fonte oficial: DL 1.001/1969, art. 9º; CF, art. 125, §4º."
+        }
+      ]
+    },
+    {
+      "topic": "art195",
+      "phase_slug": "2-crimes-militares-selecionados",
+      "slug": "reforco-ufmt-literalidade-art195-2026",
+      "title": "Reforço UFMT — Art. 195 — abandono de posto",
+      "estimated_minutes": 14,
+      "blocks": [
+        {
+          "type": "theory",
+          "title": "Elementos escritos no art. 195",
+          "content": "O tipo descreve abandonar SEM ORDEM SUPERIOR posto ou lugar de serviço designado, OU o serviço devido, ANTES DE TERMINÁ-LO. Pena: detenção de três meses a um ano. A literalidade não fala em oito dias, prazo próprio do art. 187."
+        },
+        {
+          "type": "case_study",
+          "title": "Saída durante turno com retorno posterior",
+          "content": "Militar abandona voluntariamente posto designado no meio do turno, sem ordem superior, e retorna duas horas depois. Se presentes os demais elementos, o retorno não afasta o abandono antes do fim. Não confundir com a deserção do art. 187."
+        },
+        {
+          "type": "case_study",
+          "title": "Saída depois de ordem superior",
+          "content": "Militar deixa o local designado por ordem do superior, em substituição regular. Falta a condição 'sem ordem superior' na hipótese descrita; não classificar automaticamente como abandono de posto."
+        },
+        {
+          "type": "comparison",
+          "title": "Exigência de dano e relação com disciplina",
+          "content": "O art. 195 não exige expressamente resultado de prejuízo material. Ausência de dano não altera, por si só, os elementos objetivos narrados. O art. 19 distingue o CPM das infrações de regulamentos disciplinares. Não afirmar que a saída sempre constitui crime se não estiverem presentes os elementos legais."
+        },
+        {
+          "type": "memory",
+          "title": "Checklist do art. 195",
+          "content": "Houve abandono? Era posto/lugar de serviço designado ou serviço devido? Houve ordem superior para sair? O fato aconteceu antes do término? Prazo de oito dias NÃO integra o art. 195. Pena: detenção, três meses a um ano."
+        }
+      ]
+    },
+    {
+      "topic": "art187",
+      "phase_slug": "2-crimes-militares-selecionados",
+      "slug": "reforco-ufmt-literalidade-art187-2026",
+      "title": "Reforço UFMT — Art. 187 — deserção",
+      "estimated_minutes": 14,
+      "blocks": [
+        {
+          "type": "theory",
+          "title": "Núcleo e prazo da deserção",
+          "content": "Art. 187: ausência de militar, sem licença, da unidade em que serve ou do lugar em que deve permanecer, por MAIS DE OITO DIAS. Pena: detenção de seis meses a dois anos; se oficial, a pena é agravada. Não substituir 'mais de oito dias' por oito dias exatos."
+        },
+        {
+          "type": "case_study",
+          "title": "Exatamente oito dias",
+          "content": "A hipótese descreve ausência sem licença por exatamente oito dias: ainda não demonstrou o período de 'mais de oito dias' do art. 187. Não confundir essa conclusão sobre o tipo específico com inexistência de outra possível infração."
+        },
+        {
+          "type": "case_study",
+          "title": "Nove dias completos e apresentação posterior",
+          "content": "A ausência sem licença por nove dias completos preenche o requisito de prazo do art. 187, se os demais elementos da hipótese estiverem presentes. O retorno não apaga o tempo transcorrido; efeitos da apresentação voluntária devem ser estudados separadamente no art. 189."
+        },
+        {
+          "type": "comparison",
+          "title": "Deserção versus abandono de posto",
+          "content": "Deserção do art. 187: ausência da unidade ou lugar por MAIS DE OITO DIAS. Abandono do art. 195: saída sem ordem superior de posto/lugar/serviço devido ANTES DO TÉRMINO, sem exigir o prazo da deserção. Uma ausência curta não autoriza automaticamente art. 195 se não houver posto ou serviço preenchendo o tipo."
+        },
+        {
+          "type": "memory",
+          "title": "Fixação e cautela",
+          "content": "Guarde: art. 187 = ausência sem licença + unidade/lugar devido + mais de oito dias. Art. 188 tem casos assimilados que devem ser estudados à parte. Pena do art. 187: detenção de seis meses a dois anos, agravada se oficial."
+        }
+      ]
+    },
+    {
+      "topic": "art149",
+      "phase_slug": "2-crimes-militares-selecionados",
+      "slug": "reforco-ufmt-literalidade-art149-2026",
+      "title": "Reforço UFMT — Art. 149 — motim e revolta",
+      "estimated_minutes": 14,
+      "blocks": [
+        {
+          "type": "theory",
+          "title": "Motim: reunião com uma das condutas dos incisos",
+          "content": "Art. 149: REUNIREM-SE MILITARES em alguma das hipóteses: I) agir contra ordem superior recebida ou negar cumprimento; II) recusar obediência quando agindo sem ordem ou praticando violência; III) concordar com recusa coletiva, resistência ou violência comum; IV) ocupar/utilizar os locais/meios militares indicados para ação ou violência em desobediência a ordem superior ou em detrimento da ordem/disciplina. Reunião social simples não é suficiente."
+        },
+        {
+          "type": "comparison",
+          "title": "Penas e elemento da revolta",
+          "content": "Motim (caput): RECLUSÃO de quatro a oito anos, aumento de um terço para os cabeças. Revolta (parágrafo único): se os agentes ESTAVAM ARMADOS, RECLUSÃO de oito a vinte anos, igualmente com aumento de um terço para os cabeças. O dispositivo não condiciona a revolta a disparos. A presença de armas sozinha não supre as condutas do caput."
+        },
+        {
+          "type": "case_study",
+          "title": "Caso de recusa coletiva desarmada",
+          "content": "Três militares reunidos, desarmados, agem contra ordem recebida de superior. O cenário reproduz art. 149, I (motim). A redação de 2023 passou a mencionar 'militares' no caput, sem a antiga expressão 'assemelhados'."
+        },
+        {
+          "type": "case_study",
+          "title": "Caso de recusa coletiva armada",
+          "content": "Os mesmos militares estão armados e agem reunidos contra ordem recebida. A hipótese de motim, agora com agentes armados, corresponde à figura de revolta prevista no parágrafo único. Não exigir disparo que o texto não exige."
+        },
+        {
+          "type": "warning",
+          "title": "Evite atalho incorreto",
+          "content": "Não classifique como revolta toda reunião armada: também precisa estar presente uma conduta descrita no caput do art. 149. Diferencie o parágrafo único do art. 149 do art. 150, que contém tipo penal próprio."
+        },
+        {
+          "type": "memory",
+          "title": "Memorização de literalidade",
+          "content": "Motim: 4 a 8 anos. Revolta: 8 a 20 anos. Ambos: cabeças com +1/3. Sequência de análise: reunião de militares + um dos incisos I–IV + verificar se estavam armados."
+        }
+      ]
+    }
+  ]
+}
