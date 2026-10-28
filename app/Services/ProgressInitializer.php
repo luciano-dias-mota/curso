@@ -181,8 +181,6 @@ final class ProgressInitializer
         }
     }
 
-    }
-
     /**
      * Reconcilia aulas opcionais novas em fases já acessíveis ou concluídas.
      * Não altera conclusão, checkpoints, nem desbloqueia aulas obrigatórias.
@@ -202,7 +200,6 @@ final class ProgressInitializer
         foreach ($optional->fetchAll(PDO::FETCH_COLUMN) as $lessonId) {
             $this->unlockLesson($pdo, $userId, (int) $lessonId);
         }
-
     }
 
     private function unlockAllLessons(PDO $pdo, int $userId, int $phaseId): void
