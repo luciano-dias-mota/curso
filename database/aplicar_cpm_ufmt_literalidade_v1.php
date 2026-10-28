@@ -222,7 +222,7 @@ foreach ($topicLessons as $topic => $lesson) {
         if ($saved['block_type'] !== $expected['type']
             || $saved['title'] !== $expected['title']
             || $saved['content'] !== $expected['content']
-            || (int)$saved['is_required'] !== 0) {
+            || (int)$saved['is_required'] !== 1) {
             $conflicts[] = "Conteúdo da aula existente difere da fonte: {$lesson['slug']}";
             break;
         }
@@ -342,7 +342,7 @@ $insertBlock = $pdo->prepare(
     "INSERT INTO lesson_blocks
        (lesson_id,block_type,title,content,media_url,position,is_required)
      VALUES
-       (:lesson,:type,:title,:content,NULL,:position,0)"
+       (:lesson,:type,:title,:content,NULL,:position,1)"
 );
 $insertQuestion = $pdo->prepare(
     "INSERT INTO questions
