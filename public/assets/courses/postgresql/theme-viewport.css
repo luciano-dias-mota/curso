@@ -56,9 +56,9 @@ html.pg-js-ready .pg-is-home .pg-module-card[hidden]{display:none!important}
 @media (min-width:960px) and (min-height:700px){
  html.pg-js-ready body.postgres-course-body.pg-is-home{overflow:hidden;height:100dvh}
  html.pg-js-ready .pg-is-home .postgres-course-main{height:calc(100dvh - 60px);min-height:0;padding:12px 20px;overflow:hidden}
- html.pg-js-ready .pg-is-home .pg-course-home{height:100%;min-height:0;display:grid;grid-template-rows:20px minmax(160px,.9fr) 88px minmax(210px,1.1fr);gap:10px}
+ html.pg-js-ready .pg-is-home .pg-course-home{height:100%;min-height:0;display:grid;grid-template-rows:18px clamp(150px,20dvh,196px) 74px minmax(0,1fr);gap:8px}
  html.pg-js-ready .pg-is-home .pg-course-hero{min-height:0;grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);border-radius:18px}
- html.pg-js-ready .pg-is-home .pg-course-hero-copy{padding:10px 8px 12px 23px}
+ html.pg-js-ready .pg-is-home .pg-course-hero-copy{padding:10px 8px 10px 20px}
  html.pg-js-ready .pg-is-home .pg-course-hero h1{font-size:clamp(26px,2.5vw,37px);line-height:1.03}
  html.pg-js-ready .pg-is-home .pg-course-hero-copy>p{font-size:12px;line-height:1.4}
  html.pg-js-ready .pg-is-home .pg-hero-stats{display:none}
@@ -75,17 +75,17 @@ html.pg-js-ready .pg-is-home .pg-module-card[hidden]{display:none!important}
  html.pg-js-ready .pg-is-home .pg-progress-stat{padding:7px;gap:6px}
  html.pg-js-ready .pg-is-home .pg-progress-stat>span{width:28px;height:28px;font-size:15px}
  html.pg-js-ready .pg-is-home .pg-progress-stat strong{font-size:14px}
- html.pg-js-ready .pg-is-home .pg-course-modules{min-height:0;display:flex;flex-direction:column}
- html.pg-js-ready .pg-is-home .pg-learning-head{flex:none;min-height:39px;margin:0 0 7px;align-items:center}
+ html.pg-js-ready .pg-is-home .pg-course-modules{min-height:0;display:flex;flex-direction:column;justify-content:flex-start;align-self:start}
+ html.pg-js-ready .pg-is-home .pg-learning-head{flex:none;min-height:34px;margin:0 0 6px;align-items:center}
  html.pg-js-ready .pg-is-home .pg-learning-head h2{font-size:17px}
  html.pg-js-ready .pg-is-home .pg-learning-head p{font-size:10px}
- html.pg-js-ready .pg-is-home .pg-module-grid{min-height:0;flex:1;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:minmax(0,1fr);gap:12px}
- html.pg-js-ready .pg-is-home :is(.pg-module-card,.pg-module-card:nth-child(n+5)){min-height:0;height:100%;padding:12px}
+ html.pg-js-ready .pg-is-home .pg-module-grid{min-height:0;flex:0 0 auto;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:clamp(158px,19.5dvh,184px);align-items:start;gap:10px}
+ html.pg-js-ready .pg-is-home :is(.pg-module-card,.pg-module-card:nth-child(n+5)){min-height:0;height:100%;max-height:184px;padding:10px;gap:6px}
  html.pg-js-ready .pg-is-home .pg-module-content{min-height:0}
  html.pg-js-ready .pg-is-home .pg-module-copy h3{min-height:0;font-size:13px;line-height:1.23;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
  html.pg-js-ready .pg-is-home .pg-module-copy p{min-height:0;-webkit-line-clamp:2;font-size:10px}
- html.pg-js-ready .pg-is-home .pg-module-footer{grid-template-columns:1fr 1fr}
- html.pg-js-ready .pg-is-home :is(.pg-module-state,.pg-module-action){min-height:28px;padding:0 7px;font-size:9px}
+ html.pg-js-ready .pg-is-home .pg-module-footer{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px}
+ html.pg-js-ready .pg-is-home :is(.pg-module-state,.pg-module-action){min-height:28px;padding:0 5px;font-size:9px;white-space:normal;text-align:center;line-height:1.15}
 }
 @media (min-width:960px) and (max-width:1200px) and (min-height:700px){
  html.pg-js-ready .pg-is-home .pg-progress-panel{grid-template-columns:minmax(220px,1.7fr) repeat(4,minmax(85px,1fr))}
