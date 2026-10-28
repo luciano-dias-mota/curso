@@ -199,13 +199,13 @@ if ($isPostgres):
                     <footer class="pg-module-footer">
                         <span class="pg-module-state">
                             <?php if ($done): ?>
-                                ✓ Concluído
+                                <span class="pg-state-icon" aria-hidden="true">✓</span><span>Concluído</span>
                             <?php elseif ($inProgress): ?>
-                                ▣ Em andamento
+                                <span class="pg-state-icon" aria-hidden="true">◉</span><span>Em andamento</span>
                             <?php elseif ($locked): ?>
-                                ♙ Bloqueado
+                                <span class="pg-state-icon" aria-hidden="true">🔒</span><span>Bloqueado</span>
                             <?php else: ?>
-                                Disponível
+                                <span class="pg-state-icon" aria-hidden="true">●</span><span>Disponível</span>
                             <?php endif; ?>
                         </span>
 
@@ -214,12 +214,13 @@ if ($isPostgres):
                                 class="pg-module-action <?= $inProgress ? 'is-primary' : '' ?>"
                                 href="<?= e(url('/curso/' . (int) $course['id'] . '/modulo/' . (int) $m['id'])) ?>"
                             >
-                                <?= $done ? 'Revisar módulo' : ($inProgress ? 'Continuar módulo' : 'Acessar módulo') ?>
+                                <span class="pg-action-label"><?= $done ? 'Revisar módulo' : ($inProgress ? 'Continuar módulo' : 'Acessar módulo') ?></span>
+                                <span class="pg-action-icon" aria-hidden="true"><?= $done ? '↺' : '↗' ?></span>
                             </a>
                         <?php elseif (!$isDraft): ?>
-                            <span class="pg-module-action is-disabled">Aguardando liberação</span>
+                            <span class="pg-module-action is-disabled" aria-disabled="true"><span class="pg-action-icon" aria-hidden="true">🔒</span><span>Aguardando liberação</span></span>
                         <?php else: ?>
-                            <span class="pg-module-action is-disabled">Ver conteúdo</span>
+                            <span class="pg-module-action is-disabled" aria-disabled="true"><span class="pg-action-icon" aria-hidden="true">🔒</span><span>Em preparação</span></span>
                         <?php endif; ?>
                     </footer>
                 </article>
