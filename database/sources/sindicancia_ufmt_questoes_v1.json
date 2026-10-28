@@ -109,7 +109,7 @@
       "source_key": "SIND-UFMT-V1-FUNDAMENTOS-04",
       "statement": "No curso da sindicância surge indício de participação de oficial de posto superior ao do sindicante. O que prevê o art. 3º, §3º, do Manual 2009?",
       "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Manual 2009, art. 3º, §3º: superioridade hierárquica descoberta impõe relatório e solicitação de substituição, não continuação automática.",
-      "difficulty": "hard",
+      "difficulty": "medium",
       "alternatives": [
         {
           "label": "A",
@@ -211,7 +211,7 @@
       "source_key": "SIND-UFMT-V1-DEFESA-02",
       "statement": "Militar prestou declarações no 'Termo de Perguntas ao Sindicado'. Depois foi citado por indícios de transgressão. Pelo Manual 2009, qual ato continua obrigatório?",
       "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Os modelos do Manual orientam que o acusado seja obrigatoriamente qualificado e interrogado após a citação, mesmo que já houvesse sido inquirido como sindicado.",
-      "difficulty": "hard",
+      "difficulty": "medium",
       "alternatives": [
         {
           "label": "A",
@@ -245,7 +245,7 @@
       "source_key": "SIND-UFMT-V1-DEFESA-03",
       "statement": "Na fase acusatória, segundo o Manual de 2009, qual conjunto de testemunhas pode ser indicado pelo acusado/defensor?",
       "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Manual 2009, orientações de inquirição e modelo de citação: três de defesa e mais três referidas ou informantes, categorias distintas.",
-      "difficulty": "hard",
+      "difficulty": "medium",
       "alternatives": [
         {
           "label": "A",
@@ -381,7 +381,7 @@
       "source_key": "SIND-UFMT-V1-OITIVAS-02",
       "statement": "Uma testemunha já depôs por quatro horas consecutivas, mas será necessário continuar. Segundo a REDAÇÃO DO MANUAL de 2009, assinale a correta.",
       "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. O Manual orienta máximo de quatro horas consecutivas e emprega a expressão 'facultado um período de descanso de meia-hora' se necessário prosseguir além desse período.",
-      "difficulty": "hard",
+      "difficulty": "medium",
       "alternatives": [
         {
           "label": "A",
@@ -483,7 +483,7 @@
       "source_key": "SIND-UFMT-V1-OITIVAS-05",
       "statement": "Na fase acusatória, uma testemunha encontra-se em outra localidade e é ouvida por carta precatória. O Manual de 2009 assegura ao acusado/defensor:",
       "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Manual 2009, art. 7º, parágrafo único, e explicação de inquirições: defesa pode oferecer quesitos na carta precatória.",
-      "difficulty": "hard",
+      "difficulty": "medium",
       "alternatives": [
         {
           "label": "A",
@@ -585,7 +585,7 @@
       "source_key": "SIND-UFMT-V1-DEMISSORIA-03",
       "statement": "O oficial participou como PARTE em procedimento anterior que fundamenta a acusação. Ainda que não tenha formulado a nova acusação, qual regra do Manual original de 2009 impede sua nomeação?",
       "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. A alínea d do art. 14, parágrafo único, veda encarregado que tenha sido parte em procedimento que serviu de base à acusação.",
-      "difficulty": "hard",
+      "difficulty": "medium",
       "alternatives": [
         {
           "label": "A",
@@ -653,7 +653,7 @@
       "source_key": "SIND-UFMT-V1-DEMISSORIA-05",
       "statement": "Segundo o art. 20 do Manual de 2009, recebido o relatório de sindicância demissória, em qual prazo o Comandante-Geral deve proferir solução nos termos desse artigo?",
       "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. O prazo de solução do art. 20, contado do recebimento dos autos, não se confunde com o prazo de CONCLUSÃO do art. 18 (historicamente alterado).",
-      "difficulty": "hard",
+      "difficulty": "medium",
       "alternatives": [
         {
           "label": "A",
@@ -687,7 +687,7 @@
       "source_key": "SIND-UFMT-V1-PRAZOS-01",
       "statement": "A questão pede EXPRESSAMENTE o art. 18 na REDAÇÃO ORIGINAL de 2009 do Manual, na seção demissória. Qual prazo de conclusão/remessa e prorrogação extraordinária nele constava?",
       "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Art. 18 original de 2009 previa 20 + até 10 dias para a demissória; esse art. 18 foi expressamente revogado/substituído pela Portaria de 22/01/2018. A questão é HISTÓRICA, não afirma vigência em 2026.",
-      "difficulty": "hard",
+      "difficulty": "medium",
       "alternatives": [
         {
           "label": "A",
@@ -721,7 +721,7 @@
       "source_key": "SIND-UFMT-V1-PRAZOS-02",
       "statement": "Segundo o TEXTO DA PORTARIA nº 01/QCG/CORREGPM DE 22/01/2018, qual prazo de conclusão/remessa e prorrogação corresponde à sindicância INVESTIGATÓRIA/ACUSATÓRIA?",
       "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Reprodução do art. 1º da Portaria de 2018: 40 dias + 20 de prorrogação mediante pedido e análise; não se afirma vigência consolidada em 2026.",
-      "difficulty": "hard",
+      "difficulty": "medium",
       "alternatives": [
         {
           "label": "A",
@@ -755,7 +755,7 @@
       "source_key": "SIND-UFMT-V1-PRAZOS-03",
       "statement": "Segundo o TEXTO DA PORTARIA nº 01/QCG/CORREGPM DE 22/01/2018, qual prazo de conclusão/remessa e prorrogação corresponde à sindicância DEMISSÓRIA?",
       "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Reprodução do art. 2º da Portaria 2018: 60 + 30 dias, pedido ao Comandante-Geral antes do vencimento. Confirmar vigência antes de tratar como norma atual.",
-      "difficulty": "hard",
+      "difficulty": "medium",
       "alternatives": [
         {
           "label": "A",
@@ -789,7 +789,7 @@
       "source_key": "SIND-UFMT-V1-PRAZOS-04",
       "statement": "Um pedido de prorrogação é formulado conforme a Portaria nº 01/QCG/CORREGPM DE 2018. Quanto à ANTECEDÊNCIA DO PROTOCOLO, o texto exige:",
       "explanation": "Treino inédito, sem atribuição a prova oficial da UFMT. Arts. 1º, §1º, e 2º, §1º: protocolo ao menos um dia antes do vencimento; conferir autoridade competente de acordo com o rito.",
-      "difficulty": "hard",
+      "difficulty": "medium",
       "alternatives": [
         {
           "label": "A",
