@@ -13,7 +13,7 @@ Aprofundar a fase **2. Sindicância PMMT** do **Módulo 4** do Curso Preparatór
 ## Escopo versionado
 
 - 5 aulas opcionais; **28 blocos**, com leitura completa necessária para concluir a aula, mas sem impedir o avanço nas fases.
-- 25 questões inéditas A–E; 1 correta; dificuldade medium/hard; todas com justificativa contextualizada na fonte.
+- 25 questões inéditas A–E; 1 correta; todas com dificuldade **medium** para entrar no gerador do curso; todas com justificativa contextualizada na fonte.
 - 8 correções no banco complementar: índices **13, 14, 15, 16, 17, 31, 32, 37** do módulo "Corregedoria" no arquivo `database/questoes_simulados_complementares.json`. Essas correções são idempotentes no banco quando suas versões originais estão presentes.
 - Não se atribui nenhum exercício inédito a uma prova real da UFMT.
 
